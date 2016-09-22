@@ -1,1 +1,1 @@
-# js-python
+# Języki skryptowe - Python
