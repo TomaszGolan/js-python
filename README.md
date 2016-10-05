@@ -10,8 +10,7 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
 
 ---
 
-* Wykład 1 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w01.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w01.html))
+* Wykład 1 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w01.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w01.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l01.md))
     * Wprowadzenie
     * Podstawowe typy danych: liczbowe i tekstowy
     * Operacje na liczbach; moduły *math* i *cmath*
-
