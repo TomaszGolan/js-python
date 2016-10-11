@@ -14,3 +14,6 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * Wprowadzenie
     * Podstawowe typy danych: liczbowe i tekstowy
     * Operacje na liczbach; moduły *math* i *cmath*
+
+    *Uzupełnienie (literatura): firma O'Reilly udostępniła zbiór darmowych ebooków
+    dotyczących programowania (w tym 7 książek o Pythonie). Dla zainteresowanych do pobrania [tutaj](http://www.oreilly.com/programming/free/)*
