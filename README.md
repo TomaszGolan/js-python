@@ -17,3 +17,8 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
 
     *Uzupełnienie (literatura): firma O'Reilly udostępniła zbiór darmowych ebooków
     dotyczących programowania (w tym 7 książek o Pythonie). Dla zainteresowanych do pobrania [tutaj](http://www.oreilly.com/programming/free/)*
+
+* Wykład 2 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w02.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w02.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l02.md))
+    * sekwencyjne typy danych
+    * systemy liczbowe
+    * wyrażenia logiczne
