@@ -22,3 +22,10 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * sekwencyjne typy danych
     * systemy liczbowe
     * wyrażenia logiczne
+
+* Wykład 3 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w03.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w03.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l03.md))
+    * pakowanie / odpakowywanie sekwencji
+    * kontrola przepływu
+    * formatowanie tekstu
+
+
