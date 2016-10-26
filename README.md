@@ -28,4 +28,8 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * kontrola przepływu
     * formatowanie tekstu
 
-
+* Wykład 4 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w04.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w04.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l04.md))
+    * typy mapujące
+    * funkcje
+    * dokumentacja
+    * wyrażenie lambda
