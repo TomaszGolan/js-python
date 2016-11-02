@@ -33,3 +33,9 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * funkcje
     * dokumentacja
     * wyrażenie lambda
+    
+* Wykład 5 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w05.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w05.html))
+    * *timeit*
+    * złożoność algorytmów
+    * notacja "dużego O"
+    * algorytmy sortowania
