@@ -39,3 +39,7 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * złożoność algorytmów
     * notacja "dużego O"
     * algorytmy sortowania
+    
+* Wykład 6 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w06.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w06.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l05.md))
+    * przestrzenie nazw
+    * moduły
