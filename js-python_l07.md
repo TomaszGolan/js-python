@@ -1,5 +1,5 @@
 # Języki skryptowe - Python
-# Lista 6
+# Lista 7
 
 ---
 
