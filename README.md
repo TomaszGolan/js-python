@@ -51,3 +51,9 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
 * Wykład 8 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w08.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w08.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l07.md))
     * Błędy i wyjątki
     * Operacje na plikach
+    
+* Wykład 9 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w09.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w09.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l08.md))
+    * typy sekwencyjne: set i frozenset
+    * generatory
+    * omówienie zadań z listy 6
+    * 
