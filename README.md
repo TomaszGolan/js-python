@@ -56,3 +56,6 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * typy sekwencyjne: set i frozenset
     * generatory
     * omówienie zadań z listy 6
+    
+* Wykład 10 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w10.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w10.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l09.md))
+    * wprowadzenie do programowania obiektowego
