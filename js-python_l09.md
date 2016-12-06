@@ -41,6 +41,7 @@ samochod.jedz(100) # dystans = 100 + 100km, czas = 1 + 0.5h
 samochod.podroz()
 
 *Samochód przejechał ..., ze średnią prędkością ..., co zajęło ... i spaliło ... benzyny.*
+```
 
 ---
 
