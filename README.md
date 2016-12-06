@@ -56,4 +56,3 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * typy sekwencyjne: set i frozenset
     * generatory
     * omówienie zadań z listy 6
-    * 
