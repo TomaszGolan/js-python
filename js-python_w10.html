@@ -13593,52 +13593,10 @@ class ArCiag:
     def __str__(self):
         s = &quot;Ciąg arytmetyczny ({a1}, {r}):&quot;.format(a1=self.__a1, r=self.__r)
         
-        for wyraz in self.__wyrazy:
+        for wyraz in self: # skąd wie, jak po sobie iterować?
             s += &quot; &quot; + str(wyraz)
             
         return s
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Appending to arciag.py
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Ci&#261;g-arytmetyczny:-len">Ci&#261;g arytmetyczny: <em>len</em><a class="anchor-link" href="#Ci&#261;g-arytmetyczny:-len">&#182;</a></h2><hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">writefile</span> -a arciag.py
-
-    def __len__(self): # wywoływana przez len()
-        &quot;&quot;&quot;Zwraca ilość wyrazów ciągu&quot;&quot;&quot;
-        
-        return len(self.__wyrazy)
 </pre></div>
 
 </div>
@@ -13672,7 +13630,7 @@ class ArCiag:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">writefile</span> -a arciag.py
@@ -13682,6 +13640,48 @@ class ArCiag:
         
         for a in self.__wyrazy:
             yield a
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Appending to arciag.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ci&#261;g-arytmetyczny:-len">Ci&#261;g arytmetyczny: <em>len</em><a class="anchor-link" href="#Ci&#261;g-arytmetyczny:-len">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">writefile</span> -a arciag.py
+
+    def __len__(self): # wywoływana przez len()
+        &quot;&quot;&quot;Zwraca ilość wyrazów ciągu&quot;&quot;&quot;
+        
+        return len(self.__wyrazy)
 </pre></div>
 
 </div>
@@ -13882,8 +13882,8 @@ class ArCiag(builtins.object)
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">arciag</span> <span class="k">import</span> <span class="n">ArCiag</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">ArCiag</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">ArCiag</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">ArCiag</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># domyślnie jeden wyraz</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">ArCiag</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># zacznij od 10 wyrazów</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -13909,14 +13909,28 @@ Ciąg arytmetyczny (2, 3): 2 5 8 11 14 17 20 23 26 29
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ci&#261;g-arytmetyczny:-len-i-sum">Ci&#261;g arytmetyczny: <em>len</em> i <em>sum</em><a class="anchor-link" href="#Ci&#261;g-arytmetyczny:-len-i-sum">&#182;</a></h2><hr>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">arciag</span> <span class="k">import</span> <span class="n">ArCiag</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">ArCiag</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># domyślnie 1 wyraz</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># generuj kolejne 10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13929,7 +13943,7 @@ Ciąg arytmetyczny (2, 3): 2 5 8 11 14 17 20 23 26 29
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Ciąg arytmetyczny (1, 2): 1 3 5 7 9 11 13 15 17 19 21 -&gt; 121
+<pre>Ciąg arytmetyczny (1, 2): 1 3 5 7 9 11 13 15 17 19 21
 </pre>
 </div>
 </div>
@@ -13943,7 +13957,7 @@ Ciąg arytmetyczny (2, 3): 2 5 8 11 14 17 20 23 26 29
 <div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># ilość wyrazów (dzięki __len__)</span>
 </pre></div>
 
 </div>
@@ -13961,6 +13975,89 @@ Ciąg arytmetyczny (2, 3): 2 5 8 11 14 17 20 23 26 29
 <pre>11</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># suma wyrazów (dzięki __iter__)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[60]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>121</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ci&#261;g-arytmetyczny:-zapis">Ci&#261;g arytmetyczny: zapis<a class="anchor-link" href="#Ci&#261;g-arytmetyczny:-zapis">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">arciag</span> <span class="k">import</span> <span class="n">ArCiag</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">ArCiag</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># generuj 10 wyrazów</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;moj_ciag.txt&#39;</span><span class="p">)</span> <span class="c1"># i zapisz do pliku</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+
+cat moj_ciag.txt
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Ciąg arytmetyczny (1, 2): 1 3 5 7 9 11 13 15 17 19</pre>
+</div>
 </div>
 
 </div>
