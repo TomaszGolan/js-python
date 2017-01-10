@@ -63,5 +63,7 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
 * Wykład 11 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w11.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w11.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l10.md))
     * programowania obiektowego ciąg dalszy
 
+* Wykład 12 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w12.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w12.html))
+    * graficzny interfejs użytkownika
 
 * [Lista dodatkowa](https://github.com/TomaszGolan/js-python/blob/master/js-python_l11.md)
