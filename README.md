@@ -33,32 +33,35 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * funkcje
     * dokumentacja
     * wyrażenie lambda
-    
+
 * Wykład 5 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w05.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w05.html))
     * *timeit*
     * złożoność algorytmów
     * notacja "dużego O"
     * algorytmy sortowania
-    
+
 * Wykład 6 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w06.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w06.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l05.md))
     * przestrzenie nazw
     * moduły
-    
+
 * Wykład 7 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w07.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w07.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l06.md))
     * wybrane moduły biblioteki standardowej
     * liczby pseudolosowe
-    
+
 * Wykład 8 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w08.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w08.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l07.md))
     * Błędy i wyjątki
     * Operacje na plikach
-    
+
 * Wykład 9 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w09.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w09.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l08.md))
     * typy sekwencyjne: set i frozenset
     * generatory
     * omówienie zadań z listy 6
-    
+
 * Wykład 10 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w10.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w10.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l09.md))
     * wprowadzenie do programowania obiektowego
 
 * Wykład 11 ([notebook](https://github.com/TomaszGolan/js-python/blob/master/js-python_w11.ipynb), [html](https://raw.githubusercontent.com/TomaszGolan/js-python/master/js-python_w11.html), [lista zadań](https://github.com/TomaszGolan/js-python/blob/master/js-python_l10.md))
     * programowania obiektowego ciąg dalszy
+
+
+* [Lista dodatkowa](https://github.com/TomaszGolan/js-python/blob/master/js-python_l11.md)
