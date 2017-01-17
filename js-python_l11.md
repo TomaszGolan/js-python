@@ -45,3 +45,7 @@ Lista dodatkowa dla tych, którzy nie mają zaległości z poprzednich list.
 * commit
 
 * Rozbuduj *zoo* wg własnego uznania
+
+---
+
+* stwórz GUI do aplikacji *zoo*
