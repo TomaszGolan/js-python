@@ -69,4 +69,7 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
 * [Wykład 13](http://tomaszgolan.github.io/reveal_talks/html/js-python_w13.html)
     * powtórka cz. I
 
+* [Wykład 14](http://tomaszgolan.github.io/reveal_talks/html/js-python_w14.html)
+    * powtórka cz. II
+
 * [Lista dodatkowa](https://github.com/TomaszGolan/js-python/blob/master/js-python_l11.md)
