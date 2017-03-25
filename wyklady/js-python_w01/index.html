@@ -1,265 +1,1307 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w01/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 1 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 1
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li class="active">
-    <a href="./">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../..">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w02/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-1">Wykład 1</a></li>
-            <li><a href="#dane-kontaktowe">Dane kontaktowe</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#materiay-do-wykadow">Materiały do wykładów</a></li>
-            <li><a href="#zaliczenie">Zaliczenie</a></li>
-            <li><a href="#jezyk-kompilowany">Język kompilowany</a></li>
-            <li><a href="#jezyk-interpretowany">Język interpretowany</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#hello-world">Hello World!</a></li>
-            <li><a href="#zastosowanie">Zastosowanie</a></li>
-            <li><a href="#python-2-vs-python-3">Python 2 vs Python 3</a></li>
-            <li><a href="#python-2-vs-python-3_1">Python 2 vs Python 3</a></li>
-            <li><a href="#python-2-vs-python-3_2">Python 2 vs Python 3</a></li>
-            <li><a href="#python-2-vs-python-3_3">Python 2 vs Python 3</a></li>
-            <li><a href="#tryb-interaktywny">Tryb interaktywny</a></li>
-            <li><a href="#tryb-skryptowy">Tryb skryptowy</a></li>
-            <li><a href="#tryb-skryptowy_1">Tryb skryptowy</a></li>
-            <li><a href="#jupyter">Jupyter</a></li>
-            <li><a href="#czytelnosc-kodu">Czytelność kodu</a></li>
-            <li><a href="#czytelnosc-kodu_1">Czytelność kodu</a></li>
-            <li><a href="#czytelnosc-kodu_2">Czytelność kodu</a></li>
-            <li><a href="#podstawowe-typy-danych">Podstawowe typy danych</a></li>
-            <li><a href="#operacje-na-liczbach">Operacje na liczbach</a></li>
-            <li><a href="#operacje-na-liczbach_1">Operacje na liczbach</a></li>
-            <li><a href="#operacje-na-liczbach_2">Operacje na liczbach</a></li>
-            <li><a href="#operacje-na-liczbach_3">Operacje na liczbach</a></li>
-            <li><a href="#modu-math">Moduł math</a></li>
-            <li><a href="#modu-math_1">Moduł math</a></li>
-            <li><a href="#modu-math_2">Moduł math</a></li>
-            <li><a href="#modu-math_3">Moduł math</a></li>
-            <li><a href="#modu-math_4">Moduł math</a></li>
-            <li><a href="#typ-tekstowy">Typ tekstowy</a></li>
-            <li><a href="#typ-tekstowy-bez-unicode">Typ tekstowy bez unicode</a></li>
-            <li><a href="#typ-tekstowy_1">Typ tekstowy</a></li>
-            <li><a href="#znak-ucieczki">Znak ucieczki</a></li>
-            <li><a href="#wybrane-sekewncje-specjalne">Wybrane sekewncje specjalne</a></li>
-            <li><a href="#carriage-return">Carriage return</a></li>
-            <li><a href="#dugie-ancuchy">Długie łancuchy</a></li>
-            <li><a href="#dugie-ancuchy_1">Długie łancuchy</a></li>
-            <li><a href="#dugie-ancuchy_2">Długie łancuchy</a></li>
-            <li><a href="#dugie-ancuchy_3">Długie łancuchy</a></li>
-            <li><a href="#dugie-ancuchy_4">Długie łancuchy</a></li>
-            <li><a href="#przykady-prostych-programow">Przykłady prostych programów</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 1
+      </label>
+    
+    <a href="./" title="Wykład 1" class="md-nav__link md-nav__link--active">
+      Wykład 1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-1" title="Wykład 1" class="md-nav__link">
+    Wykład 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dane-kontaktowe" title="Dane kontaktowe" class="md-nav__link">
+    Dane kontaktowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program" title="Program" class="md-nav__link">
+    Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiay-do-wykadow" title="Materiały do wykładów" class="md-nav__link">
+    Materiały do wykładów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zaliczenie" title="Zaliczenie" class="md-nav__link">
+    Zaliczenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jezyk-kompilowany" title="Język kompilowany" class="md-nav__link">
+    Język kompilowany
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jezyk-interpretowany" title="Język interpretowany" class="md-nav__link">
+    Język interpretowany
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hello-world" title="Hello World!" class="md-nav__link">
+    Hello World!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zastosowanie" title="Zastosowanie" class="md-nav__link">
+    Zastosowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3_1" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3_2" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3_3" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryb-interaktywny" title="Tryb interaktywny" class="md-nav__link">
+    Tryb interaktywny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryb-skryptowy" title="Tryb skryptowy" class="md-nav__link">
+    Tryb skryptowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryb-skryptowy_1" title="Tryb skryptowy" class="md-nav__link">
+    Tryb skryptowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter" title="Jupyter" class="md-nav__link">
+    Jupyter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu_1" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu_2" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podstawowe-typy-danych" title="Podstawowe typy danych" class="md-nav__link">
+    Podstawowe typy danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach_1" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach_2" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach_3" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_1" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_2" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_3" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_4" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typ-tekstowy" title="Typ tekstowy" class="md-nav__link">
+    Typ tekstowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typ-tekstowy-bez-unicode" title="Typ tekstowy bez unicode" class="md-nav__link">
+    Typ tekstowy bez unicode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typ-tekstowy_1" title="Typ tekstowy" class="md-nav__link">
+    Typ tekstowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#znak-ucieczki" title="Znak ucieczki" class="md-nav__link">
+    Znak ucieczki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wybrane-sekewncje-specjalne" title="Wybrane sekewncje specjalne" class="md-nav__link">
+    Wybrane sekewncje specjalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carriage-return" title="Carriage return" class="md-nav__link">
+    Carriage return
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_1" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_2" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_3" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_4" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykady-prostych-programow" title="Przykłady prostych programów" class="md-nav__link">
+    Przykłady prostych programów
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-1">Wykład 1</h2>
-<h2 id="dane-kontaktowe">Dane kontaktowe</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-1" title="Wykład 1" class="md-nav__link">
+    Wykład 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dane-kontaktowe" title="Dane kontaktowe" class="md-nav__link">
+    Dane kontaktowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#program" title="Program" class="md-nav__link">
+    Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiay-do-wykadow" title="Materiały do wykładów" class="md-nav__link">
+    Materiały do wykładów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zaliczenie" title="Zaliczenie" class="md-nav__link">
+    Zaliczenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jezyk-kompilowany" title="Język kompilowany" class="md-nav__link">
+    Język kompilowany
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jezyk-interpretowany" title="Język interpretowany" class="md-nav__link">
+    Język interpretowany
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hello-world" title="Hello World!" class="md-nav__link">
+    Hello World!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zastosowanie" title="Zastosowanie" class="md-nav__link">
+    Zastosowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3_1" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3_2" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-2-vs-python-3_3" title="Python 2 vs Python 3" class="md-nav__link">
+    Python 2 vs Python 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryb-interaktywny" title="Tryb interaktywny" class="md-nav__link">
+    Tryb interaktywny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryb-skryptowy" title="Tryb skryptowy" class="md-nav__link">
+    Tryb skryptowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryb-skryptowy_1" title="Tryb skryptowy" class="md-nav__link">
+    Tryb skryptowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter" title="Jupyter" class="md-nav__link">
+    Jupyter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu_1" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu_2" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podstawowe-typy-danych" title="Podstawowe typy danych" class="md-nav__link">
+    Podstawowe typy danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach_1" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach_2" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-liczbach_3" title="Operacje na liczbach" class="md-nav__link">
+    Operacje na liczbach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_1" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_2" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_3" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-math_4" title="Moduł math" class="md-nav__link">
+    Moduł math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typ-tekstowy" title="Typ tekstowy" class="md-nav__link">
+    Typ tekstowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typ-tekstowy-bez-unicode" title="Typ tekstowy bez unicode" class="md-nav__link">
+    Typ tekstowy bez unicode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typ-tekstowy_1" title="Typ tekstowy" class="md-nav__link">
+    Typ tekstowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#znak-ucieczki" title="Znak ucieczki" class="md-nav__link">
+    Znak ucieczki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wybrane-sekewncje-specjalne" title="Wybrane sekewncje specjalne" class="md-nav__link">
+    Wybrane sekewncje specjalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#carriage-return" title="Carriage return" class="md-nav__link">
+    Carriage return
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_1" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_2" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_3" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dugie-ancuchy_4" title="Długie łancuchy" class="md-nav__link">
+    Długie łancuchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykady-prostych-programow" title="Przykłady prostych programów" class="md-nav__link">
+    Przykłady prostych programów
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-1">Wykład 1<a class="headerlink" href="#wykad-1" title="Permanent link">&para;</a></h2>
+<h2 id="dane-kontaktowe">Dane kontaktowe<a class="headerlink" href="#dane-kontaktowe" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Tomasz Golan</li>
@@ -267,7 +1309,7 @@
 <li>email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#111;&#109;&#97;&#115;&#122;&#46;&#103;&#111;&#108;&#97;&#110;&#64;&#117;&#119;&#114;&#46;&#101;&#100;&#117;&#46;&#112;&#108;">&#116;&#111;&#109;&#97;&#115;&#122;&#46;&#103;&#111;&#108;&#97;&#110;&#64;&#117;&#119;&#114;&#46;&#101;&#100;&#117;&#46;&#112;&#108;</a></li>
 <li>konsultacje: środa 10:00-11:30; czwartek 14:30-16:00</li>
 </ul>
-<h2 id="program">Program</h2>
+<h2 id="program">Program<a class="headerlink" href="#program" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wprowadzenie</li>
@@ -286,7 +1328,7 @@
 <li>tworzenie graficznego interfejsu użytkownika</li>
 <li>dekoratory, funkcje lambda, generatory ...</li>
 </ul>
-<h2 id="materiay-do-wykadow">Materiały do wykładów</h2>
+<h2 id="materiay-do-wykadow">Materiały do wykładów<a class="headerlink" href="#materiay-do-wykadow" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wykłady: https://github.com/TomaszGolan/js-python</li>
@@ -298,39 +1340,41 @@
 <li>M. Pilgrim, “Dive into Python”: http://www.diveintopython.net/</li>
 <li>Swaroop CH "A Byte of Python": https://python.swaroopch.com/ (tłumaczenie: http://python.edu.pl/byteofpython/)</li>
 </ul>
-<h2 id="zaliczenie">Zaliczenie</h2>
+<h2 id="zaliczenie">Zaliczenie<a class="headerlink" href="#zaliczenie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>ćwiczenia: listy zadań</li>
 <li>wykład: egzamin praktyczny</li>
 </ul>
-<h2 id="jezyk-kompilowany">Język kompilowany</h2>
+<h2 id="jezyk-kompilowany">Język kompilowany<a class="headerlink" href="#jezyk-kompilowany" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>przykłady: C / C++, Pascal</li>
 <li>zalety: wydajność, błędy na etapie kompilacji, utrzymanie i rozwijanie kodu</li>
 <li>wady: czas pisania, kompilacja dużych projektów</li>
 </ul>
-<pre><code class="python">from graphviz import Source
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="kn">import</span> <span class="n">Source</span>
 
-Source('digraph &quot;kompilator&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=2]; \
-        &quot;kod źródłowy&quot; -&gt; &quot;kompilator&quot; -&gt; &quot;kod maszynowy&quot; -&gt; &quot;wynik&quot;}')
-</code></pre>
+<span class="n">Source</span><span class="p">(</span><span class="s1">&#39;digraph &quot;kompilator&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=2]; </span><span class="se">\</span>
+<span class="s1">        &quot;kod źródłowy&quot; -&gt; &quot;kompilator&quot; -&gt; &quot;kod maszynowy&quot; -&gt; &quot;wynik&quot;}&#39;</span><span class="p">)</span>
+</pre></div>
+
 
 <p><img alt="svg" src="../js-python_w01_files/js-python_w01_6_0.svg" /></p>
-<h2 id="jezyk-interpretowany">Język interpretowany</h2>
+<h2 id="jezyk-interpretowany">Język interpretowany<a class="headerlink" href="#jezyk-interpretowany" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>przykłady: Python, Perl</li>
 <li>zalety: prosty, szybki i przyjemny</li>
 <li>wady: wydajność, debugowanie (brak kompilacji)</li>
 </ul>
-<pre><code class="python">Source('digraph &quot;interpreter&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=2]; \
-        &quot;kod źródłowy&quot; -&gt; &quot;interpreter&quot; -&gt; &quot;wynik&quot;}')
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">Source</span><span class="p">(</span><span class="s1">&#39;digraph &quot;interpreter&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=2]; </span><span class="se">\</span>
+<span class="s1">        &quot;kod źródłowy&quot; -&gt; &quot;interpreter&quot; -&gt; &quot;wynik&quot;}&#39;</span><span class="p">)</span>
+</pre></div>
+
 
 <p><img alt="svg" src="../js-python_w01_files/js-python_w01_8_0.svg" /></p>
-<h2 id="python">Python</h2>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
 <hr />
 <blockquote>
 <p>Python is powerful... and fast;
@@ -353,10 +1397,11 @@ is Open.</p>
 <li>bogata bilbioteka standardowa i niezliczona ilość bibliotek zewnętrznych</li>
 <li>struktury wysokiego poziomu</li>
 </ul>
-<pre><code class="python">import this
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
 
-<pre><code>The Zen of Python, by Tim Peters
+
+<div class="codehilite"><pre><span></span>The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
 Explicit is better than implicit.
@@ -365,45 +1410,50 @@ Complex is better than complicated.
 Flat is better than nested.
 Sparse is better than dense.
 Readability counts.
-Special cases aren't special enough to break the rules.
+Special cases aren&#39;t special enough to break the rules.
 Although practicality beats purity.
 Errors should never pass silently.
 Unless explicitly silenced.
 In the face of ambiguity, refuse the temptation to guess.
 There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
+Although that way may not be obvious at first unless you&#39;re Dutch.
 Now is better than never.
 Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
+If the implementation is hard to explain, it&#39;s a bad idea.
 If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
-</code></pre>
-<h2 id="hello-world">Hello World!</h2>
-<hr />
-<pre><code class="py"># Python
-print(&quot;Hello World!&quot;)
-</code></pre>
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre></div>
 
-<hr />
-<pre><code class="cpp">// C++
-#include &lt;iostream&gt;
 
-int main()
-{
-    std::cout &lt;&lt; &quot;Hello World!&quot;;
-}
-</code></pre>
+<h2 id="hello-world">Hello World!<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="c1"># Python</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+
 
 <hr />
-<pre><code class="java">// Java
-public class Hello {
-    public static void main(String []args) {
-        System.out.println(&quot;Hello World!&quot;);
-    }
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">// C++</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<h2 id="zastosowanie">Zastosowanie</h2>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<hr />
+<div class="codehilite"><pre><span></span><span class="c1">// Java</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="zastosowanie">Zastosowanie<a class="headerlink" href="#zastosowanie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>internet: Yahoo, Google, ...</li>
@@ -413,50 +1463,52 @@ public class Hello {
 <li>nauka: NASA, Los Alamos National Laboratory, ...</li>
 <li>interfejs programistyczny aplikacji (<em>Application Programming Interface = API</em>): tensorflow (Google's machine learning), Amazon, Facebook, Youtube, ...</li>
 </ul>
-<h2 id="python-2-vs-python-3">Python 2 vs Python 3</h2>
+<h2 id="python-2-vs-python-3">Python 2 vs Python 3<a class="headerlink" href="#python-2-vs-python-3" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>Short version: Python 2.x is legacy, Python 3.x is the present and future of the language</em> (https://wiki.python.org/moin/Python2orPython3)</li>
 <li>Python 3 jest gotowy, jednak nie wszystkie zewnętrzne biblioteki są już z nim kompatybilne</li>
 </ul>
-<h2 id="python-2-vs-python-3_1">Python 2 vs Python 3</h2>
+<h2 id="python-2-vs-python-3_1">Python 2 vs Python 3<a class="headerlink" href="#python-2-vs-python-3_1" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Niektóre zmiany są kosmetyczne</li>
 </ul>
-<pre><code class="py"># Python 2
+<div class="codehilite"><pre><span></span><span class="c1"># Python 2</span>
 
-print &quot;Hello World!&quot;
+<span class="k">print</span> <span class="s2">&quot;Hello World!&quot;</span>
 
-# Python 3
+<span class="c1"># Python 3</span>
 
-print(&quot;Hello World!&quot;)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="python-2-vs-python-3_2">Python 2 vs Python 3</h2>
+
+<h2 id="python-2-vs-python-3_2">Python 2 vs Python 3<a class="headerlink" href="#python-2-vs-python-3_2" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Niektóre niebezpieczne</li>
 </ul>
-<pre><code class="py"># Python 2
+<div class="codehilite"><pre><span></span><span class="c1"># Python 2</span>
 
-3 / 2.0 # = 1.5
-3 / 2   # = 1
+<span class="mi">3</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="c1"># = 1.5</span>
+<span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>   <span class="c1"># = 1</span>
 
-# Python 3
+<span class="c1"># Python 3</span>
 
-3 / 2.0 # = 1.5
-3 / 2   # = 1.5
-3 // 2  # = 1
-</code></pre>
+<span class="mi">3</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="c1"># = 1.5</span>
+<span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>   <span class="c1"># = 1.5</span>
+<span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># = 1</span>
+</pre></div>
 
-<h2 id="python-2-vs-python-3_3">Python 2 vs Python 3</h2>
+
+<h2 id="python-2-vs-python-3_3">Python 2 vs Python 3<a class="headerlink" href="#python-2-vs-python-3_3" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>A niektóre gruntowne: iteratory</li>
 <li>Niektóre elementy Pythona 3 można zaimportować w Pythonie 2</li>
 </ul>
-<pre><code>Python 2.7.12 (default, Jul  1 2016, 15:12:24) 
+<div class="codehilite"><pre><span></span>Python 2.7.12 (default, Jul  1 2016, 15:12:24) 
 [GCC 5.4.0 20160609] on linux2
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; 3 / 2
@@ -465,7 +1517,8 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 &gt;&gt;&gt; 3 / 2
 1.5
 &gt;&gt;&gt; 
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>
@@ -475,9 +1528,9 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <p>Na wykładzie omawiany będzie Python 3</p>
 </li>
 </ul>
-<h2 id="tryb-interaktywny">Tryb interaktywny</h2>
+<h2 id="tryb-interaktywny">Tryb interaktywny<a class="headerlink" href="#tryb-interaktywny" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code>$ python
+<div class="codehilite"><pre><span></span>$ python
 Python 3.5.2 |Anaconda custom (64-bit)| (default, Jul  2 2016, 17:53:06) 
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
@@ -494,11 +1547,12 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 3.0 dostateczny
 2.0 niedostateczny
 &gt;&gt;&gt; 
-</code></pre>
+</pre></div>
 
-<h2 id="tryb-skryptowy">Tryb skryptowy</h2>
+
+<h2 id="tryb-skryptowy">Tryb skryptowy<a class="headerlink" href="#tryb-skryptowy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code>$ cat skala_ocen.py 
+<div class="codehilite"><pre><span></span>$ cat skala_ocen.py 
 #!/usr/bin/env python
 
 oceny_uwr = {2.0: &quot;niedostateczny&quot;, 3.0: &quot;dostateczny&quot;,
@@ -515,11 +1569,12 @@ $ python skala_ocen.py
 3.5 dostateczny plus
 3.0 dostateczny
 2.0 niedostateczny
-</code></pre>
+</pre></div>
 
-<h2 id="tryb-skryptowy_1">Tryb skryptowy</h2>
+
+<h2 id="tryb-skryptowy_1">Tryb skryptowy<a class="headerlink" href="#tryb-skryptowy_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code>$ ./skala_ocen.py
+<div class="codehilite"><pre><span></span>$ ./skala_ocen.py
 bash: ./skala_ocen.py: Permission denied
 
 $ chmod +x skala_ocen.py 
@@ -531,26 +1586,30 @@ $ ./skala_ocen.py
 3.5 dostateczny plus
 3.0 dostateczny
 2.0 niedostateczny
-</code></pre>
+</pre></div>
 
-<h2 id="jupyter">Jupyter</h2>
+
+<h2 id="jupyter">Jupyter<a class="headerlink" href="#jupyter" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">oceny_uwr = {2.0: &quot;niedostateczny&quot;, 3.0: &quot;dostateczny&quot;,
-             3.5: &quot;dostateczny plus&quot;, 4.0: &quot;dobry&quot;,
-             4.5: &quot;dobry plus&quot;, 5.0: &quot;bardzo dobry&quot;}
+<div class="codehilite"><pre><span></span><span class="n">oceny_uwr</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">:</span> <span class="s2">&quot;niedostateczny&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">:</span> <span class="s2">&quot;dostateczny&quot;</span><span class="p">,</span>
+             <span class="mf">3.5</span><span class="p">:</span> <span class="s2">&quot;dostateczny plus&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">:</span> <span class="s2">&quot;dobry&quot;</span><span class="p">,</span>
+             <span class="mf">4.5</span><span class="p">:</span> <span class="s2">&quot;dobry plus&quot;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">:</span> <span class="s2">&quot;bardzo dobry&quot;</span><span class="p">}</span>
 
-for ocena in sorted(oceny_uwr, reverse=True):
-    print(ocena, oceny_uwr[ocena])
-</code></pre>
+<span class="k">for</span> <span class="n">ocena</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">oceny_uwr</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ocena</span><span class="p">,</span> <span class="n">oceny_uwr</span><span class="p">[</span><span class="n">ocena</span><span class="p">])</span>
+</pre></div>
 
-<pre><code>5.0 bardzo dobry
+
+<div class="codehilite"><pre><span></span>5.0 bardzo dobry
 4.5 dobry plus
 4.0 dobry
 3.5 dostateczny plus
 3.0 dostateczny
 2.0 niedostateczny
-</code></pre>
-<h2 id="czytelnosc-kodu">Czytelność kodu</h2>
+</pre></div>
+
+
+<h2 id="czytelnosc-kodu">Czytelność kodu<a class="headerlink" href="#czytelnosc-kodu" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>przejrzysty kod</li>
@@ -561,47 +1620,53 @@ for ocena in sorted(oceny_uwr, reverse=True):
 <li>najlepiej trzymać się standardu PEP 8: https://www.python.org/dev/peps/pep-0008/</li>
 <li>ale bez przesady - przede wszystkim kod ma być czytelny</li>
 </ul>
-<h2 id="czytelnosc-kodu_1">Czytelność kodu</h2>
+<h2 id="czytelnosc-kodu_1">Czytelność kodu<a class="headerlink" href="#czytelnosc-kodu_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import random
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-# skala ocen obowiązująca na Uniwersytecie Wrocławskim
-oceny_uwr = {2.0: &quot;niedostateczny&quot;, 3.0: &quot;dostateczny&quot;,
-             3.5: &quot;dostateczny plus&quot;, 4.0: &quot;dobry&quot;,
-             4.5: &quot;dobry plus&quot;, 5.0: &quot;bardzo dobry&quot;}
+<span class="c1"># skala ocen obowiązująca na Uniwersytecie Wrocławskim</span>
+<span class="n">oceny_uwr</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">:</span> <span class="s2">&quot;niedostateczny&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">:</span> <span class="s2">&quot;dostateczny&quot;</span><span class="p">,</span>
+             <span class="mf">3.5</span><span class="p">:</span> <span class="s2">&quot;dostateczny plus&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">:</span> <span class="s2">&quot;dobry&quot;</span><span class="p">,</span>
+             <span class="mf">4.5</span><span class="p">:</span> <span class="s2">&quot;dobry plus&quot;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">:</span> <span class="s2">&quot;bardzo dobry&quot;</span><span class="p">}</span>
 
-# lista studentów uczęszczających na zajęcia z Pythona
-lista_studentow = [&quot;Kasia&quot;, &quot;Basia&quot;, &quot;Józek&quot;, &quot;Marek&quot;]
+<span class="c1"># lista studentów uczęszczających na zajęcia z Pythona</span>
+<span class="n">lista_studentow</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> <span class="s2">&quot;Basia&quot;</span><span class="p">,</span> <span class="s2">&quot;Józek&quot;</span><span class="p">,</span> <span class="s2">&quot;Marek&quot;</span><span class="p">]</span>
 
-# przez lenistwo prowadzącego oceny wystawiane losowo
-for student in lista_studentow:
-    # losowa ocena
-    ocena = random.choice(list(oceny_uwr))
-    # przypisanie oceny
-    print(student, &quot; -&gt; &quot;, oceny_uwr[ocena])
-</code></pre>
+<span class="c1"># przez lenistwo prowadzącego oceny wystawiane losowo</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">lista_studentow</span><span class="p">:</span>
+    <span class="c1"># losowa ocena</span>
+    <span class="n">ocena</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">oceny_uwr</span><span class="p">))</span>
+    <span class="c1"># przypisanie oceny</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">oceny_uwr</span><span class="p">[</span><span class="n">ocena</span><span class="p">])</span>
+</pre></div>
 
-<pre><code>Kasia  -&gt;  dobry plus
+
+<div class="codehilite"><pre><span></span>Kasia  -&gt;  dobry plus
 Basia  -&gt;  dobry plus
 Józek  -&gt;  dostateczny plus
 Marek  -&gt;  niedostateczny
-</code></pre>
-<h2 id="czytelnosc-kodu_2">Czytelność kodu</h2>
-<hr />
-<pre><code class="python">import random
-o = {2.0: &quot;niedostateczny&quot;, 3.0: &quot;dostateczny&quot;, 3.5: &quot;dostateczny plus&quot;, 4.0: &quot;dobry&quot;, 4.5: &quot;dobry plus&quot;, 5.0: &quot;bardzo dobry&quot;}
-s = [&quot;Kasia&quot;, \
-     &quot;Basia&quot;, &quot;Józek&quot;,
-     &quot;Marek&quot;]
-for i in range(len(s)): x = random.randint(2, len(o) - 1); print(s[i], &quot; -&gt; &quot;, o[x])
-</code></pre>
+</pre></div>
 
-<pre><code>Kasia  -&gt;  dostateczny
+
+<h2 id="czytelnosc-kodu_2">Czytelność kodu<a class="headerlink" href="#czytelnosc-kodu_2" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">o</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">:</span> <span class="s2">&quot;niedostateczny&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">:</span> <span class="s2">&quot;dostateczny&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">:</span> <span class="s2">&quot;dostateczny plus&quot;</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">:</span> <span class="s2">&quot;dobry&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">:</span> <span class="s2">&quot;dobry plus&quot;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">:</span> <span class="s2">&quot;bardzo dobry&quot;</span><span class="p">}</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> \
+     <span class="s2">&quot;Basia&quot;</span><span class="p">,</span> <span class="s2">&quot;Józek&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Marek&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span> <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">o</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Kasia  -&gt;  dostateczny
 Basia  -&gt;  niedostateczny
 Józek  -&gt;  dostateczny
 Marek  -&gt;  bardzo dobry
-</code></pre>
-<h2 id="podstawowe-typy-danych">Podstawowe typy danych</h2>
+</pre></div>
+
+
+<h2 id="podstawowe-typy-danych">Podstawowe typy danych<a class="headerlink" href="#podstawowe-typy-danych" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>typ całkowity (<em>int</em>)</li>
@@ -610,118 +1675,176 @@ Marek  -&gt;  bardzo dobry
 <li>typ tekstowy (<em>str</em>)</li>
 <li>zmienne są typowane dynamicznie</li>
 </ul>
-<pre><code class="python">x = 1   # [zmienna] [operator przypisania] [wartość]
-y = 1.0
-z = 1j
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># [zmienna] [operator przypisania] [wartość]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">1j</span>
 
-# drukuj typy zmiennych x, y i z (oddzielone przecinkiem)
-print(type(x), type(y), type(z), sep=&quot;, &quot;)
-</code></pre>
+<span class="c1"># drukuj typy zmiennych x, y i z (oddzielone przecinkiem)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>&lt;class 'int'&gt;, &lt;class 'float'&gt;, &lt;class 'complex'&gt;
-</code></pre>
-<pre><code class="python">x = y # przypisz zmiennej x wartość zmiennej y
 
-type(x) # a czemu nie &lt;class 'float'&gt;?
-</code></pre>
+<div class="codehilite"><pre><span></span>&lt;class &#39;int&#39;&gt;, &lt;class &#39;float&#39;&gt;, &lt;class &#39;complex&#39;&gt;
+</pre></div>
 
-<pre><code>float
-</code></pre>
-<h2 id="operacje-na-liczbach">Operacje na liczbach</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="c1"># przypisz zmiennej x wartość zmiennej y</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># a czemu nie &lt;class &#39;float&#39;&gt;?</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>float
+</pre></div>
+
+
+<h2 id="operacje-na-liczbach">Operacje na liczbach<a class="headerlink" href="#operacje-na-liczbach" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">2 + 2 # suma dwóch liczb całkowitych -&gt; liczba całkowita
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># suma dwóch liczb całkowitych -&gt; liczba całkowita</span>
+</pre></div>
 
-<pre><code>4
-</code></pre>
-<pre><code class="python">2 + 2.0 # wynikiem tej sumy jest liczba zmiennoprzecinkowa
-</code></pre>
 
-<pre><code>4.0
-</code></pre>
-<pre><code class="python">5 - 2
-</code></pre>
+<div class="codehilite"><pre><span></span>4
+</pre></div>
 
-<pre><code>3
-</code></pre>
-<pre><code class="python">-5 * 2 
-</code></pre>
 
-<pre><code>-10
-</code></pre>
-<pre><code class="python">5 / 2 # w Pythonie 3 dzielenie zawsze zwraca liczbę zmiennoprzecinkową
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mf">2.0</span> <span class="c1"># wynikiem tej sumy jest liczba zmiennoprzecinkowa</span>
+</pre></div>
 
-<pre><code>2.5
-</code></pre>
-<pre><code class="python">6 / 2 # nawet jeśli jest &quot;całkowita&quot;
-</code></pre>
 
-<pre><code>3.0
-</code></pre>
-<pre><code class="python">5 // 2 # chyba że użyjemy //
-</code></pre>
+<div class="codehilite"><pre><span></span>4.0
+</pre></div>
 
-<pre><code>2
-</code></pre>
-<h2 id="operacje-na-liczbach_1">Operacje na liczbach</h2>
+
+<div class="codehilite"><pre><span></span><span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">-</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span> 
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>-10
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># w Pythonie 3 dzielenie zawsze zwraca liczbę zmiennoprzecinkową</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2.5
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mi">6</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># nawet jeśli jest &quot;całkowita&quot;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># chyba że użyjemy //</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
+</pre></div>
+
+
+<h2 id="operacje-na-liczbach_1">Operacje na liczbach<a class="headerlink" href="#operacje-na-liczbach_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">5 % 2 # reszta z dzielenia (operator modulo)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="c1"># reszta z dzielenia (operator modulo)</span>
+</pre></div>
 
-<pre><code>1
-</code></pre>
-<pre><code class="python">int(2.5) # jawne rzutowanie na int
-</code></pre>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">float(1) # jawne rzutowanie na float
-</code></pre>
+<div class="codehilite"><pre><span></span>1
+</pre></div>
 
-<pre><code>1.0
-</code></pre>
-<pre><code class="python">complex(1,1) # liczby zespolone
-</code></pre>
 
-<pre><code>(1+1j)
-</code></pre>
-<pre><code class="python">1+1j # można wprowadzać na dwa sposoby
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span> <span class="c1"># jawne rzutowanie na int</span>
+</pre></div>
 
-<pre><code>(1+1j)
-</code></pre>
-<pre><code class="python">(1+2j).real # część rzeczywista
-</code></pre>
 
-<pre><code>1.0
-</code></pre>
-<pre><code class="python">(1+2j).imag # część urojona
-</code></pre>
+<div class="codehilite"><pre><span></span>2
+</pre></div>
 
-<pre><code>2.0
-</code></pre>
-<h2 id="operacje-na-liczbach_2">Operacje na liczbach</h2>
+
+<div class="codehilite"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># jawne rzutowanie na float</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># liczby zespolone</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1+1j)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1j</span> <span class="c1"># można wprowadzać na dwa sposoby</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1+1j)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span><span class="o">.</span><span class="n">real</span> <span class="c1"># część rzeczywista</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span><span class="o">.</span><span class="n">imag</span> <span class="c1"># część urojona</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2.0
+</pre></div>
+
+
+<h2 id="operacje-na-liczbach_2">Operacje na liczbach<a class="headerlink" href="#operacje-na-liczbach_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">abs(-10) # moduł
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># moduł</span>
+</pre></div>
 
-<pre><code>10
-</code></pre>
-<pre><code class="python">abs(-2.5)
-</code></pre>
 
-<pre><code>2.5
-</code></pre>
-<pre><code class="python">abs(1+1j) # moduł liczby zespolonej
-</code></pre>
+<div class="codehilite"><pre><span></span>10
+</pre></div>
 
-<pre><code>1.4142135623730951
-</code></pre>
-<pre><code class="python">int(1+1j) # rzutowania bez sensu zwrócą błąd
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2.5
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1j</span><span class="p">)</span> <span class="c1"># moduł liczby zespolonej</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1.4142135623730951
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1j</span><span class="p">)</span> <span class="c1"># rzutowania bez sensu zwrócą błąd</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -729,24 +1852,33 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 1 int(1+1j) # rzutowania bez sensu zwrócą błąd
 
 
-TypeError: can't convert complex to int
-</code></pre>
-<pre><code class="python">(1+1j).conjugate() # sprzężenie liczby zespolonej
-</code></pre>
+TypeError: can&#39;t convert complex to int
+</pre></div>
 
-<pre><code>(1-1j)
-</code></pre>
-<h2 id="operacje-na-liczbach_3">Operacje na liczbach</h2>
+
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1j</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="c1"># sprzężenie liczby zespolonej</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1-1j)
+</pre></div>
+
+
+<h2 id="operacje-na-liczbach_3">Operacje na liczbach<a class="headerlink" href="#operacje-na-liczbach_3" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">divmod(10, 3) # para (10 // 3 i 10 % 3)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">divmod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># para (10 // 3 i 10 % 3)</span>
+</pre></div>
 
-<pre><code>(3, 1)
-</code></pre>
-<pre><code class="python">divmod(10, 3+1j) # no bo jak...
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span>(3, 1)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">divmod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">1j</span><span class="p">)</span> <span class="c1"># no bo jak...</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -754,186 +1886,228 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 1 divmod(10, 3+1j) # no bo jak...
 
 
-TypeError: can't take floor or mod of complex number.
-</code></pre>
-<pre><code class="python">pow(2, 3) # pow(a, b) = a^b
-</code></pre>
+TypeError: can&#39;t take floor or mod of complex number.
+</pre></div>
 
-<pre><code>8
-</code></pre>
-<pre><code class="python">pow(2, 3.0) # zwróć uwagę na typy
-</code></pre>
 
-<pre><code>8.0
-</code></pre>
-<pre><code class="python">2 ** 3 # inna wersja a^b
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># pow(a, b) = a^b</span>
+</pre></div>
 
-<pre><code>8
-</code></pre>
-<pre><code class="python">1j ** 2 # dla zespolonych też działa
-</code></pre>
 
-<pre><code>(-1+0j)
-</code></pre>
-<h2 id="modu-math">Moduł math</h2>
+<div class="codehilite"><pre><span></span>8
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span> <span class="c1"># zwróć uwagę na typy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>8.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># inna wersja a^b</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>8
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mi">1j</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># dla zespolonych też działa</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(-1+0j)
+</pre></div>
+
+
+<h2 id="modu-math">Moduł math<a class="headerlink" href="#modu-math" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import math # import [moduł]
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># import [moduł]</span>
 
-dir (math) # lista dostępnych funkcji
-</code></pre>
+<span class="nb">dir</span> <span class="p">(</span><span class="n">math</span><span class="p">)</span> <span class="c1"># lista dostępnych funkcji</span>
+</pre></div>
 
-<pre><code>['__doc__',
- '__file__',
- '__loader__',
- '__name__',
- '__package__',
- '__spec__',
- 'acos',
- 'acosh',
- 'asin',
- 'asinh',
- 'atan',
- 'atan2',
- 'atanh',
- 'ceil',
- 'copysign',
- 'cos',
- 'cosh',
- 'degrees',
- 'e',
- 'erf',
- 'erfc',
- 'exp',
- 'expm1',
- 'fabs',
- 'factorial',
- 'floor',
- 'fmod',
- 'frexp',
- 'fsum',
- 'gamma',
- 'gcd',
- 'hypot',
- 'inf',
- 'isclose',
- 'isfinite',
- 'isinf',
- 'isnan',
- 'ldexp',
- 'lgamma',
- 'log',
- 'log10',
- 'log1p',
- 'log2',
- 'modf',
- 'nan',
- 'pi',
- 'pow',
- 'radians',
- 'sin',
- 'sinh',
- 'sqrt',
- 'tan',
- 'tanh',
- 'trunc']
-</code></pre>
-<h2 id="modu-math_1">Moduł math</h2>
+
+<div class="codehilite"><pre><span></span>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;ceil&#39;,
+ &#39;copysign&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;degrees&#39;,
+ &#39;e&#39;,
+ &#39;erf&#39;,
+ &#39;erfc&#39;,
+ &#39;exp&#39;,
+ &#39;expm1&#39;,
+ &#39;fabs&#39;,
+ &#39;factorial&#39;,
+ &#39;floor&#39;,
+ &#39;fmod&#39;,
+ &#39;frexp&#39;,
+ &#39;fsum&#39;,
+ &#39;gamma&#39;,
+ &#39;gcd&#39;,
+ &#39;hypot&#39;,
+ &#39;inf&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;ldexp&#39;,
+ &#39;lgamma&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;modf&#39;,
+ &#39;nan&#39;,
+ &#39;pi&#39;,
+ &#39;pow&#39;,
+ &#39;radians&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;trunc&#39;]
+</pre></div>
+
+
+<h2 id="modu-math_1">Moduł math<a class="headerlink" href="#modu-math_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">help(math.floor) # dokumentacja funkcji floor z math
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">)</span> <span class="c1"># dokumentacja funkcji floor z math</span>
+</pre></div>
 
-<pre><code>Help on built-in function floor in module math:
+
+<div class="codehilite"><pre><span></span>Help on built-in function floor in module math:
 
 floor(...)
     floor(x)
 
     Return the floor of x as an Integral.
     This is the largest integer &lt;= x.
-</code></pre>
-<pre><code class="python">help(math.ceil) # zwróć uwagę na: moduł.funkcja
-</code></pre>
+</pre></div>
 
-<pre><code>Help on built-in function ceil in module math:
+
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">)</span> <span class="c1"># zwróć uwagę na: moduł.funkcja</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Help on built-in function ceil in module math:
 
 ceil(...)
     ceil(x)
 
     Return the ceiling of x as an Integral.
     This is the smallest integer &gt;= x.
-</code></pre>
-<h2 id="modu-math_2">Moduł math</h2>
+</pre></div>
+
+
+<h2 id="modu-math_2">Moduł math<a class="headerlink" href="#modu-math_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">int(2.8) # rzutowanie float na int &quot;ucina wszystko po kropce&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">2.8</span><span class="p">)</span> <span class="c1"># rzutowanie float na int &quot;ucina wszystko po kropce&quot;</span>
+</pre></div>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">math.floor(2.8) # tak jak funkcja math.floor
-</code></pre>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">math.ceil(2.8) # funkcja math.ceil zaokrągla w górę
-</code></pre>
+<div class="codehilite"><pre><span></span>2
+</pre></div>
 
-<pre><code>3
-</code></pre>
-<pre><code class="python">math.ceil(2.1) # zawsze w górę (patrz definicja)
-</code></pre>
 
-<pre><code>3
-</code></pre>
-<h2 id="modu-math_3">Moduł math</h2>
+<div class="codehilite"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">2.8</span><span class="p">)</span> <span class="c1"># tak jak funkcja math.floor</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">2.8</span><span class="p">)</span> <span class="c1"># funkcja math.ceil zaokrągla w górę</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">2.1</span><span class="p">)</span> <span class="c1"># zawsze w górę (patrz definicja)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3
+</pre></div>
+
+
+<h2 id="modu-math_3">Moduł math<a class="headerlink" href="#modu-math_3" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import cmath # biblioteka standardowa dla liczb zespolonych
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">cmath</span> <span class="c1"># biblioteka standardowa dla liczb zespolonych</span>
 
-dir(cmath) # porównaj z dir(math), jasne czemu moduł.funkcja?
-</code></pre>
+<span class="nb">dir</span><span class="p">(</span><span class="n">cmath</span><span class="p">)</span> <span class="c1"># porównaj z dir(math), jasne czemu moduł.funkcja?</span>
+</pre></div>
 
-<pre><code>['__doc__',
- '__file__',
- '__loader__',
- '__name__',
- '__package__',
- '__spec__',
- 'acos',
- 'acosh',
- 'asin',
- 'asinh',
- 'atan',
- 'atanh',
- 'cos',
- 'cosh',
- 'e',
- 'exp',
- 'isclose',
- 'isfinite',
- 'isinf',
- 'isnan',
- 'log',
- 'log10',
- 'phase',
- 'pi',
- 'polar',
- 'rect',
- 'sin',
- 'sinh',
- 'sqrt',
- 'tan',
- 'tanh']
-</code></pre>
-<h2 id="modu-math_4">Moduł math</h2>
+
+<div class="codehilite"><pre><span></span>[&#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;atan&#39;,
+ &#39;atanh&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;e&#39;,
+ &#39;exp&#39;,
+ &#39;isclose&#39;,
+ &#39;isfinite&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;phase&#39;,
+ &#39;pi&#39;,
+ &#39;polar&#39;,
+ &#39;rect&#39;,
+ &#39;sin&#39;,
+ &#39;sinh&#39;,
+ &#39;sqrt&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;]
+</pre></div>
+
+
+<h2 id="modu-math_4">Moduł math<a class="headerlink" href="#modu-math_4" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">cmath.sqrt(-1) # cmath potrafi
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># cmath potrafi</span>
+</pre></div>
 
-<pre><code>1j
-</code></pre>
-<pre><code class="python">math.sqrt(-1) # ale math już nie
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span>1j
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># ale math już nie</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 ValueError                                Traceback (most recent call last)
 
@@ -942,34 +2116,38 @@ ValueError                                Traceback (most recent call last)
 
 
 ValueError: math domain error
-</code></pre>
-<h2 id="typ-tekstowy">Typ tekstowy</h2>
+</pre></div>
+
+
+<h2 id="typ-tekstowy">Typ tekstowy<a class="headerlink" href="#typ-tekstowy" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Python 3 używa domyślnie kodowania <em>unicode</em> dla typu <em>str</em></li>
 <li>Dzięki czemu mamy polskie znaki od ręki</li>
 </ul>
-<pre><code class="py">Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
-[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; s = &quot;zażółć gęślą jaźń&quot;
-&gt;&gt;&gt; s
-'zażółć gęślą jaźń'
-&gt;&gt;&gt; 
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">Python</span> <span class="mf">3.5</span><span class="o">.</span><span class="mi">2</span> <span class="o">|</span><span class="n">Anaconda</span> <span class="mf">4.2</span><span class="o">.</span><span class="mi">0</span> <span class="p">(</span><span class="mi">64</span><span class="o">-</span><span class="n">bit</span><span class="p">)</span><span class="o">|</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Jul</span>  <span class="mi">2</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mo">06</span><span class="p">)</span> 
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">4.4</span><span class="o">.</span><span class="mi">7</span> <span class="mi">20120313</span> <span class="p">(</span><span class="n">Red</span> <span class="n">Hat</span> <span class="mf">4.4</span><span class="o">.</span><span class="mi">7</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="n">on</span> <span class="n">linux</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;zażółć gęślą jaźń&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;zażółć gęślą jaźń&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> 
+</pre></div>
 
-<h2 id="typ-tekstowy-bez-unicode">Typ tekstowy bez <em>unicode</em></h2>
+
+<h2 id="typ-tekstowy-bez-unicode">Typ tekstowy bez <em>unicode</em><a class="headerlink" href="#typ-tekstowy-bez-unicode" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="py">Python 2.7.12 (default, Jul  1 2016, 15:12:24) 
-[GCC 5.4.0 20160609] on linux2
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; s = &quot;zażółć gęślą jaźń&quot;
-&gt;&gt;&gt; s
-'za\xc5\xbc\xc3\xb3\xc5\x82\xc4\x87 g\xc4\x99\xc5\x9bl\xc4\x85 ja\xc5\xba\xc5\x84'
-&gt;&gt;&gt; 
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">12</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Jul</span>  <span class="mi">1</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">15</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">24</span><span class="p">)</span> 
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">5.4</span><span class="o">.</span><span class="mi">0</span> <span class="mi">20160609</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux2</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;zażółć gęślą jaźń&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="s1">&#39;za</span><span class="se">\xc5\xbc\xc3\xb3\xc5\x82\xc4\x87</span><span class="s1"> g</span><span class="se">\xc4\x99\xc5\x9b</span><span class="s1">l</span><span class="se">\xc4\x85</span><span class="s1"> ja</span><span class="se">\xc5\xba\xc5\x84</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> 
+</pre></div>
 
-<h2 id="typ-tekstowy_1">Typ tekstowy</h2>
+
+<h2 id="typ-tekstowy_1">Typ tekstowy<a class="headerlink" href="#typ-tekstowy_1" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Literał łańcuchowy można wprowadzić przez:<ul>
@@ -986,36 +2164,48 @@ s = """zażółć gęślą jaźń"""</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="znak-ucieczki">Znak ucieczki</h2>
+<h2 id="znak-ucieczki">Znak ucieczki<a class="headerlink" href="#znak-ucieczki" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zmienia interpretację znaku</li>
 <li>w Pythonie (i prawie zawsze) jest to "\"</li>
 </ul>
-<pre><code class="python">print(&quot;Ala powiedziała: &quot;Mam kota.&quot; ...&quot;) # cudzysłów kończy literał
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ala powiedziała: &quot;</span><span class="n">Mam</span> <span class="n">kota</span><span class="o">.</span><span class="s2">&quot; ...&quot;</span><span class="p">)</span> <span class="c1"># cudzysłów kończy literał</span>
+</pre></div>
 
-<pre><code>  File "&lt;ipython-input-44-2bf66ab2182a&gt;", line 1
-    print("Ala powiedziała: "Mam kota." ...") # cudzysłów kończy literał
+
+<div class="codehilite"><pre><span></span>  File &quot;&lt;ipython-input-44-2bf66ab2182a&gt;&quot;, line 1
+    print(&quot;Ala powiedziała: &quot;Mam kota.&quot; ...&quot;) # cudzysłów kończy literał
                                ^
 SyntaxError: invalid syntax
-</code></pre>
-<pre><code class="python">print(&quot;Ala powiedziała: \&quot;Mam kota.\&quot; ...&quot;) # chyba że &quot;uciekniemy&quot;
-</code></pre>
+</pre></div>
 
-<pre><code>Ala powiedziała: "Mam kota." ...
-</code></pre>
-<pre><code class="python">print('Ala powiedziała: &quot;Mam kota.&quot; ...') # kombinacja ' i &quot;
-</code></pre>
 
-<pre><code>Ala powiedziała: "Mam kota." ...
-</code></pre>
-<pre><code class="python">print(&quot;Ala powiedziała: 'Mam kota.' ...&quot;) # działa w obie strony
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ala powiedziała: </span><span class="se">\&quot;</span><span class="s2">Mam kota.</span><span class="se">\&quot;</span><span class="s2"> ...&quot;</span><span class="p">)</span> <span class="c1"># chyba że &quot;uciekniemy&quot;</span>
+</pre></div>
 
-<pre><code>Ala powiedziała: 'Mam kota.' ...
-</code></pre>
-<h2 id="wybrane-sekewncje-specjalne">Wybrane sekewncje specjalne</h2>
+
+<div class="codehilite"><pre><span></span>Ala powiedziała: &quot;Mam kota.&quot; ...
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Ala powiedziała: &quot;Mam kota.&quot; ...&#39;</span><span class="p">)</span> <span class="c1"># kombinacja &#39; i &quot;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Ala powiedziała: &quot;Mam kota.&quot; ...
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ala powiedziała: &#39;Mam kota.&#39; ...&quot;</span><span class="p">)</span> <span class="c1"># działa w obie strony</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Ala powiedziała: &#39;Mam kota.&#39; ...
+</pre></div>
+
+
+<h2 id="wybrane-sekewncje-specjalne">Wybrane sekewncje specjalne<a class="headerlink" href="#wybrane-sekewncje-specjalne" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><code>\n</code> - nowa linia</li>
@@ -1023,93 +2213,110 @@ SyntaxError: invalid syntax
 <li><code>\r</code> - powrót kursora</li>
 <li><code>\v</code> - pionowa tabulacja</li>
 </ul>
-<pre><code class="python">print(&quot;\\n wstawia nową linię.\nNowa linia.&quot;) # zwróć uwagę na \\n
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n wstawia nową linię.</span><span class="se">\n</span><span class="s2">Nowa linia.&quot;</span><span class="p">)</span> <span class="c1"># zwróć uwagę na \\n</span>
+</pre></div>
 
-<pre><code>\n wstawia nową linię.
+
+<div class="codehilite"><pre><span></span>\n wstawia nową linię.
 Nowa linia.
-</code></pre>
-<pre><code class="python">print(&quot;\tTabulacja też się przydaje.&quot;) # brak spacji po \t
-</code></pre>
+</pre></div>
 
-<pre><code>    Tabulacja też się przydaje.
-</code></pre>
-<h2 id="carriage-return"><em>Carriage return</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Tabulacja też się przydaje.&quot;</span><span class="p">)</span> <span class="c1"># brak spacji po \t</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>    Tabulacja też się przydaje.
+</pre></div>
+
+
+<h2 id="carriage-return"><em>Carriage return</em><a class="headerlink" href="#carriage-return" title="Permanent link">&para;</a></h2>
 <hr />
 <p><em>(Jupyter nie rozumie <code>\r</code>)</em> </p>
-<pre><code class="py"># nowa forma importowania: from [moduł] import [funkcja]
-from time import sleep
-# alternatywa: import time
+<div class="codehilite"><pre><span></span><span class="c1"># nowa forma importowania: from [moduł] import [funkcja]</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="c1"># alternatywa: import time</span>
 
-# drukujemy liczby od 0 do 100
-for i in range(100):
-    print(i, end=&quot;%\r&quot;) # kończąc każdą linię % i carriage return
-    sleep(1) # i czekamy sekundę na następną liczbę
-    # alternatywa: time.sleep(1)
-</code></pre>
+<span class="c1"># drukujemy liczby od 0 do 100</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;%</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># kończąc każdą linię % i carriage return</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># i czekamy sekundę na następną liczbę</span>
+    <span class="c1"># alternatywa: time.sleep(1)</span>
+</pre></div>
 
-<h2 id="dugie-ancuchy">Długie łancuchy</h2>
+
+<h2 id="dugie-ancuchy">Długie łancuchy<a class="headerlink" href="#dugie-ancuchy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">tekst = &quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker&quot;
+<div class="codehilite"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker&quot;</span>
 
-print(tekst)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
-</code></pre>
-<h2 id="dugie-ancuchy_1">Długie łancuchy</h2>
+
+<div class="codehilite"><pre><span></span>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+</pre></div>
+
+
+<h2 id="dugie-ancuchy_1">Długie łancuchy<a class="headerlink" href="#dugie-ancuchy_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">tekst = &quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy \
-        wypełniacz w przemyśle poligraficznym. Został po raz \
-        pierwszy użyty w XV w. przez nieznanego drukarza do \
-        wypełnienia tekstem próbnej książki. Pięć wieków później \
-        zaczął być używany przemyśle elektronicznym, \
-        pozostając praktycznie niezmienionym. Spopularyzował się \
-        w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, \
-        zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym \
-        różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do \
-        realizacji druków na komputerach osobistych, jak Aldus PageMaker&quot;
+<div class="codehilite"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy </span><span class="se">\</span>
+<span class="s2">        wypełniacz w przemyśle poligraficznym. Został po raz </span><span class="se">\</span>
+<span class="s2">        pierwszy użyty w XV w. przez nieznanego drukarza do </span><span class="se">\</span>
+<span class="s2">        wypełnienia tekstem próbnej książki. Pięć wieków później </span><span class="se">\</span>
+<span class="s2">        zaczął być używany przemyśle elektronicznym, </span><span class="se">\</span>
+<span class="s2">        pozostając praktycznie niezmienionym. Spopularyzował się </span><span class="se">\</span>
+<span class="s2">        w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, </span><span class="se">\</span>
+<span class="s2">        zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym </span><span class="se">\</span>
+<span class="s2">        różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do </span><span class="se">\</span>
+<span class="s2">        realizacji druków na komputerach osobistych, jak Aldus PageMaker&quot;</span>
 
-print(tekst)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Lorem Ipsum jest tekstem stosowanym jako przykładowy         wypełniacz w przemyśle poligraficznym. Został po raz         pierwszy użyty w XV w. przez nieznanego drukarza do         wypełnienia tekstem próbnej książki. Pięć wieków później         zaczął być używany przemyśle elektronicznym,         pozostając praktycznie niezmienionym. Spopularyzował się         w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,         zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym         różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do         realizacji druków na komputerach osobistych, jak Aldus PageMaker
-</code></pre>
-<h2 id="dugie-ancuchy_2">Długie łancuchy</h2>
+
+<div class="codehilite"><pre><span></span>Lorem Ipsum jest tekstem stosowanym jako przykładowy         wypełniacz w przemyśle poligraficznym. Został po raz         pierwszy użyty w XV w. przez nieznanego drukarza do         wypełnienia tekstem próbnej książki. Pięć wieków później         zaczął być używany przemyśle elektronicznym,         pozostając praktycznie niezmienionym. Spopularyzował się         w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,         zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym         różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do         realizacji druków na komputerach osobistych, jak Aldus PageMaker
+</pre></div>
+
+
+<h2 id="dugie-ancuchy_2">Długie łancuchy<a class="headerlink" href="#dugie-ancuchy_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">tekst = &quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy &quot; \
-        &quot;wypełniacz w przemyśle poligraficznym. Został po raz &quot; \
-        &quot;pierwszy użyty w XV w. przez nieznanego drukarza do &quot; \
-        &quot;wypełnienia tekstem próbnej książki. Pięć wieków później &quot; \
-        &quot;zaczął być używany przemyśle elektronicznym, &quot; \
-        &quot;pozostając praktycznie niezmienionym. Spopularyzował się &quot; \
-        &quot;w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, &quot; \
-        &quot;zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym &quot; \
-        &quot;różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do &quot; \
-        &quot;realizacji druków na komputerach osobistych, jak Aldus PageMaker &quot;
+<div class="codehilite"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy &quot;</span> \
+        <span class="s2">&quot;wypełniacz w przemyśle poligraficznym. Został po raz &quot;</span> \
+        <span class="s2">&quot;pierwszy użyty w XV w. przez nieznanego drukarza do &quot;</span> \
+        <span class="s2">&quot;wypełnienia tekstem próbnej książki. Pięć wieków później &quot;</span> \
+        <span class="s2">&quot;zaczął być używany przemyśle elektronicznym, &quot;</span> \
+        <span class="s2">&quot;pozostając praktycznie niezmienionym. Spopularyzował się &quot;</span> \
+        <span class="s2">&quot;w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, &quot;</span> \
+        <span class="s2">&quot;zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym &quot;</span> \
+        <span class="s2">&quot;różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do &quot;</span> \
+        <span class="s2">&quot;realizacji druków na komputerach osobistych, jak Aldus PageMaker &quot;</span>
 
-print(tekst) # &quot;slowo&quot; &quot;slowo&quot; = &quot;slowo&quot; + &quot;slowo&quot;
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span> <span class="c1"># &quot;slowo&quot; &quot;slowo&quot; = &quot;slowo&quot; + &quot;slowo&quot;</span>
+</pre></div>
 
-<pre><code>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
-</code></pre>
-<h2 id="dugie-ancuchy_3">Długie łancuchy</h2>
+
+<div class="codehilite"><pre><span></span>Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker
+</pre></div>
+
+
+<h2 id="dugie-ancuchy_3">Długie łancuchy<a class="headerlink" href="#dugie-ancuchy_3" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">tekst = &quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy\n&quot; \
-        &quot;wypełniacz w przemyśle poligraficznym. Został po raz\n&quot; \
-        &quot;pierwszy użyty w XV w. przez nieznanego drukarza do\n&quot; \
-        &quot;wypełnienia tekstem próbnej książki. Pięć wieków później\n&quot; \
-        &quot;zaczął być używany przemyśle elektronicznym,\n&quot; \
-        &quot;pozostając praktycznie niezmienionym. Spopularyzował się\n&quot; \
-        &quot;w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,\n&quot; \
-        &quot;zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym\n&quot; \
-        &quot;różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do\n&quot; \
-        &quot;realizacji druków na komputerach osobistych, jak Aldus PageMaker\n&quot;
+<div class="codehilite"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;wypełniacz w przemyśle poligraficznym. Został po raz</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;pierwszy użyty w XV w. przez nieznanego drukarza do</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;wypełnienia tekstem próbnej książki. Pięć wieków później</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;zaczął być używany przemyśle elektronicznym,</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;pozostając praktycznie niezmienionym. Spopularyzował się</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do</span><span class="se">\n</span><span class="s2">&quot;</span> \
+        <span class="s2">&quot;realizacji druków na komputerach osobistych, jak Aldus PageMaker</span><span class="se">\n</span><span class="s2">&quot;</span>
 
-print(tekst)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Lorem Ipsum jest tekstem stosowanym jako przykładowy
+
+<div class="codehilite"><pre><span></span>Lorem Ipsum jest tekstem stosowanym jako przykładowy
 wypełniacz w przemyśle poligraficznym. Został po raz
 pierwszy użyty w XV w. przez nieznanego drukarza do
 wypełnienia tekstem próbnej książki. Pięć wieków później
@@ -1119,10 +2326,28 @@ w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,
 zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym
 różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do
 realizacji druków na komputerach osobistych, jak Aldus PageMaker
-</code></pre>
-<h2 id="dugie-ancuchy_4">Długie łancuchy</h2>
+</pre></div>
+
+
+<h2 id="dugie-ancuchy_4">Długie łancuchy<a class="headerlink" href="#dugie-ancuchy_4" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">tekst = &quot;&quot;&quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy
+<div class="codehilite"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Lorem Ipsum jest tekstem stosowanym jako przykładowy</span>
+<span class="s2">wypełniacz w przemyśle poligraficznym. Został po raz</span>
+<span class="s2">pierwszy użyty w XV w. przez nieznanego drukarza do</span>
+<span class="s2">wypełnienia tekstem próbnej książki. Pięć wieków później</span>
+<span class="s2">zaczął być używany przemyśle elektronicznym,</span>
+<span class="s2">pozostając praktycznie niezmienionym. Spopularyzował się</span>
+<span class="s2">w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,</span>
+<span class="s2">zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym</span>
+<span class="s2">różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do</span>
+<span class="s2">realizacji druków na komputerach osobistych, jak Aldus PageMaker</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Lorem Ipsum jest tekstem stosowanym jako przykładowy
 wypełniacz w przemyśle poligraficznym. Został po raz
 pierwszy użyty w XV w. przez nieznanego drukarza do
 wypełnienia tekstem próbnej książki. Pięć wieków później
@@ -1132,63 +2357,52 @@ w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,
 zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym
 różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do
 realizacji druków na komputerach osobistych, jak Aldus PageMaker
-&quot;&quot;&quot;
+</pre></div>
 
-print(tekst)
-</code></pre>
 
-<pre><code>Lorem Ipsum jest tekstem stosowanym jako przykładowy
-wypełniacz w przemyśle poligraficznym. Został po raz
-pierwszy użyty w XV w. przez nieznanego drukarza do
-wypełnienia tekstem próbnej książki. Pięć wieków później
-zaczął być używany przemyśle elektronicznym,
-pozostając praktycznie niezmienionym. Spopularyzował się
-w latach 60. XX w. wraz z publikacją arkuszy Letrasetu,
-zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym
-różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do
-realizacji druków na komputerach osobistych, jak Aldus PageMaker
-</code></pre>
-<h2 id="przykady-prostych-programow">Przykłady prostych programów</h2>
-<pre><code class="python"># źródło: http://jakevdp.github.io/blog/2013/05/28/a-simple-animation-the-magic-triangle/
+<h2 id="przykady-prostych-programow">Przykłady prostych programów<a class="headerlink" href="#przykady-prostych-programow" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># źródło: http://jakevdp.github.io/blog/2013/05/28/a-simple-animation-the-magic-triangle/</span>
 
-from JSAnimation.IPython_display import display_animation
-from matplotlib import animation
-# importowanie jeszcze inaczej: import [moduł].[funkcja] as [moja nazwa]
-import matplotlib.pyplot as plt
-import numpy as np
+<span class="kn">from</span> <span class="nn">JSAnimation.IPython_display</span> <span class="kn">import</span> <span class="n">display_animation</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">animation</span>
+<span class="c1"># importowanie jeszcze inaczej: import [moduł].[funkcja] as [moja nazwa]</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-# Set up the axes, making sure the axis ratio is equal
-fig = plt.figure(figsize=(6.5, 2.5))
-ax = fig.add_axes([0, 0, 1, 1], xlim=(-0.02, 13.02), ylim=(-0.02, 5.02),
-                  xticks=range(14), yticks=range(6), aspect='equal', frameon=False)
-ax.grid(True)
+<span class="c1"># Set up the axes, making sure the axis ratio is equal</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">6.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">13.02</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">5.02</span><span class="p">),</span>
+                  <span class="n">xticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">),</span> <span class="n">yticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 
-# Define the shapes of the polygons
-P1 = np.array([[0, 0], [5, 0], [5, 2], [0, 0]])
-P2 = np.array([[0, 0], [8, 0], [8, 3], [0, 0]])
-P3 = np.array([[0, 0], [5, 0], [5, 1], [3, 1], [3, 2], [0, 2], [0, 0]])
-P4 = np.array([[0, 1], [3, 1], [3, 0], [5, 0], [5, 2], [0, 2], [0, 1]])
+<span class="c1"># Define the shapes of the polygons</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">P3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">P4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
-# Draw the empty polygons for the animation
-patches = [ax.add_patch(plt.Polygon(P1, fc='g', ec='k', alpha=0.5)),
-           ax.add_patch(plt.Polygon(P2, fc='b', ec='k', alpha=0.5)),
-           ax.add_patch(plt.Polygon(P3, fc='y', ec='k', alpha=0.5)),
-           ax.add_patch(plt.Polygon(P4, fc='r', ec='k', alpha=0.5))]
-</code></pre>
+<span class="c1"># Draw the empty polygons for the animation</span>
+<span class="n">patches</span> <span class="o">=</span> <span class="p">[</span><span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)),</span>
+           <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)),</span>
+           <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">P3</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)),</span>
+           <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">P4</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))]</span>
+</pre></div>
 
-<pre><code class="python"># This function moves the polygons as a function of the frame i
-Nframes = 30
-def animate(nframe):
-    f = nframe / (Nframes - 1.0)
-    patches[0].set_xy(P1 + (8 - 8 * f, 3 - 3 * f + 0.5 * np.sin(f * np.pi)))
-    patches[1].set_xy(P2 + (5 * f, 2 * f - 0.5 * np.sin(f * np.pi)))
-    patches[2].set_xy(P3 + (8 - 3 * f, 0))
-    patches[3].set_xy(P4 + (8, 1 - f))
-    return patches
 
-anim = animation.FuncAnimation(fig, animate, frames=Nframes, interval=50)
-display_animation(anim, default_mode='once')
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># This function moves the polygons as a function of the frame i</span>
+<span class="n">Nframes</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">nframe</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">nframe</span> <span class="o">/</span> <span class="p">(</span><span class="n">Nframes</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">patches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xy</span><span class="p">(</span><span class="n">P1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">f</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span>
+    <span class="n">patches</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xy</span><span class="p">(</span><span class="n">P2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">f</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span>
+    <span class="n">patches</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xy</span><span class="p">(</span><span class="n">P3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">patches</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_xy</span><span class="p">(</span><span class="n">P4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">patches</span>
+
+<span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">Nframes</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">display_animation</span><span class="p">(</span><span class="n">anim</span><span class="p">,</span> <span class="n">default_mode</span><span class="o">=</span><span class="s1">&#39;once&#39;</span><span class="p">)</span>
+</pre></div>
+
 
 <script language="javascript">
   /* Define the Animation class */
@@ -1396,46 +2610,48 @@ display_animation(anim, default_mode='once')
   })()
 </script>
 
-<pre><code class="python">import turtle # kto zna AC Logo?
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span> <span class="c1"># kto zna AC Logo?</span>
 
-pen = turtle.Turtle() # o tym na kolejnych wykładach
+<span class="n">pen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span> <span class="c1"># o tym na kolejnych wykładach</span>
 
-n_steps = 90 # w ilu krokach robimy 360 stopni
+<span class="n">n_steps</span> <span class="o">=</span> <span class="mi">90</span> <span class="c1"># w ilu krokach robimy 360 stopni</span>
 
-for i in range(n_steps):
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
 
-    pen.forward(100) # rysuj 100 do przodu
-    pen.right(45)    # obróć się w prawo o 45 stopni
-    pen.forward(50)  # rysuj 50 do przodu
-    pen.left(90)     # obróć się w lewo o 90 stopni
-    pen.forward(100) # rysuj do przodu o 100
-    pen.right(45)    # obróź się w prawo o 45 stopni
+    <span class="n">pen</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># rysuj 100 do przodu</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>    <span class="c1"># obróć się w prawo o 45 stopni</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># rysuj 50 do przodu</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>     <span class="c1"># obróć się w lewo o 90 stopni</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># rysuj do przodu o 100</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>    <span class="c1"># obróź się w prawo o 45 stopni</span>
 
-    pen.penup() # podnieś długopis (nie rysuj przy przemieszczeniu)
-    pen.setposition(0, 0) # wróć na środek
-    pen.pendown() # rysujemy dalej
+    <span class="n">pen</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span> <span class="c1"># podnieś długopis (nie rysuj przy przemieszczeniu)</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">setposition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># wróć na środek</span>
+    <span class="n">pen</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span> <span class="c1"># rysujemy dalej</span>
 
-    pen.right(360/n_steps) # obróć się w prawo o n_stepną część 360
-</code></pre>
+    <span class="n">pen</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">360</span><span class="o">/</span><span class="n">n_steps</span><span class="p">)</span> <span class="c1"># obróć się w prawo o n_stepną część 360</span>
+</pre></div>
 
-<pre><code class="python"># css prezentacji
 
-from IPython.display import display, HTML
+<div class="codehilite"><pre><span></span><span class="c1"># css prezentacji</span>
 
-s = &quot;&quot;&quot;
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
-&lt;style&gt;
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 
-.container {
-    width: 80% !important;
-}
+<span class="s2">&lt;style&gt;</span>
 
-&lt;/style&gt;
+<span class="s2">.container {</span>
+<span class="s2">    width: 80% !important;</span>
+<span class="s2">}</span>
 
-&quot;&quot;&quot;
+<span class="s2">&lt;/style&gt;</span>
 
-display(HTML(s))
-</code></pre>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+
 
 <style>
 
@@ -1443,40 +2659,92 @@ display(HTML(s))
     width: 80% !important;
 }
 
-</style></div>
+</style>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w02/" title="Wykład 2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 2
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

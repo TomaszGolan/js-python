@@ -1,273 +1,1432 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w03/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 3 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 3
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w02/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w04/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-pyton">Języki skryptowe - Pyton</a></li>
-            <li><a href="#wykad-3">Wykład 3</a></li>
-            <li><a href="#powtorka">Powtórka</a></li>
-            <li><a href="#odpakowywanie-unzip">"Odpakowywanie" (unzip)</a></li>
-            <li><a href="#splat-czyli-tzw-asterisk">splat, czyli tzw. asterisk</a></li>
-            <li><a href="#unzip-i-splat">unzip i splat</a></li>
-            <li><a href="#pakowanie-zip">"Pakowanie" (zip)</a></li>
-            <li><a href="#zip-unzip-test">zip / unzip - test</a></li>
-            <li><a href="#paradygmaty-programowania">Paradygmaty programowania</a></li>
-            <li><a href="#programowanie-strukturalne">Programowanie strukturalne</a></li>
-            <li><a href="#instrukcja-blokowa">Instrukcja blokowa</a></li>
-            <li><a href="#skadnia-pythona">Składnia Pythona</a></li>
-            <li><a href="#wciecia">Wcięcia</a></li>
-            <li><a href="#instrukcja-warunkowa-if">Instrukcja warunkowa if</a></li>
-            <li><a href="#instrukcja-warunkowa-if-else">Instrukcja warunkowa if else</a></li>
-            <li><a href="#instrukcja-warunkowa-if-elif-else">Instrukcja warunkowa if elif else</a></li>
-            <li><a href="#instrukcja-warunkowa-if-elif-else_1">Instrukcja warunkowa if elif else</a></li>
-            <li><a href="#if-przykad">if - przykład</a></li>
-            <li><a href="#dygresja-input-vs-raw_input">Dygresja: input vs raw_input</a></li>
-            <li><a href="#dygresja-input-i-eval">Dygresja: input i eval</a></li>
-            <li><a href="#dygresja-input-i-eval_1">Dygresja: input i eval</a></li>
-            <li><a href="#iteratory">Iteratory</a></li>
-            <li><a href="#iteriterable">iter(iterable)</a></li>
-            <li><a href="#itercallable-sentinel">iter(callable, sentinel)</a></li>
-            <li><a href="#petla-for">Pętla for</a></li>
-            <li><a href="#for-po-liscie">for po liście</a></li>
-            <li><a href="#for-krok-po-kroku">for "krok po kroku"</a></li>
-            <li><a href="#for-i-next">for i next</a></li>
-            <li><a href="#for-po-wycinkach">for po wycinkach</a></li>
-            <li><a href="#for-po-krotce">for po krotce</a></li>
-            <li><a href="#for-po-stringu">for po stringu</a></li>
-            <li><a href="#for-po-range">for po range</a></li>
-            <li><a href="#kontrola-przepywu-przykad-1">Kontrola przepływu - przykład 1</a></li>
-            <li><a href="#kontrola-przepywu-przykad-2">Kontrola przepływu - przykład 2</a></li>
-            <li><a href="#kontrola-przepywu-przykad-3">Kontrola przepływu - przykład 3</a></li>
-            <li><a href="#unzip-i-for">unzip i for</a></li>
-            <li><a href="#enumerate">enumerate</a></li>
-            <li><a href="#petla-while">Pętla while</a></li>
-            <li><a href="#while-przykad">while - przykład</a></li>
-            <li><a href="#while-przykad_1">while - przykład</a></li>
-            <li><a href="#while-nieskonczona-petla">while - nieskończona pętla</a></li>
-            <li><a href="#dodatkowe-instrukcje-sterujace">Dodatkowe instrukcje sterujące</a></li>
-            <li><a href="#break">break</a></li>
-            <li><a href="#continue">continue</a></li>
-            <li><a href="#pass">pass</a></li>
-            <li><a href="#else">else</a></li>
-            <li><a href="#formatowanie-tekstu">Formatowanie tekstu</a></li>
-            <li><a href="#print">print</a></li>
-            <li><a href="#format-podstawy">format - podstawy</a></li>
-            <li><a href="#format-kolejnosc">format - kolejność</a></li>
-            <li><a href="#format-deklaracja-typu">format - deklaracja typu</a></li>
-            <li><a href="#format-dokadnosc">format - dokładność</a></li>
-            <li><a href="#format-keyword-arguments">format  - keyword arguments</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 3
+      </label>
+    
+    <a href="./" title="Wykład 3" class="md-nav__link md-nav__link--active">
+      Wykład 3
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-3" title="Wykład 3" class="md-nav__link">
+    Wykład 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powtorka" title="Powtórka" class="md-nav__link">
+    Powtórka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odpakowywanie-unzip" title=""Odpakowywanie" (unzip)" class="md-nav__link">
+    "Odpakowywanie" (unzip)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splat-czyli-tzw-asterisk" title="splat, czyli tzw. asterisk" class="md-nav__link">
+    splat, czyli tzw. asterisk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unzip-i-splat" title="unzip i splat" class="md-nav__link">
+    unzip i splat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-zip" title=""Pakowanie" (zip)" class="md-nav__link">
+    "Pakowanie" (zip)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip-unzip-test" title="zip / unzip - test" class="md-nav__link">
+    zip / unzip - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paradygmaty-programowania" title="Paradygmaty programowania" class="md-nav__link">
+    Paradygmaty programowania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programowanie-strukturalne" title="Programowanie strukturalne" class="md-nav__link">
+    Programowanie strukturalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-blokowa" title="Instrukcja blokowa" class="md-nav__link">
+    Instrukcja blokowa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skadnia-pythona" title="Składnia Pythona" class="md-nav__link">
+    Składnia Pythona
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wciecia" title="Wcięcia" class="md-nav__link">
+    Wcięcia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if" title="Instrukcja warunkowa if" class="md-nav__link">
+    Instrukcja warunkowa if
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if-else" title="Instrukcja warunkowa if else" class="md-nav__link">
+    Instrukcja warunkowa if else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if-elif-else" title="Instrukcja warunkowa if elif else" class="md-nav__link">
+    Instrukcja warunkowa if elif else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if-elif-else_1" title="Instrukcja warunkowa if elif else" class="md-nav__link">
+    Instrukcja warunkowa if elif else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-przykad" title="if - przykład" class="md-nav__link">
+    if - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-input-vs-raw_input" title="Dygresja: input vs raw_input" class="md-nav__link">
+    Dygresja: input vs raw_input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-input-i-eval" title="Dygresja: input i eval" class="md-nav__link">
+    Dygresja: input i eval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-input-i-eval_1" title="Dygresja: input i eval" class="md-nav__link">
+    Dygresja: input i eval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteratory" title="Iteratory" class="md-nav__link">
+    Iteratory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteriterable" title="iter(iterable)" class="md-nav__link">
+    iter(iterable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itercallable-sentinel" title="iter(callable, sentinel)" class="md-nav__link">
+    iter(callable, sentinel)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petla-for" title="Pętla for" class="md-nav__link">
+    Pętla for
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-liscie" title="for po liście" class="md-nav__link">
+    for po liście
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-krok-po-kroku" title="for "krok po kroku"" class="md-nav__link">
+    for "krok po kroku"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-i-next" title="for i next" class="md-nav__link">
+    for i next
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-wycinkach" title="for po wycinkach" class="md-nav__link">
+    for po wycinkach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-krotce" title="for po krotce" class="md-nav__link">
+    for po krotce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-stringu" title="for po stringu" class="md-nav__link">
+    for po stringu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-range" title="for po range" class="md-nav__link">
+    for po range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrola-przepywu-przykad-1" title="Kontrola przepływu - przykład 1" class="md-nav__link">
+    Kontrola przepływu - przykład 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrola-przepywu-przykad-2" title="Kontrola przepływu - przykład 2" class="md-nav__link">
+    Kontrola przepływu - przykład 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrola-przepywu-przykad-3" title="Kontrola przepływu - przykład 3" class="md-nav__link">
+    Kontrola przepływu - przykład 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unzip-i-for" title="unzip i for" class="md-nav__link">
+    unzip i for
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerate" title="enumerate" class="md-nav__link">
+    enumerate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petla-while" title="Pętla while" class="md-nav__link">
+    Pętla while
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-przykad" title="while - przykład" class="md-nav__link">
+    while - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-przykad_1" title="while - przykład" class="md-nav__link">
+    while - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-nieskonczona-petla" title="while - nieskończona pętla" class="md-nav__link">
+    while - nieskończona pętla
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dodatkowe-instrukcje-sterujace" title="Dodatkowe instrukcje sterujące" class="md-nav__link">
+    Dodatkowe instrukcje sterujące
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break" title="break" class="md-nav__link">
+    break
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue" title="continue" class="md-nav__link">
+    continue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pass" title="pass" class="md-nav__link">
+    pass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" title="else" class="md-nav__link">
+    else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatowanie-tekstu" title="Formatowanie tekstu" class="md-nav__link">
+    Formatowanie tekstu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print" title="print" class="md-nav__link">
+    print
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-podstawy" title="format - podstawy" class="md-nav__link">
+    format - podstawy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-kolejnosc" title="format - kolejność" class="md-nav__link">
+    format - kolejność
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-deklaracja-typu" title="format - deklaracja typu" class="md-nav__link">
+    format - deklaracja typu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-dokadnosc" title="format - dokładność" class="md-nav__link">
+    format - dokładność
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-keyword-arguments" title="format  - keyword arguments" class="md-nav__link">
+    format  - keyword arguments
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-pyton">Języki skryptowe - Pyton</h1>
-<h2 id="wykad-3">Wykład 3</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-3" title="Wykład 3" class="md-nav__link">
+    Wykład 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powtorka" title="Powtórka" class="md-nav__link">
+    Powtórka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odpakowywanie-unzip" title=""Odpakowywanie" (unzip)" class="md-nav__link">
+    "Odpakowywanie" (unzip)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splat-czyli-tzw-asterisk" title="splat, czyli tzw. asterisk" class="md-nav__link">
+    splat, czyli tzw. asterisk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unzip-i-splat" title="unzip i splat" class="md-nav__link">
+    unzip i splat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-zip" title=""Pakowanie" (zip)" class="md-nav__link">
+    "Pakowanie" (zip)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip-unzip-test" title="zip / unzip - test" class="md-nav__link">
+    zip / unzip - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paradygmaty-programowania" title="Paradygmaty programowania" class="md-nav__link">
+    Paradygmaty programowania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programowanie-strukturalne" title="Programowanie strukturalne" class="md-nav__link">
+    Programowanie strukturalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-blokowa" title="Instrukcja blokowa" class="md-nav__link">
+    Instrukcja blokowa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skadnia-pythona" title="Składnia Pythona" class="md-nav__link">
+    Składnia Pythona
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wciecia" title="Wcięcia" class="md-nav__link">
+    Wcięcia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if" title="Instrukcja warunkowa if" class="md-nav__link">
+    Instrukcja warunkowa if
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if-else" title="Instrukcja warunkowa if else" class="md-nav__link">
+    Instrukcja warunkowa if else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if-elif-else" title="Instrukcja warunkowa if elif else" class="md-nav__link">
+    Instrukcja warunkowa if elif else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrukcja-warunkowa-if-elif-else_1" title="Instrukcja warunkowa if elif else" class="md-nav__link">
+    Instrukcja warunkowa if elif else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-przykad" title="if - przykład" class="md-nav__link">
+    if - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-input-vs-raw_input" title="Dygresja: input vs raw_input" class="md-nav__link">
+    Dygresja: input vs raw_input
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-input-i-eval" title="Dygresja: input i eval" class="md-nav__link">
+    Dygresja: input i eval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-input-i-eval_1" title="Dygresja: input i eval" class="md-nav__link">
+    Dygresja: input i eval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteratory" title="Iteratory" class="md-nav__link">
+    Iteratory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteriterable" title="iter(iterable)" class="md-nav__link">
+    iter(iterable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#itercallable-sentinel" title="iter(callable, sentinel)" class="md-nav__link">
+    iter(callable, sentinel)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petla-for" title="Pętla for" class="md-nav__link">
+    Pętla for
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-liscie" title="for po liście" class="md-nav__link">
+    for po liście
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-krok-po-kroku" title="for "krok po kroku"" class="md-nav__link">
+    for "krok po kroku"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-i-next" title="for i next" class="md-nav__link">
+    for i next
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-wycinkach" title="for po wycinkach" class="md-nav__link">
+    for po wycinkach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-krotce" title="for po krotce" class="md-nav__link">
+    for po krotce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-stringu" title="for po stringu" class="md-nav__link">
+    for po stringu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-po-range" title="for po range" class="md-nav__link">
+    for po range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrola-przepywu-przykad-1" title="Kontrola przepływu - przykład 1" class="md-nav__link">
+    Kontrola przepływu - przykład 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrola-przepywu-przykad-2" title="Kontrola przepływu - przykład 2" class="md-nav__link">
+    Kontrola przepływu - przykład 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontrola-przepywu-przykad-3" title="Kontrola przepływu - przykład 3" class="md-nav__link">
+    Kontrola przepływu - przykład 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unzip-i-for" title="unzip i for" class="md-nav__link">
+    unzip i for
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerate" title="enumerate" class="md-nav__link">
+    enumerate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petla-while" title="Pętla while" class="md-nav__link">
+    Pętla while
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-przykad" title="while - przykład" class="md-nav__link">
+    while - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-przykad_1" title="while - przykład" class="md-nav__link">
+    while - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-nieskonczona-petla" title="while - nieskończona pętla" class="md-nav__link">
+    while - nieskończona pętla
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dodatkowe-instrukcje-sterujace" title="Dodatkowe instrukcje sterujące" class="md-nav__link">
+    Dodatkowe instrukcje sterujące
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break" title="break" class="md-nav__link">
+    break
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue" title="continue" class="md-nav__link">
+    continue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pass" title="pass" class="md-nav__link">
+    pass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" title="else" class="md-nav__link">
+    else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatowanie-tekstu" title="Formatowanie tekstu" class="md-nav__link">
+    Formatowanie tekstu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print" title="print" class="md-nav__link">
+    print
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-podstawy" title="format - podstawy" class="md-nav__link">
+    format - podstawy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-kolejnosc" title="format - kolejność" class="md-nav__link">
+    format - kolejność
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-deklaracja-typu" title="format - deklaracja typu" class="md-nav__link">
+    format - deklaracja typu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-dokadnosc" title="format - dokładność" class="md-nav__link">
+    format - dokładność
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-keyword-arguments" title="format  - keyword arguments" class="md-nav__link">
+    format  - keyword arguments
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-pyton">Języki skryptowe - Pyton<a class="headerlink" href="#jezyki-skryptowe-pyton" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-3">Wykład 3<a class="headerlink" href="#wykad-3" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pakowanie / odpakowywanie sekwencji</li>
@@ -278,7 +1437,7 @@
 </li>
 <li>formatowanie tekstu</li>
 </ul>
-<h2 id="powtorka">Powtórka</h2>
+<h2 id="powtorka">Powtórka<a class="headerlink" href="#powtorka" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>typy liczbowe ("niemutowalne"): <em>int</em>, <em>float</em>, <em>complex</em></li>
@@ -286,120 +1445,149 @@
 <li>typy sekwencyjne ("niemutowalne"): <em>tuple</em>, <em>range</em>, <em>str</em></li>
 <li>operacje logiczne</li>
 </ul>
-<h2 id="odpakowywanie-unzip">"Odpakowywanie" (<em>unzip</em>)</h2>
+<h2 id="odpakowywanie-unzip">"Odpakowywanie" (<em>unzip</em>)<a class="headerlink" href="#odpakowywanie-unzip" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 
-a, b = lista # a = lista[0], b = lista[1]
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">lista</span> <span class="c1"># a = lista[0], b = lista[1]</span>
 
-print(a, b)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>1 2
-</code></pre>
+
+<div class="codehilite"><pre><span></span>1 2
+</pre></div>
+
+
 <ul>
 <li>przykład: zamiana zmiennych</li>
 </ul>
-<pre><code class="python">a, b = b, a # a, b = tuple(b, a)
+<div class="codehilite"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="c1"># a, b = tuple(b, a)</span>
 
-print(a, b)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>2 1
-</code></pre>
+
+<div class="codehilite"><pre><span></span>2 1
+</pre></div>
+
+
 <ul>
 <li>dla porównania przykład zamiany zmiennych w C++</li>
 </ul>
-<pre><code class="cpp">a = a + b - (b = a);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">);</span>
+</pre></div>
 
-<h2 id="splat-czyli-tzw-asterisk"><em>splat</em>, czyli tzw. <em>asterisk</em></h2>
+
+<h2 id="splat-czyli-tzw-asterisk"><em>splat</em>, czyli tzw. <em>asterisk</em><a class="headerlink" href="#splat-czyli-tzw-asterisk" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = [1, 2, 3]
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-# print(arg1, arg2, arg3, ..., +opcje)
+<span class="c1"># print(arg1, arg2, arg3, ..., +opcje)</span>
 
-print(x)  # drukuje listę (1 argument)
-print(*x) # drukuje &quot;rozpakowaną&quot; listę (3 argumenty)
-print(x[0], x[1], x[2]) # równoważny zapis
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># drukuje listę (1 argument)</span>
+<span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="c1"># drukuje &quot;rozpakowaną&quot; listę (3 argumenty)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># równoważny zapis</span>
+</pre></div>
 
-<pre><code>[1, 2, 3]
+
+<div class="codehilite"><pre><span></span>[1, 2, 3]
 1 2 3
 1 2 3
-</code></pre>
-<pre><code class="python">x = &quot;Python&quot;
+</pre></div>
 
-print(x)
-print(*x) # zip/unzip działa na wszystkich sekwencjach
-</code></pre>
 
-<h2 id="unzip-i-splat"><em>unzip</em> i <em>splat</em></h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="c1"># zip/unzip działa na wszystkich sekwencjach</span>
+</pre></div>
+
+
+<h2 id="unzip-i-splat"><em>unzip</em> i <em>splat</em><a class="headerlink" href="#unzip-i-splat" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3, 4, 5]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
-# a, b = lista # ValueError: too many values to unpack (expected 2)
+<span class="c1"># a, b = lista # ValueError: too many values to unpack (expected 2)</span>
 
-a, *b = lista # a = lista[0], b = reszta
+<span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">lista</span> <span class="c1"># a = lista[0], b = reszta</span>
 
-print(a, b)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>1 [2, 3, 4, 5]
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3, 4, 5]
 
-a, *b, c = lista # a, b[0], b[1], b[2], c
+<div class="codehilite"><pre><span></span>1 [2, 3, 4, 5]
+</pre></div>
 
-print(a, b, c)
-</code></pre>
 
-<pre><code>1 [2, 3, 4] 5
-</code></pre>
-<h2 id="pakowanie-zip">"Pakowanie" (<em>zip</em>)</h2>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lista</span> <span class="c1"># a, b[0], b[1], b[2], c</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1 [2, 3, 4] 5
+</pre></div>
+
+
+<h2 id="pakowanie-zip">"Pakowanie" (<em>zip</em>)<a class="headerlink" href="#pakowanie-zip" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = [1, 2, 3]
-y = ['a', 'b', 'c']
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 
-zipped = zip(x, y) # pary (x[i], y[i])
+<span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># pary (x[i], y[i])</span>
 
-print(*zipped)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">zipped</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>(1, 'a') (2, 'b') (3, 'c')
-</code></pre>
-<pre><code class="python">x = [1, 2, 3]
-y = ['a', 'b', 'c', 'd'] # długość nie ma znaczenia
 
-zipped = zip(x, y) # pary (x[i], y[i])
+<div class="codehilite"><pre><span></span>(1, &#39;a&#39;) (2, &#39;b&#39;) (3, &#39;c&#39;)
+</pre></div>
 
-print(*zipped)
-</code></pre>
 
-<pre><code>(1, 'a') (2, 'b') (3, 'c')
-</code></pre>
-<h2 id="zip-unzip-test"><em>zip</em> / <em>unzip</em> - test</h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="c1"># długość nie ma znaczenia</span>
+
+<span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># pary (x[i], y[i])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">zipped</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1, &#39;a&#39;) (2, &#39;b&#39;) (3, &#39;c&#39;)
+</pre></div>
+
+
+<h2 id="zip-unzip-test"><em>zip</em> / <em>unzip</em> - test<a class="headerlink" href="#zip-unzip-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = [1, 2, 3]
-y = [4, 5, 6]
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
-x_copy, y_copy = zip(*zip(x, y))
+<span class="n">x_copy</span><span class="p">,</span> <span class="n">y_copy</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 
-x == list(x_copy) and y == list(y_copy)
-</code></pre>
+<span class="n">x</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">x_copy</span><span class="p">)</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">y_copy</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">print(list(zip(x,y)))
-print(*zip(x,y))
-print(list(zip(*zip(x, y))))
-</code></pre>
 
-<pre><code>[(1, 4), (2, 5), (3, 6)]
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))))</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[(1, 4), (2, 5), (3, 6)]
 (1, 4) (2, 5) (3, 6)
 [(1, 2, 3), (4, 5, 6)]
-</code></pre>
-<h2 id="paradygmaty-programowania">Paradygmaty programowania</h2>
+</pre></div>
+
+
+<h2 id="paradygmaty-programowania">Paradygmaty programowania<a class="headerlink" href="#paradygmaty-programowania" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>w Pythonie możliwe jest:<ul>
@@ -410,7 +1598,7 @@ print(list(zip(*zip(x, y))))
 </li>
 </ul>
 <hr />
-<h2 id="programowanie-strukturalne">Programowanie strukturalne</h2>
+<h2 id="programowanie-strukturalne">Programowanie strukturalne<a class="headerlink" href="#programowanie-strukturalne" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>trzy struktury sterujące:<ul>
@@ -420,77 +1608,81 @@ print(list(zip(*zip(x, y))))
 </ul>
 </li>
 </ul>
-<pre><code class="python">ps_dia = &quot;&quot;&quot;
-digraph {
-    label=&quot;Programowanie strukturalne&quot;
+<div class="codehilite"><pre><span></span><span class="n">ps_dia</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">digraph {</span>
+<span class="s2">    label=&quot;Programowanie strukturalne&quot;</span>
 
-    rankdir=LR;
+<span class="s2">    rankdir=LR;</span>
 
-    start[shape=&quot;box&quot;, style=rounded];
-    end[shape=&quot;box&quot;, style=rounded];
+<span class="s2">    start[shape=&quot;box&quot;, style=rounded];</span>
+<span class="s2">    end[shape=&quot;box&quot;, style=rounded];</span>
 
-    if[shape=&quot;diamond&quot;, style=&quot;&quot;];
+<span class="s2">    if[shape=&quot;diamond&quot;, style=&quot;&quot;];</span>
 
-    i1[shape=&quot;box&quot;, style=&quot;&quot;];
-    i2[shape=&quot;box&quot;, style=&quot;&quot;];
-    i3[shape=&quot;box&quot;, style=&quot;&quot;];
+<span class="s2">    i1[shape=&quot;box&quot;, style=&quot;&quot;];</span>
+<span class="s2">    i2[shape=&quot;box&quot;, style=&quot;&quot;];</span>
+<span class="s2">    i3[shape=&quot;box&quot;, style=&quot;&quot;];</span>
 
-    start -&gt; i1;
-    i1 -&gt; if;
-    if -&gt; i2[label=&quot;nie&quot;];
-    if -&gt; i3[label=&quot;tak&quot;];
-    i3 -&gt; end;
-    i2 -&gt; i3;
-}
-&quot;&quot;&quot;
+<span class="s2">    start -&gt; i1;</span>
+<span class="s2">    i1 -&gt; if;</span>
+<span class="s2">    if -&gt; i2[label=&quot;nie&quot;];</span>
+<span class="s2">    if -&gt; i3[label=&quot;tak&quot;];</span>
+<span class="s2">    i3 -&gt; end;</span>
+<span class="s2">    i2 -&gt; i3;</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
 
-from graphviz import Source
-</code></pre>
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="kn">import</span> <span class="n">Source</span>
+</pre></div>
 
-<pre><code class="python">Source(ps_dia)
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="n">Source</span><span class="p">(</span><span class="n">ps_dia</span><span class="p">)</span>
+</pre></div>
+
 
 <p><img alt="svg" src="../js-python_w03_files/js-python_w03_22_0.svg" /></p>
-<h2 id="instrukcja-blokowa">Instrukcja blokowa</h2>
+<h2 id="instrukcja-blokowa">Instrukcja blokowa<a class="headerlink" href="#instrukcja-blokowa" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wydzielona część kodu źródłowego (traktowana jak pojedyncza instrukcja)</li>
 <li>w C++ wykorzystuje się klamry</li>
 </ul>
-<pre><code class="cpp">int x = 0;
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-{
-    int y = 10; // zmienna lokalna
-    x = y + 2;
-}
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// zmienna lokalna</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
 
-cout &lt;&lt; x; // OK
-cout &lt;&lt; y; // ERROR: nieznana zmienna
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// OK</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// ERROR: nieznana zmienna</span>
+</pre></div>
 
-</code></pre>
 
-<h2 id="skadnia-pythona">Składnia Pythona</h2>
+<h2 id="skadnia-pythona">Składnia Pythona<a class="headerlink" href="#skadnia-pythona" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>instrukcje blokowe wprowadza się za pomocą wcięć</li>
 </ul>
-<pre><code class="cpp">// przykład C++
-double bezpieczne_dzielenie (int a, int b)
-{
-    if (b != 0) return a / b;
-    else return 0;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">// przykład C++</span>
+<span class="kt">double</span> <span class="nf">bezpieczne_dzielenie</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
-<pre><code class="py"># przykład Python
-def bezpieczne_dzielenie (a, b):
-    if b != 0:
-        return a / b
-    else:
-        return 0
-</code></pre>
 
-<h2 id="wciecia">Wcięcia</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># przykład Python</span>
+<span class="k">def</span> <span class="nf">bezpieczne_dzielenie</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+
+
+<h2 id="wciecia">Wcięcia<a class="headerlink" href="#wciecia" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>spacje (zalecane) lub tabulacje</li>
@@ -498,98 +1690,113 @@ def bezpieczne_dzielenie (a, b):
 <li>najczęściej wcięce = 4 spacje (czytelność)</li>
 <li>wiele edytorów umożliwia zamianę <em>tab</em> na spacje</li>
 </ul>
-<h2 id="instrukcja-warunkowa-if">Instrukcja warunkowa <em>if</em></h2>
+<h2 id="instrukcja-warunkowa-if">Instrukcja warunkowa <em>if</em><a class="headerlink" href="#instrukcja-warunkowa-if" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wykonaj instrukcje, jeśli spełniony jest warunek</li>
 </ul>
-<pre><code class="py">if warunek: # zwróć uwagę na :
-    instrukcja1
-    instrukcja2
-    ...
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">warunek</span><span class="p">:</span> <span class="c1"># zwróć uwagę na :</span>
+    <span class="n">instrukcja1</span>
+    <span class="n">instrukcja2</span>
+    <span class="o">...</span>
+</pre></div>
 
-<pre><code class="python">if 2 &gt; 1:
-    print(&quot;2 jest większe od 1&quot;)
-</code></pre>
 
-<pre><code>2 jest większe od 1
-</code></pre>
-<h2 id="instrukcja-warunkowa-if-else">Instrukcja warunkowa <em>if else</em></h2>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;2 jest większe od 1&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2 jest większe od 1
+</pre></div>
+
+
+<h2 id="instrukcja-warunkowa-if-else">Instrukcja warunkowa <em>if else</em><a class="headerlink" href="#instrukcja-warunkowa-if-else" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wykonaj instrukcje, jeśli spełniony jest warunek, lub wykonaj inne instrukcje</li>
 </ul>
-<pre><code class="py">if warunek:
-    instrukcja1
-    instrukcja2
-    ...
-else:
-    instrukcja3
-    instrukcja4
-    ...
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">warunek</span><span class="p">:</span>
+    <span class="n">instrukcja1</span>
+    <span class="n">instrukcja2</span>
+    <span class="o">...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">instrukcja3</span>
+    <span class="n">instrukcja4</span>
+    <span class="o">...</span>
+</pre></div>
 
-<pre><code class="python">if 2 &gt; 3:
-    print(&quot;2 jest większe od 3&quot;)
-else:
-    print(&quot;2 nie jest większe od 3&quot;)
-</code></pre>
 
-<pre><code>2 nie jest większe od 3
-</code></pre>
-<h2 id="instrukcja-warunkowa-if-elif-else">Instrukcja warunkowa <em>if elif else</em></h2>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;2 jest większe od 3&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;2 nie jest większe od 3&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2 nie jest większe od 3
+</pre></div>
+
+
+<h2 id="instrukcja-warunkowa-if-elif-else">Instrukcja warunkowa <em>if elif else</em><a class="headerlink" href="#instrukcja-warunkowa-if-elif-else" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wykonaj jeśli, lub wykonaj jeśli, ..., lub wykonaj</li>
 </ul>
-<pre><code class="py">if warunek1:
-    instrukcja1
-    instrukcja2
-    ...
-elif warunek2:
-    instrukcja3
-    instrukcja4
-    ...
-.
-.
-.
-else:
-    instrukcja5
-    instrukcja6
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">warunek1</span><span class="p">:</span>
+    <span class="n">instrukcja1</span>
+    <span class="n">instrukcja2</span>
+    <span class="o">...</span>
+<span class="k">elif</span> <span class="n">warunek2</span><span class="p">:</span>
+    <span class="n">instrukcja3</span>
+    <span class="n">instrukcja4</span>
+    <span class="o">...</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">instrukcja5</span>
+    <span class="n">instrukcja6</span>
+</pre></div>
 
-<h2 id="instrukcja-warunkowa-if-elif-else_1">Instrukcja warunkowa <em>if elif else</em></h2>
+
+<h2 id="instrukcja-warunkowa-if-elif-else_1">Instrukcja warunkowa <em>if elif else</em><a class="headerlink" href="#instrukcja-warunkowa-if-elif-else_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">if 2 &gt; 3:
-    print(&quot;2 jest większe od 3&quot;)
-elif 2 == 3:
-    print(&quot;2 jest równe 3&quot;)
-else:
-    print(&quot;2 jest mniejsze od 3&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;2 jest większe od 3&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;2 jest równe 3&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;2 jest mniejsze od 3&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>2 jest mniejsze od 3
-</code></pre>
-<h2 id="if-przykad"><em>if</em> - przykład</h2>
+
+<div class="codehilite"><pre><span></span>2 jest mniejsze od 3
+</pre></div>
+
+
+<h2 id="if-przykad"><em>if</em> - przykład<a class="headerlink" href="#if-przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">print(&quot;Podaj liczbę:&quot;, end=' ')
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 
-raw_x = input() # pobierz stringa z wejścia standardowego
-x = eval(raw_x) # zinterpretuj jako wyrażenie Pythona
+<span class="n">raw_x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># pobierz stringa z wejścia standardowego</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">raw_x</span><span class="p">)</span> <span class="c1"># zinterpretuj jako wyrażenie Pythona</span>
 
-# x % 2 zwraca resztę z dzielenia
-# każda wartość != 0 jest traktowana jako prawda
-if x % 2:
-    print(&quot;Podana liczba jest nieparzysta.&quot;)
-else:
-    print(&quot;Podana liczba jest parzysta.&quot;)
-</code></pre>
+<span class="c1"># x % 2 zwraca resztę z dzielenia</span>
+<span class="c1"># każda wartość != 0 jest traktowana jako prawda</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Podana liczba jest nieparzysta.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Podana liczba jest parzysta.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Podaj liczbę: 2
+
+<div class="codehilite"><pre><span></span>Podaj liczbę: 2
 Podana liczba jest parzysta.
-</code></pre>
-<h2 id="dygresja-input-vs-raw_input">Dygresja: <em>input</em> vs <em>raw_input</em></h2>
+</pre></div>
+
+
+<h2 id="dygresja-input-vs-raw_input">Dygresja: <em>input</em> vs <em>raw_input</em><a class="headerlink" href="#dygresja-input-vs-raw_input" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>w Pythonie 2<ul>
@@ -603,37 +1810,44 @@ Podana liczba jest parzysta.
 </ul>
 </li>
 </ul>
-<h2 id="dygresja-input-i-eval">Dygresja: <em>input</em> i <em>eval</em></h2>
+<h2 id="dygresja-input-i-eval">Dygresja: <em>input</em> i <em>eval</em><a class="headerlink" href="#dygresja-input-i-eval" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">help(input)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on method raw_input in module ipykernel.kernelbase:
 
-raw_input(prompt='') method of ipykernel.ipkernel.IPythonKernel instance
+<div class="codehilite"><pre><span></span>Help on method raw_input in module ipykernel.kernelbase:
+
+raw_input(prompt=&#39;&#39;) method of ipykernel.ipkernel.IPythonKernel instance
     Forward raw_input to frontends
 
     Raises
     ------
-    StdinNotImplentedError if active frontend doesn't support stdin.
-</code></pre>
-<pre><code class="python">type(input()) # pobiera wejście jako string
-</code></pre>
+    StdinNotImplentedError if active frontend doesn&#39;t support stdin.
+</pre></div>
 
-<pre><code>2
+
+<div class="codehilite"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="c1"># pobiera wejście jako string</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
 
 
 
 
 
 str
-</code></pre>
-<h2 id="dygresja-input-i-eval_1">Dygresja: <em>input</em> i <em>eval</em></h2>
-<hr />
-<pre><code class="python">help(eval)
-</code></pre>
+</pre></div>
 
-<pre><code>Help on built-in function eval in module builtins:
+
+<h2 id="dygresja-input-i-eval_1">Dygresja: <em>input</em> i <em>eval</em><a class="headerlink" href="#dygresja-input-i-eval_1" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">eval</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Help on built-in function eval in module builtins:
 
 eval(source, globals=None, locals=None, /)
     Evaluate the given source in the context of globals and locals.
@@ -643,27 +1857,33 @@ eval(source, globals=None, locals=None, /)
     The globals must be a dictionary and locals can be any mapping,
     defaulting to the current globals and locals.
     If only globals is given, locals defaults to it.
-</code></pre>
-<pre><code class="python">type(eval(input())) # parsuje wejście jako komendę
-</code></pre>
+</pre></div>
 
-<pre><code>2
+
+<div class="codehilite"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">()))</span> <span class="c1"># parsuje wejście jako komendę</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
 
 
 
 
 
 int
-</code></pre>
-<h2 id="iteratory">Iteratory</h2>
+</pre></div>
+
+
+<h2 id="iteratory">Iteratory<a class="headerlink" href="#iteratory" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>iterator wskazuje element sekwencji oraz umożliwia dostęp do następnego</li>
 </ul>
-<pre><code class="python">help(iter)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">iter</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on built-in function iter in module builtins:
+
+<div class="codehilite"><pre><span></span>Help on built-in function iter in module builtins:
 
 iter(...)
     iter(iterable) -&gt; iterator
@@ -672,316 +1892,381 @@ iter(...)
     Get an iterator from an object.  In the first form, the argument must
     supply its own iterator, or be a sequence.
     In the second form, the callable is called until it returns the sentinel.
-</code></pre>
-<h2 id="iteriterable"><em>iter(iterable)</em></h2>
+</pre></div>
+
+
+<h2 id="iteriterable"><em>iter(iterable)</em><a class="headerlink" href="#iteriterable" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = ['a', 'b', 'c', 'd'] # zwykła lista
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="c1"># zwykła lista</span>
 
-it = iter(lista) # iterator listy (wskazuje na początek)
+<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> <span class="c1"># iterator listy (wskazuje na początek)</span>
 
-print(next(it)) # zwraca 1 element i przesuwa &quot;wskaźnik&quot;
-print(next(it)) # zwraca 2 element i przesuwa &quot;wskaźnik&quot;
-print(next(it)) # zwraca 3 element i przesuwa &quot;wskaźnik&quot;
-print(next(it)) # zwraca 4 element i przesuwa &quot;wskaźnik&quot;
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="c1"># zwraca 1 element i przesuwa &quot;wskaźnik&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="c1"># zwraca 2 element i przesuwa &quot;wskaźnik&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="c1"># zwraca 3 element i przesuwa &quot;wskaźnik&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="c1"># zwraca 4 element i przesuwa &quot;wskaźnik&quot;</span>
+</pre></div>
 
-<pre><code>a
+
+<div class="codehilite"><pre><span></span>a
 b
 c
 d
-</code></pre>
-<h2 id="itercallable-sentinel"><em>iter(callable, sentinel)</em></h2>
+</pre></div>
+
+
+<h2 id="itercallable-sentinel"><em>iter(callable, sentinel)</em><a class="headerlink" href="#itercallable-sentinel" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">i = 0
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 
-# funkcje omówimy w przyszłości
-def funkcja():
-    &quot;&quot;&quot;Z każdym wywołaniem zwraca kolejną liczbę całkowitą.&quot;&quot;&quot;
-    global i # użyj globalnej zmiennej i
-    i += 1   # zwiększ
-    return i # i zwróć
+<span class="c1"># funkcje omówimy w przyszłości</span>
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Z każdym wywołaniem zwraca kolejną liczbę całkowitą.&quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">i</span> <span class="c1"># użyj globalnej zmiennej i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># zwiększ</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="c1"># i zwróć</span>
 
-# kolejne wartości zwracane przez funkcję
-# iterowane aż zwróci 4
-it = iter(funkcja, 4)
+<span class="c1"># kolejne wartości zwracane przez funkcję</span>
+<span class="c1"># iterowane aż zwróci 4</span>
+<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">funkcja</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
-print(next(it))
-print(next(it))
-print(next(it))
-# print(next(it)) # StopIteration
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>
+<span class="c1"># print(next(it)) # StopIteration</span>
+</pre></div>
 
-<pre><code>1
+
+<div class="codehilite"><pre><span></span>1
 2
 3
-</code></pre>
-<h2 id="petla-for">Pętla <em>for</em></h2>
+</pre></div>
+
+
+<h2 id="petla-for">Pętla <em>for</em><a class="headerlink" href="#petla-for" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pętla po sekwencji</li>
 <li>np. w Pascalu pętla po (ayrtmetycznym) ciągu liczb</li>
 <li>np. w C++ obie możliwości</li>
 </ul>
-<pre><code class="cpp">// przykład w C++
-for (unsigned int i = 0; i &lt; N; i++)
-{
-    // wykonaj coś na i-tym elemencie
-}
-for (auto it = v.begin(); it != v.end(); ++it)
-{
-    // wykonaj coś na iteratorze it
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">// przykład w C++</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// wykonaj coś na i-tym elemencie</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// wykonaj coś na iteratorze it</span>
+<span class="p">}</span>
+</pre></div>
 
-<h2 id="for-po-liscie"><em>for</em> po liście</h2>
+
+<h2 id="for-po-liscie"><em>for</em> po liście<a class="headerlink" href="#for-po-liscie" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 
-for element in lista: # pętla po liście, w każdym kroku
-    print(element)    # element zmienia swoją wartość
-</code></pre>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span> <span class="c1"># pętla po liście, w każdym kroku</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>    <span class="c1"># element zmienia swoją wartość</span>
+</pre></div>
 
-<pre><code>a
+
+<div class="codehilite"><pre><span></span>a
 b
 c
 d
-</code></pre>
-<h2 id="for-krok-po-kroku"><em>for</em> "krok po kroku"</h2>
-<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+</pre></div>
 
-it = iter(lista)
 
-element = next(it)
-print(element)
-element = next(it)
-print(element)
-element = next(it)
-print(element)
-element = next(it)
-print(element)
-</code></pre>
+<h2 id="for-krok-po-kroku"><em>for</em> "krok po kroku"<a class="headerlink" href="#for-krok-po-kroku" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 
-<pre><code>a
+<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+
+<span class="n">element</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="n">element</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="n">element</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="n">element</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>a
 b
 c
 d
-</code></pre>
-<h2 id="for-i-next"><em>for</em> i <em>next</em></h2>
+</pre></div>
+
+
+<h2 id="for-i-next"><em>for</em> i <em>next</em><a class="headerlink" href="#for-i-next" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 
-it = iter(lista)
+<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 
-# pętla po iteratorze it
-# wewnątrz &quot;ręcznie&quot; wywołujemy next()
-for i in it:
-    print(&quot;i = &quot; + str(i))
-    print(&quot;next(it) = &quot; + str(next(it)))
-</code></pre>
+<span class="c1"># pętla po iteratorze it</span>
+<span class="c1"># wewnątrz &quot;ręcznie&quot; wywołujemy next()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;i = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;next(it) = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)))</span>
+</pre></div>
 
-<pre><code>i = a
+
+<div class="codehilite"><pre><span></span>i = a
 next(it) = b
 i = c
 next(it) = d
-</code></pre>
-<h2 id="for-po-wycinkach"><em>for</em> po wycinkach</h2>
+</pre></div>
+
+
+<h2 id="for-po-wycinkach"><em>for</em> po wycinkach<a class="headerlink" href="#for-po-wycinkach" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 
-for element in lista[-2:]:
-    print(element, end=' ')
-</code></pre>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>c d
-</code></pre>
-<pre><code class="python">for i in range(10)[::2]:
-    print(i, end=' ')
-</code></pre>
 
-<pre><code>0 2 4 6 8
-</code></pre>
-<h2 id="for-po-krotce"><em>for</em> po krotce</h2>
+<div class="codehilite"><pre><span></span>c d
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)[::</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0 2 4 6 8
+</pre></div>
+
+
+<h2 id="for-po-krotce"><em>for</em> po krotce<a class="headerlink" href="#for-po-krotce" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">krotka = ('a', 'b', 'c', 'd')
+<div class="codehilite"><pre><span></span><span class="n">krotka</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
 
-for element in krotka: # pętla po krotce
-    print(element)     # działa jak po liście
-</code></pre>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">krotka</span><span class="p">:</span> <span class="c1"># pętla po krotce</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>     <span class="c1"># działa jak po liście</span>
+</pre></div>
 
-<pre><code>a
+
+<div class="codehilite"><pre><span></span>a
 b
 c
 d
-</code></pre>
-<h2 id="for-po-stringu"><em>for</em> po stringu</h2>
+</pre></div>
+
+
+<h2 id="for-po-stringu"><em>for</em> po stringu<a class="headerlink" href="#for-po-stringu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">slowo = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">slowo</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-for litera in slowo: # pętla po stringu
-    print(litera)    # iteruje po literach
-</code></pre>
+<span class="k">for</span> <span class="n">litera</span> <span class="ow">in</span> <span class="n">slowo</span><span class="p">:</span> <span class="c1"># pętla po stringu</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">litera</span><span class="p">)</span>    <span class="c1"># iteruje po literach</span>
+</pre></div>
 
-<pre><code>P
+
+<div class="codehilite"><pre><span></span>P
 y
 t
 h
 o
 n
-</code></pre>
-<h2 id="for-po-range"><em>for</em> po range</h2>
-<hr />
-<pre><code class="python">for liczba in range(5): # pętla po range
-    print(liczba)       # &quot;odpowiednik&quot; for (i = 0; ...)
-</code></pre>
+</pre></div>
 
-<pre><code>0
+
+<h2 id="for-po-range"><em>for</em> po range<a class="headerlink" href="#for-po-range" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">liczba</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1"># pętla po range</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">liczba</span><span class="p">)</span>       <span class="c1"># &quot;odpowiednik&quot; for (i = 0; ...)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0
 1
 2
 3
 4
-</code></pre>
-<h2 id="kontrola-przepywu-przykad-1">Kontrola przepływu - przykład 1</h2>
+</pre></div>
+
+
+<h2 id="kontrola-przepywu-przykad-1">Kontrola przepływu - przykład 1<a class="headerlink" href="#kontrola-przepywu-przykad-1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2.0, 'Python', 4, 1j]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1j</span><span class="p">]</span>
 
-for element in lista:
-    if type(element) is not str: # nie drukuj stringów
-        print(element) # zwróć uwage na wcięcia
-</code></pre>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span> <span class="c1"># nie drukuj stringów</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="c1"># zwróć uwage na wcięcia</span>
+</pre></div>
 
-<pre><code>1
+
+<div class="codehilite"><pre><span></span>1
 2.0
 4
 1j
-</code></pre>
-<h2 id="kontrola-przepywu-przykad-2">Kontrola przepływu - przykład 2</h2>
+</pre></div>
+
+
+<h2 id="kontrola-przepywu-przykad-2">Kontrola przepływu - przykład 2<a class="headerlink" href="#kontrola-przepywu-przykad-2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2.0, 'Python', 4, 1j]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1j</span><span class="p">]</span>
 
-for element in lista:
-    if type(element) is str:   # tylko dla stringów
-        for litera in element: # pętla po stringu
-            print(litera) # zwróć uwagę na wcięcia
-</code></pre>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">:</span>   <span class="c1"># tylko dla stringów</span>
+        <span class="k">for</span> <span class="n">litera</span> <span class="ow">in</span> <span class="n">element</span><span class="p">:</span> <span class="c1"># pętla po stringu</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">litera</span><span class="p">)</span> <span class="c1"># zwróć uwagę na wcięcia</span>
+</pre></div>
 
-<pre><code>P
+
+<div class="codehilite"><pre><span></span>P
 y
 t
 h
 o
 n
-</code></pre>
-<h2 id="kontrola-przepywu-przykad-3">Kontrola przepływu - przykład 3</h2>
+</pre></div>
+
+
+<h2 id="kontrola-przepywu-przykad-3">Kontrola przepływu - przykład 3<a class="headerlink" href="#kontrola-przepywu-przykad-3" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2.0, 'Python', 4, 1j]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1j</span><span class="p">]</span>
 
-for i in range(len(lista)): # pętla indeksach od 0 do len(lista)
-    print(str(i + 1) + &quot;. &quot; + str(lista[i])) # mało czytelne...
-</code></pre>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)):</span> <span class="c1"># pętla indeksach od 0 do len(lista)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1"># mało czytelne...</span>
+</pre></div>
 
-<pre><code>1. 1
+
+<div class="codehilite"><pre><span></span>1. 1
 2. 2.0
 3. Python
 4. 4
 5. 1j
-</code></pre>
-<h2 id="unzip-i-for"><em>unzip</em> i <em>for</em></h2>
+</pre></div>
+
+
+<h2 id="unzip-i-for"><em>unzip</em> i <em>for</em><a class="headerlink" href="#unzip-i-for" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [[1, 'a'], [2, 'b'], [3, 'c']]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
 
-for cyfra, litera in lista: # cyfra, litera = &quot;lista[i]&quot;
-    print(str(cyfra) + &quot;. &quot; + litera)
-</code></pre>
+<span class="k">for</span> <span class="n">cyfra</span><span class="p">,</span> <span class="n">litera</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span> <span class="c1"># cyfra, litera = &quot;lista[i]&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cyfra</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="n">litera</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>1. a
+
+<div class="codehilite"><pre><span></span>1. a
 2. b
 3. c
-</code></pre>
-<pre><code class="python">cyfry = [1, 2, 3]
-litery = ['a', 'b', 'c']
+</pre></div>
 
-for cyfra, litera in zip(cyfry, litery):
-    print(str(cyfra) + &quot;. &quot; + litera) 
-</code></pre>
 
-<pre><code>1. a
+<div class="codehilite"><pre><span></span><span class="n">cyfry</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">litery</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">cyfra</span><span class="p">,</span> <span class="n">litera</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cyfry</span><span class="p">,</span> <span class="n">litery</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">cyfra</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="n">litera</span><span class="p">)</span> 
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1. a
 2. b
 3. c
-</code></pre>
-<h2 id="enumerate"><em>enumerate</em></h2>
+</pre></div>
+
+
+<h2 id="enumerate"><em>enumerate</em><a class="headerlink" href="#enumerate" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = ['a', 'b', 'c']
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 
-list(enumerate(lista)) # tworzy pary (indeks, element)
-</code></pre>
+<span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span> <span class="c1"># tworzy pary (indeks, element)</span>
+</pre></div>
 
-<pre><code>[(0, 'a'), (1, 'b'), (2, 'c')]
-</code></pre>
-<pre><code class="python">for index, element in enumerate(lista):
-    print(str(index + 1) + &quot;. &quot; + element)
-</code></pre>
 
-<pre><code>1. a
+<div class="codehilite"><pre><span></span>[(0, &#39;a&#39;), (1, &#39;b&#39;), (2, &#39;c&#39;)]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="n">element</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1. a
 2. b
 3. c
-</code></pre>
-<h2 id="petla-while">Pętla <em>while</em></h2>
+</pre></div>
+
+
+<h2 id="petla-while">Pętla <em>while</em><a class="headerlink" href="#petla-while" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wykonuj blok instrukcji dopóki warunek jest spełniony</li>
 </ul>
-<pre><code class="py">while warunek:
-    instrukcje
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="n">warunek</span><span class="p">:</span>
+    <span class="n">instrukcje</span>
+</pre></div>
+
 
 <ul>
 <li>przykład:</li>
 </ul>
-<pre><code class="python">i = 0
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 
-while i &lt; 5: # wykonuj dopóki i &lt; 5
-    i += 1   # bez tego mamy nieskończoną pętlę
-    print(i, end=' ')
-</code></pre>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># wykonuj dopóki i &lt; 5</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>   <span class="c1"># bez tego mamy nieskończoną pętlę</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>1 2 3 4 5
-</code></pre>
-<h2 id="while-przykad"><em>while</em> - przykład</h2>
+
+<div class="codehilite"><pre><span></span>1 2 3 4 5
+</pre></div>
+
+
+<h2 id="while-przykad"><em>while</em> - przykład<a class="headerlink" href="#while-przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">n = input(&quot;Podaj liczbę całkowitą: &quot;)
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę całkowitą: &quot;</span><span class="p">)</span>
 
-if n.isdigit():
-    print(&quot;Twoja liczba to:&quot;, n)
-else:
-    print(n, &quot;nie jest liczbą całkowitą...&quot;)
-</code></pre>
+<span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Twoja liczba to:&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;nie jest liczbą całkowitą...&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Podaj liczbę całkowitą: 23
+
+<div class="codehilite"><pre><span></span>Podaj liczbę całkowitą: 23
 Twoja liczba to: 23
-</code></pre>
-<h2 id="while-przykad_1"><em>while</em> - przykład</h2>
+</pre></div>
+
+
+<h2 id="while-przykad_1"><em>while</em> - przykład<a class="headerlink" href="#while-przykad_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">n = input(&quot;Podaj liczbę całkowitą: &quot;)
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę całkowitą: &quot;</span><span class="p">)</span>
 
-while not n.isdigit():
-    n = input(&quot;Spróbuj jeszcze raz: &quot;)
+<span class="k">while</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Spróbuj jeszcze raz: &quot;</span><span class="p">)</span>
 
-print(&quot;Twoja liczba to:&quot;, n)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Twoja liczba to:&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Podaj liczbę całkowitą: a
+
+<div class="codehilite"><pre><span></span>Podaj liczbę całkowitą: a
 Spróbuj jeszcze raz: 2
 Twoja liczba to: 2
-</code></pre>
-<h2 id="while-nieskonczona-petla"><em>while</em> - nieskończona pętla</h2>
+</pre></div>
+
+
+<h2 id="while-nieskonczona-petla"><em>while</em> - nieskończona pętla<a class="headerlink" href="#while-nieskonczona-petla" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="py">i = 1
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
-while i != 10:
-    i += 2
-</code></pre>
+<span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+</pre></div>
 
-<h2 id="dodatkowe-instrukcje-sterujace">Dodatkowe instrukcje sterujące</h2>
+
+<h2 id="dodatkowe-instrukcje-sterujace">Dodatkowe instrukcje sterujące<a class="headerlink" href="#dodatkowe-instrukcje-sterujace" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>break</em> - przerwij pętlę</li>
@@ -989,107 +2274,130 @@ while i != 10:
 <li><em>pass</em> - nie rób nic</li>
 <li><em>else</em> - wykonuj jeśli pętla zakończyła się inaczej niż <em>break</em></li>
 </ul>
-<h2 id="break"><em>break</em></h2>
+<h2 id="break"><em>break</em><a class="headerlink" href="#break" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">for i in range(10): # drukuj liczby z range(10)
-    print(i, end=' ')
-    if i &gt; 5:       # przerwij pętlę jeśli i &gt; 5
-        break
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="c1"># drukuj liczby z range(10)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>       <span class="c1"># przerwij pętlę jeśli i &gt; 5</span>
+        <span class="k">break</span>
+</pre></div>
 
-<pre><code>0 1 2 3 4 5 6
-</code></pre>
-<pre><code class="python">i = 0
 
-while True:   # wykonuj w niekończoność
-    print(i, end=' ')
-    if i &gt; 5: # przerwij pętlę jeśli i &gt; 5
-        break
-    i += 1    # bez tego byłaby nieskończona pętla zer 
-</code></pre>
+<div class="codehilite"><pre><span></span>0 1 2 3 4 5 6
+</pre></div>
 
-<pre><code>0 1 2 3 4 5 6
-</code></pre>
-<h2 id="continue"><em>continue</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>   <span class="c1"># wykonuj w niekończoność</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># przerwij pętlę jeśli i &gt; 5</span>
+        <span class="k">break</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>    <span class="c1"># bez tego byłaby nieskończona pętla zer </span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0 1 2 3 4 5 6
+</pre></div>
+
+
+<h2 id="continue"><em>continue</em><a class="headerlink" href="#continue" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">for i in range(10):
-    if i % 2:    # jeśli i jest nieparzyste
-        continue # pomiń
-    print(i, end=' ')
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>    <span class="c1"># jeśli i jest nieparzyste</span>
+        <span class="k">continue</span> <span class="c1"># pomiń</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>0 2 4 6 8
-</code></pre>
+
+<div class="codehilite"><pre><span></span>0 2 4 6 8
+</pre></div>
+
+
 <ul>
 <li>znowu uwaga na nieskończone <em>while</em></li>
 </ul>
-<pre><code class="py">i = 0
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 
-# pętla wydrukuje 0 i utknie na 1
-while i &lt; 10: 
-    if i % 2:
-        continue
-    print(i, end=' ')
-    i += 1
-</code></pre>
+<span class="c1"># pętla wydrukuje 0 i utknie na 1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
 
-<h2 id="pass"><em>pass</em></h2>
+
+<h2 id="pass"><em>pass</em><a class="headerlink" href="#pass" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">for i in range(10):
-    if i % 2:    # jeśli i jest nieparzyste
-        pass     # nie rób nic
-    else:        # w innej sytuacji drukuj
-        print(i, end=' ')
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>    <span class="c1"># jeśli i jest nieparzyste</span>
+        <span class="k">pass</span>     <span class="c1"># nie rób nic</span>
+    <span class="k">else</span><span class="p">:</span>        <span class="c1"># w innej sytuacji drukuj</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>0 2 4 6 8
-</code></pre>
-<pre><code class="python">i = 0
 
-# w praktyce napisalibyśmy: if not i % 2: print...
-while i &lt; 10:
-    if i % 2:
-        pass
-    else:
-        print(i, end=' ')
-    i += 1
-</code></pre>
+<div class="codehilite"><pre><span></span>0 2 4 6 8
+</pre></div>
 
-<pre><code>0 2 4 6 8
-</code></pre>
-<h2 id="else"><em>else</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># w praktyce napisalibyśmy: if not i % 2: print...</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0 2 4 6 8
+</pre></div>
+
+
+<h2 id="else"><em>else</em><a class="headerlink" href="#else" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">for i in range(10):
-    if i &lt; 5: # drukuj mniejsze od 5
-        print(i, end=' ')
-    else:     # dla pozosyałych nie rób nic
-        pass
-else: # wykonaj po zakończeniu pętli
-    print(&quot;Koniec pętli.&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># drukuj mniejsze od 5</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>     <span class="c1"># dla pozosyałych nie rób nic</span>
+        <span class="k">pass</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># wykonaj po zakończeniu pętli</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Koniec pętli.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>0 1 2 3 4 Koniec pętli.
-</code></pre>
-<pre><code class="python">for i in range(10):
-    if i &lt; 5: # drukuj mniejsze od 5
-        print(i, end=' ')
-    else:     # przerwij pętlę
-        break
-else: # pętla nie doszła do końca przez break
-    print(&quot;Koniec pętli.&quot;)
-</code></pre>
 
-<pre><code>0 1 2 3 4
-</code></pre>
-<h2 id="formatowanie-tekstu">Formatowanie tekstu</h2>
+<div class="codehilite"><pre><span></span>0 1 2 3 4 Koniec pętli.
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># drukuj mniejsze od 5</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>     <span class="c1"># przerwij pętlę</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># pętla nie doszła do końca przez break</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Koniec pętli.&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0 1 2 3 4
+</pre></div>
+
+
+<h2 id="formatowanie-tekstu">Formatowanie tekstu<a class="headerlink" href="#formatowanie-tekstu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">help(print)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="k">print</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on built-in function print in module builtins:
+
+<div class="codehilite"><pre><span></span>Help on built-in function print in module builtins:
 
 print(...)
-    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
 
     Prints the values to a stream, or to sys.stdout by default.
     Optional keyword arguments:
@@ -1097,196 +2405,299 @@ print(...)
     sep:   string inserted between values, default a space.
     end:   string appended after the last value, default a newline.
     flush: whether to forcibly flush the stream.
-</code></pre>
-<h2 id="print"><em>print</em></h2>
+</pre></div>
+
+
+<h2 id="print"><em>print</em><a class="headerlink" href="#print" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">a, b, c = 1, 2, 3
+<div class="codehilite"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
 
-print(a, b, c) # domyślnym separatorem jest spacja
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># domyślnym separatorem jest spacja</span>
+</pre></div>
 
-<pre><code>1 2 3
-</code></pre>
-<pre><code class="python">print(a, b, c, sep='_') # ale można go zmiennić
-</code></pre>
 
-<pre><code>1_2_3
-</code></pre>
-<pre><code class="python"># domślnie print kończy sekwencję nową linią
-# ale można to zmienić
-print(a, b, c, sep=&quot;...&quot;, end=&quot; koniec&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span>1 2 3
+</pre></div>
 
-<pre><code>1...2...3 koniec
-</code></pre>
-<h2 id="format-podstawy"><em>format</em> - podstawy</h2>
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="c1"># ale można go zmiennić</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1_2_3
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># domślnie print kończy sekwencję nową linią</span>
+<span class="c1"># ale można to zmienić</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; koniec&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1...2...3 koniec
+</pre></div>
+
+
+<h2 id="format-podstawy"><em>format</em> - podstawy<a class="headerlink" href="#format-podstawy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 2
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 
-&quot;x jest równe &quot; + str(x) # skuteczne, ale mało wygodne
-</code></pre>
+<span class="s2">&quot;x jest równe &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># skuteczne, ale mało wygodne</span>
+</pre></div>
 
-<pre><code>'x jest równe 2'
-</code></pre>
-<pre><code class="python">x = 2
 
-# klasa string ma metodę format
-&quot;x jest równe {}&quot;.format(x)
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;x jest równe 2&#39;
+</pre></div>
 
-<pre><code>'x jest równe 2'
-</code></pre>
-<pre><code class="python"># która w miejsce {} wstawia kolejne argumenty
-&quot;x jest równe {}, a x**2 = {}&quot;.format(x, x**2)
-</code></pre>
 
-<pre><code>'x jest równe 2, a x**2 = 4'
-</code></pre>
-<h2 id="format-kolejnosc"><em>format</em> - kolejność</h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># klasa string ma metodę format</span>
+<span class="s2">&quot;x jest równe {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;x jest równe 2&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># która w miejsce {} wstawia kolejne argumenty</span>
+<span class="s2">&quot;x jest równe {}, a x**2 = {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;x jest równe 2, a x**2 = 4&#39;
+</pre></div>
+
+
+<h2 id="format-kolejnosc"><em>format</em> - kolejność<a class="headerlink" href="#format-kolejnosc" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 2
-y = 2.5
-z = &quot;trzy&quot;
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;trzy&quot;</span>
 
-# domślnie pod {} wstawiane są kolejne argument format
-&quot;x, y, z = {}, {}, {}&quot;.format(x, y, z)
-</code></pre>
+<span class="c1"># domślnie pod {} wstawiane są kolejne argument format</span>
+<span class="s2">&quot;x, y, z = {}, {}, {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>'x, y, z = 2, 2.5, trzy'
-</code></pre>
-<pre><code class="python"># ale kolejność można zmienić
-&quot;x, y, z = {2}, {0}, {1}&quot;.format(x, y, z)
-</code></pre>
 
-<pre><code>'x, y, z = trzy, 2, 2.5'
-</code></pre>
-<h2 id="format-deklaracja-typu"><em>format</em> - deklaracja typu</h2>
+<div class="codehilite"><pre><span></span>&#39;x, y, z = 2, 2.5, trzy&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># ale kolejność można zmienić</span>
+<span class="s2">&quot;x, y, z = {2}, {0}, {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;x, y, z = trzy, 2, 2.5&#39;
+</pre></div>
+
+
+<h2 id="format-deklaracja-typu"><em>format</em> - deklaracja typu<a class="headerlink" href="#format-deklaracja-typu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 1234567890
-y = 1234567890.1234567890
-z = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1234567890</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1234567890.1234567890</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-# z reguły nie ma potrzeby jawnej deklaracji typu
-print(&quot;x, y, z = {}, {}, {}&quot;.format(x, y, z))
-</code></pre>
+<span class="c1"># z reguły nie ma potrzeby jawnej deklaracji typu</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x, y, z = {}, {}, {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>x, y, z = 1234567890, 1234567890.1234567, Python
-</code></pre>
-<pre><code class="python"># ale można to zrobić
-# d - int; f - float; s - str
-print(&quot;x, y, z = {:d}, {:f}, {:s}&quot;.format(x, y, z))
-</code></pre>
 
-<pre><code>x, y, z = 1234567890, 1234567890.123457, Python
-</code></pre>
-<pre><code class="python"># e - wygodny format dla dużych liczb
-# XeY = X * 10^Y
-print(&quot;x, y, z = {:f}, {:e}, {}&quot;.format(x, y, z))
-</code></pre>
+<div class="codehilite"><pre><span></span>x, y, z = 1234567890, 1234567890.1234567, Python
+</pre></div>
 
-<pre><code>x, y, z = 1234567890.000000, 1.234568e+09, Python
-</code></pre>
-<h2 id="format-dokadnosc"><em>format</em> - dokładność</h2>
+
+<div class="codehilite"><pre><span></span><span class="c1"># ale można to zrobić</span>
+<span class="c1"># d - int; f - float; s - str</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x, y, z = {:d}, {:f}, {:s}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>x, y, z = 1234567890, 1234567890.123457, Python
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># e - wygodny format dla dużych liczb</span>
+<span class="c1"># XeY = X * 10^Y</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;x, y, z = {:f}, {:e}, {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>x, y, z = 1234567890.000000, 1.234568e+09, Python
+</pre></div>
+
+
+<h2 id="format-dokadnosc"><em>format</em> - dokładność<a class="headerlink" href="#format-dokadnosc" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from math import pi
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 
-&quot;pi = {}&quot;.format(pi)
-</code></pre>
+<span class="s2">&quot;pi = {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>'pi = 3.141592653589793'
-</code></pre>
-<pre><code class="python"># ograniczamy się do dwóch liczb po przecinku
-&quot;pi = {:.2f}&quot;.format(pi)
-</code></pre>
 
-<pre><code>'pi = 3.14'
-</code></pre>
-<pre><code class="python"># ograniczamy się do 50 liczb po przecinku
-# zwróć uwagę na zera na końcu
-&quot;pi = {:.50f}&quot;.format(pi)
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;pi = 3.141592653589793&#39;
+</pre></div>
 
-<pre><code>'pi = 3.14159265358979311599796346854418516159057617187500'
-</code></pre>
-<h2 id="format-keyword-arguments"><em>format</em>  - keyword arguments</h2>
+
+<div class="codehilite"><pre><span></span><span class="c1"># ograniczamy się do dwóch liczb po przecinku</span>
+<span class="s2">&quot;pi = {:.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;pi = 3.14&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># ograniczamy się do 50 liczb po przecinku</span>
+<span class="c1"># zwróć uwagę na zera na końcu</span>
+<span class="s2">&quot;pi = {:.50f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;pi = 3.14159265358979311599796346854418516159057617187500&#39;
+</pre></div>
+
+
+<h2 id="format-keyword-arguments"><em>format</em>  - keyword arguments<a class="headerlink" href="#format-keyword-arguments" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># żeby się nie pogubić
-# warto &quot;tagować&quot; kolejne argumenty
-&quot;{student} otrzymał {ocena}&quot;.format(student=&quot;Jan Nowak&quot;, ocena=5)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># żeby się nie pogubić</span>
+<span class="c1"># warto &quot;tagować&quot; kolejne argumenty</span>
+<span class="s2">&quot;{student} otrzymał {ocena}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">student</span><span class="o">=</span><span class="s2">&quot;Jan Nowak&quot;</span><span class="p">,</span> <span class="n">ocena</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>'Jan Nowak otrzymał 5'
-</code></pre>
-<pre><code class="python"># wtedy kolejność nie ma znaczenia
-&quot;{student} otrzymał {ocena}&quot;.format(ocena=5, student=&quot;Jan Nowak&quot;)
-</code></pre>
 
-<pre><code>'Jan Nowak otrzymał 5'
-</code></pre>
-<pre><code class="python"># lista studentów
-studenci = [&quot;Kasia&quot;, &quot;Basia&quot;, &quot;Marek&quot;, &quot;Józek&quot;]
-# każdy element odpowiada liście ocen danego studenta
-dziennik = [[3, 4, 5], [], [5, 3], [3, 2, 2, 2, 2]]
+<div class="codehilite"><pre><span></span>&#39;Jan Nowak otrzymał 5&#39;
+</pre></div>
 
-# [znak]^N -&gt; centruj w szerokości N wypełniając [znakiem]
-print(&quot;{:-^42}&quot;.format(&quot;OCENY&quot;), end=&quot;\n\n&quot;)
 
-# enumerate zwraca dwa obiekty: index i parę: (student, oceny)
-for i, (student, oceny) in enumerate(zip(studenci, dziennik)):
-    # policz średnią; chyba że brak ocen
-    if len(oceny):
-        srednia = sum(oceny) / len(oceny)
-    else:
-        srednia = 0
+<div class="codehilite"><pre><span></span><span class="c1"># wtedy kolejność nie ma znaczenia</span>
+<span class="s2">&quot;{student} otrzymał {ocena}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ocena</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">student</span><span class="o">=</span><span class="s2">&quot;Jan Nowak&quot;</span><span class="p">)</span>
+</pre></div>
 
-    # {oceny:&lt;15} działa jak ljust; {oceny:&gt;15} działa jak rjust
-    print(&quot;{index}. {imie}: {oceny:&lt;15} =&gt; srednia = {srednia:.1f}&quot;
-          .format(index=i+1,
-                  imie=student,
-                  oceny=str(oceny),
-                  srednia=srednia))
-</code></pre>
 
-<pre><code>------------------OCENY-------------------
+<div class="codehilite"><pre><span></span>&#39;Jan Nowak otrzymał 5&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># lista studentów</span>
+<span class="n">studenci</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> <span class="s2">&quot;Basia&quot;</span><span class="p">,</span> <span class="s2">&quot;Marek&quot;</span><span class="p">,</span> <span class="s2">&quot;Józek&quot;</span><span class="p">]</span>
+<span class="c1"># każdy element odpowiada liście ocen danego studenta</span>
+<span class="n">dziennik</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># [znak]^N -&gt; centruj w szerokości N wypełniając [znakiem]</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;{:-^42}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;OCENY&quot;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># enumerate zwraca dwa obiekty: index i parę: (student, oceny)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">oceny</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">studenci</span><span class="p">,</span> <span class="n">dziennik</span><span class="p">)):</span>
+    <span class="c1"># policz średnią; chyba że brak ocen</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">):</span>
+        <span class="n">srednia</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">oceny</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">srednia</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># {oceny:&lt;15} działa jak ljust; {oceny:&gt;15} działa jak rjust</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{index}. {imie}: {oceny:&lt;15} =&gt; srednia = {srednia:.1f}&quot;</span>
+          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+                  <span class="n">imie</span><span class="o">=</span><span class="n">student</span><span class="p">,</span>
+                  <span class="n">oceny</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">oceny</span><span class="p">),</span>
+                  <span class="n">srednia</span><span class="o">=</span><span class="n">srednia</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>------------------OCENY-------------------
 
 1. Kasia: [3, 4, 5]       =&gt; srednia = 4.0
 2. Basia: []              =&gt; srednia = 0.0
 3. Marek: [5, 3]          =&gt; srednia = 4.0
 4. Józek: [3, 2, 2, 2, 2] =&gt; srednia = 2.2
-</code></pre></div>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w02/" title="Wykład 2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 2
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w04/" title="Wykład 4" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 4
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

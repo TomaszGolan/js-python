@@ -1,353 +1,1390 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w02/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 2 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 2
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w01/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w03/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-2">Wykład 2</a></li>
-            <li><a href="#ostatnio">Ostatnio</a></li>
-            <li><a href="#anuch-znakow">Łańuch znaków</a></li>
-            <li><a href="#indeksowanie">Indeksowanie</a></li>
-            <li><a href="#wycinki">Wycinki</a></li>
-            <li><a href="#wycinki-z-krokiem">Wycinki z krokiem</a></li>
-            <li><a href="#indeksy-ujemne">Indeksy ujemne</a></li>
-            <li><a href="#dygresja-o-klasach">Dygresja o klasach</a></li>
-            <li><a href="#dygresja-o-klasach_1">Dygresja o klasach</a></li>
-            <li><a href="#lista-list">Lista (list)</a></li>
-            <li><a href="#lista-przez">Lista przez [ ]</a></li>
-            <li><a href="#lista-przez-konstruktor">Lista przez konstruktor</a></li>
-            <li><a href="#lista-skadana">Lista składana</a></li>
-            <li><a href="#lista-jako-rezultat-funkcji">Lista jako rezultat funkcji</a></li>
-            <li><a href="#krotka-tuple">Krotka (tuple)</a></li>
-            <li><a href="#krotka">Krotka</a></li>
-            <li><a href="#lista-vs-krotka">Lista vs Krotka</a></li>
-            <li><a href="#lista-vs-krotka_1">Lista vs Krotka</a></li>
-            <li><a href="#range">Range</a></li>
-            <li><a href="#range_1">Range</a></li>
-            <li><a href="#range_2">Range</a></li>
-            <li><a href="#sekwencyjne-typy-danych">Sekwencyjne typy danych</a></li>
-            <li><a href="#operacje-na-sekwencjach">Operacje na sekwencjach</a></li>
-            <li><a href="#operacje-na-sekwencjach_1">Operacje na sekwencjach</a></li>
-            <li><a href="#operacje-na-sekwencjach_2">Operacje na sekwencjach</a></li>
-            <li><a href="#operacje-na-sekwencjach_3">Operacje na sekwencjach</a></li>
-            <li><a href="#funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji</a></li>
-            <li><a href="#wspolne-funkcje-klasowe-sekwencji">Wspólne funkcje klasowe sekwencji</a></li>
-            <li><a href="#operacje-na-sekwencjach-zmiennych-mutable">Operacje na sekwencjach "zmiennych" (mutable)</a></li>
-            <li><a href="#operacje-na-sekwencjach-zmiennych-mutable_1">Operacje na sekwencjach "zmiennych" (mutable)</a></li>
-            <li><a href="#operacje-na-sekwencjach-zmiennych-mutable_2">Operacje na sekwencjach "zmiennych" (mutable)</a></li>
-            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
-            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_1">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
-            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_2">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
-            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_3">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
-            <li><a href="#funkcja-sort-tylko-dla-list">Funkcja sort - tylko dla list</a></li>
-            <li><a href="#system-dziesietny">System dziesiętny</a></li>
-            <li><a href="#system-dwojkowy-binarny">System dwójkowy (binarny)</a></li>
-            <li><a href="#bit-binary-digit-i-bajt-byte">Bit (binary digit) i bajt (byte)</a></li>
-            <li><a href="#zmienne-w-pamieci-operacyjnej">Zmienne w pamięci operacyjnej</a></li>
-            <li><a href="#int-long-int-w-c">Int (long int) w C++</a></li>
-            <li><a href="#czas-uniksowy">Czas uniksowy</a></li>
-            <li><a href="#limit-pamieci">Limit pamięci</a></li>
-        <li class="main "><a href="#int-w-pythonie">Int w Pythonie</a></li>
-            <li><a href="#system-szesnastkowy-heksadecymalny">System szesnastkowy (heksadecymalny)</a></li>
-            <li><a href="#kolory-rgb">Kolory RGB</a></li>
-            <li><a href="#kolory-rgb_1">Kolory RGB</a></li>
-            <li><a href="#kolory-rgb_2">Kolory RGB</a></li>
-            <li><a href="#systemy-liczbowe-w-pythonie">Systemy liczbowe w Pythonie</a></li>
-            <li><a href="#typ-logiczny-boolowski-boolean">Typ logiczny (boolowski, boolean)</a></li>
-            <li><a href="#operacje-logiczne">Operacje logiczne</a></li>
-            <li><a href="#operacje-logiczne-or">Operacje logiczne - or</a></li>
-            <li><a href="#operacje-logiczne-and">Operacje logiczne - and</a></li>
-            <li><a href="#operacje-logiczne-not">Operacje logiczne - not</a></li>
-            <li><a href="#dygresja-sowa-kluczowe-zastrzezone">Dygresja - słowa kluczowe / zastrzeżone</a></li>
-            <li><a href="#dygresja-niedozwolone-nazwy-zmiennych">Dygresja - niedozwolone nazwy zmiennych</a></li>
-            <li><a href="#porownania">Porównania</a></li>
-            <li><a href="#porownania_1">Porównania</a></li>
-            <li><a href="#identyfikator-zmiennej">Identyfikator zmiennej</a></li>
-            <li><a href="#id-dla-int">id dla int</a></li>
-            <li><a href="#id-dla-list">id dla list</a></li>
-            <li><a href="#mutable-vs-immutable">Mutable vs Immutable</a></li>
-            <li><a href="#mutable-vs-immutable_1">Mutable vs Immutable</a></li>
-            <li><a href="#konsekwencje">Konsekwencje</a></li>
-            <li><a href="#funkcja-copy">Funkcja copy</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 2
+      </label>
+    
+    <a href="./" title="Wykład 2" class="md-nav__link md-nav__link--active">
+      Wykład 2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-2" title="Wykład 2" class="md-nav__link">
+    Wykład 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ostatnio" title="Ostatnio" class="md-nav__link">
+    Ostatnio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anuch-znakow" title="Łańuch znaków" class="md-nav__link">
+    Łańuch znaków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indeksowanie" title="Indeksowanie" class="md-nav__link">
+    Indeksowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wycinki" title="Wycinki" class="md-nav__link">
+    Wycinki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wycinki-z-krokiem" title="Wycinki z krokiem" class="md-nav__link">
+    Wycinki z krokiem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indeksy-ujemne" title="Indeksy ujemne" class="md-nav__link">
+    Indeksy ujemne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-o-klasach" title="Dygresja o klasach" class="md-nav__link">
+    Dygresja o klasach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-o-klasach_1" title="Dygresja o klasach" class="md-nav__link">
+    Dygresja o klasach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-list" title="Lista (list)" class="md-nav__link">
+    Lista (list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-przez" title="Lista przez [ ]" class="md-nav__link">
+    Lista przez [ ]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-przez-konstruktor" title="Lista przez konstruktor" class="md-nav__link">
+    Lista przez konstruktor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-skadana" title="Lista składana" class="md-nav__link">
+    Lista składana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-jako-rezultat-funkcji" title="Lista jako rezultat funkcji" class="md-nav__link">
+    Lista jako rezultat funkcji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krotka-tuple" title="Krotka (tuple)" class="md-nav__link">
+    Krotka (tuple)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krotka" title="Krotka" class="md-nav__link">
+    Krotka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-vs-krotka" title="Lista vs Krotka" class="md-nav__link">
+    Lista vs Krotka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-vs-krotka_1" title="Lista vs Krotka" class="md-nav__link">
+    Lista vs Krotka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range" title="Range" class="md-nav__link">
+    Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range_1" title="Range" class="md-nav__link">
+    Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range_2" title="Range" class="md-nav__link">
+    Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sekwencyjne-typy-danych" title="Sekwencyjne typy danych" class="md-nav__link">
+    Sekwencyjne typy danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach_1" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach_2" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach_3" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-wbudowane-dla-sekwencji" title="Funkcje wbudowane dla sekwencji" class="md-nav__link">
+    Funkcje wbudowane dla sekwencji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wspolne-funkcje-klasowe-sekwencji" title="Wspólne funkcje klasowe sekwencji" class="md-nav__link">
+    Wspólne funkcje klasowe sekwencji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach-zmiennych-mutable" title="Operacje na sekwencjach "zmiennych" (mutable)" class="md-nav__link">
+    Operacje na sekwencjach "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach-zmiennych-mutable_1" title="Operacje na sekwencjach "zmiennych" (mutable)" class="md-nav__link">
+    Operacje na sekwencjach "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach-zmiennych-mutable_2" title="Operacje na sekwencjach "zmiennych" (mutable)" class="md-nav__link">
+    Operacje na sekwencjach "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_1" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_2" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_3" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcja-sort-tylko-dla-list" title="Funkcja sort - tylko dla list" class="md-nav__link">
+    Funkcja sort - tylko dla list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-dziesietny" title="System dziesiętny" class="md-nav__link">
+    System dziesiętny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-dwojkowy-binarny" title="System dwójkowy (binarny)" class="md-nav__link">
+    System dwójkowy (binarny)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-binary-digit-i-bajt-byte" title="Bit (binary digit) i bajt (byte)" class="md-nav__link">
+    Bit (binary digit) i bajt (byte)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-w-pamieci-operacyjnej" title="Zmienne w pamięci operacyjnej" class="md-nav__link">
+    Zmienne w pamięci operacyjnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#int-long-int-w-c" title="Int (long int) w C++" class="md-nav__link">
+    Int (long int) w C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-uniksowy" title="Czas uniksowy" class="md-nav__link">
+    Czas uniksowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-pamieci" title="Limit pamięci" class="md-nav__link">
+    Limit pamięci
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-2">Wykład 2</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-2" title="Wykład 2" class="md-nav__link">
+    Wykład 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ostatnio" title="Ostatnio" class="md-nav__link">
+    Ostatnio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anuch-znakow" title="Łańuch znaków" class="md-nav__link">
+    Łańuch znaków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indeksowanie" title="Indeksowanie" class="md-nav__link">
+    Indeksowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wycinki" title="Wycinki" class="md-nav__link">
+    Wycinki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wycinki-z-krokiem" title="Wycinki z krokiem" class="md-nav__link">
+    Wycinki z krokiem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indeksy-ujemne" title="Indeksy ujemne" class="md-nav__link">
+    Indeksy ujemne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-o-klasach" title="Dygresja o klasach" class="md-nav__link">
+    Dygresja o klasach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dygresja-o-klasach_1" title="Dygresja o klasach" class="md-nav__link">
+    Dygresja o klasach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-list" title="Lista (list)" class="md-nav__link">
+    Lista (list)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-przez" title="Lista przez [ ]" class="md-nav__link">
+    Lista przez [ ]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-przez-konstruktor" title="Lista przez konstruktor" class="md-nav__link">
+    Lista przez konstruktor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-skadana" title="Lista składana" class="md-nav__link">
+    Lista składana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-jako-rezultat-funkcji" title="Lista jako rezultat funkcji" class="md-nav__link">
+    Lista jako rezultat funkcji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krotka-tuple" title="Krotka (tuple)" class="md-nav__link">
+    Krotka (tuple)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krotka" title="Krotka" class="md-nav__link">
+    Krotka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-vs-krotka" title="Lista vs Krotka" class="md-nav__link">
+    Lista vs Krotka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-vs-krotka_1" title="Lista vs Krotka" class="md-nav__link">
+    Lista vs Krotka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range" title="Range" class="md-nav__link">
+    Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range_1" title="Range" class="md-nav__link">
+    Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range_2" title="Range" class="md-nav__link">
+    Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sekwencyjne-typy-danych" title="Sekwencyjne typy danych" class="md-nav__link">
+    Sekwencyjne typy danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach_1" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach_2" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach_3" title="Operacje na sekwencjach" class="md-nav__link">
+    Operacje na sekwencjach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-wbudowane-dla-sekwencji" title="Funkcje wbudowane dla sekwencji" class="md-nav__link">
+    Funkcje wbudowane dla sekwencji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wspolne-funkcje-klasowe-sekwencji" title="Wspólne funkcje klasowe sekwencji" class="md-nav__link">
+    Wspólne funkcje klasowe sekwencji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach-zmiennych-mutable" title="Operacje na sekwencjach "zmiennych" (mutable)" class="md-nav__link">
+    Operacje na sekwencjach "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach-zmiennych-mutable_1" title="Operacje na sekwencjach "zmiennych" (mutable)" class="md-nav__link">
+    Operacje na sekwencjach "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-sekwencjach-zmiennych-mutable_2" title="Operacje na sekwencjach "zmiennych" (mutable)" class="md-nav__link">
+    Operacje na sekwencjach "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_1" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_2" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_3" title="Funkcje klasowe sekwencji "zmiennych" (mutable)" class="md-nav__link">
+    Funkcje klasowe sekwencji "zmiennych" (mutable)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcja-sort-tylko-dla-list" title="Funkcja sort - tylko dla list" class="md-nav__link">
+    Funkcja sort - tylko dla list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-dziesietny" title="System dziesiętny" class="md-nav__link">
+    System dziesiętny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-dwojkowy-binarny" title="System dwójkowy (binarny)" class="md-nav__link">
+    System dwójkowy (binarny)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-binary-digit-i-bajt-byte" title="Bit (binary digit) i bajt (byte)" class="md-nav__link">
+    Bit (binary digit) i bajt (byte)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-w-pamieci-operacyjnej" title="Zmienne w pamięci operacyjnej" class="md-nav__link">
+    Zmienne w pamięci operacyjnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#int-long-int-w-c" title="Int (long int) w C++" class="md-nav__link">
+    Int (long int) w C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-uniksowy" title="Czas uniksowy" class="md-nav__link">
+    Czas uniksowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-pamieci" title="Limit pamięci" class="md-nav__link">
+    Limit pamięci
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-2">Wykład 2<a class="headerlink" href="#wykad-2" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>sekwencyjne typy danych</li>
 <li>system binarny i szesnastkowy</li>
 <li>wyrażenia logiczne</li>
 </ul>
-<h2 id="ostatnio">Ostatnio</h2>
+<h2 id="ostatnio">Ostatnio<a class="headerlink" href="#ostatnio" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wprowadzone zostały 4 typy zmiennych: <em>int</em>, <em>float</em>, <em>complex</em> i <em>str</em></li>
 </ul>
-<pre><code class="python"># [zmienna] [operator przypisania] [wartość]
-# typowanie dynamiczne
+<div class="codehilite"><pre><span></span><span class="c1"># [zmienna] [operator przypisania] [wartość]</span>
+<span class="c1"># typowanie dynamiczne</span>
 
-n = 10  # liczba całkowita
-x = 1.5 # liczba zmiennoprzecinkowa
-c = 2j  # liczba zespolona
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># liczba całkowita</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># liczba zmiennoprzecinkowa</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2j</span>  <span class="c1"># liczba zespolona</span>
 
-s = &quot;Python&quot; # łańcuch znaków
-</code></pre>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span> <span class="c1"># łańcuch znaków</span>
+</pre></div>
 
-<h2 id="anuch-znakow">Łańuch znaków</h2>
+
+<h2 id="anuch-znakow">Łańuch znaków<a class="headerlink" href="#anuch-znakow" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zmienna <em>str</em> przechowuje tak naprawdę ciąg znaków</li>
 <li>w którym każdy znak ma określoną pozycję</li>
 </ul>
-<pre><code class="python">s = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-s[0] # str[i] -&gt; i-ty znak w ciągu
-</code></pre>
+<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># str[i] -&gt; i-ty znak w ciągu</span>
+</pre></div>
 
-<pre><code>'P'
-</code></pre>
-<pre><code class="python">s[1] # pierwszy to drugi?
-</code></pre>
 
-<pre><code>'y'
-</code></pre>
-<pre><code class="python">s[2]
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;P&#39;
+</pre></div>
 
-<pre><code>'t'
-</code></pre>
-<h2 id="indeksowanie">Indeksowanie</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># pierwszy to drugi?</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;y&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;t&#39;
+</pre></div>
+
+
+<h2 id="indeksowanie">Indeksowanie<a class="headerlink" href="#indeksowanie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>indeksowanie zaczyna się od 0 a kończy na <em>n-1</em>, gdzie <em>n</em> - długość ciągu</li>
 </ul>
-<pre><code class="python">s = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-n = len(s) # długość łańcucha s
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># długość łańcucha s</span>
 
-print(n)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>6
-</code></pre>
-<pre><code class="python">s[n-1] # ostatni element
-</code></pre>
 
-<pre><code>'n'
-</code></pre>
-<pre><code class="python">s[n] # poza zakresem
-</code></pre>
+<div class="codehilite"><pre><span></span>6
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># ostatni element</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;n&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># poza zakresem</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 IndexError                                Traceback (most recent call last)
 
@@ -356,108 +1393,150 @@ IndexError                                Traceback (most recent call last)
 
 
 IndexError: string index out of range
-</code></pre>
-<h2 id="wycinki">Wycinki</h2>
+</pre></div>
+
+
+<h2 id="wycinki">Wycinki<a class="headerlink" href="#wycinki" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">s = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-s[2:4] # elementy od 2 do 3 (czyli &quot;od 3 do 4&quot;)
-</code></pre>
+<span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># elementy od 2 do 3 (czyli &quot;od 3 do 4&quot;)</span>
+</pre></div>
 
-<pre><code>'th'
-</code></pre>
-<pre><code class="python">s[2:] # od indeksu 2 do końca
-</code></pre>
 
-<pre><code>'thon'
-</code></pre>
-<pre><code class="python">s[:2] # od początku do 1
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;th&#39;
+</pre></div>
 
-<pre><code>'Py'
-</code></pre>
-<pre><code class="python">s[2:1000] # nie ma błędu o wyjściu poza zakres
-</code></pre>
 
-<pre><code>'thon'
-</code></pre>
-<h2 id="wycinki-z-krokiem">Wycinki z krokiem</h2>
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># od indeksu 2 do końca</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;thon&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># od początku do 1</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;Py&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span> <span class="c1"># nie ma błędu o wyjściu poza zakres</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;thon&#39;
+</pre></div>
+
+
+<h2 id="wycinki-z-krokiem">Wycinki z krokiem<a class="headerlink" href="#wycinki-z-krokiem" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">s = &quot;0123456789&quot;
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0123456789&quot;</span>
 
-s[2:8:2] # sekwencja[początek:koniec:krok]
-</code></pre>
+<span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># sekwencja[początek:koniec:krok]</span>
+</pre></div>
 
-<pre><code>'246'
-</code></pre>
-<pre><code class="python">s[2::3] # od 2 do końca co 3
-</code></pre>
 
-<pre><code>'258'
-</code></pre>
-<pre><code class="python">s[::2] # od początu do końca co 2
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;246&#39;
+</pre></div>
 
-<pre><code>'02468'
-</code></pre>
-<h2 id="indeksy-ujemne">Indeksy ujemne</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># od 2 do końca co 3</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;258&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># od początu do końca co 2</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;02468&#39;
+</pre></div>
+
+
+<h2 id="indeksy-ujemne">Indeksy ujemne<a class="headerlink" href="#indeksy-ujemne" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>indeks <span>\(-k\)</span> oznacza <span>\(n-k\)</span>, gdzie <span>\(n\)</span> - długość łańcucha</li>
 </ul>
-<pre><code class="python">s = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-s[-1] # 6 - 1 = 5 -&gt; ostatni znak
-</code></pre>
+<span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 6 - 1 = 5 -&gt; ostatni znak</span>
+</pre></div>
 
-<pre><code>'n'
-</code></pre>
-<pre><code class="python">s[-2] # 6 - 2 = 4 -&gt; przedostatni
-</code></pre>
 
-<pre><code>'o'
-</code></pre>
-<pre><code class="python">s[-2:] # od 4 do końca -&gt; dwa ostatnie
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;n&#39;
+</pre></div>
 
-<pre><code>'on'
-</code></pre>
-<pre><code class="python">s[:-2] # wszystko oprócz dwóch ostatnich
-</code></pre>
 
-<pre><code>'Pyth'
-</code></pre>
-<h2 id="dygresja-o-klasach">Dygresja o klasach</h2>
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># 6 - 2 = 4 -&gt; przedostatni</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;o&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># od 4 do końca -&gt; dwa ostatnie</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;on&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># wszystko oprócz dwóch ostatnich</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;Pyth&#39;
+</pre></div>
+
+
+<h2 id="dygresja-o-klasach">Dygresja o klasach<a class="headerlink" href="#dygresja-o-klasach" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>więcej o klasach będzie na dalszych wykładach</li>
 <li>klasa definuje obiekt</li>
 <li>przypisując wartość zmiennej tworzymy obiekt danej klasy</li>
 </ul>
-<pre><code class="python">n = 10 # tworzymy obiekt klasy int
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># tworzymy obiekt klasy int</span>
+</pre></div>
 
-<h2 id="dygresja-o-klasach_1">Dygresja o klasach</h2>
+
+<h2 id="dygresja-o-klasach_1">Dygresja o klasach<a class="headerlink" href="#dygresja-o-klasach_1" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>klasa może posiadać zmienne i metody (czyli funkcje działające na obiekt)</li>
 </ul>
-<pre><code class="python">x = 1.0 # tworzymy obiekt klasy float
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># tworzymy obiekt klasy float</span>
 
-# metody/zmienne klasy wywołujemy .
-x.is_integer() # [obiekt].metoda
-</code></pre>
+<span class="c1"># metody/zmienne klasy wywołujemy .</span>
+<span class="n">x</span><span class="o">.</span><span class="n">is_integer</span><span class="p">()</span> <span class="c1"># [obiekt].metoda</span>
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">s = &quot;Python&quot; # tworzymy obiekt klasy str
 
-s.replace('yt', 'yyyyyt') # [obiekt].metoda
-</code></pre>
+<div class="codehilite"><pre><span></span>True
+</pre></div>
 
-<pre><code>'Pyyyyython'
-</code></pre>
-<h2 id="lista-list">Lista (<em>list</em>)</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span> <span class="c1"># tworzymy obiekt klasy str</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;yt&#39;</span><span class="p">,</span> <span class="s1">&#39;yyyyyt&#39;</span><span class="p">)</span> <span class="c1"># [obiekt].metoda</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;Pyyyyython&#39;
+</pre></div>
+
+
+<h2 id="lista-list">Lista (<em>list</em>)<a class="headerlink" href="#lista-list" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>sekwencja zmiennych dowolnego typu</li>
@@ -469,46 +1548,63 @@ s.replace('yt', 'yyyyyt') # [obiekt].metoda
 </ul>
 </li>
 </ul>
-<h2 id="lista-przez">Lista przez [ ]</h2>
+<h2 id="lista-przez">Lista przez [ ]<a class="headerlink" href="#lista-przez" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 'a', &quot;Python&quot;]
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">]</span>
+</pre></div>
 
-<pre><code class="python">len(lista) # długość listy
-</code></pre>
 
-<pre><code>4
-</code></pre>
-<pre><code class="python">lista[0] # pierwszy element listy
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> <span class="c1"># długość listy</span>
+</pre></div>
 
-<pre><code>1
-</code></pre>
-<pre><code class="python">lista[-1] # ostatni element listy
-</code></pre>
 
-<pre><code>'Python'
-</code></pre>
-<h2 id="lista-przez-konstruktor">Lista przez konstruktor</h2>
+<div class="codehilite"><pre><span></span>4
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># pierwszy element listy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">lista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># ostatni element listy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;Python&#39;
+</pre></div>
+
+
+<h2 id="lista-przez-konstruktor">Lista przez konstruktor<a class="headerlink" href="#lista-przez-konstruktor" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = list([1,2,3]) # bez sensu, ale można
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># bez sensu, ale można</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 2, 3]
-</code></pre>
-<pre><code class="python">lista = list(&quot;Python&quot;) # można stworzyć listę ze string
 
-print(lista)
-</code></pre>
+<div class="codehilite"><pre><span></span>[1, 2, 3]
+</pre></div>
 
-<pre><code>['P', 'y', 't', 'h', 'o', 'n']
-</code></pre>
-<pre><code class="python">lista = list(1) # ale już nie z int
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span> <span class="c1"># można stworzyć listę ze string</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;P&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># ale już nie z int</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -516,38 +1612,47 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 1 lista = list(1) # ale już nie z int
 
 
-TypeError: 'int' object is not iterable
-</code></pre>
-<h2 id="lista-skadana">Lista składana</h2>
+TypeError: &#39;int&#39; object is not iterable
+</pre></div>
+
+
+<h2 id="lista-skadana">Lista składana<a class="headerlink" href="#lista-skadana" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">cyfry = [&quot;jeden&quot;, &quot;dwa&quot;, &quot;trzy&quot;] # definiujemy listę
+<div class="codehilite"><pre><span></span><span class="n">cyfry</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;jeden&quot;</span><span class="p">,</span> <span class="s2">&quot;dwa&quot;</span><span class="p">,</span> <span class="s2">&quot;trzy&quot;</span><span class="p">]</span> <span class="c1"># definiujemy listę</span>
 
-# [wartość] dla [obiektu] z [listy]
-# pętle zostaną szerzej omówione na kolejnych wykładach
-dlugosc = [len(cyfra) for cyfra in cyfry]
+<span class="c1"># [wartość] dla [obiektu] z [listy]</span>
+<span class="c1"># pętle zostaną szerzej omówione na kolejnych wykładach</span>
+<span class="n">dlugosc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">cyfra</span><span class="p">)</span> <span class="k">for</span> <span class="n">cyfra</span> <span class="ow">in</span> <span class="n">cyfry</span><span class="p">]</span>
 
-print(dlugosc)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">dlugosc</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[5, 3, 4]
-</code></pre>
-<pre><code class="python">cyfry = [&quot;jeden&quot;, &quot;dwa&quot;, &quot;trzy&quot;] # definiujemy listę
 
-# [wartość] dla [obiektu] z [listy] jeśli [warunek]
-# warunki zostaną szerzej omówione pod koniec wykładu
-dlugosc = [len(cyfra) for cyfra in cyfry if cyfra != 'dwa']
+<div class="codehilite"><pre><span></span>[5, 3, 4]
+</pre></div>
 
-print(dlugosc)
-</code></pre>
 
-<pre><code>[5, 4]
-</code></pre>
-<h2 id="lista-jako-rezultat-funkcji">Lista jako rezultat funkcji</h2>
+<div class="codehilite"><pre><span></span><span class="n">cyfry</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;jeden&quot;</span><span class="p">,</span> <span class="s2">&quot;dwa&quot;</span><span class="p">,</span> <span class="s2">&quot;trzy&quot;</span><span class="p">]</span> <span class="c1"># definiujemy listę</span>
+
+<span class="c1"># [wartość] dla [obiektu] z [listy] jeśli [warunek]</span>
+<span class="c1"># warunki zostaną szerzej omówione pod koniec wykładu</span>
+<span class="n">dlugosc</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">cyfra</span><span class="p">)</span> <span class="k">for</span> <span class="n">cyfra</span> <span class="ow">in</span> <span class="n">cyfry</span> <span class="k">if</span> <span class="n">cyfra</span> <span class="o">!=</span> <span class="s1">&#39;dwa&#39;</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">dlugosc</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[5, 4]
+</pre></div>
+
+
+<h2 id="lista-jako-rezultat-funkcji">Lista jako rezultat funkcji<a class="headerlink" href="#lista-jako-rezultat-funkcji" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">help(str.split)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on method_descriptor:
+
+<div class="codehilite"><pre><span></span>Help on method_descriptor:
 
 split(...)
     S.split(sep=None, maxsplit=-1) -&gt; list of strings
@@ -557,18 +1662,26 @@ split(...)
     splits are done. If sep is not specified or is None, any
     whitespace string is a separator and empty strings are
     removed from the result.
-</code></pre>
-<pre><code class="python">(&quot;Python is awesome, fast, and friendly!&quot;).split()
-</code></pre>
+</pre></div>
 
-<pre><code>['Python', 'is', 'awesome,', 'fast,', 'and', 'friendly!']
-</code></pre>
-<pre><code class="python">(&quot;Python is awesome, fast, and friendly!&quot;).split(',')
-</code></pre>
 
-<pre><code>['Python is awesome', ' fast', ' and friendly!']
-</code></pre>
-<h2 id="krotka-tuple">Krotka (<em>tuple</em>)</h2>
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="s2">&quot;Python is awesome, fast, and friendly!&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;Python&#39;, &#39;is&#39;, &#39;awesome,&#39;, &#39;fast,&#39;, &#39;and&#39;, &#39;friendly!&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="s2">&quot;Python is awesome, fast, and friendly!&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;Python is awesome&#39;, &#39; fast&#39;, &#39; and friendly!&#39;]
+</pre></div>
+
+
+<h2 id="krotka-tuple">Krotka (<em>tuple</em>)<a class="headerlink" href="#krotka-tuple" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>sekwencja zmiennych dowolnego typu</li>
@@ -580,34 +1693,43 @@ split(...)
 </ul>
 </li>
 </ul>
-<h2 id="krotka">Krotka</h2>
+<h2 id="krotka">Krotka<a class="headerlink" href="#krotka" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">krotka = (1, 2, 3, &quot;Python&quot;) # jak lista, ale () zamiast []
+<div class="codehilite"><pre><span></span><span class="n">krotka</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">)</span> <span class="c1"># jak lista, ale () zamiast []</span>
 
-print(krotka)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">krotka</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>(1, 2, 3, 'Python')
-</code></pre>
-<pre><code class="python">krotka = 1, 2, 3, &quot;Python&quot; # brak nawiasów = tuple
 
-print(krotka)
-</code></pre>
+<div class="codehilite"><pre><span></span>(1, 2, 3, &#39;Python&#39;)
+</pre></div>
 
-<pre><code>(1, 2, 3, 'Python')
-</code></pre>
-<pre><code class="python">lista = list(&quot;Python&quot;) # lista ze stringa
 
-krotka = tuple(lista)  # krotka z listy
+<div class="codehilite"><pre><span></span><span class="n">krotka</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span> <span class="c1"># brak nawiasów = tuple</span>
 
-print(lista)
-print(krotka)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">krotka</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['P', 'y', 't', 'h', 'o', 'n']
-('P', 'y', 't', 'h', 'o', 'n')
-</code></pre>
-<h2 id="lista-vs-krotka">Lista vs Krotka</h2>
+
+<div class="codehilite"><pre><span></span>(1, 2, 3, &#39;Python&#39;)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span> <span class="c1"># lista ze stringa</span>
+
+<span class="n">krotka</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>  <span class="c1"># krotka z listy</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">krotka</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;P&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;]
+(&#39;P&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;)
+</pre></div>
+
+
+<h2 id="lista-vs-krotka">Lista vs Krotka<a class="headerlink" href="#lista-vs-krotka" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>krotka ma stały rozmiar a lista jest dynamiczna</li>
@@ -620,26 +1742,30 @@ print(krotka)
 </ul>
 </li>
 </ul>
-<h2 id="lista-vs-krotka_1">Lista vs Krotka</h2>
+<h2 id="lista-vs-krotka_1">Lista vs Krotka<a class="headerlink" href="#lista-vs-krotka_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-print(lista)
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 
-lista[0] = 2
+<span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 2, 3]
+
+<div class="codehilite"><pre><span></span>[1, 2, 3]
 [2, 2, 3]
-</code></pre>
-<pre><code class="python">krotka = (1, 2, 3)
+</pre></div>
 
-krotka[0] = 2
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><span class="n">krotka</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">krotka</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -649,33 +1775,42 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 3 krotka[0] = 2
 
 
-TypeError: 'tuple' object does not support item assignment
-</code></pre>
-<h2 id="range">Range</h2>
+TypeError: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+
+
+<h2 id="range">Range<a class="headerlink" href="#range" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>uwaga: w Pythonie 2 <em>range()</em> jest funkcją wbudowaną; w Pythonie 3 jest to typ danych (klasa)</li>
 <li>reprezentuje (niezmienniczą) sekwencję liczb</li>
 <li>zajmuje mniej pamięci niż <em>list</em> lub <em>tuple</em> (przechowuje tylko informację o początku, końcu i kroku)</li>
 </ul>
-<h2 id="range_1">Range</h2>
+<h2 id="range_1">Range<a class="headerlink" href="#range_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = range(10) # od 0 do 10
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># od 0 do 10</span>
 
-print(x) # w Pythonie 2 zobaczylibyśmy [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># w Pythonie 2 zobaczylibyśmy [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
 
-<pre><code>range(0, 10)
-</code></pre>
-<pre><code class="python">print(list(x)) # zrzutujemy na listę, żeby wydrukować
-</code></pre>
 
-<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre>
-<pre><code class="python">x[0] = 1 # range jest immutable
-</code></pre>
+<div class="codehilite"><pre><span></span>range(0, 10)
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># zrzutujemy na listę, żeby wydrukować</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># range jest immutable</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -683,24 +1818,29 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 1 x[0] = 1 # range jest immutable
 
 
-TypeError: 'range' object does not support item assignment
-</code></pre>
-<h2 id="range_2">Range</h2>
+TypeError: &#39;range&#39; object does not support item assignment
+</pre></div>
+
+
+<h2 id="range_2">Range<a class="headerlink" href="#range_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">cyfry = range(0, 10)       # range(początek = 0, koniec) 
-parzyste = range(2, 10, 2) # range(początek, koniec, krok)
-nieparzyste = range(1, 10, 2)
+<div class="codehilite"><pre><span></span><span class="n">cyfry</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>       <span class="c1"># range(początek = 0, koniec) </span>
+<span class="n">parzyste</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># range(początek, koniec, krok)</span>
+<span class="n">nieparzyste</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-print(list(cyfry))
-print(list(parzyste))
-print(list(nieparzyste))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cyfry</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">parzyste</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">nieparzyste</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+<div class="codehilite"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [2, 4, 6, 8]
 [1, 3, 5, 7, 9]
-</code></pre>
-<h2 id="sekwencyjne-typy-danych">Sekwencyjne typy danych</h2>
+</pre></div>
+
+
+<h2 id="sekwencyjne-typy-danych">Sekwencyjne typy danych<a class="headerlink" href="#sekwencyjne-typy-danych" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>list</em> - dynamiczny ciąg zmiennych dowolnego typu</li>
@@ -709,137 +1849,182 @@ print(list(nieparzyste))
 <li><em>str</em> - niezmienniczy ciąg znaków</li>
 <li>(dla kompletności) są jeszcze binarne sekwencyjne typy danych: <em>bytes</em>, <em>bytearray</em>, <em>memoryview</em></li>
 </ul>
-<h2 id="operacje-na-sekwencjach">Operacje na sekwencjach</h2>
+<h2 id="operacje-na-sekwencjach">Operacje na sekwencjach<a class="headerlink" href="#operacje-na-sekwencjach" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>in</em> - prawda jeśli element należy do sekwencji, inaczej fałsz</li>
 <li><em>not in</em> - fałsz jeśli element należy do sekwencji, inaczej prawda</li>
 </ul>
-<pre><code class="python">s = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-&quot;y&quot; in s
-</code></pre>
+<span class="s2">&quot;y&quot;</span> <span class="ow">in</span> <span class="n">s</span>
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">&quot;p&quot; not in s
-</code></pre>
 
-<pre><code>True
-</code></pre>
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="s2">&quot;p&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">s</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
 <ul>
 <li>więcej o prawdzie i fałszu w dalszej części wykładu</li>
 </ul>
-<h2 id="operacje-na-sekwencjach_1">Operacje na sekwencjach</h2>
+<h2 id="operacje-na-sekwencjach_1">Operacje na sekwencjach<a class="headerlink" href="#operacje-na-sekwencjach_1" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>splot (<em>concatenation</em>)</li>
 <li>nie dla <em>range</em></li>
 </ul>
-<pre><code class="python">begin = &quot;Python &quot;
-middle = &quot;is &quot;
-end = &quot;awesome!&quot;
+<div class="codehilite"><pre><span></span><span class="n">begin</span> <span class="o">=</span> <span class="s2">&quot;Python &quot;</span>
+<span class="n">middle</span> <span class="o">=</span> <span class="s2">&quot;is &quot;</span>
+<span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;awesome!&quot;</span>
 
-begin + middle + end
-</code></pre>
+<span class="n">begin</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="n">end</span>
+</pre></div>
 
-<pre><code>'Python is awesome!'
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3, 4]
-dodatek = [5, 6, 7, 8]
 
-dodatek + lista # kolejność ma znaczenie
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;Python is awesome!&#39;
+</pre></div>
 
-<pre><code>[5, 6, 7, 8, 1, 2, 3, 4]
-</code></pre>
-<h2 id="operacje-na-sekwencjach_2">Operacje na sekwencjach</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">dodatek</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="n">dodatek</span> <span class="o">+</span> <span class="n">lista</span> <span class="c1"># kolejność ma znaczenie</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[5, 6, 7, 8, 1, 2, 3, 4]
+</pre></div>
+
+
+<h2 id="operacje-na-sekwencjach_2">Operacje na sekwencjach<a class="headerlink" href="#operacje-na-sekwencjach_2" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>mnożenie przez liczbę calkowitą</li>
 <li>nie dla <em>range</em></li>
 </ul>
-<pre><code class="python">znak = '-'
+<div class="codehilite"><pre><span></span><span class="n">znak</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
 
-znak * 10
-</code></pre>
+<span class="n">znak</span> <span class="o">*</span> <span class="mi">10</span>
+</pre></div>
 
-<pre><code>'----------'
-</code></pre>
-<pre><code class="python">krotka = (1, 2, 3)
 
-2 * krotka
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;----------&#39;
+</pre></div>
 
-<pre><code>(1, 2, 3, 1, 2, 3)
-</code></pre>
-<h2 id="operacje-na-sekwencjach_3">Operacje na sekwencjach</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">krotka</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="mi">2</span> <span class="o">*</span> <span class="n">krotka</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1, 2, 3, 1, 2, 3)
+</pre></div>
+
+
+<h2 id="operacje-na-sekwencjach_3">Operacje na sekwencjach<a class="headerlink" href="#operacje-na-sekwencjach_3" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wycinki</li>
 </ul>
-<pre><code class="python">lista = [1, 2, 3, &quot;Python&quot;]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">]</span>
 
-lista[:2] # dwa pierwsze
-</code></pre>
+<span class="n">lista</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># dwa pierwsze</span>
+</pre></div>
 
-<pre><code>[1, 2]
-</code></pre>
-<pre><code class="python">lista[3][-2:] # dwa ostatnie ostatniego
-</code></pre>
 
-<pre><code>'on'
-</code></pre>
-<pre><code class="python">range(3, 15, 3)[:2] # dla range też działa
-</code></pre>
+<div class="codehilite"><pre><span></span>[1, 2]
+</pre></div>
 
-<pre><code>range(3, 9, 3)
-</code></pre>
-<h2 id="funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">lista</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># dwa ostatnie ostatniego</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;on&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># dla range też działa</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>range(3, 9, 3)
+</pre></div>
+
+
+<h2 id="funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji<a class="headerlink" href="#funkcje-wbudowane-dla-sekwencji" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>len</em> - długość sekwencji</li>
 <li><em>min</em>, <em>max</em> - najmniejszy, największy element</li>
 </ul>
-<pre><code class="python">len([1,2,-3]) # liczba elementów
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># liczba elementów</span>
+</pre></div>
 
-<pre><code>3
-</code></pre>
-<pre><code class="python">min([1,2,-3]) # minimum
-</code></pre>
 
-<pre><code>-3
-</code></pre>
-<pre><code class="python">max(&quot;Python&quot;) # maximum
-</code></pre>
+<div class="codehilite"><pre><span></span>3
+</pre></div>
 
-<pre><code>'y'
-</code></pre>
-<h2 id="wspolne-funkcje-klasowe-sekwencji">Wspólne funkcje klasowe sekwencji</h2>
+
+<div class="codehilite"><pre><span></span><span class="nb">min</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># minimum</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>-3
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span> <span class="c1"># maximum</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;y&#39;
+</pre></div>
+
+
+<h2 id="wspolne-funkcje-klasowe-sekwencji">Wspólne funkcje klasowe sekwencji<a class="headerlink" href="#wspolne-funkcje-klasowe-sekwencji" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>index</em> - indeks pierwszego znalezionego elementu</li>
 <li><em>count</em> - ilość wystąpień elementu</li>
 </ul>
-<pre><code class="python">x = [1, 2, 3, 4, 5] * 2
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
 
-print(x)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-</code></pre>
-<pre><code class="python">x.count(4) # liczba 4 pojawia się 2 razy
-</code></pre>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">x.index(4) # pierwszy raz dla i=3
-</code></pre>
+<div class="codehilite"><pre><span></span>[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+</pre></div>
 
-<pre><code>3
-</code></pre>
-<h2 id="operacje-na-sekwencjach-zmiennych-mutable">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># liczba 4 pojawia się 2 razy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># pierwszy raz dla i=3</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3
+</pre></div>
+
+
+<h2 id="operacje-na-sekwencjach-zmiennych-mutable">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#operacje-na-sekwencjach-zmiennych-mutable" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>na razie znamy: <em>list</em></li>
@@ -848,161 +2033,206 @@ print(x)
 <li>ale na kolejnych wykładach poznamy kolejne</li>
 <li>więcej o <em>mutable</em> vs <em>immutable</em> w dalszej części wykładu</li>
 </ul>
-<h2 id="operacje-na-sekwencjach-zmiennych-mutable_1">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)</h2>
+<h2 id="operacje-na-sekwencjach-zmiennych-mutable_1">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#operacje-na-sekwencjach-zmiennych-mutable_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-lista[1] = 4 # zamień wartość drugiego elementu
+<span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># zamień wartość drugiego elementu</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 4, 3]
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3]
 
-lista[1:2] = [5, 5] # zamień wycinek
+<div class="codehilite"><pre><span></span>[1, 4, 3]
+</pre></div>
 
-print(lista)
-</code></pre>
 
-<pre><code>[1, 5, 5, 3]
-</code></pre>
-<h2 id="operacje-na-sekwencjach-zmiennych-mutable_2">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)</h2>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1"># zamień wycinek</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[1, 5, 5, 3]
+</pre></div>
+
+
+<h2 id="operacje-na-sekwencjach-zmiennych-mutable_2">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#operacje-na-sekwencjach-zmiennych-mutable_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-del lista[1:2] # usuń wycinek
+<span class="k">del</span> <span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># usuń wycinek</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 3]
-</code></pre>
-<pre><code class="python">lista = list(range(10))
 
-del lista[::2] # usuń co drugi element
+<div class="codehilite"><pre><span></span>[1, 3]
+</pre></div>
 
-print(lista)
-</code></pre>
 
-<pre><code>[1, 3, 5, 7, 9]
-</code></pre>
-<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="k">del</span> <span class="n">lista</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># usuń co drugi element</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[1, 3, 5, 7, 9]
+</pre></div>
+
+
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#funkcje-klasowe-sekwencji-zmiennych-mutable" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3, 4, 5]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
-lista.append(6) # append dodaje element na koniec listy
+<span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># append dodaje element na koniec listy</span>
 
-print(lista)
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 
-lista.append([7, 8, 9]) # lista dodana jako element
+<span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span> <span class="c1"># lista dodana jako element</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 2, 3, 4, 5, 6]
+
+<div class="codehilite"><pre><span></span>[1, 2, 3, 4, 5, 6]
 [1, 2, 3, 4, 5, 6, [7, 8, 9]]
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3, 4, 5]
+</pre></div>
 
-lista.extend([6, 7, 8, 9]) # extend rozwija listę 
 
-print(lista)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
-<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre>
-<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_1">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<span class="n">lista</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span> <span class="c1"># extend rozwija listę </span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+
+
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_1">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#funkcje-klasowe-sekwencji-zmiennych-mutable_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-lista.clear() # usuwa wszystkie elementy
+<span class="n">lista</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c1"># usuwa wszystkie elementy</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[]
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3]
 
-kopia = lista.copy() # kopiuje całą listę
+<div class="codehilite"><pre><span></span>[]
+</pre></div>
 
-print(kopia)
-</code></pre>
 
-<pre><code>[1, 2, 3]
-</code></pre>
-<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_2">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">kopia</span> <span class="o">=</span> <span class="n">lista</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># kopiuje całą listę</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">kopia</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[1, 2, 3]
+</pre></div>
+
+
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_2">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#funkcje-klasowe-sekwencji-zmiennych-mutable_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = [1, 2, 3]
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-lista.insert(1, 4) # wstaw 4 pod indeks 2
+<span class="n">lista</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># wstaw 4 pod indeks 2</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 4, 2, 3]
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3]
 
-lista.pop(1) # zwróć i usuń *i*-ty element
-</code></pre>
+<div class="codehilite"><pre><span></span>[1, 4, 2, 3]
+</pre></div>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">print(lista)
-</code></pre>
 
-<pre><code>[1, 3]
-</code></pre>
-<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_3">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># zwróć i usuń *i*-ty element</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[1, 3]
+</pre></div>
+
+
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_3">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)<a class="headerlink" href="#funkcje-klasowe-sekwencji-zmiennych-mutable_3" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">lista = ['a', 'b', 3] * 3
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
 
-print(lista)
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 
-lista.remove('b') # usuń element (pierwsze wystąpienie)
+<span class="n">lista</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="c1"># usuń element (pierwsze wystąpienie)</span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['a', 'b', 3, 'a', 'b', 3, 'a', 'b', 3]
-['a', 3, 'a', 'b', 3, 'a', 'b', 3]
-</code></pre>
-<pre><code class="python">lista = [1, 2, 3]
 
-lista.reverse() # odwróć kolejność
+<div class="codehilite"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, 3, &#39;a&#39;, &#39;b&#39;, 3, &#39;a&#39;, &#39;b&#39;, 3]
+[&#39;a&#39;, 3, &#39;a&#39;, &#39;b&#39;, 3, &#39;a&#39;, &#39;b&#39;, 3]
+</pre></div>
 
-print(lista)
-</code></pre>
 
-<pre><code>[3, 2, 1]
-</code></pre>
-<h2 id="funkcja-sort-tylko-dla-list">Funkcja <em>sort</em> - tylko dla list</h2>
-<pre><code class="python">help(list.sort)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<pre><code>Help on method_descriptor:
+<span class="n">lista</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># odwróć kolejność</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[3, 2, 1]
+</pre></div>
+
+
+<h2 id="funkcja-sort-tylko-dla-list">Funkcja <em>sort</em> - tylko dla list<a class="headerlink" href="#funkcja-sort-tylko-dla-list" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">sort</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Help on method_descriptor:
 
 sort(...)
     L.sort(key=None, reverse=False) -&gt; None -- stable sort *IN PLACE*
-</code></pre>
-<pre><code class="python">lista = ['e', 'D', 'a', 'b', 'C']
+</pre></div>
 
-lista.sort() # sortuj 
 
-print(lista)
+<div class="codehilite"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
 
-lista.sort(key=str.lower) # sortuj wg funkcji key
+<span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># sortuj </span>
 
-print(lista)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 
-<pre><code>['C', 'D', 'a', 'b', 'e']
-['a', 'b', 'C', 'D', 'e']
-</code></pre>
-<h2 id="system-dziesietny">System dziesiętny</h2>
+<span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span> <span class="c1"># sortuj wg funkcji key</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;C&#39;, &#39;D&#39;, &#39;a&#39;, &#39;b&#39;, &#39;e&#39;]
+[&#39;a&#39;, &#39;b&#39;, &#39;C&#39;, &#39;D&#39;, &#39;e&#39;]
+</pre></div>
+
+
+<h2 id="system-dziesietny">System dziesiętny<a class="headerlink" href="#system-dziesietny" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>
@@ -1016,7 +2246,7 @@ print(lista)
 <ul>
 <li>przykład zastosowania: warzywniak</li>
 </ul>
-<h2 id="system-dwojkowy-binarny">System dwójkowy (binarny)</h2>
+<h2 id="system-dwojkowy-binarny">System dwójkowy (binarny)<a class="headerlink" href="#system-dwojkowy-binarny" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>
@@ -1030,7 +2260,7 @@ print(lista)
 <ul>
 <li>przykład zastosowania: elektronika cyfrowa</li>
 </ul>
-<h2 id="bit-binary-digit-i-bajt-byte">Bit (<em>binary digit</em>) i bajt (<em>byte</em>)</h2>
+<h2 id="bit-binary-digit-i-bajt-byte">Bit (<em>binary digit</em>) i bajt (<em>byte</em>)<a class="headerlink" href="#bit-binary-digit-i-bajt-byte" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>dwa równie prawdopodobne stany: <span>\(\{0, 1\}\)</span></li>
@@ -1043,25 +2273,27 @@ print(lista)
 </li>
 <li><a href="https://en.wikipedia.org/wiki/Binary_prefix">przedrostki binarne</a>: kibi, mebi, gibi... nie do końca się przyjęły </li>
 </ul>
-<h2 id="zmienne-w-pamieci-operacyjnej">Zmienne w pamięci operacyjnej</h2>
+<h2 id="zmienne-w-pamieci-operacyjnej">Zmienne w pamięci operacyjnej<a class="headerlink" href="#zmienne-w-pamieci-operacyjnej" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>każda zmienna przechowywana jest w pamięci operacyjnej w postaci bitowej</li>
 <li>przy czym bajt jest najmniejszym adresowalnym "fragmentem" pamięci</li>
 <li>np. <span>\(438 = 110110110_2\)</span> zajmie co najmniej 2B = 16b (a nie 9 bitów)</li>
 </ul>
-<pre><code class="python">from graphviz import Source
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="kn">import</span> <span class="n">Source</span>
 
-pamiec = Source('digraph &quot;pamiec&quot; \
-                { rankdir=LR; node [shape=&quot;box&quot;; fontsize=40;]; splines=none; \
-                &quot;0000001&quot; -&gt; &quot;10110110&quot;}')
-</code></pre>
+<span class="n">pamiec</span> <span class="o">=</span> <span class="n">Source</span><span class="p">(</span><span class="s1">&#39;digraph &quot;pamiec&quot; </span><span class="se">\</span>
+<span class="s1">                { rankdir=LR; node [shape=&quot;box&quot;; fontsize=40;]; splines=none; </span><span class="se">\</span>
+<span class="s1">                &quot;0000001&quot; -&gt; &quot;10110110&quot;}&#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">pamiec
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="n">pamiec</span>
+</pre></div>
+
 
 <p><img alt="svg" src="../js-python_w02_files/js-python_w02_114_0.svg" /></p>
-<h2 id="int-long-int-w-c">Int (long int) w C++</h2>
+<h2 id="int-long-int-w-c">Int (long int) w C++<a class="headerlink" href="#int-long-int-w-c" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zajmuje 32 bity</li>
@@ -1070,7 +2302,7 @@ pamiec = Source('digraph &quot;pamiec&quot; \
 <li>ze znakiem: <span>\((-2^{31} - 1, 2^{31} - 1) = (-2147483647, 2147483647)\)</span></li>
 <li>w C++ występują również: char (8 bitów), short int (8 bitów), long long int (64 bity)</li>
 </ul>
-<h2 id="czas-uniksowy">Czas uniksowy</h2>
+<h2 id="czas-uniksowy">Czas uniksowy<a class="headerlink" href="#czas-uniksowy" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>liczba sekund od epoki Uniksa (01.01.1970 UTC)</li>
@@ -1081,51 +2313,63 @@ pamiec = Source('digraph &quot;pamiec&quot; \
 <blockquote>
 <p>Manually changing the date to May 1970 or earlier can prevent your iOS device from turning on after a restart.</p>
 </blockquote>
-<h2 id="limit-pamieci">Limit pamięci</h2>
+<h2 id="limit-pamieci">Limit pamięci<a class="headerlink" href="#limit-pamieci" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Architektura 32-bitowa dysponuje <span>\(2^{32}\)</span> adresami</li>
 </ul>
-<pre><code class="python">B = 1          # bajt
-KB = 1024 * B  # kilobajt
-MB = 1024 * KB # megabajt
+<div class="codehilite"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>          <span class="c1"># bajt</span>
+<span class="n">KB</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="n">B</span>  <span class="c1"># kilobajt</span>
+<span class="n">MB</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="n">KB</span> <span class="c1"># megabajt</span>
 
-2**32 / MB
-</code></pre>
+<span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">/</span> <span class="n">MB</span>
+</pre></div>
 
-<pre><code>4096.0
-</code></pre>
+
+<div class="codehilite"><pre><span></span>4096.0
+</pre></div>
+
+
 <ul>
 <li>stąd limit pamięci operacyjnej w systemach 32-bitowych to ok. 4GB</li>
 <li>co często daje limit na pamięć RAM rzędu 3GB (bo karta graficzna)</li>
 </ul>
-<h1 id="int-w-pythonie">Int w Pythonie</h1>
+<h1 id="int-w-pythonie">Int w Pythonie<a class="headerlink" href="#int-w-pythonie" title="Permanent link">&para;</a></h1>
 <hr />
-<pre><code class="python"># zwróć uwagę na sposób importowania:
-# from [moduł] import [funkcja] as [nazwa]
-from sys import getsizeof as rozmiar
+<div class="codehilite"><pre><span></span><span class="c1"># zwróć uwagę na sposób importowania:</span>
+<span class="c1"># from [moduł] import [funkcja] as [nazwa]</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">getsizeof</span> <span class="k">as</span> <span class="n">rozmiar</span>
 
-help(rozmiar)
-</code></pre>
+<span class="n">help</span><span class="p">(</span><span class="n">rozmiar</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on built-in function getsizeof in module sys:
+
+<div class="codehilite"><pre><span></span>Help on built-in function getsizeof in module sys:
 
 getsizeof(...)
     getsizeof(object, default) -&gt; int
 
     Return the size of object in bytes.
-</code></pre>
-<pre><code class="python">rozmiar(0)
-</code></pre>
+</pre></div>
 
-<pre><code>24
-</code></pre>
-<pre><code class="python">rozmiar(2**100)
-</code></pre>
 
-<pre><code>40
-</code></pre>
-<h2 id="system-szesnastkowy-heksadecymalny">System szesnastkowy (heksadecymalny)</h2>
+<div class="codehilite"><pre><span></span><span class="n">rozmiar</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>24
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">rozmiar</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>40
+</pre></div>
+
+
+<h2 id="system-szesnastkowy-heksadecymalny">System szesnastkowy (heksadecymalny)<a class="headerlink" href="#system-szesnastkowy-heksadecymalny" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>
@@ -1139,7 +2383,7 @@ getsizeof(...)
 <ul>
 <li>przykład zastosowania: adres MAC (<em>Media Access Control</em>), grafika komputerowa (kolory RGB)</li>
 </ul>
-<h2 id="kolory-rgb">Kolory RGB</h2>
+<h2 id="kolory-rgb">Kolory RGB<a class="headerlink" href="#kolory-rgb" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>w 24-bitowym RGB:<ul>
@@ -1153,7 +2397,7 @@ getsizeof(...)
 <span>\[11111111_2 = 255\]</span><ul>
 <li>w 32-bitowym dochodzi kanał alpha (przezroczystość)</li>
 </ul>
-<h2 id="kolory-rgb_1">Kolory RGB</h2>
+<h2 id="kolory-rgb_1">Kolory RGB<a class="headerlink" href="#kolory-rgb_1" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>często spotka się zapis: <code>#RRGGBB</code></li>
@@ -1165,60 +2409,78 @@ getsizeof(...)
 </ul>
 </li>
 </ul>
-<h2 id="kolory-rgb_2">Kolory RGB</h2>
+<h2 id="kolory-rgb_2">Kolory RGB<a class="headerlink" href="#kolory-rgb_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># rysuj bezpośrednio w Jupyter
-%matplotlib inline
+<div class="codehilite"><pre><span></span><span class="c1"># rysuj bezpośrednio w Jupyter</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="kn">as</span> <span class="nn">patches</span>
 
-# zdefiniuj kwadrat
-kwadrat = patches.Rectangle(
-    (0.0, 0.0),   # wierzchołek
-    1.0,          # szerokość
-    1.0,          # wysokość
-    facecolor=&quot;#ff96cb&quot; # kolor wypełnienia
-)
+<span class="c1"># zdefiniuj kwadrat</span>
+<span class="n">kwadrat</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>   <span class="c1"># wierzchołek</span>
+    <span class="mf">1.0</span><span class="p">,</span>          <span class="c1"># szerokość</span>
+    <span class="mf">1.0</span><span class="p">,</span>          <span class="c1"># wysokość</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;#ff96cb&quot;</span> <span class="c1"># kolor wypełnienia</span>
+<span class="p">)</span>
 
-plt.figure(figsize=(1,1)) # rozmiar
-plt.axis('off')           # wyłącz osie
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># rozmiar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>           <span class="c1"># wyłącz osie</span>
 
-# narysuj kwadrat; gca -&gt; get currect axis
-plt.gca().add_patch(kwadrat)
-</code></pre>
+<span class="c1"># narysuj kwadrat; gca -&gt; get currect axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">kwadrat</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>&lt;matplotlib.patches.Rectangle at 0x7ff3e862cdd8&gt;
-</code></pre>
+
+<div class="codehilite"><pre><span></span>&lt;matplotlib.patches.Rectangle at 0x7ff3e862cdd8&gt;
+</pre></div>
+
+
 <p><img alt="png" src="../js-python_w02_files/js-python_w02_128_1.png" /></p>
-<h2 id="systemy-liczbowe-w-pythonie">Systemy liczbowe w Pythonie</h2>
+<h2 id="systemy-liczbowe-w-pythonie">Systemy liczbowe w Pythonie<a class="headerlink" href="#systemy-liczbowe-w-pythonie" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">bin(438) # liczba 438 w systemie binarnym
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="mi">438</span><span class="p">)</span> <span class="c1"># liczba 438 w systemie binarnym</span>
+</pre></div>
 
-<pre><code>'0b110110110'
-</code></pre>
-<pre><code class="python">0b110110110 # 0b sygnalizuje system binarny
-</code></pre>
 
-<pre><code>438
-</code></pre>
-<pre><code class="python">0b0000000000110110110 # wiodące zera nic nie zmieniają
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;0b110110110&#39;
+</pre></div>
 
-<pre><code>438
-</code></pre>
-<pre><code class="python">hex(438) # liczba 438 w systemie heksadecymalnym
-</code></pre>
 
-<pre><code>'0x1b6'
-</code></pre>
-<pre><code class="python">0x1b6 # 0x sygnalizuje system szesnastkowy
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="mb">0b110110110</span> <span class="c1"># 0b sygnalizuje system binarny</span>
+</pre></div>
 
-<pre><code>438
-</code></pre>
-<h2 id="typ-logiczny-boolowski-boolean">Typ logiczny (boolowski, <em>boolean</em>)</h2>
+
+<div class="codehilite"><pre><span></span>438
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mb">0b0000000000110110110</span> <span class="c1"># wiodące zera nic nie zmieniają</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>438
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">hex</span><span class="p">(</span><span class="mi">438</span><span class="p">)</span> <span class="c1"># liczba 438 w systemie heksadecymalnym</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;0x1b6&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="mh">0x1b6</span> <span class="c1"># 0x sygnalizuje system szesnastkowy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>438
+</pre></div>
+
+
+<h2 id="typ-logiczny-boolowski-boolean">Typ logiczny (boolowski, <em>boolean</em>)<a class="headerlink" href="#typ-logiczny-boolowski-boolean" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>przyjmuje wartości: prawda lub fałsz</li>
@@ -1231,7 +2493,7 @@ plt.gca().add_patch(kwadrat)
 </li>
 <li>pozostałe wartości uznawane są za prawdę</li>
 </ul>
-<h2 id="operacje-logiczne">Operacje logiczne</h2>
+<h2 id="operacje-logiczne">Operacje logiczne<a class="headerlink" href="#operacje-logiczne" title="Permanent link">&para;</a></h2>
 <hr />
 <table>
 <thead>
@@ -1255,58 +2517,74 @@ plt.gca().add_patch(kwadrat)
 </tr>
 </tbody>
 </table>
-<h2 id="operacje-logiczne-or">Operacje logiczne - or</h2>
+<h2 id="operacje-logiczne-or">Operacje logiczne - or<a class="headerlink" href="#operacje-logiczne-or" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">print(&quot;0 or 0 -&gt; &quot; + str(0 or 0))
-print(&quot;1 or 0 -&gt; &quot; + str(1 or 0))
-print(&quot;0 or 1 -&gt; &quot; + str(0 or 1))
-print(&quot;1 or 1 -&gt; &quot; + str(1 or 1))
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;0 or 0 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">0</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1 or 0 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;0 or 1 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">0</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1 or 1 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>0 or 0 -&gt; 0
+
+<div class="codehilite"><pre><span></span>0 or 0 -&gt; 0
 1 or 0 -&gt; 1
 0 or 1 -&gt; 1
 1 or 1 -&gt; 1
-</code></pre>
-<h2 id="operacje-logiczne-and">Operacje logiczne - and</h2>
+</pre></div>
+
+
+<h2 id="operacje-logiczne-and">Operacje logiczne - and<a class="headerlink" href="#operacje-logiczne-and" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">print(&quot;0 and 0 -&gt; &quot; + str(0 and 0))
-print(&quot;1 and 0 -&gt; &quot; + str(1 and 0))
-print(&quot;0 and 1 -&gt; &quot; + str(0 and 1))
-print(&quot;1 and 1 -&gt; &quot; + str(1 and 1))
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;0 and 0 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">0</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1 and 0 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span> <span class="ow">and</span> <span class="mi">0</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;0 and 1 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">0</span> <span class="ow">and</span> <span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;1 and 1 -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span> <span class="ow">and</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
 
-<h2 id="operacje-logiczne-not">Operacje logiczne - not</h2>
+
+<h2 id="operacje-logiczne-not">Operacje logiczne - not<a class="headerlink" href="#operacje-logiczne-not" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">not True
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="ow">not</span> <span class="bp">True</span>
+</pre></div>
 
-<pre><code>False
-</code></pre>
-<pre><code class="python">not False
-</code></pre>
 
-<pre><code>True
-</code></pre>
-<h2 id="dygresja-sowa-kluczowe-zastrzezone">Dygresja - słowa kluczowe / zastrzeżone</h2>
+<div class="codehilite"><pre><span></span>False
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="ow">not</span> <span class="bp">False</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<h2 id="dygresja-sowa-kluczowe-zastrzezone">Dygresja - słowa kluczowe / zastrzeżone<a class="headerlink" href="#dygresja-sowa-kluczowe-zastrzezone" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 1     # zmiennej x przypisz wartość 1
-y = 2     # zmiennej y przypisz wartość 2
-False = 3 # zmiennej False przypusz wartość 3
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># zmiennej x przypisz wartość 1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># zmiennej y przypisz wartość 2</span>
+<span class="bp">False</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># zmiennej False przypusz wartość 3</span>
+</pre></div>
 
-<pre><code>  File "&lt;ipython-input-88-6d6e4a6b0a3f&gt;", line 3
+
+<div class="codehilite"><pre><span></span>  File &quot;&lt;ipython-input-88-6d6e4a6b0a3f&gt;&quot;, line 3
     False = 3 # zmiennej False przypusz wartość 3
                                                  ^
-SyntaxError: can't assign to keyword
-</code></pre>
-<pre><code class="python">import keyword
-print(keyword.kwlist) # lista słów kluczowych w Pythonie
-</code></pre>
+SyntaxError: can&#39;t assign to keyword
+</pre></div>
 
-<pre><code>['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
-</code></pre>
-<h2 id="dygresja-niedozwolone-nazwy-zmiennych">Dygresja - niedozwolone nazwy zmiennych</h2>
+
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">keyword</span>
+<span class="k">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span> <span class="c1"># lista słów kluczowych w Pythonie</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;False&#39;, &#39;None&#39;, &#39;True&#39;, &#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, &#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]
+</pre></div>
+
+
+<h2 id="dygresja-niedozwolone-nazwy-zmiennych">Dygresja - niedozwolone nazwy zmiennych<a class="headerlink" href="#dygresja-niedozwolone-nazwy-zmiennych" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>słowa kluczowe</li>
@@ -1314,7 +2592,7 @@ print(keyword.kwlist) # lista słów kluczowych w Pythonie
 <li>zawierające polskie znaki</li>
 <li>zawierające cokolwiek innego niż litery, cyfry i <code>_</code></li>
 </ul>
-<h2 id="porownania">Porównania</h2>
+<h2 id="porownania">Porównania<a class="headerlink" href="#porownania" title="Permanent link">&para;</a></h2>
 <hr />
 <table>
 <thead>
@@ -1358,99 +2636,141 @@ print(keyword.kwlist) # lista słów kluczowych w Pythonie
 </tr>
 </tbody>
 </table>
-<h2 id="porownania_1">Porównania</h2>
+<h2 id="porownania_1">Porównania<a class="headerlink" href="#porownania_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">1 &gt; 0 # większy niż
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="c1"># większy niż</span>
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">&quot;Prowadzący&quot; &gt; &quot;Student&quot; # znak po znaku
-</code></pre>
 
-<pre><code>False
-</code></pre>
-<pre><code class="python">&quot;prowadzący&quot; &gt; &quot;Student&quot; # wielkość ma znaczenie
-</code></pre>
+<div class="codehilite"><pre><span></span>True
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">&quot;prowadzący&quot; &gt; &quot;2 studentów&quot; # litera &gt; cyfra
-</code></pre>
 
-<pre><code>True
-</code></pre>
-<h2 id="identyfikator-zmiennej">Identyfikator zmiennej</h2>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;Prowadzący&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;Student&quot;</span> <span class="c1"># znak po znaku</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>False
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="s2">&quot;prowadzący&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;Student&quot;</span> <span class="c1"># wielkość ma znaczenie</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="s2">&quot;prowadzący&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;2 studentów&quot;</span> <span class="c1"># litera &gt; cyfra</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<h2 id="identyfikator-zmiennej">Identyfikator zmiennej<a class="headerlink" href="#identyfikator-zmiennej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">help(id)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on built-in function id in module builtins:
+
+<div class="codehilite"><pre><span></span>Help on built-in function id in module builtins:
 
 id(obj, /)
     Return the identity of an object.
 
     This is guaranteed to be unique among simultaneously existing objects.
-    (CPython uses the object's memory address.)
-</code></pre>
-<pre><code class="python">x = 2 # zmiennej x przypisz wartość 2
-id(x) # wyświetl jej id
-</code></pre>
+    (CPython uses the object&#39;s memory address.)
+</pre></div>
 
-<pre><code>140685772794432
-</code></pre>
-<h2 id="id-dla-int">id dla int</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># zmiennej x przypisz wartość 2</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># wyświetl jej id</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685772794432
+</pre></div>
+
+
+<h2 id="id-dla-int">id dla int<a class="headerlink" href="#id-dla-int" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 2 # zmiennej x przypisz wartość 2
-id(x) # wyświetl jej id
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># zmiennej x przypisz wartość 2</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># wyświetl jej id</span>
+</pre></div>
 
-<pre><code>140685772794432
-</code></pre>
-<pre><code class="python">y = 2 
-id(y) # to samo id co x
-</code></pre>
 
-<pre><code>140685772794432
-</code></pre>
-<pre><code class="python">x is y # zmienne x i y wskazują w to samo miejsce
-</code></pre>
+<div class="codehilite"><pre><span></span>140685772794432
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<h2 id="id-dla-list">id dla list</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># to samo id co x</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685772794432
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span> <span class="c1"># zmienne x i y wskazują w to samo miejsce</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<h2 id="id-dla-list">id dla list<a class="headerlink" href="#id-dla-list" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = [1, 2, 3] # lista
-y = [1, 2, 3] # taka sama lista
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># lista</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># taka sama lista</span>
 
-x == y # rzeczywiście taka sama
-</code></pre>
+<span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="c1"># rzeczywiście taka sama</span>
+</pre></div>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">x is y # ale nie ta sama
-</code></pre>
 
-<pre><code>False
-</code></pre>
-<pre><code class="python">print(id(x), id(y)) # listy mają różne id
-</code></pre>
+<div class="codehilite"><pre><span></span>True
+</pre></div>
 
-<pre><code>140685552423752 140684962057672
-</code></pre>
-<pre><code class="python">x[0] is y[0] # ale elementy już nie
-</code></pre>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">x = y # przypisz zmiennej x obieky y
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span> <span class="c1"># ale nie ta sama</span>
+</pre></div>
 
-x is y # teraz x i y wskazują to samo
-</code></pre>
 
-<pre><code>True
-</code></pre>
-<h2 id="mutable-vs-immutable">Mutable vs Immutable</h2>
+<div class="codehilite"><pre><span></span>False
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># listy mają różne id</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685552423752 140684962057672
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># ale elementy już nie</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="c1"># przypisz zmiennej x obieky y</span>
+
+<span class="n">x</span> <span class="ow">is</span> <span class="n">y</span> <span class="c1"># teraz x i y wskazują to samo</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<h2 id="mutable-vs-immutable">Mutable vs Immutable<a class="headerlink" href="#mutable-vs-immutable" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>immutable: <em>int</em>, <em>float</em>, <em>complex</em>, <em>str</em>, <em>tuple</em>, (<em>frozen set</em>, <em>bytes</em>)<ul>
@@ -1462,101 +2782,175 @@ x is y # teraz x i y wskazują to samo
 </ul>
 </li>
 </ul>
-<h2 id="mutable-vs-immutable_1">Mutable vs Immutable</h2>
+<h2 id="mutable-vs-immutable_1">Mutable vs Immutable<a class="headerlink" href="#mutable-vs-immutable_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 2
-id(x)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>140685772794432
-</code></pre>
-<pre><code class="python">x = 3
-id(x)
-</code></pre>
 
-<pre><code>140685772794464
-</code></pre>
-<pre><code class="python">x = [2]
-id(x)
-</code></pre>
+<div class="codehilite"><pre><span></span>140685772794432
+</pre></div>
 
-<pre><code>140685552461384
-</code></pre>
-<pre><code class="python">x.append(3)
-id(x)
-</code></pre>
 
-<pre><code>140685552461384
-</code></pre>
-<h2 id="konsekwencje">Konsekwencje</h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685772794464
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685552461384
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685552461384
+</pre></div>
+
+
+<h2 id="konsekwencje">Konsekwencje<a class="headerlink" href="#konsekwencje" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = 2 # uwtórz obiekt typu int
-y = x # y wskazuje na to samo co x
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># uwtórz obiekt typu int</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="c1"># y wskazuje na to samo co x</span>
 
-y = 5 # zmieniam y - nowe miejsce w pamięci
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># zmieniam y - nowe miejsce w pamięci</span>
 
-print(x) # x dalej wskazuje na 2
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># x dalej wskazuje na 2</span>
+</pre></div>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">x = [1, 2, 3] # utwórz obiekt typu list
-y = x # y wskazuje na to samo co x
 
-print(id(x), id(y))
-</code></pre>
+<div class="codehilite"><pre><span></span>2
+</pre></div>
 
-<pre><code>140684962055816 140684962055816
-</code></pre>
-<pre><code class="python">y[0] = 4 # modyfikuję y
 
-print(x) # a zmienia się x...
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># utwórz obiekt typu list</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="c1"># y wskazuje na to samo co x</span>
 
-<pre><code>[4, 2, 3]
-</code></pre>
-<h2 id="funkcja-copy">Funkcja <em>copy</em></h2>
-<pre><code class="python">x = [1, 2, 3] # utwórz obiekt typu list
-y = x.copy()  # stwórz kopię tego obiektu
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
 
-print(id(x), id(y)) # teraz są to dwa różne obiekty
-</code></pre>
 
-<pre><code>140685552556616 140685552460232
-</code></pre></div>
+<div class="codehilite"><pre><span></span>140684962055816 140684962055816
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># modyfikuję y</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># a zmienia się x...</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[4, 2, 3]
+</pre></div>
+
+
+<h2 id="funkcja-copy">Funkcja <em>copy</em><a class="headerlink" href="#funkcja-copy" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># utwórz obiekt typu list</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># stwórz kopię tego obiektu</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c1"># teraz są to dwa różne obiekty</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>140685552556616 140685552460232
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w01/" title="Wykład 1" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 1
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w03/" title="Wykład 3" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 3
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

@@ -1,270 +1,1325 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w11/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 11 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 11
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w10/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w12/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-11">Wykład 11</a></li>
-            <li><a href="#na-ostatnim-wykadzie">Na ostatnim wykładzie</a></li>
-            <li><a href="#konwencja-self">Konwencja self</a></li>
-            <li><a href="#self-test">self test</a></li>
-            <li><a href="#funkcja-globalna">Funkcja globalna</a></li>
-            <li><a href="#metoda-z-funkcji-globalnej">Metoda z funkcji globalnej</a></li>
-            <li><a href="#punkt">Punkt</a></li>
-            <li><a href="#odcinek">Odcinek</a></li>
-            <li><a href="#enkapsulacja">Enkapsulacja</a></li>
-            <li><a href="#przykad-czastka">Przykład - cząstka</a></li>
-            <li><a href="#czastka-test">Cząstka - test</a></li>
-            <li><a href="#gettery-i-settery">Gettery i settery</a></li>
-            <li><a href="#get-set-test">get, set - test</a></li>
-            <li><a href="#dziedziczenie">Dziedziczenie</a></li>
-            <li><a href="#przykad">Przykład</a></li>
-            <li><a href="#konstruktor-klasy-bazowej">Konstruktor klasy bazowej</a></li>
-            <li><a href="#wywoanie-konstruktora-bazy">Wywołanie konstruktora bazy</a></li>
-            <li><a href="#przykad-student">Przykład - Student</a></li>
-            <li><a href="#przykad-studentissp">Przykład - StudentISSP</a></li>
-            <li><a href="#polimorfizm">Polimorfizm</a></li>
-            <li><a href="#ryby-gosu-nie-maja">Ryby głosu nie mają</a></li>
-            <li><a href="#wymuszanie-interfejsu">Wymuszanie interfejsu</a></li>
-            <li><a href="#wieksze-wymuszanie-interfejsu">Większe wymuszanie interfejsu</a></li>
-            <li><a href="#przykad-wielokat">Przykład - Wielokąt</a></li>
-            <li><a href="#przykad-trojkat">Przykład - Trójkąt</a></li>
-            <li><a href="#przykad-trojkat-rownoboczny">Przykład - Trójkąt Równoboczny</a></li>
-            <li><a href="#wielokrotne-dziedziczenie">Wielokrotne dziedziczenie</a></li>
-            <li><a href="#przykad-amifibia">Przykład - amifibia</a></li>
-            <li><a href="#przykad-amifibia-v2">Przykład - amifibia v2</a></li>
-            <li><a href="#klasa-screen">Klasa Screen</a></li>
-            <li><a href="#matshow">matshow</a></li>
-            <li><a href="#screen">Screen</a></li>
-            <li><a href="#screen-test">Screen test</a></li>
-            <li><a href="#screen-test-ii">Screen test II</a></li>
-            <li><a href="#zbior-mandelbrota">Zbiór Mandelbrota</a></li>
-            <li><a href="#implementacja">Implementacja</a></li>
-            <li><a href="#przygotowanie-zbioru">Przygotowanie zbioru</a></li>
-            <li><a href="#najsynniejszy-fraktal">Najsłynniejszy fraktal</a></li>
-            <li><a href="#ifs-iterated-function-system">IFS (iterated function system)</a></li>
-            <li><a href="#paproc-barnsleya">Paproć Barnsleya</a></li>
-            <li><a href="#ifs-przykad">IFS - przykład</a></li>
-            <li><a href="#losowanie">Losowanie</a></li>
-            <li><a href="#przygotowanie-danych">Przygotowanie danych</a></li>
-            <li><a href="#wesoych-swiat">Wesołych Świąt</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 11
+      </label>
+    
+    <a href="./" title="Wykład 11" class="md-nav__link md-nav__link--active">
+      Wykład 11
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-11" title="Wykład 11" class="md-nav__link">
+    Wykład 11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#na-ostatnim-wykadzie" title="Na ostatnim wykładzie" class="md-nav__link">
+    Na ostatnim wykładzie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konwencja-self" title="Konwencja self" class="md-nav__link">
+    Konwencja self
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-test" title="self test" class="md-nav__link">
+    self test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcja-globalna" title="Funkcja globalna" class="md-nav__link">
+    Funkcja globalna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metoda-z-funkcji-globalnej" title="Metoda z funkcji globalnej" class="md-nav__link">
+    Metoda z funkcji globalnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punkt" title="Punkt" class="md-nav__link">
+    Punkt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odcinek" title="Odcinek" class="md-nav__link">
+    Odcinek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enkapsulacja" title="Enkapsulacja" class="md-nav__link">
+    Enkapsulacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-czastka" title="Przykład - cząstka" class="md-nav__link">
+    Przykład - cząstka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czastka-test" title="Cząstka - test" class="md-nav__link">
+    Cząstka - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettery-i-settery" title="Gettery i settery" class="md-nav__link">
+    Gettery i settery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-set-test" title="get, set - test" class="md-nav__link">
+    get, set - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dziedziczenie" title="Dziedziczenie" class="md-nav__link">
+    Dziedziczenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konstruktor-klasy-bazowej" title="Konstruktor klasy bazowej" class="md-nav__link">
+    Konstruktor klasy bazowej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wywoanie-konstruktora-bazy" title="Wywołanie konstruktora bazy" class="md-nav__link">
+    Wywołanie konstruktora bazy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-student" title="Przykład - Student" class="md-nav__link">
+    Przykład - Student
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-studentissp" title="Przykład - StudentISSP" class="md-nav__link">
+    Przykład - StudentISSP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polimorfizm" title="Polimorfizm" class="md-nav__link">
+    Polimorfizm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ryby-gosu-nie-maja" title="Ryby głosu nie mają" class="md-nav__link">
+    Ryby głosu nie mają
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-interfejsu" title="Wymuszanie interfejsu" class="md-nav__link">
+    Wymuszanie interfejsu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wieksze-wymuszanie-interfejsu" title="Większe wymuszanie interfejsu" class="md-nav__link">
+    Większe wymuszanie interfejsu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-wielokat" title="Przykład - Wielokąt" class="md-nav__link">
+    Przykład - Wielokąt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-trojkat" title="Przykład - Trójkąt" class="md-nav__link">
+    Przykład - Trójkąt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-trojkat-rownoboczny" title="Przykład - Trójkąt Równoboczny" class="md-nav__link">
+    Przykład - Trójkąt Równoboczny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wielokrotne-dziedziczenie" title="Wielokrotne dziedziczenie" class="md-nav__link">
+    Wielokrotne dziedziczenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-amifibia" title="Przykład - amifibia" class="md-nav__link">
+    Przykład - amifibia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-amifibia-v2" title="Przykład - amifibia v2" class="md-nav__link">
+    Przykład - amifibia v2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klasa-screen" title="Klasa Screen" class="md-nav__link">
+    Klasa Screen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matshow" title="matshow" class="md-nav__link">
+    matshow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen" title="Screen" class="md-nav__link">
+    Screen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-test" title="Screen test" class="md-nav__link">
+    Screen test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-test-ii" title="Screen test II" class="md-nav__link">
+    Screen test II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zbior-mandelbrota" title="Zbiór Mandelbrota" class="md-nav__link">
+    Zbiór Mandelbrota
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacja" title="Implementacja" class="md-nav__link">
+    Implementacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przygotowanie-zbioru" title="Przygotowanie zbioru" class="md-nav__link">
+    Przygotowanie zbioru
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#najsynniejszy-fraktal" title="Najsłynniejszy fraktal" class="md-nav__link">
+    Najsłynniejszy fraktal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifs-iterated-function-system" title="IFS (iterated function system)" class="md-nav__link">
+    IFS (iterated function system)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paproc-barnsleya" title="Paproć Barnsleya" class="md-nav__link">
+    Paproć Barnsleya
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifs-przykad" title="IFS - przykład" class="md-nav__link">
+    IFS - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowanie" title="Losowanie" class="md-nav__link">
+    Losowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przygotowanie-danych" title="Przygotowanie danych" class="md-nav__link">
+    Przygotowanie danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wesoych-swiat" title="Wesołych Świąt" class="md-nav__link">
+    Wesołych Świąt
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-11">Wykład 11</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-11" title="Wykład 11" class="md-nav__link">
+    Wykład 11
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#na-ostatnim-wykadzie" title="Na ostatnim wykładzie" class="md-nav__link">
+    Na ostatnim wykładzie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konwencja-self" title="Konwencja self" class="md-nav__link">
+    Konwencja self
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-test" title="self test" class="md-nav__link">
+    self test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcja-globalna" title="Funkcja globalna" class="md-nav__link">
+    Funkcja globalna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metoda-z-funkcji-globalnej" title="Metoda z funkcji globalnej" class="md-nav__link">
+    Metoda z funkcji globalnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punkt" title="Punkt" class="md-nav__link">
+    Punkt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odcinek" title="Odcinek" class="md-nav__link">
+    Odcinek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enkapsulacja" title="Enkapsulacja" class="md-nav__link">
+    Enkapsulacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-czastka" title="Przykład - cząstka" class="md-nav__link">
+    Przykład - cząstka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czastka-test" title="Cząstka - test" class="md-nav__link">
+    Cząstka - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettery-i-settery" title="Gettery i settery" class="md-nav__link">
+    Gettery i settery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-set-test" title="get, set - test" class="md-nav__link">
+    get, set - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dziedziczenie" title="Dziedziczenie" class="md-nav__link">
+    Dziedziczenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konstruktor-klasy-bazowej" title="Konstruktor klasy bazowej" class="md-nav__link">
+    Konstruktor klasy bazowej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wywoanie-konstruktora-bazy" title="Wywołanie konstruktora bazy" class="md-nav__link">
+    Wywołanie konstruktora bazy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-student" title="Przykład - Student" class="md-nav__link">
+    Przykład - Student
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-studentissp" title="Przykład - StudentISSP" class="md-nav__link">
+    Przykład - StudentISSP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polimorfizm" title="Polimorfizm" class="md-nav__link">
+    Polimorfizm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ryby-gosu-nie-maja" title="Ryby głosu nie mają" class="md-nav__link">
+    Ryby głosu nie mają
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-interfejsu" title="Wymuszanie interfejsu" class="md-nav__link">
+    Wymuszanie interfejsu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wieksze-wymuszanie-interfejsu" title="Większe wymuszanie interfejsu" class="md-nav__link">
+    Większe wymuszanie interfejsu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-wielokat" title="Przykład - Wielokąt" class="md-nav__link">
+    Przykład - Wielokąt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-trojkat" title="Przykład - Trójkąt" class="md-nav__link">
+    Przykład - Trójkąt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-trojkat-rownoboczny" title="Przykład - Trójkąt Równoboczny" class="md-nav__link">
+    Przykład - Trójkąt Równoboczny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wielokrotne-dziedziczenie" title="Wielokrotne dziedziczenie" class="md-nav__link">
+    Wielokrotne dziedziczenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-amifibia" title="Przykład - amifibia" class="md-nav__link">
+    Przykład - amifibia
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-amifibia-v2" title="Przykład - amifibia v2" class="md-nav__link">
+    Przykład - amifibia v2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klasa-screen" title="Klasa Screen" class="md-nav__link">
+    Klasa Screen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matshow" title="matshow" class="md-nav__link">
+    matshow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen" title="Screen" class="md-nav__link">
+    Screen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-test" title="Screen test" class="md-nav__link">
+    Screen test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-test-ii" title="Screen test II" class="md-nav__link">
+    Screen test II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zbior-mandelbrota" title="Zbiór Mandelbrota" class="md-nav__link">
+    Zbiór Mandelbrota
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacja" title="Implementacja" class="md-nav__link">
+    Implementacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przygotowanie-zbioru" title="Przygotowanie zbioru" class="md-nav__link">
+    Przygotowanie zbioru
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#najsynniejszy-fraktal" title="Najsłynniejszy fraktal" class="md-nav__link">
+    Najsłynniejszy fraktal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifs-iterated-function-system" title="IFS (iterated function system)" class="md-nav__link">
+    IFS (iterated function system)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paproc-barnsleya" title="Paproć Barnsleya" class="md-nav__link">
+    Paproć Barnsleya
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifs-przykad" title="IFS - przykład" class="md-nav__link">
+    IFS - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowanie" title="Losowanie" class="md-nav__link">
+    Losowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przygotowanie-danych" title="Przygotowanie danych" class="md-nav__link">
+    Przygotowanie danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wesoych-swiat" title="Wesołych Świąt" class="md-nav__link">
+    Wesołych Świąt
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-11">Wykład 11<a class="headerlink" href="#wykad-11" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>programowania obiektowego ciąg dalszy</li>
 </ul>
-<h2 id="na-ostatnim-wykadzie">Na ostatnim wykładzie</h2>
+<h2 id="na-ostatnim-wykadzie">Na ostatnim wykładzie<a class="headerlink" href="#na-ostatnim-wykadzie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>klasy pozwalają na definiowanie własnych typów</li>
@@ -272,26 +1327,28 @@
 <li>nie ma "pełnej prywatności"</li>
 <li>atrybuty klasowe</li>
 </ul>
-<h2 id="konwencja-self">Konwencja <em>self</em></h2>
+<h2 id="konwencja-self">Konwencja <em>self</em><a class="headerlink" href="#konwencja-self" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pierwszym argumentem każdej metody jest wskaźnik na obiekt</li>
 <li>przyjęto nazywać ten argument <em>self</em> (choć nic nie stoi na przeszkodzie, żeby używać innej nazwy)</li>
 </ul>
-<h2 id="self-test"><em>self</em> test</h2>
+<h2 id="self-test"><em>self</em> test<a class="headerlink" href="#self-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Foo:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
-    def moja_metoda(): # błąd
-        pass
-</code></pre>
+    <span class="k">def</span> <span class="nf">moja_metoda</span><span class="p">():</span> <span class="c1"># błąd</span>
+        <span class="k">pass</span>
+</pre></div>
 
-<pre><code class="python">x = Foo()
-x.moja_metoda()
-# bo x jest pierwszym argumentem pozycyjnym!
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
+<span class="n">x</span><span class="o">.</span><span class="n">moja_metoda</span><span class="p">()</span>
+<span class="c1"># bo x jest pierwszym argumentem pozycyjnym!</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -302,105 +1359,123 @@ TypeError                                 Traceback (most recent call last)
 
 
 TypeError: moja_metoda() takes 0 positional arguments but 1 was given
-</code></pre>
-<h2 id="funkcja-globalna">Funkcja globalna</h2>
+</pre></div>
+
+
+<h2 id="funkcja-globalna">Funkcja globalna<a class="headerlink" href="#funkcja-globalna" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Foo:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
-    def __init__(self): # &quot;konstruktor&quot;
-        self.bar = False
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># &quot;konstruktor&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="bp">False</span>
 
-    def __str__(self): # print
-        return &quot;Foobar = {}&quot;.format(self.bar)
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># print</span>
+        <span class="k">return</span> <span class="s2">&quot;Foobar = {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
 
-def funkcja(obiekt):  # funkcja globalna
-    obiekt.bar = True # ustaw flagę bar
-</code></pre>
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">(</span><span class="n">obiekt</span><span class="p">):</span>  <span class="c1"># funkcja globalna</span>
+    <span class="n">obiekt</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># ustaw flagę bar</span>
+</pre></div>
 
-<pre><code class="python">x = Foo() # stwórz obiekt typu Foo
 
-print(x)
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span> <span class="c1"># stwórz obiekt typu Foo</span>
 
-funkcja(x) # globalna na x
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-print(x)
-</code></pre>
+<span class="n">funkcja</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># globalna na x</span>
 
-<pre><code>Foobar = False
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Foobar = False
 Foobar = True
-</code></pre>
-<h2 id="metoda-z-funkcji-globalnej">Metoda z funkcji globalnej</h2>
+</pre></div>
+
+
+<h2 id="metoda-z-funkcji-globalnej">Metoda z funkcji globalnej<a class="headerlink" href="#metoda-z-funkcji-globalnej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Foo:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
-    def __init__(self): # &quot;konstruktor&quot;
-        self.bar = False
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># &quot;konstruktor&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="bp">False</span>
 
-    def __str__(self): # print
-        return &quot;Foobar = {}&quot;.format(self.bar)
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># print</span>
+        <span class="k">return</span> <span class="s2">&quot;Foobar = {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bar</span><span class="p">)</span>
 
-    def funkcja(obiekt):  # metoda
-        obiekt.bar = True # ustaw flagę bar
-</code></pre>
+    <span class="k">def</span> <span class="nf">funkcja</span><span class="p">(</span><span class="n">obiekt</span><span class="p">):</span>  <span class="c1"># metoda</span>
+        <span class="n">obiekt</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># ustaw flagę bar</span>
+</pre></div>
 
-<pre><code class="python">x = Foo() # stwórz obiekt typu Foo
 
-print(x)
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span> <span class="c1"># stwórz obiekt typu Foo</span>
 
-x.funkcja() # metoda (x jest arg pozycyjnym)
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-print(x)
-</code></pre>
+<span class="n">x</span><span class="o">.</span><span class="n">funkcja</span><span class="p">()</span> <span class="c1"># metoda (x jest arg pozycyjnym)</span>
 
-<pre><code>Foobar = False
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Foobar = False
 Foobar = True
-</code></pre>
-<h2 id="punkt">Punkt</h2>
+</pre></div>
+
+
+<h2 id="punkt">Punkt<a class="headerlink" href="#punkt" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Punkt:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Punkt</span><span class="p">:</span>
 
-    def __init__(self, x=0.0, y=0.0):
-        self.x = x # odcięta 
-        self.y = y # rzędna
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="c1"># odcięta </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="c1"># rzędna</span>
 
-    def __str__(self): # (x, y)
-        return &quot;({}, {})&quot;.format(self.x, self.y)
-</code></pre>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># (x, y)</span>
+        <span class="k">return</span> <span class="s2">&quot;({}, {})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">x = Punkt(1.0, 2.0) 
 
-print(x)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Punkt</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span> 
 
-<pre><code>(1.0, 2.0)
-</code></pre>
-<h2 id="odcinek">Odcinek</h2>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1.0, 2.0)
+</pre></div>
+
+
+<h2 id="odcinek">Odcinek<a class="headerlink" href="#odcinek" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from math import sqrt
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
-class Odcinek:
+<span class="k">class</span> <span class="nc">Odcinek</span><span class="p">:</span>
 
-    def __init__(self, start, end):
-        self.poczatek = start # Punkt
-        self.koniec = end     # Punkt
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">poczatek</span> <span class="o">=</span> <span class="n">start</span> <span class="c1"># Punkt</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">koniec</span> <span class="o">=</span> <span class="n">end</span>     <span class="c1"># Punkt</span>
 
-    def dlugosc(self):
-        # Odcinek.Punkt.Wspolrzedna
-        x = self.koniec.x - self.poczatek.x
-        y = self.koniec.y - self.poczatek.y
-        return sqrt(x**2 + y**2)
-</code></pre>
+    <span class="k">def</span> <span class="nf">dlugosc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Odcinek.Punkt.Wspolrzedna</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">koniec</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">poczatek</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">koniec</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">poczatek</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">a = Punkt()  # (0, 0)
-b = Punkt(2) # (2, 0)
-o = Odcinek(a, b)
 
-o.dlugosc()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Punkt</span><span class="p">()</span>  <span class="c1"># (0, 0)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Punkt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># (2, 0)</span>
+<span class="n">o</span> <span class="o">=</span> <span class="n">Odcinek</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
-<pre><code>2.0
-</code></pre>
-<h2 id="enkapsulacja">Enkapsulacja</h2>
+<span class="n">o</span><span class="o">.</span><span class="n">dlugosc</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2.0
+</pre></div>
+
+
+<h2 id="enkapsulacja">Enkapsulacja<a class="headerlink" href="#enkapsulacja" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>enkapsulacja - ukrywanie implementacji</li>
@@ -408,85 +1483,102 @@ o.dlugosc()
 <li>tylko własne metody moga zmienić stan</li>
 <li>w Pythonie jest to umowne, bo nie ma zmiennych prywatnych</li>
 </ul>
-<h2 id="przykad-czastka">Przykład - cząstka</h2>
+<h2 id="przykad-czastka">Przykład - cząstka<a class="headerlink" href="#przykad-czastka" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Particle:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Particle</span><span class="p">:</span>
 
-    def __init__(self, mass, velocity=0.0):
-        self.m = mass     # masa
-        self.v = velocity # prędkość
-        self.ped()        # ustala pęd
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="o">=</span> <span class="n">mass</span>     <span class="c1"># masa</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">velocity</span> <span class="c1"># prędkość</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ped</span><span class="p">()</span>        <span class="c1"># ustala pęd</span>
 
-    def __str__(self):
-        return &quot;m = {m}, v = {v}, p = {p}&quot;\
-                .format(m=self.m, v=self.v, p=self.p)
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;m = {m}, v = {v}, p = {p}&quot;</span>\
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">)</span>
 
-    def ped(self): # liczy pęd cząstki
-        self.p = self.m*self.v
-</code></pre>
+    <span class="k">def</span> <span class="nf">ped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># liczy pęd cząstki</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span>
+</pre></div>
 
-<h2 id="czastka-test">Cząstka - test</h2>
+
+<h2 id="czastka-test">Cząstka - test<a class="headerlink" href="#czastka-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = Particle(10, 10) # masa = 10, prędkość = 10
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># masa = 10, prędkość = 10</span>
 
-print(x) # pęd = masa * prędkość
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># pęd = masa * prędkość</span>
+</pre></div>
 
-<pre><code>m = 10, v = 10, p = 100
-</code></pre>
-<pre><code class="python">x.v = 0  # zmień prędkość
 
-print(x) # pęd nie został uaktulaniony
-</code></pre>
+<div class="codehilite"><pre><span></span>m = 10, v = 10, p = 100
+</pre></div>
 
-<pre><code>m = 10, v = 0, p = 100
-</code></pre>
-<h2 id="gettery-i-settery"><em>Gettery</em> i <em>settery</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># zmień prędkość</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># pęd nie został uaktulaniony</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>m = 10, v = 0, p = 100
+</pre></div>
+
+
+<h2 id="gettery-i-settery"><em>Gettery</em> i <em>settery</em><a class="headerlink" href="#gettery-i-settery" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Particle:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Particle</span><span class="p">:</span>
 
-    def __init__(self, mass, velocity=0.0):
-        self.__m = mass     # masa
-        self.__v = velocity # prędkość
-        self.ped()          # ustala pęd
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__m</span> <span class="o">=</span> <span class="n">mass</span>     <span class="c1"># masa</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__v</span> <span class="o">=</span> <span class="n">velocity</span> <span class="c1"># prędkość</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ped</span><span class="p">()</span>          <span class="c1"># ustala pęd</span>
 
-    def __str__(self):
-        return &quot;m = {m}, v = {v}, p = {p}&quot;\
-                .format(m=self.__m, v=self.__v, p=self.__p)
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;m = {m}, v = {v}, p = {p}&quot;</span>\
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__m</span><span class="p">,</span> <span class="n">v</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__v</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__p</span><span class="p">)</span>
 
-    def ped(self): # liczy pęd cząstki
-        self.__p = self.__m*self.__v
+    <span class="k">def</span> <span class="nf">ped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># liczy pęd cząstki</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__m</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__v</span>
 
-    def get_v(self): # pobierz prędkośc
-        return self.__v
+    <span class="k">def</span> <span class="nf">get_v</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># pobierz prędkośc</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__v</span>
 
-    def set_v(self, v): # ustaw prędkość
-        self.__v = v
-        self.ped() # aktualizuj pęd
-</code></pre>
+    <span class="k">def</span> <span class="nf">set_v</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span> <span class="c1"># ustaw prędkość</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__v</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ped</span><span class="p">()</span> <span class="c1"># aktualizuj pęd</span>
+</pre></div>
 
-<h2 id="get-set-test"><em>get</em>, <em>set</em> - test</h2>
+
+<h2 id="get-set-test"><em>get</em>, <em>set</em> - test<a class="headerlink" href="#get-set-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = Particle(10, 10) # masa = 10, prędkość = 10
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Particle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># masa = 10, prędkość = 10</span>
 
-print(x)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>m = 10, v = 10, p = 100
-</code></pre>
-<pre><code class="python">x.set_v(0) # zmień prędkość
 
-print(x) # pęd został uaktulaniony
-</code></pre>
+<div class="codehilite"><pre><span></span>m = 10, v = 10, p = 100
+</pre></div>
 
-<pre><code>m = 10, v = 0, p = 0
-</code></pre>
-<pre><code class="python">x.get_v() # pobierz prędkość
-</code></pre>
 
-<pre><code>0
-</code></pre>
-<h2 id="dziedziczenie">Dziedziczenie</h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">set_v</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># zmień prędkość</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># pęd został uaktulaniony</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>m = 10, v = 0, p = 0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">get_v</span><span class="p">()</span> <span class="c1"># pobierz prędkość</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0
+</pre></div>
+
+
+<h2 id="dziedziczenie">Dziedziczenie<a class="headerlink" href="#dziedziczenie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>umożliwia ponowne wykorzystanie funkcjonalności <em>klas bazowych</em> w <em>klasach pochodnych</em></li>
@@ -497,152 +1589,181 @@ print(x) # pęd został uaktulaniony
 </ul>
 </li>
 </ul>
-<h2 id="przykad">Przykład</h2>
+<h2 id="przykad">Przykład<a class="headerlink" href="#przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Baza:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Baza</span><span class="p">:</span>
 
-    def whoami(self):
-        print(&quot;Jestem obiektem klasy Baza.&quot;)
+    <span class="k">def</span> <span class="nf">whoami</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jestem obiektem klasy Baza.&quot;</span><span class="p">)</span>
 
-class Pochodna(Baza): # dziedziczy z Baza
+<span class="k">class</span> <span class="nc">Pochodna</span><span class="p">(</span><span class="n">Baza</span><span class="p">):</span> <span class="c1"># dziedziczy z Baza</span>
 
-    def sayhi(self):
-        print(&quot;Hello!&quot;)
-</code></pre>
+    <span class="k">def</span> <span class="nf">sayhi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">x = Pochodna()
 
-x.sayhi() # zdefiniowane w Pochodna
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Pochodna</span><span class="p">()</span>
 
-<pre><code>Hello!
-</code></pre>
-<pre><code class="python">x.whoami() # zdefiinowane w Baza
-</code></pre>
+<span class="n">x</span><span class="o">.</span><span class="n">sayhi</span><span class="p">()</span> <span class="c1"># zdefiniowane w Pochodna</span>
+</pre></div>
 
-<pre><code>Jestem obiektem klasy Baza.
-</code></pre>
-<h2 id="konstruktor-klasy-bazowej">Konstruktor klasy bazowej</h2>
+
+<div class="codehilite"><pre><span></span>Hello!
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">whoami</span><span class="p">()</span> <span class="c1"># zdefiinowane w Baza</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Jestem obiektem klasy Baza.
+</pre></div>
+
+
+<h2 id="konstruktor-klasy-bazowej">Konstruktor klasy bazowej<a class="headerlink" href="#konstruktor-klasy-bazowej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Foo:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
-    def __init__(self):
-        print(&quot;Tworzę Foo&quot;)
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Tworzę Foo&quot;</span><span class="p">)</span>
 
-class Bar(Foo):
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
 
-    def __init__(self):
-        print(&quot;Tworzę Bar&quot;)
-</code></pre>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Tworzę Bar&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">x = Bar() # __init__ z Foo nie jest wywołany
-</code></pre>
 
-<pre><code>Tworzę Bar
-</code></pre>
-<h2 id="wywoanie-konstruktora-bazy">Wywołanie konstruktora bazy</h2>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">()</span> <span class="c1"># __init__ z Foo nie jest wywołany</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Tworzę Bar
+</pre></div>
+
+
+<h2 id="wywoanie-konstruktora-bazy">Wywołanie konstruktora bazy<a class="headerlink" href="#wywoanie-konstruktora-bazy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Foo:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
 
-    def __init__(self):
-        print(&quot;Tworzę Foo&quot;)
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Tworzę Foo&quot;</span><span class="p">)</span>
 
-class Bar(Foo):
+<span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="n">Foo</span><span class="p">):</span>
 
-    def __init__(self):
-        super().__init__() # wywołaj konstruktor klasy nadrzędnej
-        print(&quot;Tworzę Bar&quot;)
-</code></pre>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span> <span class="c1"># wywołaj konstruktor klasy nadrzędnej</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Tworzę Bar&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">x = Bar()
-</code></pre>
 
-<pre><code>Tworzę Foo
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Tworzę Foo
 Tworzę Bar
-</code></pre>
-<h2 id="przykad-student">Przykład - Student</h2>
+</pre></div>
+
+
+<h2 id="przykad-student">Przykład - Student<a class="headerlink" href="#przykad-student" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Student:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
 
-    last_index = 1234 # atrybut klasy
+    <span class="n">last_index</span> <span class="o">=</span> <span class="mi">1234</span> <span class="c1"># atrybut klasy</span>
 
-    def __init__(self, name):
-        # aktualizuj numer indeksu
-        self.__class__.last_index += 1
-        # przypisz studentowi imię i numer indeksu
-        self.name = name
-        self.index = self.__class__.last_index
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="c1"># aktualizuj numer indeksu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">last_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># przypisz studentowi imię i numer indeksu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">last_index</span>
 
-    def __str__(self): # Student [imię] (nr indeksu)
-        return &quot;Student {} (nr {})&quot;.format(self.name, self.index)
-</code></pre>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># Student [imię] (nr indeksu)</span>
+        <span class="k">return</span> <span class="s2">&quot;Student {} (nr {})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">student = Student(&quot;Anna&quot;)
 
-print(student)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Anna&quot;</span><span class="p">)</span>
 
-<pre><code>Student Anna (nr 1235)
-</code></pre>
-<h2 id="przykad-studentissp">Przykład - StudentISSP</h2>
+<span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Student Anna (nr 1235)
+</pre></div>
+
+
+<h2 id="przykad-studentissp">Przykład - StudentISSP<a class="headerlink" href="#przykad-studentissp" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class StudentISSP(Student): # też Student
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">StudentISSP</span><span class="p">(</span><span class="n">Student</span><span class="p">):</span> <span class="c1"># też Student</span>
 
-    def __init__(self, name, przedmioty):
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">przedmioty</span><span class="p">):</span>
 
-        super().__init__(name) # wywołaj Student.__init__
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1"># wywołaj Student.__init__</span>
 
-        self.przedmioty = przedmioty
+        <span class="bp">self</span><span class="o">.</span><span class="n">przedmioty</span> <span class="o">=</span> <span class="n">przedmioty</span>
 
-    def __str__(self):
-        return super().__str__() + \
-                &quot;: &quot; + &quot;, &quot;.join(self.przedmioty)
-</code></pre>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span> <span class="o">+</span> \
+                <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">przedmioty</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">studentISSP = StudentISSP(&quot;Jan&quot;, [&quot;programowanie&quot;, &quot;fizyka&quot;])
 
-print(studentISSP)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">studentISSP</span> <span class="o">=</span> <span class="n">StudentISSP</span><span class="p">(</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;programowanie&quot;</span><span class="p">,</span> <span class="s2">&quot;fizyka&quot;</span><span class="p">])</span>
 
-<pre><code>Student Jan (nr 1236): programowanie, fizyka
-</code></pre>
-<h2 id="polimorfizm">Polimorfizm</h2>
+<span class="k">print</span><span class="p">(</span><span class="n">studentISSP</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Student Jan (nr 1236): programowanie, fizyka
+</pre></div>
+
+
+<h2 id="polimorfizm">Polimorfizm<a class="headerlink" href="#polimorfizm" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>współdzielenie <em>interfejsu</em> przez różne typy</li>
 </ul>
-<pre><code class="python">class Kot:
-    def glos(self):
-        print(&quot;Miau&quot;)
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Kot</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Miau&quot;</span><span class="p">)</span>
 
-class Pies:
-    def glos(self):
-        print(&quot;Hau&quot;)
+<span class="k">class</span> <span class="nc">Pies</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hau&quot;</span><span class="p">)</span>
 
-class Krowa:
-    def glos(self):
-        print(&quot;Muu&quot;) 
-</code></pre>
+<span class="k">class</span> <span class="nc">Krowa</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Muu&quot;</span><span class="p">)</span> 
+</pre></div>
 
-<pre><code class="python">for zwierze in [Kot(), Pies(), Krowa()]:
-    zwierze.glos() # za każdym razem inny typ
-</code></pre>
 
-<pre><code>Miau
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">zwierze</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Kot</span><span class="p">(),</span> <span class="n">Pies</span><span class="p">(),</span> <span class="n">Krowa</span><span class="p">()]:</span>
+    <span class="n">zwierze</span><span class="o">.</span><span class="n">glos</span><span class="p">()</span> <span class="c1"># za każdym razem inny typ</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Miau
 Hau
 Muu
-</code></pre>
-<h2 id="ryby-gosu-nie-maja">Ryby głosu nie mają</h2>
+</pre></div>
+
+
+<h2 id="ryby-gosu-nie-maja">Ryby głosu nie mają<a class="headerlink" href="#ryby-gosu-nie-maja" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Ryba:
-    pass # brak definicji glos
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Ryba</span><span class="p">:</span>
+    <span class="k">pass</span> <span class="c1"># brak definicji glos</span>
+</pre></div>
 
-<pre><code class="python">for zwierze in [Kot(), Pies(), Krowa(), Ryba()]:
-    zwierze.glos() # Ryba nie ma zdefiniowanej metody glos
-</code></pre>
 
-<pre><code>Miau
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">zwierze</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Kot</span><span class="p">(),</span> <span class="n">Pies</span><span class="p">(),</span> <span class="n">Krowa</span><span class="p">(),</span> <span class="n">Ryba</span><span class="p">()]:</span>
+    <span class="n">zwierze</span><span class="o">.</span><span class="n">glos</span><span class="p">()</span> <span class="c1"># Ryba nie ma zdefiniowanej metody glos</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Miau
 Hau
 Muu
 
@@ -657,47 +1778,55 @@ AttributeError                            Traceback (most recent call last)
 ----&gt; 2     zwierze.glos() # Ryba nie ma zdefiniowanej metody glos
 
 
-AttributeError: 'Ryba' object has no attribute 'glos'
-</code></pre>
-<h2 id="wymuszanie-interfejsu">Wymuszanie interfejsu</h2>
+AttributeError: &#39;Ryba&#39; object has no attribute &#39;glos&#39;
+</pre></div>
+
+
+<h2 id="wymuszanie-interfejsu">Wymuszanie interfejsu<a class="headerlink" href="#wymuszanie-interfejsu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Zwierze:
-    def glos(self):
-        pass
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Zwierze</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
 
-class Kot(Zwierze):
-    def glos(self): # nadpisuje Zwierze.glos
-        print(&quot;Miau&quot;)
+<span class="k">class</span> <span class="nc">Kot</span><span class="p">(</span><span class="n">Zwierze</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># nadpisuje Zwierze.glos</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Miau&quot;</span><span class="p">)</span>
 
-class Ryba(Zwierze):
-    pass
-</code></pre>
+<span class="k">class</span> <span class="nc">Ryba</span><span class="p">(</span><span class="n">Zwierze</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
 
-<pre><code class="python">for zwierze in [Kot(), Ryba()]:
-    zwierze.glos() # Ryba siedzi cicho
-</code></pre>
 
-<pre><code>Miau
-</code></pre>
-<h2 id="wieksze-wymuszanie-interfejsu">Większe wymuszanie interfejsu</h2>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">zwierze</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Kot</span><span class="p">(),</span> <span class="n">Ryba</span><span class="p">()]:</span>
+    <span class="n">zwierze</span><span class="o">.</span><span class="n">glos</span><span class="p">()</span> <span class="c1"># Ryba siedzi cicho</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Miau
+</pre></div>
+
+
+<h2 id="wieksze-wymuszanie-interfejsu">Większe wymuszanie interfejsu<a class="headerlink" href="#wieksze-wymuszanie-interfejsu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Zwierze:
-    def glos(self):
-        raise NotImplementedError(&quot;Każde zwiesze musi mieć głos.&quot;)
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Zwierze</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Każde zwiesze musi mieć głos.&quot;</span><span class="p">)</span>
 
-class Kot(Zwierze):
-    def glos(self): # nadpisuje Zwierze.glos
-        print(&quot;Miau&quot;)
+<span class="k">class</span> <span class="nc">Kot</span><span class="p">(</span><span class="n">Zwierze</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">glos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># nadpisuje Zwierze.glos</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Miau&quot;</span><span class="p">)</span>
 
-class Ryba(Zwierze):
-    pass
-</code></pre>
+<span class="k">class</span> <span class="nc">Ryba</span><span class="p">(</span><span class="n">Zwierze</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
 
-<pre><code class="python">for zwierze in [Kot(), Ryba()]:
-    zwierze.glos() # Ryba zwróci błąd
-</code></pre>
 
-<pre><code>Miau
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">zwierze</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Kot</span><span class="p">(),</span> <span class="n">Ryba</span><span class="p">()]:</span>
+    <span class="n">zwierze</span><span class="o">.</span><span class="n">glos</span><span class="p">()</span> <span class="c1"># Ryba zwróci błąd</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Miau
 
 
 
@@ -713,260 +1842,302 @@ NotImplementedError                       Traceback (most recent call last)
 &lt;ipython-input-35-e744aa713040&gt; in glos(self)
       1 class Zwierze:
       2     def glos(self):
-----&gt; 3         raise NotImplementedError("Każde zwiesze musi mieć głos.")
+----&gt; 3         raise NotImplementedError(&quot;Każde zwiesze musi mieć głos.&quot;)
       4 
       5 class Kot(Zwierze):
 
 
 NotImplementedError: Każde zwiesze musi mieć głos.
-</code></pre>
-<h2 id="przykad-wielokat">Przykład - Wielokąt</h2>
+</pre></div>
+
+
+<h2 id="przykad-wielokat">Przykład - Wielokąt<a class="headerlink" href="#przykad-wielokat" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Wielokat:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Wielokat</span><span class="p">:</span>
 
-    def __init__(self, *boki):
-        self.boki = boki # krotka
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">boki</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boki</span> <span class="o">=</span> <span class="n">boki</span> <span class="c1"># krotka</span>
 
-    def obwod(self):          # suma długości
-        return sum(self.boki) # boków
+    <span class="k">def</span> <span class="nf">obwod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>          <span class="c1"># suma długości</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boki</span><span class="p">)</span> <span class="c1"># boków</span>
 
-    def pole(self): raise NotImplementedError
-</code></pre>
+    <span class="k">def</span> <span class="nf">pole</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
 
-<pre><code class="python">w = Wielokat(1, 2, 3, 4, 5) # pięciokąt
 
-w.obwod()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">Wielokat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># pięciokąt</span>
 
-<pre><code>15
-</code></pre>
-<h2 id="przykad-trojkat">Przykład - Trójkąt</h2>
+<span class="n">w</span><span class="o">.</span><span class="n">obwod</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>15
+</pre></div>
+
+
+<h2 id="przykad-trojkat">Przykład - Trójkąt<a class="headerlink" href="#przykad-trojkat" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Trojkat(Wielokat):
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Trojkat</span><span class="p">(</span><span class="n">Wielokat</span><span class="p">):</span>
 
-    def __init__(self, *boki):
-        super().__init__(*boki) # utwórz wielokąt
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">boki</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">boki</span><span class="p">)</span> <span class="c1"># utwórz wielokąt</span>
 
-    def pole(self):
-        pole = p = self.obwod()/2 # obwod zdefiniowane w Wielokat
+    <span class="k">def</span> <span class="nf">pole</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pole</span> <span class="o">=</span> <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obwod</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># obwod zdefiniowane w Wielokat</span>
 
-        for bok in self.boki: # wzór Herona
-            pole *= (p - bok) # p(p - a)(p - b)(p - c)
+        <span class="k">for</span> <span class="n">bok</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">boki</span><span class="p">:</span> <span class="c1"># wzór Herona</span>
+            <span class="n">pole</span> <span class="o">*=</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">bok</span><span class="p">)</span> <span class="c1"># p(p - a)(p - b)(p - c)</span>
 
-        return pole**0.5 # pierwiastek
-</code></pre>
+        <span class="k">return</span> <span class="n">pole</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># pierwiastek</span>
+</pre></div>
 
-<pre><code class="python">t = Trojkat(3, 4, 5)
 
-t.obwod() # z Wielokat
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Trojkat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 
-<pre><code>12
-</code></pre>
-<pre><code class="python">t.pole() # z Pole
-</code></pre>
+<span class="n">t</span><span class="o">.</span><span class="n">obwod</span><span class="p">()</span> <span class="c1"># z Wielokat</span>
+</pre></div>
 
-<pre><code>6.0
-</code></pre>
-<h2 id="przykad-trojkat-rownoboczny">Przykład - Trójkąt Równoboczny</h2>
+
+<div class="codehilite"><pre><span></span>12
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">pole</span><span class="p">()</span> <span class="c1"># z Pole</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>6.0
+</pre></div>
+
+
+<h2 id="przykad-trojkat-rownoboczny">Przykład - Trójkąt Równoboczny<a class="headerlink" href="#przykad-trojkat-rownoboczny" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class TrojkatR(Trojkat):
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">TrojkatR</span><span class="p">(</span><span class="n">Trojkat</span><span class="p">):</span>
 
-    def __init__(self, bok):
-        super().__init__(bok, bok, bok) # Trójkąt -&gt; Wielokąt
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bok</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">bok</span><span class="p">,</span> <span class="n">bok</span><span class="p">,</span> <span class="n">bok</span><span class="p">)</span> <span class="c1"># Trójkąt -&gt; Wielokąt</span>
 
-    def pole(self):
-        return (self.boki[0]**2)*(3**0.5)/4
-</code></pre>
+    <span class="k">def</span> <span class="nf">pole</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boki</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
 
-<pre><code class="python">t = TrojkatR(3) # (3, 3, 3)
 
-t.pole() # TrojkatR.pole()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">TrojkatR</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># (3, 3, 3)</span>
 
-<pre><code>3.8971143170299736
-</code></pre>
-<pre><code class="python">t = Trojkat(3, 3, 3)
+<span class="n">t</span><span class="o">.</span><span class="n">pole</span><span class="p">()</span> <span class="c1"># TrojkatR.pole()</span>
+</pre></div>
 
-t.pole() # Trojkat.pole() 
-</code></pre>
 
-<pre><code>3.897114317029974
-</code></pre>
-<h2 id="wielokrotne-dziedziczenie">Wielokrotne dziedziczenie</h2>
+<div class="codehilite"><pre><span></span>3.8971143170299736
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Trojkat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">pole</span><span class="p">()</span> <span class="c1"># Trojkat.pole() </span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3.897114317029974
+</pre></div>
+
+
+<h2 id="wielokrotne-dziedziczenie">Wielokrotne dziedziczenie<a class="headerlink" href="#wielokrotne-dziedziczenie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>klasa może posiadać kilka klas bazowych</li>
 <li>posiada wtedy wszystkie dane i metody</li>
 <li>a co jeśli się powtarzają?</li>
 </ul>
-<h2 id="przykad-amifibia">Przykład - amifibia</h2>
+<h2 id="przykad-amifibia">Przykład - amifibia<a class="headerlink" href="#przykad-amifibia" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Samochod:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Samochod</span><span class="p">:</span>
 
-    def jedz(self):
-        print(&quot;Jadę...&quot;)
+    <span class="k">def</span> <span class="nf">jedz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jadę...&quot;</span><span class="p">)</span>
 
-class Lodz:
+<span class="k">class</span> <span class="nc">Lodz</span><span class="p">:</span>
 
-    def plyn(self):
-        print(&quot;Płynę...&quot;)
+    <span class="k">def</span> <span class="nf">plyn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Płynę...&quot;</span><span class="p">)</span>
 
-class Amfibia(Samochod, Lodz): pass
-</code></pre>
+<span class="k">class</span> <span class="nc">Amfibia</span><span class="p">(</span><span class="n">Samochod</span><span class="p">,</span> <span class="n">Lodz</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
 
-<pre><code class="python">amfibia = Amfibia()
 
-amfibia.jedz() # Samochod
-amfibia.plyn() # Lodz
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">amfibia</span> <span class="o">=</span> <span class="n">Amfibia</span><span class="p">()</span>
 
-<pre><code>Jadę...
+<span class="n">amfibia</span><span class="o">.</span><span class="n">jedz</span><span class="p">()</span> <span class="c1"># Samochod</span>
+<span class="n">amfibia</span><span class="o">.</span><span class="n">plyn</span><span class="p">()</span> <span class="c1"># Lodz</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Jadę...
 Płynę...
-</code></pre>
-<h2 id="przykad-amifibia-v2">Przykład - amifibia v2</h2>
+</pre></div>
+
+
+<h2 id="przykad-amifibia-v2">Przykład - amifibia v2<a class="headerlink" href="#przykad-amifibia-v2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Samochod:
-    def run(self):
-        print(&quot;Jadę...&quot;)
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Samochod</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jadę...&quot;</span><span class="p">)</span>
 
-class Lodz:
-    def run(self):
-        print(&quot;Płynę...&quot;)
+<span class="k">class</span> <span class="nc">Lodz</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Płynę...&quot;</span><span class="p">)</span>
 
-class Amfibia1(Samochod, Lodz): pass
-class Amfibia2(Lodz, Samochod): pass
-</code></pre>
+<span class="k">class</span> <span class="nc">Amfibia1</span><span class="p">(</span><span class="n">Samochod</span><span class="p">,</span> <span class="n">Lodz</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">Amfibia2</span><span class="p">(</span><span class="n">Lodz</span><span class="p">,</span> <span class="n">Samochod</span><span class="p">):</span> <span class="k">pass</span>
+</pre></div>
 
-<pre><code class="python">amifibia1 = Amfibia1()
-amifibia1.run()
-</code></pre>
 
-<pre><code>Jadę...
-</code></pre>
-<pre><code class="python">amifibia2 = Amfibia2()
-amifibia2.run()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">amifibia1</span> <span class="o">=</span> <span class="n">Amfibia1</span><span class="p">()</span>
+<span class="n">amifibia1</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>Płynę...
-</code></pre>
-<h2 id="klasa-screen">Klasa Screen</h2>
+
+<div class="codehilite"><pre><span></span>Jadę...
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">amifibia2</span> <span class="o">=</span> <span class="n">Amfibia2</span><span class="p">()</span>
+<span class="n">amifibia2</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Płynę...
+</pre></div>
+
+
+<h2 id="klasa-screen">Klasa Screen<a class="headerlink" href="#klasa-screen" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>napiszemy klasę, która będzie naszym wirtualnym ekranem</li>
 <li>do <em>rysowania</em> użyjemy modułu <em>matplotlib</em></li>
 </ul>
-<pre><code class="python">%matplotlib inline
-import matplotlib.pyplot as plt
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</pre></div>
 
-<h2 id="matshow"><em>matshow</em></h2>
+
+<h2 id="matshow"><em>matshow</em><a class="headerlink" href="#matshow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">tablica = [[0]*5 for _ in range(5)] # tablica 5x5
+<div class="codehilite"><pre><span></span><span class="n">tablica</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span> <span class="c1"># tablica 5x5</span>
 
-for i in range(5):
-    tablica[i][0] = i + 1 # pierwsza kolumna
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">tablica</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># pierwsza kolumna</span>
 
-print(tablica)
+<span class="k">print</span><span class="p">(</span><span class="n">tablica</span><span class="p">)</span>
 
-plt.matshow(tablica) # &quot;rysuj&quot; tablicę
-</code></pre>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">tablica</span><span class="p">)</span> <span class="c1"># &quot;rysuj&quot; tablicę</span>
+</pre></div>
 
-<pre><code>[[1, 0, 0, 0, 0], [2, 0, 0, 0, 0], [3, 0, 0, 0, 0], [4, 0, 0, 0, 0], [5, 0, 0, 0, 0]]
+
+<div class="codehilite"><pre><span></span>[[1, 0, 0, 0, 0], [2, 0, 0, 0, 0], [3, 0, 0, 0, 0], [4, 0, 0, 0, 0], [5, 0, 0, 0, 0]]
 
 
 
 
 
 &lt;matplotlib.image.AxesImage at 0x7f2c74549978&gt;
-</code></pre>
+</pre></div>
+
+
 <p><img alt="png" src="../js-python_w11_files/js-python_w11_81_2.png" /></p>
-<h2 id="screen">Screen</h2>
+<h2 id="screen">Screen<a class="headerlink" href="#screen" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Screen:
-    &quot;&quot;&quot;Ekran na bazie matplotlib.pyplot.matshow&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Screen</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Ekran na bazie matplotlib.pyplot.matshow&quot;&quot;&quot;</span>
 
-    def __init__(self, width, height): # ustal wymiary ekrany
-        self.w = width  # zapamiętaj szerokość
-        self.h = height # zapamiętaj wysokość
-        self.pixels = [[0]*width for _ in range(height)]
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span> <span class="c1"># ustal wymiary ekrany</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">width</span>  <span class="c1"># zapamiętaj szerokość</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">height</span> <span class="c1"># zapamiętaj wysokość</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixels</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">width</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">)]</span>
 
-    def show(self, cmap=plt.cm.gray_r):
-        plt.matshow(self.pixels, origin='lower', cmap=cmap)
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pixels</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
 
-    def set(self, y, x, value): # ustaw wartość piksela
-        if y &lt; self.w and x &lt; self.h: # x &lt;-&gt; y
-            self.pixels[x][y] = value # dla naszej wygody
-</code></pre>
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span> <span class="c1"># ustaw wartość piksela</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="c1"># x &lt;-&gt; y</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pixels</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="c1"># dla naszej wygody</span>
+</pre></div>
 
-<h2 id="screen-test">Screen test</h2>
+
+<h2 id="screen-test">Screen test<a class="headerlink" href="#screen-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">s = Screen(10, 4)
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
-s.set(5, 1, 10) # [5,1] = 10
-s.set(1, 2, 50) # [1,2] = 50
+<span class="n">s</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># [5,1] = 10</span>
+<span class="n">s</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1"># [1,2] = 50</span>
 
-s.show()
-</code></pre>
+<span class="n">s</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
 
 <p><img alt="png" src="../js-python_w11_files/js-python_w11_85_0.png" /></p>
-<h2 id="screen-test-ii">Screen test II</h2>
+<h2 id="screen-test-ii">Screen test II<a class="headerlink" href="#screen-test-ii" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">s = Screen(200, 20)
+<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
-for x in range(200):
-    s.set(x, int(x**0.5), x)
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 
-s.show()
-</code></pre>
+<span class="n">s</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
 
 <p><img alt="png" src="../js-python_w11_files/js-python_w11_87_0.png" /></p>
-<h2 id="zbior-mandelbrota">Zbiór Mandelbrota</h2>
+<h2 id="zbior-mandelbrota">Zbiór Mandelbrota<a class="headerlink" href="#zbior-mandelbrota" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>punkty <span>\(p\)</span> (zespolone), dla których ciąg</li>
 </ul>
 <span>\[z_{n+1} = z_n^2 + p\]</span><p>(gdzie <span>\(z_0 = 0\)</span>) nie dąży do nieskończoności lub</p>
-<span>\[|z_n| &lt; 2\]</span><h2 id="implementacja">Implementacja</h2>
+<span>\[|z_n| &lt; 2\]</span><h2 id="implementacja">Implementacja<a class="headerlink" href="#implementacja" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def mandelbrot(p, limit=100):
-    &quot;&quot;&quot;Zwraca n, dla którego |zn| &lt; 2&quot;&quot;&quot;
-    zn = p # bo z0 = 0
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">mandelbrot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca n, dla którego |zn| &lt; 2&quot;&quot;&quot;</span>
+    <span class="n">zn</span> <span class="o">=</span> <span class="n">p</span> <span class="c1"># bo z0 = 0</span>
 
-    for i in range(limit): # sprawdzamy do pewnego momentu
-        if abs(zn) &gt; 2: # zwróć miejsce, w którym
-            return i    # warunek nie jest już spełniony
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span> <span class="c1"># sprawdzamy do pewnego momentu</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">zn</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># zwróć miejsce, w którym</span>
+            <span class="k">return</span> <span class="n">i</span>    <span class="c1"># warunek nie jest już spełniony</span>
 
-        zn = zn**2 + p # następny wyraz ciągu
+        <span class="n">zn</span> <span class="o">=</span> <span class="n">zn</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">p</span> <span class="c1"># następny wyraz ciągu</span>
 
-    return limit # warunek spełniony do limitu
-</code></pre>
+    <span class="k">return</span> <span class="n">limit</span> <span class="c1"># warunek spełniony do limitu</span>
+</pre></div>
 
-<h2 id="przygotowanie-zbioru">Przygotowanie zbioru</h2>
+
+<h2 id="przygotowanie-zbioru">Przygotowanie zbioru<a class="headerlink" href="#przygotowanie-zbioru" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">size = 1000
+<div class="codehilite"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
 
-s = Screen(size, size)
+<span class="n">s</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 
-# podwójna pętla po wszystkich pikselach
-for x in range(size):
-    for y in range(size):
-        xs = -2.0 + 2.5 * x / size   # [-2.0, 0.5]
-        ys = -1.25 + 2.5 * y / size # [-1.25, 1.25]
-        s.set(x, y, mandelbrot(complex(xs, ys)))
-</code></pre>
+<span class="c1"># podwójna pętla po wszystkich pikselach</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">size</span>   <span class="c1"># [-2.0, 0.5]</span>
+        <span class="n">ys</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.25</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">y</span> <span class="o">/</span> <span class="n">size</span> <span class="c1"># [-1.25, 1.25]</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">mandelbrot</span><span class="p">(</span><span class="nb">complex</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)))</span>
+</pre></div>
 
-<h2 id="najsynniejszy-fraktal">Najsłynniejszy fraktal</h2>
+
+<h2 id="najsynniejszy-fraktal">Najsłynniejszy fraktal<a class="headerlink" href="#najsynniejszy-fraktal" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import matplotlib
-matplotlib.rcParams['figure.figsize'] = (10, 8)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">s.show()
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
 
 <p><img alt="png" src="../js-python_w11_files/js-python_w11_95_0.png" /></p>
-<h2 id="ifs-iterated-function-system">IFS (<em>iterated function system</em>)</h2>
+<h2 id="ifs-iterated-function-system">IFS (<em>iterated function system</em>)<a class="headerlink" href="#ifs-iterated-function-system" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>geometria fraktalna</li>
@@ -978,100 +2149,156 @@ $$f_3(x, y) = (0.20x - 0.26y, 0.23x + 0.22y + 1.6)$$
 $$f_4(x, y) = (0, 0.16y)\]</span><ul>
 <li>w proporcjach 85:7:71</li>
 </ul>
-<h2 id="paproc-barnsleya">Paproć Barnsleya</h2>
+<h2 id="paproc-barnsleya">Paproć Barnsleya<a class="headerlink" href="#paproc-barnsleya" title="Permanent link">&para;</a></h2>
 <hr />
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Fractal_fern-Barnsley_animation.gif" /></p>
-<h2 id="ifs-przykad">IFS - przykład</h2>
+<h2 id="ifs-przykad">IFS - przykład<a class="headerlink" href="#ifs-przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># źródło: https://scratch.mit.edu/projects/92421819/
+<div class="codehilite"><pre><span></span><span class="c1"># źródło: https://scratch.mit.edu/projects/92421819/</span>
 
-def f1(x, y): return 0.03*x, 0.1*y
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="mf">0.03</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">y</span>
 
-def f2(x, y): return 0.85*x, 0.85*y + 1.5
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="mf">0.85</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.85</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">1.5</span>
 
-def f3(x, y): return 0.8*x, 0.8*y + 1.5
+<span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">1.5</span>
 
-def f4(x, y): return 0.2*x - 0.08*y, 0.15*x + 0.22*y + 0.85
+<span class="k">def</span> <span class="nf">f4</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.08</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.15</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.22</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.85</span>
 
-def f5(x, y): return -0.2*x + 0.08*y, 0.15*x + 0.22*y + 0.85
+<span class="k">def</span> <span class="nf">f5</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.08</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.15</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.22</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.85</span>
 
-def f6(x, y): return 0.25*x-0.1*y, 0.12*x + 0.25*y + 0.3
+<span class="k">def</span> <span class="nf">f6</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="mf">0.25</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.12</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.3</span>
 
-def f7(x, y): return -0.2*x + 0.1*y, 0.12*x + 0.2*y + 0.4
-</code></pre>
+<span class="k">def</span> <span class="nf">f7</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.12</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.4</span>
+</pre></div>
 
-<h2 id="losowanie">Losowanie</h2>
+
+<h2 id="losowanie">Losowanie<a class="headerlink" href="#losowanie" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from random import randint
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
-def random_f():
-    # proporcje 2:60:10:7:7:7:7
-    x = randint(1,100)
-    if x &lt;= 2: return f1
-    if x &lt;= 62: return f2
-    if x &lt;= 72: return f3
-    if x &lt;= 79: return f4
-    if x &lt;= 86: return f5
-    if x &lt;= 93: return f6
-    return f7
-</code></pre>
+<span class="k">def</span> <span class="nf">random_f</span><span class="p">():</span>
+    <span class="c1"># proporcje 2:60:10:7:7:7:7</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="n">f1</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">62</span><span class="p">:</span> <span class="k">return</span> <span class="n">f2</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">72</span><span class="p">:</span> <span class="k">return</span> <span class="n">f3</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">79</span><span class="p">:</span> <span class="k">return</span> <span class="n">f4</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">86</span><span class="p">:</span> <span class="k">return</span> <span class="n">f5</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">93</span><span class="p">:</span> <span class="k">return</span> <span class="n">f6</span>
+    <span class="k">return</span> <span class="n">f7</span>
+</pre></div>
 
-<h2 id="przygotowanie-danych">Przygotowanie danych</h2>
+
+<h2 id="przygotowanie-danych">Przygotowanie danych<a class="headerlink" href="#przygotowanie-danych" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">n_iter = 100000
-size = 1000
+<div class="codehilite"><pre><span></span><span class="n">n_iter</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span>
 
-s = Screen(size, size)
+<span class="n">s</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 
-x, y = 0, 0 # punkt początkowy
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="c1"># punkt początkowy</span>
 
-for _ in range(n_iter):
-    f = random_f() # losowa funkcja
-    x, y = f(x, y) # nowe współrzędne
-    xs = (x + 1.0) * size / 2
-    ys = y * size / 10.0
-    s.set(int(xs), int(ys), 500 - abs(xs - 500))
-</code></pre>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">random_f</span><span class="p">()</span> <span class="c1"># losowa funkcja</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># nowe współrzędne</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">size</span> <span class="o">/</span> <span class="mf">10.0</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ys</span><span class="p">),</span> <span class="mi">500</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xs</span> <span class="o">-</span> <span class="mi">500</span><span class="p">))</span>
+</pre></div>
 
-<h2 id="wesoych-swiat">Wesołych Świąt</h2>
+
+<h2 id="wesoych-swiat">Wesołych Świąt<a class="headerlink" href="#wesoych-swiat" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">s.show(plt.cm.Greens)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">)</span>
+</pre></div>
 
-<p><img alt="png" src="../js-python_w11_files/js-python_w11_105_0.png" /></p></div>
+
+<p><img alt="png" src="../js-python_w11_files/js-python_w11_105_0.png" /></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w10/" title="Wykład 10" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 10
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w12/" title="Wykład 12" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 12
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

@@ -1,275 +1,1460 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w07/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 7 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 7
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w06/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w08/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-7">Wykład 7</a></li>
-            <li><a href="#modu-os">Moduł os</a></li>
-            <li><a href="#system-operacyjny">System operacyjny</a></li>
-            <li><a href="#katalog-roboczy">Katalog roboczy</a></li>
-            <li><a href="#zawartosc-katalogu">Zawartość katalogu</a></li>
-            <li><a href="#tworzenie-usuwanie-katalogow">Tworzenie / usuwanie katalogów</a></li>
-            <li><a href="#tworzenie-usuwanie-plikow">Tworzenie / usuwanie plików</a></li>
-            <li><a href="#drzewo-katalogow">Drzewo katalogów</a></li>
-            <li><a href="#modu-ospath">Moduł os.path</a></li>
-            <li><a href="#wiecej-o-ospath">Więcej o os.path</a></li>
-            <li><a href="#zmienne-srodowiskowe">Zmienne środowiskowe</a></li>
-            <li><a href="#usos">USOS</a></li>
-            <li><a href="#zmienna-srodowiskowa-usos">Zmienna środowiskowa USOS</a></li>
-            <li><a href="#usos-dodawanie-studenta">USOS - dodawanie studenta</a></li>
-            <li><a href="#usos-przykad">USOS - przykład</a></li>
-            <li><a href="#usos-wynik">USOS - wynik</a></li>
-            <li><a href="#oswalk">os.walk</a></li>
-            <li><a href="#oswalk_1">os.walk</a></li>
-            <li><a href="#modu-glob">Moduł glob</a></li>
-            <li><a href="#wiecej-o-glob">Więcej o glob</a></li>
-            <li><a href="#modu-sys">Moduł sys</a></li>
-            <li><a href="#referencje-do-obiektu">Referencje do obiektu</a></li>
-            <li><a href="#referencje-do-obiektow-mutowalnych">Referencje do obiektów mutowalnych</a></li>
-            <li><a href="#argumenty">Argumenty</a></li>
-            <li><a href="#przykad">Przykład</a></li>
-            <li><a href="#modu-time">Moduł time</a></li>
-            <li><a href="#czas-uniksowy">Czas uniksowy</a></li>
-            <li><a href="#przyblizony-test">Przybliżony test</a></li>
-            <li><a href="#uniksowe-chwile-godne-uwagi">Uniksowe chwile godne uwagi</a></li>
-            <li><a href="#czas-lokalny">Czas lokalny</a></li>
-            <li><a href="#czas-w-formie-czytelnej">Czas w formie czytelnej</a></li>
-            <li><a href="#pomiar-czasu-wall-time">Pomiar czasu (wall time)</a></li>
-            <li><a href="#pomiar-czasu-procesora-process-time">Pomiar czasu procesora (process time)</a></li>
-            <li><a href="#modu-datetime">Moduł datetime</a></li>
-            <li><a href="#przykad_1">Przykład</a></li>
-            <li><a href="#przykad-logi">Przykład - logi</a></li>
-            <li><a href="#generatory-liczb-pseudolosowych">Generatory liczb pseudolosowych</a></li>
-            <li><a href="#middle-square-method">Middle square method</a></li>
-            <li><a href="#middle-square-method-algorytm">Middle square method - algorytm</a></li>
-            <li><a href="#middle-square-method-implementacja">Middle square method - implementacja</a></li>
-            <li><a href="#middle-square-method-wyniki">Middle square method - wyniki</a></li>
-            <li><a href="#algorytm-lcg">Algorytm LCG</a></li>
-            <li><a href="#algorytm-lcg-implementacja">Algorytm LCG - implementacja</a></li>
-            <li><a href="#algorytm-lcg-wyniki">Algorytm LCG - wyniki</a></li>
-            <li><a href="#algorytm-lcg-korelacje">Algorytm LCG - korelacje</a></li>
-            <li><a href="#algorytm-lcg-punkty-3d">Algorytm LCG - punkty 3D</a></li>
-            <li><a href="#algorytm-lcg-punkty-3d_1">Algorytm LCG - punkty 3D</a></li>
-            <li><a href="#modu-random">Moduł random</a></li>
-            <li><a href="#losowe-liczby-zmiennoprzecinkowe">Losowe liczby zmiennoprzecinkowe</a></li>
-            <li><a href="#losowe-liczby-cakowite">Losowe liczby całkowite</a></li>
-            <li><a href="#losowe-z-sekwencji">Losowe z sekwencji</a></li>
-            <li><a href="#seed">Seed</a></li>
-            <li><a href="#totolotek">Totolotek</a></li>
-            <li><a href="#totolotek-symulacja">Totolotek - symulacja</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 7
+      </label>
+    
+    <a href="./" title="Wykład 7" class="md-nav__link md-nav__link--active">
+      Wykład 7
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-7" title="Wykład 7" class="md-nav__link">
+    Wykład 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-os" title="Moduł os" class="md-nav__link">
+    Moduł os
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-operacyjny" title="System operacyjny" class="md-nav__link">
+    System operacyjny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#katalog-roboczy" title="Katalog roboczy" class="md-nav__link">
+    Katalog roboczy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zawartosc-katalogu" title="Zawartość katalogu" class="md-nav__link">
+    Zawartość katalogu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tworzenie-usuwanie-katalogow" title="Tworzenie / usuwanie katalogów" class="md-nav__link">
+    Tworzenie / usuwanie katalogów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tworzenie-usuwanie-plikow" title="Tworzenie / usuwanie plików" class="md-nav__link">
+    Tworzenie / usuwanie plików
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drzewo-katalogow" title="Drzewo katalogów" class="md-nav__link">
+    Drzewo katalogów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-ospath" title="Moduł os.path" class="md-nav__link">
+    Moduł os.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiecej-o-ospath" title="Więcej o os.path" class="md-nav__link">
+    Więcej o os.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-srodowiskowe" title="Zmienne środowiskowe" class="md-nav__link">
+    Zmienne środowiskowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos" title="USOS" class="md-nav__link">
+    USOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienna-srodowiskowa-usos" title="Zmienna środowiskowa USOS" class="md-nav__link">
+    Zmienna środowiskowa USOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos-dodawanie-studenta" title="USOS - dodawanie studenta" class="md-nav__link">
+    USOS - dodawanie studenta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos-przykad" title="USOS - przykład" class="md-nav__link">
+    USOS - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos-wynik" title="USOS - wynik" class="md-nav__link">
+    USOS - wynik
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oswalk" title="os.walk" class="md-nav__link">
+    os.walk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oswalk_1" title="os.walk" class="md-nav__link">
+    os.walk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-glob" title="Moduł glob" class="md-nav__link">
+    Moduł glob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiecej-o-glob" title="Więcej o glob" class="md-nav__link">
+    Więcej o glob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-sys" title="Moduł sys" class="md-nav__link">
+    Moduł sys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencje-do-obiektu" title="Referencje do obiektu" class="md-nav__link">
+    Referencje do obiektu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencje-do-obiektow-mutowalnych" title="Referencje do obiektów mutowalnych" class="md-nav__link">
+    Referencje do obiektów mutowalnych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argumenty" title="Argumenty" class="md-nav__link">
+    Argumenty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-time" title="Moduł time" class="md-nav__link">
+    Moduł time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-uniksowy" title="Czas uniksowy" class="md-nav__link">
+    Czas uniksowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przyblizony-test" title="Przybliżony test" class="md-nav__link">
+    Przybliżony test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniksowe-chwile-godne-uwagi" title="Uniksowe chwile godne uwagi" class="md-nav__link">
+    Uniksowe chwile godne uwagi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-lokalny" title="Czas lokalny" class="md-nav__link">
+    Czas lokalny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-w-formie-czytelnej" title="Czas w formie czytelnej" class="md-nav__link">
+    Czas w formie czytelnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pomiar-czasu-wall-time" title="Pomiar czasu (wall time)" class="md-nav__link">
+    Pomiar czasu (wall time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pomiar-czasu-procesora-process-time" title="Pomiar czasu procesora (process time)" class="md-nav__link">
+    Pomiar czasu procesora (process time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-datetime" title="Moduł datetime" class="md-nav__link">
+    Moduł datetime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad_1" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-logi" title="Przykład - logi" class="md-nav__link">
+    Przykład - logi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatory-liczb-pseudolosowych" title="Generatory liczb pseudolosowych" class="md-nav__link">
+    Generatory liczb pseudolosowych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method" title="Middle square method" class="md-nav__link">
+    Middle square method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method-algorytm" title="Middle square method - algorytm" class="md-nav__link">
+    Middle square method - algorytm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method-implementacja" title="Middle square method - implementacja" class="md-nav__link">
+    Middle square method - implementacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method-wyniki" title="Middle square method - wyniki" class="md-nav__link">
+    Middle square method - wyniki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg" title="Algorytm LCG" class="md-nav__link">
+    Algorytm LCG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-implementacja" title="Algorytm LCG - implementacja" class="md-nav__link">
+    Algorytm LCG - implementacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-wyniki" title="Algorytm LCG - wyniki" class="md-nav__link">
+    Algorytm LCG - wyniki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-korelacje" title="Algorytm LCG - korelacje" class="md-nav__link">
+    Algorytm LCG - korelacje
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-punkty-3d" title="Algorytm LCG - punkty 3D" class="md-nav__link">
+    Algorytm LCG - punkty 3D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-punkty-3d_1" title="Algorytm LCG - punkty 3D" class="md-nav__link">
+    Algorytm LCG - punkty 3D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-random" title="Moduł random" class="md-nav__link">
+    Moduł random
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowe-liczby-zmiennoprzecinkowe" title="Losowe liczby zmiennoprzecinkowe" class="md-nav__link">
+    Losowe liczby zmiennoprzecinkowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowe-liczby-cakowite" title="Losowe liczby całkowite" class="md-nav__link">
+    Losowe liczby całkowite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowe-z-sekwencji" title="Losowe z sekwencji" class="md-nav__link">
+    Losowe z sekwencji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seed" title="Seed" class="md-nav__link">
+    Seed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totolotek" title="Totolotek" class="md-nav__link">
+    Totolotek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totolotek-symulacja" title="Totolotek - symulacja" class="md-nav__link">
+    Totolotek - symulacja
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-7">Wykład 7</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-7" title="Wykład 7" class="md-nav__link">
+    Wykład 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-os" title="Moduł os" class="md-nav__link">
+    Moduł os
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-operacyjny" title="System operacyjny" class="md-nav__link">
+    System operacyjny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#katalog-roboczy" title="Katalog roboczy" class="md-nav__link">
+    Katalog roboczy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zawartosc-katalogu" title="Zawartość katalogu" class="md-nav__link">
+    Zawartość katalogu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tworzenie-usuwanie-katalogow" title="Tworzenie / usuwanie katalogów" class="md-nav__link">
+    Tworzenie / usuwanie katalogów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tworzenie-usuwanie-plikow" title="Tworzenie / usuwanie plików" class="md-nav__link">
+    Tworzenie / usuwanie plików
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drzewo-katalogow" title="Drzewo katalogów" class="md-nav__link">
+    Drzewo katalogów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-ospath" title="Moduł os.path" class="md-nav__link">
+    Moduł os.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiecej-o-ospath" title="Więcej o os.path" class="md-nav__link">
+    Więcej o os.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-srodowiskowe" title="Zmienne środowiskowe" class="md-nav__link">
+    Zmienne środowiskowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos" title="USOS" class="md-nav__link">
+    USOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienna-srodowiskowa-usos" title="Zmienna środowiskowa USOS" class="md-nav__link">
+    Zmienna środowiskowa USOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos-dodawanie-studenta" title="USOS - dodawanie studenta" class="md-nav__link">
+    USOS - dodawanie studenta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos-przykad" title="USOS - przykład" class="md-nav__link">
+    USOS - przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usos-wynik" title="USOS - wynik" class="md-nav__link">
+    USOS - wynik
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oswalk" title="os.walk" class="md-nav__link">
+    os.walk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oswalk_1" title="os.walk" class="md-nav__link">
+    os.walk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-glob" title="Moduł glob" class="md-nav__link">
+    Moduł glob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiecej-o-glob" title="Więcej o glob" class="md-nav__link">
+    Więcej o glob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-sys" title="Moduł sys" class="md-nav__link">
+    Moduł sys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencje-do-obiektu" title="Referencje do obiektu" class="md-nav__link">
+    Referencje do obiektu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencje-do-obiektow-mutowalnych" title="Referencje do obiektów mutowalnych" class="md-nav__link">
+    Referencje do obiektów mutowalnych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argumenty" title="Argumenty" class="md-nav__link">
+    Argumenty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-time" title="Moduł time" class="md-nav__link">
+    Moduł time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-uniksowy" title="Czas uniksowy" class="md-nav__link">
+    Czas uniksowy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przyblizony-test" title="Przybliżony test" class="md-nav__link">
+    Przybliżony test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniksowe-chwile-godne-uwagi" title="Uniksowe chwile godne uwagi" class="md-nav__link">
+    Uniksowe chwile godne uwagi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-lokalny" title="Czas lokalny" class="md-nav__link">
+    Czas lokalny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czas-w-formie-czytelnej" title="Czas w formie czytelnej" class="md-nav__link">
+    Czas w formie czytelnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pomiar-czasu-wall-time" title="Pomiar czasu (wall time)" class="md-nav__link">
+    Pomiar czasu (wall time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pomiar-czasu-procesora-process-time" title="Pomiar czasu procesora (process time)" class="md-nav__link">
+    Pomiar czasu procesora (process time)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-datetime" title="Moduł datetime" class="md-nav__link">
+    Moduł datetime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad_1" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-logi" title="Przykład - logi" class="md-nav__link">
+    Przykład - logi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generatory-liczb-pseudolosowych" title="Generatory liczb pseudolosowych" class="md-nav__link">
+    Generatory liczb pseudolosowych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method" title="Middle square method" class="md-nav__link">
+    Middle square method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method-algorytm" title="Middle square method - algorytm" class="md-nav__link">
+    Middle square method - algorytm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method-implementacja" title="Middle square method - implementacja" class="md-nav__link">
+    Middle square method - implementacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middle-square-method-wyniki" title="Middle square method - wyniki" class="md-nav__link">
+    Middle square method - wyniki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg" title="Algorytm LCG" class="md-nav__link">
+    Algorytm LCG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-implementacja" title="Algorytm LCG - implementacja" class="md-nav__link">
+    Algorytm LCG - implementacja
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-wyniki" title="Algorytm LCG - wyniki" class="md-nav__link">
+    Algorytm LCG - wyniki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-korelacje" title="Algorytm LCG - korelacje" class="md-nav__link">
+    Algorytm LCG - korelacje
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-punkty-3d" title="Algorytm LCG - punkty 3D" class="md-nav__link">
+    Algorytm LCG - punkty 3D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorytm-lcg-punkty-3d_1" title="Algorytm LCG - punkty 3D" class="md-nav__link">
+    Algorytm LCG - punkty 3D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-random" title="Moduł random" class="md-nav__link">
+    Moduł random
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowe-liczby-zmiennoprzecinkowe" title="Losowe liczby zmiennoprzecinkowe" class="md-nav__link">
+    Losowe liczby zmiennoprzecinkowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowe-liczby-cakowite" title="Losowe liczby całkowite" class="md-nav__link">
+    Losowe liczby całkowite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losowe-z-sekwencji" title="Losowe z sekwencji" class="md-nav__link">
+    Losowe z sekwencji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seed" title="Seed" class="md-nav__link">
+    Seed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totolotek" title="Totolotek" class="md-nav__link">
+    Totolotek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#totolotek-symulacja" title="Totolotek - symulacja" class="md-nav__link">
+    Totolotek - symulacja
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-7">Wykład 7<a class="headerlink" href="#wykad-7" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Bilioteka standardowa<ul>
@@ -281,7 +1466,7 @@
 </li>
 <li>Liczby pseudolosowe</li>
 </ul>
-<h2 id="modu-os">Moduł <em>os</em></h2>
+<h2 id="modu-os">Moduł <em>os</em><a class="headerlink" href="#modu-os" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>przenośne używanie funkcjonalności zależnych od systemu operacyjnego<ul>
@@ -293,328 +1478,404 @@
 </ul>
 </li>
 </ul>
-<h2 id="system-operacyjny">System operacyjny</h2>
+<h2 id="system-operacyjny">System operacyjny<a class="headerlink" href="#system-operacyjny" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import os
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-# POSIX = Portable Operating System Interface for Unix
-os.name # posix, nt, ce, java
-</code></pre>
+<span class="c1"># POSIX = Portable Operating System Interface for Unix</span>
+<span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="c1"># posix, nt, ce, java</span>
+</pre></div>
 
-<pre><code>'posix'
-</code></pre>
-<pre><code class="python">if os.name == &quot;posix&quot;: # jeśli unix
-    cmd = &quot;ls&quot;         # użyj ls
-elif os.name == &quot;nt&quot;:  # jeśli windows
-    cmd = &quot;dir&quot;        # użyj dir
 
-print(cmd)
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;posix&#39;
+</pre></div>
 
-<pre><code>ls
-</code></pre>
-<h2 id="katalog-roboczy">Katalog roboczy</h2>
+
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;posix&quot;</span><span class="p">:</span> <span class="c1"># jeśli unix</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;ls&quot;</span>         <span class="c1"># użyj ls</span>
+<span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span><span class="p">:</span>  <span class="c1"># jeśli windows</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;dir&quot;</span>        <span class="c1"># użyj dir</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>ls
+</pre></div>
+
+
+<h2 id="katalog-roboczy">Katalog roboczy<a class="headerlink" href="#katalog-roboczy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">current_path = os.getcwd() # pwd
+<div class="codehilite"><pre><span></span><span class="n">current_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1"># pwd</span>
 
-print(&quot;Katalog roboczy:&quot;, current_path)
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Katalog roboczy:&quot;</span><span class="p">,</span> <span class="n">current_path</span><span class="p">)</span>
 
-new_path = &quot;/home/goran&quot;
+<span class="n">new_path</span> <span class="o">=</span> <span class="s2">&quot;/home/goran&quot;</span>
 
-os.chdir(new_path) # zmień katalog roboczy
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">new_path</span><span class="p">)</span> <span class="c1"># zmień katalog roboczy</span>
 
-print(&quot;Nowy katalog roboczy:&quot;, os.getcwd())
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Nowy katalog roboczy:&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 
-os.chdir(current_path) # wracamy
-</code></pre>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">current_path</span><span class="p">)</span> <span class="c1"># wracamy</span>
+</pre></div>
 
-<pre><code>Katalog roboczy: /doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python
+
+<div class="codehilite"><pre><span></span>Katalog roboczy: /doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python
 Nowy katalog roboczy: /home/goran
-</code></pre>
-<h2 id="zawartosc-katalogu">Zawartość katalogu</h2>
+</pre></div>
+
+
+<h2 id="zawartosc-katalogu">Zawartość katalogu<a class="headerlink" href="#zawartosc-katalogu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">os.listdir(&quot;/usr/&quot;) # lista plików i katalogów
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;/usr/&quot;</span><span class="p">)</span> <span class="c1"># lista plików i katalogów</span>
+</pre></div>
 
-<pre><code>['src', 'local', 'bin', 'include', 'sbin', 'lib', 'games', 'share', 'locale']
-</code></pre>
-<pre><code class="python">os.listdir() # lista plików i katalogów w pwd
-</code></pre>
 
-<pre><code>['my_script.py',
- 'usos.py',
- '.ipynb_checkpoints',
- 'js-python_w05.html',
- 'js-python_w01.html',
- 'js-python_l02.md',
- 'test.2016_11_11_175921.log',
- 'js-python_w04.ipynb',
- 'js-python_w06.html',
- 'README.md',
- 'js-python_w03.html',
- 'test.2016_11_11_175922.log',
- 'js-python_l00.md',
- 'iloczyn.py',
- 'js-python_w04.html',
- 'temp.py',
- 'js-python_w03.ipynb',
- 'js-python_l01.pdf',
- 'js-python_w05.ipynb',
- 'print_args.py',
- 'src',
- 'js-python_l01.md',
- 'middle2.py',
- 'js-python_w01.ipynb',
- 'listy_zadan',
- '__pycache__',
- 'dodaj_studentow.py',
- 'js-python_w07.ipynb',
- 'test.2016_11_11_175942.log',
- 'js-python_w02.ipynb',
- 'js-python_w02.html',
- 'temp',
- 'my_module.py',
- 'js-python_w06.ipynb',
- 'private.py']
-</code></pre>
-<h2 id="tworzenie-usuwanie-katalogow">Tworzenie / usuwanie katalogów</h2>
+<div class="codehilite"><pre><span></span>[&#39;src&#39;, &#39;local&#39;, &#39;bin&#39;, &#39;include&#39;, &#39;sbin&#39;, &#39;lib&#39;, &#39;games&#39;, &#39;share&#39;, &#39;locale&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="c1"># lista plików i katalogów w pwd</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;my_script.py&#39;,
+ &#39;usos.py&#39;,
+ &#39;.ipynb_checkpoints&#39;,
+ &#39;js-python_w05.html&#39;,
+ &#39;js-python_w01.html&#39;,
+ &#39;js-python_l02.md&#39;,
+ &#39;test.2016_11_11_175921.log&#39;,
+ &#39;js-python_w04.ipynb&#39;,
+ &#39;js-python_w06.html&#39;,
+ &#39;README.md&#39;,
+ &#39;js-python_w03.html&#39;,
+ &#39;test.2016_11_11_175922.log&#39;,
+ &#39;js-python_l00.md&#39;,
+ &#39;iloczyn.py&#39;,
+ &#39;js-python_w04.html&#39;,
+ &#39;temp.py&#39;,
+ &#39;js-python_w03.ipynb&#39;,
+ &#39;js-python_l01.pdf&#39;,
+ &#39;js-python_w05.ipynb&#39;,
+ &#39;print_args.py&#39;,
+ &#39;src&#39;,
+ &#39;js-python_l01.md&#39;,
+ &#39;middle2.py&#39;,
+ &#39;js-python_w01.ipynb&#39;,
+ &#39;listy_zadan&#39;,
+ &#39;__pycache__&#39;,
+ &#39;dodaj_studentow.py&#39;,
+ &#39;js-python_w07.ipynb&#39;,
+ &#39;test.2016_11_11_175942.log&#39;,
+ &#39;js-python_w02.ipynb&#39;,
+ &#39;js-python_w02.html&#39;,
+ &#39;temp&#39;,
+ &#39;my_module.py&#39;,
+ &#39;js-python_w06.ipynb&#39;,
+ &#39;private.py&#39;]
+</pre></div>
+
+
+<h2 id="tworzenie-usuwanie-katalogow">Tworzenie / usuwanie katalogów<a class="headerlink" href="#tworzenie-usuwanie-katalogow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def check(ls, folder):
-    &quot;&quot;&quot;Sprawdza czy folder znajduje się na liście.&quot;&quot;&quot;
-    if folder in ls:
-        print(&quot;{} is found.&quot;.format(folder))
-    else:
-        print(&quot;{} not found.&quot;.format(folder))
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="n">folder</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sprawdza czy folder znajduje się na liście.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">ls</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} is found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} not found.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span>
 
-my_folder = &quot;test&quot;
+<span class="n">my_folder</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
 
-check(os.listdir(), my_folder)
+<span class="n">check</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(),</span> <span class="n">my_folder</span><span class="p">)</span>
 
-os.mkdir(my_folder) # stwórz katalog test
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">my_folder</span><span class="p">)</span> <span class="c1"># stwórz katalog test</span>
 
-check(os.listdir(), my_folder)
+<span class="n">check</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(),</span> <span class="n">my_folder</span><span class="p">)</span>
 
-os.rmdir(my_folder) # usuń katalog test
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">my_folder</span><span class="p">)</span> <span class="c1"># usuń katalog test</span>
 
-check(os.listdir(), my_folder)
-</code></pre>
+<span class="n">check</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(),</span> <span class="n">my_folder</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>test not found.
+
+<div class="codehilite"><pre><span></span>test not found.
 test is found.
 test not found.
-</code></pre>
-<h2 id="tworzenie-usuwanie-plikow">Tworzenie / usuwanie plików</h2>
+</pre></div>
+
+
+<h2 id="tworzenie-usuwanie-plikow">Tworzenie / usuwanie plików<a class="headerlink" href="#tworzenie-usuwanie-plikow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">os.mkdir(&quot;my_dir&quot;) # stwórz katalog &quot;my_dir&quot;
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;my_dir&quot;</span><span class="p">)</span> <span class="c1"># stwórz katalog &quot;my_dir&quot;</span>
 
-# otwórz plik w trybie zapisu (więcej za tydzień)
-file = open(&quot;my_dir/my_file&quot;, 'w')
-file.close()
+<span class="c1"># otwórz plik w trybie zapisu (więcej za tydzień)</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_dir/my_file&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-os.listdir(&quot;my_dir&quot;)
-</code></pre>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;my_dir&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['my_file']
-</code></pre>
-<pre><code class="python"># nie można usunąć niepustego katalogu
-os.rmdir(&quot;my_dir&quot;) # OSError: [Errno 39] Directory not empty: 'my_dir'
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span>[&#39;my_file&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># nie można usunąć niepustego katalogu</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;my_dir&quot;</span><span class="p">)</span> <span class="c1"># OSError: [Errno 39] Directory not empty: &#39;my_dir&#39;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 OSError                                   Traceback (most recent call last)
 
 &lt;ipython-input-8-35adb4ad65f2&gt; in &lt;module&gt;()
       1 # nie można usunąć niepustego katalogu
-----&gt; 2 os.rmdir("my_dir") # OSError: [Errno 39] Directory not empty: 'my_dir'
+----&gt; 2 os.rmdir(&quot;my_dir&quot;) # OSError: [Errno 39] Directory not empty: &#39;my_dir&#39;
 
 
-OSError: [Errno 39] Directory not empty: 'my_dir'
-</code></pre>
-<pre><code class="python">os.remove(&quot;my_dir/my_file&quot;) # usuń plik
-os.rmdir(&quot;my_dir&quot;)          # usuń katalog
-</code></pre>
+OSError: [Errno 39] Directory not empty: &#39;my_dir&#39;
+</pre></div>
 
-<h2 id="drzewo-katalogow">Drzewo katalogów</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;my_dir/my_file&quot;</span><span class="p">)</span> <span class="c1"># usuń plik</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;my_dir&quot;</span><span class="p">)</span>          <span class="c1"># usuń katalog</span>
+</pre></div>
+
+
+<h2 id="drzewo-katalogow">Drzewo katalogów<a class="headerlink" href="#drzewo-katalogow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># os.makedirs(..., exist_ok=True) -&gt; działa jak mkdir -p
-os.makedirs(&quot;level0/level1/level2&quot;) # utwórz &quot;ciąg&quot; katalogów
+<div class="codehilite"><pre><span></span><span class="c1"># os.makedirs(..., exist_ok=True) -&gt; działa jak mkdir -p</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;level0/level1/level2&quot;</span><span class="p">)</span> <span class="c1"># utwórz &quot;ciąg&quot; katalogów</span>
 
-os.listdir(&quot;level0&quot;)
-</code></pre>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;level0&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['level1']
-</code></pre>
-<pre><code class="python">os.listdir(&quot;level0/level1&quot;)
-</code></pre>
 
-<pre><code>['level2']
-</code></pre>
-<pre><code class="python"># os.rmdir(&quot;level0/level1/level2&quot;)    # usunie tylko level2
-os.removedirs(&quot;level0/level1/level2&quot;) # usunie wszystko
-</code></pre>
+<div class="codehilite"><pre><span></span>[&#39;level1&#39;]
+</pre></div>
 
-<h2 id="modu-ospath">Moduł <em>os.path</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;level0/level1&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;level2&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># os.rmdir(&quot;level0/level1/level2&quot;)    # usunie tylko level2</span>
+<span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s2">&quot;level0/level1/level2&quot;</span><span class="p">)</span> <span class="c1"># usunie wszystko</span>
+</pre></div>
+
+
+<h2 id="modu-ospath">Moduł <em>os.path</em><a class="headerlink" href="#modu-ospath" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import os
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-path = &quot;/my/path&quot; # katalog
-file = &quot;file.py&quot;  # plik
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/my/path&quot;</span> <span class="c1"># katalog</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="s2">&quot;file.py&quot;</span>  <span class="c1"># plik</span>
 
-os.path.join(path, file) # tworzy pełną ścieżkę do pliku
-</code></pre>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span> <span class="c1"># tworzy pełną ścieżkę do pliku</span>
+</pre></div>
 
-<pre><code>'/my/path/file.py'
-</code></pre>
-<pre><code class="python">os.path.split(&quot;/my/path/file.py&quot;) # zwraca (head, tail)
-</code></pre>
 
-<pre><code>('/my/path', 'file.py')
-</code></pre>
-<pre><code class="python">os.path.dirname(&quot;/my/path/file.py&quot;) # zwraca split()[0]
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;/my/path/file.py&#39;
+</pre></div>
 
-<pre><code>'/my/path'
-</code></pre>
-<pre><code class="python">os.path.basename(&quot;/my/path/file.py&quot;) # zwraca split()[1]
-</code></pre>
 
-<pre><code>'file.py'
-</code></pre>
-<h2 id="wiecej-o-ospath">Więcej o <em>os.path</em></h2>
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/my/path/file.py&quot;</span><span class="p">)</span> <span class="c1"># zwraca (head, tail)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(&#39;/my/path&#39;, &#39;file.py&#39;)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s2">&quot;/my/path/file.py&quot;</span><span class="p">)</span> <span class="c1"># zwraca split()[0]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;/my/path&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s2">&quot;/my/path/file.py&quot;</span><span class="p">)</span> <span class="c1"># zwraca split()[1]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;file.py&#39;
+</pre></div>
+
+
+<h2 id="wiecej-o-ospath">Więcej o <em>os.path</em><a class="headerlink" href="#wiecej-o-ospath" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import os.path as path
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span> <span class="kn">as</span> <span class="nn">path</span>
 
-path.splitext(&quot;/my/path/file.py&quot;) # wydziela rozszerzenie pliku
-</code></pre>
+<span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="s2">&quot;/my/path/file.py&quot;</span><span class="p">)</span> <span class="c1"># wydziela rozszerzenie pliku</span>
+</pre></div>
 
-<pre><code>('/my/path/file', '.py')
-</code></pre>
-<pre><code class="python">my_path, my_file = path.split(&quot;/my/path/file.py&quot;)
-my_base, my_extn = path.splitext(my_file)
 
-print(&quot;my_path =&quot;, my_path)
-print(&quot;my_file =&quot;, my_file)
-print(&quot;my_base =&quot;, my_base)
-print(&quot;my_extn =&quot;, my_extn)
-</code></pre>
+<div class="codehilite"><pre><span></span>(&#39;/my/path/file&#39;, &#39;.py&#39;)
+</pre></div>
 
-<pre><code>my_path = /my/path
+
+<div class="codehilite"><pre><span></span><span class="n">my_path</span><span class="p">,</span> <span class="n">my_file</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/my/path/file.py&quot;</span><span class="p">)</span>
+<span class="n">my_base</span><span class="p">,</span> <span class="n">my_extn</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">my_file</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;my_path =&quot;</span><span class="p">,</span> <span class="n">my_path</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;my_file =&quot;</span><span class="p">,</span> <span class="n">my_file</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;my_base =&quot;</span><span class="p">,</span> <span class="n">my_base</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;my_extn =&quot;</span><span class="p">,</span> <span class="n">my_extn</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>my_path = /my/path
 my_file = file.py
 my_base = file
 my_extn = .py
-</code></pre>
-<h2 id="zmienne-srodowiskowe">Zmienne środowiskowe</h2>
+</pre></div>
+
+
+<h2 id="zmienne-srodowiskowe">Zmienne środowiskowe<a class="headerlink" href="#zmienne-srodowiskowe" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">os.getenv(&quot;HOME&quot;) # pobierz wartość zmiennej środowiskowej
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HOME&quot;</span><span class="p">)</span> <span class="c1"># pobierz wartość zmiennej środowiskowej</span>
+</pre></div>
 
-<pre><code>'/home/goran'
-</code></pre>
-<pre><code class="python">os.environ[&quot;HOME&quot;] # environ -&gt; słownik zś
-</code></pre>
 
-<pre><code>'/home/goran'
-</code></pre>
-<pre><code class="python">os.environ[&quot;MOJA_ZMIENNA&quot;] = &quot;To musi być string&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;/home/goran&#39;
+</pre></div>
 
-<pre><code class="python">%%bash
-# wywołanie komendy basha z poziomu jupytera
-echo $MOJA_ZMIENNA
-</code></pre>
 
-<pre><code>To musi być string
-</code></pre>
-<h2 id="usos">USOS</h2>
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HOME&quot;</span><span class="p">]</span> <span class="c1"># environ -&gt; słownik zś</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;/home/goran&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MOJA_ZMIENNA&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;To musi być string&quot;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="c1"># wywołanie komendy basha z poziomu jupytera</span>
+<span class="n">echo</span> <span class="err">$</span><span class="n">MOJA_ZMIENNA</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>To musi być string
+</pre></div>
+
+
+<h2 id="usos">USOS<a class="headerlink" href="#usos" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile usos.py
-&quot;&quot;&quot;Uniwersytecki System Obsługi Studiów
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">usos</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Uniwersytecki System Obsługi Studiów</span>
 
-Dane przechowywane w postaci: kierunek/rok/imie.nazwisko
-a w pliku zapisany jest numer indeksu
-&quot;&quot;&quot;
+<span class="sd">Dane przechowywane w postaci: kierunek/rok/imie.nazwisko</span>
+<span class="sd">a w pliku zapisany jest numer indeksu</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
-import os
+<span class="kn">import</span> <span class="nn">os</span>
 
-# top-level katalog na podstawie zmiennej środowiskowej $USOS
-# jeśli nie jest zdefiniowana -&gt; bieżący katalog
-_BASE_PATH = os.getenv(&quot;USOS&quot;) or os.getcwd()
-</code></pre>
+<span class="c1"># top-level katalog na podstawie zmiennej środowiskowej $USOS</span>
+<span class="c1"># jeśli nie jest zdefiniowana -&gt; bieżący katalog</span>
+<span class="n">_BASE_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;USOS&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>Overwriting usos.py
-</code></pre>
-<h2 id="zmienna-srodowiskowa-usos">Zmienna środowiskowa USOS</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting usos.py
+</pre></div>
+
+
+<h2 id="zmienna-srodowiskowa-usos">Zmienna środowiskowa USOS<a class="headerlink" href="#zmienna-srodowiskowa-usos" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-echo $USOS
-python -c &quot;import usos; print(usos._BASE_PATH)&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">echo</span> <span class="err">$</span><span class="n">USOS</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import usos; print(usos._BASE_PATH)&quot;</span>
+</pre></div>
 
-<pre><code>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python
-</code></pre>
-<pre><code class="python">%%bash
-export USOS=&quot;/moja/sciezka/do/bazy/danych&quot;
-python -c &quot;import usos; print(usos._BASE_PATH)&quot;
-</code></pre>
 
-<pre><code>/moja/sciezka/do/bazy/danych
-</code></pre>
-<h2 id="usos-dodawanie-studenta">USOS - dodawanie studenta</h2>
+<div class="codehilite"><pre><span></span>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">export</span> <span class="n">USOS</span><span class="o">=</span><span class="s2">&quot;/moja/sciezka/do/bazy/danych&quot;</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import usos; print(usos._BASE_PATH)&quot;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>/moja/sciezka/do/bazy/danych
+</pre></div>
+
+
+<h2 id="usos-dodawanie-studenta">USOS - dodawanie studenta<a class="headerlink" href="#usos-dodawanie-studenta" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile -a usos.py
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="o">-</span><span class="n">a</span> <span class="n">usos</span><span class="o">.</span><span class="n">py</span>
 
-def add_student(imie, nazwisko, indeks, kierunek, rok):
-    &quot;&quot;&quot;Dodaje studenta.
+<span class="k">def</span> <span class="nf">add_student</span><span class="p">(</span><span class="n">imie</span><span class="p">,</span> <span class="n">nazwisko</span><span class="p">,</span> <span class="n">indeks</span><span class="p">,</span> <span class="n">kierunek</span><span class="p">,</span> <span class="n">rok</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Dodaje studenta.</span>
 
-    Tworzy plik imie.nazwisko w katalogu kierunek/rok/
-    i umieszcza w nim numer indeksu
-    &quot;&quot;&quot;
-    # pełna ścieżka do katalogu danego kierunku/rocznika
-    path = os.path.join(_BASE_PATH, kierunek, str(rok))
-    # imie.nazwisko
-    file = &quot;.&quot;.join([imie, nazwisko])
-    # stwórz kierunek lub pomiń jeśli istnieje
-    os.makedirs(path, exist_ok=True)
-    # o plikach więcej za tydzień
-    with open(os.path.join(path, file), 'w') as f:
-        f.write(str(indeks))
-</code></pre>
+<span class="sd">    Tworzy plik imie.nazwisko w katalogu kierunek/rok/</span>
+<span class="sd">    i umieszcza w nim numer indeksu</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># pełna ścieżka do katalogu danego kierunku/rocznika</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_BASE_PATH</span><span class="p">,</span> <span class="n">kierunek</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">rok</span><span class="p">))</span>
+    <span class="c1"># imie.nazwisko</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">imie</span><span class="p">,</span> <span class="n">nazwisko</span><span class="p">])</span>
+    <span class="c1"># stwórz kierunek lub pomiń jeśli istnieje</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="c1"># o plikach więcej za tydzień</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">indeks</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>Appending to usos.py
-</code></pre>
-<h2 id="usos-przykad">USOS - przykład</h2>
+
+<div class="codehilite"><pre><span></span>Appending to usos.py
+</pre></div>
+
+
+<h2 id="usos-przykad">USOS - przykład<a class="headerlink" href="#usos-przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile dodaj_studentow.py
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">dodaj_studentow</span><span class="o">.</span><span class="n">py</span>
 
-import usos
-import random
+<span class="kn">import</span> <span class="nn">usos</span>
+<span class="kn">import</span> <span class="nn">random</span>
 
-imiona = [&quot;Kasia&quot;, &quot;Basia&quot;, &quot;Marek&quot;, &quot;Darek&quot;]
-nazwiska = [&quot;Nowak&quot;, &quot;Marian&quot;, &quot;Python&quot;]
-kierunki = [&quot;ISSP&quot;, &quot;Fizyka Komputerowa&quot;]
+<span class="n">imiona</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> <span class="s2">&quot;Basia&quot;</span><span class="p">,</span> <span class="s2">&quot;Marek&quot;</span><span class="p">,</span> <span class="s2">&quot;Darek&quot;</span><span class="p">]</span>
+<span class="n">nazwiska</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nowak&quot;</span><span class="p">,</span> <span class="s2">&quot;Marian&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">]</span>
+<span class="n">kierunki</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ISSP&quot;</span><span class="p">,</span> <span class="s2">&quot;Fizyka Komputerowa&quot;</span><span class="p">]</span>
 
-for i in range(10):
-    imie = random.choice(imiona)         # losowe imie
-    nazwisko = random.choice(nazwiska)   # losowe nazwisko
-    indeks = random.randint(1000, 9999)  # losowy indeks
-    rocznik = random.randint(2015, 2017) # losowy rocznik
-    kierunek = random.choice(kierunki)   # losowy kierunek
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">imie</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">imiona</span><span class="p">)</span>         <span class="c1"># losowe imie</span>
+    <span class="n">nazwisko</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">nazwiska</span><span class="p">)</span>   <span class="c1"># losowe nazwisko</span>
+    <span class="n">indeks</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">9999</span><span class="p">)</span>  <span class="c1"># losowy indeks</span>
+    <span class="n">rocznik</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2017</span><span class="p">)</span> <span class="c1"># losowy rocznik</span>
+    <span class="n">kierunek</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">kierunki</span><span class="p">)</span>   <span class="c1"># losowy kierunek</span>
 
-    usos.add_student(imie, nazwisko, indeks, kierunek, rocznik)
-</code></pre>
+    <span class="n">usos</span><span class="o">.</span><span class="n">add_student</span><span class="p">(</span><span class="n">imie</span><span class="p">,</span> <span class="n">nazwisko</span><span class="p">,</span> <span class="n">indeks</span><span class="p">,</span> <span class="n">kierunek</span><span class="p">,</span> <span class="n">rocznik</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Overwriting dodaj_studentow.py
-</code></pre>
-<h2 id="usos-wynik">USOS - wynik</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting dodaj_studentow.py
+</pre></div>
+
+
+<h2 id="usos-wynik">USOS - wynik<a class="headerlink" href="#usos-wynik" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-export USOS=/home/goran/usos
-python dodaj_studentow.py
-tree $USOS
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">export</span> <span class="n">USOS</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">goran</span><span class="o">/</span><span class="n">usos</span>
+<span class="n">python</span> <span class="n">dodaj_studentow</span><span class="o">.</span><span class="n">py</span>
+<span class="n">tree</span> <span class="err">$</span><span class="n">USOS</span>
+</pre></div>
 
-<pre><code>/home/goran/usos
+
+<div class="codehilite"><pre><span></span>/home/goran/usos
 ├── Fizyka Komputerowa
 │   ├── 2015
 │   │   └── Marek.Python
@@ -635,60 +1896,66 @@ tree $USOS
         └── Basia.Nowak
 
 8 directories, 10 files
-</code></pre>
-<h2 id="oswalk"><em>os.walk</em></h2>
-<hr />
-<pre><code class="python"># os.walk &quot;podróżuje po drzewie katalogów&quot;
-# na każdym kroku zwracając krotkę
-# (obecny katalog, lista podkatalogów, lista plików)
-for root, dirs, files in os.walk(&quot;/home/goran/usos&quot;):
-    print(root, dirs, files, sep=&quot;\n&quot;, end=&quot;\n\n&quot;)
-</code></pre>
+</pre></div>
 
-<pre><code>/home/goran/usos
-['Fizyka Komputerowa', 'ISSP']
+
+<h2 id="oswalk"><em>os.walk</em><a class="headerlink" href="#oswalk" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="c1"># os.walk &quot;podróżuje po drzewie katalogów&quot;</span>
+<span class="c1"># na każdym kroku zwracając krotkę</span>
+<span class="c1"># (obecny katalog, lista podkatalogów, lista plików)</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/home/goran/usos&quot;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>/home/goran/usos
+[&#39;Fizyka Komputerowa&#39;, &#39;ISSP&#39;]
 []
 
 /home/goran/usos/Fizyka Komputerowa
-['2016', '2015', '2017']
+[&#39;2016&#39;, &#39;2015&#39;, &#39;2017&#39;]
 []
 
 /home/goran/usos/Fizyka Komputerowa/2016
 []
-['Kasia.Nowak', 'Basia.Marian', 'Marek.Python']
+[&#39;Kasia.Nowak&#39;, &#39;Basia.Marian&#39;, &#39;Marek.Python&#39;]
 
 /home/goran/usos/Fizyka Komputerowa/2015
 []
-['Marek.Python']
+[&#39;Marek.Python&#39;]
 
 /home/goran/usos/Fizyka Komputerowa/2017
 []
-['Basia.Marian']
+[&#39;Basia.Marian&#39;]
 
 /home/goran/usos/ISSP
-['2016', '2015', '2017']
+[&#39;2016&#39;, &#39;2015&#39;, &#39;2017&#39;]
 []
 
 /home/goran/usos/ISSP/2016
 []
-['Kasia.Python', 'Kasia.Nowak', 'Basia.Marian']
+[&#39;Kasia.Python&#39;, &#39;Kasia.Nowak&#39;, &#39;Basia.Marian&#39;]
 
 /home/goran/usos/ISSP/2015
 []
-['Marek.Marian']
+[&#39;Marek.Marian&#39;]
 
 /home/goran/usos/ISSP/2017
 []
-['Basia.Nowak']
-</code></pre>
-<h2 id="oswalk_1"><em>os.walk</em></h2>
-<hr />
-<pre><code class="python">for root, dirs, files in os.walk(&quot;/home/goran/usos&quot;):
-    for file in files: # pętla po plikach w danym katalogu root
-        print(os.path.join(root, file))
-</code></pre>
+[&#39;Basia.Nowak&#39;]
+</pre></div>
 
-<pre><code>/home/goran/usos/Fizyka Komputerowa/2016/Kasia.Nowak
+
+<h2 id="oswalk_1"><em>os.walk</em><a class="headerlink" href="#oswalk_1" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;/home/goran/usos&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span> <span class="c1"># pętla po plikach w danym katalogu root</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>/home/goran/usos/Fizyka Komputerowa/2016/Kasia.Nowak
 /home/goran/usos/Fizyka Komputerowa/2016/Basia.Marian
 /home/goran/usos/Fizyka Komputerowa/2016/Marek.Python
 /home/goran/usos/Fizyka Komputerowa/2015/Marek.Python
@@ -698,45 +1965,59 @@ for root, dirs, files in os.walk(&quot;/home/goran/usos&quot;):
 /home/goran/usos/ISSP/2016/Basia.Marian
 /home/goran/usos/ISSP/2015/Marek.Marian
 /home/goran/usos/ISSP/2017/Basia.Nowak
-</code></pre>
-<h2 id="modu-glob">Moduł <em>glob</em></h2>
+</pre></div>
+
+
+<h2 id="modu-glob">Moduł <em>glob</em><a class="headerlink" href="#modu-glob" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>umożliwia wykorzystanie uniksowych <em>dzikich kart</em>: <code>?</code>, <code>*</code>, <code>[]</code></li>
 </ul>
-<pre><code class="python">import glob
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
 
-glob.glob(&quot;*.ipynb&quot;) # lista plików z rozszerzeniem ipynb
-</code></pre>
+<span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.ipynb&quot;</span><span class="p">)</span> <span class="c1"># lista plików z rozszerzeniem ipynb</span>
+</pre></div>
 
-<pre><code>['js-python_w04.ipynb',
- 'js-python_w03.ipynb',
- 'js-python_w05.ipynb',
- 'js-python_w01.ipynb',
- 'js-python_w07.ipynb',
- 'js-python_w02.ipynb',
- 'js-python_w06.ipynb']
-</code></pre>
-<h2 id="wiecej-o-glob">Więcej o <em>glob</em></h2>
+
+<div class="codehilite"><pre><span></span>[&#39;js-python_w04.ipynb&#39;,
+ &#39;js-python_w03.ipynb&#39;,
+ &#39;js-python_w05.ipynb&#39;,
+ &#39;js-python_w01.ipynb&#39;,
+ &#39;js-python_w07.ipynb&#39;,
+ &#39;js-python_w02.ipynb&#39;,
+ &#39;js-python_w06.ipynb&#39;]
+</pre></div>
+
+
+<h2 id="wiecej-o-glob">Więcej o <em>glob</em><a class="headerlink" href="#wiecej-o-glob" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># pliki z roszerzeniem html oraz
-# pasujące do wzorca (coś)(cyfra od 0 do 3)
-glob.glob(&quot;*[0-3].html&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># pliki z roszerzeniem html oraz</span>
+<span class="c1"># pasujące do wzorca (coś)(cyfra od 0 do 3)</span>
+<span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*[0-3].html&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['js-python_w01.html', 'js-python_w03.html', 'js-python_w02.html']
-</code></pre>
-<pre><code class="python">glob.glob(&quot;js-python_?02.*&quot;) # js-python_[znak]02.[cokolwiek]
-</code></pre>
 
-<pre><code>['js-python_l02.md', 'js-python_w02.ipynb', 'js-python_w02.html']
-</code></pre>
-<pre><code class="python">glob.glob(&quot;js-python_?02.[mi]*&quot;) # js-python_[znak]02.[m lub i]cokolwiek
-</code></pre>
+<div class="codehilite"><pre><span></span>[&#39;js-python_w01.html&#39;, &#39;js-python_w03.html&#39;, &#39;js-python_w02.html&#39;]
+</pre></div>
 
-<pre><code>['js-python_l02.md', 'js-python_w02.ipynb']
-</code></pre>
-<h2 id="modu-sys">Moduł <em>sys</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;js-python_?02.*&quot;</span><span class="p">)</span> <span class="c1"># js-python_[znak]02.[cokolwiek]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;js-python_l02.md&#39;, &#39;js-python_w02.ipynb&#39;, &#39;js-python_w02.html&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;js-python_?02.[mi]*&quot;</span><span class="p">)</span> <span class="c1"># js-python_[znak]02.[m lub i]cokolwiek</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;js-python_l02.md&#39;, &#39;js-python_w02.ipynb&#39;]
+</pre></div>
+
+
+<h2 id="modu-sys">Moduł <em>sys</em><a class="headerlink" href="#modu-sys" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>funkcje i parametry specyficzne dla systemu operacyjnego</li>
@@ -744,293 +2025,384 @@ glob.glob(&quot;*[0-3].html&quot;)
 <li>referencje do obiektów</li>
 <li>argumenty wywołania skryptu</li>
 </ul>
-<h2 id="referencje-do-obiektu">Referencje do obiektu</h2>
+<h2 id="referencje-do-obiektu">Referencje do obiektu<a class="headerlink" href="#referencje-do-obiektu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%reset
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">reset</span>
+</pre></div>
 
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
-</code></pre>
-<pre><code class="python">import sys
 
-x = 1234
-y = 1234
-z = &quot;Mój tekst&quot;
+<div class="codehilite"><pre><span></span>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+</pre></div>
 
-sys.getrefcount(x) # x, y i ?
-</code></pre>
 
-<pre><code>3
-</code></pre>
-<pre><code class="python">sys.getrefcount(z) # getrefcount pracuje na kopii z 
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
-<pre><code>2
-</code></pre>
-<h2 id="referencje-do-obiektow-mutowalnych">Referencje do obiektów <em>mutowalnych</em></h2>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1234</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1234</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;Mój tekst&quot;</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># x, y i ?</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>3
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># getrefcount pracuje na kopii z </span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
+</pre></div>
+
+
+<h2 id="referencje-do-obiektow-mutowalnych">Referencje do obiektów <em>mutowalnych</em><a class="headerlink" href="#referencje-do-obiektow-mutowalnych" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = [1, 2, 3]
-y = x
-z = x.copy()
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-sys.getrefcount(x) # x, y i getrefcount
-</code></pre>
+<span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># x, y i getrefcount</span>
+</pre></div>
 
-<pre><code>3
-</code></pre>
-<pre><code class="python">x is y # x i y wskazują to samo
-</code></pre>
 
-<pre><code>True
-</code></pre>
-<pre><code class="python">x is z # x i z wskazują na inne listy
-</code></pre>
+<div class="codehilite"><pre><span></span>3
+</pre></div>
 
-<pre><code>False
-</code></pre>
-<h2 id="argumenty">Argumenty</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span> <span class="c1"># x i y wskazują to samo</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>True
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="ow">is</span> <span class="n">z</span> <span class="c1"># x i z wskazują na inne listy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>False
+</pre></div>
+
+
+<h2 id="argumenty">Argumenty<a class="headerlink" href="#argumenty" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile print_args.py
-&quot;&quot;&quot;Drukuje argumenty podane w linii komend.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">print_args</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Drukuje argumenty podane w linii komend.&quot;&quot;&quot;</span>
 
-import sys
+<span class="kn">import</span> <span class="nn">sys</span>
 
-# sys.argv - lista argumentó linii komend
-for i, arg in enumerate(sys.argv):
-    print(&quot;{}. {}&quot;.format(i, arg))
-</code></pre>
+<span class="c1"># sys.argv - lista argumentó linii komend</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{}. {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">arg</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>Overwriting print_args.py
-</code></pre>
-<pre><code class="python">!python print_args.py arg1 arg2 33 &quot;hello world&quot;
-</code></pre>
 
-<pre><code>0. print_args.py
+<div class="codehilite"><pre><span></span>Overwriting print_args.py
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="n">print_args</span><span class="o">.</span><span class="n">py</span> <span class="n">arg1</span> <span class="n">arg2</span> <span class="mi">33</span> <span class="s2">&quot;hello world&quot;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0. print_args.py
 1. arg1
 2. arg2
 3. 33
 4. hello world
-</code></pre>
-<h2 id="przykad">Przykład</h2>
+</pre></div>
+
+
+<h2 id="przykad">Przykład<a class="headerlink" href="#przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile iloczyn.py
-&quot;&quot;&quot;Liczy iloczyn podanych argumentów.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">iloczyn</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Liczy iloczyn podanych argumentów.&quot;&quot;&quot;</span>
 
-import sys
+<span class="kn">import</span> <span class="nn">sys</span>
 
-if len(sys.argv) &lt; 2: # sys.argv[0] = iloczyn.py
-    print(&quot;Musisz podać co najmniej jedną liczbę .&quot;)
-else:
-    wyrazenie = &quot;*&quot;.join(sys.argv[1:])
-    print(wyrazenie, &quot;=&quot;, eval(wyrazenie))
-</code></pre>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># sys.argv[0] = iloczyn.py</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Musisz podać co najmniej jedną liczbę .&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">wyrazenie</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">wyrazenie</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="nb">eval</span><span class="p">(</span><span class="n">wyrazenie</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>Overwriting iloczyn.py
-</code></pre>
-<pre><code class="python">!python iloczyn.py
-</code></pre>
 
-<pre><code>Musisz podać co najmniej jedną liczbę .
-</code></pre>
-<pre><code class="python">!python iloczyn.py 1 2 5 4 10 0.5
-</code></pre>
+<div class="codehilite"><pre><span></span>Overwriting iloczyn.py
+</pre></div>
 
-<pre><code>1*2*5*4*10*0.5 = 200.0
-</code></pre>
-<h2 id="modu-time">Moduł <em>time</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="n">iloczyn</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Musisz podać co najmniej jedną liczbę .
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="err">!</span><span class="n">python</span> <span class="n">iloczyn</span><span class="o">.</span><span class="n">py</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">5</span> <span class="mi">4</span> <span class="mi">10</span> <span class="mf">0.5</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1*2*5*4*10*0.5 = 200.0
+</pre></div>
+
+
+<h2 id="modu-time">Moduł <em>time</em><a class="headerlink" href="#modu-time" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>operacje na czasie</li>
 <li>nie wszystkie funkcjonalności są dostępne na wszystkich platformach</li>
 <li>najczęściej wywoływane są funkcje biblioteki C o tej samej nazwie</li>
 </ul>
-<h2 id="czas-uniksowy">Czas uniksowy</h2>
+<h2 id="czas-uniksowy">Czas uniksowy<a class="headerlink" href="#czas-uniksowy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import time
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-time.gmtime() # Greenwhich Mean Time / czas uniwersalny
-</code></pre>
+<span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">()</span> <span class="c1"># Greenwhich Mean Time / czas uniwersalny</span>
+</pre></div>
 
-<pre><code>time.struct_time(tm_year=2016, tm_mon=11, tm_mday=14, tm_hour=17, tm_min=43, tm_sec=9, tm_wday=0, tm_yday=319, tm_isdst=0)
-</code></pre>
-<pre><code class="python">time.time() # ile minęło sekund od
-</code></pre>
 
-<pre><code>1479145391.2862186
-</code></pre>
-<pre><code class="python">time.gmtime(0) # eoki Uniksa
-</code></pre>
+<div class="codehilite"><pre><span></span>time.struct_time(tm_year=2016, tm_mon=11, tm_mday=14, tm_hour=17, tm_min=43, tm_sec=9, tm_wday=0, tm_yday=319, tm_isdst=0)
+</pre></div>
 
-<pre><code>time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
-</code></pre>
-<h2 id="przyblizony-test">Przybliżony test</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="c1"># ile minęło sekund od</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1479145391.2862186
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># eoki Uniksa</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+</pre></div>
+
+
+<h2 id="przyblizony-test">Przybliżony test<a class="headerlink" href="#przyblizony-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">time.time() / 60 / 60 / 24 / 365 # lat
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">24</span> <span class="o">/</span> <span class="mi">365</span> <span class="c1"># lat</span>
+</pre></div>
 
-<pre><code>46.90339274137039
-</code></pre>
-<pre><code class="python">time.gmtime()[0] - time.gmtime(0)[0] # rok teraz - rok epoki linuksa
-</code></pre>
 
-<pre><code>46
-</code></pre>
-<h2 id="uniksowe-chwile-godne-uwagi">Uniksowe chwile godne uwagi</h2>
+<div class="codehilite"><pre><span></span>46.90339274137039
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># rok teraz - rok epoki linuksa</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>46
+</pre></div>
+
+
+<h2 id="uniksowe-chwile-godne-uwagi">Uniksowe chwile godne uwagi<a class="headerlink" href="#uniksowe-chwile-godne-uwagi" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">time.gmtime(1000000000)[:6] # Unix billenium
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mi">1000000000</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># Unix billenium</span>
+</pre></div>
 
-<pre><code>(2001, 9, 9, 1, 46, 40)
-</code></pre>
-<pre><code class="python">time.gmtime(1234567890)[:6] # piątek 13-tego
-</code></pre>
 
-<pre><code>(2009, 2, 13, 23, 31, 30)
-</code></pre>
+<div class="codehilite"><pre><span></span>(2001, 9, 9, 1, 46, 40)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># piątek 13-tego</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(2009, 2, 13, 23, 31, 30)
+</pre></div>
+
+
 <p><img alt="" src="../src/unix1234567890.gif" /></p>
-<pre><code class="python">time.gmtime(0xFFFFFFFF)[:6] # max bez znaku (32-bit)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mh">0xFFFFFFFF</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># max bez znaku (32-bit)</span>
+</pre></div>
 
-<pre><code>(2106, 2, 7, 6, 28, 15)
-</code></pre>
-<pre><code class="python">time.gmtime(0x7FFFFFFF)[:6] # max ze znakiem (32-bit)
-</code></pre>
 
-<pre><code>(2038, 1, 19, 3, 14, 7)
-</code></pre>
-<h2 id="czas-lokalny">Czas lokalny</h2>
+<div class="codehilite"><pre><span></span>(2106, 2, 7, 6, 28, 15)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mh">0x7FFFFFFF</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># max ze znakiem (32-bit)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(2038, 1, 19, 3, 14, 7)
+</pre></div>
+
+
+<h2 id="czas-lokalny">Czas lokalny<a class="headerlink" href="#czas-lokalny" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">time.localtime() # czas lokalny
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span> <span class="c1"># czas lokalny</span>
+</pre></div>
 
-<pre><code>time.struct_time(tm_year=2016, tm_mon=11, tm_mday=14, tm_hour=18, tm_min=43, tm_sec=19, tm_wday=0, tm_yday=319, tm_isdst=0)
-</code></pre>
-<pre><code class="python">time.localtime()[3] - time.gmtime()[3] # różnica Polska - GMT
-</code></pre>
 
-<pre><code>1
-</code></pre>
-<h2 id="czas-w-formie-czytelnej">Czas w formie czytelnej</h2>
+<div class="codehilite"><pre><span></span>time.struct_time(tm_year=2016, tm_mon=11, tm_mday=14, tm_hour=18, tm_min=43, tm_sec=19, tm_wday=0, tm_yday=319, tm_isdst=0)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># różnica Polska - GMT</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1
+</pre></div>
+
+
+<h2 id="czas-w-formie-czytelnej">Czas w formie czytelnej<a class="headerlink" href="#czas-w-formie-czytelnej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">teraz = time.localtime()
+<div class="codehilite"><pre><span></span><span class="n">teraz</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
 
-time.strftime(&quot;%c&quot;, teraz) # lub time.asctime(teraz)
-</code></pre>
+<span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="p">)</span> <span class="c1"># lub time.asctime(teraz)</span>
+</pre></div>
 
-<pre><code>'Mon Nov 14 18:43:22 2016'
-</code></pre>
-<pre><code class="python">dzien_tygodnia = time.strftime(&quot;%A&quot;, teraz) # %a - skrót
 
-print(&quot;Dzisiaj jest&quot;, dzien_tygodnia)
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;Mon Nov 14 18:43:22 2016&#39;
+</pre></div>
 
-<pre><code>Dzisiaj jest Monday
-</code></pre>
-<pre><code class="python">time.strftime(&quot;%Y-%m-%d %H:%M&quot;, teraz) # ROK-MIESIĄC-DZIEŃ GODZINA:MINUTA
-</code></pre>
 
-<pre><code>'2016-11-14 18:43'
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">dzien_tygodnia</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%A&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="p">)</span> <span class="c1"># %a - skrót</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Dzisiaj jest&quot;</span><span class="p">,</span> <span class="n">dzien_tygodnia</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Dzisiaj jest Monday
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="p">)</span> <span class="c1"># ROK-MIESIĄC-DZIEŃ GODZINA:MINUTA</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;2016-11-14 18:43&#39;
+</pre></div>
+
+
 <ul>
 <li>pełna lista dyrektyw <a href="https://docs.python.org/3.6/library/time.html#time.strftime">tutaj</a></li>
 </ul>
-<h2 id="pomiar-czasu-wall-time">Pomiar czasu (<em>wall time</em>)</h2>
+<h2 id="pomiar-czasu-wall-time">Pomiar czasu (<em>wall time</em>)<a class="headerlink" href="#pomiar-czasu-wall-time" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import time
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-def poczekalnia(n):
-    &quot;&quot;&quot;Czeka n sekund.&quot;&quot;&quot;
-    time.sleep(n)
+<span class="k">def</span> <span class="nf">poczekalnia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Czeka n sekund.&quot;&quot;&quot;</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-przed = time.time() # czas przed wywołaniem funkcji
+<span class="n">przed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="c1"># czas przed wywołaniem funkcji</span>
 
-poczekalnia(2)
+<span class="n">poczekalnia</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-po = time.time() # czas po wywołaniu funkcji
+<span class="n">po</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="c1"># czas po wywołaniu funkcji</span>
 
-print(&quot;Czekałem {} sekund.&quot;.format(po - przed))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Czekałem {} sekund.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">po</span> <span class="o">-</span> <span class="n">przed</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>Czekałem 2.002260446548462 sekund.
-</code></pre>
-<h2 id="pomiar-czasu-procesora-process-time">Pomiar czasu procesora (<em>process time</em>)</h2>
+
+<div class="codehilite"><pre><span></span>Czekałem 2.002260446548462 sekund.
+</pre></div>
+
+
+<h2 id="pomiar-czasu-procesora-process-time">Pomiar czasu procesora (<em>process time</em>)<a class="headerlink" href="#pomiar-czasu-procesora-process-time" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import time
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-def poczekalnia(n):
-    &quot;&quot;&quot;Czeka n sekund.&quot;&quot;&quot;
-    time.sleep(n)
+<span class="k">def</span> <span class="nf">poczekalnia</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Czeka n sekund.&quot;&quot;&quot;</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-przed = time.clock() # czas przed wywołaniem funkcji
+<span class="n">przed</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span> <span class="c1"># czas przed wywołaniem funkcji</span>
 
-poczekalnia(2)
+<span class="n">poczekalnia</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-po = time.clock() # czas po wywołaniu funkcji
+<span class="n">po</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span> <span class="c1"># czas po wywołaniu funkcji</span>
 
-print(&quot;Czekałem {} sekund.&quot;.format(po - przed))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Czekałem {} sekund.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">po</span> <span class="o">-</span> <span class="n">przed</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>Czekałem 0.0015890000000000626 sekund.
-</code></pre>
-<h2 id="modu-datetime">Moduł <em>datetime</em></h2>
+
+<div class="codehilite"><pre><span></span>Czekałem 0.0015890000000000626 sekund.
+</pre></div>
+
+
+<h2 id="modu-datetime">Moduł <em>datetime</em><a class="headerlink" href="#modu-datetime" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wygodniejszy w użyciu do zarządzania czasem i datą</li>
 <li>arytmetyka czasu i daty, np.</li>
 </ul>
-<pre><code class="python">import datetime
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
-t0 = datetime.datetime.now()
-t1 = datetime.datetime(2017, 2, 4) # początek sesji
+<span class="n">t0</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># początek sesji</span>
 
-print(t1 - t0)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>81 days, 5:16:24.258938
-</code></pre>
-<h2 id="przykad_1">Przykład</h2>
+
+<div class="codehilite"><pre><span></span>81 days, 5:16:24.258938
+</pre></div>
+
+
+<h2 id="przykad_1">Przykład<a class="headerlink" href="#przykad_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">teraz = datetime.datetime.now()
-uniks_end = datetime.datetime(2038, 1, 19, 3, 14, 7)
+<div class="codehilite"><pre><span></span><span class="n">teraz</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">uniks_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2038</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 
-print(&quot;teraz =&quot;, teraz)
-print(&quot;rok =&quot;, teraz.year)
-print(&quot;miesiąc =&quot;, teraz.month)
-print(&quot;dzień =&quot;, teraz.day)
-print(&quot;Do końca uniksa zostało&quot;, uniks_end - teraz)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;teraz =&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;rok =&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;miesiąc =&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;dzień =&quot;</span><span class="p">,</span> <span class="n">teraz</span><span class="o">.</span><span class="n">day</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Do końca uniksa zostało&quot;</span><span class="p">,</span> <span class="n">uniks_end</span> <span class="o">-</span> <span class="n">teraz</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>teraz = 2016-11-14 18:43:37.185897
+
+<div class="codehilite"><pre><span></span>teraz = 2016-11-14 18:43:37.185897
 rok = 2016
 miesiąc = 11
 dzień = 14
 Do końca uniksa zostało 7735 days, 8:30:29.814103
-</code></pre>
-<h2 id="przykad-logi">Przykład - logi</h2>
+</pre></div>
+
+
+<h2 id="przykad-logi">Przykład - logi<a class="headerlink" href="#przykad-logi" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import os
-from datetime import datetime
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-def create_log(log_path, process):
-    &quot;&quot;&quot;Tworzy unikatowy log.&quot;&quot;&quot;
-    timestamp = datetime.now().strftime('%Y_%m_%d_%H%M%S')
-    filename = &quot;.&quot;.join([process, timestamp, &quot;log&quot;])
-    with open(os.path.join(log_path, filename), 'w+') as f:
-        f.write(&quot;Uruchomiono proces.&quot;)
+<span class="k">def</span> <span class="nf">create_log</span><span class="p">(</span><span class="n">log_path</span><span class="p">,</span> <span class="n">process</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tworzy unikatowy log.&quot;&quot;&quot;</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y_%m_</span><span class="si">%d</span><span class="s1">_%H%M%S&#39;</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">process</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="s2">&quot;log&quot;</span><span class="p">])</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">log_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Uruchomiono proces.&quot;</span><span class="p">)</span>
 
-create_log(os.getcwd(), &quot;test&quot;)
-</code></pre>
+<span class="n">create_log</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">%%bash
-ls -l *.log
-</code></pre>
 
-<pre><code>-rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175921.log
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">*.</span><span class="n">log</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>-rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175921.log
 -rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175922.log
 -rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175942.log
 -rw-rw-r-- 1 goran goran 19 lis 14 18:43 test.2016_11_14_184342.log
-</code></pre>
-<h2 id="generatory-liczb-pseudolosowych">Generatory liczb pseudolosowych</h2>
+</pre></div>
+
+
+<h2 id="generatory-liczb-pseudolosowych">Generatory liczb pseudolosowych<a class="headerlink" href="#generatory-liczb-pseudolosowych" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>nie jest możliwe wygenerowanie liczby prawdziwie losowej</li>
@@ -1041,7 +2413,7 @@ ls -l *.log
 </ul>
 </li>
 </ul>
-<h2 id="middle-square-method"><em>Middle square method</em></h2>
+<h2 id="middle-square-method"><em>Middle square method</em><a class="headerlink" href="#middle-square-method" title="Permanent link">&para;</a></h2>
 <hr />
 <p><img src="src/Eniac.jpg" style="float: right; width: 50%;"></p>
 <ul>
@@ -1052,7 +2424,7 @@ ls -l *.log
 </ul>
 </li>
 </ul>
-<h2 id="middle-square-method-algorytm"><em>Middle square method</em> - algorytm</h2>
+<h2 id="middle-square-method-algorytm"><em>Middle square method</em> - algorytm<a class="headerlink" href="#middle-square-method-algorytm" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>weź liczbę 4-cyfrową jako <em>seed</em> (w ogólności można wziać <em>n</em>-cyfrową liczbę)</li>
@@ -1061,43 +2433,49 @@ ls -l *.log
 </ul>
 <span>\[1111^2 = 01234321 \rightarrow 2343$$
 $$2343^2 = 05489649 \rightarrow 4896$$
-$$4896^2 = 23970816 \rightarrow 9708\]</span><h2 id="middle-square-method-implementacja"><em>Middle square method</em> - implementacja</h2>
+$$4896^2 = 23970816 \rightarrow 9708\]</span><h2 id="middle-square-method-implementacja"><em>Middle square method</em> - implementacja<a class="headerlink" href="#middle-square-method-implementacja" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile middle2.py
-&quot;&quot;&quot;PRNG using middle-square method.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">middle2</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;PRNG using middle-square method.&quot;&quot;&quot;</span>
 
-def _middle2(n):
-    &quot;&quot;&quot;Return next random number.&quot;&quot;&quot;
-    return int(str(n*n).zfill(8)[2:6])
+<span class="k">def</span> <span class="nf">_middle2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return next random number.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">8</span><span class="p">)[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
 
-def generate(n, seed=1111):
-    &quot;&quot;&quot;Generate n numbers starting with seed.&quot;&quot;&quot;
-    numbers = []
-    for _ in range(n):
-        numbers.append(seed)
-        seed = _middle2(seed)
-    return numbers
-</code></pre>
+<span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1111</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate n numbers starting with seed.&quot;&quot;&quot;</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">seed</span> <span class="o">=</span> <span class="n">_middle2</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numbers</span>
+</pre></div>
 
-<pre><code>Overwriting middle2.py
-</code></pre>
-<h2 id="middle-square-method-wyniki"><em>Middle square method</em> - wyniki</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting middle2.py
+</pre></div>
+
+
+<h2 id="middle-square-method-wyniki"><em>Middle square method</em> - wyniki<a class="headerlink" href="#middle-square-method-wyniki" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%matplotlib inline
-import matplotlib.pyplot as plt
-import middle2
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">middle2</span>
 
-size, seed = 100, 1234
+<span class="n">size</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1234</span>
 
-x, y = range(size), middle2.generate(size, seed)
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">),</span> <span class="n">middle2</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
 
-plt.plot(x, y)
-</code></pre>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x7f31658c5240&gt;]
-</code></pre>
+
+<div class="codehilite"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f31658c5240&gt;]
+</pre></div>
+
+
 <p><img alt="png" src="../js-python_w07_files/js-python_w07_109_1.png" /></p>
-<h2 id="algorytm-lcg">Algorytm LCG</h2>
+<h2 id="algorytm-lcg">Algorytm LCG<a class="headerlink" href="#algorytm-lcg" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>LCG = linear congruential generator</li>
@@ -1105,85 +2483,96 @@ plt.plot(x, y)
 <li>prosty i szybki</li>
 <li>silne korelacje - nie nadaje się do symulacji Monte Carlo (i tym bardziej kryptografii)</li>
 </ul>
-<span>\[X_{n+1} = (aX_n + c) \text{ mod } m\]</span><h2 id="algorytm-lcg-implementacja">Algorytm LCG - implementacja</h2>
+<span>\[X_{n+1} = (aX_n + c) \text{ mod } m\]</span><h2 id="algorytm-lcg-implementacja">Algorytm LCG - implementacja<a class="headerlink" href="#algorytm-lcg-implementacja" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def lcg(seed, m, a, c):
-    &quot;&quot;&quot;Return next random number using LCG.&quot;&quot;&quot;
-    return (seed * a + c) % m
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">lcg</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return next random number using LCG.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">seed</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
 
-size, seed = 100, 1234
-a, c, m = 48271, 0, 2**32 - 1 # C++11 minst_rand
+<span class="n">size</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1234</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">48271</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># C++11 minst_rand</span>
 
-random_numbers = []
+<span class="n">random_numbers</span> <span class="o">=</span> <span class="p">[]</span>
 
-for _ in range(size):
-    seed = lcg(seed, m, a, c)
-    random_numbers.append(seed)
-</code></pre>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="n">seed</span> <span class="o">=</span> <span class="n">lcg</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="n">random_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="algorytm-lcg-wyniki">Algorytm LCG - wyniki</h2>
+
+<h2 id="algorytm-lcg-wyniki">Algorytm LCG - wyniki<a class="headerlink" href="#algorytm-lcg-wyniki" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import matplotlib.pyplot as plt
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-x = range(size)
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
 
-plt.plot(x, random_numbers)
-</code></pre>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">random_numbers</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[&lt;matplotlib.lines.Line2D at 0x7f316581b5f8&gt;]
-</code></pre>
+
+<div class="codehilite"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f316581b5f8&gt;]
+</pre></div>
+
+
 <p><img alt="png" src="../js-python_w07_files/js-python_w07_114_1.png" /></p>
-<h2 id="algorytm-lcg-korelacje">Algorytm LCG - korelacje</h2>
+<h2 id="algorytm-lcg-korelacje">Algorytm LCG - korelacje<a class="headerlink" href="#algorytm-lcg-korelacje" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># Mathematics and Computers in Simulations 46 (1998) 485-505
-seed = 1
-a = 65539
-c = 0
-m = 2**31
+<div class="codehilite"><pre><span></span><span class="c1"># Mathematics and Computers in Simulations 46 (1998) 485-505</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">65539</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">31</span>
 
-punkty = [] # losowe punkty
+<span class="n">punkty</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># losowe punkty</span>
 
-for _ in range(9600):
-    seed = lcg(seed, m, a, c)
-    punkty.append(seed)
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9600</span><span class="p">):</span>
+    <span class="n">seed</span> <span class="o">=</span> <span class="n">lcg</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="n">punkty</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
 
-x = punkty[::3]  # współrzędne x
-y = punkty[1::3] # współrzędne y
-z = punkty[2::3] # współrzędne z
-</code></pre>
+<span class="n">x</span> <span class="o">=</span> <span class="n">punkty</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># współrzędne x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">punkty</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># współrzędne y</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">punkty</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># współrzędne z</span>
+</pre></div>
 
-<h2 id="algorytm-lcg-punkty-3d">Algorytm LCG - punkty 3D</h2>
+
+<h2 id="algorytm-lcg-punkty-3d">Algorytm LCG - punkty 3D<a class="headerlink" href="#algorytm-lcg-punkty-3d" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from time import sleep
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 
-ax.scatter(x, y, z, marker='.')
-</code></pre>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f3164d78e10&gt;
-</code></pre>
+
+<div class="codehilite"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f3164d78e10&gt;
+</pre></div>
+
+
 <p><img alt="png" src="../js-python_w07_files/js-python_w07_118_1.png" /></p>
-<h2 id="algorytm-lcg-punkty-3d_1">Algorytm LCG - punkty 3D</h2>
+<h2 id="algorytm-lcg-punkty-3d_1">Algorytm LCG - punkty 3D<a class="headerlink" href="#algorytm-lcg-punkty-3d_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 
-ax.view_init(30, 60)
+<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
 
-ax.scatter(x,y,z, marker='.')
-</code></pre>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f3164cbeeb8&gt;
-</code></pre>
+
+<div class="codehilite"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f3164cbeeb8&gt;
+</pre></div>
+
+
 <p><img alt="png" src="../js-python_w07_files/js-python_w07_120_1.png" /></p>
-<h2 id="modu-random">Moduł <em>random</em></h2>
+<h2 id="modu-random">Moduł <em>random</em><a class="headerlink" href="#modu-random" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>generator Mersenne Twister</li>
@@ -1191,170 +2580,254 @@ ax.scatter(x,y,z, marker='.')
 <li>przewidywalność (nie nadaje się do kryptografii)</li>
 <li>szybki, ale "nieelegancki"</li>
 </ul>
-<h2 id="losowe-liczby-zmiennoprzecinkowe">Losowe liczby zmiennoprzecinkowe</h2>
+<h2 id="losowe-liczby-zmiennoprzecinkowe">Losowe liczby zmiennoprzecinkowe<a class="headerlink" href="#losowe-liczby-zmiennoprzecinkowe" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import random
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-# random.random() -&gt; losowa liczba z [0, 1)
+<span class="c1"># random.random() -&gt; losowa liczba z [0, 1)</span>
 
-losowe = [random.random() for _ in range(10)]
+<span class="n">losowe</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 
-print(losowe)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">losowe</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[0.2698846730753022, 0.39646893011652196, 0.3569316622351202, 0.7422356288778353, 0.9872672338526717, 0.8037923911064603, 0.8702317548225692, 0.4956627050929412, 0.3254081126694237, 0.3929978024317329]
-</code></pre>
-<pre><code class="python"># random.uniform(a, b) -&gt; losowa z przedziału [a, b]
 
-losowe = [random.uniform(99, 100) for _ in range(10)]
+<div class="codehilite"><pre><span></span>[0.2698846730753022, 0.39646893011652196, 0.3569316622351202, 0.7422356288778353, 0.9872672338526717, 0.8037923911064603, 0.8702317548225692, 0.4956627050929412, 0.3254081126694237, 0.3929978024317329]
+</pre></div>
 
-print(losowe)
-</code></pre>
 
-<pre><code>[99.99533728109901, 99.59952026049403, 99.42567811786209, 99.78233290994207, 99.84681728147966, 99.53305937003043, 99.47972787766165, 99.94064273021912, 99.8788743089142, 99.76186755697995]
-</code></pre>
-<h2 id="losowe-liczby-cakowite">Losowe liczby całkowite</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># random.uniform(a, b) -&gt; losowa z przedziału [a, b]</span>
+
+<span class="n">losowe</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">losowe</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[99.99533728109901, 99.59952026049403, 99.42567811786209, 99.78233290994207, 99.84681728147966, 99.53305937003043, 99.47972787766165, 99.94064273021912, 99.8788743089142, 99.76186755697995]
+</pre></div>
+
+
+<h2 id="losowe-liczby-cakowite">Losowe liczby całkowite<a class="headerlink" href="#losowe-liczby-cakowite" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import random
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-# random.randint(a, b) - losowa całkowita z [a, b]
+<span class="c1"># random.randint(a, b) - losowa całkowita z [a, b]</span>
 
-losowe = [random.randint(1, 10) for _ in range(10)]
+<span class="n">losowe</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 
-print(losowe)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">losowe</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[4, 3, 7, 2, 5, 3, 6, 6, 5, 1]
-</code></pre>
-<pre><code class="python"># random.randrange(stop) -&gt; losowa &lt; stop
-# random.randrange(start, stop[, step])
 
-losowe = [random.randrange(10) for _ in range(10)]
+<div class="codehilite"><pre><span></span>[4, 3, 7, 2, 5, 3, 6, 6, 5, 1]
+</pre></div>
 
-print(losowe)
-</code></pre>
 
-<pre><code>[7, 5, 0, 2, 4, 5, 1, 1, 1, 4]
-</code></pre>
-<h2 id="losowe-z-sekwencji">Losowe z sekwencji</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># random.randrange(stop) -&gt; losowa &lt; stop</span>
+<span class="c1"># random.randrange(start, stop[, step])</span>
+
+<span class="n">losowe</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">losowe</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[7, 5, 0, 2, 4, 5, 1, 1, 1, 4]
+</pre></div>
+
+
+<h2 id="losowe-z-sekwencji">Losowe z sekwencji<a class="headerlink" href="#losowe-z-sekwencji" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import random
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-x = &quot;Python&quot;
-y = ['a', 'b', 'c', 1, 2, 3]
-</code></pre>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
 
-<pre><code class="python">random.choice(x) # losowa litera z str
-</code></pre>
 
-<pre><code>'o'
-</code></pre>
-<pre><code class="python">random.choice(y) # losowy element listy
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># losowa litera z str</span>
+</pre></div>
 
-<pre><code>2
-</code></pre>
-<pre><code class="python">random.sample(y, 3) # losowy podzbiór
-</code></pre>
 
-<pre><code>[1, 3, 'b']
-</code></pre>
-<h2 id="seed">Seed</h2>
+<div class="codehilite"><pre><span></span>&#39;o&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># losowy element listy</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># losowy podzbiór</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[1, 3, &#39;b&#39;]
+</pre></div>
+
+
+<h2 id="seed">Seed<a class="headerlink" href="#seed" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import random
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-for _ in range(5):
-    print(random.random())
-</code></pre>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+</pre></div>
 
-<pre><code>0.5943111012611626
+
+<div class="codehilite"><pre><span></span>0.5943111012611626
 0.7799061974116444
 0.9688698425524694
 0.09623949574155088
 0.7030765207216848
-</code></pre>
-<pre><code class="python">for _ in range(5):
-    random.seed(1234) # stały seed -&gt; stała wartość
-    print(random.random())
-</code></pre>
+</pre></div>
 
-<pre><code>0.9664535356921388
+
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span> <span class="c1"># stały seed -&gt; stała wartość</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0.9664535356921388
 0.9664535356921388
 0.9664535356921388
 0.9664535356921388
 0.9664535356921388
-</code></pre>
-<h2 id="totolotek">Totolotek</h2>
+</pre></div>
+
+
+<h2 id="totolotek">Totolotek<a class="headerlink" href="#totolotek" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from random import randint
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
-def losowanie():
-    &quot;&quot;&quot;Losuje 6 liczb od 1 do 49.&quot;&quot;&quot;
-    return sorted([randint(1, 49) for _ in range(6)])
+<span class="k">def</span> <span class="nf">losowanie</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Losuje 6 liczb od 1 do 49.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">49</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
 
-def check(a, b):
-    &quot;&quot;&quot;Sprawdza ilość takich samych elementów.&quot;&quot;&quot;
-    return len([n for n in a if n in b])
+<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sprawdza ilość takich samych elementów.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">([</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">b</span><span class="p">])</span>
 
-def play():
-    &quot;&quot;&quot;Gra w lotka.&quot;&quot;&quot;
-    lotto = losowanie() # losowanie lotto
-    kupon = losowanie() # kupon chybił-trafił
-    return check(kupon, lotto)
-</code></pre>
+<span class="k">def</span> <span class="nf">play</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Gra w lotka.&quot;&quot;&quot;</span>
+    <span class="n">lotto</span> <span class="o">=</span> <span class="n">losowanie</span><span class="p">()</span> <span class="c1"># losowanie lotto</span>
+    <span class="n">kupon</span> <span class="o">=</span> <span class="n">losowanie</span><span class="p">()</span> <span class="c1"># kupon chybił-trafił</span>
+    <span class="k">return</span> <span class="n">check</span><span class="p">(</span><span class="n">kupon</span><span class="p">,</span> <span class="n">lotto</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="totolotek-symulacja">Totolotek - symulacja</h2>
+
+<h2 id="totolotek-symulacja">Totolotek - symulacja<a class="headerlink" href="#totolotek-symulacja" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%matplotlib inline
-import matplotlib.pyplot as plt
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-n = 10000 # ilość gier
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># ilość gier</span>
 
-wyniki = [play() for _ in range(n)] 
+<span class="n">wyniki</span> <span class="o">=</span> <span class="p">[</span><span class="n">play</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> 
 
-plt.hist(wyniki, 6)
-</code></pre>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">wyniki</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>(array([  4.80300000e+03,   3.70800000e+03,   1.26200000e+03,
+
+<div class="codehilite"><pre><span></span>(array([  4.80300000e+03,   3.70800000e+03,   1.26200000e+03,
           1.96000000e+02,   2.90000000e+01,   2.00000000e+00]),
  array([ 0.        ,  0.83333333,  1.66666667,  2.5       ,  3.33333333,
          4.16666667,  5.        ]),
  &lt;a list of 6 Patch objects&gt;)
-</code></pre>
-<p><img alt="png" src="../js-python_w07_files/js-python_w07_139_1.png" /></p></div>
-        </div>
+</pre></div>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+
+<p><img alt="png" src="../js-python_w07_files/js-python_w07_139_1.png" /></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w06/" title="Wykład 6" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 6
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../js-python_w08/" title="Wykład 8" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 8
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

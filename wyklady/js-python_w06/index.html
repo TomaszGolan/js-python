@@ -1,892 +1,2138 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w06/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 6 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 6
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w05/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w07/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-6">Wykład 6</a></li>
-            <li><a href="#nazwy-zmiennych">Nazwy zmiennych</a></li>
-            <li><a href="#niebezpieczne-nadpisania">Niebezpieczne nadpisania</a></li>
-            <li><a href="#moduy-import">Moduły - import ...</a></li>
-            <li><a href="#moduy-from-import">Moduły - from ... import ...</a></li>
-            <li><a href="#przestrzenie-nazw">Przestrzenie nazw</a></li>
-            <li><a href="#uwaga-nadpisac-mozna-wszystko">Uwaga: nadpisać można wszystko</a></li>
-            <li><a href="#przestrzen-nazw-lokalnych">Przestrzeń nazw lokalnych</a></li>
-            <li><a href="#przestrzen-nazw-globalnych">Przestrzeń nazw globalnych</a></li>
-            <li><a href="#zmienne-lokalne-nadpisuja-globalne">Zmienne lokalne nadpisują globalne</a></li>
-            <li><a href="#albo-global-albo-local">Albo global albo local</a></li>
-            <li><a href="#kolejnosc-przestrzeni">Kolejność przestrzeni</a></li>
-            <li><a href="#wielokrotne-zagniezdzenie">Wielokrotne zagnieżdżenie</a></li>
-            <li><a href="#uwaga-na-globalne-mutowalne">Uwaga na globalne mutowalne</a></li>
-            <li><a href="#wymuszanie-zmiennej-globalnej">Wymuszanie zmiennej globalnej</a></li>
-            <li><a href="#wymuszanie-zmiennej-nielokalnej">Wymuszanie zmiennej "nielokalnej"</a></li>
-            <li><a href="#wymuszanie-zmiennej-nielokalnej_1">Wymuszanie zmiennej "nielokalnej"</a></li>
-            <li><a href="#wymuszanie-zmiennej-nielokalnej_2">Wymuszanie zmiennej "nielokalnej"</a></li>
-            <li><a href="#uwaga-dla-programistow-cc">Uwaga dla programistów C/C++</a></li>
-            <li><a href="#zasieg">Zasięg</a></li>
-            <li><a href="#wasny-modu">Własny moduł</a></li>
-            <li><a href="#importowanie-wasnego-moduu">Importowanie własnego modułu</a></li>
-            <li><a href="#dokumentacja-moduu">Dokumentacja modułu</a></li>
-            <li><a href="#zawartosc-moduu">Zawartość modułu</a></li>
-            <li><a href="#doc-file-name-package">doc, file, name, package</a></li>
-            <li><a href="#loader-spec-cached">loader, spec, cached</a></li>
-            <li><a href="#plik-pyc">Plik pyc</a></li>
-            <li><a href="#kompilowany-czy-interpretowany">Kompilowany czy interpretowany?</a></li>
-            <li><a href="#skrypt-jako-zbior-definicji">Skrypt jako "zbior definicji"</a></li>
-            <li><a href="#skrypt-wykonujacy-operacje">Skrypt wykonujący operacje</a></li>
-            <li><a href="#wykonywanie-podczas-importowania">Wykonywanie podczas importowania</a></li>
-            <li><a href="#funkcja-main">"Funkcja main"</a></li>
-            <li><a href="#importowanie-a-main">Importowanie a main</a></li>
-            <li><a href="#prywatnosc">Prywatność</a></li>
-            <li><a href="#gdzie-interpreter-szuka-moduow">Gdzie interpreter szuka modułów?</a></li>
-            <li><a href="#zmienne-srodowiskowe">Zmienne środowiskowe</a></li>
-            <li><a href="#zmienne-srodowiskowe_1">Zmienne środowiskowe</a></li>
-            <li><a href="#syspath">sys.path</a></li>
-            <li><a href="#syspath_1">sys.path</a></li>
-            <li><a href="#modu-poza-katalogiem-roboczym">Moduł poza katalogiem roboczym</a></li>
-            <li><a href="#modu-poza-katalogiem-roboczym_1">Moduł poza katalogiem roboczym</a></li>
-            <li><a href="#trojmian-w-akcji">Trójmian w akcji</a></li>
-            <li><a href="#trojmian-w-akcji_1">Trójmian w akcji</a></li>
-            <li><a href="#paczka">Paczka</a></li>
-            <li><a href="#initpy">init.py</a></li>
-            <li><a href="#lista-4">Lista 4</a></li>
-            <li><a href="#lista-4-zadanie-2">Lista 4 - zadanie 2</a></li>
-            <li><a href="#lista-4-zadanie-3">Lista 4 - zadanie 3</a></li>
-            <li><a href="#importowanie">Importowanie</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 6
+      </label>
+    
+    <a href="./" title="Wykład 6" class="md-nav__link md-nav__link--active">
+      Wykład 6
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-6" title="Wykład 6" class="md-nav__link">
+    Wykład 6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nazwy-zmiennych" title="Nazwy zmiennych" class="md-nav__link">
+    Nazwy zmiennych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niebezpieczne-nadpisania" title="Niebezpieczne nadpisania" class="md-nav__link">
+    Niebezpieczne nadpisania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduy-import" title="Moduły - import ..." class="md-nav__link">
+    Moduły - import ...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduy-from-import" title="Moduły - from ... import ..." class="md-nav__link">
+    Moduły - from ... import ...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przestrzenie-nazw" title="Przestrzenie nazw" class="md-nav__link">
+    Przestrzenie nazw
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga-nadpisac-mozna-wszystko" title="Uwaga: nadpisać można wszystko" class="md-nav__link">
+    Uwaga: nadpisać można wszystko
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przestrzen-nazw-lokalnych" title="Przestrzeń nazw lokalnych" class="md-nav__link">
+    Przestrzeń nazw lokalnych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przestrzen-nazw-globalnych" title="Przestrzeń nazw globalnych" class="md-nav__link">
+    Przestrzeń nazw globalnych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-lokalne-nadpisuja-globalne" title="Zmienne lokalne nadpisują globalne" class="md-nav__link">
+    Zmienne lokalne nadpisują globalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#albo-global-albo-local" title="Albo global albo local" class="md-nav__link">
+    Albo global albo local
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kolejnosc-przestrzeni" title="Kolejność przestrzeni" class="md-nav__link">
+    Kolejność przestrzeni
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wielokrotne-zagniezdzenie" title="Wielokrotne zagnieżdżenie" class="md-nav__link">
+    Wielokrotne zagnieżdżenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga-na-globalne-mutowalne" title="Uwaga na globalne mutowalne" class="md-nav__link">
+    Uwaga na globalne mutowalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-globalnej" title="Wymuszanie zmiennej globalnej" class="md-nav__link">
+    Wymuszanie zmiennej globalnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-nielokalnej" title="Wymuszanie zmiennej "nielokalnej"" class="md-nav__link">
+    Wymuszanie zmiennej "nielokalnej"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-nielokalnej_1" title="Wymuszanie zmiennej "nielokalnej"" class="md-nav__link">
+    Wymuszanie zmiennej "nielokalnej"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-nielokalnej_2" title="Wymuszanie zmiennej "nielokalnej"" class="md-nav__link">
+    Wymuszanie zmiennej "nielokalnej"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga-dla-programistow-cc" title="Uwaga dla programistów C/C++" class="md-nav__link">
+    Uwaga dla programistów C/C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zasieg" title="Zasięg" class="md-nav__link">
+    Zasięg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wasny-modu" title="Własny moduł" class="md-nav__link">
+    Własny moduł
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importowanie-wasnego-moduu" title="Importowanie własnego modułu" class="md-nav__link">
+    Importowanie własnego modułu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dokumentacja-moduu" title="Dokumentacja modułu" class="md-nav__link">
+    Dokumentacja modułu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zawartosc-moduu" title="Zawartość modułu" class="md-nav__link">
+    Zawartość modułu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doc-file-name-package" title="doc, file, name, package" class="md-nav__link">
+    doc, file, name, package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loader-spec-cached" title="loader, spec, cached" class="md-nav__link">
+    loader, spec, cached
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plik-pyc" title="Plik pyc" class="md-nav__link">
+    Plik pyc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kompilowany-czy-interpretowany" title="Kompilowany czy interpretowany?" class="md-nav__link">
+    Kompilowany czy interpretowany?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skrypt-jako-zbior-definicji" title="Skrypt jako "zbior definicji"" class="md-nav__link">
+    Skrypt jako "zbior definicji"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skrypt-wykonujacy-operacje" title="Skrypt wykonujący operacje" class="md-nav__link">
+    Skrypt wykonujący operacje
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wykonywanie-podczas-importowania" title="Wykonywanie podczas importowania" class="md-nav__link">
+    Wykonywanie podczas importowania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcja-main" title=""Funkcja main"" class="md-nav__link">
+    "Funkcja main"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importowanie-a-main" title="Importowanie a main" class="md-nav__link">
+    Importowanie a main
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prywatnosc" title="Prywatność" class="md-nav__link">
+    Prywatność
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdzie-interpreter-szuka-moduow" title="Gdzie interpreter szuka modułów?" class="md-nav__link">
+    Gdzie interpreter szuka modułów?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-srodowiskowe" title="Zmienne środowiskowe" class="md-nav__link">
+    Zmienne środowiskowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-srodowiskowe_1" title="Zmienne środowiskowe" class="md-nav__link">
+    Zmienne środowiskowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syspath" title="sys.path" class="md-nav__link">
+    sys.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syspath_1" title="sys.path" class="md-nav__link">
+    sys.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-poza-katalogiem-roboczym" title="Moduł poza katalogiem roboczym" class="md-nav__link">
+    Moduł poza katalogiem roboczym
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-poza-katalogiem-roboczym_1" title="Moduł poza katalogiem roboczym" class="md-nav__link">
+    Moduł poza katalogiem roboczym
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trojmian-w-akcji" title="Trójmian w akcji" class="md-nav__link">
+    Trójmian w akcji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trojmian-w-akcji_1" title="Trójmian w akcji" class="md-nav__link">
+    Trójmian w akcji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paczka" title="Paczka" class="md-nav__link">
+    Paczka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initpy" title="init.py" class="md-nav__link">
+    init.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-4" title="Lista 4" class="md-nav__link">
+    Lista 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-4-zadanie-2" title="Lista 4 - zadanie 2" class="md-nav__link">
+    Lista 4 - zadanie 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-4-zadanie-3" title="Lista 4 - zadanie 3" class="md-nav__link">
+    Lista 4 - zadanie 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importowanie" title="Importowanie" class="md-nav__link">
+    Importowanie
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-6">Wykład 6</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-6" title="Wykład 6" class="md-nav__link">
+    Wykład 6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nazwy-zmiennych" title="Nazwy zmiennych" class="md-nav__link">
+    Nazwy zmiennych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niebezpieczne-nadpisania" title="Niebezpieczne nadpisania" class="md-nav__link">
+    Niebezpieczne nadpisania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduy-import" title="Moduły - import ..." class="md-nav__link">
+    Moduły - import ...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduy-from-import" title="Moduły - from ... import ..." class="md-nav__link">
+    Moduły - from ... import ...
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przestrzenie-nazw" title="Przestrzenie nazw" class="md-nav__link">
+    Przestrzenie nazw
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga-nadpisac-mozna-wszystko" title="Uwaga: nadpisać można wszystko" class="md-nav__link">
+    Uwaga: nadpisać można wszystko
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przestrzen-nazw-lokalnych" title="Przestrzeń nazw lokalnych" class="md-nav__link">
+    Przestrzeń nazw lokalnych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przestrzen-nazw-globalnych" title="Przestrzeń nazw globalnych" class="md-nav__link">
+    Przestrzeń nazw globalnych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-lokalne-nadpisuja-globalne" title="Zmienne lokalne nadpisują globalne" class="md-nav__link">
+    Zmienne lokalne nadpisują globalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#albo-global-albo-local" title="Albo global albo local" class="md-nav__link">
+    Albo global albo local
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kolejnosc-przestrzeni" title="Kolejność przestrzeni" class="md-nav__link">
+    Kolejność przestrzeni
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wielokrotne-zagniezdzenie" title="Wielokrotne zagnieżdżenie" class="md-nav__link">
+    Wielokrotne zagnieżdżenie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga-na-globalne-mutowalne" title="Uwaga na globalne mutowalne" class="md-nav__link">
+    Uwaga na globalne mutowalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-globalnej" title="Wymuszanie zmiennej globalnej" class="md-nav__link">
+    Wymuszanie zmiennej globalnej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-nielokalnej" title="Wymuszanie zmiennej "nielokalnej"" class="md-nav__link">
+    Wymuszanie zmiennej "nielokalnej"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-nielokalnej_1" title="Wymuszanie zmiennej "nielokalnej"" class="md-nav__link">
+    Wymuszanie zmiennej "nielokalnej"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wymuszanie-zmiennej-nielokalnej_2" title="Wymuszanie zmiennej "nielokalnej"" class="md-nav__link">
+    Wymuszanie zmiennej "nielokalnej"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga-dla-programistow-cc" title="Uwaga dla programistów C/C++" class="md-nav__link">
+    Uwaga dla programistów C/C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zasieg" title="Zasięg" class="md-nav__link">
+    Zasięg
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wasny-modu" title="Własny moduł" class="md-nav__link">
+    Własny moduł
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importowanie-wasnego-moduu" title="Importowanie własnego modułu" class="md-nav__link">
+    Importowanie własnego modułu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dokumentacja-moduu" title="Dokumentacja modułu" class="md-nav__link">
+    Dokumentacja modułu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zawartosc-moduu" title="Zawartość modułu" class="md-nav__link">
+    Zawartość modułu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doc-file-name-package" title="doc, file, name, package" class="md-nav__link">
+    doc, file, name, package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loader-spec-cached" title="loader, spec, cached" class="md-nav__link">
+    loader, spec, cached
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plik-pyc" title="Plik pyc" class="md-nav__link">
+    Plik pyc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kompilowany-czy-interpretowany" title="Kompilowany czy interpretowany?" class="md-nav__link">
+    Kompilowany czy interpretowany?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skrypt-jako-zbior-definicji" title="Skrypt jako "zbior definicji"" class="md-nav__link">
+    Skrypt jako "zbior definicji"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skrypt-wykonujacy-operacje" title="Skrypt wykonujący operacje" class="md-nav__link">
+    Skrypt wykonujący operacje
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wykonywanie-podczas-importowania" title="Wykonywanie podczas importowania" class="md-nav__link">
+    Wykonywanie podczas importowania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funkcja-main" title=""Funkcja main"" class="md-nav__link">
+    "Funkcja main"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importowanie-a-main" title="Importowanie a main" class="md-nav__link">
+    Importowanie a main
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prywatnosc" title="Prywatność" class="md-nav__link">
+    Prywatność
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdzie-interpreter-szuka-moduow" title="Gdzie interpreter szuka modułów?" class="md-nav__link">
+    Gdzie interpreter szuka modułów?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-srodowiskowe" title="Zmienne środowiskowe" class="md-nav__link">
+    Zmienne środowiskowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmienne-srodowiskowe_1" title="Zmienne środowiskowe" class="md-nav__link">
+    Zmienne środowiskowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syspath" title="sys.path" class="md-nav__link">
+    sys.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syspath_1" title="sys.path" class="md-nav__link">
+    sys.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-poza-katalogiem-roboczym" title="Moduł poza katalogiem roboczym" class="md-nav__link">
+    Moduł poza katalogiem roboczym
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-poza-katalogiem-roboczym_1" title="Moduł poza katalogiem roboczym" class="md-nav__link">
+    Moduł poza katalogiem roboczym
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trojmian-w-akcji" title="Trójmian w akcji" class="md-nav__link">
+    Trójmian w akcji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trojmian-w-akcji_1" title="Trójmian w akcji" class="md-nav__link">
+    Trójmian w akcji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paczka" title="Paczka" class="md-nav__link">
+    Paczka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initpy" title="init.py" class="md-nav__link">
+    init.py
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-4" title="Lista 4" class="md-nav__link">
+    Lista 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-4-zadanie-2" title="Lista 4 - zadanie 2" class="md-nav__link">
+    Lista 4 - zadanie 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-4-zadanie-3" title="Lista 4 - zadanie 3" class="md-nav__link">
+    Lista 4 - zadanie 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importowanie" title="Importowanie" class="md-nav__link">
+    Importowanie
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-6">Wykład 6<a class="headerlink" href="#wykad-6" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>przestrzenie nazw</li>
 <li>moduły</li>
 </ul>
-<h2 id="nazwy-zmiennych">Nazwy zmiennych</h2>
+<h2 id="nazwy-zmiennych">Nazwy zmiennych<a class="headerlink" href="#nazwy-zmiennych" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">zmienna = 10 # zmienna wskazuje na int
+<div class="codehilite"><pre><span></span><span class="n">zmienna</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># zmienna wskazuje na int</span>
 
-print(zmienna)
+<span class="k">print</span><span class="p">(</span><span class="n">zmienna</span><span class="p">)</span>
 
-zmienna = &quot;Hello World!&quot; # zmienna wskazuje na str
+<span class="n">zmienna</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span> <span class="c1"># zmienna wskazuje na str</span>
 
-print(zmienna)
+<span class="k">print</span><span class="p">(</span><span class="n">zmienna</span><span class="p">)</span>
 
-def funkcja():
-    print(&quot;Jestem funkcją.&quot;)
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jestem funkcją.&quot;</span><span class="p">)</span>
 
-zmienna = funkcja # zmienna wskazuje na funkcje
+<span class="n">zmienna</span> <span class="o">=</span> <span class="n">funkcja</span> <span class="c1"># zmienna wskazuje na funkcje</span>
 
-zmienna()
-</code></pre>
+<span class="n">zmienna</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>10
+
+<div class="codehilite"><pre><span></span>10
 Hello World!
 Jestem funkcją.
-</code></pre>
-<h2 id="niebezpieczne-nadpisania">Niebezpieczne nadpisania</h2>
+</pre></div>
+
+
+<h2 id="niebezpieczne-nadpisania">Niebezpieczne nadpisania<a class="headerlink" href="#niebezpieczne-nadpisania" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def moja_nazwa(): # moja_nazwa wskazuje na funkcję
-    print(&quot;Jestem funkcją.&quot;)
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">moja_nazwa</span><span class="p">():</span> <span class="c1"># moja_nazwa wskazuje na funkcję</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jestem funkcją.&quot;</span><span class="p">)</span>
 
-def moja_nazwa(): # moja_nazwa wskazuje inną funkcję
-    print(&quot;Jestem nową funkcją.&quot;)
+<span class="k">def</span> <span class="nf">moja_nazwa</span><span class="p">():</span> <span class="c1"># moja_nazwa wskazuje inną funkcję</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jestem nową funkcją.&quot;</span><span class="p">)</span>
 
-moja_nazwa()
-</code></pre>
+<span class="n">moja_nazwa</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>Jestem nową funkcją.
-</code></pre>
-<pre><code class="python">moja_nazwa = 10 # moja_nazwa wskazuje na int 
 
-moja_nazwa() # TypeError: 'int' object is not callable
-</code></pre>
+<div class="codehilite"><pre><span></span>Jestem nową funkcją.
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span><span class="n">moja_nazwa</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># moja_nazwa wskazuje na int </span>
+
+<span class="n">moja_nazwa</span><span class="p">()</span> <span class="c1"># TypeError: &#39;int&#39; object is not callable</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
 &lt;ipython-input-3-d535b594ed2f&gt; in &lt;module&gt;()
       1 moja_nazwa = 10 # moja_nazwa wskazuje na int
       2 
-----&gt; 3 moja_nazwa() # TypeError: 'int' object is not callable
+----&gt; 3 moja_nazwa() # TypeError: &#39;int&#39; object is not callable
 
 
-TypeError: 'int' object is not callable
-</code></pre>
-<h2 id="moduy-import">Moduły - <em>import</em> ...</h2>
+TypeError: &#39;int&#39; object is not callable
+</pre></div>
+
+
+<h2 id="moduy-import">Moduły - <em>import</em> ...<a class="headerlink" href="#moduy-import" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import math
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
-def sin(x):
-    &quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;
-    return x
-</code></pre>
+<span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
 
-<pre><code class="python">math.sin(math.pi / 2) # wywołanie [moduł].[funkcja]
-</code></pre>
 
-<pre><code>1.0
-</code></pre>
-<pre><code class="python">sin(math.pi / 2) # wywołanie [funkcja]
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># wywołanie [moduł].[funkcja]</span>
+</pre></div>
 
-<pre><code>1.5707963267948966
-</code></pre>
-<h2 id="moduy-from-import">Moduły - <em>from ... import ...</em></h2>
+
+<div class="codehilite"><pre><span></span>1.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># wywołanie [funkcja]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1.5707963267948966
+</pre></div>
+
+
+<h2 id="moduy-from-import">Moduły - <em>from ... import ...</em><a class="headerlink" href="#moduy-from-import" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from math import sin
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
 
-def sin(x): # nadpisuje sin z math
-    &quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;
-    return x
+<span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># nadpisuje sin z math</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span>
 
-sin(math.pi / 2) # wywołanie funkcji sin
-</code></pre>
+<span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># wywołanie funkcji sin</span>
+</pre></div>
 
-<pre><code>1.5707963267948966
-</code></pre>
-<pre><code class="python">def sin(x):
-    &quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;
-    return x
 
-from math import sin # nadpisuje sin
+<div class="codehilite"><pre><span></span>1.5707963267948966
+</pre></div>
 
-sin(math.pi / 2) # wywołanie math.sin
-</code></pre>
 
-<pre><code>1.0
-</code></pre>
-<h2 id="przestrzenie-nazw">Przestrzenie nazw</h2>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span> <span class="c1"># nadpisuje sin</span>
+
+<span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># wywołanie math.sin</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>1.0
+</pre></div>
+
+
+<h2 id="przestrzenie-nazw">Przestrzenie nazw<a class="headerlink" href="#przestrzenie-nazw" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>abstrakcyjna przestrzeń przechowująca nazwy</li>
 <li>np. przestrzeń nazw wbudowanych</li>
 </ul>
-<pre><code class="python">print(dir(__builtin__)[-72:])
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtin__</span><span class="p">)[</span><span class="o">-</span><span class="mi">72</span><span class="p">:])</span>
+</pre></div>
 
-<pre><code>['abs', 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'dreload', 'enumerate', 'eval', 'exec', 'filter', 'float', 'format', 'frozenset', 'get_ipython', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
-</code></pre>
-<h2 id="uwaga-nadpisac-mozna-wszystko">Uwaga: nadpisać można wszystko</h2>
+
+<div class="codehilite"><pre><span></span>[&#39;abs&#39;, &#39;all&#39;, &#39;any&#39;, &#39;ascii&#39;, &#39;bin&#39;, &#39;bool&#39;, &#39;bytearray&#39;, &#39;bytes&#39;, &#39;callable&#39;, &#39;chr&#39;, &#39;classmethod&#39;, &#39;compile&#39;, &#39;complex&#39;, &#39;copyright&#39;, &#39;credits&#39;, &#39;delattr&#39;, &#39;dict&#39;, &#39;dir&#39;, &#39;divmod&#39;, &#39;dreload&#39;, &#39;enumerate&#39;, &#39;eval&#39;, &#39;exec&#39;, &#39;filter&#39;, &#39;float&#39;, &#39;format&#39;, &#39;frozenset&#39;, &#39;get_ipython&#39;, &#39;getattr&#39;, &#39;globals&#39;, &#39;hasattr&#39;, &#39;hash&#39;, &#39;help&#39;, &#39;hex&#39;, &#39;id&#39;, &#39;input&#39;, &#39;int&#39;, &#39;isinstance&#39;, &#39;issubclass&#39;, &#39;iter&#39;, &#39;len&#39;, &#39;license&#39;, &#39;list&#39;, &#39;locals&#39;, &#39;map&#39;, &#39;max&#39;, &#39;memoryview&#39;, &#39;min&#39;, &#39;next&#39;, &#39;object&#39;, &#39;oct&#39;, &#39;open&#39;, &#39;ord&#39;, &#39;pow&#39;, &#39;print&#39;, &#39;property&#39;, &#39;range&#39;, &#39;repr&#39;, &#39;reversed&#39;, &#39;round&#39;, &#39;set&#39;, &#39;setattr&#39;, &#39;slice&#39;, &#39;sorted&#39;, &#39;staticmethod&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;super&#39;, &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;zip&#39;]
+</pre></div>
+
+
+<h2 id="uwaga-nadpisac-mozna-wszystko">Uwaga: nadpisać można wszystko<a class="headerlink" href="#uwaga-nadpisac-mozna-wszystko" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">slownik = dict(x=1, y=2)
+<div class="codehilite"><pre><span></span><span class="n">slownik</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-print(slownik)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">slownik</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>{'y': 2, 'x': 1}
-</code></pre>
-<pre><code class="python">def dict(x, y): # nazwy wbudowane też można nadpisać
-    return x, y
 
-slownik = dict(x=1, y=2)
+<div class="codehilite"><pre><span></span>{&#39;y&#39;: 2, &#39;x&#39;: 1}
+</pre></div>
 
-print(slownik)
-</code></pre>
 
-<pre><code>(1, 2)
-</code></pre>
-<pre><code class="python"># usuń zmienne sesji jupyter
-%reset
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">dict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="c1"># nazwy wbudowane też można nadpisać</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
-</code></pre>
-<h2 id="przestrzen-nazw-lokalnych">Przestrzeń nazw lokalnych</h2>
+<span class="n">slownik</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">slownik</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>(1, 2)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="c1"># usuń zmienne sesji jupyter</span>
+<span class="o">%</span><span class="n">reset</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+</pre></div>
+
+
+<h2 id="przestrzen-nazw-lokalnych">Przestrzeń nazw lokalnych<a class="headerlink" href="#przestrzen-nazw-lokalnych" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zmienne zdefiniowane wewnątrz funkcji (niedostępne poza nią)</li>
 </ul>
-<pre><code class="python">def funkcja():             # zmienne lokalne dostępne
-    zmienna_lokalna = 1    # są tylko wewnątrz funkcji
-    return zmienna_lokalna # w której zostały zdefiniowane
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>             <span class="c1"># zmienne lokalne dostępne</span>
+    <span class="n">zmienna_lokalna</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># są tylko wewnątrz funkcji</span>
+    <span class="k">return</span> <span class="n">zmienna_lokalna</span> <span class="c1"># w której zostały zdefiniowane</span>
 
-print(&quot;zmienna_lokalna =&quot;, zmienna_lokalna)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;zmienna_lokalna =&quot;</span><span class="p">,</span> <span class="n">zmienna_lokalna</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 NameError                                 Traceback (most recent call last)
 
 &lt;ipython-input-13-7a69ba8766dd&gt; in &lt;module&gt;()
       3     return zmienna_lokalna # w której zostały zdefiniowane
       4 
-----&gt; 5 print("zmienna_lokalna =", zmienna_lokalna)
+----&gt; 5 print(&quot;zmienna_lokalna =&quot;, zmienna_lokalna)
 
 
-NameError: name 'zmienna_lokalna' is not defined
-</code></pre>
-<h2 id="przestrzen-nazw-globalnych">Przestrzeń nazw globalnych</h2>
+NameError: name &#39;zmienna_lokalna&#39; is not defined
+</pre></div>
+
+
+<h2 id="przestrzen-nazw-globalnych">Przestrzeń nazw globalnych<a class="headerlink" href="#przestrzen-nazw-globalnych" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>dostępne w całym module (pliku)</li>
 </ul>
-<pre><code class="python">zmienna_globalna = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-def funkcja():
-    return zmienna_globalna
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">zmienna_globalna</span>
 
-# wewnątrz funkcji zmienne globalne są dostępne
-funkcja()
-</code></pre>
+<span class="c1"># wewnątrz funkcji zmienne globalne są dostępne</span>
+<span class="n">funkcja</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>'Python'
-</code></pre>
-<h2 id="zmienne-lokalne-nadpisuja-globalne">Zmienne lokalne nadpisują globalne</h2>
+
+<div class="codehilite"><pre><span></span>&#39;Python&#39;
+</pre></div>
+
+
+<h2 id="zmienne-lokalne-nadpisuja-globalne">Zmienne lokalne nadpisują globalne<a class="headerlink" href="#zmienne-lokalne-nadpisuja-globalne" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">zmienna_globalna = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-def funkcja():
-    zmienna_globalna = &quot;Nowy Python&quot; # lokalna zmienna_globalna
-    print(&quot;in funkcja:&quot;, zmienna_globalna)
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Nowy Python&quot;</span> <span class="c1"># lokalna zmienna_globalna</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in funkcja:&quot;</span><span class="p">,</span> <span class="n">zmienna_globalna</span><span class="p">)</span>
 
-funkcja()
+<span class="n">funkcja</span><span class="p">()</span>
 
-print(&quot;outside funkcja:&quot;, zmienna_globalna) # globalna bez zmian
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;outside funkcja:&quot;</span><span class="p">,</span> <span class="n">zmienna_globalna</span><span class="p">)</span> <span class="c1"># globalna bez zmian</span>
+</pre></div>
 
-<pre><code>in funkcja: Nowy Python
+
+<div class="codehilite"><pre><span></span>in funkcja: Nowy Python
 outside funkcja: Python
-</code></pre>
-<h2 id="albo-global-albo-local">Albo <em>global</em> albo <em>local</em></h2>
+</pre></div>
+
+
+<h2 id="albo-global-albo-local">Albo <em>global</em> albo <em>local</em><a class="headerlink" href="#albo-global-albo-local" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">zmienna_globalna = &quot;Python&quot;
+<div class="codehilite"><pre><span></span><span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 
-def funkcja():
-    print(&quot;in funkcja:&quot;, zmienna_globalna) # globalna?
-    zmienna_globalna = &quot;Nowy Python&quot;
-    print(&quot;in funkcja:&quot;, zmienna_globalna) # lokalna?
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in funkcja:&quot;</span><span class="p">,</span> <span class="n">zmienna_globalna</span><span class="p">)</span> <span class="c1"># globalna?</span>
+    <span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Nowy Python&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in funkcja:&quot;</span><span class="p">,</span> <span class="n">zmienna_globalna</span><span class="p">)</span> <span class="c1"># lokalna?</span>
 
-funkcja() # UnboundLocalError: local variable 'zmienna_globalna'
-          # referenced before assignment
-</code></pre>
+<span class="n">funkcja</span><span class="p">()</span> <span class="c1"># UnboundLocalError: local variable &#39;zmienna_globalna&#39;</span>
+          <span class="c1"># referenced before assignment</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 UnboundLocalError                         Traceback (most recent call last)
 
 &lt;ipython-input-16-c9f400fd03ff&gt; in &lt;module&gt;()
-      6     print("in funkcja:", zmienna_globalna) # lokalna?
+      6     print(&quot;in funkcja:&quot;, zmienna_globalna) # lokalna?
       7 
-----&gt; 8 funkcja() # UnboundLocalError: local variable 'zmienna_globalna'
+----&gt; 8 funkcja() # UnboundLocalError: local variable &#39;zmienna_globalna&#39;
       9           # referenced before assignment
 
 
 &lt;ipython-input-16-c9f400fd03ff&gt; in funkcja()
       2 
       3 def funkcja():
-----&gt; 4     print("in funkcja:", zmienna_globalna) # globalna?
-      5     zmienna_globalna = "Nowy Python"
-      6     print("in funkcja:", zmienna_globalna) # lokalna?
+----&gt; 4     print(&quot;in funkcja:&quot;, zmienna_globalna) # globalna?
+      5     zmienna_globalna = &quot;Nowy Python&quot;
+      6     print(&quot;in funkcja:&quot;, zmienna_globalna) # lokalna?
 
 
-UnboundLocalError: local variable 'zmienna_globalna' referenced before assignment
-</code></pre>
-<h2 id="kolejnosc-przestrzeni">Kolejność przestrzeni</h2>
+UnboundLocalError: local variable &#39;zmienna_globalna&#39; referenced before assignment
+</pre></div>
+
+
+<h2 id="kolejnosc-przestrzeni">Kolejność przestrzeni<a class="headerlink" href="#kolejnosc-przestrzeni" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>nazwy lokalne, potem globalne, na końcu wbudowane</li>
 </ul>
-<pre><code class="python">list = tuple # zmienna globalna nadpisuje wbudowane list
-dict = float # zmienna globalna nadpisuje wbudowane dict
+<div class="codehilite"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="nb">tuple</span> <span class="c1"># zmienna globalna nadpisuje wbudowane list</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="nb">float</span> <span class="c1"># zmienna globalna nadpisuje wbudowane dict</span>
 
-print(&quot;type(list()) =&quot;, type(list()))
-print(&quot;type(dict()) =&quot;, type(dict()))
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;type(list()) =&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;type(dict()) =&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">dict</span><span class="p">()))</span>
 
-def funkcja():
-    dict = int # zmienna lokalna nadpisuje globalne dict
-    print(&quot;In funkcja:&quot;)
-    print(&quot;\ttype(dict()) =&quot;, type(dict())) # lokalna
-    print(&quot;\ttype(list()) =&quot;, type(list())) # globalna
-    print(&quot;\ttype(int()) =&quot;, type(int()))   # wbudowana
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="nb">dict</span> <span class="o">=</span> <span class="nb">int</span> <span class="c1"># zmienna lokalna nadpisuje globalne dict</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;In funkcja:&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">type(dict()) =&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">dict</span><span class="p">()))</span> <span class="c1"># lokalna</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">type(list()) =&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">()))</span> <span class="c1"># globalna</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">type(int()) =&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">()))</span>   <span class="c1"># wbudowana</span>
 
-funkcja()
-</code></pre>
+<span class="n">funkcja</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>type(list()) = &lt;class 'tuple'&gt;
-type(dict()) = &lt;class 'float'&gt;
+
+<div class="codehilite"><pre><span></span>type(list()) = &lt;class &#39;tuple&#39;&gt;
+type(dict()) = &lt;class &#39;float&#39;&gt;
 In funkcja:
-    type(dict()) = &lt;class 'int'&gt;
-    type(list()) = &lt;class 'tuple'&gt;
-    type(int()) = &lt;class 'int'&gt;
-</code></pre>
-<pre><code class="python">%reset
-</code></pre>
+    type(dict()) = &lt;class &#39;int&#39;&gt;
+    type(list()) = &lt;class &#39;tuple&#39;&gt;
+    type(int()) = &lt;class &#39;int&#39;&gt;
+</pre></div>
 
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
-</code></pre>
-<h2 id="wielokrotne-zagniezdzenie">Wielokrotne zagnieżdżenie</h2>
+
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">reset</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+</pre></div>
+
+
+<h2 id="wielokrotne-zagniezdzenie">Wielokrotne zagnieżdżenie<a class="headerlink" href="#wielokrotne-zagniezdzenie" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">a = &quot;global a&quot; # zasięg zmiennych a, b, c
-b = &quot;global b&quot; # jest globalny
-c = &quot;global c&quot;
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;global a&quot;</span> <span class="c1"># zasięg zmiennych a, b, c</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;global b&quot;</span> <span class="c1"># jest globalny</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;global c&quot;</span>
 
-def funkcja():
-    a = &quot;local a&quot; # lokalne a, b dostępne w funkcji
-    b = &quot;local b&quot; # i w każdym kolejnym zagnieżdzeniu
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local a&quot;</span> <span class="c1"># lokalne a, b dostępne w funkcji</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;local b&quot;</span> <span class="c1"># i w każdym kolejnym zagnieżdzeniu</span>
 
-    def funkcja_w_funkcji():
-        a = &quot;local local a&quot; # dostępna tylko w funkcja_w_funkcji
-        print(a, b, c, sep='\n')
+    <span class="k">def</span> <span class="nf">funkcja_w_funkcji</span><span class="p">():</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local local a&quot;</span> <span class="c1"># dostępna tylko w funkcja_w_funkcji</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-    funkcja_w_funkcji()
+    <span class="n">funkcja_w_funkcji</span><span class="p">()</span>
 
-funkcja() # od &quot;najlokalniejszej&quot; do &quot;najglobalniejszej&quot;
-</code></pre>
+<span class="n">funkcja</span><span class="p">()</span> <span class="c1"># od &quot;najlokalniejszej&quot; do &quot;najglobalniejszej&quot;</span>
+</pre></div>
 
-<pre><code>local local a
+
+<div class="codehilite"><pre><span></span>local local a
 local b
 global c
-</code></pre>
-<h2 id="uwaga-na-globalne-mutowalne">Uwaga na globalne mutowalne</h2>
+</pre></div>
+
+
+<h2 id="uwaga-na-globalne-mutowalne">Uwaga na globalne mutowalne<a class="headerlink" href="#uwaga-na-globalne-mutowalne" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">x = [1, 2, 3]
-y = ['a', 'b', 'c']
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 
-def funkcja():
-    x = [1, 2, 3, 4] # przypisanie -&gt; zmienna lokalna
-    y.append('d')    # modyfikacja -&gt; ciągle globalna
+<span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="c1"># przypisanie -&gt; zmienna lokalna</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>    <span class="c1"># modyfikacja -&gt; ciągle globalna</span>
 
-funkcja()
+<span class="n">funkcja</span><span class="p">()</span>
 
-print(x, y, sep='\n')
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>[1, 2, 3]
-['a', 'b', 'c', 'd']
-</code></pre>
-<h2 id="wymuszanie-zmiennej-globalnej">Wymuszanie zmiennej globalnej</h2>
+
+<div class="codehilite"><pre><span></span>[1, 2, 3]
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+</pre></div>
+
+
+<h2 id="wymuszanie-zmiennej-globalnej">Wymuszanie zmiennej globalnej<a class="headerlink" href="#wymuszanie-zmiennej-globalnej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">zmienna = &quot;globalna&quot;
+<div class="codehilite"><pre><span></span><span class="n">zmienna</span> <span class="o">=</span> <span class="s2">&quot;globalna&quot;</span>
 
-def f():
-    global zmienna # przypisanie nie tworzy zmiennej lokalnej
-    zmienna = &quot;nowa globalna&quot; # ale modyfikuje globalną
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">zmienna</span> <span class="c1"># przypisanie nie tworzy zmiennej lokalnej</span>
+    <span class="n">zmienna</span> <span class="o">=</span> <span class="s2">&quot;nowa globalna&quot;</span> <span class="c1"># ale modyfikuje globalną</span>
 
-f()
+<span class="n">f</span><span class="p">()</span>
 
-print(zmienna)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">zmienna</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>nowa globalna
-</code></pre>
-<h2 id="wymuszanie-zmiennej-nielokalnej">Wymuszanie zmiennej "nielokalnej"</h2>
+
+<div class="codehilite"><pre><span></span>nowa globalna
+</pre></div>
+
+
+<h2 id="wymuszanie-zmiennej-nielokalnej">Wymuszanie zmiennej "nielokalnej"<a class="headerlink" href="#wymuszanie-zmiennej-nielokalnej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">a = &quot;global a&quot; # globalna
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;global a&quot;</span> <span class="c1"># globalna</span>
 
-def f():
-    a = &quot;local a&quot; # lokalna w f
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local a&quot;</span> <span class="c1"># lokalna w f</span>
 
-    def g():
-        a = &quot;local local a&quot; # lokalna w g
-        print(&quot;in g():&quot;, a)
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local local a&quot;</span> <span class="c1"># lokalna w g</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in g():&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-    g()
+    <span class="n">g</span><span class="p">()</span>
 
-    print(&quot;in f():&quot;, a)
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in f():&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-f()
+<span class="n">f</span><span class="p">()</span>
 
-print(&quot;outside:&quot;, a)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;outside:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>in g(): local local a
+
+<div class="codehilite"><pre><span></span>in g(): local local a
 in f(): local a
 outside: global a
-</code></pre>
-<h2 id="wymuszanie-zmiennej-nielokalnej_1">Wymuszanie zmiennej "nielokalnej"</h2>
+</pre></div>
+
+
+<h2 id="wymuszanie-zmiennej-nielokalnej_1">Wymuszanie zmiennej "nielokalnej"<a class="headerlink" href="#wymuszanie-zmiennej-nielokalnej_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">a = &quot;global a&quot; # globalna
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;global a&quot;</span> <span class="c1"># globalna</span>
 
-def f():
-    a = &quot;local a&quot; # lokalna w f
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local a&quot;</span> <span class="c1"># lokalna w f</span>
 
-    def g():
-        global a # używaj globalnej
-        a = &quot;local local a&quot; # modyfikuje globalną
-        print(&quot;in g():&quot;, a)
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">a</span> <span class="c1"># używaj globalnej</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local local a&quot;</span> <span class="c1"># modyfikuje globalną</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in g():&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-    g()
+    <span class="n">g</span><span class="p">()</span>
 
-    print(&quot;in f():&quot;, a)
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in f():&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-f()
+<span class="n">f</span><span class="p">()</span>
 
-print(&quot;outside:&quot;, a)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;outside:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>in g(): local local a
+
+<div class="codehilite"><pre><span></span>in g(): local local a
 in f(): local a
 outside: local local a
-</code></pre>
-<h2 id="wymuszanie-zmiennej-nielokalnej_2">Wymuszanie zmiennej "nielokalnej"</h2>
+</pre></div>
+
+
+<h2 id="wymuszanie-zmiennej-nielokalnej_2">Wymuszanie zmiennej "nielokalnej"<a class="headerlink" href="#wymuszanie-zmiennej-nielokalnej_2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">a = &quot;global a&quot; # globalna
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;global a&quot;</span> <span class="c1"># globalna</span>
 
-def f():
-    a = &quot;local a&quot; # lokalna w f
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local a&quot;</span> <span class="c1"># lokalna w f</span>
 
-    def g():
-        nonlocal a # użyj a z poprzedniego zagnieżdżenia
-        a = &quot;local local a&quot; # modyfikuje a z f
-        print(&quot;in g():&quot;, a)
+    <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+        <span class="n">nonlocal</span> <span class="n">a</span> <span class="c1"># użyj a z poprzedniego zagnieżdżenia</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;local local a&quot;</span> <span class="c1"># modyfikuje a z f</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in g():&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-    g()
+    <span class="n">g</span><span class="p">()</span>
 
-    print(&quot;in f():&quot;, a)
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;in f():&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 
-f()
+<span class="n">f</span><span class="p">()</span>
 
-print(&quot;outside:&quot;, a)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;outside:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>in g(): local local a
+
+<div class="codehilite"><pre><span></span>in g(): local local a
 in f(): local local a
 outside: global a
-</code></pre>
-<h2 id="uwaga-dla-programistow-cc">Uwaga dla programistów C/C++</h2>
+</pre></div>
+
+
+<h2 id="uwaga-dla-programistow-cc">Uwaga dla programistów C/C++<a class="headerlink" href="#uwaga-dla-programistow-cc" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def funkcja(flag=True):
-    if flag:   # zmienna zdefiniowana w bloku
-        x = 10 # jest dostępna poza tym blokiem
-    else:
-        x = 20
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">funkcja</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>   <span class="c1"># zmienna zdefiniowana w bloku</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># jest dostępna poza tym blokiem</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
 
-    print(x)
-</code></pre>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">funkcja() 
-</code></pre>
 
-<pre><code>10
-</code></pre>
-<pre><code class="python">funkcja(False)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">funkcja</span><span class="p">()</span> 
+</pre></div>
 
-<pre><code>20
-</code></pre>
-<h2 id="zasieg">Zasięg</h2>
+
+<div class="codehilite"><pre><span></span>10
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">funkcja</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>20
+</pre></div>
+
+
+<h2 id="zasieg">Zasięg<a class="headerlink" href="#zasieg" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>obszar dostępności danej przestrzeni nazw</li>
 </ul>
-<pre><code class="python">import math
-from math import cos
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span>
 
-a = 1 # zasięg -&gt; cały plik
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># zasięg -&gt; cały plik</span>
 
-def f():
-    # uwaga: zaleca się wszystkie importy robić na początku
-    from math import log # zasięg log(...) -&gt; funkcja
-    b = 2 # zasięg -&gt; funkcja
-    c = log(3) 
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="c1"># uwaga: zaleca się wszystkie importy robić na początku</span>
+    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span> <span class="c1"># zasięg log(...) -&gt; funkcja</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># zasięg -&gt; funkcja</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
 
-d = math.sin(4) # sin(...) poza zasięgiem [moduł].[funkcja]
-e = cos(5)      # zasięg cos(...) -&gt; cały plik
-# f = log(6)    # NameError: name 'log' is not defined
-</code></pre>
+<span class="n">d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># sin(...) poza zasięgiem [moduł].[funkcja]</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>      <span class="c1"># zasięg cos(...) -&gt; cały plik</span>
+<span class="c1"># f = log(6)    # NameError: name &#39;log&#39; is not defined</span>
+</pre></div>
 
-<h2 id="wasny-modu">Własny moduł</h2>
+
+<h2 id="wasny-modu">Własny moduł<a class="headerlink" href="#wasny-modu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile my_module.py
-&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;</span>
 
-zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+<span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Unikaj zmiennych globalnych!&quot;</span>
 
-def moja_funkcja():
-    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
-    print(zmienna_globalna)
+<span class="k">def</span> <span class="nf">moja_funkcja</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">zmienna_globalna</span><span class="p">)</span>
 
-def inna_funkcja(word=&quot;&quot;, n=0):
-    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
-    print(word * n)
-</code></pre>
+<span class="k">def</span> <span class="nf">inna_funkcja</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Overwriting my_module.py
-</code></pre>
-<h2 id="importowanie-wasnego-moduu">Importowanie własnego modułu</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting my_module.py
+</pre></div>
+
+
+<h2 id="importowanie-wasnego-moduu">Importowanie własnego modułu<a class="headerlink" href="#importowanie-wasnego-moduu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import my_module
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
 
-my_module.zmienna_globalna
-</code></pre>
+<span class="n">my_module</span><span class="o">.</span><span class="n">zmienna_globalna</span>
+</pre></div>
 
-<pre><code>'Unikaj zmiennych globalnych!'
-</code></pre>
-<pre><code class="python">my_module.moja_funkcja()
-</code></pre>
 
-<pre><code>Unikaj zmiennych globalnych!
-</code></pre>
-<pre><code class="python">my_module.inna_funkcja(&quot;-&quot;, 10)
-</code></pre>
+<div class="codehilite"><pre><span></span>&#39;Unikaj zmiennych globalnych!&#39;
+</pre></div>
 
-<pre><code>----------
-</code></pre>
-<h2 id="dokumentacja-moduu">Dokumentacja modułu</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">my_module</span><span class="o">.</span><span class="n">moja_funkcja</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Unikaj zmiennych globalnych!
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">my_module</span><span class="o">.</span><span class="n">inna_funkcja</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>----------
+</pre></div>
+
+
+<h2 id="dokumentacja-moduu">Dokumentacja modułu<a class="headerlink" href="#dokumentacja-moduu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import my_module
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
 
-help(my_module)
-</code></pre>
+<span class="n">help</span><span class="p">(</span><span class="n">my_module</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Help on module my_module:
+
+<div class="codehilite"><pre><span></span>Help on module my_module:
 
 NAME
     my_module - To jest mój pierwszy moduł.
 
 FUNCTIONS
-    inna_funkcja(word='', n=0)
+    inna_funkcja(word=&#39;&#39;, n=0)
         Drukuje word n razy.
 
     moja_funkcja()
         Drukuje zmienną globalną.
 
 DATA
-    zmienna_globalna = 'Unikaj zmiennych globalnych!'
+    zmienna_globalna = &#39;Unikaj zmiennych globalnych!&#39;
 
 FILE
     /doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py
-</code></pre>
-<h2 id="zawartosc-moduu">Zawartość modułu</h2>
+</pre></div>
+
+
+<h2 id="zawartosc-moduu">Zawartość modułu<a class="headerlink" href="#zawartosc-moduu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import my_module
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
 
-dir(my_module)
-</code></pre>
+<span class="nb">dir</span><span class="p">(</span><span class="n">my_module</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['__builtins__',
- '__cached__',
- '__doc__',
- '__file__',
- '__loader__',
- '__name__',
- '__package__',
- '__spec__',
- 'inna_funkcja',
- 'moja_funkcja',
- 'zmienna_globalna']
-</code></pre>
-<h2 id="doc-file-name-package"><em>doc</em>, <em>file</em>, <em>name</em>, <em>package</em></h2>
+
+<div class="codehilite"><pre><span></span>[&#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;inna_funkcja&#39;,
+ &#39;moja_funkcja&#39;,
+ &#39;zmienna_globalna&#39;]
+</pre></div>
+
+
+<h2 id="doc-file-name-package"><em>doc</em>, <em>file</em>, <em>name</em>, <em>package</em><a class="headerlink" href="#doc-file-name-package" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">print(my_module.__doc__) # dokumentacja modułu
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span> <span class="c1"># dokumentacja modułu</span>
+</pre></div>
 
-<pre><code>To jest mój pierwszy moduł.
-</code></pre>
-<pre><code class="python">print(my_module.__file__) # ścieżka do pliku źródłowego
-</code></pre>
 
-<pre><code>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py
-</code></pre>
-<pre><code class="python">print(my_module.__name__)  # nazwa modułu
-</code></pre>
+<div class="codehilite"><pre><span></span>To jest mój pierwszy moduł.
+</pre></div>
 
-<pre><code>my_module
-</code></pre>
-<pre><code class="python">print(my_module.__package__) # paczka to zbiór modułów
-</code></pre>
 
-<h2 id="loader-spec-cached"><em>loader</em>, <em>spec</em>, <em>cached</em></h2>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__file__</span><span class="p">)</span> <span class="c1"># ścieżka do pliku źródłowego</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>  <span class="c1"># nazwa modułu</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>my_module
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__package__</span><span class="p">)</span> <span class="c1"># paczka to zbiór modułów</span>
+</pre></div>
+
+
+<h2 id="loader-spec-cached"><em>loader</em>, <em>spec</em>, <em>cached</em><a class="headerlink" href="#loader-spec-cached" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># informacja o &quot;loaderze&quot;, który został wykorzystany
-# do zaimportowania modułu    
-print(my_module.__loader__)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># informacja o &quot;loaderze&quot;, który został wykorzystany</span>
+<span class="c1"># do zaimportowania modułu    </span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__loader__</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>&lt;_frozen_importlib_external.SourceFileLoader object at 0x7f134aded6a0&gt;
-</code></pre>
-<pre><code class="python">print(my_module.__spec__) # ustalane w momencie importowanie modułu
-</code></pre>
 
-<pre><code>ModuleSpec(name='my_module', loader=&lt;_frozen_importlib_external.SourceFileLoader object at 0x7f134aded6a0&gt;, origin='/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py')
-</code></pre>
-<pre><code class="python">print(my_module.__cached__) # ścieżka do pliku .pyc
-</code></pre>
+<div class="codehilite"><pre><span></span>&lt;_frozen_importlib_external.SourceFileLoader object at 0x7f134aded6a0&gt;
+</pre></div>
 
-<pre><code>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/__pycache__/my_module.cpython-35.pyc
-</code></pre>
-<h2 id="plik-pyc">Plik <em>pyc</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__spec__</span><span class="p">)</span> <span class="c1"># ustalane w momencie importowanie modułu</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>ModuleSpec(name=&#39;my_module&#39;, loader=&lt;_frozen_importlib_external.SourceFileLoader object at 0x7f134aded6a0&gt;, origin=&#39;/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py&#39;)
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">my_module</span><span class="o">.</span><span class="n">__cached__</span><span class="p">)</span> <span class="c1"># ścieżka do pliku .pyc</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/__pycache__/my_module.cpython-35.pyc
+</pre></div>
+
+
+<h2 id="plik-pyc">Plik <em>pyc</em><a class="headerlink" href="#plik-pyc" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>plik <em>pyc</em> jest wynikiem kompilacji skryptu <em>py</em> do kodu bajtowego</li>
 <li>przyp. kod masyznowy -&gt; zrozumiały dla procesora</li>
 <li>kod bajtowy -&gt; zrozumiały dla maszyny wirtualnej / interpretera</li>
 </ul>
-<h2 id="kompilowany-czy-interpretowany">Kompilowany czy interpretowany?</h2>
+<h2 id="kompilowany-czy-interpretowany">Kompilowany czy interpretowany?<a class="headerlink" href="#kompilowany-czy-interpretowany" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>uwaga: implementacja języka (a nie język sam w sobie) może być kompilowany lub interpretowany</li>
 </ul>
-<pre><code class="python">from graphviz import Source
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="kn">import</span> <span class="n">Source</span>
 
-Source('digraph &quot;interpreter&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=1]; \
-        &quot;kod źródłowy&quot; -&gt; &quot;kompilator&quot; -&gt; &quot;kod bajtowy&quot; -&gt; &quot;interpreter&quot; -&gt; &quot;wynik&quot;}')
-</code></pre>
+<span class="n">Source</span><span class="p">(</span><span class="s1">&#39;digraph &quot;interpreter&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=1]; </span><span class="se">\</span>
+<span class="s1">        &quot;kod źródłowy&quot; -&gt; &quot;kompilator&quot; -&gt; &quot;kod bajtowy&quot; -&gt; &quot;interpreter&quot; -&gt; &quot;wynik&quot;}&#39;</span><span class="p">)</span>
+</pre></div>
+
 
 <p><img alt="svg" src="../js-python_w06_files/js-python_w06_69_0.svg" /></p>
-<h2 id="skrypt-jako-zbior-definicji">Skrypt jako "zbior definicji"</h2>
+<h2 id="skrypt-jako-zbior-definicji">Skrypt jako "zbior definicji"<a class="headerlink" href="#skrypt-jako-zbior-definicji" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile my_module.py
-&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;</span>
 
-zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+<span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Unikaj zmiennych globalnych!&quot;</span>
 
-def moja_funkcja():
-    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
-    print(zmienna_globalna)
+<span class="k">def</span> <span class="nf">moja_funkcja</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">zmienna_globalna</span><span class="p">)</span>
 
-def inna_funkcja(word=&quot;&quot;, n=0):
-    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
-    print(word * n)
-</code></pre>
+<span class="k">def</span> <span class="nf">inna_funkcja</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Overwriting my_module.py
-</code></pre>
-<pre><code class="python">%run my_module.py
-</code></pre>
 
-<h2 id="skrypt-wykonujacy-operacje">Skrypt wykonujący operacje</h2>
+<div class="codehilite"><pre><span></span>Overwriting my_module.py
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<h2 id="skrypt-wykonujacy-operacje">Skrypt wykonujący operacje<a class="headerlink" href="#skrypt-wykonujacy-operacje" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile my_module.py
-&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;</span>
 
-zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+<span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Unikaj zmiennych globalnych!&quot;</span>
 
-def moja_funkcja():
-    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
-    print(zmienna_globalna)
+<span class="k">def</span> <span class="nf">moja_funkcja</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">zmienna_globalna</span><span class="p">)</span>
 
-def inna_funkcja(word=&quot;&quot;, n=0):
-    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
-    print(word * n)
+<span class="k">def</span> <span class="nf">inna_funkcja</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
 
-inna_funkcja('-', 10)
-moja_funkcja()
-inna_funkcja('-', 10)
-</code></pre>
+<span class="n">inna_funkcja</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">moja_funkcja</span><span class="p">()</span>
+<span class="n">inna_funkcja</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Overwriting my_module.py
-</code></pre>
-<pre><code class="python">%run my_module.py
-</code></pre>
 
-<pre><code>----------
+<div class="codehilite"><pre><span></span>Overwriting my_module.py
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>----------
 Unikaj zmiennych globalnych!
 ----------
-</code></pre>
-<h2 id="wykonywanie-podczas-importowania">Wykonywanie podczas importowania</h2>
+</pre></div>
+
+
+<h2 id="wykonywanie-podczas-importowania">Wykonywanie podczas importowania<a class="headerlink" href="#wykonywanie-podczas-importowania" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code>Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
+<div class="codehilite"><pre><span></span>Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; import my_module
@@ -894,73 +2140,89 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 Unikaj zmiennych globalnych!
 ----------
 &gt;&gt;&gt; 
-</code></pre>
+</pre></div>
 
-<h2 id="funkcja-main">"Funkcja <em>main</em>"</h2>
+
+<h2 id="funkcja-main">"Funkcja <em>main</em>"<a class="headerlink" href="#funkcja-main" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile my_module.py
-&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;</span>
 
-zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+<span class="n">zmienna_globalna</span> <span class="o">=</span> <span class="s2">&quot;Unikaj zmiennych globalnych!&quot;</span>
 
-def moja_funkcja():
-    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
-    print(zmienna_globalna)
+<span class="k">def</span> <span class="nf">moja_funkcja</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">zmienna_globalna</span><span class="p">)</span>
 
-def inna_funkcja(word=&quot;&quot;, n=0):
-    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
-    print(word * n)
+<span class="k">def</span> <span class="nf">inna_funkcja</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">word</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
 
-if __name__ == &quot;__main__&quot;:
-    inna_funkcja('-', 10)
-    moja_funkcja()
-    inna_funkcja('-', 10)
-</code></pre>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">inna_funkcja</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">moja_funkcja</span><span class="p">()</span>
+    <span class="n">inna_funkcja</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Overwriting my_module.py
-</code></pre>
-<pre><code class="python">%run my_module.py
-</code></pre>
 
-<pre><code>----------
+<div class="codehilite"><pre><span></span>Overwriting my_module.py
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>----------
 Unikaj zmiennych globalnych!
 ----------
-</code></pre>
-<h2 id="importowanie-a-main">Importowanie a <em>main</em></h2>
+</pre></div>
+
+
+<h2 id="importowanie-a-main">Importowanie a <em>main</em><a class="headerlink" href="#importowanie-a-main" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>instrukcje w <em>main</em> nie zostaną wykonane podczas importowania (bo <code>__name__</code> = nazwa modułu)</li>
 </ul>
-<pre><code>Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
+<div class="codehilite"><pre><span></span>Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; import my_module
 &gt;&gt;&gt; 
-</code></pre>
+</pre></div>
 
-<h2 id="prywatnosc">Prywatność</h2>
+
+<h2 id="prywatnosc">Prywatność<a class="headerlink" href="#prywatnosc" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile private.py
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">private</span><span class="o">.</span><span class="n">py</span>
 
-public = &quot;public&quot;
-# _ przed nazwą -&gt; from ... import * pomija
-_internal = &quot;internal use&quot;
-</code></pre>
+<span class="n">public</span> <span class="o">=</span> <span class="s2">&quot;public&quot;</span>
+<span class="c1"># _ przed nazwą -&gt; from ... import * pomija</span>
+<span class="n">_internal</span> <span class="o">=</span> <span class="s2">&quot;internal use&quot;</span>
+</pre></div>
 
-<pre><code>Overwriting private.py
-</code></pre>
-<pre><code class="python">from private import * # importuj wszystko 
-</code></pre>
 
-<pre><code class="python">public
-</code></pre>
+<div class="codehilite"><pre><span></span>Overwriting private.py
+</pre></div>
 
-<pre><code>'public'
-</code></pre>
-<pre><code class="python">_internal
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">private</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># importuj wszystko </span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">public</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;public&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">_internal</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 NameError                                 Traceback (most recent call last)
 
@@ -968,9 +2230,11 @@ NameError                                 Traceback (most recent call last)
 ----&gt; 1 _internal
 
 
-NameError: name '_internal' is not defined
-</code></pre>
-<h2 id="gdzie-interpreter-szuka-moduow">Gdzie interpreter szuka modułów?</h2>
+NameError: name &#39;_internal&#39; is not defined
+</pre></div>
+
+
+<h2 id="gdzie-interpreter-szuka-moduow">Gdzie interpreter szuka modułów?<a class="headerlink" href="#gdzie-interpreter-szuka-moduow" title="Permanent link">&para;</a></h2>
 <hr />
 <ol>
 <li>bieżący katalog</li>
@@ -978,104 +2242,117 @@ NameError: name '_internal' is not defined
 <li>w katalogach określonych w trakcie instalacji (np. <code>/usr/lib/python</code>)</li>
 <li>w katalogach określonych w zmiennej <code>sys.path</code></li>
 </ol>
-<h2 id="zmienne-srodowiskowe">Zmienne środowiskowe</h2>
+<h2 id="zmienne-srodowiskowe">Zmienne środowiskowe<a class="headerlink" href="#zmienne-srodowiskowe" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zmienne powłoki systemowej</li>
 </ul>
-<pre><code class="bash">goran@goran-ift:~$ export MOJA_ZMIENNA=&quot;wartość mojej zmiennej&quot;
-goran@goran-ift:~$ echo $MOJA_ZMIENNA 
+<div class="codehilite"><pre><span></span>goran@goran-ift:~$ <span class="nb">export</span> <span class="nv">MOJA_ZMIENNA</span><span class="o">=</span><span class="s2">&quot;wartość mojej zmiennej&quot;</span>
+goran@goran-ift:~$ <span class="nb">echo</span> <span class="nv">$MOJA_ZMIENNA</span> 
 wartość mojej zmiennej
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>część zmiennych jest inicjowana przy starcie powłoki, np</li>
 </ul>
-<pre><code class="bash">goran@goran-ift:~$ echo $PATH
+<div class="codehilite"><pre><span></span>goran@goran-ift:~$ <span class="nb">echo</span> <span class="nv">$PATH</span>
 /home/goran/soft/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-</code></pre>
+</pre></div>
 
-<h2 id="zmienne-srodowiskowe_1">Zmienne środowiskowe</h2>
+
+<h2 id="zmienne-srodowiskowe_1">Zmienne środowiskowe<a class="headerlink" href="#zmienne-srodowiskowe_1" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zmienne można aktualizować</li>
 </ul>
-<pre><code class="bash">goran@goran-ift:~$ export PATH=/newpath/:$PATH
-goran@goran-ift:~$ echo $PATH
+<div class="codehilite"><pre><span></span>goran@goran-ift:~$ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/newpath/:<span class="nv">$PATH</span>
+goran@goran-ift:~$ <span class="nb">echo</span> <span class="nv">$PATH</span>
 /newpath/:/home/goran/soft/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-</code></pre>
+</pre></div>
 
-<h2 id="syspath"><em>sys.path</em></h2>
+
+<h2 id="syspath"><em>sys.path</em><a class="headerlink" href="#syspath" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import sys
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
-sys.path
-</code></pre>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
 
-<pre><code>['',
- '/home/goran/soft/anaconda3/lib/python35.zip',
- '/home/goran/soft/anaconda3/lib/python3.5',
- '/home/goran/soft/anaconda3/lib/python3.5/plat-linux',
- '/home/goran/soft/anaconda3/lib/python3.5/lib-dynload',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.6-py3.5.egg',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages/IPython/extensions',
- '/home/goran/.ipython']
-</code></pre>
-<h2 id="syspath_1"><em>sys.path</em></h2>
+
+<div class="codehilite"><pre><span></span>[&#39;&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python35.zip&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/plat-linux&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/lib-dynload&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.6-py3.5.egg&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages/IPython/extensions&#39;,
+ &#39;/home/goran/.ipython&#39;]
+</pre></div>
+
+
+<h2 id="syspath_1"><em>sys.path</em><a class="headerlink" href="#syspath_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">sys.path.append(&quot;/moja/sciezka/do/modulow&quot;)
+<div class="codehilite"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/moja/sciezka/do/modulow&quot;</span><span class="p">)</span>
 
-sys.path
-</code></pre>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
 
-<pre><code>['',
- '/home/goran/soft/anaconda3/lib/python35.zip',
- '/home/goran/soft/anaconda3/lib/python3.5',
- '/home/goran/soft/anaconda3/lib/python3.5/plat-linux',
- '/home/goran/soft/anaconda3/lib/python3.5/lib-dynload',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.6-py3.5.egg',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg',
- '/home/goran/soft/anaconda3/lib/python3.5/site-packages/IPython/extensions',
- '/home/goran/.ipython',
- '/moja/sciezka/do/modulow']
-</code></pre>
-<h2 id="modu-poza-katalogiem-roboczym">Moduł poza katalogiem roboczym</h2>
+
+<div class="codehilite"><pre><span></span>[&#39;&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python35.zip&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/plat-linux&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/lib-dynload&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.6-py3.5.egg&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg&#39;,
+ &#39;/home/goran/soft/anaconda3/lib/python3.5/site-packages/IPython/extensions&#39;,
+ &#39;/home/goran/.ipython&#39;,
+ &#39;/moja/sciezka/do/modulow&#39;]
+</pre></div>
+
+
+<h2 id="modu-poza-katalogiem-roboczym">Moduł poza katalogiem roboczym<a class="headerlink" href="#modu-poza-katalogiem-roboczym" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile /home/goran/trojmian.py
-&quot;&quot;&quot;Moduł do obsługi trómianu kwadratowego.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">goran</span><span class="o">/</span><span class="n">trojmian</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Moduł do obsługi trómianu kwadratowego.&quot;&quot;&quot;</span>
 
-from math import sqrt
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 
-def _delta(a, b, c):
-    &quot;&quot;&quot;Liczy wyróżnik trójmianu.&quot;&quot;&quot;
-    return b**2 - 4*a*c
+<span class="k">def</span> <span class="nf">_delta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Liczy wyróżnik trójmianu.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
 
-def _solve(a, b, d):
-    &quot;&quot;&quot;Liczy miejsca zerowe.&quot;&quot;&quot;
-    d = sqrt(d)
-    return (-b + d) / 2 / a, (-b - d) / 2 / a
+<span class="k">def</span> <span class="nf">_solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Liczy miejsca zerowe.&quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">a</span>
 
-def solution(a, b, c):
-    &quot;&quot;&quot;Zwraca miejsca zerowe.&quot;&quot;&quot;
-    d = _delta(a, b, c)
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca miejsca zerowe.&quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">_delta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
-    if d &lt; 0:return None
-    elif d == 0: return -b / 2 / a
-    else: return _solve(a, b, d) 
-</code></pre>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span><span class="k">return</span> <span class="bp">None</span>
+    <span class="k">elif</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">a</span>
+    <span class="k">else</span><span class="p">:</span> <span class="k">return</span> <span class="n">_solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> 
+</pre></div>
 
-<pre><code>Overwriting /home/goran/trojmian.py
-</code></pre>
-<h2 id="modu-poza-katalogiem-roboczym_1">Moduł poza katalogiem roboczym</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting /home/goran/trojmian.py
+</pre></div>
+
+
+<h2 id="modu-poza-katalogiem-roboczym_1">Moduł poza katalogiem roboczym<a class="headerlink" href="#modu-poza-katalogiem-roboczym_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># nie ma w katalogu roboczym ani w PYTHONPATH itd
-import trojmian
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># nie ma w katalogu roboczym ani w PYTHONPATH itd</span>
+<span class="kn">import</span> <span class="nn">trojmian</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 ImportError                               Traceback (most recent call last)
 
@@ -1084,19 +2361,23 @@ ImportError                               Traceback (most recent call last)
 ----&gt; 2 import trojmian
 
 
-ImportError: No module named 'trojmian'
-</code></pre>
-<pre><code class="python">import sys
-sys.path.append(&quot;/home/goran/&quot;) # dodajemy ścieżkę do sys.path
-import trojmian # teraz działa
-</code></pre>
+ImportError: No module named &#39;trojmian&#39;
+</pre></div>
 
-<h2 id="trojmian-w-akcji">Trójmian w akcji</h2>
+
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/home/goran/&quot;</span><span class="p">)</span> <span class="c1"># dodajemy ścieżkę do sys.path</span>
+<span class="kn">import</span> <span class="nn">trojmian</span> <span class="c1"># teraz działa</span>
+</pre></div>
+
+
+<h2 id="trojmian-w-akcji">Trójmian w akcji<a class="headerlink" href="#trojmian-w-akcji" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">help(trojmian) # nie ma _delta, ale jest sqrt!
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">trojmian</span><span class="p">)</span> <span class="c1"># nie ma _delta, ale jest sqrt!</span>
+</pre></div>
 
-<pre><code>Help on module trojmian:
+
+<div class="codehilite"><pre><span></span>Help on module trojmian:
 
 NAME
     trojmian - Moduł do obsługi trómianu kwadratowego.
@@ -1112,26 +2393,36 @@ FUNCTIONS
 
 FILE
     /home/goran/trojmian.py
-</code></pre>
-<h2 id="trojmian-w-akcji_1">Trójmian w akcji</h2>
+</pre></div>
+
+
+<h2 id="trojmian-w-akcji_1">Trójmian w akcji<a class="headerlink" href="#trojmian-w-akcji_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from trojmian import * # importuj wszystko
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">trojmian</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># importuj wszystko</span>
+</pre></div>
 
-<pre><code class="python">solution(1, 2, 1) # dostęp do solution
-</code></pre>
 
-<pre><code>-1.0
-</code></pre>
-<pre><code class="python">sqrt(4) # dostęp do sqrt z math!
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">solution</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># dostęp do solution</span>
+</pre></div>
 
-<pre><code>2.0
-</code></pre>
-<pre><code class="python">_delta(1, 2, 1) # ale _delta nie została zaimportowana
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span>-1.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># dostęp do sqrt z math!</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">_delta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># ale _delta nie została zaimportowana</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 NameError                                 Traceback (most recent call last)
 
@@ -1139,14 +2430,16 @@ NameError                                 Traceback (most recent call last)
 ----&gt; 1 _delta(1, 2, 1) # ale _delta nie została zaimportowana
 
 
-NameError: name '_delta' is not defined
-</code></pre>
-<h2 id="paczka">Paczka</h2>
+NameError: name &#39;_delta&#39; is not defined
+</pre></div>
+
+
+<h2 id="paczka">Paczka<a class="headerlink" href="#paczka" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>uporządkowany zbiór modułów</li>
 </ul>
-<pre><code>package_name/     # top-level
+<div class="codehilite"><pre><span></span>package_name/     # top-level
     __init__.py   # wymagane (może być puste)
     subpackage1/
         __init__.py
@@ -1156,89 +2449,106 @@ NameError: name '_delta' is not defined
     subpackage2/
         __init__.py
         ...
-</code></pre>
+</pre></div>
 
-<h2 id="initpy"><strong>init</strong>.py</h2>
+
+<h2 id="initpy"><strong>init</strong>.py<a class="headerlink" href="#initpy" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile listy_zadan/__init__.py
-&quot;&quot;&quot;Inicjalizacja paczki listy_zadan&quot;&quot;&quot;
-import math # można np. importować moduły
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">listy_zadan</span><span class="o">/</span><span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Inicjalizacja paczki listy_zadan&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="c1"># można np. importować moduły</span>
+</pre></div>
 
-<pre><code>Overwriting listy_zadan/__init__.py
-</code></pre>
-<h2 id="lista-4">Lista 4</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting listy_zadan/__init__.py
+</pre></div>
+
+
+<h2 id="lista-4">Lista 4<a class="headerlink" href="#lista-4" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile listy_zadan/lista4/__init__.py
-&quot;&quot;&quot;Inicjalizacja podpaczki lista4&quot;&quot;&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">listy_zadan</span><span class="o">/</span><span class="n">lista4</span><span class="o">/</span><span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Inicjalizacja podpaczki lista4&quot;&quot;&quot;</span>
+</pre></div>
 
-<pre><code>Overwriting listy_zadan/lista4/__init__.py
-</code></pre>
-<h2 id="lista-4-zadanie-2">Lista 4 - zadanie 2</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting listy_zadan/lista4/__init__.py
+</pre></div>
+
+
+<h2 id="lista-4-zadanie-2">Lista 4 - zadanie 2<a class="headerlink" href="#lista-4-zadanie-2" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile listy_zadan/lista4/zad2.py
-&quot;&quot;&quot;Napisz funkcję, która znajduje mniejszą liczbę z dwóch podanych.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">listy_zadan</span><span class="o">/</span><span class="n">lista4</span><span class="o">/</span><span class="n">zad2</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Napisz funkcję, która znajduje mniejszą liczbę z dwóch podanych.&quot;&quot;&quot;</span>
 
-def min2(a, b):
-    &quot;&quot;&quot;Zwraca mniejszą z dwóch podanych liczb.&quot;&quot;&quot;
-    if a &gt; b:
-        return b
-    return a
-</code></pre>
+<span class="k">def</span> <span class="nf">min2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca mniejszą z dwóch podanych liczb.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
 
-<pre><code>Overwriting listy_zadan/lista4/zad2.py
-</code></pre>
-<h2 id="lista-4-zadanie-3">Lista 4 - zadanie 3</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting listy_zadan/lista4/zad2.py
+</pre></div>
+
+
+<h2 id="lista-4-zadanie-3">Lista 4 - zadanie 3<a class="headerlink" href="#lista-4-zadanie-3" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile listy_zadan/lista4/zad3.py
-&quot;&quot;&quot;Napisz funkcję, która z podanych liczb (ilość dowolna) znajduje najmniejszą.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">listy_zadan</span><span class="o">/</span><span class="n">lista4</span><span class="o">/</span><span class="n">zad3</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Napisz funkcję, która z podanych liczb (ilość dowolna) znajduje najmniejszą.&quot;&quot;&quot;</span>
 
-from listy_zadan.lista4.zad2 import min2
+<span class="kn">from</span> <span class="nn">listy_zadan.lista4.zad2</span> <span class="kn">import</span> <span class="n">min2</span>
 
-def min(*a):
-    &quot;&quot;&quot;Zwraca najmniejszą z podanych liczb.&quot;&quot;&quot;
-    current_min = a[0]
+<span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca najmniejszą z podanych liczb.&quot;&quot;&quot;</span>
+    <span class="n">current_min</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    for x in a:
-        current_min = min2(current_min, x)
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="n">current_min</span> <span class="o">=</span> <span class="n">min2</span><span class="p">(</span><span class="n">current_min</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
-    return current_min
-</code></pre>
+    <span class="k">return</span> <span class="n">current_min</span>
+</pre></div>
 
-<pre><code>Overwriting listy_zadan/lista4/zad3.py
-</code></pre>
-<h2 id="importowanie">Importowanie</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting listy_zadan/lista4/zad3.py
+</pre></div>
+
+
+<h2 id="importowanie">Importowanie<a class="headerlink" href="#importowanie" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import listy_zadan.lista4.zad2
-import listy_zadan.lista4.zad3 as zad3
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">listy_zadan.lista4.zad2</span>
+<span class="kn">import</span> <span class="nn">listy_zadan.lista4.zad3</span> <span class="kn">as</span> <span class="nn">zad3</span>
 
-print(&quot;Zad2 =&quot;, listy_zadan.lista4.zad2.min2(1, 5))
-print(&quot;Zad3 =&quot;, zad3.min(6, 2, 6, 3, 5))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Zad2 =&quot;</span><span class="p">,</span> <span class="n">listy_zadan</span><span class="o">.</span><span class="n">lista4</span><span class="o">.</span><span class="n">zad2</span><span class="o">.</span><span class="n">min2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Zad3 =&quot;</span><span class="p">,</span> <span class="n">zad3</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>Zad2 = 1
+
+<div class="codehilite"><pre><span></span>Zad2 = 1
 Zad3 = 2
-</code></pre>
-<pre><code class="python"># css prezentacji
+</pre></div>
 
 
-from IPython.display import display, HTML
+<div class="codehilite"><pre><span></span><span class="c1"># css prezentacji</span>
 
-s = &quot;&quot;&quot;
 
-&lt;style&gt;
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
-.rendered_html code {
-  font-size: 75%;
-}
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 
-&lt;/style&gt;
+<span class="s2">&lt;style&gt;</span>
 
-&quot;&quot;&quot;
+<span class="s2">.rendered_html code {</span>
+<span class="s2">  font-size: 75%;</span>
+<span class="s2">}</span>
 
-display(HTML(s))
-</code></pre>
+<span class="s2">&lt;/style&gt;</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+
 
 <style>
 
@@ -1246,40 +2556,92 @@ display(HTML(s))
   font-size: 75%;
 }
 
-</style></div>
+</style>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w05/" title="Wykład 5" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 5
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w07/" title="Wykład 7" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 7
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

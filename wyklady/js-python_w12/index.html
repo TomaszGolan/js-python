@@ -1,268 +1,1297 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w12/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 12 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 12
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w08/">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w11/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w13-14/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-12">Wykład 12</a></li>
-            <li><a href="#gui">GUI</a></li>
-            <li><a href="#pierwsze-okienko">PIerwsze okienko</a></li>
-            <li><a href="#tytu-i-wymiary">Tytuł i wymiary</a></li>
-            <li><a href="#klasa-app">Klasa App</a></li>
-            <li><a href="#pierwsza-aplikacja">Pierwsza "aplikacja"</a></li>
-            <li><a href="#centrowanie-aplikacji">Centrowanie aplikacji</a></li>
-            <li><a href="#test">Test</a></li>
-            <li><a href="#pierwszy-frame">Pierwszy Frame</a></li>
-            <li><a href="#pierwszy-kolorowy-frame">Pierwszy kolorowy Frame</a></li>
-            <li><a href="#aplikacja-z-ramka">Aplikacja z ramką</a></li>
-            <li><a href="#klasa-ramka">Klasa ramka</a></li>
-            <li><a href="#przykad">Przykład</a></li>
-            <li><a href="#dwie-ramki">Dwie ramki</a></li>
-            <li><a href="#pakowanie">Pakowanie</a></li>
-            <li><a href="#pakowanie-ramek">Pakowanie ramek</a></li>
-            <li><a href="#pakowanie-ramek-i">Pakowanie ramek I</a></li>
-            <li><a href="#pakowanie-ramek-ii">Pakowanie ramek II</a></li>
-            <li><a href="#pakowanie-ramek-iii">Pakowanie ramek III</a></li>
-            <li><a href="#pierwszy-przycisk">Pierwszy przycisk</a></li>
-            <li><a href="#wiecej-o-command">Więcej o command</a></li>
-            <li><a href="#command-i-argumenty-funkcji">command i argumenty funkcji?</a></li>
-            <li><a href="#wyrazenia-lambda">Wyrażenia lambda</a></li>
-            <li><a href="#wyrazenie-lambda">Wyrażenie lambda</a></li>
-            <li><a href="#wyrazenie-lambda_1">Wyrażenie lambda</a></li>
-            <li><a href="#kolor-ramki">Kolor ramki</a></li>
-            <li><a href="#przycisk-do-koloru">Przycisk do koloru</a></li>
-            <li><a href="#kilka-przyciskow">Kilka przycisków</a></li>
-            <li><a href="#kilka-przyciskow-krocej">Kilka przycisków krócej</a></li>
-            <li><a href="#ukadanie-przyciskow">Układanie przycisków</a></li>
-            <li><a href="#rozciaganie-przyciskow">Rozciąganie przycisków</a></li>
-            <li><a href="#siatka">Siatka</a></li>
-            <li><a href="#rozciaganie-w-siatce">Rozciąganie w siatce</a></li>
-            <li><a href="#pole-tekstowe">Pole tekstowe</a></li>
-            <li><a href="#pole-tekstowe-wstaw">Pole tekstowe - wstaw</a></li>
-            <li><a href="#usuwanie-tekstu">Usuwanie tekstu</a></li>
-            <li><a href="#pobieranie-tekstu">Pobieranie tekstu</a></li>
-            <li><a href="#student-gui">Student GUI</a></li>
-            <li><a href="#gowne-okno-programu">Główne okno programu</a></li>
-            <li><a href="#entries">Entries</a></li>
-            <li><a href="#przycisk-save">Przycisk save</a></li>
-            <li><a href="#test_1">Test</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w08/" title="Wykład 8" class="md-nav__link">
+      Wykład 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 12
+      </label>
+    
+    <a href="./" title="Wykład 12" class="md-nav__link md-nav__link--active">
+      Wykład 12
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-12" title="Wykład 12" class="md-nav__link">
+    Wykład 12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" title="GUI" class="md-nav__link">
+    GUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwsze-okienko" title="PIerwsze okienko" class="md-nav__link">
+    PIerwsze okienko
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tytu-i-wymiary" title="Tytuł i wymiary" class="md-nav__link">
+    Tytuł i wymiary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klasa-app" title="Klasa App" class="md-nav__link">
+    Klasa App
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwsza-aplikacja" title="Pierwsza "aplikacja"" class="md-nav__link">
+    Pierwsza "aplikacja"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centrowanie-aplikacji" title="Centrowanie aplikacji" class="md-nav__link">
+    Centrowanie aplikacji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwszy-frame" title="Pierwszy Frame" class="md-nav__link">
+    Pierwszy Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwszy-kolorowy-frame" title="Pierwszy kolorowy Frame" class="md-nav__link">
+    Pierwszy kolorowy Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplikacja-z-ramka" title="Aplikacja z ramką" class="md-nav__link">
+    Aplikacja z ramką
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klasa-ramka" title="Klasa ramka" class="md-nav__link">
+    Klasa ramka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwie-ramki" title="Dwie ramki" class="md-nav__link">
+    Dwie ramki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie" title="Pakowanie" class="md-nav__link">
+    Pakowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek" title="Pakowanie ramek" class="md-nav__link">
+    Pakowanie ramek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek-i" title="Pakowanie ramek I" class="md-nav__link">
+    Pakowanie ramek I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek-ii" title="Pakowanie ramek II" class="md-nav__link">
+    Pakowanie ramek II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek-iii" title="Pakowanie ramek III" class="md-nav__link">
+    Pakowanie ramek III
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwszy-przycisk" title="Pierwszy przycisk" class="md-nav__link">
+    Pierwszy przycisk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiecej-o-command" title="Więcej o command" class="md-nav__link">
+    Więcej o command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-i-argumenty-funkcji" title="command i argumenty funkcji?" class="md-nav__link">
+    command i argumenty funkcji?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyrazenia-lambda" title="Wyrażenia lambda" class="md-nav__link">
+    Wyrażenia lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyrazenie-lambda" title="Wyrażenie lambda" class="md-nav__link">
+    Wyrażenie lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyrazenie-lambda_1" title="Wyrażenie lambda" class="md-nav__link">
+    Wyrażenie lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kolor-ramki" title="Kolor ramki" class="md-nav__link">
+    Kolor ramki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przycisk-do-koloru" title="Przycisk do koloru" class="md-nav__link">
+    Przycisk do koloru
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kilka-przyciskow" title="Kilka przycisków" class="md-nav__link">
+    Kilka przycisków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kilka-przyciskow-krocej" title="Kilka przycisków krócej" class="md-nav__link">
+    Kilka przycisków krócej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ukadanie-przyciskow" title="Układanie przycisków" class="md-nav__link">
+    Układanie przycisków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rozciaganie-przyciskow" title="Rozciąganie przycisków" class="md-nav__link">
+    Rozciąganie przycisków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siatka" title="Siatka" class="md-nav__link">
+    Siatka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rozciaganie-w-siatce" title="Rozciąganie w siatce" class="md-nav__link">
+    Rozciąganie w siatce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pole-tekstowe" title="Pole tekstowe" class="md-nav__link">
+    Pole tekstowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pole-tekstowe-wstaw" title="Pole tekstowe - wstaw" class="md-nav__link">
+    Pole tekstowe - wstaw
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuwanie-tekstu" title="Usuwanie tekstu" class="md-nav__link">
+    Usuwanie tekstu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pobieranie-tekstu" title="Pobieranie tekstu" class="md-nav__link">
+    Pobieranie tekstu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#student-gui" title="Student GUI" class="md-nav__link">
+    Student GUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gowne-okno-programu" title="Główne okno programu" class="md-nav__link">
+    Główne okno programu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entries" title="Entries" class="md-nav__link">
+    Entries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przycisk-save" title="Przycisk save" class="md-nav__link">
+    Przycisk save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_1" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-12">Wykład 12</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-12" title="Wykład 12" class="md-nav__link">
+    Wykład 12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" title="GUI" class="md-nav__link">
+    GUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwsze-okienko" title="PIerwsze okienko" class="md-nav__link">
+    PIerwsze okienko
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tytu-i-wymiary" title="Tytuł i wymiary" class="md-nav__link">
+    Tytuł i wymiary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klasa-app" title="Klasa App" class="md-nav__link">
+    Klasa App
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwsza-aplikacja" title="Pierwsza "aplikacja"" class="md-nav__link">
+    Pierwsza "aplikacja"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centrowanie-aplikacji" title="Centrowanie aplikacji" class="md-nav__link">
+    Centrowanie aplikacji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwszy-frame" title="Pierwszy Frame" class="md-nav__link">
+    Pierwszy Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwszy-kolorowy-frame" title="Pierwszy kolorowy Frame" class="md-nav__link">
+    Pierwszy kolorowy Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplikacja-z-ramka" title="Aplikacja z ramką" class="md-nav__link">
+    Aplikacja z ramką
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#klasa-ramka" title="Klasa ramka" class="md-nav__link">
+    Klasa ramka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dwie-ramki" title="Dwie ramki" class="md-nav__link">
+    Dwie ramki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie" title="Pakowanie" class="md-nav__link">
+    Pakowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek" title="Pakowanie ramek" class="md-nav__link">
+    Pakowanie ramek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek-i" title="Pakowanie ramek I" class="md-nav__link">
+    Pakowanie ramek I
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek-ii" title="Pakowanie ramek II" class="md-nav__link">
+    Pakowanie ramek II
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pakowanie-ramek-iii" title="Pakowanie ramek III" class="md-nav__link">
+    Pakowanie ramek III
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pierwszy-przycisk" title="Pierwszy przycisk" class="md-nav__link">
+    Pierwszy przycisk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiecej-o-command" title="Więcej o command" class="md-nav__link">
+    Więcej o command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-i-argumenty-funkcji" title="command i argumenty funkcji?" class="md-nav__link">
+    command i argumenty funkcji?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyrazenia-lambda" title="Wyrażenia lambda" class="md-nav__link">
+    Wyrażenia lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyrazenie-lambda" title="Wyrażenie lambda" class="md-nav__link">
+    Wyrażenie lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyrazenie-lambda_1" title="Wyrażenie lambda" class="md-nav__link">
+    Wyrażenie lambda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kolor-ramki" title="Kolor ramki" class="md-nav__link">
+    Kolor ramki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przycisk-do-koloru" title="Przycisk do koloru" class="md-nav__link">
+    Przycisk do koloru
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kilka-przyciskow" title="Kilka przycisków" class="md-nav__link">
+    Kilka przycisków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kilka-przyciskow-krocej" title="Kilka przycisków krócej" class="md-nav__link">
+    Kilka przycisków krócej
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ukadanie-przyciskow" title="Układanie przycisków" class="md-nav__link">
+    Układanie przycisków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rozciaganie-przyciskow" title="Rozciąganie przycisków" class="md-nav__link">
+    Rozciąganie przycisków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#siatka" title="Siatka" class="md-nav__link">
+    Siatka
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rozciaganie-w-siatce" title="Rozciąganie w siatce" class="md-nav__link">
+    Rozciąganie w siatce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pole-tekstowe" title="Pole tekstowe" class="md-nav__link">
+    Pole tekstowe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pole-tekstowe-wstaw" title="Pole tekstowe - wstaw" class="md-nav__link">
+    Pole tekstowe - wstaw
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuwanie-tekstu" title="Usuwanie tekstu" class="md-nav__link">
+    Usuwanie tekstu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pobieranie-tekstu" title="Pobieranie tekstu" class="md-nav__link">
+    Pobieranie tekstu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#student-gui" title="Student GUI" class="md-nav__link">
+    Student GUI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gowne-okno-programu" title="Główne okno programu" class="md-nav__link">
+    Główne okno programu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entries" title="Entries" class="md-nav__link">
+    Entries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przycisk-save" title="Przycisk save" class="md-nav__link">
+    Przycisk save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_1" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-12">Wykład 12<a class="headerlink" href="#wykad-12" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>graficzny interfejs użytkownika</li>
 </ul>
-<h2 id="gui">GUI</h2>
+<h2 id="gui">GUI<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>Graphical User Interface</em></li>
@@ -275,167 +1304,179 @@
 </li>
 <li>Pełna lista: <a href="https://wiki.python.org/moin/GuiProgramming">link</a></li>
 </ul>
-<h2 id="pierwsze-okienko">PIerwsze okienko</h2>
+<h2 id="pierwsze-okienko">PIerwsze okienko<a class="headerlink" href="#pierwsze-okienko" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import tkinter as tk
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="kn">as</span> <span class="nn">tk</span>
 
-# główne okno programu
-# z tytułem, krawędziami itp
-# kontener na resztę
-root = tk.Tk()
+<span class="c1"># główne okno programu</span>
+<span class="c1"># z tytułem, krawędziami itp</span>
+<span class="c1"># kontener na resztę</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
 
-# pętla programu - wyłapuje sygnały
-# przerwana przez zamknięcie okna
-# lub wywołanie quit()
-root.mainloop()  
-</code></pre>
+<span class="c1"># pętla programu - wyłapuje sygnały</span>
+<span class="c1"># przerwana przez zamknięcie okna</span>
+<span class="c1"># lub wywołanie quit()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>  
+</pre></div>
 
-<h2 id="tytu-i-wymiary">Tytuł i wymiary</h2>
+
+<h2 id="tytu-i-wymiary">Tytuł i wymiary<a class="headerlink" href="#tytu-i-wymiary" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">root = tk.Tk()
+<div class="codehilite"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
 
-# tytuł okna
-root.title(&quot;Hello World!&quot;)
+<span class="c1"># tytuł okna</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
 
-# szerokość x wysokość + położenie x + położenie y
-root.geometry(&quot;400x300+200+200&quot;)
+<span class="c1"># szerokość x wysokość + położenie x + położenie y</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;400x300+200+200&quot;</span><span class="p">)</span>
 
-root.mainloop()
-</code></pre>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="klasa-app">Klasa <em>App</em></h2>
+
+<h2 id="klasa-app">Klasa <em>App</em><a class="headerlink" href="#klasa-app" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class App(tk.Tk):
-    # App dziedziczy z tkinter.Tk
-    def __init__(self, title=&quot;Aplikacja&quot;):
-        super().__init__() # konstruktor Tk
-        self.title(title)  # ustaw tytuł
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">App</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
+    <span class="c1"># App dziedziczy z tkinter.Tk</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Aplikacja&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span> <span class="c1"># konstruktor Tk</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>  <span class="c1"># ustaw tytuł</span>
 
-    def run(self):
-        # app.run() będzie się lepiej prezentować
-        self.mainloop()
-</code></pre>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># app.run() będzie się lepiej prezentować</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pierwsza-aplikacja">Pierwsza "aplikacja"</h2>
+
+<h2 id="pierwsza-aplikacja">Pierwsza "aplikacja"<a class="headerlink" href="#pierwsza-aplikacja" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Pierwsza aplikacja&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Pierwsza aplikacja&quot;</span><span class="p">)</span>
 
-# app dziedziczy z Tk
-# więc ma dostęp do tych samych funkcji
+<span class="c1"># app dziedziczy z Tk</span>
+<span class="c1"># więc ma dostęp do tych samych funkcji</span>
 
-#app.geometry(&quot;400x300+200+200&quot;)
+<span class="c1">#app.geometry(&quot;400x300+200+200&quot;)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="centrowanie-aplikacji">Centrowanie aplikacji</h2>
+
+<h2 id="centrowanie-aplikacji">Centrowanie aplikacji<a class="headerlink" href="#centrowanie-aplikacji" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class App(tk.Tk):
-    def __init__(self, title=&quot;Aplikacja&quot;):
-        super().__init__() # konstruktor Tk
-        #super().option_add(&quot;*font&quot;, &quot;Helvetica 24&quot;)
-        self.title(title)  # ustaw tytuł
-        self.center()      # wyśrodkuj
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">App</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Aplikacja&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span> <span class="c1"># konstruktor Tk</span>
+        <span class="c1">#super().option_add(&quot;*font&quot;, &quot;Helvetica 24&quot;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>  <span class="c1"># ustaw tytuł</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">()</span>      <span class="c1"># wyśrodkuj</span>
 
-    def run(self): self.mainloop()
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 
-    def center(self):
-        self.update()
-        # szerokość / wysokość okna
-        wx = self.winfo_width()
-        wy = self.winfo_height()
-        # szerokość wysokość ekranu
-        sx = self.winfo_screenwidth()
-        sy = self.winfo_screenheight()
-        # środek ekranu przesunięty o 
-        x = (sx - wx) // 2 # połowę szerokośi
-        y = (sy - wy) // 2 # połowę wysokości
+    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="c1"># szerokość / wysokość okna</span>
+        <span class="n">wx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span>
+        <span class="n">wy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">()</span>
+        <span class="c1"># szerokość wysokość ekranu</span>
+        <span class="n">sx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_screenwidth</span><span class="p">()</span>
+        <span class="n">sy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">winfo_screenheight</span><span class="p">()</span>
+        <span class="c1"># środek ekranu przesunięty o </span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">sx</span> <span class="o">-</span> <span class="n">wx</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># połowę szerokośi</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">sy</span> <span class="o">-</span> <span class="n">wy</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># połowę wysokości</span>
 
-        self.geometry(&quot;{}x{}+{}+{}&quot;.format(wx, wy, x, y))
-</code></pre>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;{}x{}+{}+{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wx</span><span class="p">,</span> <span class="n">wy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
 
-<h2 id="test">Test</h2>
+
+<h2 id="test">Test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Wyśrodkowana aplikacja&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Wyśrodkowana aplikacja&quot;</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pierwszy-frame">Pierwszy <em>Frame</em></h2>
+
+<h2 id="pierwszy-frame">Pierwszy <em>Frame</em><a class="headerlink" href="#pierwszy-frame" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># Frame to po prostu prostokątny obszar
+<div class="codehilite"><pre><span></span><span class="c1"># Frame to po prostu prostokątny obszar</span>
 
-root = tk.Tk()
-root.geometry(&quot;400x300+200+200&quot;)
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;400x300+200+200&quot;</span><span class="p">)</span>
 
-# Frame(parent)
-ramka = tk.Frame(root) # umieść ramkę w root
-# więcej o pack za chwilę
-ramka.pack(fill=tk.BOTH, expand=True)
+<span class="c1"># Frame(parent)</span>
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="c1"># umieść ramkę w root</span>
+<span class="c1"># więcej o pack za chwilę</span>
+<span class="n">ramka</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-root.mainloop()
-</code></pre>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pierwszy-kolorowy-frame">Pierwszy kolorowy Frame</h2>
+
+<h2 id="pierwszy-kolorowy-frame">Pierwszy kolorowy Frame<a class="headerlink" href="#pierwszy-kolorowy-frame" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">root = tk.Tk()
-root.geometry(&quot;400x300+200+200&quot;)
+<div class="codehilite"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;400x300+200+200&quot;</span><span class="p">)</span>
 
-# Frame(parent, background=color)
-ramka = tk.Frame(root, background=&quot;red&quot;)
-ramka.pack(fill=tk.BOTH, expand=True)
+<span class="c1"># Frame(parent, background=color)</span>
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">ramka</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-root.mainloop()
-</code></pre>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="aplikacja-z-ramka">Aplikacja z ramką</h2>
+
+<h2 id="aplikacja-z-ramka">Aplikacja z ramką<a class="headerlink" href="#aplikacja-z-ramka" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Jedna ramka&quot;</span><span class="p">)</span>
 
-# App dziedziczy z tk.Tk
-# więc też może być argumentem Frame(...)
-ramka = tk.Frame(app, background=&quot;red&quot;)
-ramka.pack(fill=tk.BOTH, expand=True)
+<span class="c1"># App dziedziczy z tk.Tk</span>
+<span class="c1"># więc też może być argumentem Frame(...)</span>
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">ramka</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="klasa-ramka">Klasa ramka</h2>
+
+<h2 id="klasa-ramka">Klasa ramka<a class="headerlink" href="#klasa-ramka" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># pozwoli zaoszczędzić miejsca na kolejnych slajdach
+<div class="codehilite"><pre><span></span><span class="c1"># pozwoli zaoszczędzić miejsca na kolejnych slajdach</span>
 
-class Ramka(tk.Frame):
-    # nasza ramka dziedziczy z tkinter.Frame
-    def __init__(self, parent, color=&quot;white&quot;):
-        # wywołaj konstruktor Frame
-        tk.Frame.__init__(self, parent, background=color)
-        # o pack więcej za chwilę
-        self.pack(fill=tk.BOTH, expand=True)
-</code></pre>
+<span class="k">class</span> <span class="nc">Ramka</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+    <span class="c1"># nasza ramka dziedziczy z tkinter.Frame</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">):</span>
+        <span class="c1"># wywołaj konstruktor Frame</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+        <span class="c1"># o pack więcej za chwilę</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="przykad">Przykład</h2>
+
+<h2 id="przykad">Przykład<a class="headerlink" href="#przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Jedna ramka&quot;</span><span class="p">)</span>
 
-# Ramka inicjuje Frame
-# i się pakuje w App
-ramka = Ramka(app)
+<span class="c1"># Ramka inicjuje Frame</span>
+<span class="c1"># i się pakuje w App</span>
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="dwie-ramki">Dwie ramki</h2>
+
+<h2 id="dwie-ramki">Dwie ramki<a class="headerlink" href="#dwie-ramki" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Jedna ramka&quot;</span><span class="p">)</span>
 
 
-r1 = Ramka(app) # &quot;white&quot;
-r2 = Ramka(app, &quot;red&quot;)
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="c1"># &quot;white&quot;</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pakowanie">Pakowanie</h2>
+
+<h2 id="pakowanie">Pakowanie<a class="headerlink" href="#pakowanie" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>do rozmieszczania widgetów służy funkcja <em>widget.pack(opcje)</em></li>
@@ -446,83 +1487,90 @@ app.run()
 </ul>
 </li>
 </ul>
-<h2 id="pakowanie-ramek">Pakowanie ramek</h2>
+<h2 id="pakowanie-ramek">Pakowanie ramek<a class="headerlink" href="#pakowanie-ramek" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Ramka(tk.Frame):
-    # dodajemy argument kluczowy side
-    def __init__(self, parent, color=&quot;white&quot;, side=tk.TOP):
-        tk.Frame.__init__(self, parent, background=color)   
-        self.pack(fill=tk.BOTH, expand=True, side=side)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Ramka</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+    <span class="c1"># dodajemy argument kluczowy side</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">):</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>   
+        <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">side</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="pakowanie-ramek-i">Pakowanie ramek I</h2>
+
+<h2 id="pakowanie-ramek-i">Pakowanie ramek I<a class="headerlink" href="#pakowanie-ramek-i" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Dwie ramki&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Dwie ramki&quot;</span><span class="p">)</span>
 
-r1 = Ramka(app, &quot;white&quot;, tk.LEFT)
-r2 = Ramka(app, &quot;red&quot;, tk.RIGHT)
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pakowanie-ramek-ii">Pakowanie ramek II</h2>
+
+<h2 id="pakowanie-ramek-ii">Pakowanie ramek II<a class="headerlink" href="#pakowanie-ramek-ii" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Trzy ramki&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Trzy ramki&quot;</span><span class="p">)</span>
 
-r1 = Ramka(app, &quot;white&quot;, tk.LEFT)
-r2 = Ramka(app, &quot;red&quot;, tk.RIGHT)
-r3 = Ramka(app, &quot;green&quot;, tk.TOP)
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">)</span>
+<span class="n">r3</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pakowanie-ramek-iii">Pakowanie ramek III</h2>
+
+<h2 id="pakowanie-ramek-iii">Pakowanie ramek III<a class="headerlink" href="#pakowanie-ramek-iii" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Trzy ramki&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Trzy ramki&quot;</span><span class="p">)</span>
 
-r1 = Ramka(app, &quot;green&quot;, tk.TOP) # górna ramka
-r2 = Ramka(app) # dolna ramka
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">)</span> <span class="c1"># górna ramka</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="c1"># dolna ramka</span>
 
-# do dolnej ramki wrzucamy lewą i prawą
-r21 = Ramka(r2, &quot;white&quot;, tk.LEFT)
-r22 = Ramka(r2, &quot;red&quot;, tk.RIGHT)
+<span class="c1"># do dolnej ramki wrzucamy lewą i prawą</span>
+<span class="n">r21</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+<span class="n">r22</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pierwszy-przycisk">Pierwszy przycisk</h2>
+
+<h2 id="pierwszy-przycisk">Pierwszy przycisk<a class="headerlink" href="#pierwszy-przycisk" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Aplikacja z przyciskiem&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Aplikacja z przyciskiem&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-# Button(parent, text, command)
-# app.center bez ()
-przycisk = tk.Button(ramka, text=&quot;Center&quot;, command=app.center)
-przycisk.place(x=0, y=0) # pozycja przycisku
+<span class="c1"># Button(parent, text, command)</span>
+<span class="c1"># app.center bez ()</span>
+<span class="n">przycisk</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Center&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+<span class="n">przycisk</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pozycja przycisku</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="wiecej-o-command">Więcej o <em>command</em></h2>
+
+<h2 id="wiecej-o-command">Więcej o <em>command</em><a class="headerlink" href="#wiecej-o-command" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def funkcja():
-    return &quot;Hello&quot;
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">funkcja</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello&quot;</span>
 
-# przypisuje odpowiednią funkcję
-# która będzie wywołana po naciśnięciu
-przycisk1 = tk.Button(command=funkcja)
+<span class="c1"># przypisuje odpowiednią funkcję</span>
+<span class="c1"># która będzie wywołana po naciśnięciu</span>
+<span class="n">przycisk1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">funkcja</span><span class="p">)</span>
 
-przycisk1.cget(&quot;command&quot;)
-</code></pre>
+<span class="n">przycisk1</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;command&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python"># przypisuje wynik zwracany przez funkcję
-przycisk2 = tk.Button(command=funkcja())
 
-przycisk2.cget(&quot;command&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># przypisuje wynik zwracany przez funkcję</span>
+<span class="n">przycisk2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">funkcja</span><span class="p">())</span>
 
-<h2 id="command-i-argumenty-funkcji"><em>command</em> i argumenty funkcji?</h2>
+<span class="n">przycisk2</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;command&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="command-i-argumenty-funkcji"><em>command</em> i argumenty funkcji?<a class="headerlink" href="#command-i-argumenty-funkcji" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>a co jeśli chcemy, aby przycisk wywoływał funkcję z jakimś argumentem?</li>
@@ -530,347 +1578,427 @@ przycisk2.cget(&quot;command&quot;)
 <li>chcemy użyć tej samej funkcji, ale z innym argumentem</li>
 <li>wtedy niezbędne jest wykorzystanie wyrażeń lambda</li>
 </ul>
-<h2 id="wyrazenia-lambda">Wyrażenia <em>lambda</em></h2>
+<h2 id="wyrazenia-lambda">Wyrażenia <em>lambda</em><a class="headerlink" href="#wyrazenia-lambda" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def suma(a, b): # &quot;klasyczna&quot; funkcja
-    return a + b
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="c1"># &quot;klasyczna&quot; funkcja</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
 
-<pre><code class="python">lsuma = lambda a, b: a + b # &quot;anonimowa&quot; funkcja
-</code></pre>
 
-<pre><code class="python">suma(1, 2) # wywołujemy funkcję suma
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">lsuma</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># &quot;anonimowa&quot; funkcja</span>
+</pre></div>
 
-<pre><code class="python">lsuma(1, 2) # wywołujemy wyrażenia lambda
-</code></pre>
 
-<h2 id="wyrazenie-lambda">Wyrażenie <em>lambda</em></h2>
+<div class="codehilite"><pre><span></span><span class="n">suma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># wywołujemy funkcję suma</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">lsuma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># wywołujemy wyrażenia lambda</span>
+</pre></div>
+
+
+<h2 id="wyrazenie-lambda">Wyrażenie <em>lambda</em><a class="headerlink" href="#wyrazenie-lambda" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def suma(a, b):
-    return a + b
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-suma2 = lambda b: suma(2, b) # dodaj 2
-suma4 = lambda b: suma(4, b) # dodaj 4
-</code></pre>
+<span class="n">suma2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">suma</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># dodaj 2</span>
+<span class="n">suma4</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">suma</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># dodaj 4</span>
+</pre></div>
 
-<pre><code class="python">suma2(1)
-</code></pre>
 
-<pre><code class="python">suma4(1)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">suma2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="wyrazenie-lambda_1">Wyrażenie <em>lambda</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="n">suma4</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="wyrazenie-lambda_1">Wyrażenie <em>lambda</em><a class="headerlink" href="#wyrazenie-lambda_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def change_color(color=&quot;white&quot;):
-    print(&quot;Zmieniam kolor na:&quot;, color)
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">change_color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Zmieniam kolor na:&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 
-ustaw_zielony = lambda: change_color(&quot;zielony&quot;)
-ustaw_niebieski = lambda: change_color(&quot;niebieski&quot;)
-</code></pre>
+<span class="n">ustaw_zielony</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">change_color</span><span class="p">(</span><span class="s2">&quot;zielony&quot;</span><span class="p">)</span>
+<span class="n">ustaw_niebieski</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">change_color</span><span class="p">(</span><span class="s2">&quot;niebieski&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">ustaw_zielony() # change_color(&quot;zielony&quot;)
-</code></pre>
 
-<pre><code class="python">ustaw_niebieski() # change_color(&quot;niebieski&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">ustaw_zielony</span><span class="p">()</span> <span class="c1"># change_color(&quot;zielony&quot;)</span>
+</pre></div>
 
-<h2 id="kolor-ramki">Kolor ramki</h2>
+
+<div class="codehilite"><pre><span></span><span class="n">ustaw_niebieski</span><span class="p">()</span> <span class="c1"># change_color(&quot;niebieski&quot;)</span>
+</pre></div>
+
+
+<h2 id="kolor-ramki">Kolor ramki<a class="headerlink" href="#kolor-ramki" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Ramka(tk.Frame):
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Ramka</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
 
-    def __init__(self, parent, color=&quot;white&quot;, side=tk.TOP):
-        tk.Frame.__init__(self, parent, background=color)   
-        self.pack(fill=tk.BOTH, expand=True, side=side)
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">):</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>   
+        <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="n">side</span><span class="p">)</span>
 
-    def change_color(self, color=&quot;white&quot;):
-        # Frame.config umożliwia zmianę parametrów
-        self.config(bg=color) # bg = background
-</code></pre>
+    <span class="k">def</span> <span class="nf">change_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">):</span>
+        <span class="c1"># Frame.config umożliwia zmianę parametrów</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="n">color</span><span class="p">)</span> <span class="c1"># bg = background</span>
+</pre></div>
 
-<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
 
-ramka = Ramka(app) # domyślnie biała
-ramka.change_color(&quot;red&quot;) # zmień kolor
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Jedna ramka&quot;</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="c1"># domyślnie biała</span>
+<span class="n">ramka</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># zmień kolor</span>
 
-<h2 id="przycisk-do-koloru">Przycisk do koloru</h2>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<h2 id="przycisk-do-koloru">Przycisk do koloru<a class="headerlink" href="#przycisk-do-koloru" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Przycisk do tła&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przycisk do tła&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-# Button(parent, text, command)
-przycisk = tk.Button(ramka, text=&quot;Red&quot;,
-                     command=lambda: ramka.change_color(&quot;red&quot;))
-przycisk.place(x=0, y=0) # pozycja przycisku
+<span class="c1"># Button(parent, text, command)</span>
+<span class="n">przycisk</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span>
+                     <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">ramka</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">))</span>
+<span class="n">przycisk</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pozycja przycisku</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="kilka-przyciskow">Kilka przycisków</h2>
+
+<h2 id="kilka-przyciskow">Kilka przycisków<a class="headerlink" href="#kilka-przyciskow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Przyciski v1&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przyciski v1&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-but_red = tk.Button(ramka, text=&quot;Red&quot;,
-                    command=lambda: ramka.change_color(&quot;red&quot;))
-but_red.place(x=0, y=0) # wpisujemy ręcznie
+<span class="n">but_red</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span>
+                    <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">ramka</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">))</span>
+<span class="n">but_red</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># wpisujemy ręcznie</span>
 
-but_blue = tk.Button(ramka, text=&quot;Blue&quot;,
-                     command=lambda: ramka.change_color(&quot;blue&quot;))
-but_blue.place(x=0, y=50) # absolutne pozycje
+<span class="n">but_blue</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span>
+                     <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">ramka</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">))</span>
+<span class="n">but_blue</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># absolutne pozycje</span>
 
-but_def = tk.Button(ramka, text=&quot;Default&quot;,
-                    command=lambda: ramka.change_color())
-but_def.place(x=0, y=100) # przycisków
+<span class="n">but_def</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Default&quot;</span><span class="p">,</span>
+                    <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">ramka</span><span class="o">.</span><span class="n">change_color</span><span class="p">())</span>
+<span class="n">but_def</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># przycisków</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="kilka-przyciskow-krocej">Kilka przycisków krócej</h2>
+
+<h2 id="kilka-przyciskow-krocej">Kilka przycisków krócej<a class="headerlink" href="#kilka-przyciskow-krocej" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Przyciski v2&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przyciski v2&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-# wykorzystamy wyrażenia lambda do generowania przycisków
-button = lambda color: tk.Button(ramka, text=color,
-                                 command=lambda: ramka.change_color(color))
+<span class="c1"># wykorzystamy wyrażenia lambda do generowania przycisków</span>
+<span class="n">button</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">color</span><span class="p">:</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                                 <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">ramka</span><span class="o">.</span><span class="n">change_color</span><span class="p">(</span><span class="n">color</span><span class="p">))</span>
 
-button(&quot;red&quot;).place(x=0, y=0)     # wpisujemy ręcznie
-button(&quot;blue&quot;).place(x=0, y=50)   # absolutne pozycje
-button(&quot;white&quot;).place(x=0, y=100) # przyciskow
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>     <span class="c1"># wpisujemy ręcznie</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>   <span class="c1"># absolutne pozycje</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># przyciskow</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="ukadanie-przyciskow">Układanie przycisków</h2>
+
+<h2 id="ukadanie-przyciskow">Układanie przycisków<a class="headerlink" href="#ukadanie-przyciskow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Przyciski v3&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przyciski v3&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-button(&quot;red&quot;).pack(side=tk.LEFT)   # pakujemy od lewej
-button(&quot;blue&quot;).pack(side=tk.LEFT)
-button(&quot;white&quot;).pack(side=tk.LEFT)
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>   <span class="c1"># pakujemy od lewej</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="rozciaganie-przyciskow">Rozciąganie przycisków</h2>
+
+<h2 id="rozciaganie-przyciskow">Rozciąganie przycisków<a class="headerlink" href="#rozciaganie-przyciskow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Przyciski v4&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przyciski v4&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-# czerwony rozciągamy w poziomie
-button(&quot;red&quot;).pack(side=tk.LEFT, fill=tk.X, expand=True)
-# niebieski ma stały rozmiar
-button(&quot;blue&quot;).pack(side=tk.LEFT)
-# biały rozciądamy w pionie
-button(&quot;white&quot;).pack(side=tk.LEFT, fill=tk.Y, expand=True)
+<span class="c1"># czerwony rozciągamy w poziomie</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># niebieski ma stały rozmiar</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+<span class="c1"># biały rozciądamy w pionie</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="siatka">Siatka</h2>
+
+<h2 id="siatka">Siatka<a class="headerlink" href="#siatka" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Przyciski v5&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przyciski v5&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 
-# 1 rząd 1 kolumna
-button(&quot;red&quot;).grid(row=0, column=0)
-# 1 rząd 2 kolumna
-button(&quot;blue&quot;).grid(row=0, column=1)
-# 2 rząd 1 kolumna
-button(&quot;white&quot;).grid(row=1, column=0)
-# 2 rząd 2 kolumna
-button(&quot;black&quot;).grid(row=1, column=1)
+<span class="c1"># 1 rząd 1 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 1 rząd 2 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 2 rząd 1 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 2 rząd 2 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="rozciaganie-w-siatce">Rozciąganie w siatce</h2>
+
+<h2 id="rozciaganie-w-siatce">Rozciąganie w siatce<a class="headerlink" href="#rozciaganie-w-siatce" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from tkinter import N, S, E, W
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">N</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">W</span>
 
-app = App(&quot;Przyciski v6&quot;)
+<span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Przyciski v6&quot;</span><span class="p">)</span>
 
-ramka = Ramka(app)
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">Ramka</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
-# 1 rząd 1 kolumna
-button(&quot;red&quot;).grid(row=0, column=0, sticky=N+S+E+W)
-# 1 rząd 2 kolumna
-button(&quot;blue&quot;).grid(row=0, column=1, sticky=N+S+E+W)
-# 2 rząd 1 kolumna
-button(&quot;white&quot;).grid(row=1, column=0, sticky=N+S+E+W)
-# 2 rząd 2 kolumna
-button(&quot;black&quot;).grid(row=1, column=1, sticky=N+S+E+W)
+<span class="c1"># 1 rząd 1 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">S</span><span class="o">+</span><span class="n">E</span><span class="o">+</span><span class="n">W</span><span class="p">)</span>
+<span class="c1"># 1 rząd 2 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">S</span><span class="o">+</span><span class="n">E</span><span class="o">+</span><span class="n">W</span><span class="p">)</span>
+<span class="c1"># 2 rząd 1 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">S</span><span class="o">+</span><span class="n">E</span><span class="o">+</span><span class="n">W</span><span class="p">)</span>
+<span class="c1"># 2 rząd 2 kolumna</span>
+<span class="n">button</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">N</span><span class="o">+</span><span class="n">S</span><span class="o">+</span><span class="n">E</span><span class="o">+</span><span class="n">W</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pole-tekstowe">Pole tekstowe</h2>
+
+<h2 id="pole-tekstowe">Pole tekstowe<a class="headerlink" href="#pole-tekstowe" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Pole tekstowe&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Pole tekstowe&quot;</span><span class="p">)</span>
 
-tekst = tk.Entry(app) # pole tekstowe
-tekst.pack() # domyślne pakowanie
+<span class="n">tekst</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="c1"># pole tekstowe</span>
+<span class="n">tekst</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span> <span class="c1"># domyślne pakowanie</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pole-tekstowe-wstaw">Pole tekstowe - wstaw</h2>
+
+<h2 id="pole-tekstowe-wstaw">Pole tekstowe - wstaw<a class="headerlink" href="#pole-tekstowe-wstaw" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Pole tekstowe - insert&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Pole tekstowe - insert&quot;</span><span class="p">)</span>
 
-tekst = tk.Entry(app)
-tekst.pack(fill=tk.X, expand=True) # rozciągnij w poziomie
+<span class="n">tekst</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">tekst</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># rozciągnij w poziomie</span>
 
-# wstaw początkowy tekst
-tekst.insert(0, &quot;Tutaj wpisz cokolwiek...&quot;)
+<span class="c1"># wstaw początkowy tekst</span>
+<span class="n">tekst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Tutaj wpisz cokolwiek...&quot;</span><span class="p">)</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="usuwanie-tekstu">Usuwanie tekstu</h2>
+
+<h2 id="usuwanie-tekstu">Usuwanie tekstu<a class="headerlink" href="#usuwanie-tekstu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Pole tekstowe - delete&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Pole tekstowe - delete&quot;</span><span class="p">)</span>
 
-tekst = tk.Entry(app)
-tekst.pack(fill=tk.X, expand=True)
+<span class="n">tekst</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">tekst</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-tekst.insert(0, &quot;Tutaj wpisz cokolwiek...&quot;)
+<span class="n">tekst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Tutaj wpisz cokolwiek...&quot;</span><span class="p">)</span>
 
-# Entry.delete usuwa tekst
-przycisk = tk.Button(app, text=&quot;clear&quot;,
-                     command=lambda: tekst.delete(0, tk.END))
-przycisk.pack()
+<span class="c1"># Entry.delete usuwa tekst</span>
+<span class="n">przycisk</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+                     <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">tekst</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">END</span><span class="p">))</span>
+<span class="n">przycisk</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="pobieranie-tekstu">Pobieranie tekstu</h2>
+
+<h2 id="pobieranie-tekstu">Pobieranie tekstu<a class="headerlink" href="#pobieranie-tekstu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">app = App(&quot;Pole tekstowe - get&quot;)
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;Pole tekstowe - get&quot;</span><span class="p">)</span>
 
-tekst = tk.Entry(app)
-tekst.pack(fill=tk.X, expand=True)
+<span class="n">tekst</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">tekst</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-tekst.insert(0, &quot;Tutaj wpisz cokolwiek...&quot;)
+<span class="n">tekst</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Tutaj wpisz cokolwiek...&quot;</span><span class="p">)</span>
 
-# Entry.get pobiera tekst
-przycisk = tk.Button(app, text=&quot;pobierz&quot;, command=lambda: print(tekst.get()))
-przycisk.pack()
+<span class="c1"># Entry.get pobiera tekst</span>
+<span class="n">przycisk</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;pobierz&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span>
+<span class="n">przycisk</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
 
-app.run()
-</code></pre>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="student-gui">Student GUI</h2>
+
+<h2 id="student-gui">Student GUI<a class="headerlink" href="#student-gui" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">class Student:
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
 
-    def __init__(self, imie, nazwisko, indeks):
-        self._imie = imie
-        self._nazwisko = nazwisko
-        self._indeks = indeks
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imie</span><span class="p">,</span> <span class="n">nazwisko</span><span class="p">,</span> <span class="n">indeks</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_imie</span> <span class="o">=</span> <span class="n">imie</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nazwisko</span> <span class="o">=</span> <span class="n">nazwisko</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_indeks</span> <span class="o">=</span> <span class="n">indeks</span>
 
-        self.save() # automatyczny zapis przy tworzeniu studenta
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span> <span class="c1"># automatyczny zapis przy tworzeniu studenta</span>
 
-    def save(self):
-        with open(&quot;.&quot;.join([self._imie, self._nazwisko]), 'w') as f:
-            f.write(self._indeks)
-</code></pre>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_imie</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nazwisko</span><span class="p">]),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_indeks</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="gowne-okno-programu">Główne okno programu</h2>
+
+<h2 id="gowne-okno-programu">Główne okno programu<a class="headerlink" href="#gowne-okno-programu" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import tkinter as tk
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="kn">as</span> <span class="nn">tk</span>
 
-root = tk.Tk()
-#root.option_add(&quot;*font&quot;, &quot;Helvetica 24&quot;)
-root.title(&quot;Student&quot;)
-root.geometry(&quot;800x600+400+300&quot;)
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="c1">#root.option_add(&quot;*font&quot;, &quot;Helvetica 24&quot;)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Student&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;800x600+400+300&quot;</span><span class="p">)</span>
 
-# ramka z tłem, do której będziemy wrzucać pola tekstowe
-ramka = tk.Frame(root, bg=&quot;white&quot;)
-ramka.pack(fill=tk.BOTH, expand=True)
-</code></pre>
+<span class="c1"># ramka z tłem, do której będziemy wrzucać pola tekstowe</span>
+<span class="n">ramka</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">ramka</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="entries">Entries</h2>
+
+<h2 id="entries">Entries<a class="headerlink" href="#entries" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># imię
-tk.Label(ramka, text=&quot;Imię: &quot;).grid(row=0, column=0, sticky=&quot;nsew&quot;)
-imie = tk.Entry(ramka)
-imie.grid(row=0, column=1, sticky=&quot;nsew&quot;)
+<div class="codehilite"><pre><span></span><span class="c1"># imię</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Imię: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
+<span class="n">imie</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">ramka</span><span class="p">)</span>
+<span class="n">imie</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
 
-# nazwisko
-tk.Label(ramka, text=&quot;Nazwisko: &quot;).grid(row=1, column=0, sticky=&quot;nsew&quot;)
-nazwisko = tk.Entry(ramka)
-nazwisko.grid(row=1, column=1, sticky=&quot;nsew&quot;)
+<span class="c1"># nazwisko</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Nazwisko: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
+<span class="n">nazwisko</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">ramka</span><span class="p">)</span>
+<span class="n">nazwisko</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
 
-# numer indeksu
-tk.Label(ramka, text=&quot;Indeks: &quot;).grid(row=2, column=0, sticky=&quot;nsew&quot;)
-indeks = tk.Entry(ramka)
-indeks.grid(row=2, column=1, sticky=&quot;nsew&quot;)
-</code></pre>
+<span class="c1"># numer indeksu</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">ramka</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Indeks: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
+<span class="n">indeks</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">ramka</span><span class="p">)</span>
+<span class="n">indeks</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&quot;nsew&quot;</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="przycisk-save">Przycisk <em>save</em></h2>
+
+<h2 id="przycisk-save">Przycisk <em>save</em><a class="headerlink" href="#przycisk-save" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># wyrażenie lamba generujące studenta
-# na bazie wpisów w entries
-make_student = lambda: Student(imie.get(), nazwisko.get(), indeks.get())
+<div class="codehilite"><pre><span></span><span class="c1"># wyrażenie lamba generujące studenta</span>
+<span class="c1"># na bazie wpisów w entries</span>
+<span class="n">make_student</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">Student</span><span class="p">(</span><span class="n">imie</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">nazwisko</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">indeks</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 
-przycisk = tk.Button(root, text=&quot;save&quot;, command=make_student)
-przycisk.pack()
-</code></pre>
+<span class="n">przycisk</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">make_student</span><span class="p">)</span>
+<span class="n">przycisk</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="test_1">Test</h2>
+
+<h2 id="test_1">Test<a class="headerlink" href="#test_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">root.mainloop()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
 
-<pre><code class="python">%%bash
-cat Jan.Kowalski
-</code></pre></div>
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">Jan</span><span class="o">.</span><span class="n">Kowalski</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w11/" title="Wykład 11" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 11
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykłady powtórkowe
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>

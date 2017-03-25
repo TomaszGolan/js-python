@@ -1,293 +1,1634 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Wykłady z Pythona dla ISSP i FK @ WFiA">
+      
+      
+        <link rel="canonical" href="https://tomaszgolan.github.io/js-python/wyklady/js-python_w08/">
+      
+      
+        <meta name="author" content="Tomasz Golan">
+      
+      
+        <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+    
+    
+      
         <title>Wykład 8 - Języki skryptowe - Python (2016/17)</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../js/highlight.pack.js"></script> 
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="Języki skryptowe - Python (2016/17)" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Wykłady
+                </span>
+              
+            
+            Wykład 8
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
         </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="../..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../js-python_w01/">Wykład 1</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w02/">Wykład 2</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w03/">Wykład 3</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w04/">Wykład 4</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w05/">Wykład 5</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w06/">Wykład 6</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w07/">Wykład 7</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Wykład 8</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w09/">Wykład 9</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w10/">Wykład 10</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w11/">Wykład 11</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w12/">Wykład 12</a>
-</li>
-                            
-<li >
-    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../listy/js-python_l01/">Lista 1</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l02/">Lista 2</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l03/">Lista 3</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l04/">Lista 4</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l05/">Lista 5</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l06/">Lista 6</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l07/">Lista 7</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l08/">Lista 8</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l09/">Lista 9</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l10/">Lista 10</a>
-</li>
-                            
-<li >
-    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
-</li>
-                            
-<li >
-    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../js-python_w07/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../js-python_w09/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
-            <li><a href="#wykad-8">Wykład 8</a></li>
-            <li><a href="#bedy-bug">Błędy (bug)</a></li>
-            <li><a href="#bedy-leksykalne">Błędy leksykalne</a></li>
-            <li><a href="#bedy-skadniowe-syntax-error">Błędy składniowe (syntax error)</a></li>
-            <li><a href="#bedy-typowania">Błędy typowania</a></li>
-            <li><a href="#bedy-dziaania-runtime-error">Błędy działania (runtime error)</a></li>
-            <li><a href="#bedy-semantyczne-semantic-error">Błędy semantyczne (semantic error)</a></li>
-            <li><a href="#bedy-logiczne">Błędy logiczne</a></li>
-            <li><a href="#nieskonczone-petle">Nieskończone pętle</a></li>
-            <li><a href="#najdrozszy-myslnik-w-historii">Najdroższy myślnik w historii</a></li>
-            <li><a href="#therac-25">Therac-25</a></li>
-            <li><a href="#zapobieganie-bedom">Zapobieganie błędom</a></li>
-            <li><a href="#czytelnosc-kodu">Czytelność kodu</a></li>
-            <li><a href="#code-review">Code review</a></li>
-            <li><a href="#debugowanie">Debugowanie</a></li>
-            <li><a href="#9595debug9595">__debug__</a></li>
-            <li><a href="#przykad">Przykład</a></li>
-            <li><a href="#przykad-debug-mode">Przykład - debug mode</a></li>
-            <li><a href="#wbudowany-debugger">Wbudowany debugger</a></li>
-            <li><a href="#pdb">pdb</a></li>
-            <li><a href="#wyjatki-exceptions">Wyjątki (exceptions)</a></li>
-            <li><a href="#przykad-iloraz">Przykład - iloraz</a></li>
-            <li><a href="#iloraz-zabezpiecznie-if">Iloraz - zabezpiecznie if</a></li>
-            <li><a href="#iloraz-wyjatek">Iloraz - wyjątek</a></li>
-            <li><a href="#przykad-pobierz-liczbe-cakowita">Przykład - pobierz liczbę całkowitą</a></li>
-            <li><a href="#typy-wyjatkow">Typy wyjątków</a></li>
-            <li><a href="#komunikat-wyjatku">Komunikat wyjątku</a></li>
-            <li><a href="#przykad_1">Przykład</a></li>
-            <li><a href="#przykad-test">Przykład - test</a></li>
-            <li><a href="#tryfinally">try...finally</a></li>
-            <li><a href="#tryexceptfinally">try...except...finally</a></li>
-            <li><a href="#zgaszanie-wyjatkow">Zgłaszanie wyjątków</a></li>
-            <li><a href="#zgaszanie-wyjatkow-test">Zgłaszanie wyjątków test</a></li>
-            <li><a href="#wasne-wyjatki">Własne wyjątki</a></li>
-            <li><a href="#assert">assert</a></li>
-            <li><a href="#assert-test">assert - test</a></li>
-            <li><a href="#operacje-na-plikach">Operacje na plikach</a></li>
-            <li><a href="#tryby-pracy-nad-plikiem">Tryby pracy nad plikiem</a></li>
-            <li><a href="#zapis-do-pliku">Zapis do pliku</a></li>
-            <li><a href="#dopisywanie-do-pliku">Dopisywanie do pliku</a></li>
-            <li><a href="#odczyt-pliku">Odczyt pliku</a></li>
-            <li><a href="#r-vs-a">r+ vs a</a></li>
-            <li><a href="#w-vs-r">w+ vs r+</a></li>
-            <li><a href="#w-vs-w">w vs w+</a></li>
-            <li><a href="#w-vs-w_1">w vs w+</a></li>
-            <li><a href="#seek">seek</a></li>
-            <li><a href="#tell">tell</a></li>
-            <li><a href="#seek-and-read">seek and read</a></li>
-            <li><a href="#uwaga">Uwaga</a></li>
-            <li><a href="#otwieranie-plikow-a-wyjatki">Otwieranie plików a wyjątki</a></li>
-            <li><a href="#with-statement">with statement</a></li>
-            <li><a href="#with-open">with open</a></li>
-            <li><a href="#comma-separated-values-csv">Comma-separated values (CSV)</a></li>
-            <li><a href="#modu-csv">Moduł csv</a></li>
-            <li><a href="#wczytywanie-danych">Wczytywanie danych</a></li>
-            <li><a href="#przykad-ankieta">Przykład - ankieta</a></li>
-            <li><a href="#ankieta-wczytywanie-danych">Ankieta - wczytywanie danych</a></li>
-            <li><a href="#ilosc-odpowiedzi">Ilość odpowiedzi</a></li>
-            <li><a href="#sygnatura-czasowa">Sygnatura czasowa</a></li>
-            <li><a href="#liczba-gosow-w-czasie">Liczba głosów w czasie</a></li>
-            <li><a href="#zliczanie-gosow">Zliczanie głosów</a></li>
-            <li><a href="#analiza-pytania">Analiza pytania</a></li>
-            <li><a href="#pytanie-1">Pytanie 1</a></li>
-            <li><a href="#pytanie-2">Pytanie 2</a></li>
-            <li><a href="#pytanie-3">Pytanie 3</a></li>
-            <li><a href="#pytanie-4">Pytanie 4</a></li>
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    Języki skryptowe - Python (2016/17)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/TomaszGolan/js-python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      TomaszGolan/Python
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Wykłady
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Wykłady
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w01/" title="Wykład 1" class="md-nav__link">
+      Wykład 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w02/" title="Wykład 2" class="md-nav__link">
+      Wykład 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w03/" title="Wykład 3" class="md-nav__link">
+      Wykład 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w04/" title="Wykład 4" class="md-nav__link">
+      Wykład 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w05/" title="Wykład 5" class="md-nav__link">
+      Wykład 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w06/" title="Wykład 6" class="md-nav__link">
+      Wykład 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w07/" title="Wykład 7" class="md-nav__link">
+      Wykład 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Wykład 8
+      </label>
+    
+    <a href="./" title="Wykład 8" class="md-nav__link md-nav__link--active">
+      Wykład 8
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-8" title="Wykład 8" class="md-nav__link">
+    Wykład 8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-bug" title="Błędy (bug)" class="md-nav__link">
+    Błędy (bug)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-leksykalne" title="Błędy leksykalne" class="md-nav__link">
+    Błędy leksykalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-skadniowe-syntax-error" title="Błędy składniowe (syntax error)" class="md-nav__link">
+    Błędy składniowe (syntax error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-typowania" title="Błędy typowania" class="md-nav__link">
+    Błędy typowania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-dziaania-runtime-error" title="Błędy działania (runtime error)" class="md-nav__link">
+    Błędy działania (runtime error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-semantyczne-semantic-error" title="Błędy semantyczne (semantic error)" class="md-nav__link">
+    Błędy semantyczne (semantic error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-logiczne" title="Błędy logiczne" class="md-nav__link">
+    Błędy logiczne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nieskonczone-petle" title="Nieskończone pętle" class="md-nav__link">
+    Nieskończone pętle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#najdrozszy-myslnik-w-historii" title="Najdroższy myślnik w historii" class="md-nav__link">
+    Najdroższy myślnik w historii
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#therac-25" title="Therac-25" class="md-nav__link">
+    Therac-25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zapobieganie-bedom" title="Zapobieganie błędom" class="md-nav__link">
+    Zapobieganie błędom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-review" title="Code review" class="md-nav__link">
+    Code review
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugowanie" title="Debugowanie" class="md-nav__link">
+    Debugowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9595debug9595" title="__debug__" class="md-nav__link">
+    __debug__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-debug-mode" title="Przykład - debug mode" class="md-nav__link">
+    Przykład - debug mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wbudowany-debugger" title="Wbudowany debugger" class="md-nav__link">
+    Wbudowany debugger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdb" title="pdb" class="md-nav__link">
+    pdb
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyjatki-exceptions" title="Wyjątki (exceptions)" class="md-nav__link">
+    Wyjątki (exceptions)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-iloraz" title="Przykład - iloraz" class="md-nav__link">
+    Przykład - iloraz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iloraz-zabezpiecznie-if" title="Iloraz - zabezpiecznie if" class="md-nav__link">
+    Iloraz - zabezpiecznie if
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iloraz-wyjatek" title="Iloraz - wyjątek" class="md-nav__link">
+    Iloraz - wyjątek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-pobierz-liczbe-cakowita" title="Przykład - pobierz liczbę całkowitą" class="md-nav__link">
+    Przykład - pobierz liczbę całkowitą
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typy-wyjatkow" title="Typy wyjątków" class="md-nav__link">
+    Typy wyjątków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#komunikat-wyjatku" title="Komunikat wyjątku" class="md-nav__link">
+    Komunikat wyjątku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad_1" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-test" title="Przykład - test" class="md-nav__link">
+    Przykład - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryfinally" title="try...finally" class="md-nav__link">
+    try...finally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryexceptfinally" title="try...except...finally" class="md-nav__link">
+    try...except...finally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zgaszanie-wyjatkow" title="Zgłaszanie wyjątków" class="md-nav__link">
+    Zgłaszanie wyjątków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zgaszanie-wyjatkow-test" title="Zgłaszanie wyjątków test" class="md-nav__link">
+    Zgłaszanie wyjątków test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wasne-wyjatki" title="Własne wyjątki" class="md-nav__link">
+    Własne wyjątki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert" title="assert" class="md-nav__link">
+    assert
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert-test" title="assert - test" class="md-nav__link">
+    assert - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-plikach" title="Operacje na plikach" class="md-nav__link">
+    Operacje na plikach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryby-pracy-nad-plikiem" title="Tryby pracy nad plikiem" class="md-nav__link">
+    Tryby pracy nad plikiem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zapis-do-pliku" title="Zapis do pliku" class="md-nav__link">
+    Zapis do pliku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dopisywanie-do-pliku" title="Dopisywanie do pliku" class="md-nav__link">
+    Dopisywanie do pliku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odczyt-pliku" title="Odczyt pliku" class="md-nav__link">
+    Odczyt pliku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-vs-a" title="r+ vs a" class="md-nav__link">
+    r+ vs a
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w-vs-r" title="w+ vs r+" class="md-nav__link">
+    w+ vs r+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w-vs-w" title="w vs w+" class="md-nav__link">
+    w vs w+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w-vs-w_1" title="w vs w+" class="md-nav__link">
+    w vs w+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seek" title="seek" class="md-nav__link">
+    seek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tell" title="tell" class="md-nav__link">
+    tell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seek-and-read" title="seek and read" class="md-nav__link">
+    seek and read
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga" title="Uwaga" class="md-nav__link">
+    Uwaga
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otwieranie-plikow-a-wyjatki" title="Otwieranie plików a wyjątki" class="md-nav__link">
+    Otwieranie plików a wyjątki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-statement" title="with statement" class="md-nav__link">
+    with statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-open" title="with open" class="md-nav__link">
+    with open
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comma-separated-values-csv" title="Comma-separated values (CSV)" class="md-nav__link">
+    Comma-separated values (CSV)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-csv" title="Moduł csv" class="md-nav__link">
+    Moduł csv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wczytywanie-danych" title="Wczytywanie danych" class="md-nav__link">
+    Wczytywanie danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-ankieta" title="Przykład - ankieta" class="md-nav__link">
+    Przykład - ankieta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ankieta-wczytywanie-danych" title="Ankieta - wczytywanie danych" class="md-nav__link">
+    Ankieta - wczytywanie danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ilosc-odpowiedzi" title="Ilość odpowiedzi" class="md-nav__link">
+    Ilość odpowiedzi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sygnatura-czasowa" title="Sygnatura czasowa" class="md-nav__link">
+    Sygnatura czasowa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liczba-gosow-w-czasie" title="Liczba głosów w czasie" class="md-nav__link">
+    Liczba głosów w czasie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zliczanie-gosow" title="Zliczanie głosów" class="md-nav__link">
+    Zliczanie głosów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analiza-pytania" title="Analiza pytania" class="md-nav__link">
+    Analiza pytania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-1" title="Pytanie 1" class="md-nav__link">
+    Pytanie 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-2" title="Pytanie 2" class="md-nav__link">
+    Pytanie 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-3" title="Pytanie 3" class="md-nav__link">
+    Pytanie 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-4" title="Pytanie 4" class="md-nav__link">
+    Pytanie 4
+  </a>
+  
+</li>
+      
+      
+      
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  
+</nav>
+    
+  </li>
 
-<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
-<h2 id="wykad-8">Wykład 8</h2>
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w09/" title="Wykład 9" class="md-nav__link">
+      Wykład 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w10/" title="Wykład 10" class="md-nav__link">
+      Wykład 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w11/" title="Wykład 11" class="md-nav__link">
+      Wykład 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w12/" title="Wykład 12" class="md-nav__link">
+      Wykład 12
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js-python_w13-14/" title="Wykłady powtórkowe" class="md-nav__link">
+      Wykłady powtórkowe
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Listy zadań
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Listy zadań
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l01/" title="Lista 1" class="md-nav__link">
+      Lista 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l02/" title="Lista 2" class="md-nav__link">
+      Lista 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l03/" title="Lista 3" class="md-nav__link">
+      Lista 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l04/" title="Lista 4" class="md-nav__link">
+      Lista 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l05/" title="Lista 5" class="md-nav__link">
+      Lista 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l06/" title="Lista 6" class="md-nav__link">
+      Lista 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l07/" title="Lista 7" class="md-nav__link">
+      Lista 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l08/" title="Lista 8" class="md-nav__link">
+      Lista 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l09/" title="Lista 9" class="md-nav__link">
+      Lista 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l10/" title="Lista 10" class="md-nav__link">
+      Lista 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../listy/js-python_l11/" title="Lista dodatkowa" class="md-nav__link">
+      Lista dodatkowa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Kolokwia/Egzaminy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kolokwia/Egzaminy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_01/" title="Kolokwium na 3 grupa I" class="md-nav__link">
+      Kolokwium na 3 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona3_02/" title="Kolokwium na 3 grupa II" class="md-nav__link">
+      Kolokwium na 3 grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_kolona4_01/" title="Kolokwium na 4 grupa I" class="md-nav__link">
+      Kolokwium na 4 grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_01/" title="Egzamin grupa I" class="md-nav__link">
+      Egzamin grupa I
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_02/" title="Egzamin grupa II" class="md-nav__link">
+      Egzamin grupa II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../egzaminy/2016_egz_03/" title="Egzamin grupa III" class="md-nav__link">
+      Egzamin grupa III
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wykad-8" title="Wykład 8" class="md-nav__link">
+    Wykład 8
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-bug" title="Błędy (bug)" class="md-nav__link">
+    Błędy (bug)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-leksykalne" title="Błędy leksykalne" class="md-nav__link">
+    Błędy leksykalne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-skadniowe-syntax-error" title="Błędy składniowe (syntax error)" class="md-nav__link">
+    Błędy składniowe (syntax error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-typowania" title="Błędy typowania" class="md-nav__link">
+    Błędy typowania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-dziaania-runtime-error" title="Błędy działania (runtime error)" class="md-nav__link">
+    Błędy działania (runtime error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-semantyczne-semantic-error" title="Błędy semantyczne (semantic error)" class="md-nav__link">
+    Błędy semantyczne (semantic error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedy-logiczne" title="Błędy logiczne" class="md-nav__link">
+    Błędy logiczne
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nieskonczone-petle" title="Nieskończone pętle" class="md-nav__link">
+    Nieskończone pętle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#najdrozszy-myslnik-w-historii" title="Najdroższy myślnik w historii" class="md-nav__link">
+    Najdroższy myślnik w historii
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#therac-25" title="Therac-25" class="md-nav__link">
+    Therac-25
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zapobieganie-bedom" title="Zapobieganie błędom" class="md-nav__link">
+    Zapobieganie błędom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czytelnosc-kodu" title="Czytelność kodu" class="md-nav__link">
+    Czytelność kodu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-review" title="Code review" class="md-nav__link">
+    Code review
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugowanie" title="Debugowanie" class="md-nav__link">
+    Debugowanie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9595debug9595" title="__debug__" class="md-nav__link">
+    __debug__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-debug-mode" title="Przykład - debug mode" class="md-nav__link">
+    Przykład - debug mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wbudowany-debugger" title="Wbudowany debugger" class="md-nav__link">
+    Wbudowany debugger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdb" title="pdb" class="md-nav__link">
+    pdb
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wyjatki-exceptions" title="Wyjątki (exceptions)" class="md-nav__link">
+    Wyjątki (exceptions)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-iloraz" title="Przykład - iloraz" class="md-nav__link">
+    Przykład - iloraz
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iloraz-zabezpiecznie-if" title="Iloraz - zabezpiecznie if" class="md-nav__link">
+    Iloraz - zabezpiecznie if
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iloraz-wyjatek" title="Iloraz - wyjątek" class="md-nav__link">
+    Iloraz - wyjątek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-pobierz-liczbe-cakowita" title="Przykład - pobierz liczbę całkowitą" class="md-nav__link">
+    Przykład - pobierz liczbę całkowitą
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typy-wyjatkow" title="Typy wyjątków" class="md-nav__link">
+    Typy wyjątków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#komunikat-wyjatku" title="Komunikat wyjątku" class="md-nav__link">
+    Komunikat wyjątku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad_1" title="Przykład" class="md-nav__link">
+    Przykład
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-test" title="Przykład - test" class="md-nav__link">
+    Przykład - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryfinally" title="try...finally" class="md-nav__link">
+    try...finally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryexceptfinally" title="try...except...finally" class="md-nav__link">
+    try...except...finally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zgaszanie-wyjatkow" title="Zgłaszanie wyjątków" class="md-nav__link">
+    Zgłaszanie wyjątków
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zgaszanie-wyjatkow-test" title="Zgłaszanie wyjątków test" class="md-nav__link">
+    Zgłaszanie wyjątków test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wasne-wyjatki" title="Własne wyjątki" class="md-nav__link">
+    Własne wyjątki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert" title="assert" class="md-nav__link">
+    assert
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert-test" title="assert - test" class="md-nav__link">
+    assert - test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacje-na-plikach" title="Operacje na plikach" class="md-nav__link">
+    Operacje na plikach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryby-pracy-nad-plikiem" title="Tryby pracy nad plikiem" class="md-nav__link">
+    Tryby pracy nad plikiem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zapis-do-pliku" title="Zapis do pliku" class="md-nav__link">
+    Zapis do pliku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dopisywanie-do-pliku" title="Dopisywanie do pliku" class="md-nav__link">
+    Dopisywanie do pliku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odczyt-pliku" title="Odczyt pliku" class="md-nav__link">
+    Odczyt pliku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-vs-a" title="r+ vs a" class="md-nav__link">
+    r+ vs a
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w-vs-r" title="w+ vs r+" class="md-nav__link">
+    w+ vs r+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w-vs-w" title="w vs w+" class="md-nav__link">
+    w vs w+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w-vs-w_1" title="w vs w+" class="md-nav__link">
+    w vs w+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seek" title="seek" class="md-nav__link">
+    seek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tell" title="tell" class="md-nav__link">
+    tell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seek-and-read" title="seek and read" class="md-nav__link">
+    seek and read
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uwaga" title="Uwaga" class="md-nav__link">
+    Uwaga
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otwieranie-plikow-a-wyjatki" title="Otwieranie plików a wyjątki" class="md-nav__link">
+    Otwieranie plików a wyjątki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-statement" title="with statement" class="md-nav__link">
+    with statement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-open" title="with open" class="md-nav__link">
+    with open
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comma-separated-values-csv" title="Comma-separated values (CSV)" class="md-nav__link">
+    Comma-separated values (CSV)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modu-csv" title="Moduł csv" class="md-nav__link">
+    Moduł csv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wczytywanie-danych" title="Wczytywanie danych" class="md-nav__link">
+    Wczytywanie danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przykad-ankieta" title="Przykład - ankieta" class="md-nav__link">
+    Przykład - ankieta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ankieta-wczytywanie-danych" title="Ankieta - wczytywanie danych" class="md-nav__link">
+    Ankieta - wczytywanie danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ilosc-odpowiedzi" title="Ilość odpowiedzi" class="md-nav__link">
+    Ilość odpowiedzi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sygnatura-czasowa" title="Sygnatura czasowa" class="md-nav__link">
+    Sygnatura czasowa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liczba-gosow-w-czasie" title="Liczba głosów w czasie" class="md-nav__link">
+    Liczba głosów w czasie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zliczanie-gosow" title="Zliczanie głosów" class="md-nav__link">
+    Zliczanie głosów
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analiza-pytania" title="Analiza pytania" class="md-nav__link">
+    Analiza pytania
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-1" title="Pytanie 1" class="md-nav__link">
+    Pytanie 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-2" title="Pytanie 2" class="md-nav__link">
+    Pytanie 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-3" title="Pytanie 3" class="md-nav__link">
+    Pytanie 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytanie-4" title="Pytanie 4" class="md-nav__link">
+    Pytanie 4
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="jezyki-skryptowe-python">Języki skryptowe - Python<a class="headerlink" href="#jezyki-skryptowe-python" title="Permanent link">&para;</a></h1>
+<h2 id="wykad-8">Wykład 8<a class="headerlink" href="#wykad-8" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>Błędy i wyjątki</li>
 <li>Operacje na plikach</li>
 </ul>
-<h2 id="bedy-bug">Błędy (<em>bug</em>)</h2>
+<h2 id="bedy-bug">Błędy (<em>bug</em>)<a class="headerlink" href="#bedy-bug" title="Permanent link">&para;</a></h2>
 <hr />
 <blockquote>
 <p>Without requirements or design, programming is the art of adding bugs to an empty text file.</p>
@@ -300,45 +1641,52 @@
 <li>błędy działania</li>
 <li>nieskończone obliczenia</li>
 </ul>
-<h2 id="bedy-leksykalne">Błędy leksykalne</h2>
+<h2 id="bedy-leksykalne">Błędy leksykalne<a class="headerlink" href="#bedy-leksykalne" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pojedyncza jednostka leksykalna, której nie przewiduje definicja języka</li>
 </ul>
-<pre><code class="python">x = 1
-x++ # operator ++ nie istnieje
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x</span><span class="o">++</span> <span class="c1"># operator ++ nie istnieje</span>
+</pre></div>
 
-<pre><code>  File "&lt;ipython-input-1-c2b85b799f03&gt;", line 2
+
+<div class="codehilite"><pre><span></span>  File &quot;&lt;ipython-input-1-c2b85b799f03&gt;&quot;, line 2
     x++ # operator ++ nie istnieje
                                   ^
 SyntaxError: invalid syntax
-</code></pre>
-<h2 id="bedy-skadniowe-syntax-error">Błędy składniowe (<em>syntax error</em>)</h2>
+</pre></div>
+
+
+<h2 id="bedy-skadniowe-syntax-error">Błędy składniowe (<em>syntax error</em>)<a class="headerlink" href="#bedy-skadniowe-syntax-error" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>niepoprawnie zestawione poprawne jednostki leksykalne </li>
 </ul>
-<pre><code class="python">if True                   # brakuje :
-    print(&quot;Hello World&quot;)) # dodatkowy )
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="bp">True</span>                   <span class="c1"># brakuje :</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">))</span> <span class="c1"># dodatkowy )</span>
+</pre></div>
 
-<pre><code>  File "&lt;ipython-input-2-3cc3ffe6806b&gt;", line 1
+
+<div class="codehilite"><pre><span></span>  File &quot;&lt;ipython-input-2-3cc3ffe6806b&gt;&quot;, line 1
     if True                   # brakuje :
                                          ^
 SyntaxError: invalid syntax
-</code></pre>
-<h2 id="bedy-typowania">Błędy typowania</h2>
+</pre></div>
+
+
+<h2 id="bedy-typowania">Błędy typowania<a class="headerlink" href="#bedy-typowania" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wyrażenie nieadekwatne do typu</li>
 </ul>
-<pre><code class="python">x = 1
+<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 
-x[0] = 2 # x nie jest sekwencyjnym typem danych
-</code></pre>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># x nie jest sekwencyjnym typem danych</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 TypeError                                 Traceback (most recent call last)
 
@@ -348,21 +1696,24 @@ TypeError                                 Traceback (most recent call last)
 ----&gt; 3 x[0] = 2 # x nie jest sekwencyjnym typem danych
 
 
-TypeError: 'int' object does not support item assignment
-</code></pre>
-<h2 id="bedy-dziaania-runtime-error">Błędy działania (<em>runtime error</em>)</h2>
+TypeError: &#39;int&#39; object does not support item assignment
+</pre></div>
+
+
+<h2 id="bedy-dziaania-runtime-error">Błędy działania (<em>runtime error</em>)<a class="headerlink" href="#bedy-dziaania-runtime-error" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pojawiają się w trakcie działania programu (np. odczyt z pliku, który nie istnieje)</li>
 </ul>
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b&quot;&quot;&quot;
-    return a / b
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
-iloraz(10, 0) # dzielenie przez 0
-</code></pre>
+<span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># dzielenie przez 0</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 ZeroDivisionError                         Traceback (most recent call last)
 
@@ -374,43 +1725,48 @@ ZeroDivisionError                         Traceback (most recent call last)
 
 &lt;ipython-input-4-976842d0fc36&gt; in iloraz(a, b)
       1 def iloraz(a, b):
-      2     """Zwraca a / b"""
+      2     &quot;&quot;&quot;Zwraca a / b&quot;&quot;&quot;
 ----&gt; 3     return a / b
       4 
       5 iloraz(10, 0) # dzielenie przez 0
 
 
 ZeroDivisionError: division by zero
-</code></pre>
-<h2 id="bedy-semantyczne-semantic-error">Błędy semantyczne (<em>semantic error</em>)</h2>
+</pre></div>
+
+
+<h2 id="bedy-semantyczne-semantic-error">Błędy semantyczne (<em>semantic error</em>)<a class="headerlink" href="#bedy-semantyczne-semantic-error" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>niezgodność oczekiwań ze stanem faktycznym</li>
 </ul>
-<pre><code class="python">def dzialanie(a, b, c):
-    &quot;&quot;&quot;Zwraca iloraz a przez sumę b i c.&quot;&quot;&quot;
-    return a / b + c # zamiast a / (b + c)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">dzialanie</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca iloraz a przez sumę b i c.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="c1"># zamiast a / (b + c)</span>
+</pre></div>
 
-<h2 id="bedy-logiczne">Błędy logiczne</h2>
+
+<h2 id="bedy-logiczne">Błędy logiczne<a class="headerlink" href="#bedy-logiczne" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>program liczy nie to co trzeba (w tym też błędy semantyczne)</li>
 <li>najtrudniejsze do znalezienia</li>
 </ul>
-<pre><code class="python">def delta(a, b, c):
-    &quot;&quot;&quot;Liczy wyróżnik trójmianu kwadratowego.&quot;&quot;&quot;
-    return b - 4*a*c # zamiast b*b - 4*a*c
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">delta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Liczy wyróżnik trójmianu kwadratowego.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span> <span class="c1"># zamiast b*b - 4*a*c</span>
+</pre></div>
 
-<h2 id="nieskonczone-petle">Nieskończone pętle</h2>
+
+<h2 id="nieskonczone-petle">Nieskończone pętle<a class="headerlink" href="#nieskonczone-petle" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def loop(i = 0):
-    while i &lt; 10:
-        i -= 1 # i zawsze będzie mniejsze od 10
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1"># i zawsze będzie mniejsze od 10</span>
+</pre></div>
 
-<h2 id="najdrozszy-myslnik-w-historii">Najdroższy myślnik w historii</h2>
+
+<h2 id="najdrozszy-myslnik-w-historii">Najdroższy myślnik w historii<a class="headerlink" href="#najdrozszy-myslnik-w-historii" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>NASA (1962); Mariner 1:  Floryda -&gt; Wenus</li>
@@ -419,21 +1775,21 @@ ZeroDivisionError: division by zero
 <p>Review Board determined that the omission of a hyphen in coded computer instructions in the data-editing program allowed transmission of incorrect guidance signals to the spacecraft.</p>
 </blockquote>
 <p><a href="http://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=MARIN1">źródło</a></p>
-<h2 id="therac-25">Therac-25</h2>
+<h2 id="therac-25">Therac-25<a class="headerlink" href="#therac-25" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>maszyna do radioterapii nowotworów</li>
 <li>na skutek błędów programistycznych kilka osób zmarło na skutek napromieniowania</li>
 <li>błąd typu <em>race condition</em> - przy zbyt szybkim wprowadzaniu danych (przez operatora) parametry zabiegu nie były prawidłowo inicjowane</li>
 </ul>
-<h2 id="zapobieganie-bedom">Zapobieganie błędom</h2>
+<h2 id="zapobieganie-bedom">Zapobieganie błędom<a class="headerlink" href="#zapobieganie-bedom" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pisanie czytelnego kodu</li>
 <li><em>code review</em></li>
 <li>debugowanie</li>
 </ul>
-<h2 id="czytelnosc-kodu">Czytelność kodu</h2>
+<h2 id="czytelnosc-kodu">Czytelność kodu<a class="headerlink" href="#czytelnosc-kodu" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>zrozumiałe nazwy zmiennych (nawet kosztem długości)</li>
@@ -441,13 +1797,13 @@ ZeroDivisionError: division by zero
 <li>tworzenie dokumentacji w trakcie pisania programu</li>
 <li>opisywanie przyjętych założeń (w komentarzach i/lub dokumentacji)</li>
 </ul>
-<h2 id="code-review"><em>Code review</em></h2>
+<h2 id="code-review"><em>Code review</em><a class="headerlink" href="#code-review" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>sprawdzenie kodu przez inną osobę</li>
 </ul>
 <p><img alt="" src="../src/code_review.jpg" /></p>
-<h2 id="debugowanie">Debugowanie</h2>
+<h2 id="debugowanie">Debugowanie<a class="headerlink" href="#debugowanie" title="Permanent link">&para;</a></h2>
 <hr />
 <blockquote>
 <p>If debugging is the process of removing software bugs, then programming must be the process of putting them in. </p>
@@ -458,68 +1814,84 @@ ZeroDivisionError: division by zero
 <li>kontrolowane wykonanie programu</li>
 <li>debugger</li>
 </ul>
-<h2 id="9595debug9595">__debug__</h2>
+<h2 id="9595debug9595">__debug__<a class="headerlink" href="#9595debug9595" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile debug.py
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">debug</span><span class="o">.</span><span class="n">py</span>
 
-# __debug__ - wbudowana stała
-# równa True - jeśli uruchomione bez -O (optimize)
+<span class="c1"># __debug__ - wbudowana stała</span>
+<span class="c1"># równa True - jeśli uruchomione bez -O (optimize)</span>
 
-if __debug__:
-    print(&quot;Jestem w trybie debugowania.&quot;)
-else:
-    print(&quot;Jestem w trybie normalnym.&quot;)
-</code></pre>
+<span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jestem w trybie debugowania.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Jestem w trybie normalnym.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Overwriting debug.py
-</code></pre>
-<pre><code class="python">%%bash
-python debug.py
-</code></pre>
 
-<pre><code>Jestem w trybie debugowania.
-</code></pre>
-<pre><code class="python">%%bash
-python -O debug.py
-</code></pre>
+<div class="codehilite"><pre><span></span>Overwriting debug.py
+</pre></div>
 
-<pre><code>Jestem w trybie normalnym.
-</code></pre>
-<h2 id="przykad">Przykład</h2>
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="n">debug</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Jestem w trybie debugowania.
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">O</span> <span class="n">debug</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Jestem w trybie normalnym.
+</pre></div>
+
+
+<h2 id="przykad">Przykład<a class="headerlink" href="#przykad" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile fib.py
-&quot;&quot;&quot;Wyznacza pierwsze wyrazy ciągu Fibonacciego.&quot;&quot;&quot;
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">fib</span><span class="o">.</span><span class="n">py</span>
+<span class="sd">&quot;&quot;&quot;Wyznacza pierwsze wyrazy ciągu Fibonacciego.&quot;&quot;&quot;</span>
 
-fib = [0, 1]
+<span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-for i in range(10):
-    if not __debug__:
-        print(&quot;i =&quot;, i)
-        print(&quot;fib =&quot;, fib)
-        print(&quot;fib[i-2] =&quot;, fib[i-2])
-        print(&quot;fib[i-1] =&quot;, fib[i-1])
-        print()
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">__debug__</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;i =&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;fib =&quot;</span><span class="p">,</span> <span class="n">fib</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;fib[i-2] =&quot;</span><span class="p">,</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;fib[i-1] =&quot;</span><span class="p">,</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">()</span>
 
-    fib.append(fib[i-2] + fib[i-1])
+    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
-print(fib) # [0, 1, 1, 2, 3, 5, 8, 13, ...]
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="c1"># [0, 1, 1, 2, 3, 5, 8, 13, ...]</span>
+</pre></div>
 
-<pre><code>Overwriting fib.py
-</code></pre>
-<pre><code class="python">%%bash
-python fib.py
-</code></pre>
 
-<pre><code>[0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5]
-</code></pre>
-<h2 id="przykad-debug-mode">Przykład - <em>debug mode</em></h2>
+<div class="codehilite"><pre><span></span>Overwriting fib.py
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="n">fib</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5]
+</pre></div>
+
+
+<h2 id="przykad-debug-mode">Przykład - <em>debug mode</em><a class="headerlink" href="#przykad-debug-mode" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-python -O fib.py
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">O</span> <span class="n">fib</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
 
-<pre><code>i = 0
+
+<div class="codehilite"><pre><span></span>i = 0
 fib = [0, 1]
 fib[i-2] = 0
 fib[i-1] = 1
@@ -570,26 +1942,31 @@ fib[i-2] = 2
 fib[i-1] = 3
 
 [0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5]
-</code></pre>
-<h2 id="wbudowany-debugger">Wbudowany debugger</h2>
+</pre></div>
+
+
+<h2 id="wbudowany-debugger">Wbudowany debugger<a class="headerlink" href="#wbudowany-debugger" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%writefile fib.py
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">fib</span><span class="o">.</span><span class="n">py</span>
 
-import pdb # wbudowany debugger
+<span class="kn">import</span> <span class="nn">pdb</span> <span class="c1"># wbudowany debugger</span>
 
-pdb.set_trace() # zacznij debugować
+<span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span> <span class="c1"># zacznij debugować</span>
 
-fib = [0, 1]
+<span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-for i in range(10):
-    fib.append(fib[i-2] + fib[i-1])
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
-print(fib) # [0, 1, 1, 2, 3, 5, 8, 13, ...]
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="c1"># [0, 1, 1, 2, 3, 5, 8, 13, ...]</span>
+</pre></div>
 
-<pre><code>Overwriting fib.py
-</code></pre>
-<h2 id="pdb">pdb</h2>
+
+<div class="codehilite"><pre><span></span>Overwriting fib.py
+</pre></div>
+
+
+<h2 id="pdb">pdb<a class="headerlink" href="#pdb" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li><em>n</em> - następna instrukcja</li>
@@ -600,29 +1977,34 @@ print(fib) # [0, 1, 1, 2, 3, 5, 8, 13, ...]
 <li><em>enter</em> - powtórz ostatnią komendę</li>
 <li>...</li>
 </ul>
-<h2 id="wyjatki-exceptions">Wyjątki (<em>exceptions</em>)</h2>
+<h2 id="wyjatki-exceptions">Wyjątki (<em>exceptions</em>)<a class="headerlink" href="#wyjatki-exceptions" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>błędy działania (<em>runtime error</em>)</li>
 <li>wykryte podczas wykonywania są nazywane wyjątkami</li>
 <li>programista może decydować co robić z wyjątkami</li>
 </ul>
-<h2 id="przykad-iloraz">Przykład - iloraz</h2>
+<h2 id="przykad-iloraz">Przykład - iloraz<a class="headerlink" href="#przykad-iloraz" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b&quot;&quot;&quot;
-    return a / b
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
 
-<pre><code class="python">iloraz(10, 2)
-</code></pre>
 
-<pre><code>5.0
-</code></pre>
-<pre><code class="python">iloraz(10, 0)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>5.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 ZeroDivisionError                         Traceback (most recent call last)
 
@@ -632,165 +2014,205 @@ ZeroDivisionError                         Traceback (most recent call last)
 
 &lt;ipython-input-15-a5a78f530c06&gt; in iloraz(a, b)
       1 def iloraz(a, b):
-      2     """Zwraca a / b"""
+      2     &quot;&quot;&quot;Zwraca a / b&quot;&quot;&quot;
 ----&gt; 3     return a / b
 
 
 ZeroDivisionError: division by zero
-</code></pre>
-<h2 id="iloraz-zabezpiecznie-if">Iloraz - zabezpiecznie <em>if</em></h2>
+</pre></div>
+
+
+<h2 id="iloraz-zabezpiecznie-if">Iloraz - zabezpiecznie <em>if</em><a class="headerlink" href="#iloraz-zabezpiecznie-if" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b lub zero, jeśli b = 0.&quot;&quot;&quot;
-    if b == 0: # można tak, ale lepiej korzystać z wyjątków
-        return 0
-    return a / b
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b lub zero, jeśli b = 0.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># można tak, ale lepiej korzystać z wyjątków</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
 
-<pre><code class="python">iloraz(10, 2)
-</code></pre>
 
-<pre><code>5.0
-</code></pre>
-<pre><code class="python">iloraz(10, 0)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>0
-</code></pre>
-<h2 id="iloraz-wyjatek">Iloraz - <em>wyjątek</em></h2>
+
+<div class="codehilite"><pre><span></span>5.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0
+</pre></div>
+
+
+<h2 id="iloraz-wyjatek">Iloraz - <em>wyjątek</em><a class="headerlink" href="#iloraz-wyjatek" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b lub zero, jeśli b = 0.&quot;&quot;&quot;
-    try:    # spróbuj
-        return a / b
-    except: # jeśli error to
-        return 0
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b lub zero, jeśli b = 0.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>    <span class="c1"># spróbuj</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">except</span><span class="p">:</span> <span class="c1"># jeśli error to</span>
+        <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
 
-<pre><code class="python">iloraz(10, 2)
-</code></pre>
 
-<pre><code>5.0
-</code></pre>
-<pre><code class="python">iloraz(10, 0)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>0
-</code></pre>
-<h2 id="przykad-pobierz-liczbe-cakowita">Przykład - pobierz liczbę całkowitą</h2>
+
+<div class="codehilite"><pre><span></span>5.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0
+</pre></div>
+
+
+<h2 id="przykad-pobierz-liczbe-cakowita">Przykład - pobierz liczbę całkowitą<a class="headerlink" href="#przykad-pobierz-liczbe-cakowita" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">while True:
-    try:    # spróbuj rzutować na int
-        x = int(input(&quot;Podaj liczbę: &quot;))
-        break
-    except: # jeśli się nie uda to
-        print(&quot;Spróbuj jeszcze raz.&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>    <span class="c1"># spróbuj rzutować na int</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę: &quot;</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">except</span><span class="p">:</span> <span class="c1"># jeśli się nie uda to</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Spróbuj jeszcze raz.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Podaj liczbę: a
+
+<div class="codehilite"><pre><span></span>Podaj liczbę: a
 Spróbuj jeszcze raz.
 Podaj liczbę: 1.0
 Spróbuj jeszcze raz.
 Podaj liczbę: 1
-</code></pre>
-<h2 id="typy-wyjatkow">Typy wyjątków</h2>
+</pre></div>
+
+
+<h2 id="typy-wyjatkow">Typy wyjątków<a class="headerlink" href="#typy-wyjatkow" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>pełna lista wbudowanych wyjątków <a href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions">link</a></li>
 </ul>
-<pre><code class="python">while True:
-    try:
-        x = int(input(&quot;Podaj liczbę: &quot;))
-        break
-    except ValueError: # jeśli błąd wartości
-        print(&quot;Spróbuj jeszcze raz.&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę: &quot;</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span> <span class="c1"># jeśli błąd wartości</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Spróbuj jeszcze raz.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>Podaj liczbę: a
+
+<div class="codehilite"><pre><span></span>Podaj liczbę: a
 Spróbuj jeszcze raz.
 Podaj liczbę: 1.0
 Spróbuj jeszcze raz.
 Podaj liczbę: 1
-</code></pre>
-<h2 id="komunikat-wyjatku">Komunikat wyjątku</h2>
-<hr />
-<pre><code class="python">while True:
-    try:
-        x = int(input(&quot;Podaj liczbę: &quot;))
-        break
-    except ValueError as err: # err = komunikat błędu
-        print(&quot;Spróbuj jeszcze raz, bo&quot;, err)
-</code></pre>
+</pre></div>
 
-<pre><code>Podaj liczbę: a
-Spróbuj jeszcze raz, bo invalid literal for int() with base 10: 'a'
+
+<h2 id="komunikat-wyjatku">Komunikat wyjątku<a class="headerlink" href="#komunikat-wyjatku" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Podaj liczbę: &quot;</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># err = komunikat błędu</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Spróbuj jeszcze raz, bo&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Podaj liczbę: a
+Spróbuj jeszcze raz, bo invalid literal for int() with base 10: &#39;a&#39;
 Podaj liczbę: 1.0
-Spróbuj jeszcze raz, bo invalid literal for int() with base 10: '1.0'
+Spróbuj jeszcze raz, bo invalid literal for int() with base 10: &#39;1.0&#39;
 Podaj liczbę: 1
-</code></pre>
-<h2 id="przykad_1">Przykład</h2>
+</pre></div>
+
+
+<h2 id="przykad_1">Przykład<a class="headerlink" href="#przykad_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># więcej o plikach za chwilę
+<div class="codehilite"><pre><span></span><span class="c1"># więcej o plikach za chwilę</span>
 
-import sys
+<span class="kn">import</span> <span class="nn">sys</span>
 
-def read_data():
-    try:
-        plik = open('data.txt') # otwórz plik
-        linia = plik.readline() # wczytaj linię
-        dane = int(linia)       # rzutuj linię na int
-    except IOError as err:      # IOError
-        print(&quot;Błąd I/O:&quot;, err)
-    except ValueError as err:   # ValueError
-        print(&quot;Złe dane:&quot;, err)
-    except:                     # InnyError
-        print(&quot;Coś poszło nie tak...&quot;)
-        sys.exit(0)
-</code></pre>
+<span class="k">def</span> <span class="nf">read_data</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">plik</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">)</span> <span class="c1"># otwórz plik</span>
+        <span class="n">linia</span> <span class="o">=</span> <span class="n">plik</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># wczytaj linię</span>
+        <span class="n">dane</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">linia</span><span class="p">)</span>       <span class="c1"># rzutuj linię na int</span>
+    <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>      <span class="c1"># IOError</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Błąd I/O:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>   <span class="c1"># ValueError</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Złe dane:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>                     <span class="c1"># InnyError</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coś poszło nie tak...&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
 
-<h2 id="przykad-test">Przykład - test</h2>
+
+<h2 id="przykad-test">Przykład - test<a class="headerlink" href="#przykad-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">read_data()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">read_data</span><span class="p">()</span>
+</pre></div>
 
-<pre><code>Błąd I/O: [Errno 2] No such file or directory: 'data.txt'
-</code></pre>
-<pre><code class="python">%%writefile data.txt
-Python
-</code></pre>
 
-<pre><code>Writing data.txt
-</code></pre>
-<pre><code class="python">read_data()
-</code></pre>
+<div class="codehilite"><pre><span></span>Błąd I/O: [Errno 2] No such file or directory: &#39;data.txt&#39;
+</pre></div>
 
-<pre><code>Złe dane: invalid literal for int() with base 10: 'Python'
-</code></pre>
-<h2 id="tryfinally"><em>try...finally</em></h2>
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">data</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Python</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Writing data.txt
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">read_data</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Złe dane: invalid literal for int() with base 10: &#39;Python&#39;
+</pre></div>
+
+
+<h2 id="tryfinally"><em>try...finally</em><a class="headerlink" href="#tryfinally" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b.&quot;&quot;&quot;
-    try:
-        return a / b
-    finally: # wykonaj mimo zgłoszonego wyjątku
-        print(&quot;Posprzątam bez względu na wyjątki.&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">finally</span><span class="p">:</span> <span class="c1"># wykonaj mimo zgłoszonego wyjątku</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Posprzątam bez względu na wyjątki.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">iloraz(10, 5)
-</code></pre>
 
-<pre><code>Posprzątam bez względu na wyjątki.
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Posprzątam bez względu na wyjątki.
 
 
 
 
 
 2.0
-</code></pre>
-<pre><code class="python">iloraz(10, 0)
-</code></pre>
+</pre></div>
 
-<pre><code>Posprzątam bez względu na wyjątki.
+
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Posprzątam bez względu na wyjątki.
 
 
 
@@ -803,62 +2225,76 @@ ZeroDivisionError                         Traceback (most recent call last)
 
 
 &lt;ipython-input-31-2179acde9974&gt; in iloraz(a, b)
-      2     """Zwraca a / b."""
+      2     &quot;&quot;&quot;Zwraca a / b.&quot;&quot;&quot;
       3     try:
 ----&gt; 4         return a / b
       5     finally: # wykonaj mimo zgłoszonego wyjątku
-      6         print("Posprzątam bez względu na wyjątki.")
+      6         print(&quot;Posprzątam bez względu na wyjątki.&quot;)
 
 
 ZeroDivisionError: division by zero
-</code></pre>
-<h2 id="tryexceptfinally"><em>try...except...finally</em></h2>
+</pre></div>
+
+
+<h2 id="tryexceptfinally"><em>try...except...finally</em><a class="headerlink" href="#tryexceptfinally" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b lub zero, jeśli b = 0.&quot;&quot;&quot;
-    try:
-        return a / b
-    except:
-        print(&quot;Użytkownik nie zna matematyki.&quot;)
-    finally: # wykona zawsze bez względu na wyni try
-        print(&quot;Posprzątam bez względu na wyjątki.&quot;)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b lub zero, jeśli b = 0.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Użytkownik nie zna matematyki.&quot;</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span> <span class="c1"># wykona zawsze bez względu na wyni try</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Posprzątam bez względu na wyjątki.&quot;</span><span class="p">)</span>
+</pre></div>
 
-<pre><code class="python">iloraz(10, 5)
-</code></pre>
 
-<pre><code>Posprzątam bez względu na wyjątki.
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Posprzątam bez względu na wyjątki.
 
 
 
 
 
 2.0
-</code></pre>
-<pre><code class="python">iloraz(10, 0)
-</code></pre>
+</pre></div>
 
-<pre><code>Użytkownik nie zna matematyki.
+
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Użytkownik nie zna matematyki.
 Posprzątam bez względu na wyjątki.
-</code></pre>
-<h2 id="zgaszanie-wyjatkow">Zgłaszanie wyjątków</h2>
+</pre></div>
+
+
+<h2 id="zgaszanie-wyjatkow">Zgłaszanie wyjątków<a class="headerlink" href="#zgaszanie-wyjatkow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def iloraz(a, b):
-    &quot;&quot;&quot;Zwraca a / b.&quot;&quot;&quot;
-    if b == 0:
-        raise NameError(&quot;Dzielenie przez zero.&quot;)
-    return a / b
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">iloraz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zwraca a / b.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s2">&quot;Dzielenie przez zero.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
 
-<pre><code class="python">iloraz(10, 5)
-</code></pre>
 
-<pre><code>2.0
-</code></pre>
-<pre><code class="python">iloraz(10, 0)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>2.0
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 NameError                                 Traceback (most recent call last)
 
@@ -867,85 +2303,104 @@ NameError                                 Traceback (most recent call last)
 
 
 &lt;ipython-input-37-0c4a0fa13db9&gt; in iloraz(a, b)
-      2     """Zwraca a / b."""
+      2     &quot;&quot;&quot;Zwraca a / b.&quot;&quot;&quot;
       3     if b == 0:
-----&gt; 4         raise NameError("Dzielenie przez zero.")
+----&gt; 4         raise NameError(&quot;Dzielenie przez zero.&quot;)
       5     return a / b
 
 
 NameError: Dzielenie przez zero.
-</code></pre>
-<h2 id="zgaszanie-wyjatkow-test">Zgłaszanie wyjątków test</h2>
-<hr />
-<pre><code class="python">try:
-    iloraz(10, 0)
-except NameError as err:
-    print(&quot;Błąd:&quot;, err)
-</code></pre>
+</pre></div>
 
-<pre><code>Błąd: Dzielenie przez zero.
-</code></pre>
-<h2 id="wasne-wyjatki">Własne wyjątki</h2>
+
+<h2 id="zgaszanie-wyjatkow-test">Zgłaszanie wyjątków test<a class="headerlink" href="#zgaszanie-wyjatkow-test" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">iloraz</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Błąd:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Błąd: Dzielenie przez zero.
+</pre></div>
+
+
+<h2 id="wasne-wyjatki">Własne wyjątki<a class="headerlink" href="#wasne-wyjatki" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>możliwe jest definiowanie własnych wyjątków</li>
 <li>o tym w przyszłości, jak już poznamy klasy</li>
 </ul>
-<h2 id="assert"><em>assert</em></h2>
+<h2 id="assert"><em>assert</em><a class="headerlink" href="#assert" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="py"># assert expression jest równoważne
-if __debug__:
-    if not expression: raise AssertionError
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># assert expression jest równoważne</span>
+<span class="k">if</span> <span class="n">__debug__</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">expression</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">AssertionError</span>
+</pre></div>
 
-<pre><code class="python">%%writefile assert.py
 
-import sys
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="k">assert</span><span class="o">.</span><span class="n">py</span>
 
-assert sys.argv[1] != &quot;Python&quot;
+<span class="kn">import</span> <span class="nn">sys</span>
 
-print(&quot;Assert test.&quot;)
-</code></pre>
+<span class="k">assert</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Python&quot;</span>
 
-<pre><code>Overwriting assert.py
-</code></pre>
-<h2 id="assert-test"><em>assert</em> - test</h2>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Assert test.&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Overwriting assert.py
+</pre></div>
+
+
+<h2 id="assert-test"><em>assert</em> - test<a class="headerlink" href="#assert-test" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-python assert.py 1
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="k">assert</span><span class="o">.</span><span class="n">py</span> <span class="mi">1</span>
+</pre></div>
 
-<pre><code>Assert test.
-</code></pre>
-<pre><code class="python">%%bash
-python assert.py Python
-</code></pre>
 
-<pre><code>Traceback (most recent call last):
-  File "assert.py", line 4, in &lt;module&gt;
-    assert sys.argv[1] != "Python"
+<div class="codehilite"><pre><span></span>Assert test.
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="k">assert</span><span class="o">.</span><span class="n">py</span> <span class="n">Python</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Traceback (most recent call last):
+  File &quot;assert.py&quot;, line 4, in &lt;module&gt;
+    assert sys.argv[1] != &quot;Python&quot;
 AssertionError
-</code></pre>
-<pre><code class="python">%%bash
-python -O assert.py Python
-</code></pre>
+</pre></div>
 
-<pre><code>Assert test.
-</code></pre>
-<h2 id="operacje-na-plikach">Operacje na plikach</h2>
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">O</span> <span class="k">assert</span><span class="o">.</span><span class="n">py</span> <span class="n">Python</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Assert test.
+</pre></div>
+
+
+<h2 id="operacje-na-plikach">Operacje na plikach<a class="headerlink" href="#operacje-na-plikach" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>do otwierania plików służy funkcja wbudowana <em>open</em></li>
 <li>przyjmuje wiele argumentów, przy czym dwa najważniejsze to: <em>file</em> i <em>mode</em></li>
 </ul>
-<pre><code class="py">open(file, mode)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+</pre></div>
+
 
 <ul>
 <li><em>file</em> - nazwa pliku (lub pełna ścieżka, jeśli nie w katalogu roboczym)</li>
 <li><em>mode</em> - tryb</li>
 </ul>
-<h2 id="tryby-pracy-nad-plikiem">Tryby pracy nad plikiem</h2>
+<h2 id="tryby-pracy-nad-plikiem">Tryby pracy nad plikiem<a class="headerlink" href="#tryby-pracy-nad-plikiem" title="Permanent link">&para;</a></h2>
 <hr />
 <table>
 <thead>
@@ -988,109 +2443,126 @@ python -O assert.py Python
 <ul>
 <li>np. <code>open(file, r+b)</code> otwiera plik do odczytu, z możliwością zapisu, w trybie binarnym</li>
 </ul>
-<h2 id="zapis-do-pliku">Zapis do pliku</h2>
+<h2 id="zapis-do-pliku">Zapis do pliku<a class="headerlink" href="#zapis-do-pliku" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># otwórz plik do zapisu
-# usuń zawartość jeśli plik istnieje
-file = open(&quot;test&quot;, 'w')
+<div class="codehilite"><pre><span></span><span class="c1"># otwórz plik do zapisu</span>
+<span class="c1"># usuń zawartość jeśli plik istnieje</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 
-file.write(&quot;0123456789&quot;) # zapisz do pliku
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;0123456789&quot;</span><span class="p">)</span> <span class="c1"># zapisz do pliku</span>
 
-file.close() # zamknij plik
-</code></pre>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># zamknij plik</span>
+</pre></div>
 
-<pre><code class="python">file.write(&quot;jeszcze coś&quot;) # plik już jest zamknięty
-</code></pre>
 
-<pre><code>---------------------------------------------------------------------------
+<div class="codehilite"><pre><span></span><span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;jeszcze coś&quot;</span><span class="p">)</span> <span class="c1"># plik już jest zamknięty</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 ValueError                                Traceback (most recent call last)
 
 &lt;ipython-input-46-456f9e28996a&gt; in &lt;module&gt;()
-----&gt; 1 file.write("jeszcze coś") # plik już jest zamknięty
+----&gt; 1 file.write(&quot;jeszcze coś&quot;) # plik już jest zamknięty
 
 
 ValueError: I/O operation on closed file.
-</code></pre>
-<h2 id="dopisywanie-do-pliku">Dopisywanie do pliku</h2>
+</pre></div>
+
+
+<h2 id="dopisywanie-do-pliku">Dopisywanie do pliku<a class="headerlink" href="#dopisywanie-do-pliku" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># otwórz plik do zapisu
-# ustaw się na końcu pliku
-file = open(&quot;test&quot;, 'a')
+<div class="codehilite"><pre><span></span><span class="c1"># otwórz plik do zapisu</span>
+<span class="c1"># ustaw się na końcu pliku</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
 
-file.write(&quot;abcdefghij&quot;) # zapisz do pliku
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;abcdefghij&quot;</span><span class="p">)</span> <span class="c1"># zapisz do pliku</span>
 
-file.close() # zamknij plik
-</code></pre>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># zamknij plik</span>
+</pre></div>
 
-<h2 id="odczyt-pliku">Odczyt pliku</h2>
+
+<h2 id="odczyt-pliku">Odczyt pliku<a class="headerlink" href="#odczyt-pliku" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">file = open(&quot;test&quot;, &quot;r&quot;) # otwórz tylko do odczytu
+<div class="codehilite"><pre><span></span><span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># otwórz tylko do odczytu</span>
 
-zawartosc = file.read() # wczytaj całą zawartość pliku
+<span class="n">zawartosc</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># wczytaj całą zawartość pliku</span>
 
-file.close()
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-print(zawartosc)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">zawartosc</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>0123456789abcdefghij
-</code></pre>
-<h2 id="r-vs-a"><em>r+</em> vs <em>a</em></h2>
+
+<div class="codehilite"><pre><span></span>0123456789abcdefghij
+</pre></div>
+
+
+<h2 id="r-vs-a"><em>r+</em> vs <em>a</em><a class="headerlink" href="#r-vs-a" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># a (append) - zaczyna dopisywać na koniec pliku
-# r+ - zaczyna zapisywać od początku (nadpisując dane)
+<div class="codehilite"><pre><span></span><span class="c1"># a (append) - zaczyna dopisywać na koniec pliku</span>
+<span class="c1"># r+ - zaczyna zapisywać od początku (nadpisując dane)</span>
 
-file = open(&quot;test&quot;, &quot;r+&quot;) # odczyt z możliwością zapisu
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;r+&quot;</span><span class="p">)</span> <span class="c1"># odczyt z możliwością zapisu</span>
 
-file.write(&quot;.&quot; * 5) # zapisz 5 kropek
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># zapisz 5 kropek</span>
 
-file.close()
-</code></pre>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 
-<pre><code class="python">%%bash
-cat test
-</code></pre>
 
-<pre><code>.....56789abcdefghij
-</code></pre>
-<h2 id="w-vs-r"><em>w+</em> vs <em>r+</em></h2>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">test</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>.....56789abcdefghij
+</pre></div>
+
+
+<h2 id="w-vs-r"><em>w+</em> vs <em>r+</em><a class="headerlink" href="#w-vs-r" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python"># r+ - zaczyna zapisywać od początku (nadpisując dane)
-# w+ - najpierw czyści plik (jeśli istnieje)
+<div class="codehilite"><pre><span></span><span class="c1"># r+ - zaczyna zapisywać od początku (nadpisując dane)</span>
+<span class="c1"># w+ - najpierw czyści plik (jeśli istnieje)</span>
 
-file = open(&quot;test&quot;, &quot;w+&quot;) # zapis z możliwością odczytu
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span> <span class="c1"># zapis z możliwością odczytu</span>
 
-file.write(&quot;.&quot; * 5) # zapisz 5 kropek
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># zapisz 5 kropek</span>
 
-file.close()
-</code></pre>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 
-<pre><code class="python">%%bash
-cat test
-</code></pre>
 
-<pre><code>.....
-</code></pre>
-<h2 id="w-vs-w"><em>w</em> vs <em>w+</em></h2>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">test</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>.....
+</pre></div>
+
+
+<h2 id="w-vs-w"><em>w</em> vs <em>w+</em><a class="headerlink" href="#w-vs-w" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">file = open(&quot;test&quot;, &quot;w&quot;) # tylko zapis
+<div class="codehilite"><pre><span></span><span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="c1"># tylko zapis</span>
 
-file.write(&quot;.&quot; * 5) # zapisz 5 kropek
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># zapisz 5 kropek</span>
 
-zawartosc = file.read()
+<span class="n">zawartosc</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-file.close()
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-print(zawartosc)
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">zawartosc</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>---------------------------------------------------------------------------
+
+<div class="codehilite"><pre><span></span>---------------------------------------------------------------------------
 
 UnsupportedOperation                      Traceback (most recent call last)
 
 &lt;ipython-input-53-6fb740cd3fea&gt; in &lt;module&gt;()
-      3 file.write("." * 5) # zapisz 5 kropek
+      3 file.write(&quot;.&quot; * 5) # zapisz 5 kropek
       4 
 ----&gt; 5 zawartosc = file.read()
       6 
@@ -1098,90 +2570,117 @@ UnsupportedOperation                      Traceback (most recent call last)
 
 
 UnsupportedOperation: not readable
-</code></pre>
-<h2 id="w-vs-w_1"><em>w</em> vs <em>w+</em></h2>
+</pre></div>
+
+
+<h2 id="w-vs-w_1"><em>w</em> vs <em>w+</em><a class="headerlink" href="#w-vs-w_1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">file = open(&quot;test&quot;, &quot;w+&quot;) # zapis z możliwościa odczytu
+<div class="codehilite"><pre><span></span><span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span> <span class="c1"># zapis z możliwościa odczytu</span>
 
-file.write(&quot;.&quot; * 5) # zapisz 5 kropek
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># zapisz 5 kropek</span>
 
-zawartosc = file.read()
+<span class="n">zawartosc</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-file.close()
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-print(zawartosc) # nie wydrukuje bo jesteśmy na końcu pliku
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">zawartosc</span><span class="p">)</span> <span class="c1"># nie wydrukuje bo jesteśmy na końcu pliku</span>
+</pre></div>
 
-<h2 id="seek"><em>seek</em></h2>
+
+<h2 id="seek"><em>seek</em><a class="headerlink" href="#seek" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">file = open(&quot;test&quot;, &quot;w+&quot;) # zapis z możliwościa odczytu
+<div class="codehilite"><pre><span></span><span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span> <span class="c1"># zapis z możliwościa odczytu</span>
 
-file.write(&quot;.&quot; * 5) # zapisz 5 kropek
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># zapisz 5 kropek</span>
 
-file.seek(0) # ustaw położenie
+<span class="nb">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># ustaw położenie</span>
 
-zawartosc = file.read()
+<span class="n">zawartosc</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-file.close()
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-print(zawartosc) # nie wydrukuje bo jesteśmy na końcu pliku
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">zawartosc</span><span class="p">)</span> <span class="c1"># nie wydrukuje bo jesteśmy na końcu pliku</span>
+</pre></div>
 
-<pre><code>.....
-</code></pre>
-<h2 id="tell"><em>tell</em></h2>
+
+<div class="codehilite"><pre><span></span>.....
+</pre></div>
+
+
+<h2 id="tell"><em>tell</em><a class="headerlink" href="#tell" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-cat test
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">test</span>
+</pre></div>
 
-<pre><code>.....
-</code></pre>
-<pre><code class="python">file = open(&quot;test&quot;, &quot;a+&quot;) # dodawanie z możliwością odczytu
 
-file.tell() # pozycja w pliku
-</code></pre>
+<div class="codehilite"><pre><span></span>.....
+</pre></div>
 
-<pre><code>5
-</code></pre>
-<pre><code class="python">file.write(&quot;12345&quot;) # dopisz 12345
 
-file.tell()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;a+&quot;</span><span class="p">)</span> <span class="c1"># dodawanie z możliwością odczytu</span>
 
-<pre><code>10
-</code></pre>
-<pre><code class="python">%%bash
-cat test
-</code></pre>
+<span class="nb">file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="c1"># pozycja w pliku</span>
+</pre></div>
 
-<pre><code>.....12345
-</code></pre>
-<h2 id="seek-and-read"><em>seek</em> and <em>read</em></h2>
+
+<div class="codehilite"><pre><span></span>5
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span> <span class="c1"># dopisz 12345</span>
+
+<span class="nb">file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>10
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">test</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>.....12345
+</pre></div>
+
+
+<h2 id="seek-and-read"><em>seek</em> and <em>read</em><a class="headerlink" href="#seek-and-read" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-cat test
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">test</span>
+</pre></div>
 
-<pre><code>.....12345
-</code></pre>
-<pre><code class="python"># seek(offset, punkt_odniesienia)
-# po = 0, 1, 2 (początek pliku, bieżąca pozycja, koniec pliku)
-# w trybie tekstowym tylko 0 jest dozwolone
 
-file.seek(6, 0) # o 6 znaków od początku 
+<div class="codehilite"><pre><span></span>.....12345
+</pre></div>
 
-file.read(1)
-</code></pre>
 
-<pre><code>'2'
-</code></pre>
-<pre><code class="python">file.tell() # read(n) przesuwa o n
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># seek(offset, punkt_odniesienia)</span>
+<span class="c1"># po = 0, 1, 2 (początek pliku, bieżąca pozycja, koniec pliku)</span>
+<span class="c1"># w trybie tekstowym tylko 0 jest dozwolone</span>
 
-<pre><code>7
-</code></pre>
-<h2 id="uwaga">Uwaga</h2>
+<span class="nb">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># o 6 znaków od początku </span>
+
+<span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>&#39;2&#39;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="c1"># read(n) przesuwa o n</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>7
+</pre></div>
+
+
+<h2 id="uwaga">Uwaga<a class="headerlink" href="#uwaga" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>wygodnie jest wczytać cały plik do pamięci<ul>
@@ -1195,44 +2694,47 @@ file.read(1)
 </ul>
 </li>
 </ul>
-<h2 id="otwieranie-plikow-a-wyjatki">Otwieranie plików a wyjątki</h2>
+<h2 id="otwieranie-plikow-a-wyjatki">Otwieranie plików a wyjątki<a class="headerlink" href="#otwieranie-plikow-a-wyjatki" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="py">try:
-    file = open(&quot;złe_dane&quot;)
-    data = file.read() # zgłasza wyjątek
-finally: # porządek nawet w przypadku wyjątku
-    print(&quot;Czyszczę śmieci.&quot;)
-    file.close()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;złe_dane&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># zgłasza wyjątek</span>
+<span class="k">finally</span><span class="p">:</span> <span class="c1"># porządek nawet w przypadku wyjątku</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Czyszczę śmieci.&quot;</span><span class="p">)</span>
+    <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 
-<h2 id="with-statement"><em>with</em> statement</h2>
+
+<h2 id="with-statement"><em>with</em> statement<a class="headerlink" href="#with-statement" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>gwarantuje, że jeśli wywołane zostało <code>__enter__()</code> (np. otwarcie pliku)</li>
 <li>to zostanie wywołane <code>__exit()__</code> (np. zamknięcie pliku)</li>
 <li>nawet jeśli po drodze wystąpi wyjątek </li>
 </ul>
-<h2 id="with-open"><em>with open</em></h2>
+<h2 id="with-open"><em>with open</em><a class="headerlink" href="#with-open" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="py">with open(&quot;plik_z_danymi&quot;) as file:
-    data = file.read()
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;plik_z_danymi&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+
 
 <ul>
 <li>gwarantuje, że plik zostanie zawsze poprawnie zamknięty</li>
 <li>wygodniejsze niż <em>try...finally...</em></li>
 </ul>
-<h2 id="comma-separated-values-csv">Comma-separated values (CSV)</h2>
+<h2 id="comma-separated-values-csv">Comma-separated values (CSV)<a class="headerlink" href="#comma-separated-values-csv" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
 <li>forma przechowywania danych w plikach tesktowych</li>
 <li>każde pole oddzielone jest przecinkiem</li>
 <li>plik csv</li>
 </ul>
-<pre><code>imię, nazwisko, ocena
+<div class="codehilite"><pre><span></span>imię, nazwisko, ocena
 Kasia, Kowalska, 4
 Jan, Nowak, 4
-</code></pre>
+</pre></div>
+
 
 <ul>
 <li>tabela</li>
@@ -1258,207 +2760,247 @@ Jan, Nowak, 4
 </tr>
 </tbody>
 </table>
-<h2 id="modu-csv">Moduł <em>csv</em></h2>
+<h2 id="modu-csv">Moduł <em>csv</em><a class="headerlink" href="#modu-csv" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import csv
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
-data = [[&quot;imie&quot;, &quot;nazwisko&quot;, &quot;ocena&quot;],
-        [&quot;Kasia&quot;, &quot;Kowalska&quot;, 4],
-        [&quot;Jan&quot;, &quot;Nowak&quot;, 4]]
+<span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;imie&quot;</span><span class="p">,</span> <span class="s2">&quot;nazwisko&quot;</span><span class="p">,</span> <span class="s2">&quot;ocena&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> <span class="s2">&quot;Kowalska&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span> <span class="s2">&quot;Nowak&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
 
-with open(&quot;oceny.csv&quot;, &quot;w&quot;) as csvfile:
-    writer = csv.writer(csvfile) # tworzymy &quot;pisarza&quot; csv
-    for wpis in data:
-        writer.writerow(wpis)    
-</code></pre>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;oceny.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span> <span class="c1"># tworzymy &quot;pisarza&quot; csv</span>
+    <span class="k">for</span> <span class="n">wpis</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">wpis</span><span class="p">)</span>    
+</pre></div>
 
-<pre><code class="python">%%bash
-cat oceny.csv
-</code></pre>
 
-<pre><code>imie,nazwisko,ocena
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">oceny</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>imie,nazwisko,ocena
 Kasia,Kowalska,4
 Jan,Nowak,4
-</code></pre>
-<h2 id="wczytywanie-danych">Wczytywanie danych</h2>
+</pre></div>
+
+
+<h2 id="wczytywanie-danych">Wczytywanie danych<a class="headerlink" href="#wczytywanie-danych" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import csv
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
-with open('oceny.csv', 'r') as csvfile:
-    reader = csv.reader(csvfile) # tworzymy &quot;czytelnika&quot; csv
-    for wpis in reader:
-        print(wpis)
-</code></pre>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;oceny.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span> <span class="c1"># tworzymy &quot;czytelnika&quot; csv</span>
+    <span class="k">for</span> <span class="n">wpis</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">wpis</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['imie', 'nazwisko', 'ocena']
-['Kasia', 'Kowalska', '4']
-['Jan', 'Nowak', '4']
-</code></pre>
-<h2 id="przykad-ankieta">Przykład - ankieta</h2>
+
+<div class="codehilite"><pre><span></span>[&#39;imie&#39;, &#39;nazwisko&#39;, &#39;ocena&#39;]
+[&#39;Kasia&#39;, &#39;Kowalska&#39;, &#39;4&#39;]
+[&#39;Jan&#39;, &#39;Nowak&#39;, &#39;4&#39;]
+</pre></div>
+
+
+<h2 id="przykad-ankieta">Przykład - ankieta<a class="headerlink" href="#przykad-ankieta" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%%bash
-cat ankieta.csv | sed -n 1p # pierwsza linia
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">ankieta</span><span class="o">.</span><span class="n">csv</span> <span class="o">|</span> <span class="n">sed</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span><span class="n">p</span> <span class="c1"># pierwsza linia</span>
+</pre></div>
 
-<pre><code>Sygnatura czasowa,"Co sądzisz o ""przemycaniu"" na wykładzie podstawowych pojęć z innych dziedzin informatyki?",Tempo wykładu jest,Czy na wykładzie powinno być więcej przykładów?,"Ostatnie wykłady (jeśli starczy czasu, po przerobieniu całego podstawowego materiału) powinny być poświęcone"
-</code></pre>
-<pre><code class="python">%%bash
-cat ankieta.csv | sed -n 2p # druga linia
-</code></pre>
 
-<pre><code>2016-11-04 09:38:13,"Jak najbardziej, o ile nie będzie tego na egzaminie.",Zbyt szybkie! Nie nadążam z przyswajaniem nowych pojęć.,"Raczej tak, przykłady trochę ułatwiają przyswojenie nowych pojęć.",Powtórce. Przegląd wszystkich omawianych wcześniej zagadnień.
-</code></pre>
-<h2 id="ankieta-wczytywanie-danych">Ankieta - wczytywanie danych</h2>
+<div class="codehilite"><pre><span></span>Sygnatura czasowa,&quot;Co sądzisz o &quot;&quot;przemycaniu&quot;&quot; na wykładzie podstawowych pojęć z innych dziedzin informatyki?&quot;,Tempo wykładu jest,Czy na wykładzie powinno być więcej przykładów?,&quot;Ostatnie wykłady (jeśli starczy czasu, po przerobieniu całego podstawowego materiału) powinny być poświęcone&quot;
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">%%</span><span class="n">bash</span>
+<span class="n">cat</span> <span class="n">ankieta</span><span class="o">.</span><span class="n">csv</span> <span class="o">|</span> <span class="n">sed</span> <span class="o">-</span><span class="n">n</span> <span class="mi">2</span><span class="n">p</span> <span class="c1"># druga linia</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>2016-11-04 09:38:13,&quot;Jak najbardziej, o ile nie będzie tego na egzaminie.&quot;,Zbyt szybkie! Nie nadążam z przyswajaniem nowych pojęć.,&quot;Raczej tak, przykłady trochę ułatwiają przyswojenie nowych pojęć.&quot;,Powtórce. Przegląd wszystkich omawianych wcześniej zagadnień.
+</pre></div>
+
+
+<h2 id="ankieta-wczytywanie-danych">Ankieta - wczytywanie danych<a class="headerlink" href="#ankieta-wczytywanie-danych" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">import csv
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
-# wczytaj wyniki ankiety do zmiennej wyniki
-with open('ankieta.csv', 'r') as csvfile:
-    reader = csv.reader(csvfile)
-    wyniki = list(reader) # zapisz wyniki
-</code></pre>
+<span class="c1"># wczytaj wyniki ankiety do zmiennej wyniki</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ankieta.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+    <span class="n">wyniki</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> <span class="c1"># zapisz wyniki</span>
+</pre></div>
 
-<pre><code class="python">headers = wyniki.pop(0) # pierwszy wiersz to pytania
 
-print(headers)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="n">wyniki</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pierwszy wiersz to pytania</span>
 
-<pre><code>['Sygnatura czasowa', 'Co sądzisz o "przemycaniu" na wykładzie podstawowych pojęć z innych dziedzin informatyki?', 'Tempo wykładu jest', 'Czy na wykładzie powinno być więcej przykładów?', 'Ostatnie wykłady (jeśli starczy czasu, po przerobieniu całego podstawowego materiału) powinny być poświęcone']
-</code></pre>
-<pre><code class="python">print(wyniki[0]) # odpowiedzi pierwszej osoby
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>['2016-11-04 09:38:13', 'Jak najbardziej, o ile nie będzie tego na egzaminie.', 'Zbyt szybkie! Nie nadążam z przyswajaniem nowych pojęć.', 'Raczej tak, przykłady trochę ułatwiają przyswojenie nowych pojęć.', 'Powtórce. Przegląd wszystkich omawianych wcześniej zagadnień.']
-</code></pre>
-<h2 id="ilosc-odpowiedzi">Ilość odpowiedzi</h2>
+
+<div class="codehilite"><pre><span></span>[&#39;Sygnatura czasowa&#39;, &#39;Co sądzisz o &quot;przemycaniu&quot; na wykładzie podstawowych pojęć z innych dziedzin informatyki?&#39;, &#39;Tempo wykładu jest&#39;, &#39;Czy na wykładzie powinno być więcej przykładów?&#39;, &#39;Ostatnie wykłady (jeśli starczy czasu, po przerobieniu całego podstawowego materiału) powinny być poświęcone&#39;]
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">wyniki</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># odpowiedzi pierwszej osoby</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[&#39;2016-11-04 09:38:13&#39;, &#39;Jak najbardziej, o ile nie będzie tego na egzaminie.&#39;, &#39;Zbyt szybkie! Nie nadążam z przyswajaniem nowych pojęć.&#39;, &#39;Raczej tak, przykłady trochę ułatwiają przyswojenie nowych pojęć.&#39;, &#39;Powtórce. Przegląd wszystkich omawianych wcześniej zagadnień.&#39;]
+</pre></div>
+
+
+<h2 id="ilosc-odpowiedzi">Ilość odpowiedzi<a class="headerlink" href="#ilosc-odpowiedzi" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">n_votes = len(wyniki)
+<div class="codehilite"><pre><span></span><span class="n">n_votes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wyniki</span><span class="p">)</span>
 
-print(&quot;W ankiecie wzięło {} osób.&quot;.format(n_votes))
-</code></pre>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;W ankiecie wzięło {} osób.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_votes</span><span class="p">))</span>
+</pre></div>
 
-<pre><code>W ankiecie wzięło 22 osób.
-</code></pre>
-<h2 id="sygnatura-czasowa">Sygnatura czasowa</h2>
+
+<div class="codehilite"><pre><span></span>W ankiecie wzięło 22 osób.
+</pre></div>
+
+
+<h2 id="sygnatura-czasowa">Sygnatura czasowa<a class="headerlink" href="#sygnatura-czasowa" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">from datetime import datetime
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-def str2date(date):
-    &quot;&quot;&quot;Konwertuje string do datetime wg formatu z ankiety.&quot;&quot;&quot;
-    return datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
+<span class="k">def</span> <span class="nf">str2date</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Konwertuje string do datetime wg formatu z ankiety.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
 
-sygnatury = []
+<span class="n">sygnatury</span> <span class="o">=</span> <span class="p">[]</span>
 
-for glos in wyniki:
-    sygnatury.append(str2date(glos[0]))
-</code></pre>
+<span class="k">for</span> <span class="n">glos</span> <span class="ow">in</span> <span class="n">wyniki</span><span class="p">:</span>
+    <span class="n">sygnatury</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">str2date</span><span class="p">(</span><span class="n">glos</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
 
-<pre><code class="python">print(&quot;Między pierwszym a ostatnim głosem minęło:&quot;,
-      sygnatury[-1] - sygnatury[0])
-</code></pre>
 
-<pre><code>Między pierwszym a ostatnim głosem minęło: 11 days, 15:37:12
-</code></pre>
-<h2 id="liczba-gosow-w-czasie">Liczba głosów w czasie</h2>
+<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Między pierwszym a ostatnim głosem minęło:&quot;</span><span class="p">,</span>
+      <span class="n">sygnatury</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sygnatury</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>Między pierwszym a ostatnim głosem minęło: 11 days, 15:37:12
+</pre></div>
+
+
+<h2 id="liczba-gosow-w-czasie">Liczba głosów w czasie<a class="headerlink" href="#liczba-gosow-w-czasie" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">%matplotlib inline
-import matplotlib
-import matplotlib.pyplot as plt
-from matplotlib.dates import DateFormatter
+<div class="codehilite"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span>
 
-dates = matplotlib.dates.date2num(sygnatury)
+<span class="n">dates</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">dates</span><span class="o">.</span><span class="n">date2num</span><span class="p">(</span><span class="n">sygnatury</span><span class="p">)</span>
 
-fig, ax = plt.subplots()
-ax.plot_date(dates, range(n_votes))
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_date</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_votes</span><span class="p">))</span>
 
-ax.xaxis.set_major_formatter(DateFormatter('%m-%d'))
-</code></pre>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+</pre></div>
+
 
 <p><img alt="png" src="../js-python_w08_files/js-python_w08_133_0.png" /></p>
-<h2 id="zliczanie-gosow">Zliczanie głosów</h2>
+<h2 id="zliczanie-gosow">Zliczanie głosów<a class="headerlink" href="#zliczanie-gosow" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def count_votes(odpowiedzi):
-    &quot;&quot;&quot;Liczy ilość głosów per odpowiedź.&quot;&quot;&quot;
-    results = {} # odpowiedź: liczba głosów
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">count_votes</span><span class="p">(</span><span class="n">odpowiedzi</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Liczy ilość głosów per odpowiedź.&quot;&quot;&quot;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># odpowiedź: liczba głosów</span>
 
-    while len(odpowiedzi): # dopóki pozostały odpowiedzi
-        odpowiedz = odpowiedzi[0] # weź pierwszą z brzegu
-        n_votes = odpowiedzi.count(odpowiedz) # liczba wystąpień
-        results[odpowiedz] = n_votes # zapisz
-        # usuń wszystkie wystąpienia odpowiedz
-        odpowiedzi = [o for o in odpowiedzi if o != odpowiedz]
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">odpowiedzi</span><span class="p">):</span> <span class="c1"># dopóki pozostały odpowiedzi</span>
+        <span class="n">odpowiedz</span> <span class="o">=</span> <span class="n">odpowiedzi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># weź pierwszą z brzegu</span>
+        <span class="n">n_votes</span> <span class="o">=</span> <span class="n">odpowiedzi</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">odpowiedz</span><span class="p">)</span> <span class="c1"># liczba wystąpień</span>
+        <span class="n">results</span><span class="p">[</span><span class="n">odpowiedz</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_votes</span> <span class="c1"># zapisz</span>
+        <span class="c1"># usuń wszystkie wystąpienia odpowiedz</span>
+        <span class="n">odpowiedzi</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">odpowiedzi</span> <span class="k">if</span> <span class="n">o</span> <span class="o">!=</span> <span class="n">odpowiedz</span><span class="p">]</span>
 
-    return results
-</code></pre>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
 
-<h2 id="analiza-pytania">Analiza pytania</h2>
+
+<h2 id="analiza-pytania">Analiza pytania<a class="headerlink" href="#analiza-pytania" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">def analizuj(n, m=3):
-    &quot;&quot;&quot;Drukuje m najczęstszych odpowiedzi na n-te pytanie.&quot;&quot;&quot;
-    pytanie = headers[n] # treść pytania
-    odpowiedzi = [o[n] for o in wyniki] # n-ta kolumna
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">analizuj</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Drukuje m najczęstszych odpowiedzi na n-te pytanie.&quot;&quot;&quot;</span>
+    <span class="n">pytanie</span> <span class="o">=</span> <span class="n">headers</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># treść pytania</span>
+    <span class="n">odpowiedzi</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">wyniki</span><span class="p">]</span> <span class="c1"># n-ta kolumna</span>
 
-    votes = count_votes(odpowiedzi) # {odp: liczba głosów}
-    # posortuj głosy -&gt; odpowiedzi od najczęstszych
-    best = sorted(votes, key=votes.get, reverse=True)
+    <span class="n">votes</span> <span class="o">=</span> <span class="n">count_votes</span><span class="p">(</span><span class="n">odpowiedzi</span><span class="p">)</span> <span class="c1"># {odp: liczba głosów}</span>
+    <span class="c1"># posortuj głosy -&gt; odpowiedzi od najczęstszych</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">votes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">votes</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-    # wyrdukuj pytanie
-    print(&quot;-&quot;*len(pytanie))
-    print(pytanie)
-    print(&quot;-&quot;*len(pytanie), end=&quot;\n\n&quot;)
+    <span class="c1"># wyrdukuj pytanie</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">pytanie</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">pytanie</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">pytanie</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    # wydrukuj m najczęstszych odpowiedzi
-    for i in range(m):
-        odp = best[i] # i-ta odpowiedz
-        procent = votes[odp] / n_votes * 100 # procent głosów
-        print(&quot;{:.2f}% -&gt; {}&quot;.format(procent, odp))
-</code></pre>
+    <span class="c1"># wydrukuj m najczęstszych odpowiedzi</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">odp</span> <span class="o">=</span> <span class="n">best</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># i-ta odpowiedz</span>
+        <span class="n">procent</span> <span class="o">=</span> <span class="n">votes</span><span class="p">[</span><span class="n">odp</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_votes</span> <span class="o">*</span> <span class="mi">100</span> <span class="c1"># procent głosów</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{:.2f}% -&gt; {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">procent</span><span class="p">,</span> <span class="n">odp</span><span class="p">))</span>
+</pre></div>
 
-<h2 id="pytanie-1">Pytanie 1</h2>
+
+<h2 id="pytanie-1">Pytanie 1<a class="headerlink" href="#pytanie-1" title="Permanent link">&para;</a></h2>
 <hr />
-<pre><code class="python">analizuj(1)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">analizuj</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
 
-<pre><code>-----------------------------------------------------------------------------------------
-Co sądzisz o "przemycaniu" na wykładzie podstawowych pojęć z innych dziedzin informatyki?
+
+<div class="codehilite"><pre><span></span>-----------------------------------------------------------------------------------------
+Co sądzisz o &quot;przemycaniu&quot; na wykładzie podstawowych pojęć z innych dziedzin informatyki?
 -----------------------------------------------------------------------------------------
 
 40.91% -&gt; Jak najbardziej! Wszystko związane z programowaniem jest mile widziane.
 36.36% -&gt; Jak najbardziej, o ile nie będzie tego na egzaminie.
 13.64% -&gt; Chętnie poznam, ale nie za dużo.
-</code></pre>
-<h2 id="pytanie-2">Pytanie 2</h2>
-<hr />
-<pre><code class="python">analizuj(2)
-</code></pre>
+</pre></div>
 
-<pre><code>------------------
+
+<h2 id="pytanie-2">Pytanie 2<a class="headerlink" href="#pytanie-2" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="n">analizuj</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>------------------
 Tempo wykładu jest
 ------------------
 
 40.91% -&gt; Trochę za szybkie. Można minimalnie zmniejszyć liczbę nowych pojęć per wykład.
 22.73% -&gt; Zbyt szybkie! Nie nadążam z przyswajaniem nowych pojęć.
 22.73% -&gt; Idealne.
-</code></pre>
-<h2 id="pytanie-3">Pytanie 3</h2>
-<hr />
-<pre><code class="python">analizuj(3)
-</code></pre>
+</pre></div>
 
-<pre><code>-----------------------------------------------
+
+<h2 id="pytanie-3">Pytanie 3<a class="headerlink" href="#pytanie-3" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="n">analizuj</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>-----------------------------------------------
 Czy na wykładzie powinno być więcej przykładów?
 -----------------------------------------------
 
 45.45% -&gt; Raczej tak, przykłady trochę ułatwiają przyswojenie nowych pojęć.
 36.36% -&gt; Jest dobrze jak jest.
 9.09% -&gt; Zdecydowanie tak! Nic tak nie uczy jak dobry przykład.
-</code></pre>
-<h2 id="pytanie-4">Pytanie 4</h2>
-<hr />
-<pre><code class="python">analizuj(4, 4)
-</code></pre>
+</pre></div>
 
-<pre><code>------------------------------------------------------------------------------------------------------------
+
+<h2 id="pytanie-4">Pytanie 4<a class="headerlink" href="#pytanie-4" title="Permanent link">&para;</a></h2>
+<hr />
+<div class="codehilite"><pre><span></span><span class="n">analizuj</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>------------------------------------------------------------------------------------------------------------
 Ostatnie wykłady (jeśli starczy czasu, po przerobieniu całego podstawowego materiału) powinny być poświęcone
 ------------------------------------------------------------------------------------------------------------
 
@@ -1466,40 +3008,92 @@ Ostatnie wykłady (jeśli starczy czasu, po przerobieniu całego podstawowego ma
 22.73% -&gt; GUI. Graficzny interfejs użytkownika.
 18.18% -&gt; Tworzenie gier.
 13.64% -&gt; Bazy danych.
-</code></pre></div>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '../..';</script>
-        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../js-python_w07/" title="Wykład 7" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Wykład 7
+              </span>
             </div>
-            <div class="modal-footer">
+          </a>
+        
+        
+          <a href="../js-python_w09/" title="Wykład 9" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Wykład 9
+              </span>
             </div>
-        </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
-</div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/TomaszGolan/js-python" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+    
+      
+    
+  </body>
 </html>
