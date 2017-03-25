@@ -1,4 +1,4 @@
-site_name: Języki skryptowe - Python (2016/17)
+# Website structure
 pages:
     - Home: index.md
     - Wykłady:
@@ -34,7 +34,35 @@ pages:
         - Egzamin grupa I: egzaminy/2016_egz_01.md
         - Egzamin grupa II: egzaminy/2016_egz_02.md
         - Egzamin grupa III: egzaminy/2016_egz_03.md
+
+# Project information
+site_name: Języki skryptowe - Python (2016/17)
+site_description: 'Wykłady z Pythona dla ISSP i FK @ WFiA'
+site_author: 'Tomasz Golan'
+site_url: 'https://tomaszgolan.github.io/js-python/'
+
+# Repository
+repo_name: 'TomaszGolan/Python'
+repo_url: 'https://github.com/TomaszGolan/js-python/'
+
+# Theme
+theme: material
+
+#  Options
+extra:
+  palette:
+    primary: 'blue grey'
+    accent: 'blue'
+  social:
+    - type: 'github'
+      link: 'https://github.com/TomaszGolan/js-python'
+
+# Extensions
 markdown_extensions:
-   - pymdownx.arithmatex
+    - pymdownx.arithmatex
+    - admonition
+    - codehilite(guess_lang=false)
+    - toc(permalink=true)
+
 extra_javascript:
-  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML

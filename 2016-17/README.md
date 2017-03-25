@@ -2,9 +2,12 @@
 
 ---
 
-Wykłady przygotowane są w Jupyter Notebook. Pliki ipynb można swobodnie przeglądać w formie notatek za pośrednictwem GitHuba lub otworzyć lokalnie i przeglądać w trybie interaktywnym za pomocą Jupyter Notebook.
+Wykłady przygotowane są w Jupyter Notebook.
+Pliki ipynb można swobodnie przeglądać w formie notatek za pośrednictwem GitHuba
+lub otworzyć lokalnie i przeglądać w trybie interaktywnym za pomocą Jupyter Notebook.
 
-Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](https://github.com/damianavila/RISE).
+Do odtworzenia wykładów w formie prezentacji niezbędny jest
+dodatek [RISE](https://github.com/damianavila/RISE).
 
 ---
 
