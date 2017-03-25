@@ -27,9 +27,9 @@ Zastąp zapisywanie do pliku pustą pętlą (`for _ in lista/generator: pass`) i
 
 Zad 4.
 
-Plik [studenci_python.txt](https://raw.githubusercontent.com/TomaszGolan/js-python/master/src/studenci_python.txt) zawiera listę studentów uczęszczających na wykład z Pythona.
+Plik [studenci_python.txt](src/studenci_python.txt) zawiera listę studentów uczęszczających na wykład z Pythona.
 
-Plik [studenci_cpp.txt](https://raw.githubusercontent.com/TomaszGolan/js-python/master/src/studenci_cpp.txt) zawiera listę studentów uczęszczających na wykład z C++.
+Plik [studenci_cpp.txt](src/studenci_cpp.txt) zawiera listę studentów uczęszczających na wykład z C++.
 
 Napisz skrypt, który wydrukuję listę studentów uczęszczających na oba wykłady.
 
