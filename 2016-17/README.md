@@ -36,7 +36,7 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * dokumentacja
     * wyrażenie lambda
 
-* Wykład 5 ([notebook](wyklady/js-python_w05.ipynb)
+* Wykład 5 ([notebook](wyklady/js-python_w05.ipynb))
 
     * *timeit*
     * złożoność algorytmów
@@ -72,7 +72,7 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
 
     * programowania obiektowego ciąg dalszy
 
-* Wykład 12 ([notebook](wyklady/js-python_w12.ipynb)
+* Wykład 12 ([notebook](wyklady/js-python_w12.ipynb))
 
     * graficzny interfejs użytkownika
 
