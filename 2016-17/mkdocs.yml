@@ -1,0 +1,36 @@
+site_name: Języki skryptowe - Python (2016/17)
+pages:
+    - Home: index.md
+    - Wykłady:
+        - Wykład 1: wyklady/js-python_w01.md
+        - Wykład 2: wyklady/js-python_w02.md
+        - Wykład 3: wyklady/js-python_w03.md
+        - Wykład 4: wyklady/js-python_w04.md
+        - Wykład 5: wyklady/js-python_w05.md
+        - Wykład 6: wyklady/js-python_w06.md
+        - Wykład 7: wyklady/js-python_w07.md
+        - Wykład 8: wyklady/js-python_w08.md
+        - Wykład 9: wyklady/js-python_w09.md
+        - Wykład 10: wyklady/js-python_w10.md
+        - Wykład 11: wyklady/js-python_w11.md
+        - Wykład 12: wyklady/js-python_w12.md
+        - Wykłady powtórkowe: wyklady/js-python_w13-14.md
+    - Listy zadań:
+        - Lista 1: listy/js-python_l01.md
+        - Lista 2: listy/js-python_l02.md
+        - Lista 3: listy/js-python_l03.md
+        - Lista 4: listy/js-python_l04.md
+        - Lista 5: listy/js-python_l05.md
+        - Lista 6: listy/js-python_l06.md
+        - Lista 7: listy/js-python_l07.md
+        - Lista 8: listy/js-python_l08.md
+        - Lista 9: listy/js-python_l09.md
+        - Lista 10: listy/js-python_l10.md
+        - Lista dodatkowa: listy/js-python_l11.md
+    - Kolokwia/Egzaminy:
+        - Kolokwium na 3 grupa I: egzaminy/2016_kolona3_01.md
+        - Kolokwium na 3 grupa II: egzaminy/2016_kolona3_02.md
+        - Kolokwium na 4 grupa I: egzaminy/2016_kolona4_01.md
+        - Egzamin grupa I: egzaminy/2016_egz_01.md
+        - Egzamin grupa II: egzaminy/2016_egz_02.md
+        - Egzamin grupa III: egzaminy/2016_egz_03.md
