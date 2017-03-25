@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 9 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w08/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w10/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
+            <li><a href="#wykad-9">Wykład 9</a></li>
+            <li><a href="#typy-sekwencyjne">Typy sekwencyjne</a></li>
+            <li><a href="#sekwencja-set">Sekwencja set</a></li>
+            <li><a href="#definiowanie-set">Definiowanie set</a></li>
+            <li><a href="#set-z-list">set z list</a></li>
+            <li><a href="#dodawanie-elementow-do-zbioru">Dodawanie elementów do zbioru</a></li>
+            <li><a href="#elementy-niehashowalne">Elementy niehashowalne</a></li>
+            <li><a href="#sekwencje-hashowalne">Sekwencje hashowalne</a></li>
+            <li><a href="#usuwanie-elementow-ze-zbioru">Usuwanie elementów ze zbioru</a></li>
+            <li><a href="#bezpieczne-usuwanie">Bezpieczne usuwanie?</a></li>
+            <li><a href="#zastosowanie-zbiorow">Zastosowanie zbiorów</a></li>
+            <li><a href="#czesc-wspolna-zbiorow">Część wspólna zbiorów</a></li>
+            <li><a href="#czesc-wspolna-list">Część wspólna list</a></li>
+            <li><a href="#frozenset">frozenset</a></li>
+            <li><a href="#przykad-totolotek">Przykład - Totolotek</a></li>
+            <li><a href="#totolotek-z-set">Totolotek z set</a></li>
+            <li><a href="#totolotek-test">Totolotek - test</a></li>
+            <li><a href="#totolotek-z-frozenset">Totolotek z frozenset</a></li>
+            <li><a href="#totolotek-test_1">Totolotek - test</a></li>
+            <li><a href="#generatory">Generatory</a></li>
+            <li><a href="#dygresja-range">Dygresja: range</a></li>
+            <li><a href="#ciag-geometryczny">Ciąg geometryczny</a></li>
+            <li><a href="#ciag-geometryczny-generator">Ciąg geometryczny - generator</a></li>
+            <li><a href="#generator-a-lista">Generator a lista</a></li>
+            <li><a href="#generator-jak-iterator">Generator jak iterator</a></li>
+            <li><a href="#czas">Czas</a></li>
+            <li><a href="#czas-dokadniej">Czas dokładniej</a></li>
+            <li><a href="#lista-czy-generator">Lista czy generator</a></li>
+            <li><a href="#wyczerpanie-generatora">"Wyczerpanie" generatora</a></li>
+            <li><a href="#wielekrotne-uzycie">Wielekrotne użycie</a></li>
+            <li><a href="#powtorka-listy-skadane-list-comprehensions">Powtórka: listy składane (list comprehensions)</a></li>
+            <li><a href="#append-vs-lista-skadana">Append vs lista składana</a></li>
+            <li><a href="#czas_1">Czas</a></li>
+            <li><a href="#przykad">Przykład</a></li>
+            <li><a href="#generator-jak-lista-skadana">Generator "jak lista składana"</a></li>
+            <li><a href="#uwagi-na-koniec">Uwagi na koniec</a></li>
+            <li><a href="#probne-kolokwium-zadanie-1">Próbne kolokwium - zadanie 1</a></li>
+            <li><a href="#zadanie-1-wersja-i">Zadanie 1 - wersja I</a></li>
+            <li><a href="#zadanie-1-wersja-ii">Zadanie 1 - wersja II</a></li>
+            <li><a href="#zadanie-1-wersja-iii">Zadanie 1 - wersja III</a></li>
+            <li><a href="#zadanie-1-wersja-iv">Zadanie 1 - wersja IV</a></li>
+            <li><a href="#probne-kolokwium-zadanie-2">Próbne kolokwium - zadanie 2</a></li>
+            <li><a href="#zadanie-2-wersja-i">Zadanie 2 - wersja I</a></li>
+            <li><a href="#dygresja-o-dzielnikach">Dygresja o dzielnikach</a></li>
+            <li><a href="#zadanie-2-wersja-ii">Zadanie 2 - wersja II</a></li>
+            <li><a href="#sito-eratostenesa">Sito Eratostenesa</a></li>
+            <li><a href="#implementacja">Implementacja</a></li>
+            <li><a href="#probne-kolokwium-zadanie-3">Próbne kolokwium - zadanie 3</a></li>
+            <li><a href="#zadanie-3">Zadanie 3</a></li>
+            <li><a href="#zadanie-3-czesc-i">Zadanie 3 - część I</a></li>
+            <li><a href="#zadanie-3-czesc-ii">Zadanie 3 - część II</a></li>
+            <li><a href="#zadanie-3-czesc-iii">Zadanie 3 - część III</a></li>
+            <li><a href="#zadanie-3-czesc-iv">Zadanie 3 - część IV</a></li>
+            <li><a href="#zadanie-3-test">Zadanie 3 - test</a></li>
+            <li><a href="#probne-kolokwium-zadanie-4">Próbne kolokwium - zadanie 4</a></li>
+            <li><a href="#metoda-bisekcji">Metoda bisekcji</a></li>
+            <li><a href="#zadanie-4">Zadanie 4</a></li>
+            <li><a href="#zadanie-4-test">Zadanie 4 - test</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
+<h2 id="wykad-9">Wykład 9</h2>
+<hr />
+<ul>
+<li>typy sekwencyjne: <em>set</em> i <em>frozenset</em></li>
+<li>generatory</li>
+<li>omówienie zadań z listy 6</li>
+</ul>
+<h2 id="typy-sekwencyjne">Typy sekwencyjne</h2>
+<hr />
+<ul>
+<li>do tej pory poznaliśmy cztery typy sekwencyjne:<ul>
+<li><em>str</em> - typ tekstowy</li>
+<li><em>list</em> - <em>mutowalna</em> sekwencja</li>
+<li><em>tuple</em> - <em>niemutowalna</em> sekwencja</li>
+<li><em>range</em> - <em>niemutowalna</em> sekwencja liczb</li>
+</ul>
+</li>
+</ul>
+<h2 id="sekwencja-set">Sekwencja <em>set</em></h2>
+<hr />
+<ul>
+<li><em>set</em> jest <em>mutowalną</em> sekwencją</li>
+<li>różnice względem <em>list</em><ul>
+<li>nie może zawierać duplikatów</li>
+<li>jest nieuporządkowana</li>
+<li>może zawierać tylko <em>hashowalne</em> obiekty</li>
+</ul>
+</li>
+</ul>
+<h2 id="definiowanie-set">Definiowanie <em>set</em></h2>
+<hr />
+<pre><code class="python">zbior = {1, 4, 6, 2, 1} # nawiasy klamrowe
+
+type(zbior)
+</code></pre>
+
+<pre><code>set
+</code></pre>
+<pre><code class="python">print(zbior)
+</code></pre>
+
+<pre><code>{1, 2, 4, 6}
+</code></pre>
+<pre><code class="python">zbior[0] # nie ma indeksowania zbiorów
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-3-119e4f5506a9&gt; in &lt;module&gt;()
+----&gt; 1 zbior[0] # nie ma indeksowania zbiorów
+
+
+TypeError: 'set' object does not support indexing
+</code></pre>
+<h2 id="set-z-list"><em>set</em> z <em>list</em></h2>
+<hr />
+<pre><code class="python">lista = [1, 4, 6, 2, 1]
+
+zbior = set(lista) # stwórz zbiór na bazie listy
+
+print(zbior)
+</code></pre>
+
+<pre><code>{1, 2, 4, 6}
+</code></pre>
+<h2 id="dodawanie-elementow-do-zbioru">Dodawanie elementów do zbioru</h2>
+<hr />
+<pre><code class="python">zbior = {1, 2, 3}
+
+print(zbior)
+</code></pre>
+
+<pre><code>{1, 2, 3}
+</code></pre>
+<pre><code class="python">zbior.add(4) # dodaj 4
+
+print(zbior)
+</code></pre>
+
+<pre><code>{1, 2, 3, 4}
+</code></pre>
+<pre><code class="python">zbior.add(4) # jeszcze raz dodaj 4
+
+print(zbior) # nie ma duplikatów
+</code></pre>
+
+<pre><code>{1, 2, 3, 4}
+</code></pre>
+<h2 id="elementy-niehashowalne">Elementy <em>niehashowalne</em></h2>
+<hr />
+<pre><code class="python">zbior = {1, 2, 3}
+
+lista = [4, 5] # lista jest niehashowalna
+
+# zbiór nie może przechowywać 
+# elementów niehashowalnych
+zbior.add(lista)
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-8-c1da28ad9f1d&gt; in &lt;module&gt;()
+      5 # zbiór nie może przechowywać
+      6 # elementów niehashowalnych
+----&gt; 7 zbior.add(lista)
+
+
+TypeError: unhashable type: 'list'
+</code></pre>
+<h2 id="sekwencje-hashowalne">Sekwencje hashowalne</h2>
+<hr />
+<pre><code class="python">zbior = {1, 2, 3}
+
+krotka = (4, 5) # krotka jest hashowalna
+
+# więc można dodać krotkę
+# do zbioru
+zbior.add(krotka)
+
+print(zbior)
+</code></pre>
+
+<pre><code>{(4, 5), 1, 2, 3}
+</code></pre>
+<h2 id="usuwanie-elementow-ze-zbioru">Usuwanie elementów ze zbioru</h2>
+<hr />
+<pre><code class="python">zbior = {1, 2, 3}
+
+zbior.remove(1) # usuń 1
+
+print(zbior)
+</code></pre>
+
+<pre><code>{2, 3}
+</code></pre>
+<pre><code class="python"># zwróci błąd jeśli element nie istnieje
+zbior.remove(1)
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-11-15d16e079b36&gt; in &lt;module&gt;()
+      1 # zwróci błąd jeśli element nie istnieje
+----&gt; 2 zbior.remove(1)
+
+
+KeyError: 1
+</code></pre>
+<h2 id="bezpieczne-usuwanie">Bezpieczne usuwanie?</h2>
+<hr />
+<pre><code class="python">zbior = {1, 2, 3}
+
+# aby uniknąć błędów i przerwania programu
+# można sprawdzić, czy na pewno element
+# znajduje się w zbiorze
+if 1 in zbior:
+    zbior.remove(1)
+</code></pre>
+
+<pre><code class="python"># lub skorzystać z try...except
+try:
+    zbior.remove(1)
+except:
+    pass
+</code></pre>
+
+<pre><code class="python"># lub skorzystać z discard
+zbior.discard(1)
+</code></pre>
+
+<h2 id="zastosowanie-zbiorow">Zastosowanie zbiorów</h2>
+<hr />
+<pre><code class="python"># usuwanie duplikatów z listy
+
+lista = [2, 1, 2, 3, 4, 3, 2, 1, 5, 5, 2]
+
+lista = list(set(lista))
+
+# uwaga - tracimy kolejność
+print(lista)
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5]
+</code></pre>
+<h2 id="czesc-wspolna-zbiorow">Część wspólna zbiorów</h2>
+<hr />
+<pre><code class="python">A = {1, 2, 3, 4, 5}
+B = {3, 4, 5, 6, 7}
+
+A.intersection(B) # część wspólna A i B
+</code></pre>
+
+<pre><code>{3, 4, 5}
+</code></pre>
+<pre><code class="python"># lub krócej
+A &amp; B
+</code></pre>
+
+<pre><code>{3, 4, 5}
+</code></pre>
+<h2 id="czesc-wspolna-list">Część wspólna list</h2>
+<hr />
+<pre><code class="python">A = [1, 2, 3, 4, 5]
+B = [3, 4, 5, 6, 7]
+
+# rzutuje A i B na zbiory
+# wyznacza ich część wspólną
+# rzutuje na listę
+wspolna = list(set(A) &amp; set(B))
+
+print(wspolna)
+</code></pre>
+
+<pre><code>[3, 4, 5]
+</code></pre>
+<h2 id="frozenset"><em>frozenset</em></h2>
+<hr />
+<ul>
+<li>jak <em>set</em> ale <em>niemutowalny</em>, czyli nie można modyfikować zawartości</li>
+</ul>
+<pre><code class="python">zamrozony_zbior = frozenset([1, 2, 3, 4, 5])
+
+type(zamrozony_zbior)
+</code></pre>
+
+<pre><code>frozenset
+</code></pre>
+<pre><code class="python">zamrozony_zbior.add(1) # nie można dodawać / usuwać
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-20-c3b7844219a4&gt; in &lt;module&gt;()
+----&gt; 1 zamrozony_zbior.add(1) # nie można dodawać / usuwać
+
+
+AttributeError: 'frozenset' object has no attribute 'add'
+</code></pre>
+<h2 id="przykad-totolotek">Przykład - Totolotek</h2>
+<hr />
+<pre><code class="python">from random import randint
+
+# z wykładu 7
+
+def losowanie():
+    &quot;&quot;&quot;Losuje 6 liczb od 1 do 49.&quot;&quot;&quot;
+    # nie jesteśmy zabezpieczni przed powtórzeniami
+    return sorted([randint(1, 49) for _ in range(6)])
+
+def check(a, b):
+    &quot;&quot;&quot;Sprawdza ilość takich samych elementów.&quot;&quot;&quot;
+    return len([n for n in a if n in b])
+
+def play():
+    &quot;&quot;&quot;Gra w lotka.&quot;&quot;&quot;
+    lotto = losowanie() # losowanie lotto
+    kupon = losowanie() # kupon chybił-trafił
+    return check(kupon, lotto)
+</code></pre>
+
+<h2 id="totolotek-z-set">Totolotek z <em>set</em></h2>
+<hr />
+<pre><code class="python">from random import randint
+
+def losowanie():
+    &quot;&quot;&quot;Losuje 6 liczb od 1 do 49.&quot;&quot;&quot;
+    los = set() # tutaj zapiszemy wyniki losowania
+
+    while len(los) &lt; 6: # dodawaj aż 6 unikatów
+        los.add(randint(1, 49))
+
+    return los
+
+def check(a, b):
+    &quot;&quot;&quot;Sprawdza ilość takich samych elementów.&quot;&quot;&quot;
+    return len(a &amp; b)
+</code></pre>
+
+<h2 id="totolotek-test">Totolotek - test</h2>
+<hr />
+<pre><code class="python">lotto = losowanie()
+kupon = losowanie()
+
+print(lotto, kupon, sep=&quot;\n&quot;)
+</code></pre>
+
+<pre><code>{35, 7, 12, 16, 48, 29}
+{32, 10, 13, 26, 29, 31}
+</code></pre>
+<pre><code class="python">check(lotto, kupon)
+</code></pre>
+
+<pre><code>1
+</code></pre>
+<h2 id="totolotek-z-frozenset">Totolotek z <em>frozenset</em></h2>
+<hr />
+<pre><code class="python">from random import sample
+
+# frozenset bo losowania nie będziemy modyfikować
+
+def losowanie():
+    &quot;&quot;&quot;Losuje 6 liczb od 1 do 49.&quot;&quot;&quot;
+    los = sample(range(1, 50), 6) # sample gwarantuje brak powtórzeń
+    return frozenset(los) # zwracamy jako zamrożony zbiór
+
+def check(a, b):
+    &quot;&quot;&quot;Sprawdza ilość takich samych elementów.&quot;&quot;&quot;
+    return len(a &amp; b)
+</code></pre>
+
+<h2 id="totolotek-test_1">Totolotek - test</h2>
+<hr />
+<pre><code class="python">lotto = losowanie()
+kupon = losowanie()
+
+print(lotto, kupon, sep=&quot;\n&quot;)
+</code></pre>
+
+<pre><code>frozenset({37, 46, 48, 19, 25, 31})
+frozenset({38, 40, 41, 18, 19, 30})
+</code></pre>
+<pre><code class="python">check(lotto, kupon)
+</code></pre>
+
+<pre><code>1
+</code></pre>
+<h2 id="generatory">Generatory</h2>
+<hr />
+<ul>
+<li>funkcja, która zachowuje się jak iterator (czyli można np. wykorzystać ją w pętli)</li>
+<li>zamiast tworzyć całą listę obiektów, które będą przechowywane w pamięci</li>
+<li>oszczędza czas i pamięć</li>
+</ul>
+<h2 id="dygresja-range">Dygresja: <em>range</em></h2>
+<hr />
+<pre><code class="python">%timeit -n1 range(1000000) # tworzy obiekt range
+</code></pre>
+
+<pre><code>1 loop, best of 3: 1.68 µs per loop
+</code></pre>
+<pre><code class="python"># kolejne elementy range
+# muszą zostać zapisane w pamięci
+%timeit -n1 list(range(1000000))
+</code></pre>
+
+<pre><code>1 loop, best of 3: 53.3 ms per loop
+</code></pre>
+<h2 id="ciag-geometryczny">Ciąg geometryczny</h2>
+<hr />
+<pre><code class="python">def geometryczny(a1, q, n):
+    &quot;&quot;&quot;Generuje n wyrazów ciągu geometrycznego.&quot;&quot;&quot;
+
+    ciag = [a1]
+
+    for _ in range(n-1): # n-1 bo pierwszy już jest
+        ciag.append(ciag[-1]*q) # następny = poprzedni * iloraz
+
+    return ciag
+</code></pre>
+
+<pre><code class="python">ciag = geometryczny(1, 3, 10)
+
+print(ciag)
+</code></pre>
+
+<pre><code>[1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
+</code></pre>
+<h2 id="ciag-geometryczny-generator">Ciąg geometryczny - generator</h2>
+<hr />
+<pre><code class="python">def gen_geometryczny(a1, q, n):
+    &quot;&quot;&quot;Generuje n wyrazów ciągu geometrycznego.&quot;&quot;&quot;
+
+    for _ in range(n):
+        yield a1 # zwróć obecną wartość a1
+        a1 *= q  # i czekaj na kolejną iterację
+</code></pre>
+
+<h2 id="generator-a-lista">Generator a lista</h2>
+<hr />
+<pre><code class="python">ciag1 = geometryczny(1, 3, 10)     # zwraca listę 
+ciag2 = gen_geometryczny(1, 3, 10) # zwraca generator
+</code></pre>
+
+<pre><code class="python">print(ciag1)
+</code></pre>
+
+<pre><code>[1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683]
+</code></pre>
+<pre><code class="python">print(ciag2)
+</code></pre>
+
+<pre><code>&lt;generator object gen_geometryczny at 0x7f9bac1ec678&gt;
+</code></pre>
+<h2 id="generator-jak-iterator">Generator jak iterator</h2>
+<hr />
+<pre><code class="python">next(ciag2) # pierwszy element
+</code></pre>
+
+<pre><code>1
+</code></pre>
+<pre><code class="python">next(ciag2) # kolejny element itd
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python"># a najczęściej w pętli
+for i in gen_geometryczny(1, 3, 10):
+    print(i, end=', ')
+</code></pre>
+
+<pre><code>1, 3, 9, 27, 81, 243, 729, 2187, 6561, 19683,
+</code></pre>
+<h2 id="czas">Czas</h2>
+<hr />
+<pre><code class="python">%timeit -n3 geometryczny(1, 3, 10000)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 12.8 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 gen_geometryczny(1, 3, 10000)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 978 ns per loop
+</code></pre>
+<h2 id="czas-dokadniej">Czas dokładniej</h2>
+<hr />
+<pre><code class="python">def test_lista():
+    &quot;&quot;&quot;Pętla po liście&quot;&quot;&quot;
+    for element in geometryczny(1, 3, 10000):
+        pass
+
+def test_generator():
+    &quot;&quot;&quot;Pętla po generatorze&quot;&quot;&quot;
+    for element in gen_geometryczny(1, 3, 10000):
+        pass
+</code></pre>
+
+<pre><code class="python">%timeit -n3 test_lista()
+</code></pre>
+
+<pre><code>3 loops, best of 3: 13.6 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 test_generator()
+</code></pre>
+
+<pre><code>3 loops, best of 3: 12.1 ms per loop
+</code></pre>
+<h2 id="lista-czy-generator">Lista czy generator</h2>
+<hr />
+<ul>
+<li>generator będzie z reguły szybszy</li>
+<li>generator może być nieskończony</li>
+<li>jednak nie można wykonywać operacji na "elementach", np. sortowania</li>
+<li>lista może być efektywniejsza, jeśli planujemy więcej pętli</li>
+</ul>
+<h2 id="wyczerpanie-generatora">"Wyczerpanie" generatora</h2>
+<hr />
+<pre><code class="python">ciag = gen_geometryczny(1, 3, 20) # generuje 20 wyrazów
+</code></pre>
+
+<pre><code class="python">for i in range(10): # wydrukuj 10 pierwszych
+    print(next(ciag), end=' ')
+</code></pre>
+
+<pre><code>1 3 9 27 81 243 729 2187 6561 19683
+</code></pre>
+<pre><code class="python">for element in ciag: # nie zaczyna od pierwszego!
+    print(element, end=' ')
+</code></pre>
+
+<pre><code>59049 177147 531441 1594323 4782969 14348907 43046721 129140163 387420489 1162261467
+</code></pre>
+<h2 id="wielekrotne-uzycie">Wielekrotne użycie</h2>
+<hr />
+<pre><code class="python">def lista_loop(n=10):
+    &quot;&quot;&quot;Wykonuje n pętli po liście&quot;&quot;&quot;
+
+    ciag = geometryczny(1, 3, 10000)
+
+    for _ in range(n):
+        for element in ciag:
+            pass
+
+def gen_loop(n=10):
+    &quot;&quot;&quot;Wykonuje n pętli po generatorze&quot;&quot;&quot;
+
+    for _ in range(n):
+        for element in gen_geometryczny(1, 3, 10000):
+            pass
+</code></pre>
+
+<pre><code class="python">%timeit -n3 lista_loop()
+</code></pre>
+
+<pre><code>3 loops, best of 3: 14.2 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 gen_loop()
+</code></pre>
+
+<pre><code>3 loops, best of 3: 77.4 ms per loop
+</code></pre>
+<h2 id="powtorka-listy-skadane-list-comprehensions">Powtórka: listy składane (<em>list comprehensions</em>)</h2>
+<hr />
+<pre><code class="python"># chcemy stworzyć listę zawierającą
+# kwadraty wszystkich cyfr
+
+kwadraty = []
+
+for x in range(10):
+    kwadraty.append(x**2)
+
+print(kwadraty)
+</code></pre>
+
+<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre>
+<pre><code class="python"># a korzystając z listy skladanej
+
+kwadraty = [x**2 for x in range(10)]
+
+print(kwadraty)
+</code></pre>
+
+<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre>
+<h2 id="append-vs-lista-skadana">Append vs lista składana</h2>
+<hr />
+<pre><code class="python">def create_list(n=100000):
+    &quot;&quot;&quot;Tworzy listę kwadratów pierwszych n liczb naturalnych&quot;&quot;&quot;
+
+    kwadraty = []
+
+    for x in range(n):
+        kwadraty.append(x**2)
+
+    return kwadraty
+
+def list_comprehension(n=100000):
+    &quot;&quot;&quot;Tworzy listę kwadratów pierwszych n liczb naturalnych&quot;&quot;&quot;
+
+    return [x**2 for x in range(n)]
+</code></pre>
+
+<h2 id="czas_1">Czas</h2>
+<hr />
+<pre><code class="python">%timeit -n3 x = create_list() # lista tworzona przez append
+</code></pre>
+
+<pre><code>3 loops, best of 3: 48.3 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 y = list_comprehension() # lista składana
+</code></pre>
+
+<pre><code>3 loops, best of 3: 42.5 ms per loop
+</code></pre>
+<pre><code class="python">create_list() == list_comprehension() # wynik ten sam
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="przykad">Przykład</h2>
+<hr />
+<pre><code class="python">def force(m, a):
+    &quot;&quot;&quot;Zwraca wartość siły [N].
+
+    Liczy siłę jaką należy zadziałać na ciało
+    o masie m [kg], aby nadać mu przyspieszenie a [m/s^2].
+    &quot;&quot;&quot;
+    return m*a
+
+wagi = [10, 20, 30, 40, 50] # kg
+przyspieszenia = [1, 2, 3, 4, 5] # m/s^2
+</code></pre>
+
+<pre><code class="python"># stwórz tablicę z wartościami sił 
+
+sily = [force(m, a) for m, a in zip(wagi, przyspieszenia)]
+
+print(sily)
+</code></pre>
+
+<pre><code>[10, 40, 90, 160, 250]
+</code></pre>
+<h2 id="generator-jak-lista-skadana">Generator "jak lista składana"</h2>
+<hr />
+<pre><code class="python"># lista składana
+list_comprehension = [x**2 for x in range(10)]
+
+# generator expression
+generator = (x**2 for x in range(10))
+</code></pre>
+
+<pre><code class="python">for x in generator:
+    print(x, end=' ')
+</code></pre>
+
+<pre><code>0 1 4 9 16 25 36 49 64 81
+</code></pre>
+<pre><code class="python"># lub prościej
+
+for x in (x**2 for x in range(10)):
+    print(x, end=' ')
+</code></pre>
+
+<pre><code>0 1 4 9 16 25 36 49 64 81
+</code></pre>
+<h2 id="uwagi-na-koniec">Uwagi na koniec</h2>
+<hr />
+<ul>
+<li>unikaj tworzenia list przez <em>append</em>, jeśli można wykorzystać <em>list comprehension</em></li>
+<li>unikaj tworzenia list jeśli jest to zbędne (użyj generatorów)</li>
+<li>unikaj <em>generator function</em> na rzecz <em>generator expression</em></li>
+</ul>
+<h2 id="probne-kolokwium-zadanie-1">Próbne kolokwium - zadanie 1</h2>
+<hr />
+<p>Napisz skrypt, który wygeneruje listę zawierającą 100 pierwszych wyrazów ciągu geometrycznego (dla zadanych a1 i q - pierwszy wyraz ciągu i iloraz).</p>
+<p>Następnie wydrukuje na ekranie ten ciąg oraz jego podciąg zawierający tylko parzyste wyrazy.</p>
+<h2 id="zadanie-1-wersja-i">Zadanie 1 - wersja I</h2>
+<hr />
+<pre><code class="python"># podnoszenie q do potęgi jest bardzo czasochłonne!
+
+def geometryczny_v1(a1, q, n):
+    &quot;&quot;&quot;Zwraca n-ty wyraz ciągu geometrycznego (a1, q)&quot;&quot;&quot;
+
+    return a1*q**(n-1) # nie wymaga wyjaśnienia (oby...)
+</code></pre>
+
+<pre><code class="python"># składamy listę na bazie naszej funkcji
+
+ciag = [geometryczny_v1(1, 3, n+1) for n in range(100)]
+</code></pre>
+
+<pre><code class="python"># print(ciag) # drukuje cały ciąg
+# print(ciag[1::2]) # drukuje tylko parzyste wyrazy
+</code></pre>
+
+<h2 id="zadanie-1-wersja-ii">Zadanie 1 - wersja II</h2>
+<hr />
+<pre><code class="python">def geometryczny_v2(a1, q, n, ciag=[]):
+    &quot;&quot;&quot;Tworzy listę n pierwszych wyrazów ciągu (a1, q)&quot;&quot;&quot;
+
+    for _ in range(n):
+        ciag.append(a1) # dodaj obecny wyraz
+        a1 *= q         # następny wyraz
+
+    return ciag
+</code></pre>
+
+<pre><code class="python">ciag = geometryczny_v2(1, 3, 100)
+</code></pre>
+
+<pre><code class="python"># print(ciag) # drukuje cały ciąg
+# print(ciag[1::2]) # drukuje tylko parzyste wyrazy
+</code></pre>
+
+<h2 id="zadanie-1-wersja-iii">Zadanie 1 - wersja III</h2>
+<hr />
+<pre><code class="python">def geometryczny_v3(a1, q, n):
+    &quot;&quot;&quot;Generator ciągu geometrycznego (a1, q)&quot;&quot;&quot;
+
+    for _ in range(n):
+        yield a1 # zwróć obecny wyraz i czekaj
+        a1 *= q  # następny wyraz
+</code></pre>
+
+<pre><code class="python">ciag = geometryczny_v3(1, 3, 100) # generator!
+</code></pre>
+
+<pre><code class="python"># drukuj cały ciąg
+
+# for x in ciag:
+#     print(x, end=' ')
+
+# nie ma wycinków generatorów
+# ale można skorzystać z itertools.islice
+</code></pre>
+
+<h2 id="zadanie-1-wersja-iv">Zadanie 1 - wersja IV</h2>
+<hr />
+<pre><code class="python">def geometryczny_v4(a1, q, n, ciag=[]):
+    &quot;&quot;&quot;Ciąg geometryczny (a1, q) rekurencyjnie&quot;&quot;&quot;
+
+    if not n:
+        return ciag # zwróć ciąg gdy dotrzemy do n
+
+    ciag.append(a1) # dodaj obecny element
+    # wywołaj rekurencyjnie z kolejnym elementem
+    return geometryczny_v4(a1*q, q, n-1, ciag)
+</code></pre>
+
+<pre><code class="python">ciag = geometryczny_v4(1, 3, 100)
+</code></pre>
+
+<pre><code class="python"># print(ciag) # drukuje cały ciąg
+# print(ciag[1::2]) # drukuje tylko parzyste wyrazy
+</code></pre>
+
+<h2 id="probne-kolokwium-zadanie-2">Próbne kolokwium - zadanie 2</h2>
+<hr />
+<p>Napisz funkcję, która sprawdza, czy podana liczba jest liczbą pierwszą. Funkcja powinna zwracać True lub False.</p>
+<p>Napisz skrypt, który sprawdzi, czy podana przez użytkownika liczba jest liczbą pierwszą.</p>
+<h2 id="zadanie-2-wersja-i">Zadanie 2 - wersja I</h2>
+<hr />
+<pre><code class="python">def is_prime_v1(n):
+    &quot;&quot;&quot;Sprawdza czy n jest liczbą pierwszą.&quot;&quot;&quot;
+
+    if n &lt; 2:
+        return False # 0 i 1 nie są pierwsze
+
+    if n &lt; 4:
+        return True # 2 i 3 są pierwsze
+
+    if n % 2 == 0:
+        return False # parzyste nie są pierwsze
+
+    i = 3
+
+    while i &lt; n:
+        if n % i == 0:
+            return False # dzieli się przez i
+        i += 1
+
+    return True # nie dzieli się przez nic    
+</code></pre>
+
+<pre><code class="python">is_prime_v1(11)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="dygresja-o-dzielnikach">Dygresja o dzielnikach</h2>
+<hr />
+<ul>
+<li>Niech $n = a * b$</li>
+<li>Jeśli $a = b$, to $a = b = \sqrt(n)$</li>
+<li>Jeśli $a \neq b$, to albo $a &lt; \sqrt(n)$ albo $b &lt; \sqrt(n)$</li>
+<li>Co oznacza, że jeśli nie znajdziemy dzielnika mniejszego od $\sqrt(n)$, to nie znajdziemy og też dalej</li>
+</ul>
+<h2 id="zadanie-2-wersja-ii">Zadanie 2 - wersja II</h2>
+<hr />
+<pre><code class="python">def is_prime_v2(n):
+    &quot;&quot;&quot;Sprawdza czy n jest liczbą pierwszą.&quot;&quot;&quot;
+
+    if n &lt; 2:
+        return False # 0 i 1 nie są pierwsze
+
+    if n &lt; 4:
+        return True # 2 i 3 są pierwsze
+
+    if n % 2 == 0:
+        return False # parzyste nie są pierwsze
+
+    i = 3
+
+    while i*i &lt; n: # szukamy do pierwiastka z n
+        if n % i == 0:
+            return False # dzieli się przez i
+        i += 1
+
+    return True # nie dzieli się przez nic  
+</code></pre>
+
+<pre><code class="python">is_prime_v2(11)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="sito-eratostenesa">Sito Eratostenesa</h2>
+<hr />
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif"></p>
+<h2 id="implementacja">Implementacja</h2>
+<hr />
+<pre><code class="python">def sieve_v1(n):
+    &quot;&quot;&quot;Create Sieve of Eratosthenes&quot;&quot;&quot;
+    is_prime = [False, False] + [True] * n # ustaw flagi na True
+
+    i = 2
+
+    while i * i &lt; n: # do pierwiastka z n
+        if is_prime[i]:
+            for j in range(2*i, n, i): # zmień flagę
+                is_prime[j] = False    # dla wszystkich wielokrotności
+        i += 1
+
+    return is_prime
+</code></pre>
+
+<pre><code class="python">primes = sieve_v1(100)
+
+for i in range(100):
+    if primes[i]:
+        print(i, end=' ')
+</code></pre>
+
+<pre><code>2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
+</code></pre>
+<h2 id="probne-kolokwium-zadanie-3">Próbne kolokwium - zadanie 3</h2>
+<hr />
+<p>Napisz skrypt, który wymaga trzech argumentów z linii komend (wsk. sys.argv), czyli: <code>python moj_skrypt.py arg1 arg2 arg3</code></p>
+<p>które są długościami boków trójkąta (można założyć, że podane argumenty są liczbami). Na tej podstawie skrypt powinien wydrukować na ekranie następujące informacje:</p>
+<ul>
+<li>obwód i pole trójkąta</li>
+<li>informację czy trójkąt jest równoboczny, równoramienny czy różnoboczny</li>
+<li>informację czy trójkąt jest prostokątny, ostrokątny czy rozwartokątny</li>
+</ul>
+<p>W przypadku złej liczby argumentów program powinien wyświetlić odpowiedni komunikat i zakończyć działanie.</p>
+<h2 id="zadanie-3">Zadanie 3</h2>
+<hr />
+<ul>
+<li>Pełny skrypt można znalęźć tutaj: <a href="https://raw.githubusercontent.com/TomaszGolan/js-python/master/src/triangle.py">zadanie 3</a></li>
+</ul>
+<h2 id="zadanie-3-czesc-i">Zadanie 3 - część I</h2>
+<hr />
+<pre><code class="python">%%writefile zad3.py
+
+&quot;&quot;&quot;Moduł do obsługi trójkątów.&quot;&quot;&quot;
+
+import sys
+import math
+
+
+def help():
+    &quot;&quot;&quot;Drukuje instrukcję obsługi i zamyka program&quot;&quot;&quot;
+
+    print(&quot;usage: python triangle.py bok1 bok2 bok3&quot;)
+    sys.exit(1)
+
+
+def generate(a, b, c):
+    &quot;&quot;&quot;Zwraca posortowane boki trójkąta jako floaty.&quot;&quot;&quot;
+
+    return sorted([float(a), float(b), float(c)])
+</code></pre>
+
+<pre><code>Overwriting zad3.py
+</code></pre>
+<h2 id="zadanie-3-czesc-ii">Zadanie 3 - część II</h2>
+<hr />
+<pre><code class="python">%%writefile -a zad3.py
+
+def check(a, b, c):
+    &quot;&quot;&quot;Zamyka program, jeśli nierówność trójkąta nie jest spełniona.&quot;&quot;&quot;
+
+    if a + b &lt;= c:
+        print(&quot;Nierówność trojkąta nie jest spełniona.\n&quot;)
+        help()
+
+
+def obwod(a, b, c):
+    &quot;&quot;&quot;Zwraca obwód trójkąta&quot;&quot;&quot;
+
+    return a + b + c
+
+
+def pole(a, b, c):
+    &quot;&quot;&quot;Zwraca pole trójkąta&quot;&quot;&quot;
+
+    p = obwod(a, b, c) / 2
+    # wzór Herona
+    return math.sqrt(p*(p - a)*(p - b)*(p - c))
+</code></pre>
+
+<pre><code>Appending to zad3.py
+</code></pre>
+<h2 id="zadanie-3-czesc-iii">Zadanie 3 - część III</h2>
+<hr />
+<pre><code class="python">%%writefile -a zad3.py
+
+def typ_boki(a, b, c):
+    &quot;&quot;&quot;Zwraca typ trójkąta (ze względu na boki)&quot;&quot;&quot;
+
+    if a == b == c:
+        return &quot;równoboczny&quot;
+    elif a == b or b == c:
+        return &quot;równoramienny&quot;
+    else:
+        return &quot;różnoboczny&quot;
+
+
+def typ_katy(a, b, c):
+    &quot;&quot;&quot;Zwraca typ trójkąta (ze względu na kąty)&quot;&quot;&quot;
+
+    x = a**2 + b**2 - c**2
+
+    if x == 0:
+        return &quot;prostokątny&quot;
+    elif x &gt; 0:
+        return &quot;ostrokątny&quot;
+    else:
+        return &quot;rozwartokątny&quot;
+</code></pre>
+
+<pre><code>Appending to zad3.py
+</code></pre>
+<h2 id="zadanie-3-czesc-iv">Zadanie 3 - część IV</h2>
+<hr />
+<pre><code class="python">%%writefile -a zad3.py
+
+if __name__ == &quot;__main__&quot;:
+
+    try:
+        a, b, c = generate(sys.argv[1], sys.argv[2], sys.argv[3])
+    except:
+        help()
+
+    check(a, b, c)
+
+    print(&quot;Obwód trójkąta =&quot;, obwod(a, b, c))
+    print(&quot;Pole trójkąta =&quot;, pole(a, b, c))
+    print(&quot;Trójkąt jest&quot;,   typ_boki(a, b, c))
+    print(&quot;Trójkąt jest&quot;, typ_katy(a, b, c))
+</code></pre>
+
+<pre><code>Appending to zad3.py
+</code></pre>
+<h2 id="zadanie-3-test">Zadanie 3 - test</h2>
+<hr />
+<pre><code class="python">%%bash
+
+python zad3.py
+</code></pre>
+
+<pre><code>usage: python triangle.py bok1 bok2 bok3
+</code></pre>
+<pre><code class="python">%%bash
+
+python zad3.py 3 4 5
+</code></pre>
+
+<pre><code>Obwód trójkąta = 12.0
+Pole trójkąta = 6.0
+Trójkąt jest różnoboczny
+Trójkąt jest prostokątny
+</code></pre>
+<h2 id="probne-kolokwium-zadanie-4">Próbne kolokwium - zadanie 4</h2>
+<hr />
+<p>Korzystając z metody równego podziału (bisekcji) znajdź przybliżone miejsce zerowe funkcji: <code>f(x) = x**3 + 2*x*2 - 4*x - 10</code> w przedziale [1:3].</p>
+<h2 id="metoda-bisekcji">Metoda bisekcji</h2>
+<hr />
+<ul>
+<li>$f(x)$ jest ciągła w przedziale $[a, b]$</li>
+<li>i przyjmuje różne znaki na końcach przedziału $f(a)f(b) &lt; 0$</li>
+<li>idea:<ul>
+<li>sprawdzamy, czy środek $x$ jest miejscem zerowym -&gt; koniec</li>
+<li>dzielimy przedział na dwa: $[a, x]$ i $[x, b]$</li>
+<li>wybieramy przedział, dla którego znaki są różne na brzegach</li>
+<li>powtarzamy do skutku</li>
+</ul>
+</li>
+</ul>
+<h2 id="zadanie-4">Zadanie 4</h2>
+<hr />
+<pre><code class="python">def bisekcja(f, a, b, epsilon=0.0001):
+    &quot;&quot;&quot;Szuka miejsca zerowego f w [a, b] z dokładnością epislon.
+
+    Zakładamy b &gt; a oraz f(a)*f(b) &lt; 0
+    &quot;&quot;&quot;
+
+    while b - a &gt; epsilon: # dopóki mieścimy się w epsilon
+        x = (b + a) / 2    # środek przedziału
+
+        if f(x) == 0:       # miejsce zerowe znalezione
+            return x
+        elif f(x)*f(a) &lt; 0: # nowy przedział [a, x1]
+            b = x
+        else:               # nowy przedział [x1, b]
+            a = x 
+
+    return (b + a) / 2 # zwracamy przybliżoną wartość    
+</code></pre>
+
+<h2 id="zadanie-4-test">Zadanie 4 - test</h2>
+<hr />
+<pre><code class="python">def funkcja(x):
+    return x**3 + 2*x**2 - 4*x - 10
+
+x0 = bisekcja(funkcja, 1, 3)
+
+print(&quot;x0 =&quot;, x0)
+print(&quot;f(x0) =&quot;, funkcja(x0))
+</code></pre>
+
+<pre><code>x0 = 2.117950439453125
+f(x0) = 0.00014644321370838043
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

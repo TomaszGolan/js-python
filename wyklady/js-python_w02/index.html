@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 2 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w01/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w03/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
+            <li><a href="#wykad-2">Wykład 2</a></li>
+            <li><a href="#ostatnio">Ostatnio</a></li>
+            <li><a href="#anuch-znakow">Łańuch znaków</a></li>
+            <li><a href="#indeksowanie">Indeksowanie</a></li>
+            <li><a href="#wycinki">Wycinki</a></li>
+            <li><a href="#wycinki-z-krokiem">Wycinki z krokiem</a></li>
+            <li><a href="#indeksy-ujemne">Indeksy ujemne</a></li>
+            <li><a href="#dygresja-o-klasach">Dygresja o klasach</a></li>
+            <li><a href="#dygresja-o-klasach_1">Dygresja o klasach</a></li>
+            <li><a href="#lista-list">Lista (list)</a></li>
+            <li><a href="#lista-przez">Lista przez [ ]</a></li>
+            <li><a href="#lista-przez-konstruktor">Lista przez konstruktor</a></li>
+            <li><a href="#lista-skadana">Lista składana</a></li>
+            <li><a href="#lista-jako-rezultat-funkcji">Lista jako rezultat funkcji</a></li>
+            <li><a href="#krotka-tuple">Krotka (tuple)</a></li>
+            <li><a href="#krotka">Krotka</a></li>
+            <li><a href="#lista-vs-krotka">Lista vs Krotka</a></li>
+            <li><a href="#lista-vs-krotka_1">Lista vs Krotka</a></li>
+            <li><a href="#range">Range</a></li>
+            <li><a href="#range_1">Range</a></li>
+            <li><a href="#range_2">Range</a></li>
+            <li><a href="#sekwencyjne-typy-danych">Sekwencyjne typy danych</a></li>
+            <li><a href="#operacje-na-sekwencjach">Operacje na sekwencjach</a></li>
+            <li><a href="#operacje-na-sekwencjach_1">Operacje na sekwencjach</a></li>
+            <li><a href="#operacje-na-sekwencjach_2">Operacje na sekwencjach</a></li>
+            <li><a href="#operacje-na-sekwencjach_3">Operacje na sekwencjach</a></li>
+            <li><a href="#funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji</a></li>
+            <li><a href="#wspolne-funkcje-klasowe-sekwencji">Wspólne funkcje klasowe sekwencji</a></li>
+            <li><a href="#operacje-na-sekwencjach-zmiennych-mutable">Operacje na sekwencjach "zmiennych" (mutable)</a></li>
+            <li><a href="#operacje-na-sekwencjach-zmiennych-mutable_1">Operacje na sekwencjach "zmiennych" (mutable)</a></li>
+            <li><a href="#operacje-na-sekwencjach-zmiennych-mutable_2">Operacje na sekwencjach "zmiennych" (mutable)</a></li>
+            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
+            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_1">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
+            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_2">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
+            <li><a href="#funkcje-klasowe-sekwencji-zmiennych-mutable_3">Funkcje klasowe sekwencji "zmiennych" (mutable)</a></li>
+            <li><a href="#funkcja-sort-tylko-dla-list">Funkcja sort - tylko dla list</a></li>
+            <li><a href="#system-dziesietny">System dziesiętny</a></li>
+            <li><a href="#system-dwojkowy-binarny">System dwójkowy (binarny)</a></li>
+            <li><a href="#bit-binary-digit-i-bajt-byte">Bit (binary digit) i bajt (byte)</a></li>
+            <li><a href="#zmienne-w-pamieci-operacyjnej">Zmienne w pamięci operacyjnej</a></li>
+            <li><a href="#int-long-int-w-c">Int (long int) w C++</a></li>
+            <li><a href="#czas-uniksowy">Czas uniksowy</a></li>
+            <li><a href="#limit-pamieci">Limit pamięci</a></li>
+        <li class="main "><a href="#int-w-pythonie">Int w Pythonie</a></li>
+            <li><a href="#system-szesnastkowy-heksadecymalny">System szesnastkowy (heksadecymalny)</a></li>
+            <li><a href="#kolory-rgb">Kolory RGB</a></li>
+            <li><a href="#kolory-rgb_1">Kolory RGB</a></li>
+            <li><a href="#kolory-rgb_2">Kolory RGB</a></li>
+            <li><a href="#systemy-liczbowe-w-pythonie">Systemy liczbowe w Pythonie</a></li>
+            <li><a href="#typ-logiczny-boolowski-boolean">Typ logiczny (boolowski, boolean)</a></li>
+            <li><a href="#operacje-logiczne">Operacje logiczne</a></li>
+            <li><a href="#operacje-logiczne-or">Operacje logiczne - or</a></li>
+            <li><a href="#operacje-logiczne-and">Operacje logiczne - and</a></li>
+            <li><a href="#operacje-logiczne-not">Operacje logiczne - not</a></li>
+            <li><a href="#dygresja-sowa-kluczowe-zastrzezone">Dygresja - słowa kluczowe / zastrzeżone</a></li>
+            <li><a href="#dygresja-niedozwolone-nazwy-zmiennych">Dygresja - niedozwolone nazwy zmiennych</a></li>
+            <li><a href="#porownania">Porównania</a></li>
+            <li><a href="#porownania_1">Porównania</a></li>
+            <li><a href="#identyfikator-zmiennej">Identyfikator zmiennej</a></li>
+            <li><a href="#id-dla-int">id dla int</a></li>
+            <li><a href="#id-dla-list">id dla list</a></li>
+            <li><a href="#mutable-vs-immutable">Mutable vs Immutable</a></li>
+            <li><a href="#mutable-vs-immutable_1">Mutable vs Immutable</a></li>
+            <li><a href="#konsekwencje">Konsekwencje</a></li>
+            <li><a href="#funkcja-copy">Funkcja copy</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
+<h2 id="wykad-2">Wykład 2</h2>
+<hr />
+<ul>
+<li>sekwencyjne typy danych</li>
+<li>system binarny i szesnastkowy</li>
+<li>wyrażenia logiczne</li>
+</ul>
+<h2 id="ostatnio">Ostatnio</h2>
+<hr />
+<ul>
+<li>wprowadzone zostały 4 typy zmiennych: <em>int</em>, <em>float</em>, <em>complex</em> i <em>str</em></li>
+</ul>
+<pre><code class="python"># [zmienna] [operator przypisania] [wartość]
+# typowanie dynamiczne
+
+n = 10  # liczba całkowita
+x = 1.5 # liczba zmiennoprzecinkowa
+c = 2j  # liczba zespolona
+
+s = &quot;Python&quot; # łańcuch znaków
+</code></pre>
+
+<h2 id="anuch-znakow">Łańuch znaków</h2>
+<hr />
+<ul>
+<li>zmienna <em>str</em> przechowuje tak naprawdę ciąg znaków</li>
+<li>w którym każdy znak ma określoną pozycję</li>
+</ul>
+<pre><code class="python">s = &quot;Python&quot;
+
+s[0] # str[i] -&gt; i-ty znak w ciągu
+</code></pre>
+
+<pre><code>'P'
+</code></pre>
+<pre><code class="python">s[1] # pierwszy to drugi?
+</code></pre>
+
+<pre><code>'y'
+</code></pre>
+<pre><code class="python">s[2]
+</code></pre>
+
+<pre><code>'t'
+</code></pre>
+<h2 id="indeksowanie">Indeksowanie</h2>
+<hr />
+<ul>
+<li>indeksowanie zaczyna się od 0 a kończy na <em>n-1</em>, gdzie <em>n</em> - długość ciągu</li>
+</ul>
+<pre><code class="python">s = &quot;Python&quot;
+
+n = len(s) # długość łańcucha s
+
+print(n)
+</code></pre>
+
+<pre><code>6
+</code></pre>
+<pre><code class="python">s[n-1] # ostatni element
+</code></pre>
+
+<pre><code>'n'
+</code></pre>
+<pre><code class="python">s[n] # poza zakresem
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+IndexError                                Traceback (most recent call last)
+
+&lt;ipython-input-7-1dea7ae0782c&gt; in &lt;module&gt;()
+----&gt; 1 s[n] # poza zakresem
+
+
+IndexError: string index out of range
+</code></pre>
+<h2 id="wycinki">Wycinki</h2>
+<hr />
+<pre><code class="python">s = &quot;Python&quot;
+
+s[2:4] # elementy od 2 do 3 (czyli &quot;od 3 do 4&quot;)
+</code></pre>
+
+<pre><code>'th'
+</code></pre>
+<pre><code class="python">s[2:] # od indeksu 2 do końca
+</code></pre>
+
+<pre><code>'thon'
+</code></pre>
+<pre><code class="python">s[:2] # od początku do 1
+</code></pre>
+
+<pre><code>'Py'
+</code></pre>
+<pre><code class="python">s[2:1000] # nie ma błędu o wyjściu poza zakres
+</code></pre>
+
+<pre><code>'thon'
+</code></pre>
+<h2 id="wycinki-z-krokiem">Wycinki z krokiem</h2>
+<hr />
+<pre><code class="python">s = &quot;0123456789&quot;
+
+s[2:8:2] # sekwencja[początek:koniec:krok]
+</code></pre>
+
+<pre><code>'246'
+</code></pre>
+<pre><code class="python">s[2::3] # od 2 do końca co 3
+</code></pre>
+
+<pre><code>'258'
+</code></pre>
+<pre><code class="python">s[::2] # od początu do końca co 2
+</code></pre>
+
+<pre><code>'02468'
+</code></pre>
+<h2 id="indeksy-ujemne">Indeksy ujemne</h2>
+<hr />
+<ul>
+<li>indeks $-k$ oznacza $n-k$, gdzie $n$ - długość łańcucha</li>
+</ul>
+<pre><code class="python">s = &quot;Python&quot;
+
+s[-1] # 6 - 1 = 5 -&gt; ostatni znak
+</code></pre>
+
+<pre><code>'n'
+</code></pre>
+<pre><code class="python">s[-2] # 6 - 2 = 4 -&gt; przedostatni
+</code></pre>
+
+<pre><code>'o'
+</code></pre>
+<pre><code class="python">s[-2:] # od 4 do końca -&gt; dwa ostatnie
+</code></pre>
+
+<pre><code>'on'
+</code></pre>
+<pre><code class="python">s[:-2] # wszystko oprócz dwóch ostatnich
+</code></pre>
+
+<pre><code>'Pyth'
+</code></pre>
+<h2 id="dygresja-o-klasach">Dygresja o klasach</h2>
+<hr />
+<ul>
+<li>więcej o klasach będzie na dalszych wykładach</li>
+<li>klasa definuje obiekt</li>
+<li>przypisując wartość zmiennej tworzymy obiekt danej klasy</li>
+</ul>
+<pre><code class="python">n = 10 # tworzymy obiekt klasy int
+</code></pre>
+
+<h2 id="dygresja-o-klasach_1">Dygresja o klasach</h2>
+<hr />
+<ul>
+<li>klasa może posiadać zmienne i metody (czyli funkcje działające na obiekt)</li>
+</ul>
+<pre><code class="python">x = 1.0 # tworzymy obiekt klasy float
+
+# metody/zmienne klasy wywołujemy .
+x.is_integer() # [obiekt].metoda
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">s = &quot;Python&quot; # tworzymy obiekt klasy str
+
+s.replace('yt', 'yyyyyt') # [obiekt].metoda
+</code></pre>
+
+<pre><code>'Pyyyyython'
+</code></pre>
+<h2 id="lista-list">Lista (<em>list</em>)</h2>
+<hr />
+<ul>
+<li>sekwencja zmiennych dowolnego typu</li>
+<li>dynamiczny rozmiar</li>
+<li>inicjowana jest:<ul>
+<li>nawiasy kwadratowe</li>
+<li>jawnie <em>list([iterable])</em> (czyli konstruktor klasy <em>list</em>)</li>
+<li>lista składana (<em>list comprehension</em>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="lista-przez">Lista przez [ ]</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 'a', &quot;Python&quot;]
+</code></pre>
+
+<pre><code class="python">len(lista) # długość listy
+</code></pre>
+
+<pre><code>4
+</code></pre>
+<pre><code class="python">lista[0] # pierwszy element listy
+</code></pre>
+
+<pre><code>1
+</code></pre>
+<pre><code class="python">lista[-1] # ostatni element listy
+</code></pre>
+
+<pre><code>'Python'
+</code></pre>
+<h2 id="lista-przez-konstruktor">Lista przez konstruktor</h2>
+<hr />
+<pre><code class="python">lista = list([1,2,3]) # bez sensu, ale można
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 2, 3]
+</code></pre>
+<pre><code class="python">lista = list(&quot;Python&quot;) # można stworzyć listę ze string
+
+print(lista)
+</code></pre>
+
+<pre><code>['P', 'y', 't', 'h', 'o', 'n']
+</code></pre>
+<pre><code class="python">lista = list(1) # ale już nie z int
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-28-5b92e1b521a9&gt; in &lt;module&gt;()
+----&gt; 1 lista = list(1) # ale już nie z int
+
+
+TypeError: 'int' object is not iterable
+</code></pre>
+<h2 id="lista-skadana">Lista składana</h2>
+<hr />
+<pre><code class="python">cyfry = [&quot;jeden&quot;, &quot;dwa&quot;, &quot;trzy&quot;] # definiujemy listę
+
+# [wartość] dla [obiektu] z [listy]
+# pętle zostaną szerzej omówione na kolejnych wykładach
+dlugosc = [len(cyfra) for cyfra in cyfry]
+
+print(dlugosc)
+</code></pre>
+
+<pre><code>[5, 3, 4]
+</code></pre>
+<pre><code class="python">cyfry = [&quot;jeden&quot;, &quot;dwa&quot;, &quot;trzy&quot;] # definiujemy listę
+
+# [wartość] dla [obiektu] z [listy] jeśli [warunek]
+# warunki zostaną szerzej omówione pod koniec wykładu
+dlugosc = [len(cyfra) for cyfra in cyfry if cyfra != 'dwa']
+
+print(dlugosc)
+</code></pre>
+
+<pre><code>[5, 4]
+</code></pre>
+<h2 id="lista-jako-rezultat-funkcji">Lista jako rezultat funkcji</h2>
+<hr />
+<pre><code class="python">help(str.split)
+</code></pre>
+
+<pre><code>Help on method_descriptor:
+
+split(...)
+    S.split(sep=None, maxsplit=-1) -&gt; list of strings
+
+    Return a list of the words in S, using sep as the
+    delimiter string.  If maxsplit is given, at most maxsplit
+    splits are done. If sep is not specified or is None, any
+    whitespace string is a separator and empty strings are
+    removed from the result.
+</code></pre>
+<pre><code class="python">(&quot;Python is awesome, fast, and friendly!&quot;).split()
+</code></pre>
+
+<pre><code>['Python', 'is', 'awesome,', 'fast,', 'and', 'friendly!']
+</code></pre>
+<pre><code class="python">(&quot;Python is awesome, fast, and friendly!&quot;).split(',')
+</code></pre>
+
+<pre><code>['Python is awesome', ' fast', ' and friendly!']
+</code></pre>
+<h2 id="krotka-tuple">Krotka (<em>tuple</em>)</h2>
+<hr />
+<ul>
+<li>sekwencja zmiennych dowolnego typu</li>
+<li>stały rozmiar</li>
+<li>inicjowana jest:<ul>
+<li>nawiasy okrągłe</li>
+<li>ciąg elementów oddzielonych przecinkiem</li>
+<li>jawnie <em>tuple([iterable])</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="krotka">Krotka</h2>
+<hr />
+<pre><code class="python">krotka = (1, 2, 3, &quot;Python&quot;) # jak lista, ale () zamiast []
+
+print(krotka)
+</code></pre>
+
+<pre><code>(1, 2, 3, 'Python')
+</code></pre>
+<pre><code class="python">krotka = 1, 2, 3, &quot;Python&quot; # brak nawiasów = tuple
+
+print(krotka)
+</code></pre>
+
+<pre><code>(1, 2, 3, 'Python')
+</code></pre>
+<pre><code class="python">lista = list(&quot;Python&quot;) # lista ze stringa
+
+krotka = tuple(lista)  # krotka z listy
+
+print(lista)
+print(krotka)
+</code></pre>
+
+<pre><code>['P', 'y', 't', 'h', 'o', 'n']
+('P', 'y', 't', 'h', 'o', 'n')
+</code></pre>
+<h2 id="lista-vs-krotka">Lista vs Krotka</h2>
+<hr />
+<ul>
+<li>krotka ma stały rozmiar a lista jest dynamiczna</li>
+<li>krotka jest "niezmienna" (<em>immutable</em>) w przeciwieństwie do listy (<em>mutable</em>)</li>
+<li>więcej o <em>mutable</em> vs <em>immutable</em> w dalszej części wykładu</li>
+<li>jeśli sekwencja obiektów jest stała w czasie działania programu, lepiej używać krotek<ul>
+<li>szybsze</li>
+<li>bezpieczniejsze</li>
+<li>mogą być kluczami w słowniku <em>(o słownikach na kolejnych wykładach)</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="lista-vs-krotka_1">Lista vs Krotka</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3]
+
+print(lista)
+
+lista[0] = 2
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 2, 3]
+[2, 2, 3]
+</code></pre>
+<pre><code class="python">krotka = (1, 2, 3)
+
+krotka[0] = 2
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-38-9a057d2d95b0&gt; in &lt;module&gt;()
+      1 krotka = (1, 2, 3)
+      2 
+----&gt; 3 krotka[0] = 2
+
+
+TypeError: 'tuple' object does not support item assignment
+</code></pre>
+<h2 id="range">Range</h2>
+<hr />
+<ul>
+<li>uwaga: w Pythonie 2 <em>range()</em> jest funkcją wbudowaną; w Pythonie 3 jest to typ danych (klasa)</li>
+<li>reprezentuje (niezmienniczą) sekwencję liczb</li>
+<li>zajmuje mniej pamięci niż <em>list</em> lub <em>tuple</em> (przechowuje tylko informację o początku, końcu i kroku)</li>
+</ul>
+<h2 id="range_1">Range</h2>
+<hr />
+<pre><code class="python">x = range(10) # od 0 do 10
+
+print(x) # w Pythonie 2 zobaczylibyśmy [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+
+<pre><code>range(0, 10)
+</code></pre>
+<pre><code class="python">print(list(x)) # zrzutujemy na listę, żeby wydrukować
+</code></pre>
+
+<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<pre><code class="python">x[0] = 1 # range jest immutable
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-41-3a9de573c036&gt; in &lt;module&gt;()
+----&gt; 1 x[0] = 1 # range jest immutable
+
+
+TypeError: 'range' object does not support item assignment
+</code></pre>
+<h2 id="range_2">Range</h2>
+<hr />
+<pre><code class="python">cyfry = range(0, 10)       # range(początek = 0, koniec) 
+parzyste = range(2, 10, 2) # range(początek, koniec, krok)
+nieparzyste = range(1, 10, 2)
+
+print(list(cyfry))
+print(list(parzyste))
+print(list(nieparzyste))
+</code></pre>
+
+<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2, 4, 6, 8]
+[1, 3, 5, 7, 9]
+</code></pre>
+<h2 id="sekwencyjne-typy-danych">Sekwencyjne typy danych</h2>
+<hr />
+<ul>
+<li><em>list</em> - dynamiczny ciąg zmiennych dowolnego typu</li>
+<li><em>tuple</em> - niezmienniczy ciąg zmiennych dowolnego typu</li>
+<li><em>range</em> - niezmienniczy ciąg liczba całkowitych</li>
+<li><em>str</em> - niezmienniczy ciąg znaków</li>
+<li>(dla kompletności) są jeszcze binarne sekwencyjne typy danych: <em>bytes</em>, <em>bytearray</em>, <em>memoryview</em></li>
+</ul>
+<h2 id="operacje-na-sekwencjach">Operacje na sekwencjach</h2>
+<hr />
+<ul>
+<li><em>in</em> - prawda jeśli element należy do sekwencji, inaczej fałsz</li>
+<li><em>not in</em> - fałsz jeśli element należy do sekwencji, inaczej prawda</li>
+</ul>
+<pre><code class="python">s = &quot;Python&quot;
+
+&quot;y&quot; in s
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">&quot;p&quot; not in s
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<ul>
+<li>więcej o prawdzie i fałszu w dalszej części wykładu</li>
+</ul>
+<h2 id="operacje-na-sekwencjach_1">Operacje na sekwencjach</h2>
+<hr />
+<ul>
+<li>splot (<em>concatenation</em>)</li>
+<li>nie dla <em>range</em></li>
+</ul>
+<pre><code class="python">begin = &quot;Python &quot;
+middle = &quot;is &quot;
+end = &quot;awesome!&quot;
+
+begin + middle + end
+</code></pre>
+
+<pre><code>'Python is awesome!'
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3, 4]
+dodatek = [5, 6, 7, 8]
+
+dodatek + lista # kolejność ma znaczenie
+</code></pre>
+
+<pre><code>[5, 6, 7, 8, 1, 2, 3, 4]
+</code></pre>
+<h2 id="operacje-na-sekwencjach_2">Operacje na sekwencjach</h2>
+<hr />
+<ul>
+<li>mnożenie przez liczbę calkowitą</li>
+<li>nie dla <em>range</em></li>
+</ul>
+<pre><code class="python">znak = '-'
+
+znak * 10
+</code></pre>
+
+<pre><code>'----------'
+</code></pre>
+<pre><code class="python">krotka = (1, 2, 3)
+
+2 * krotka
+</code></pre>
+
+<pre><code>(1, 2, 3, 1, 2, 3)
+</code></pre>
+<h2 id="operacje-na-sekwencjach_3">Operacje na sekwencjach</h2>
+<hr />
+<ul>
+<li>wycinki</li>
+</ul>
+<pre><code class="python">lista = [1, 2, 3, &quot;Python&quot;]
+
+lista[:2] # dwa pierwsze
+</code></pre>
+
+<pre><code>[1, 2]
+</code></pre>
+<pre><code class="python">lista[3][-2:] # dwa ostatnie ostatniego
+</code></pre>
+
+<pre><code>'on'
+</code></pre>
+<pre><code class="python">range(3, 15, 3)[:2] # dla range też działa
+</code></pre>
+
+<pre><code>range(3, 9, 3)
+</code></pre>
+<h2 id="funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji</h2>
+<hr />
+<ul>
+<li><em>len</em> - długość sekwencji</li>
+<li><em>min</em>, <em>max</em> - najmniejszy, największy element</li>
+</ul>
+<pre><code class="python">len([1,2,-3]) # liczba elementów
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">min([1,2,-3]) # minimum
+</code></pre>
+
+<pre><code>-3
+</code></pre>
+<pre><code class="python">max(&quot;Python&quot;) # maximum
+</code></pre>
+
+<pre><code>'y'
+</code></pre>
+<h2 id="wspolne-funkcje-klasowe-sekwencji">Wspólne funkcje klasowe sekwencji</h2>
+<hr />
+<ul>
+<li><em>index</em> - indeks pierwszego znalezionego elementu</li>
+<li><em>count</em> - ilość wystąpień elementu</li>
+</ul>
+<pre><code class="python">x = [1, 2, 3, 4, 5] * 2
+
+print(x)
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+</code></pre>
+<pre><code class="python">x.count(4) # liczba 4 pojawia się 2 razy
+</code></pre>
+
+<pre><code>2
+</code></pre>
+<pre><code class="python">x.index(4) # pierwszy raz dla i=3
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<h2 id="operacje-na-sekwencjach-zmiennych-mutable">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<ul>
+<li>na razie znamy: <em>list</em></li>
+<li>ale na kolejnych wykładach poznamy kolejne</li>
+<li>sekwencje "niezmienne" (<em>immutable</em>): <em>tuple</em>, <em>range</em> i <em>str</em></li>
+<li>ale na kolejnych wykładach poznamy kolejne</li>
+<li>więcej o <em>mutable</em> vs <em>immutable</em> w dalszej części wykładu</li>
+</ul>
+<h2 id="operacje-na-sekwencjach-zmiennych-mutable_1">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3]
+
+lista[1] = 4 # zamień wartość drugiego elementu
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 4, 3]
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3]
+
+lista[1:2] = [5, 5] # zamień wycinek
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 5, 5, 3]
+</code></pre>
+<h2 id="operacje-na-sekwencjach-zmiennych-mutable_2">Operacje na sekwencjach "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3]
+
+del lista[1:2] # usuń wycinek
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 3]
+</code></pre>
+<pre><code class="python">lista = list(range(10))
+
+del lista[::2] # usuń co drugi element
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 3, 5, 7, 9]
+</code></pre>
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3, 4, 5]
+
+lista.append(6) # append dodaje element na koniec listy
+
+print(lista)
+
+lista.append([7, 8, 9]) # lista dodana jako element
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4, 5, 6, [7, 8, 9]]
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3, 4, 5]
+
+lista.extend([6, 7, 8, 9]) # extend rozwija listę 
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_1">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3]
+
+lista.clear() # usuwa wszystkie elementy
+
+print(lista)
+</code></pre>
+
+<pre><code>[]
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3]
+
+kopia = lista.copy() # kopiuje całą listę
+
+print(kopia)
+</code></pre>
+
+<pre><code>[1, 2, 3]
+</code></pre>
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_2">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3]
+
+lista.insert(1, 4) # wstaw 4 pod indeks 2
+
+print(lista)
+</code></pre>
+
+<pre><code>[1, 4, 2, 3]
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3]
+
+lista.pop(1) # zwróć i usuń *i*-ty element
+</code></pre>
+
+<pre><code>2
+</code></pre>
+<pre><code class="python">print(lista)
+</code></pre>
+
+<pre><code>[1, 3]
+</code></pre>
+<h2 id="funkcje-klasowe-sekwencji-zmiennych-mutable_3">Funkcje klasowe sekwencji "zmiennych" (<em>mutable</em>)</h2>
+<hr />
+<pre><code class="python">lista = ['a', 'b', 3] * 3
+
+print(lista)
+
+lista.remove('b') # usuń element (pierwsze wystąpienie)
+
+print(lista)
+</code></pre>
+
+<pre><code>['a', 'b', 3, 'a', 'b', 3, 'a', 'b', 3]
+['a', 3, 'a', 'b', 3, 'a', 'b', 3]
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3]
+
+lista.reverse() # odwróć kolejność
+
+print(lista)
+</code></pre>
+
+<pre><code>[3, 2, 1]
+</code></pre>
+<h2 id="funkcja-sort-tylko-dla-list">Funkcja <em>sort</em> - tylko dla list</h2>
+<pre><code class="python">help(list.sort)
+</code></pre>
+
+<pre><code>Help on method_descriptor:
+
+sort(...)
+    L.sort(key=None, reverse=False) -&gt; None -- stable sort *IN PLACE*
+</code></pre>
+<pre><code class="python">lista = ['e', 'D', 'a', 'b', 'C']
+
+lista.sort() # sortuj 
+
+print(lista)
+
+lista.sort(key=str.lower) # sortuj wg funkcji key
+
+print(lista)
+</code></pre>
+
+<pre><code>['C', 'D', 'a', 'b', 'e']
+['a', 'b', 'C', 'D', 'e']
+</code></pre>
+<h2 id="system-dziesietny">System dziesiętny</h2>
+<hr />
+<ul>
+<li>
+<p>ogólnie: $$a_n...a_2a_1a_0 = \sum\limits_{i = 0}^{n} a_i \cdot 10^{i} \text{ , gdzie } a_i \in {0,...,9}$$</p>
+</li>
+<li>
+<p>np. $$438 = 4 \cdot 10^2 + 3 \cdot 10^1 + 8 \cdot 10^0$$</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>przykład zastosowania: warzywniak</li>
+</ul>
+<h2 id="system-dwojkowy-binarny">System dwójkowy (binarny)</h2>
+<hr />
+<ul>
+<li>
+<p>ogólnie: $$a_n...a_2a_1a_0 = \sum\limits_{i = 0}^n a_i \cdot 2^i \text{ , gdzie } a_i \in {0,1}$$</p>
+</li>
+<li>
+<p>np. $$110110110_2 = 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 0 \cdot 2^0 = 256 + 128 + 32 + 16 + 4 + 2 = 438$$</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>przykład zastosowania: elektronika cyfrowa</li>
+</ul>
+<h2 id="bit-binary-digit-i-bajt-byte">Bit (<em>binary digit</em>) i bajt (<em>byte</em>)</h2>
+<hr />
+<ul>
+<li>dwa równie prawdopodobne stany: ${0, 1}$</li>
+<li>1B = 8b (1 bajt = 8 bitów)</li>
+<li>myląca konwencja informatyków:<ul>
+<li>1KB = 1024B</li>
+<li>1MB = 1024KB = 1024 * 1024B = 1048576B</li>
+<li>1GB = 1024MB = 1073741824B</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Binary_prefix">przedrostki binarne</a>: kibi, mebi, gibi... nie do końca się przyjęły </li>
+</ul>
+<h2 id="zmienne-w-pamieci-operacyjnej">Zmienne w pamięci operacyjnej</h2>
+<hr />
+<ul>
+<li>każda zmienna przechowywana jest w pamięci operacyjnej w postaci bitowej</li>
+<li>przy czym bajt jest najmniejszym adresowalnym "fragmentem" pamięci</li>
+<li>np. $438 = 110110110_2$ zajmie co najmniej 2B = 16b (a nie 9 bitów)</li>
+</ul>
+<pre><code class="python">from graphviz import Source
+
+pamiec = Source('digraph &quot;pamiec&quot; \
+                { rankdir=LR; node [shape=&quot;box&quot;; fontsize=40;]; splines=none; \
+                &quot;0000001&quot; -&gt; &quot;10110110&quot;}')
+</code></pre>
+
+<pre><code class="python">pamiec
+</code></pre>
+
+<p><img alt="svg" src="../js-python_w02_files/js-python_w02_114_0.svg" /></p>
+<h2 id="int-long-int-w-c">Int (long int) w C++</h2>
+<hr />
+<ul>
+<li>zajmuje 32 bity</li>
+<li>stąd 438 = 00000000 00000000 00000001 10110110</li>
+<li>bez znaku: $(0, 2^{32} - 1) = (0, 4294967295)$</li>
+<li>ze znakiem: $(-2^{31} - 1, 2^{31} - 1) = (-2147483647, 2147483647)$</li>
+<li>w C++ występują również: char (8 bitów), short int (8 bitów), long long int (64 bity)</li>
+</ul>
+<h2 id="czas-uniksowy">Czas uniksowy</h2>
+<hr />
+<ul>
+<li>liczba sekund od epoki Uniksa (01.01.1970 UTC)</li>
+<li>32-bitowa liczba ze znakiem</li>
+<li>2147483647 sekund minie 19 stycznia 2038 o godz. 03:14:07 UTC</li>
+<li>ciekawostka: iPhone 1970 bug</li>
+</ul>
+<blockquote>
+<p>Manually changing the date to May 1970 or earlier can prevent your iOS device from turning on after a restart.</p>
+</blockquote>
+<h2 id="limit-pamieci">Limit pamięci</h2>
+<hr />
+<ul>
+<li>Architektura 32-bitowa dysponuje $2^{32}$ adresami</li>
+</ul>
+<pre><code class="python">B = 1          # bajt
+KB = 1024 * B  # kilobajt
+MB = 1024 * KB # megabajt
+
+2**32 / MB
+</code></pre>
+
+<pre><code>4096.0
+</code></pre>
+<ul>
+<li>stąd limit pamięci operacyjnej w systemach 32-bitowych to ok. 4GB</li>
+<li>co często daje limit na pamięć RAM rzędu 3GB (bo karta graficzna)</li>
+</ul>
+<h1 id="int-w-pythonie">Int w Pythonie</h1>
+<hr />
+<pre><code class="python"># zwróć uwagę na sposób importowania:
+# from [moduł] import [funkcja] as [nazwa]
+from sys import getsizeof as rozmiar
+
+help(rozmiar)
+</code></pre>
+
+<pre><code>Help on built-in function getsizeof in module sys:
+
+getsizeof(...)
+    getsizeof(object, default) -&gt; int
+
+    Return the size of object in bytes.
+</code></pre>
+<pre><code class="python">rozmiar(0)
+</code></pre>
+
+<pre><code>24
+</code></pre>
+<pre><code class="python">rozmiar(2**100)
+</code></pre>
+
+<pre><code>40
+</code></pre>
+<h2 id="system-szesnastkowy-heksadecymalny">System szesnastkowy (heksadecymalny)</h2>
+<hr />
+<ul>
+<li>
+<p>ogólnie: $$a_n...a_2a_1a_0 = \sum\limits_{i = 0}^n a_i \cdot 16^i \text{ , gdzie } a_i \in {0,...,9,A,...,F}$$</p>
+</li>
+<li>
+<p>np. $$1\text{b}6_{16} = 1 \cdot 16^2 + 11 \cdot 16^1 + 6 \cdot 16^0 = 256 + 176 + 6 = 438$$</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>przykład zastosowania: adres MAC (<em>Media Access Control</em>), grafika komputerowa (kolory RGB)</li>
+</ul>
+<h2 id="kolory-rgb">Kolory RGB</h2>
+<hr />
+<ul>
+<li>w 24-bitowym RGB:<ul>
+<li>czerwony: 0 - 255</li>
+<li>zielony: 0 - 255</li>
+<li>niebieski: 0 - 255</li>
+</ul>
+</li>
+<li>czemu do 255? 1 bajt = 8 bitów</li>
+</ul>
+<p>$$11111111_2 = 255$$</p>
+<ul>
+<li>w 32-bitowym dochodzi kanał alpha (przezroczystość)</li>
+</ul>
+<h2 id="kolory-rgb_1">Kolory RGB</h2>
+<hr />
+<ul>
+<li>często spotka się zapis: <code>#RRGGBB</code></li>
+<li>gdzie <code>RR</code> - kolor czerwony w zapisie szesnastkowym itd.</li>
+<li>np. <code>#ff96cb</code><ul>
+<li>czerwony: $\text{ff}_{16} = 255$</li>
+<li>zielony: $96_{16} = 150$</li>
+<li>niebieski: $\text{cb}_{16} = 203$</li>
+</ul>
+</li>
+</ul>
+<h2 id="kolory-rgb_2">Kolory RGB</h2>
+<hr />
+<pre><code class="python"># rysuj bezpośrednio w Jupyter
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# zdefiniuj kwadrat
+kwadrat = patches.Rectangle(
+    (0.0, 0.0),   # wierzchołek
+    1.0,          # szerokość
+    1.0,          # wysokość
+    facecolor=&quot;#ff96cb&quot; # kolor wypełnienia
+)
+
+plt.figure(figsize=(1,1)) # rozmiar
+plt.axis('off')           # wyłącz osie
+
+# narysuj kwadrat; gca -&gt; get currect axis
+plt.gca().add_patch(kwadrat)
+</code></pre>
+
+<pre><code>&lt;matplotlib.patches.Rectangle at 0x7ff3e862cdd8&gt;
+</code></pre>
+<p><img alt="png" src="../js-python_w02_files/js-python_w02_128_1.png" /></p>
+<h2 id="systemy-liczbowe-w-pythonie">Systemy liczbowe w Pythonie</h2>
+<hr />
+<pre><code class="python">bin(438) # liczba 438 w systemie binarnym
+</code></pre>
+
+<pre><code>'0b110110110'
+</code></pre>
+<pre><code class="python">0b110110110 # 0b sygnalizuje system binarny
+</code></pre>
+
+<pre><code>438
+</code></pre>
+<pre><code class="python">0b0000000000110110110 # wiodące zera nic nie zmieniają
+</code></pre>
+
+<pre><code>438
+</code></pre>
+<pre><code class="python">hex(438) # liczba 438 w systemie heksadecymalnym
+</code></pre>
+
+<pre><code>'0x1b6'
+</code></pre>
+<pre><code class="python">0x1b6 # 0x sygnalizuje system szesnastkowy
+</code></pre>
+
+<pre><code>438
+</code></pre>
+<h2 id="typ-logiczny-boolowski-boolean">Typ logiczny (boolowski, <em>boolean</em>)</h2>
+<hr />
+<ul>
+<li>przyjmuje wartości: prawda lub fałsz</li>
+<li>w Pythonie następujące wartości są utożsamiane z fałszem:<ul>
+<li>False</li>
+<li>None</li>
+<li>zero dowolnego typu (0, 0.0, 0j)</li>
+<li>pusta sekwencja '', (), [] lub mapowanie {}</li>
+</ul>
+</li>
+<li>pozostałe wartości uznawane są za prawdę</li>
+</ul>
+<h2 id="operacje-logiczne">Operacje logiczne</h2>
+<hr />
+<table>
+<thead>
+<tr>
+<th align="center">Operacja</th>
+<th align="center">Wynik</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">x or y</td>
+<td align="center">jeśli x jest fałszem, to y, inaczej x</td>
+</tr>
+<tr>
+<td align="center">x and y</td>
+<td align="center">jeśli x jest fałszem, to x, inaczej y</td>
+</tr>
+<tr>
+<td align="center">not x</td>
+<td align="center">jeśli x jest fałszem, to True, inaczej False</td>
+</tr>
+</tbody>
+</table>
+<h2 id="operacje-logiczne-or">Operacje logiczne - or</h2>
+<hr />
+<pre><code class="python">print(&quot;0 or 0 -&gt; &quot; + str(0 or 0))
+print(&quot;1 or 0 -&gt; &quot; + str(1 or 0))
+print(&quot;0 or 1 -&gt; &quot; + str(0 or 1))
+print(&quot;1 or 1 -&gt; &quot; + str(1 or 1))
+</code></pre>
+
+<pre><code>0 or 0 -&gt; 0
+1 or 0 -&gt; 1
+0 or 1 -&gt; 1
+1 or 1 -&gt; 1
+</code></pre>
+<h2 id="operacje-logiczne-and">Operacje logiczne - and</h2>
+<hr />
+<pre><code class="python">print(&quot;0 and 0 -&gt; &quot; + str(0 and 0))
+print(&quot;1 and 0 -&gt; &quot; + str(1 and 0))
+print(&quot;0 and 1 -&gt; &quot; + str(0 and 1))
+print(&quot;1 and 1 -&gt; &quot; + str(1 and 1))
+</code></pre>
+
+<h2 id="operacje-logiczne-not">Operacje logiczne - not</h2>
+<hr />
+<pre><code class="python">not True
+</code></pre>
+
+<pre><code>False
+</code></pre>
+<pre><code class="python">not False
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="dygresja-sowa-kluczowe-zastrzezone">Dygresja - słowa kluczowe / zastrzeżone</h2>
+<hr />
+<pre><code class="python">x = 1     # zmiennej x przypisz wartość 1
+y = 2     # zmiennej y przypisz wartość 2
+False = 3 # zmiennej False przypusz wartość 3
+</code></pre>
+
+<pre><code>  File "&lt;ipython-input-88-6d6e4a6b0a3f&gt;", line 3
+    False = 3 # zmiennej False przypusz wartość 3
+                                                 ^
+SyntaxError: can't assign to keyword
+</code></pre>
+<pre><code class="python">import keyword
+print(keyword.kwlist) # lista słów kluczowych w Pythonie
+</code></pre>
+
+<pre><code>['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+</code></pre>
+<h2 id="dygresja-niedozwolone-nazwy-zmiennych">Dygresja - niedozwolone nazwy zmiennych</h2>
+<hr />
+<ul>
+<li>słowa kluczowe</li>
+<li>zaczynające się od cyfry</li>
+<li>zawierające polskie znaki</li>
+<li>zawierające cokolwiek innego niż litery, cyfry i <code>_</code></li>
+</ul>
+<h2 id="porownania">Porównania</h2>
+<hr />
+<table>
+<thead>
+<tr>
+<th align="center">Operacja</th>
+<th align="center">Znaczenie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">==</td>
+<td align="center">równe</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">różne</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">mniejsze</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">większe</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">mniejsze lub równe</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">większe lub równe</td>
+</tr>
+<tr>
+<td align="center">is</td>
+<td align="center">ten sam identyfikator</td>
+</tr>
+<tr>
+<td align="center">is not</td>
+<td align="center">inny identyfikator</td>
+</tr>
+</tbody>
+</table>
+<h2 id="porownania_1">Porównania</h2>
+<hr />
+<pre><code class="python">1 &gt; 0 # większy niż
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">&quot;Prowadzący&quot; &gt; &quot;Student&quot; # znak po znaku
+</code></pre>
+
+<pre><code>False
+</code></pre>
+<pre><code class="python">&quot;prowadzący&quot; &gt; &quot;Student&quot; # wielkość ma znaczenie
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">&quot;prowadzący&quot; &gt; &quot;2 studentów&quot; # litera &gt; cyfra
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="identyfikator-zmiennej">Identyfikator zmiennej</h2>
+<hr />
+<pre><code class="python">help(id)
+</code></pre>
+
+<pre><code>Help on built-in function id in module builtins:
+
+id(obj, /)
+    Return the identity of an object.
+
+    This is guaranteed to be unique among simultaneously existing objects.
+    (CPython uses the object's memory address.)
+</code></pre>
+<pre><code class="python">x = 2 # zmiennej x przypisz wartość 2
+id(x) # wyświetl jej id
+</code></pre>
+
+<pre><code>140685772794432
+</code></pre>
+<h2 id="id-dla-int">id dla int</h2>
+<hr />
+<pre><code class="python">x = 2 # zmiennej x przypisz wartość 2
+id(x) # wyświetl jej id
+</code></pre>
+
+<pre><code>140685772794432
+</code></pre>
+<pre><code class="python">y = 2 
+id(y) # to samo id co x
+</code></pre>
+
+<pre><code>140685772794432
+</code></pre>
+<pre><code class="python">x is y # zmienne x i y wskazują w to samo miejsce
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="id-dla-list">id dla list</h2>
+<hr />
+<pre><code class="python">x = [1, 2, 3] # lista
+y = [1, 2, 3] # taka sama lista
+
+x == y # rzeczywiście taka sama
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">x is y # ale nie ta sama
+</code></pre>
+
+<pre><code>False
+</code></pre>
+<pre><code class="python">print(id(x), id(y)) # listy mają różne id
+</code></pre>
+
+<pre><code>140685552423752 140684962057672
+</code></pre>
+<pre><code class="python">x[0] is y[0] # ale elementy już nie
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">x = y # przypisz zmiennej x obieky y
+
+x is y # teraz x i y wskazują to samo
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="mutable-vs-immutable">Mutable vs Immutable</h2>
+<hr />
+<ul>
+<li>immutable: <em>int</em>, <em>float</em>, <em>complex</em>, <em>str</em>, <em>tuple</em>, (<em>frozen set</em>, <em>bytes</em>)<ul>
+<li>przypisanie zmiennej nowej wartości tworzy nowy obiekt w pamięci</li>
+</ul>
+</li>
+<li>mutable: <em>list</em>, (<em>set</em>, <em>dict</em>, <em>byte array</em>)<ul>
+<li>możliwa modyfikacja obiektu</li>
+</ul>
+</li>
+</ul>
+<h2 id="mutable-vs-immutable_1">Mutable vs Immutable</h2>
+<hr />
+<pre><code class="python">x = 2
+id(x)
+</code></pre>
+
+<pre><code>140685772794432
+</code></pre>
+<pre><code class="python">x = 3
+id(x)
+</code></pre>
+
+<pre><code>140685772794464
+</code></pre>
+<pre><code class="python">x = [2]
+id(x)
+</code></pre>
+
+<pre><code>140685552461384
+</code></pre>
+<pre><code class="python">x.append(3)
+id(x)
+</code></pre>
+
+<pre><code>140685552461384
+</code></pre>
+<h2 id="konsekwencje">Konsekwencje</h2>
+<hr />
+<pre><code class="python">x = 2 # uwtórz obiekt typu int
+y = x # y wskazuje na to samo co x
+
+y = 5 # zmieniam y - nowe miejsce w pamięci
+
+print(x) # x dalej wskazuje na 2
+</code></pre>
+
+<pre><code>2
+</code></pre>
+<pre><code class="python">x = [1, 2, 3] # utwórz obiekt typu list
+y = x # y wskazuje na to samo co x
+
+print(id(x), id(y))
+</code></pre>
+
+<pre><code>140684962055816 140684962055816
+</code></pre>
+<pre><code class="python">y[0] = 4 # modyfikuję y
+
+print(x) # a zmienia się x...
+</code></pre>
+
+<pre><code>[4, 2, 3]
+</code></pre>
+<h2 id="funkcja-copy">Funkcja <em>copy</em></h2>
+<pre><code class="python">x = [1, 2, 3] # utwórz obiekt typu list
+y = x.copy()  # stwórz kopię tego obiektu
+
+print(id(x), id(y)) # teraz są to dwa różne obiekty
+</code></pre>
+
+<pre><code>140685552556616 140685552460232
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

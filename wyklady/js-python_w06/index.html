@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 6 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w05/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w07/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
+            <li><a href="#wykad-6">Wykład 6</a></li>
+            <li><a href="#nazwy-zmiennych">Nazwy zmiennych</a></li>
+            <li><a href="#niebezpieczne-nadpisania">Niebezpieczne nadpisania</a></li>
+            <li><a href="#moduy-import">Moduły - import ...</a></li>
+            <li><a href="#moduy-from-import">Moduły - from ... import ...</a></li>
+            <li><a href="#przestrzenie-nazw">Przestrzenie nazw</a></li>
+            <li><a href="#uwaga-nadpisac-mozna-wszystko">Uwaga: nadpisać można wszystko</a></li>
+            <li><a href="#przestrzen-nazw-lokalnych">Przestrzeń nazw lokalnych</a></li>
+            <li><a href="#przestrzen-nazw-globalnych">Przestrzeń nazw globalnych</a></li>
+            <li><a href="#zmienne-lokalne-nadpisuja-globalne">Zmienne lokalne nadpisują globalne</a></li>
+            <li><a href="#albo-global-albo-local">Albo global albo local</a></li>
+            <li><a href="#kolejnosc-przestrzeni">Kolejność przestrzeni</a></li>
+            <li><a href="#wielokrotne-zagniezdzenie">Wielokrotne zagnieżdżenie</a></li>
+            <li><a href="#uwaga-na-globalne-mutowalne">Uwaga na globalne mutowalne</a></li>
+            <li><a href="#wymuszanie-zmiennej-globalnej">Wymuszanie zmiennej globalnej</a></li>
+            <li><a href="#wymuszanie-zmiennej-nielokalnej">Wymuszanie zmiennej "nielokalnej"</a></li>
+            <li><a href="#wymuszanie-zmiennej-nielokalnej_1">Wymuszanie zmiennej "nielokalnej"</a></li>
+            <li><a href="#wymuszanie-zmiennej-nielokalnej_2">Wymuszanie zmiennej "nielokalnej"</a></li>
+            <li><a href="#uwaga-dla-programistow-cc">Uwaga dla programistów C/C++</a></li>
+            <li><a href="#zasieg">Zasięg</a></li>
+            <li><a href="#wasny-modu">Własny moduł</a></li>
+            <li><a href="#importowanie-wasnego-moduu">Importowanie własnego modułu</a></li>
+            <li><a href="#dokumentacja-moduu">Dokumentacja modułu</a></li>
+            <li><a href="#zawartosc-moduu">Zawartość modułu</a></li>
+            <li><a href="#doc-file-name-package">doc, file, name, package</a></li>
+            <li><a href="#loader-spec-cached">loader, spec, cached</a></li>
+            <li><a href="#plik-pyc">Plik pyc</a></li>
+            <li><a href="#kompilowany-czy-interpretowany">Kompilowany czy interpretowany?</a></li>
+            <li><a href="#skrypt-jako-zbior-definicji">Skrypt jako "zbior definicji"</a></li>
+            <li><a href="#skrypt-wykonujacy-operacje">Skrypt wykonujący operacje</a></li>
+            <li><a href="#wykonywanie-podczas-importowania">Wykonywanie podczas importowania</a></li>
+            <li><a href="#funkcja-main">"Funkcja main"</a></li>
+            <li><a href="#importowanie-a-main">Importowanie a main</a></li>
+            <li><a href="#prywatnosc">Prywatność</a></li>
+            <li><a href="#gdzie-interpreter-szuka-moduow">Gdzie interpreter szuka modułów?</a></li>
+            <li><a href="#zmienne-srodowiskowe">Zmienne środowiskowe</a></li>
+            <li><a href="#zmienne-srodowiskowe_1">Zmienne środowiskowe</a></li>
+            <li><a href="#syspath">sys.path</a></li>
+            <li><a href="#syspath_1">sys.path</a></li>
+            <li><a href="#modu-poza-katalogiem-roboczym">Moduł poza katalogiem roboczym</a></li>
+            <li><a href="#modu-poza-katalogiem-roboczym_1">Moduł poza katalogiem roboczym</a></li>
+            <li><a href="#trojmian-w-akcji">Trójmian w akcji</a></li>
+            <li><a href="#trojmian-w-akcji_1">Trójmian w akcji</a></li>
+            <li><a href="#paczka">Paczka</a></li>
+            <li><a href="#initpy">init.py</a></li>
+            <li><a href="#lista-4">Lista 4</a></li>
+            <li><a href="#lista-4-zadanie-2">Lista 4 - zadanie 2</a></li>
+            <li><a href="#lista-4-zadanie-3">Lista 4 - zadanie 3</a></li>
+            <li><a href="#importowanie">Importowanie</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
+<h2 id="wykad-6">Wykład 6</h2>
+<hr />
+<ul>
+<li>przestrzenie nazw</li>
+<li>moduły</li>
+</ul>
+<h2 id="nazwy-zmiennych">Nazwy zmiennych</h2>
+<hr />
+<pre><code class="python">zmienna = 10 # zmienna wskazuje na int
+
+print(zmienna)
+
+zmienna = &quot;Hello World!&quot; # zmienna wskazuje na str
+
+print(zmienna)
+
+def funkcja():
+    print(&quot;Jestem funkcją.&quot;)
+
+zmienna = funkcja # zmienna wskazuje na funkcje
+
+zmienna()
+</code></pre>
+
+<pre><code>10
+Hello World!
+Jestem funkcją.
+</code></pre>
+<h2 id="niebezpieczne-nadpisania">Niebezpieczne nadpisania</h2>
+<hr />
+<pre><code class="python">def moja_nazwa(): # moja_nazwa wskazuje na funkcję
+    print(&quot;Jestem funkcją.&quot;)
+
+def moja_nazwa(): # moja_nazwa wskazuje inną funkcję
+    print(&quot;Jestem nową funkcją.&quot;)
+
+moja_nazwa()
+</code></pre>
+
+<pre><code>Jestem nową funkcją.
+</code></pre>
+<pre><code class="python">moja_nazwa = 10 # moja_nazwa wskazuje na int 
+
+moja_nazwa() # TypeError: 'int' object is not callable
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-3-d535b594ed2f&gt; in &lt;module&gt;()
+      1 moja_nazwa = 10 # moja_nazwa wskazuje na int
+      2 
+----&gt; 3 moja_nazwa() # TypeError: 'int' object is not callable
+
+
+TypeError: 'int' object is not callable
+</code></pre>
+<h2 id="moduy-import">Moduły - <em>import</em> ...</h2>
+<hr />
+<pre><code class="python">import math
+
+def sin(x):
+    &quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;
+    return x
+</code></pre>
+
+<pre><code class="python">math.sin(math.pi / 2) # wywołanie [moduł].[funkcja]
+</code></pre>
+
+<pre><code>1.0
+</code></pre>
+<pre><code class="python">sin(math.pi / 2) # wywołanie [funkcja]
+</code></pre>
+
+<pre><code>1.5707963267948966
+</code></pre>
+<h2 id="moduy-from-import">Moduły - <em>from ... import ...</em></h2>
+<hr />
+<pre><code class="python">from math import sin
+
+def sin(x): # nadpisuje sin z math
+    &quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;
+    return x
+
+sin(math.pi / 2) # wywołanie funkcji sin
+</code></pre>
+
+<pre><code>1.5707963267948966
+</code></pre>
+<pre><code class="python">def sin(x):
+    &quot;&quot;&quot;Zwraca x.&quot;&quot;&quot;
+    return x
+
+from math import sin # nadpisuje sin
+
+sin(math.pi / 2) # wywołanie math.sin
+</code></pre>
+
+<pre><code>1.0
+</code></pre>
+<h2 id="przestrzenie-nazw">Przestrzenie nazw</h2>
+<hr />
+<ul>
+<li>abstrakcyjna przestrzeń przechowująca nazwy</li>
+<li>np. przestrzeń nazw wbudowanych</li>
+</ul>
+<pre><code class="python">print(dir(__builtin__)[-72:])
+</code></pre>
+
+<pre><code>['abs', 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'dreload', 'enumerate', 'eval', 'exec', 'filter', 'float', 'format', 'frozenset', 'get_ipython', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+</code></pre>
+<h2 id="uwaga-nadpisac-mozna-wszystko">Uwaga: nadpisać można wszystko</h2>
+<hr />
+<pre><code class="python">slownik = dict(x=1, y=2)
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'y': 2, 'x': 1}
+</code></pre>
+<pre><code class="python">def dict(x, y): # nazwy wbudowane też można nadpisać
+    return x, y
+
+slownik = dict(x=1, y=2)
+
+print(slownik)
+</code></pre>
+
+<pre><code>(1, 2)
+</code></pre>
+<pre><code class="python"># usuń zmienne sesji jupyter
+%reset
+</code></pre>
+
+<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+</code></pre>
+<h2 id="przestrzen-nazw-lokalnych">Przestrzeń nazw lokalnych</h2>
+<hr />
+<ul>
+<li>zmienne zdefiniowane wewnątrz funkcji (niedostępne poza nią)</li>
+</ul>
+<pre><code class="python">def funkcja():             # zmienne lokalne dostępne
+    zmienna_lokalna = 1    # są tylko wewnątrz funkcji
+    return zmienna_lokalna # w której zostały zdefiniowane
+
+print(&quot;zmienna_lokalna =&quot;, zmienna_lokalna)
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-13-7a69ba8766dd&gt; in &lt;module&gt;()
+      3     return zmienna_lokalna # w której zostały zdefiniowane
+      4 
+----&gt; 5 print("zmienna_lokalna =", zmienna_lokalna)
+
+
+NameError: name 'zmienna_lokalna' is not defined
+</code></pre>
+<h2 id="przestrzen-nazw-globalnych">Przestrzeń nazw globalnych</h2>
+<hr />
+<ul>
+<li>dostępne w całym module (pliku)</li>
+</ul>
+<pre><code class="python">zmienna_globalna = &quot;Python&quot;
+
+def funkcja():
+    return zmienna_globalna
+
+# wewnątrz funkcji zmienne globalne są dostępne
+funkcja()
+</code></pre>
+
+<pre><code>'Python'
+</code></pre>
+<h2 id="zmienne-lokalne-nadpisuja-globalne">Zmienne lokalne nadpisują globalne</h2>
+<hr />
+<pre><code class="python">zmienna_globalna = &quot;Python&quot;
+
+def funkcja():
+    zmienna_globalna = &quot;Nowy Python&quot; # lokalna zmienna_globalna
+    print(&quot;in funkcja:&quot;, zmienna_globalna)
+
+funkcja()
+
+print(&quot;outside funkcja:&quot;, zmienna_globalna) # globalna bez zmian
+</code></pre>
+
+<pre><code>in funkcja: Nowy Python
+outside funkcja: Python
+</code></pre>
+<h2 id="albo-global-albo-local">Albo <em>global</em> albo <em>local</em></h2>
+<hr />
+<pre><code class="python">zmienna_globalna = &quot;Python&quot;
+
+def funkcja():
+    print(&quot;in funkcja:&quot;, zmienna_globalna) # globalna?
+    zmienna_globalna = &quot;Nowy Python&quot;
+    print(&quot;in funkcja:&quot;, zmienna_globalna) # lokalna?
+
+funkcja() # UnboundLocalError: local variable 'zmienna_globalna'
+          # referenced before assignment
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+UnboundLocalError                         Traceback (most recent call last)
+
+&lt;ipython-input-16-c9f400fd03ff&gt; in &lt;module&gt;()
+      6     print("in funkcja:", zmienna_globalna) # lokalna?
+      7 
+----&gt; 8 funkcja() # UnboundLocalError: local variable 'zmienna_globalna'
+      9           # referenced before assignment
+
+
+&lt;ipython-input-16-c9f400fd03ff&gt; in funkcja()
+      2 
+      3 def funkcja():
+----&gt; 4     print("in funkcja:", zmienna_globalna) # globalna?
+      5     zmienna_globalna = "Nowy Python"
+      6     print("in funkcja:", zmienna_globalna) # lokalna?
+
+
+UnboundLocalError: local variable 'zmienna_globalna' referenced before assignment
+</code></pre>
+<h2 id="kolejnosc-przestrzeni">Kolejność przestrzeni</h2>
+<hr />
+<ul>
+<li>nazwy lokalne, potem globalne, na końcu wbudowane</li>
+</ul>
+<pre><code class="python">list = tuple # zmienna globalna nadpisuje wbudowane list
+dict = float # zmienna globalna nadpisuje wbudowane dict
+
+print(&quot;type(list()) =&quot;, type(list()))
+print(&quot;type(dict()) =&quot;, type(dict()))
+
+def funkcja():
+    dict = int # zmienna lokalna nadpisuje globalne dict
+    print(&quot;In funkcja:&quot;)
+    print(&quot;\ttype(dict()) =&quot;, type(dict())) # lokalna
+    print(&quot;\ttype(list()) =&quot;, type(list())) # globalna
+    print(&quot;\ttype(int()) =&quot;, type(int()))   # wbudowana
+
+funkcja()
+</code></pre>
+
+<pre><code>type(list()) = &lt;class 'tuple'&gt;
+type(dict()) = &lt;class 'float'&gt;
+In funkcja:
+    type(dict()) = &lt;class 'int'&gt;
+    type(list()) = &lt;class 'tuple'&gt;
+    type(int()) = &lt;class 'int'&gt;
+</code></pre>
+<pre><code class="python">%reset
+</code></pre>
+
+<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+</code></pre>
+<h2 id="wielokrotne-zagniezdzenie">Wielokrotne zagnieżdżenie</h2>
+<hr />
+<pre><code class="python">a = &quot;global a&quot; # zasięg zmiennych a, b, c
+b = &quot;global b&quot; # jest globalny
+c = &quot;global c&quot;
+
+def funkcja():
+    a = &quot;local a&quot; # lokalne a, b dostępne w funkcji
+    b = &quot;local b&quot; # i w każdym kolejnym zagnieżdzeniu
+
+    def funkcja_w_funkcji():
+        a = &quot;local local a&quot; # dostępna tylko w funkcja_w_funkcji
+        print(a, b, c, sep='\n')
+
+    funkcja_w_funkcji()
+
+funkcja() # od &quot;najlokalniejszej&quot; do &quot;najglobalniejszej&quot;
+</code></pre>
+
+<pre><code>local local a
+local b
+global c
+</code></pre>
+<h2 id="uwaga-na-globalne-mutowalne">Uwaga na globalne mutowalne</h2>
+<hr />
+<pre><code class="python">x = [1, 2, 3]
+y = ['a', 'b', 'c']
+
+def funkcja():
+    x = [1, 2, 3, 4] # przypisanie -&gt; zmienna lokalna
+    y.append('d')    # modyfikacja -&gt; ciągle globalna
+
+funkcja()
+
+print(x, y, sep='\n')
+</code></pre>
+
+<pre><code>[1, 2, 3]
+['a', 'b', 'c', 'd']
+</code></pre>
+<h2 id="wymuszanie-zmiennej-globalnej">Wymuszanie zmiennej globalnej</h2>
+<hr />
+<pre><code class="python">zmienna = &quot;globalna&quot;
+
+def f():
+    global zmienna # przypisanie nie tworzy zmiennej lokalnej
+    zmienna = &quot;nowa globalna&quot; # ale modyfikuje globalną
+
+f()
+
+print(zmienna)
+</code></pre>
+
+<pre><code>nowa globalna
+</code></pre>
+<h2 id="wymuszanie-zmiennej-nielokalnej">Wymuszanie zmiennej "nielokalnej"</h2>
+<hr />
+<pre><code class="python">a = &quot;global a&quot; # globalna
+
+def f():
+    a = &quot;local a&quot; # lokalna w f
+
+    def g():
+        a = &quot;local local a&quot; # lokalna w g
+        print(&quot;in g():&quot;, a)
+
+    g()
+
+    print(&quot;in f():&quot;, a)
+
+f()
+
+print(&quot;outside:&quot;, a)
+</code></pre>
+
+<pre><code>in g(): local local a
+in f(): local a
+outside: global a
+</code></pre>
+<h2 id="wymuszanie-zmiennej-nielokalnej_1">Wymuszanie zmiennej "nielokalnej"</h2>
+<hr />
+<pre><code class="python">a = &quot;global a&quot; # globalna
+
+def f():
+    a = &quot;local a&quot; # lokalna w f
+
+    def g():
+        global a # używaj globalnej
+        a = &quot;local local a&quot; # modyfikuje globalną
+        print(&quot;in g():&quot;, a)
+
+    g()
+
+    print(&quot;in f():&quot;, a)
+
+f()
+
+print(&quot;outside:&quot;, a)
+</code></pre>
+
+<pre><code>in g(): local local a
+in f(): local a
+outside: local local a
+</code></pre>
+<h2 id="wymuszanie-zmiennej-nielokalnej_2">Wymuszanie zmiennej "nielokalnej"</h2>
+<hr />
+<pre><code class="python">a = &quot;global a&quot; # globalna
+
+def f():
+    a = &quot;local a&quot; # lokalna w f
+
+    def g():
+        nonlocal a # użyj a z poprzedniego zagnieżdżenia
+        a = &quot;local local a&quot; # modyfikuje a z f
+        print(&quot;in g():&quot;, a)
+
+    g()
+
+    print(&quot;in f():&quot;, a)
+
+f()
+
+print(&quot;outside:&quot;, a)
+</code></pre>
+
+<pre><code>in g(): local local a
+in f(): local local a
+outside: global a
+</code></pre>
+<h2 id="uwaga-dla-programistow-cc">Uwaga dla programistów C/C++</h2>
+<hr />
+<pre><code class="python">def funkcja(flag=True):
+    if flag:   # zmienna zdefiniowana w bloku
+        x = 10 # jest dostępna poza tym blokiem
+    else:
+        x = 20
+
+    print(x)
+</code></pre>
+
+<pre><code class="python">funkcja() 
+</code></pre>
+
+<pre><code>10
+</code></pre>
+<pre><code class="python">funkcja(False)
+</code></pre>
+
+<pre><code>20
+</code></pre>
+<h2 id="zasieg">Zasięg</h2>
+<hr />
+<ul>
+<li>obszar dostępności danej przestrzeni nazw</li>
+</ul>
+<pre><code class="python">import math
+from math import cos
+
+a = 1 # zasięg -&gt; cały plik
+
+def f():
+    # uwaga: zaleca się wszystkie importy robić na początku
+    from math import log # zasięg log(...) -&gt; funkcja
+    b = 2 # zasięg -&gt; funkcja
+    c = log(3) 
+
+d = math.sin(4) # sin(...) poza zasięgiem [moduł].[funkcja]
+e = cos(5)      # zasięg cos(...) -&gt; cały plik
+# f = log(6)    # NameError: name 'log' is not defined
+</code></pre>
+
+<h2 id="wasny-modu">Własny moduł</h2>
+<hr />
+<pre><code class="python">%%writefile my_module.py
+&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+
+zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+
+def moja_funkcja():
+    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
+    print(zmienna_globalna)
+
+def inna_funkcja(word=&quot;&quot;, n=0):
+    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
+    print(word * n)
+</code></pre>
+
+<pre><code>Overwriting my_module.py
+</code></pre>
+<h2 id="importowanie-wasnego-moduu">Importowanie własnego modułu</h2>
+<hr />
+<pre><code class="python">import my_module
+
+my_module.zmienna_globalna
+</code></pre>
+
+<pre><code>'Unikaj zmiennych globalnych!'
+</code></pre>
+<pre><code class="python">my_module.moja_funkcja()
+</code></pre>
+
+<pre><code>Unikaj zmiennych globalnych!
+</code></pre>
+<pre><code class="python">my_module.inna_funkcja(&quot;-&quot;, 10)
+</code></pre>
+
+<pre><code>----------
+</code></pre>
+<h2 id="dokumentacja-moduu">Dokumentacja modułu</h2>
+<hr />
+<pre><code class="python">import my_module
+
+help(my_module)
+</code></pre>
+
+<pre><code>Help on module my_module:
+
+NAME
+    my_module - To jest mój pierwszy moduł.
+
+FUNCTIONS
+    inna_funkcja(word='', n=0)
+        Drukuje word n razy.
+
+    moja_funkcja()
+        Drukuje zmienną globalną.
+
+DATA
+    zmienna_globalna = 'Unikaj zmiennych globalnych!'
+
+FILE
+    /doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py
+</code></pre>
+<h2 id="zawartosc-moduu">Zawartość modułu</h2>
+<hr />
+<pre><code class="python">import my_module
+
+dir(my_module)
+</code></pre>
+
+<pre><code>['__builtins__',
+ '__cached__',
+ '__doc__',
+ '__file__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ 'inna_funkcja',
+ 'moja_funkcja',
+ 'zmienna_globalna']
+</code></pre>
+<h2 id="doc-file-name-package"><em>doc</em>, <em>file</em>, <em>name</em>, <em>package</em></h2>
+<hr />
+<pre><code class="python">print(my_module.__doc__) # dokumentacja modułu
+</code></pre>
+
+<pre><code>To jest mój pierwszy moduł.
+</code></pre>
+<pre><code class="python">print(my_module.__file__) # ścieżka do pliku źródłowego
+</code></pre>
+
+<pre><code>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py
+</code></pre>
+<pre><code class="python">print(my_module.__name__)  # nazwa modułu
+</code></pre>
+
+<pre><code>my_module
+</code></pre>
+<pre><code class="python">print(my_module.__package__) # paczka to zbiór modułów
+</code></pre>
+
+<h2 id="loader-spec-cached"><em>loader</em>, <em>spec</em>, <em>cached</em></h2>
+<hr />
+<pre><code class="python"># informacja o &quot;loaderze&quot;, który został wykorzystany
+# do zaimportowania modułu    
+print(my_module.__loader__)
+</code></pre>
+
+<pre><code>&lt;_frozen_importlib_external.SourceFileLoader object at 0x7f134aded6a0&gt;
+</code></pre>
+<pre><code class="python">print(my_module.__spec__) # ustalane w momencie importowanie modułu
+</code></pre>
+
+<pre><code>ModuleSpec(name='my_module', loader=&lt;_frozen_importlib_external.SourceFileLoader object at 0x7f134aded6a0&gt;, origin='/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/my_module.py')
+</code></pre>
+<pre><code class="python">print(my_module.__cached__) # ścieżka do pliku .pyc
+</code></pre>
+
+<pre><code>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python/__pycache__/my_module.cpython-35.pyc
+</code></pre>
+<h2 id="plik-pyc">Plik <em>pyc</em></h2>
+<hr />
+<ul>
+<li>plik <em>pyc</em> jest wynikiem kompilacji skryptu <em>py</em> do kodu bajtowego</li>
+<li>przyp. kod masyznowy -&gt; zrozumiały dla procesora</li>
+<li>kod bajtowy -&gt; zrozumiały dla maszyny wirtualnej / interpretera</li>
+</ul>
+<h2 id="kompilowany-czy-interpretowany">Kompilowany czy interpretowany?</h2>
+<hr />
+<ul>
+<li>uwaga: implementacja języka (a nie język sam w sobie) może być kompilowany lub interpretowany</li>
+</ul>
+<pre><code class="python">from graphviz import Source
+
+Source('digraph &quot;interpreter&quot; { rankdir=LR; node [shape=&quot;box&quot;, width=1]; \
+        &quot;kod źródłowy&quot; -&gt; &quot;kompilator&quot; -&gt; &quot;kod bajtowy&quot; -&gt; &quot;interpreter&quot; -&gt; &quot;wynik&quot;}')
+</code></pre>
+
+<p><img alt="svg" src="../js-python_w06_files/js-python_w06_69_0.svg" /></p>
+<h2 id="skrypt-jako-zbior-definicji">Skrypt jako "zbior definicji"</h2>
+<hr />
+<pre><code class="python">%%writefile my_module.py
+&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+
+zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+
+def moja_funkcja():
+    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
+    print(zmienna_globalna)
+
+def inna_funkcja(word=&quot;&quot;, n=0):
+    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
+    print(word * n)
+</code></pre>
+
+<pre><code>Overwriting my_module.py
+</code></pre>
+<pre><code class="python">%run my_module.py
+</code></pre>
+
+<h2 id="skrypt-wykonujacy-operacje">Skrypt wykonujący operacje</h2>
+<hr />
+<pre><code class="python">%%writefile my_module.py
+&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+
+zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+
+def moja_funkcja():
+    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
+    print(zmienna_globalna)
+
+def inna_funkcja(word=&quot;&quot;, n=0):
+    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
+    print(word * n)
+
+inna_funkcja('-', 10)
+moja_funkcja()
+inna_funkcja('-', 10)
+</code></pre>
+
+<pre><code>Overwriting my_module.py
+</code></pre>
+<pre><code class="python">%run my_module.py
+</code></pre>
+
+<pre><code>----------
+Unikaj zmiennych globalnych!
+----------
+</code></pre>
+<h2 id="wykonywanie-podczas-importowania">Wykonywanie podczas importowania</h2>
+<hr />
+<pre><code>Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import my_module
+----------
+Unikaj zmiennych globalnych!
+----------
+&gt;&gt;&gt; 
+</code></pre>
+
+<h2 id="funkcja-main">"Funkcja <em>main</em>"</h2>
+<hr />
+<pre><code class="python">%%writefile my_module.py
+&quot;&quot;&quot;To jest mój pierwszy moduł.&quot;&quot;&quot;
+
+zmienna_globalna = &quot;Unikaj zmiennych globalnych!&quot;
+
+def moja_funkcja():
+    &quot;&quot;&quot;Drukuje zmienną globalną.&quot;&quot;&quot;
+    print(zmienna_globalna)
+
+def inna_funkcja(word=&quot;&quot;, n=0):
+    &quot;&quot;&quot;Drukuje word n razy.&quot;&quot;&quot;
+    print(word * n)
+
+if __name__ == &quot;__main__&quot;:
+    inna_funkcja('-', 10)
+    moja_funkcja()
+    inna_funkcja('-', 10)
+</code></pre>
+
+<pre><code>Overwriting my_module.py
+</code></pre>
+<pre><code class="python">%run my_module.py
+</code></pre>
+
+<pre><code>----------
+Unikaj zmiennych globalnych!
+----------
+</code></pre>
+<h2 id="importowanie-a-main">Importowanie a <em>main</em></h2>
+<hr />
+<ul>
+<li>instrukcje w <em>main</em> nie zostaną wykonane podczas importowania (bo <code>__name__</code> = nazwa modułu)</li>
+</ul>
+<pre><code>Python 3.5.2 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:53:06) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import my_module
+&gt;&gt;&gt; 
+</code></pre>
+
+<h2 id="prywatnosc">Prywatność</h2>
+<hr />
+<pre><code class="python">%%writefile private.py
+
+public = &quot;public&quot;
+# _ przed nazwą -&gt; from ... import * pomija
+_internal = &quot;internal use&quot;
+</code></pre>
+
+<pre><code>Overwriting private.py
+</code></pre>
+<pre><code class="python">from private import * # importuj wszystko 
+</code></pre>
+
+<pre><code class="python">public
+</code></pre>
+
+<pre><code>'public'
+</code></pre>
+<pre><code class="python">_internal
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-52-69fdfd559f34&gt; in &lt;module&gt;()
+----&gt; 1 _internal
+
+
+NameError: name '_internal' is not defined
+</code></pre>
+<h2 id="gdzie-interpreter-szuka-moduow">Gdzie interpreter szuka modułów?</h2>
+<hr />
+<ol>
+<li>bieżący katalog</li>
+<li>w katalogach określonych w zmiennej środowiskowej <code>PYTHONPATH</code></li>
+<li>w katalogach określonych w trakcie instalacji (np. <code>/usr/lib/python</code>)</li>
+<li>w katalogach określonych w zmiennej <code>sys.path</code></li>
+</ol>
+<h2 id="zmienne-srodowiskowe">Zmienne środowiskowe</h2>
+<hr />
+<ul>
+<li>zmienne powłoki systemowej</li>
+</ul>
+<pre><code class="bash">goran@goran-ift:~$ export MOJA_ZMIENNA=&quot;wartość mojej zmiennej&quot;
+goran@goran-ift:~$ echo $MOJA_ZMIENNA 
+wartość mojej zmiennej
+</code></pre>
+
+<ul>
+<li>część zmiennych jest inicjowana przy starcie powłoki, np</li>
+</ul>
+<pre><code class="bash">goran@goran-ift:~$ echo $PATH
+/home/goran/soft/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+</code></pre>
+
+<h2 id="zmienne-srodowiskowe_1">Zmienne środowiskowe</h2>
+<hr />
+<ul>
+<li>zmienne można aktualizować</li>
+</ul>
+<pre><code class="bash">goran@goran-ift:~$ export PATH=/newpath/:$PATH
+goran@goran-ift:~$ echo $PATH
+/newpath/:/home/goran/soft/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+</code></pre>
+
+<h2 id="syspath"><em>sys.path</em></h2>
+<hr />
+<pre><code class="python">import sys
+
+sys.path
+</code></pre>
+
+<pre><code>['',
+ '/home/goran/soft/anaconda3/lib/python35.zip',
+ '/home/goran/soft/anaconda3/lib/python3.5',
+ '/home/goran/soft/anaconda3/lib/python3.5/plat-linux',
+ '/home/goran/soft/anaconda3/lib/python3.5/lib-dynload',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.6-py3.5.egg',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages/IPython/extensions',
+ '/home/goran/.ipython']
+</code></pre>
+<h2 id="syspath_1"><em>sys.path</em></h2>
+<hr />
+<pre><code class="python">sys.path.append(&quot;/moja/sciezka/do/modulow&quot;)
+
+sys.path
+</code></pre>
+
+<pre><code>['',
+ '/home/goran/soft/anaconda3/lib/python35.zip',
+ '/home/goran/soft/anaconda3/lib/python3.5',
+ '/home/goran/soft/anaconda3/lib/python3.5/plat-linux',
+ '/home/goran/soft/anaconda3/lib/python3.5/lib-dynload',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.6-py3.5.egg',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg',
+ '/home/goran/soft/anaconda3/lib/python3.5/site-packages/IPython/extensions',
+ '/home/goran/.ipython',
+ '/moja/sciezka/do/modulow']
+</code></pre>
+<h2 id="modu-poza-katalogiem-roboczym">Moduł poza katalogiem roboczym</h2>
+<hr />
+<pre><code class="python">%%writefile /home/goran/trojmian.py
+&quot;&quot;&quot;Moduł do obsługi trómianu kwadratowego.&quot;&quot;&quot;
+
+from math import sqrt
+
+def _delta(a, b, c):
+    &quot;&quot;&quot;Liczy wyróżnik trójmianu.&quot;&quot;&quot;
+    return b**2 - 4*a*c
+
+def _solve(a, b, d):
+    &quot;&quot;&quot;Liczy miejsca zerowe.&quot;&quot;&quot;
+    d = sqrt(d)
+    return (-b + d) / 2 / a, (-b - d) / 2 / a
+
+def solution(a, b, c):
+    &quot;&quot;&quot;Zwraca miejsca zerowe.&quot;&quot;&quot;
+    d = _delta(a, b, c)
+
+    if d &lt; 0:return None
+    elif d == 0: return -b / 2 / a
+    else: return _solve(a, b, d) 
+</code></pre>
+
+<pre><code>Overwriting /home/goran/trojmian.py
+</code></pre>
+<h2 id="modu-poza-katalogiem-roboczym_1">Moduł poza katalogiem roboczym</h2>
+<hr />
+<pre><code class="python"># nie ma w katalogu roboczym ani w PYTHONPATH itd
+import trojmian
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+ImportError                               Traceback (most recent call last)
+
+&lt;ipython-input-56-e2dca95631fe&gt; in &lt;module&gt;()
+      1 # nie ma w katalogu roboczym ani w PYTHONPATH itd
+----&gt; 2 import trojmian
+
+
+ImportError: No module named 'trojmian'
+</code></pre>
+<pre><code class="python">import sys
+sys.path.append(&quot;/home/goran/&quot;) # dodajemy ścieżkę do sys.path
+import trojmian # teraz działa
+</code></pre>
+
+<h2 id="trojmian-w-akcji">Trójmian w akcji</h2>
+<hr />
+<pre><code class="python">help(trojmian) # nie ma _delta, ale jest sqrt!
+</code></pre>
+
+<pre><code>Help on module trojmian:
+
+NAME
+    trojmian - Moduł do obsługi trómianu kwadratowego.
+
+FUNCTIONS
+    solution(a, b, c)
+        Zwraca miejsca zerowe.
+
+    sqrt(...)
+        sqrt(x)
+
+        Return the square root of x.
+
+FILE
+    /home/goran/trojmian.py
+</code></pre>
+<h2 id="trojmian-w-akcji_1">Trójmian w akcji</h2>
+<hr />
+<pre><code class="python">from trojmian import * # importuj wszystko
+</code></pre>
+
+<pre><code class="python">solution(1, 2, 1) # dostęp do solution
+</code></pre>
+
+<pre><code>-1.0
+</code></pre>
+<pre><code class="python">sqrt(4) # dostęp do sqrt z math!
+</code></pre>
+
+<pre><code>2.0
+</code></pre>
+<pre><code class="python">_delta(1, 2, 1) # ale _delta nie została zaimportowana
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-62-a5950f05b403&gt; in &lt;module&gt;()
+----&gt; 1 _delta(1, 2, 1) # ale _delta nie została zaimportowana
+
+
+NameError: name '_delta' is not defined
+</code></pre>
+<h2 id="paczka">Paczka</h2>
+<hr />
+<ul>
+<li>uporządkowany zbiór modułów</li>
+</ul>
+<pre><code>package_name/     # top-level
+    __init__.py   # wymagane (może być puste)
+    subpackage1/
+        __init__.py
+        module1.py
+        module2.py
+        ...
+    subpackage2/
+        __init__.py
+        ...
+</code></pre>
+
+<h2 id="initpy"><strong>init</strong>.py</h2>
+<hr />
+<pre><code class="python">%%writefile listy_zadan/__init__.py
+&quot;&quot;&quot;Inicjalizacja paczki listy_zadan&quot;&quot;&quot;
+import math # można np. importować moduły
+</code></pre>
+
+<pre><code>Overwriting listy_zadan/__init__.py
+</code></pre>
+<h2 id="lista-4">Lista 4</h2>
+<hr />
+<pre><code class="python">%%writefile listy_zadan/lista4/__init__.py
+&quot;&quot;&quot;Inicjalizacja podpaczki lista4&quot;&quot;&quot;
+</code></pre>
+
+<pre><code>Overwriting listy_zadan/lista4/__init__.py
+</code></pre>
+<h2 id="lista-4-zadanie-2">Lista 4 - zadanie 2</h2>
+<hr />
+<pre><code class="python">%%writefile listy_zadan/lista4/zad2.py
+&quot;&quot;&quot;Napisz funkcję, która znajduje mniejszą liczbę z dwóch podanych.&quot;&quot;&quot;
+
+def min2(a, b):
+    &quot;&quot;&quot;Zwraca mniejszą z dwóch podanych liczb.&quot;&quot;&quot;
+    if a &gt; b:
+        return b
+    return a
+</code></pre>
+
+<pre><code>Overwriting listy_zadan/lista4/zad2.py
+</code></pre>
+<h2 id="lista-4-zadanie-3">Lista 4 - zadanie 3</h2>
+<hr />
+<pre><code class="python">%%writefile listy_zadan/lista4/zad3.py
+&quot;&quot;&quot;Napisz funkcję, która z podanych liczb (ilość dowolna) znajduje najmniejszą.&quot;&quot;&quot;
+
+from listy_zadan.lista4.zad2 import min2
+
+def min(*a):
+    &quot;&quot;&quot;Zwraca najmniejszą z podanych liczb.&quot;&quot;&quot;
+    current_min = a[0]
+
+    for x in a:
+        current_min = min2(current_min, x)
+
+    return current_min
+</code></pre>
+
+<pre><code>Overwriting listy_zadan/lista4/zad3.py
+</code></pre>
+<h2 id="importowanie">Importowanie</h2>
+<hr />
+<pre><code class="python">import listy_zadan.lista4.zad2
+import listy_zadan.lista4.zad3 as zad3
+
+print(&quot;Zad2 =&quot;, listy_zadan.lista4.zad2.min2(1, 5))
+print(&quot;Zad3 =&quot;, zad3.min(6, 2, 6, 3, 5))
+</code></pre>
+
+<pre><code>Zad2 = 1
+Zad3 = 2
+</code></pre>
+<pre><code class="python"># css prezentacji
+
+
+from IPython.display import display, HTML
+
+s = &quot;&quot;&quot;
+
+&lt;style&gt;
+
+.rendered_html code {
+  font-size: 75%;
+}
+
+&lt;/style&gt;
+
+&quot;&quot;&quot;
+
+display(HTML(s))
+</code></pre>
+
+<style>
+
+.rendered_html code {
+  font-size: 75%;
+}
+
+</style></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

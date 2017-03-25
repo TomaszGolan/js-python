@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 7 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w06/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w08/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
+            <li><a href="#wykad-7">Wykład 7</a></li>
+            <li><a href="#modu-os">Moduł os</a></li>
+            <li><a href="#system-operacyjny">System operacyjny</a></li>
+            <li><a href="#katalog-roboczy">Katalog roboczy</a></li>
+            <li><a href="#zawartosc-katalogu">Zawartość katalogu</a></li>
+            <li><a href="#tworzenie-usuwanie-katalogow">Tworzenie / usuwanie katalogów</a></li>
+            <li><a href="#tworzenie-usuwanie-plikow">Tworzenie / usuwanie plików</a></li>
+            <li><a href="#drzewo-katalogow">Drzewo katalogów</a></li>
+            <li><a href="#modu-ospath">Moduł os.path</a></li>
+            <li><a href="#wiecej-o-ospath">Więcej o os.path</a></li>
+            <li><a href="#zmienne-srodowiskowe">Zmienne środowiskowe</a></li>
+            <li><a href="#usos">USOS</a></li>
+            <li><a href="#zmienna-srodowiskowa-usos">Zmienna środowiskowa USOS</a></li>
+            <li><a href="#usos-dodawanie-studenta">USOS - dodawanie studenta</a></li>
+            <li><a href="#usos-przykad">USOS - przykład</a></li>
+            <li><a href="#usos-wynik">USOS - wynik</a></li>
+            <li><a href="#oswalk">os.walk</a></li>
+            <li><a href="#oswalk_1">os.walk</a></li>
+            <li><a href="#modu-glob">Moduł glob</a></li>
+            <li><a href="#wiecej-o-glob">Więcej o glob</a></li>
+            <li><a href="#modu-sys">Moduł sys</a></li>
+            <li><a href="#referencje-do-obiektu">Referencje do obiektu</a></li>
+            <li><a href="#referencje-do-obiektow-mutowalnych">Referencje do obiektów mutowalnych</a></li>
+            <li><a href="#argumenty">Argumenty</a></li>
+            <li><a href="#przykad">Przykład</a></li>
+            <li><a href="#modu-time">Moduł time</a></li>
+            <li><a href="#czas-uniksowy">Czas uniksowy</a></li>
+            <li><a href="#przyblizony-test">Przybliżony test</a></li>
+            <li><a href="#uniksowe-chwile-godne-uwagi">Uniksowe chwile godne uwagi</a></li>
+            <li><a href="#czas-lokalny">Czas lokalny</a></li>
+            <li><a href="#czas-w-formie-czytelnej">Czas w formie czytelnej</a></li>
+            <li><a href="#pomiar-czasu-wall-time">Pomiar czasu (wall time)</a></li>
+            <li><a href="#pomiar-czasu-procesora-process-time">Pomiar czasu procesora (process time)</a></li>
+            <li><a href="#modu-datetime">Moduł datetime</a></li>
+            <li><a href="#przykad_1">Przykład</a></li>
+            <li><a href="#przykad-logi">Przykład - logi</a></li>
+            <li><a href="#generatory-liczb-pseudolosowych">Generatory liczb pseudolosowych</a></li>
+            <li><a href="#middle-square-method">Middle square method</a></li>
+            <li><a href="#middle-square-method-algorytm">Middle square method - algorytm</a></li>
+            <li><a href="#middle-square-method-implementacja">Middle square method - implementacja</a></li>
+            <li><a href="#middle-square-method-wyniki">Middle square method - wyniki</a></li>
+            <li><a href="#algorytm-lcg">Algorytm LCG</a></li>
+            <li><a href="#algorytm-lcg-implementacja">Algorytm LCG - implementacja</a></li>
+            <li><a href="#algorytm-lcg-wyniki">Algorytm LCG - wyniki</a></li>
+            <li><a href="#algorytm-lcg-korelacje">Algorytm LCG - korelacje</a></li>
+            <li><a href="#algorytm-lcg-punkty-3d">Algorytm LCG - punkty 3D</a></li>
+            <li><a href="#algorytm-lcg-punkty-3d_1">Algorytm LCG - punkty 3D</a></li>
+            <li><a href="#modu-random">Moduł random</a></li>
+            <li><a href="#losowe-liczby-zmiennoprzecinkowe">Losowe liczby zmiennoprzecinkowe</a></li>
+            <li><a href="#losowe-liczby-cakowite">Losowe liczby całkowite</a></li>
+            <li><a href="#losowe-z-sekwencji">Losowe z sekwencji</a></li>
+            <li><a href="#seed">Seed</a></li>
+            <li><a href="#totolotek">Totolotek</a></li>
+            <li><a href="#totolotek-symulacja">Totolotek - symulacja</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
+<h2 id="wykad-7">Wykład 7</h2>
+<hr />
+<ul>
+<li>Bilioteka standardowa<ul>
+<li>os</li>
+<li>sys</li>
+<li>time / datetime</li>
+<li>random</li>
+</ul>
+</li>
+<li>Liczby pseudolosowe</li>
+</ul>
+<h2 id="modu-os">Moduł <em>os</em></h2>
+<hr />
+<ul>
+<li>przenośne używanie funkcjonalności zależnych od systemu operacyjnego<ul>
+<li>operacje na plikach (o tym za tydzień)</li>
+<li>operacje na ścieżkach</li>
+<li>uruchamianie poleceń systemowych</li>
+<li>zarządzanie zmiennymi środowiskowymi</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<h2 id="system-operacyjny">System operacyjny</h2>
+<hr />
+<pre><code class="python">import os
+
+# POSIX = Portable Operating System Interface for Unix
+os.name # posix, nt, ce, java
+</code></pre>
+
+<pre><code>'posix'
+</code></pre>
+<pre><code class="python">if os.name == &quot;posix&quot;: # jeśli unix
+    cmd = &quot;ls&quot;         # użyj ls
+elif os.name == &quot;nt&quot;:  # jeśli windows
+    cmd = &quot;dir&quot;        # użyj dir
+
+print(cmd)
+</code></pre>
+
+<pre><code>ls
+</code></pre>
+<h2 id="katalog-roboczy">Katalog roboczy</h2>
+<hr />
+<pre><code class="python">current_path = os.getcwd() # pwd
+
+print(&quot;Katalog roboczy:&quot;, current_path)
+
+new_path = &quot;/home/goran&quot;
+
+os.chdir(new_path) # zmień katalog roboczy
+
+print(&quot;Nowy katalog roboczy:&quot;, os.getcwd())
+
+os.chdir(current_path) # wracamy
+</code></pre>
+
+<pre><code>Katalog roboczy: /doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python
+Nowy katalog roboczy: /home/goran
+</code></pre>
+<h2 id="zawartosc-katalogu">Zawartość katalogu</h2>
+<hr />
+<pre><code class="python">os.listdir(&quot;/usr/&quot;) # lista plików i katalogów
+</code></pre>
+
+<pre><code>['src', 'local', 'bin', 'include', 'sbin', 'lib', 'games', 'share', 'locale']
+</code></pre>
+<pre><code class="python">os.listdir() # lista plików i katalogów w pwd
+</code></pre>
+
+<pre><code>['my_script.py',
+ 'usos.py',
+ '.ipynb_checkpoints',
+ 'js-python_w05.html',
+ 'js-python_w01.html',
+ 'js-python_l02.md',
+ 'test.2016_11_11_175921.log',
+ 'js-python_w04.ipynb',
+ 'js-python_w06.html',
+ 'README.md',
+ 'js-python_w03.html',
+ 'test.2016_11_11_175922.log',
+ 'js-python_l00.md',
+ 'iloczyn.py',
+ 'js-python_w04.html',
+ 'temp.py',
+ 'js-python_w03.ipynb',
+ 'js-python_l01.pdf',
+ 'js-python_w05.ipynb',
+ 'print_args.py',
+ 'src',
+ 'js-python_l01.md',
+ 'middle2.py',
+ 'js-python_w01.ipynb',
+ 'listy_zadan',
+ '__pycache__',
+ 'dodaj_studentow.py',
+ 'js-python_w07.ipynb',
+ 'test.2016_11_11_175942.log',
+ 'js-python_w02.ipynb',
+ 'js-python_w02.html',
+ 'temp',
+ 'my_module.py',
+ 'js-python_w06.ipynb',
+ 'private.py']
+</code></pre>
+<h2 id="tworzenie-usuwanie-katalogow">Tworzenie / usuwanie katalogów</h2>
+<hr />
+<pre><code class="python">def check(ls, folder):
+    &quot;&quot;&quot;Sprawdza czy folder znajduje się na liście.&quot;&quot;&quot;
+    if folder in ls:
+        print(&quot;{} is found.&quot;.format(folder))
+    else:
+        print(&quot;{} not found.&quot;.format(folder))
+
+my_folder = &quot;test&quot;
+
+check(os.listdir(), my_folder)
+
+os.mkdir(my_folder) # stwórz katalog test
+
+check(os.listdir(), my_folder)
+
+os.rmdir(my_folder) # usuń katalog test
+
+check(os.listdir(), my_folder)
+</code></pre>
+
+<pre><code>test not found.
+test is found.
+test not found.
+</code></pre>
+<h2 id="tworzenie-usuwanie-plikow">Tworzenie / usuwanie plików</h2>
+<hr />
+<pre><code class="python">os.mkdir(&quot;my_dir&quot;) # stwórz katalog &quot;my_dir&quot;
+
+# otwórz plik w trybie zapisu (więcej za tydzień)
+file = open(&quot;my_dir/my_file&quot;, 'w')
+file.close()
+
+os.listdir(&quot;my_dir&quot;)
+</code></pre>
+
+<pre><code>['my_file']
+</code></pre>
+<pre><code class="python"># nie można usunąć niepustego katalogu
+os.rmdir(&quot;my_dir&quot;) # OSError: [Errno 39] Directory not empty: 'my_dir'
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+OSError                                   Traceback (most recent call last)
+
+&lt;ipython-input-8-35adb4ad65f2&gt; in &lt;module&gt;()
+      1 # nie można usunąć niepustego katalogu
+----&gt; 2 os.rmdir("my_dir") # OSError: [Errno 39] Directory not empty: 'my_dir'
+
+
+OSError: [Errno 39] Directory not empty: 'my_dir'
+</code></pre>
+<pre><code class="python">os.remove(&quot;my_dir/my_file&quot;) # usuń plik
+os.rmdir(&quot;my_dir&quot;)          # usuń katalog
+</code></pre>
+
+<h2 id="drzewo-katalogow">Drzewo katalogów</h2>
+<hr />
+<pre><code class="python"># os.makedirs(..., exist_ok=True) -&gt; działa jak mkdir -p
+os.makedirs(&quot;level0/level1/level2&quot;) # utwórz &quot;ciąg&quot; katalogów
+
+os.listdir(&quot;level0&quot;)
+</code></pre>
+
+<pre><code>['level1']
+</code></pre>
+<pre><code class="python">os.listdir(&quot;level0/level1&quot;)
+</code></pre>
+
+<pre><code>['level2']
+</code></pre>
+<pre><code class="python"># os.rmdir(&quot;level0/level1/level2&quot;)    # usunie tylko level2
+os.removedirs(&quot;level0/level1/level2&quot;) # usunie wszystko
+</code></pre>
+
+<h2 id="modu-ospath">Moduł <em>os.path</em></h2>
+<hr />
+<pre><code class="python">import os
+
+path = &quot;/my/path&quot; # katalog
+file = &quot;file.py&quot;  # plik
+
+os.path.join(path, file) # tworzy pełną ścieżkę do pliku
+</code></pre>
+
+<pre><code>'/my/path/file.py'
+</code></pre>
+<pre><code class="python">os.path.split(&quot;/my/path/file.py&quot;) # zwraca (head, tail)
+</code></pre>
+
+<pre><code>('/my/path', 'file.py')
+</code></pre>
+<pre><code class="python">os.path.dirname(&quot;/my/path/file.py&quot;) # zwraca split()[0]
+</code></pre>
+
+<pre><code>'/my/path'
+</code></pre>
+<pre><code class="python">os.path.basename(&quot;/my/path/file.py&quot;) # zwraca split()[1]
+</code></pre>
+
+<pre><code>'file.py'
+</code></pre>
+<h2 id="wiecej-o-ospath">Więcej o <em>os.path</em></h2>
+<hr />
+<pre><code class="python">import os.path as path
+
+path.splitext(&quot;/my/path/file.py&quot;) # wydziela rozszerzenie pliku
+</code></pre>
+
+<pre><code>('/my/path/file', '.py')
+</code></pre>
+<pre><code class="python">my_path, my_file = path.split(&quot;/my/path/file.py&quot;)
+my_base, my_extn = path.splitext(my_file)
+
+print(&quot;my_path =&quot;, my_path)
+print(&quot;my_file =&quot;, my_file)
+print(&quot;my_base =&quot;, my_base)
+print(&quot;my_extn =&quot;, my_extn)
+</code></pre>
+
+<pre><code>my_path = /my/path
+my_file = file.py
+my_base = file
+my_extn = .py
+</code></pre>
+<h2 id="zmienne-srodowiskowe">Zmienne środowiskowe</h2>
+<hr />
+<pre><code class="python">os.getenv(&quot;HOME&quot;) # pobierz wartość zmiennej środowiskowej
+</code></pre>
+
+<pre><code>'/home/goran'
+</code></pre>
+<pre><code class="python">os.environ[&quot;HOME&quot;] # environ -&gt; słownik zś
+</code></pre>
+
+<pre><code>'/home/goran'
+</code></pre>
+<pre><code class="python">os.environ[&quot;MOJA_ZMIENNA&quot;] = &quot;To musi być string&quot;
+</code></pre>
+
+<pre><code class="python">%%bash
+# wywołanie komendy basha z poziomu jupytera
+echo $MOJA_ZMIENNA
+</code></pre>
+
+<pre><code>To musi być string
+</code></pre>
+<h2 id="usos">USOS</h2>
+<hr />
+<pre><code class="python">%%writefile usos.py
+&quot;&quot;&quot;Uniwersytecki System Obsługi Studiów
+
+Dane przechowywane w postaci: kierunek/rok/imie.nazwisko
+a w pliku zapisany jest numer indeksu
+&quot;&quot;&quot;
+
+import os
+
+# top-level katalog na podstawie zmiennej środowiskowej $USOS
+# jeśli nie jest zdefiniowana -&gt; bieżący katalog
+_BASE_PATH = os.getenv(&quot;USOS&quot;) or os.getcwd()
+</code></pre>
+
+<pre><code>Overwriting usos.py
+</code></pre>
+<h2 id="zmienna-srodowiskowa-usos">Zmienna środowiskowa USOS</h2>
+<hr />
+<pre><code class="python">%%bash
+echo $USOS
+python -c &quot;import usos; print(usos._BASE_PATH)&quot;
+</code></pre>
+
+<pre><code>/doc/insync/scratch/zajęcia/2016/języki skryptowe - python/js-python
+</code></pre>
+<pre><code class="python">%%bash
+export USOS=&quot;/moja/sciezka/do/bazy/danych&quot;
+python -c &quot;import usos; print(usos._BASE_PATH)&quot;
+</code></pre>
+
+<pre><code>/moja/sciezka/do/bazy/danych
+</code></pre>
+<h2 id="usos-dodawanie-studenta">USOS - dodawanie studenta</h2>
+<hr />
+<pre><code class="python">%%writefile -a usos.py
+
+def add_student(imie, nazwisko, indeks, kierunek, rok):
+    &quot;&quot;&quot;Dodaje studenta.
+
+    Tworzy plik imie.nazwisko w katalogu kierunek/rok/
+    i umieszcza w nim numer indeksu
+    &quot;&quot;&quot;
+    # pełna ścieżka do katalogu danego kierunku/rocznika
+    path = os.path.join(_BASE_PATH, kierunek, str(rok))
+    # imie.nazwisko
+    file = &quot;.&quot;.join([imie, nazwisko])
+    # stwórz kierunek lub pomiń jeśli istnieje
+    os.makedirs(path, exist_ok=True)
+    # o plikach więcej za tydzień
+    with open(os.path.join(path, file), 'w') as f:
+        f.write(str(indeks))
+</code></pre>
+
+<pre><code>Appending to usos.py
+</code></pre>
+<h2 id="usos-przykad">USOS - przykład</h2>
+<hr />
+<pre><code class="python">%%writefile dodaj_studentow.py
+
+import usos
+import random
+
+imiona = [&quot;Kasia&quot;, &quot;Basia&quot;, &quot;Marek&quot;, &quot;Darek&quot;]
+nazwiska = [&quot;Nowak&quot;, &quot;Marian&quot;, &quot;Python&quot;]
+kierunki = [&quot;ISSP&quot;, &quot;Fizyka Komputerowa&quot;]
+
+for i in range(10):
+    imie = random.choice(imiona)         # losowe imie
+    nazwisko = random.choice(nazwiska)   # losowe nazwisko
+    indeks = random.randint(1000, 9999)  # losowy indeks
+    rocznik = random.randint(2015, 2017) # losowy rocznik
+    kierunek = random.choice(kierunki)   # losowy kierunek
+
+    usos.add_student(imie, nazwisko, indeks, kierunek, rocznik)
+</code></pre>
+
+<pre><code>Overwriting dodaj_studentow.py
+</code></pre>
+<h2 id="usos-wynik">USOS - wynik</h2>
+<hr />
+<pre><code class="python">%%bash
+export USOS=/home/goran/usos
+python dodaj_studentow.py
+tree $USOS
+</code></pre>
+
+<pre><code>/home/goran/usos
+├── Fizyka Komputerowa
+│   ├── 2015
+│   │   └── Marek.Python
+│   ├── 2016
+│   │   ├── Basia.Marian
+│   │   ├── Kasia.Nowak
+│   │   └── Marek.Python
+│   └── 2017
+│       └── Basia.Marian
+└── ISSP
+    ├── 2015
+    │   └── Marek.Marian
+    ├── 2016
+    │   ├── Basia.Marian
+    │   ├── Kasia.Nowak
+    │   └── Kasia.Python
+    └── 2017
+        └── Basia.Nowak
+
+8 directories, 10 files
+</code></pre>
+<h2 id="oswalk"><em>os.walk</em></h2>
+<hr />
+<pre><code class="python"># os.walk &quot;podróżuje po drzewie katalogów&quot;
+# na każdym kroku zwracając krotkę
+# (obecny katalog, lista podkatalogów, lista plików)
+for root, dirs, files in os.walk(&quot;/home/goran/usos&quot;):
+    print(root, dirs, files, sep=&quot;\n&quot;, end=&quot;\n\n&quot;)
+</code></pre>
+
+<pre><code>/home/goran/usos
+['Fizyka Komputerowa', 'ISSP']
+[]
+
+/home/goran/usos/Fizyka Komputerowa
+['2016', '2015', '2017']
+[]
+
+/home/goran/usos/Fizyka Komputerowa/2016
+[]
+['Kasia.Nowak', 'Basia.Marian', 'Marek.Python']
+
+/home/goran/usos/Fizyka Komputerowa/2015
+[]
+['Marek.Python']
+
+/home/goran/usos/Fizyka Komputerowa/2017
+[]
+['Basia.Marian']
+
+/home/goran/usos/ISSP
+['2016', '2015', '2017']
+[]
+
+/home/goran/usos/ISSP/2016
+[]
+['Kasia.Python', 'Kasia.Nowak', 'Basia.Marian']
+
+/home/goran/usos/ISSP/2015
+[]
+['Marek.Marian']
+
+/home/goran/usos/ISSP/2017
+[]
+['Basia.Nowak']
+</code></pre>
+<h2 id="oswalk_1"><em>os.walk</em></h2>
+<hr />
+<pre><code class="python">for root, dirs, files in os.walk(&quot;/home/goran/usos&quot;):
+    for file in files: # pętla po plikach w danym katalogu root
+        print(os.path.join(root, file))
+</code></pre>
+
+<pre><code>/home/goran/usos/Fizyka Komputerowa/2016/Kasia.Nowak
+/home/goran/usos/Fizyka Komputerowa/2016/Basia.Marian
+/home/goran/usos/Fizyka Komputerowa/2016/Marek.Python
+/home/goran/usos/Fizyka Komputerowa/2015/Marek.Python
+/home/goran/usos/Fizyka Komputerowa/2017/Basia.Marian
+/home/goran/usos/ISSP/2016/Kasia.Python
+/home/goran/usos/ISSP/2016/Kasia.Nowak
+/home/goran/usos/ISSP/2016/Basia.Marian
+/home/goran/usos/ISSP/2015/Marek.Marian
+/home/goran/usos/ISSP/2017/Basia.Nowak
+</code></pre>
+<h2 id="modu-glob">Moduł <em>glob</em></h2>
+<hr />
+<ul>
+<li>umożliwia wykorzystanie uniksowych <em>dzikich kart</em>: <code>?</code>, <code>*</code>, <code>[]</code></li>
+</ul>
+<pre><code class="python">import glob
+
+glob.glob(&quot;*.ipynb&quot;) # lista plików z rozszerzeniem ipynb
+</code></pre>
+
+<pre><code>['js-python_w04.ipynb',
+ 'js-python_w03.ipynb',
+ 'js-python_w05.ipynb',
+ 'js-python_w01.ipynb',
+ 'js-python_w07.ipynb',
+ 'js-python_w02.ipynb',
+ 'js-python_w06.ipynb']
+</code></pre>
+<h2 id="wiecej-o-glob">Więcej o <em>glob</em></h2>
+<hr />
+<pre><code class="python"># pliki z roszerzeniem html oraz
+# pasujące do wzorca (coś)(cyfra od 0 do 3)
+glob.glob(&quot;*[0-3].html&quot;)
+</code></pre>
+
+<pre><code>['js-python_w01.html', 'js-python_w03.html', 'js-python_w02.html']
+</code></pre>
+<pre><code class="python">glob.glob(&quot;js-python_?02.*&quot;) # js-python_[znak]02.[cokolwiek]
+</code></pre>
+
+<pre><code>['js-python_l02.md', 'js-python_w02.ipynb', 'js-python_w02.html']
+</code></pre>
+<pre><code class="python">glob.glob(&quot;js-python_?02.[mi]*&quot;) # js-python_[znak]02.[m lub i]cokolwiek
+</code></pre>
+
+<pre><code>['js-python_l02.md', 'js-python_w02.ipynb']
+</code></pre>
+<h2 id="modu-sys">Moduł <em>sys</em></h2>
+<hr />
+<ul>
+<li>funkcje i parametry specyficzne dla systemu operacyjnego</li>
+<li>ostatnio: ścieżka dostępu do modułów <em>sys.path</em></li>
+<li>referencje do obiektów</li>
+<li>argumenty wywołania skryptu</li>
+</ul>
+<h2 id="referencje-do-obiektu">Referencje do obiektu</h2>
+<hr />
+<pre><code class="python">%reset
+</code></pre>
+
+<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+</code></pre>
+<pre><code class="python">import sys
+
+x = 1234
+y = 1234
+z = &quot;Mój tekst&quot;
+
+sys.getrefcount(x) # x, y i ?
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">sys.getrefcount(z) # getrefcount pracuje na kopii z 
+</code></pre>
+
+<pre><code>2
+</code></pre>
+<h2 id="referencje-do-obiektow-mutowalnych">Referencje do obiektów <em>mutowalnych</em></h2>
+<hr />
+<pre><code class="python">x = [1, 2, 3]
+y = x
+z = x.copy()
+
+sys.getrefcount(x) # x, y i getrefcount
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">x is y # x i y wskazują to samo
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">x is z # x i z wskazują na inne listy
+</code></pre>
+
+<pre><code>False
+</code></pre>
+<h2 id="argumenty">Argumenty</h2>
+<hr />
+<pre><code class="python">%%writefile print_args.py
+&quot;&quot;&quot;Drukuje argumenty podane w linii komend.&quot;&quot;&quot;
+
+import sys
+
+# sys.argv - lista argumentó linii komend
+for i, arg in enumerate(sys.argv):
+    print(&quot;{}. {}&quot;.format(i, arg))
+</code></pre>
+
+<pre><code>Overwriting print_args.py
+</code></pre>
+<pre><code class="python">!python print_args.py arg1 arg2 33 &quot;hello world&quot;
+</code></pre>
+
+<pre><code>0. print_args.py
+1. arg1
+2. arg2
+3. 33
+4. hello world
+</code></pre>
+<h2 id="przykad">Przykład</h2>
+<hr />
+<pre><code class="python">%%writefile iloczyn.py
+&quot;&quot;&quot;Liczy iloczyn podanych argumentów.&quot;&quot;&quot;
+
+import sys
+
+if len(sys.argv) &lt; 2: # sys.argv[0] = iloczyn.py
+    print(&quot;Musisz podać co najmniej jedną liczbę .&quot;)
+else:
+    wyrazenie = &quot;*&quot;.join(sys.argv[1:])
+    print(wyrazenie, &quot;=&quot;, eval(wyrazenie))
+</code></pre>
+
+<pre><code>Overwriting iloczyn.py
+</code></pre>
+<pre><code class="python">!python iloczyn.py
+</code></pre>
+
+<pre><code>Musisz podać co najmniej jedną liczbę .
+</code></pre>
+<pre><code class="python">!python iloczyn.py 1 2 5 4 10 0.5
+</code></pre>
+
+<pre><code>1*2*5*4*10*0.5 = 200.0
+</code></pre>
+<h2 id="modu-time">Moduł <em>time</em></h2>
+<hr />
+<ul>
+<li>operacje na czasie</li>
+<li>nie wszystkie funkcjonalności są dostępne na wszystkich platformach</li>
+<li>najczęściej wywoływane są funkcje biblioteki C o tej samej nazwie</li>
+</ul>
+<h2 id="czas-uniksowy">Czas uniksowy</h2>
+<hr />
+<pre><code class="python">import time
+
+time.gmtime() # Greenwhich Mean Time / czas uniwersalny
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2016, tm_mon=11, tm_mday=14, tm_hour=17, tm_min=43, tm_sec=9, tm_wday=0, tm_yday=319, tm_isdst=0)
+</code></pre>
+<pre><code class="python">time.time() # ile minęło sekund od
+</code></pre>
+
+<pre><code>1479145391.2862186
+</code></pre>
+<pre><code class="python">time.gmtime(0) # eoki Uniksa
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0)
+</code></pre>
+<h2 id="przyblizony-test">Przybliżony test</h2>
+<hr />
+<pre><code class="python">time.time() / 60 / 60 / 24 / 365 # lat
+</code></pre>
+
+<pre><code>46.90339274137039
+</code></pre>
+<pre><code class="python">time.gmtime()[0] - time.gmtime(0)[0] # rok teraz - rok epoki linuksa
+</code></pre>
+
+<pre><code>46
+</code></pre>
+<h2 id="uniksowe-chwile-godne-uwagi">Uniksowe chwile godne uwagi</h2>
+<hr />
+<pre><code class="python">time.gmtime(1000000000)[:6] # Unix billenium
+</code></pre>
+
+<pre><code>(2001, 9, 9, 1, 46, 40)
+</code></pre>
+<pre><code class="python">time.gmtime(1234567890)[:6] # piątek 13-tego
+</code></pre>
+
+<pre><code>(2009, 2, 13, 23, 31, 30)
+</code></pre>
+<p><img alt="" src="../src/unix1234567890.gif" /></p>
+<pre><code class="python">time.gmtime(0xFFFFFFFF)[:6] # max bez znaku (32-bit)
+</code></pre>
+
+<pre><code>(2106, 2, 7, 6, 28, 15)
+</code></pre>
+<pre><code class="python">time.gmtime(0x7FFFFFFF)[:6] # max ze znakiem (32-bit)
+</code></pre>
+
+<pre><code>(2038, 1, 19, 3, 14, 7)
+</code></pre>
+<h2 id="czas-lokalny">Czas lokalny</h2>
+<hr />
+<pre><code class="python">time.localtime() # czas lokalny
+</code></pre>
+
+<pre><code>time.struct_time(tm_year=2016, tm_mon=11, tm_mday=14, tm_hour=18, tm_min=43, tm_sec=19, tm_wday=0, tm_yday=319, tm_isdst=0)
+</code></pre>
+<pre><code class="python">time.localtime()[3] - time.gmtime()[3] # różnica Polska - GMT
+</code></pre>
+
+<pre><code>1
+</code></pre>
+<h2 id="czas-w-formie-czytelnej">Czas w formie czytelnej</h2>
+<hr />
+<pre><code class="python">teraz = time.localtime()
+
+time.strftime(&quot;%c&quot;, teraz) # lub time.asctime(teraz)
+</code></pre>
+
+<pre><code>'Mon Nov 14 18:43:22 2016'
+</code></pre>
+<pre><code class="python">dzien_tygodnia = time.strftime(&quot;%A&quot;, teraz) # %a - skrót
+
+print(&quot;Dzisiaj jest&quot;, dzien_tygodnia)
+</code></pre>
+
+<pre><code>Dzisiaj jest Monday
+</code></pre>
+<pre><code class="python">time.strftime(&quot;%Y-%m-%d %H:%M&quot;, teraz) # ROK-MIESIĄC-DZIEŃ GODZINA:MINUTA
+</code></pre>
+
+<pre><code>'2016-11-14 18:43'
+</code></pre>
+<ul>
+<li>pełna lista dyrektyw <a href="https://docs.python.org/3.6/library/time.html#time.strftime">tutaj</a></li>
+</ul>
+<h2 id="pomiar-czasu-wall-time">Pomiar czasu (<em>wall time</em>)</h2>
+<hr />
+<pre><code class="python">import time
+
+def poczekalnia(n):
+    &quot;&quot;&quot;Czeka n sekund.&quot;&quot;&quot;
+    time.sleep(n)
+
+przed = time.time() # czas przed wywołaniem funkcji
+
+poczekalnia(2)
+
+po = time.time() # czas po wywołaniu funkcji
+
+print(&quot;Czekałem {} sekund.&quot;.format(po - przed))
+</code></pre>
+
+<pre><code>Czekałem 2.002260446548462 sekund.
+</code></pre>
+<h2 id="pomiar-czasu-procesora-process-time">Pomiar czasu procesora (<em>process time</em>)</h2>
+<hr />
+<pre><code class="python">import time
+
+def poczekalnia(n):
+    &quot;&quot;&quot;Czeka n sekund.&quot;&quot;&quot;
+    time.sleep(n)
+
+przed = time.clock() # czas przed wywołaniem funkcji
+
+poczekalnia(2)
+
+po = time.clock() # czas po wywołaniu funkcji
+
+print(&quot;Czekałem {} sekund.&quot;.format(po - przed))
+</code></pre>
+
+<pre><code>Czekałem 0.0015890000000000626 sekund.
+</code></pre>
+<h2 id="modu-datetime">Moduł <em>datetime</em></h2>
+<hr />
+<ul>
+<li>wygodniejszy w użyciu do zarządzania czasem i datą</li>
+<li>arytmetyka czasu i daty, np.</li>
+</ul>
+<pre><code class="python">import datetime
+
+t0 = datetime.datetime.now()
+t1 = datetime.datetime(2017, 2, 4) # początek sesji
+
+print(t1 - t0)
+</code></pre>
+
+<pre><code>81 days, 5:16:24.258938
+</code></pre>
+<h2 id="przykad_1">Przykład</h2>
+<hr />
+<pre><code class="python">teraz = datetime.datetime.now()
+uniks_end = datetime.datetime(2038, 1, 19, 3, 14, 7)
+
+print(&quot;teraz =&quot;, teraz)
+print(&quot;rok =&quot;, teraz.year)
+print(&quot;miesiąc =&quot;, teraz.month)
+print(&quot;dzień =&quot;, teraz.day)
+print(&quot;Do końca uniksa zostało&quot;, uniks_end - teraz)
+</code></pre>
+
+<pre><code>teraz = 2016-11-14 18:43:37.185897
+rok = 2016
+miesiąc = 11
+dzień = 14
+Do końca uniksa zostało 7735 days, 8:30:29.814103
+</code></pre>
+<h2 id="przykad-logi">Przykład - logi</h2>
+<hr />
+<pre><code class="python">import os
+from datetime import datetime
+
+def create_log(log_path, process):
+    &quot;&quot;&quot;Tworzy unikatowy log.&quot;&quot;&quot;
+    timestamp = datetime.now().strftime('%Y_%m_%d_%H%M%S')
+    filename = &quot;.&quot;.join([process, timestamp, &quot;log&quot;])
+    with open(os.path.join(log_path, filename), 'w+') as f:
+        f.write(&quot;Uruchomiono proces.&quot;)
+
+create_log(os.getcwd(), &quot;test&quot;)
+</code></pre>
+
+<pre><code class="python">%%bash
+ls -l *.log
+</code></pre>
+
+<pre><code>-rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175921.log
+-rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175922.log
+-rw-rw-r-- 1 goran goran 19 lis 11 17:59 test.2016_11_11_175942.log
+-rw-rw-r-- 1 goran goran 19 lis 14 18:43 test.2016_11_14_184342.log
+</code></pre>
+<h2 id="generatory-liczb-pseudolosowych">Generatory liczb pseudolosowych</h2>
+<hr />
+<ul>
+<li>nie jest możliwe wygenerowanie liczby prawdziwie losowej</li>
+<li>możliwe jest wygenerowanie (na bazie liczby wejściowej, <em>seed</em>) ciągu liczb pseudolosowych<ul>
+<li>ten sam <em>seed</em> = ten sam ciąg</li>
+<li>maksymalna ilość ciągów = możliwe <em>seedy</em></li>
+<li>okresowość</li>
+</ul>
+</li>
+</ul>
+<h2 id="middle-square-method"><em>Middle square method</em></h2>
+<hr />
+<p><img src="src/Eniac.jpg" style="float: right; width: 50%;"></p>
+<ul>
+<li>stworzony przez Johna von Neumanna</li>
+<li>Wykorzystany w<ul>
+<li>ENIAC (jeden z pierwszych komputerów na świecie)</li>
+<li>Projekt Manhattan</li>
+</ul>
+</li>
+</ul>
+<h2 id="middle-square-method-algorytm"><em>Middle square method</em> - algorytm</h2>
+<hr />
+<ul>
+<li>weź liczbę 4-cyfrową jako <em>seed</em> (w ogólności można wziać <em>n</em>-cyfrową liczbę)</li>
+<li>podnieś do kwadratu, aby otrzymać liczbę 8-cyfrową (dodaj zera, jeśli trzeba)</li>
+<li>4 środkowe cyfry są wynikiem i <em>seedem</em> dla następnej liczby</li>
+</ul>
+<p>$$1111^2 = 01234321 \rightarrow 2343$$
+$$2343^2 = 05489649 \rightarrow 4896$$
+$$4896^2 = 23970816 \rightarrow 9708$$</p>
+<h2 id="middle-square-method-implementacja"><em>Middle square method</em> - implementacja</h2>
+<hr />
+<pre><code class="python">%%writefile middle2.py
+&quot;&quot;&quot;PRNG using middle-square method.&quot;&quot;&quot;
+
+def _middle2(n):
+    &quot;&quot;&quot;Return next random number.&quot;&quot;&quot;
+    return int(str(n*n).zfill(8)[2:6])
+
+def generate(n, seed=1111):
+    &quot;&quot;&quot;Generate n numbers starting with seed.&quot;&quot;&quot;
+    numbers = []
+    for _ in range(n):
+        numbers.append(seed)
+        seed = _middle2(seed)
+    return numbers
+</code></pre>
+
+<pre><code>Overwriting middle2.py
+</code></pre>
+<h2 id="middle-square-method-wyniki"><em>Middle square method</em> - wyniki</h2>
+<hr />
+<pre><code class="python">%matplotlib inline
+import matplotlib.pyplot as plt
+import middle2
+
+size, seed = 100, 1234
+
+x, y = range(size), middle2.generate(size, seed)
+
+plt.plot(x, y)
+</code></pre>
+
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7f31658c5240&gt;]
+</code></pre>
+<p><img alt="png" src="../js-python_w07_files/js-python_w07_109_1.png" /></p>
+<h2 id="algorytm-lcg">Algorytm LCG</h2>
+<hr />
+<ul>
+<li>LCG = linear congruential generator</li>
+<li>zaimplementowany w wielu językach</li>
+<li>prosty i szybki</li>
+<li>silne korelacje - nie nadaje się do symulacji Monte Carlo (i tym bardziej kryptografii)</li>
+</ul>
+<p>$$X_{n+1} = (aX_n + c) \text{ mod } m$$</p>
+<h2 id="algorytm-lcg-implementacja">Algorytm LCG - implementacja</h2>
+<hr />
+<pre><code class="python">def lcg(seed, m, a, c):
+    &quot;&quot;&quot;Return next random number using LCG.&quot;&quot;&quot;
+    return (seed * a + c) % m
+
+size, seed = 100, 1234
+a, c, m = 48271, 0, 2**32 - 1 # C++11 minst_rand
+
+random_numbers = []
+
+for _ in range(size):
+    seed = lcg(seed, m, a, c)
+    random_numbers.append(seed)
+</code></pre>
+
+<h2 id="algorytm-lcg-wyniki">Algorytm LCG - wyniki</h2>
+<hr />
+<pre><code class="python">import matplotlib.pyplot as plt
+
+x = range(size)
+
+plt.plot(x, random_numbers)
+</code></pre>
+
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7f316581b5f8&gt;]
+</code></pre>
+<p><img alt="png" src="../js-python_w07_files/js-python_w07_114_1.png" /></p>
+<h2 id="algorytm-lcg-korelacje">Algorytm LCG - korelacje</h2>
+<hr />
+<pre><code class="python"># Mathematics and Computers in Simulations 46 (1998) 485-505
+seed = 1
+a = 65539
+c = 0
+m = 2**31
+
+punkty = [] # losowe punkty
+
+for _ in range(9600):
+    seed = lcg(seed, m, a, c)
+    punkty.append(seed)
+
+x = punkty[::3]  # współrzędne x
+y = punkty[1::3] # współrzędne y
+z = punkty[2::3] # współrzędne z
+</code></pre>
+
+<h2 id="algorytm-lcg-punkty-3d">Algorytm LCG - punkty 3D</h2>
+<hr />
+<pre><code class="python">import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from time import sleep
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+ax.scatter(x, y, z, marker='.')
+</code></pre>
+
+<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f3164d78e10&gt;
+</code></pre>
+<p><img alt="png" src="../js-python_w07_files/js-python_w07_118_1.png" /></p>
+<h2 id="algorytm-lcg-punkty-3d_1">Algorytm LCG - punkty 3D</h2>
+<hr />
+<pre><code class="python">import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+ax.view_init(30, 60)
+
+ax.scatter(x,y,z, marker='.')
+</code></pre>
+
+<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f3164cbeeb8&gt;
+</code></pre>
+<p><img alt="png" src="../js-python_w07_files/js-python_w07_120_1.png" /></p>
+<h2 id="modu-random">Moduł <em>random</em></h2>
+<hr />
+<ul>
+<li>generator Mersenne Twister</li>
+<li>zaniedbywalna korelacja między kolejnymi liczbami (dobry do symulacji Monte Carlo)</li>
+<li>przewidywalność (nie nadaje się do kryptografii)</li>
+<li>szybki, ale "nieelegancki"</li>
+</ul>
+<h2 id="losowe-liczby-zmiennoprzecinkowe">Losowe liczby zmiennoprzecinkowe</h2>
+<hr />
+<pre><code class="python">import random
+
+# random.random() -&gt; losowa liczba z [0, 1)
+
+losowe = [random.random() for _ in range(10)]
+
+print(losowe)
+</code></pre>
+
+<pre><code>[0.2698846730753022, 0.39646893011652196, 0.3569316622351202, 0.7422356288778353, 0.9872672338526717, 0.8037923911064603, 0.8702317548225692, 0.4956627050929412, 0.3254081126694237, 0.3929978024317329]
+</code></pre>
+<pre><code class="python"># random.uniform(a, b) -&gt; losowa z przedziału [a, b]
+
+losowe = [random.uniform(99, 100) for _ in range(10)]
+
+print(losowe)
+</code></pre>
+
+<pre><code>[99.99533728109901, 99.59952026049403, 99.42567811786209, 99.78233290994207, 99.84681728147966, 99.53305937003043, 99.47972787766165, 99.94064273021912, 99.8788743089142, 99.76186755697995]
+</code></pre>
+<h2 id="losowe-liczby-cakowite">Losowe liczby całkowite</h2>
+<hr />
+<pre><code class="python">import random
+
+# random.randint(a, b) - losowa całkowita z [a, b]
+
+losowe = [random.randint(1, 10) for _ in range(10)]
+
+print(losowe)
+</code></pre>
+
+<pre><code>[4, 3, 7, 2, 5, 3, 6, 6, 5, 1]
+</code></pre>
+<pre><code class="python"># random.randrange(stop) -&gt; losowa &lt; stop
+# random.randrange(start, stop[, step])
+
+losowe = [random.randrange(10) for _ in range(10)]
+
+print(losowe)
+</code></pre>
+
+<pre><code>[7, 5, 0, 2, 4, 5, 1, 1, 1, 4]
+</code></pre>
+<h2 id="losowe-z-sekwencji">Losowe z sekwencji</h2>
+<hr />
+<pre><code class="python">import random
+
+x = &quot;Python&quot;
+y = ['a', 'b', 'c', 1, 2, 3]
+</code></pre>
+
+<pre><code class="python">random.choice(x) # losowa litera z str
+</code></pre>
+
+<pre><code>'o'
+</code></pre>
+<pre><code class="python">random.choice(y) # losowy element listy
+</code></pre>
+
+<pre><code>2
+</code></pre>
+<pre><code class="python">random.sample(y, 3) # losowy podzbiór
+</code></pre>
+
+<pre><code>[1, 3, 'b']
+</code></pre>
+<h2 id="seed">Seed</h2>
+<hr />
+<pre><code class="python">import random
+
+for _ in range(5):
+    print(random.random())
+</code></pre>
+
+<pre><code>0.5943111012611626
+0.7799061974116444
+0.9688698425524694
+0.09623949574155088
+0.7030765207216848
+</code></pre>
+<pre><code class="python">for _ in range(5):
+    random.seed(1234) # stały seed -&gt; stała wartość
+    print(random.random())
+</code></pre>
+
+<pre><code>0.9664535356921388
+0.9664535356921388
+0.9664535356921388
+0.9664535356921388
+0.9664535356921388
+</code></pre>
+<h2 id="totolotek">Totolotek</h2>
+<hr />
+<pre><code class="python">from random import randint
+
+def losowanie():
+    &quot;&quot;&quot;Losuje 6 liczb od 1 do 49.&quot;&quot;&quot;
+    return sorted([randint(1, 49) for _ in range(6)])
+
+def check(a, b):
+    &quot;&quot;&quot;Sprawdza ilość takich samych elementów.&quot;&quot;&quot;
+    return len([n for n in a if n in b])
+
+def play():
+    &quot;&quot;&quot;Gra w lotka.&quot;&quot;&quot;
+    lotto = losowanie() # losowanie lotto
+    kupon = losowanie() # kupon chybił-trafił
+    return check(kupon, lotto)
+</code></pre>
+
+<h2 id="totolotek-symulacja">Totolotek - symulacja</h2>
+<hr />
+<pre><code class="python">%matplotlib inline
+import matplotlib.pyplot as plt
+
+n = 10000 # ilość gier
+
+wyniki = [play() for _ in range(n)] 
+
+plt.hist(wyniki, 6)
+</code></pre>
+
+<pre><code>(array([  4.80300000e+03,   3.70800000e+03,   1.26200000e+03,
+          1.96000000e+02,   2.90000000e+01,   2.00000000e+00]),
+ array([ 0.        ,  0.83333333,  1.66666667,  2.5       ,  3.33333333,
+         4.16666667,  5.        ]),
+ &lt;a list of 6 Patch objects&gt;)
+</code></pre>
+<p><img alt="png" src="../js-python_w07_files/js-python_w07_139_1.png" /></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

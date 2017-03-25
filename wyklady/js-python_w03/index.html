@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 3 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w02/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w04/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-pyton">Języki skryptowe - Pyton</a></li>
+            <li><a href="#wykad-3">Wykład 3</a></li>
+            <li><a href="#powtorka">Powtórka</a></li>
+            <li><a href="#odpakowywanie-unzip">"Odpakowywanie" (unzip)</a></li>
+            <li><a href="#splat-czyli-tzw-asterisk">splat, czyli tzw. asterisk</a></li>
+            <li><a href="#unzip-i-splat">unzip i splat</a></li>
+            <li><a href="#pakowanie-zip">"Pakowanie" (zip)</a></li>
+            <li><a href="#zip-unzip-test">zip / unzip - test</a></li>
+            <li><a href="#paradygmaty-programowania">Paradygmaty programowania</a></li>
+            <li><a href="#programowanie-strukturalne">Programowanie strukturalne</a></li>
+            <li><a href="#instrukcja-blokowa">Instrukcja blokowa</a></li>
+            <li><a href="#skadnia-pythona">Składnia Pythona</a></li>
+            <li><a href="#wciecia">Wcięcia</a></li>
+            <li><a href="#instrukcja-warunkowa-if">Instrukcja warunkowa if</a></li>
+            <li><a href="#instrukcja-warunkowa-if-else">Instrukcja warunkowa if else</a></li>
+            <li><a href="#instrukcja-warunkowa-if-elif-else">Instrukcja warunkowa if elif else</a></li>
+            <li><a href="#instrukcja-warunkowa-if-elif-else_1">Instrukcja warunkowa if elif else</a></li>
+            <li><a href="#if-przykad">if - przykład</a></li>
+            <li><a href="#dygresja-input-vs-raw_input">Dygresja: input vs raw_input</a></li>
+            <li><a href="#dygresja-input-i-eval">Dygresja: input i eval</a></li>
+            <li><a href="#dygresja-input-i-eval_1">Dygresja: input i eval</a></li>
+            <li><a href="#iteratory">Iteratory</a></li>
+            <li><a href="#iteriterable">iter(iterable)</a></li>
+            <li><a href="#itercallable-sentinel">iter(callable, sentinel)</a></li>
+            <li><a href="#petla-for">Pętla for</a></li>
+            <li><a href="#for-po-liscie">for po liście</a></li>
+            <li><a href="#for-krok-po-kroku">for "krok po kroku"</a></li>
+            <li><a href="#for-i-next">for i next</a></li>
+            <li><a href="#for-po-wycinkach">for po wycinkach</a></li>
+            <li><a href="#for-po-krotce">for po krotce</a></li>
+            <li><a href="#for-po-stringu">for po stringu</a></li>
+            <li><a href="#for-po-range">for po range</a></li>
+            <li><a href="#kontrola-przepywu-przykad-1">Kontrola przepływu - przykład 1</a></li>
+            <li><a href="#kontrola-przepywu-przykad-2">Kontrola przepływu - przykład 2</a></li>
+            <li><a href="#kontrola-przepywu-przykad-3">Kontrola przepływu - przykład 3</a></li>
+            <li><a href="#unzip-i-for">unzip i for</a></li>
+            <li><a href="#enumerate">enumerate</a></li>
+            <li><a href="#petla-while">Pętla while</a></li>
+            <li><a href="#while-przykad">while - przykład</a></li>
+            <li><a href="#while-przykad_1">while - przykład</a></li>
+            <li><a href="#while-nieskonczona-petla">while - nieskończona pętla</a></li>
+            <li><a href="#dodatkowe-instrukcje-sterujace">Dodatkowe instrukcje sterujące</a></li>
+            <li><a href="#break">break</a></li>
+            <li><a href="#continue">continue</a></li>
+            <li><a href="#pass">pass</a></li>
+            <li><a href="#else">else</a></li>
+            <li><a href="#formatowanie-tekstu">Formatowanie tekstu</a></li>
+            <li><a href="#print">print</a></li>
+            <li><a href="#format-podstawy">format - podstawy</a></li>
+            <li><a href="#format-kolejnosc">format - kolejność</a></li>
+            <li><a href="#format-deklaracja-typu">format - deklaracja typu</a></li>
+            <li><a href="#format-dokadnosc">format - dokładność</a></li>
+            <li><a href="#format-keyword-arguments">format  - keyword arguments</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-pyton">Języki skryptowe - Pyton</h1>
+<h2 id="wykad-3">Wykład 3</h2>
+<hr />
+<ul>
+<li>pakowanie / odpakowywanie sekwencji</li>
+<li>kontrola przepływu:<ul>
+<li>instrukcje warunkowe <em>if</em></li>
+<li>pętle <em>for</em> i <em>while</em></li>
+</ul>
+</li>
+<li>formatowanie tekstu</li>
+</ul>
+<h2 id="powtorka">Powtórka</h2>
+<hr />
+<ul>
+<li>typy liczbowe ("niemutowalne"): <em>int</em>, <em>float</em>, <em>complex</em></li>
+<li>typy sekwencyjne ("mutowalne"): <em>list</em></li>
+<li>typy sekwencyjne ("niemutowalne"): <em>tuple</em>, <em>range</em>, <em>str</em></li>
+<li>operacje logiczne</li>
+</ul>
+<h2 id="odpakowywanie-unzip">"Odpakowywanie" (<em>unzip</em>)</h2>
+<hr />
+<pre><code class="python">lista = [1, 2]
+
+a, b = lista # a = lista[0], b = lista[1]
+
+print(a, b)
+</code></pre>
+
+<pre><code>1 2
+</code></pre>
+<ul>
+<li>przykład: zamiana zmiennych</li>
+</ul>
+<pre><code class="python">a, b = b, a # a, b = tuple(b, a)
+
+print(a, b)
+</code></pre>
+
+<pre><code>2 1
+</code></pre>
+<ul>
+<li>dla porównania przykład zamiany zmiennych w C++</li>
+</ul>
+<pre><code class="cpp">a = a + b - (b = a);
+</code></pre>
+
+<h2 id="splat-czyli-tzw-asterisk"><em>splat</em>, czyli tzw. <em>asterisk</em></h2>
+<hr />
+<pre><code class="python">x = [1, 2, 3]
+
+# print(arg1, arg2, arg3, ..., +opcje)
+
+print(x)  # drukuje listę (1 argument)
+print(*x) # drukuje &quot;rozpakowaną&quot; listę (3 argumenty)
+print(x[0], x[1], x[2]) # równoważny zapis
+</code></pre>
+
+<pre><code>[1, 2, 3]
+1 2 3
+1 2 3
+</code></pre>
+<pre><code class="python">x = &quot;Python&quot;
+
+print(x)
+print(*x) # zip/unzip działa na wszystkich sekwencjach
+</code></pre>
+
+<h2 id="unzip-i-splat"><em>unzip</em> i <em>splat</em></h2>
+<hr />
+<pre><code class="python">lista = [1, 2, 3, 4, 5]
+
+# a, b = lista # ValueError: too many values to unpack (expected 2)
+
+a, *b = lista # a = lista[0], b = reszta
+
+print(a, b)
+</code></pre>
+
+<pre><code>1 [2, 3, 4, 5]
+</code></pre>
+<pre><code class="python">lista = [1, 2, 3, 4, 5]
+
+a, *b, c = lista # a, b[0], b[1], b[2], c
+
+print(a, b, c)
+</code></pre>
+
+<pre><code>1 [2, 3, 4] 5
+</code></pre>
+<h2 id="pakowanie-zip">"Pakowanie" (<em>zip</em>)</h2>
+<hr />
+<pre><code class="python">x = [1, 2, 3]
+y = ['a', 'b', 'c']
+
+zipped = zip(x, y) # pary (x[i], y[i])
+
+print(*zipped)
+</code></pre>
+
+<pre><code>(1, 'a') (2, 'b') (3, 'c')
+</code></pre>
+<pre><code class="python">x = [1, 2, 3]
+y = ['a', 'b', 'c', 'd'] # długość nie ma znaczenia
+
+zipped = zip(x, y) # pary (x[i], y[i])
+
+print(*zipped)
+</code></pre>
+
+<pre><code>(1, 'a') (2, 'b') (3, 'c')
+</code></pre>
+<h2 id="zip-unzip-test"><em>zip</em> / <em>unzip</em> - test</h2>
+<hr />
+<pre><code class="python">x = [1, 2, 3]
+y = [4, 5, 6]
+
+x_copy, y_copy = zip(*zip(x, y))
+
+x == list(x_copy) and y == list(y_copy)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python">print(list(zip(x,y)))
+print(*zip(x,y))
+print(list(zip(*zip(x, y))))
+</code></pre>
+
+<pre><code>[(1, 4), (2, 5), (3, 6)]
+(1, 4) (2, 5) (3, 6)
+[(1, 2, 3), (4, 5, 6)]
+</code></pre>
+<h2 id="paradygmaty-programowania">Paradygmaty programowania</h2>
+<hr />
+<ul>
+<li>w Pythonie możliwe jest:<ul>
+<li>programowanie strukturalne (np. Fortran, C)</li>
+<li>programowanie obiektowe (np. C++, Java)</li>
+<li>programowanie funkcyjne (np. Lisp, Haskell)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="programowanie-strukturalne">Programowanie strukturalne</h2>
+<hr />
+<ul>
+<li>trzy struktury sterujące:<ul>
+<li><em>sekwencja</em> - wykonanie instrukcji w zadanej kolejności</li>
+<li><em>wybór</em> - wykonanie instrukcji w zależności od stanu</li>
+<li><em>iteracja</em> - wykonywanie instrukcji dopóki (nie)spełniony jest warunek</li>
+</ul>
+</li>
+</ul>
+<pre><code class="python">ps_dia = &quot;&quot;&quot;
+digraph {
+    label=&quot;Programowanie strukturalne&quot;
+
+    rankdir=LR;
+
+    start[shape=&quot;box&quot;, style=rounded];
+    end[shape=&quot;box&quot;, style=rounded];
+
+    if[shape=&quot;diamond&quot;, style=&quot;&quot;];
+
+    i1[shape=&quot;box&quot;, style=&quot;&quot;];
+    i2[shape=&quot;box&quot;, style=&quot;&quot;];
+    i3[shape=&quot;box&quot;, style=&quot;&quot;];
+
+    start -&gt; i1;
+    i1 -&gt; if;
+    if -&gt; i2[label=&quot;nie&quot;];
+    if -&gt; i3[label=&quot;tak&quot;];
+    i3 -&gt; end;
+    i2 -&gt; i3;
+}
+&quot;&quot;&quot;
+
+from graphviz import Source
+</code></pre>
+
+<pre><code class="python">Source(ps_dia)
+</code></pre>
+
+<p><img alt="svg" src="../js-python_w03_files/js-python_w03_22_0.svg" /></p>
+<h2 id="instrukcja-blokowa">Instrukcja blokowa</h2>
+<hr />
+<ul>
+<li>wydzielona część kodu źródłowego (traktowana jak pojedyncza instrukcja)</li>
+<li>w C++ wykorzystuje się klamry</li>
+</ul>
+<pre><code class="cpp">int x = 0;
+
+{
+    int y = 10; // zmienna lokalna
+    x = y + 2;
+}
+
+cout &lt;&lt; x; // OK
+cout &lt;&lt; y; // ERROR: nieznana zmienna
+
+</code></pre>
+
+<h2 id="skadnia-pythona">Składnia Pythona</h2>
+<hr />
+<ul>
+<li>instrukcje blokowe wprowadza się za pomocą wcięć</li>
+</ul>
+<pre><code class="cpp">// przykład C++
+double bezpieczne_dzielenie (int a, int b)
+{
+    if (b != 0) return a / b;
+    else return 0;
+}
+</code></pre>
+
+<pre><code class="py"># przykład Python
+def bezpieczne_dzielenie (a, b):
+    if b != 0:
+        return a / b
+    else:
+        return 0
+</code></pre>
+
+<h2 id="wciecia">Wcięcia</h2>
+<hr />
+<ul>
+<li>spacje (zalecane) lub tabulacje</li>
+<li>w Pythonie 3 nie wolno mieszać (w Pythonie 2 się nie zaleca)</li>
+<li>najczęściej wcięce = 4 spacje (czytelność)</li>
+<li>wiele edytorów umożliwia zamianę <em>tab</em> na spacje</li>
+</ul>
+<h2 id="instrukcja-warunkowa-if">Instrukcja warunkowa <em>if</em></h2>
+<hr />
+<ul>
+<li>wykonaj instrukcje, jeśli spełniony jest warunek</li>
+</ul>
+<pre><code class="py">if warunek: # zwróć uwagę na :
+    instrukcja1
+    instrukcja2
+    ...
+</code></pre>
+
+<pre><code class="python">if 2 &gt; 1:
+    print(&quot;2 jest większe od 1&quot;)
+</code></pre>
+
+<pre><code>2 jest większe od 1
+</code></pre>
+<h2 id="instrukcja-warunkowa-if-else">Instrukcja warunkowa <em>if else</em></h2>
+<hr />
+<ul>
+<li>wykonaj instrukcje, jeśli spełniony jest warunek, lub wykonaj inne instrukcje</li>
+</ul>
+<pre><code class="py">if warunek:
+    instrukcja1
+    instrukcja2
+    ...
+else:
+    instrukcja3
+    instrukcja4
+    ...
+</code></pre>
+
+<pre><code class="python">if 2 &gt; 3:
+    print(&quot;2 jest większe od 3&quot;)
+else:
+    print(&quot;2 nie jest większe od 3&quot;)
+</code></pre>
+
+<pre><code>2 nie jest większe od 3
+</code></pre>
+<h2 id="instrukcja-warunkowa-if-elif-else">Instrukcja warunkowa <em>if elif else</em></h2>
+<hr />
+<ul>
+<li>wykonaj jeśli, lub wykonaj jeśli, ..., lub wykonaj</li>
+</ul>
+<pre><code class="py">if warunek1:
+    instrukcja1
+    instrukcja2
+    ...
+elif warunek2:
+    instrukcja3
+    instrukcja4
+    ...
+.
+.
+.
+else:
+    instrukcja5
+    instrukcja6
+</code></pre>
+
+<h2 id="instrukcja-warunkowa-if-elif-else_1">Instrukcja warunkowa <em>if elif else</em></h2>
+<hr />
+<pre><code class="python">if 2 &gt; 3:
+    print(&quot;2 jest większe od 3&quot;)
+elif 2 == 3:
+    print(&quot;2 jest równe 3&quot;)
+else:
+    print(&quot;2 jest mniejsze od 3&quot;)
+</code></pre>
+
+<pre><code>2 jest mniejsze od 3
+</code></pre>
+<h2 id="if-przykad"><em>if</em> - przykład</h2>
+<hr />
+<pre><code class="python">print(&quot;Podaj liczbę:&quot;, end=' ')
+
+raw_x = input() # pobierz stringa z wejścia standardowego
+x = eval(raw_x) # zinterpretuj jako wyrażenie Pythona
+
+# x % 2 zwraca resztę z dzielenia
+# każda wartość != 0 jest traktowana jako prawda
+if x % 2:
+    print(&quot;Podana liczba jest nieparzysta.&quot;)
+else:
+    print(&quot;Podana liczba jest parzysta.&quot;)
+</code></pre>
+
+<pre><code>Podaj liczbę: 2
+Podana liczba jest parzysta.
+</code></pre>
+<h2 id="dygresja-input-vs-raw_input">Dygresja: <em>input</em> vs <em>raw_input</em></h2>
+<hr />
+<ul>
+<li>w Pythonie 2<ul>
+<li><em>raw_input</em> pobiera "surowego" stringa</li>
+<li><em>input</em> dodatkowo go parsuje</li>
+</ul>
+</li>
+<li>w Pythonie 3<ul>
+<li><em>input</em> pobiera "surowego" stringa</li>
+<li><em>eval(input)</em> odtworzy zachowanie <em>input</em> z Pythona 2</li>
+</ul>
+</li>
+</ul>
+<h2 id="dygresja-input-i-eval">Dygresja: <em>input</em> i <em>eval</em></h2>
+<hr />
+<pre><code class="python">help(input)
+</code></pre>
+
+<pre><code>Help on method raw_input in module ipykernel.kernelbase:
+
+raw_input(prompt='') method of ipykernel.ipkernel.IPythonKernel instance
+    Forward raw_input to frontends
+
+    Raises
+    ------
+    StdinNotImplentedError if active frontend doesn't support stdin.
+</code></pre>
+<pre><code class="python">type(input()) # pobiera wejście jako string
+</code></pre>
+
+<pre><code>2
+
+
+
+
+
+str
+</code></pre>
+<h2 id="dygresja-input-i-eval_1">Dygresja: <em>input</em> i <em>eval</em></h2>
+<hr />
+<pre><code class="python">help(eval)
+</code></pre>
+
+<pre><code>Help on built-in function eval in module builtins:
+
+eval(source, globals=None, locals=None, /)
+    Evaluate the given source in the context of globals and locals.
+
+    The source may be a string representing a Python expression
+    or a code object as returned by compile().
+    The globals must be a dictionary and locals can be any mapping,
+    defaulting to the current globals and locals.
+    If only globals is given, locals defaults to it.
+</code></pre>
+<pre><code class="python">type(eval(input())) # parsuje wejście jako komendę
+</code></pre>
+
+<pre><code>2
+
+
+
+
+
+int
+</code></pre>
+<h2 id="iteratory">Iteratory</h2>
+<hr />
+<ul>
+<li>iterator wskazuje element sekwencji oraz umożliwia dostęp do następnego</li>
+</ul>
+<pre><code class="python">help(iter)
+</code></pre>
+
+<pre><code>Help on built-in function iter in module builtins:
+
+iter(...)
+    iter(iterable) -&gt; iterator
+    iter(callable, sentinel) -&gt; iterator
+
+    Get an iterator from an object.  In the first form, the argument must
+    supply its own iterator, or be a sequence.
+    In the second form, the callable is called until it returns the sentinel.
+</code></pre>
+<h2 id="iteriterable"><em>iter(iterable)</em></h2>
+<hr />
+<pre><code class="python">lista = ['a', 'b', 'c', 'd'] # zwykła lista
+
+it = iter(lista) # iterator listy (wskazuje na początek)
+
+print(next(it)) # zwraca 1 element i przesuwa &quot;wskaźnik&quot;
+print(next(it)) # zwraca 2 element i przesuwa &quot;wskaźnik&quot;
+print(next(it)) # zwraca 3 element i przesuwa &quot;wskaźnik&quot;
+print(next(it)) # zwraca 4 element i przesuwa &quot;wskaźnik&quot;
+</code></pre>
+
+<pre><code>a
+b
+c
+d
+</code></pre>
+<h2 id="itercallable-sentinel"><em>iter(callable, sentinel)</em></h2>
+<hr />
+<pre><code class="python">i = 0
+
+# funkcje omówimy w przyszłości
+def funkcja():
+    &quot;&quot;&quot;Z każdym wywołaniem zwraca kolejną liczbę całkowitą.&quot;&quot;&quot;
+    global i # użyj globalnej zmiennej i
+    i += 1   # zwiększ
+    return i # i zwróć
+
+# kolejne wartości zwracane przez funkcję
+# iterowane aż zwróci 4
+it = iter(funkcja, 4)
+
+print(next(it))
+print(next(it))
+print(next(it))
+# print(next(it)) # StopIteration
+</code></pre>
+
+<pre><code>1
+2
+3
+</code></pre>
+<h2 id="petla-for">Pętla <em>for</em></h2>
+<hr />
+<ul>
+<li>pętla po sekwencji</li>
+<li>np. w Pascalu pętla po (ayrtmetycznym) ciągu liczb</li>
+<li>np. w C++ obie możliwości</li>
+</ul>
+<pre><code class="cpp">// przykład w C++
+for (unsigned int i = 0; i &lt; N; i++)
+{
+    // wykonaj coś na i-tym elemencie
+}
+for (auto it = v.begin(); it != v.end(); ++it)
+{
+    // wykonaj coś na iteratorze it
+}
+</code></pre>
+
+<h2 id="for-po-liscie"><em>for</em> po liście</h2>
+<hr />
+<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+
+for element in lista: # pętla po liście, w każdym kroku
+    print(element)    # element zmienia swoją wartość
+</code></pre>
+
+<pre><code>a
+b
+c
+d
+</code></pre>
+<h2 id="for-krok-po-kroku"><em>for</em> "krok po kroku"</h2>
+<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+
+it = iter(lista)
+
+element = next(it)
+print(element)
+element = next(it)
+print(element)
+element = next(it)
+print(element)
+element = next(it)
+print(element)
+</code></pre>
+
+<pre><code>a
+b
+c
+d
+</code></pre>
+<h2 id="for-i-next"><em>for</em> i <em>next</em></h2>
+<hr />
+<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+
+it = iter(lista)
+
+# pętla po iteratorze it
+# wewnątrz &quot;ręcznie&quot; wywołujemy next()
+for i in it:
+    print(&quot;i = &quot; + str(i))
+    print(&quot;next(it) = &quot; + str(next(it)))
+</code></pre>
+
+<pre><code>i = a
+next(it) = b
+i = c
+next(it) = d
+</code></pre>
+<h2 id="for-po-wycinkach"><em>for</em> po wycinkach</h2>
+<hr />
+<pre><code class="python">lista = ['a', 'b', 'c', 'd']
+
+for element in lista[-2:]:
+    print(element, end=' ')
+</code></pre>
+
+<pre><code>c d
+</code></pre>
+<pre><code class="python">for i in range(10)[::2]:
+    print(i, end=' ')
+</code></pre>
+
+<pre><code>0 2 4 6 8
+</code></pre>
+<h2 id="for-po-krotce"><em>for</em> po krotce</h2>
+<hr />
+<pre><code class="python">krotka = ('a', 'b', 'c', 'd')
+
+for element in krotka: # pętla po krotce
+    print(element)     # działa jak po liście
+</code></pre>
+
+<pre><code>a
+b
+c
+d
+</code></pre>
+<h2 id="for-po-stringu"><em>for</em> po stringu</h2>
+<hr />
+<pre><code class="python">slowo = &quot;Python&quot;
+
+for litera in slowo: # pętla po stringu
+    print(litera)    # iteruje po literach
+</code></pre>
+
+<pre><code>P
+y
+t
+h
+o
+n
+</code></pre>
+<h2 id="for-po-range"><em>for</em> po range</h2>
+<hr />
+<pre><code class="python">for liczba in range(5): # pętla po range
+    print(liczba)       # &quot;odpowiednik&quot; for (i = 0; ...)
+</code></pre>
+
+<pre><code>0
+1
+2
+3
+4
+</code></pre>
+<h2 id="kontrola-przepywu-przykad-1">Kontrola przepływu - przykład 1</h2>
+<hr />
+<pre><code class="python">lista = [1, 2.0, 'Python', 4, 1j]
+
+for element in lista:
+    if type(element) is not str: # nie drukuj stringów
+        print(element) # zwróć uwage na wcięcia
+</code></pre>
+
+<pre><code>1
+2.0
+4
+1j
+</code></pre>
+<h2 id="kontrola-przepywu-przykad-2">Kontrola przepływu - przykład 2</h2>
+<hr />
+<pre><code class="python">lista = [1, 2.0, 'Python', 4, 1j]
+
+for element in lista:
+    if type(element) is str:   # tylko dla stringów
+        for litera in element: # pętla po stringu
+            print(litera) # zwróć uwagę na wcięcia
+</code></pre>
+
+<pre><code>P
+y
+t
+h
+o
+n
+</code></pre>
+<h2 id="kontrola-przepywu-przykad-3">Kontrola przepływu - przykład 3</h2>
+<hr />
+<pre><code class="python">lista = [1, 2.0, 'Python', 4, 1j]
+
+for i in range(len(lista)): # pętla indeksach od 0 do len(lista)
+    print(str(i + 1) + &quot;. &quot; + str(lista[i])) # mało czytelne...
+</code></pre>
+
+<pre><code>1. 1
+2. 2.0
+3. Python
+4. 4
+5. 1j
+</code></pre>
+<h2 id="unzip-i-for"><em>unzip</em> i <em>for</em></h2>
+<hr />
+<pre><code class="python">lista = [[1, 'a'], [2, 'b'], [3, 'c']]
+
+for cyfra, litera in lista: # cyfra, litera = &quot;lista[i]&quot;
+    print(str(cyfra) + &quot;. &quot; + litera)
+</code></pre>
+
+<pre><code>1. a
+2. b
+3. c
+</code></pre>
+<pre><code class="python">cyfry = [1, 2, 3]
+litery = ['a', 'b', 'c']
+
+for cyfra, litera in zip(cyfry, litery):
+    print(str(cyfra) + &quot;. &quot; + litera) 
+</code></pre>
+
+<pre><code>1. a
+2. b
+3. c
+</code></pre>
+<h2 id="enumerate"><em>enumerate</em></h2>
+<hr />
+<pre><code class="python">lista = ['a', 'b', 'c']
+
+list(enumerate(lista)) # tworzy pary (indeks, element)
+</code></pre>
+
+<pre><code>[(0, 'a'), (1, 'b'), (2, 'c')]
+</code></pre>
+<pre><code class="python">for index, element in enumerate(lista):
+    print(str(index + 1) + &quot;. &quot; + element)
+</code></pre>
+
+<pre><code>1. a
+2. b
+3. c
+</code></pre>
+<h2 id="petla-while">Pętla <em>while</em></h2>
+<hr />
+<ul>
+<li>wykonuj blok instrukcji dopóki warunek jest spełniony</li>
+</ul>
+<pre><code class="py">while warunek:
+    instrukcje
+</code></pre>
+
+<ul>
+<li>przykład:</li>
+</ul>
+<pre><code class="python">i = 0
+
+while i &lt; 5: # wykonuj dopóki i &lt; 5
+    i += 1   # bez tego mamy nieskończoną pętlę
+    print(i, end=' ')
+</code></pre>
+
+<pre><code>1 2 3 4 5
+</code></pre>
+<h2 id="while-przykad"><em>while</em> - przykład</h2>
+<hr />
+<pre><code class="python">n = input(&quot;Podaj liczbę całkowitą: &quot;)
+
+if n.isdigit():
+    print(&quot;Twoja liczba to:&quot;, n)
+else:
+    print(n, &quot;nie jest liczbą całkowitą...&quot;)
+</code></pre>
+
+<pre><code>Podaj liczbę całkowitą: 23
+Twoja liczba to: 23
+</code></pre>
+<h2 id="while-przykad_1"><em>while</em> - przykład</h2>
+<hr />
+<pre><code class="python">n = input(&quot;Podaj liczbę całkowitą: &quot;)
+
+while not n.isdigit():
+    n = input(&quot;Spróbuj jeszcze raz: &quot;)
+
+print(&quot;Twoja liczba to:&quot;, n)
+</code></pre>
+
+<pre><code>Podaj liczbę całkowitą: a
+Spróbuj jeszcze raz: 2
+Twoja liczba to: 2
+</code></pre>
+<h2 id="while-nieskonczona-petla"><em>while</em> - nieskończona pętla</h2>
+<hr />
+<pre><code class="py">i = 1
+
+while i != 10:
+    i += 2
+</code></pre>
+
+<h2 id="dodatkowe-instrukcje-sterujace">Dodatkowe instrukcje sterujące</h2>
+<hr />
+<ul>
+<li><em>break</em> - przerwij pętlę</li>
+<li><em>continue</em> - przerwij obecną iterację</li>
+<li><em>pass</em> - nie rób nic</li>
+<li><em>else</em> - wykonuj jeśli pętla zakończyła się inaczej niż <em>break</em></li>
+</ul>
+<h2 id="break"><em>break</em></h2>
+<hr />
+<pre><code class="python">for i in range(10): # drukuj liczby z range(10)
+    print(i, end=' ')
+    if i &gt; 5:       # przerwij pętlę jeśli i &gt; 5
+        break
+</code></pre>
+
+<pre><code>0 1 2 3 4 5 6
+</code></pre>
+<pre><code class="python">i = 0
+
+while True:   # wykonuj w niekończoność
+    print(i, end=' ')
+    if i &gt; 5: # przerwij pętlę jeśli i &gt; 5
+        break
+    i += 1    # bez tego byłaby nieskończona pętla zer 
+</code></pre>
+
+<pre><code>0 1 2 3 4 5 6
+</code></pre>
+<h2 id="continue"><em>continue</em></h2>
+<hr />
+<pre><code class="python">for i in range(10):
+    if i % 2:    # jeśli i jest nieparzyste
+        continue # pomiń
+    print(i, end=' ')
+</code></pre>
+
+<pre><code>0 2 4 6 8
+</code></pre>
+<ul>
+<li>znowu uwaga na nieskończone <em>while</em></li>
+</ul>
+<pre><code class="py">i = 0
+
+# pętla wydrukuje 0 i utknie na 1
+while i &lt; 10: 
+    if i % 2:
+        continue
+    print(i, end=' ')
+    i += 1
+</code></pre>
+
+<h2 id="pass"><em>pass</em></h2>
+<hr />
+<pre><code class="python">for i in range(10):
+    if i % 2:    # jeśli i jest nieparzyste
+        pass     # nie rób nic
+    else:        # w innej sytuacji drukuj
+        print(i, end=' ')
+</code></pre>
+
+<pre><code>0 2 4 6 8
+</code></pre>
+<pre><code class="python">i = 0
+
+# w praktyce napisalibyśmy: if not i % 2: print...
+while i &lt; 10:
+    if i % 2:
+        pass
+    else:
+        print(i, end=' ')
+    i += 1
+</code></pre>
+
+<pre><code>0 2 4 6 8
+</code></pre>
+<h2 id="else"><em>else</em></h2>
+<hr />
+<pre><code class="python">for i in range(10):
+    if i &lt; 5: # drukuj mniejsze od 5
+        print(i, end=' ')
+    else:     # dla pozosyałych nie rób nic
+        pass
+else: # wykonaj po zakończeniu pętli
+    print(&quot;Koniec pętli.&quot;)
+</code></pre>
+
+<pre><code>0 1 2 3 4 Koniec pętli.
+</code></pre>
+<pre><code class="python">for i in range(10):
+    if i &lt; 5: # drukuj mniejsze od 5
+        print(i, end=' ')
+    else:     # przerwij pętlę
+        break
+else: # pętla nie doszła do końca przez break
+    print(&quot;Koniec pętli.&quot;)
+</code></pre>
+
+<pre><code>0 1 2 3 4
+</code></pre>
+<h2 id="formatowanie-tekstu">Formatowanie tekstu</h2>
+<hr />
+<pre><code class="python">help(print)
+</code></pre>
+
+<pre><code>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</code></pre>
+<h2 id="print"><em>print</em></h2>
+<hr />
+<pre><code class="python">a, b, c = 1, 2, 3
+
+print(a, b, c) # domyślnym separatorem jest spacja
+</code></pre>
+
+<pre><code>1 2 3
+</code></pre>
+<pre><code class="python">print(a, b, c, sep='_') # ale można go zmiennić
+</code></pre>
+
+<pre><code>1_2_3
+</code></pre>
+<pre><code class="python"># domślnie print kończy sekwencję nową linią
+# ale można to zmienić
+print(a, b, c, sep=&quot;...&quot;, end=&quot; koniec&quot;)
+</code></pre>
+
+<pre><code>1...2...3 koniec
+</code></pre>
+<h2 id="format-podstawy"><em>format</em> - podstawy</h2>
+<hr />
+<pre><code class="python">x = 2
+
+&quot;x jest równe &quot; + str(x) # skuteczne, ale mało wygodne
+</code></pre>
+
+<pre><code>'x jest równe 2'
+</code></pre>
+<pre><code class="python">x = 2
+
+# klasa string ma metodę format
+&quot;x jest równe {}&quot;.format(x)
+</code></pre>
+
+<pre><code>'x jest równe 2'
+</code></pre>
+<pre><code class="python"># która w miejsce {} wstawia kolejne argumenty
+&quot;x jest równe {}, a x**2 = {}&quot;.format(x, x**2)
+</code></pre>
+
+<pre><code>'x jest równe 2, a x**2 = 4'
+</code></pre>
+<h2 id="format-kolejnosc"><em>format</em> - kolejność</h2>
+<hr />
+<pre><code class="python">x = 2
+y = 2.5
+z = &quot;trzy&quot;
+
+# domślnie pod {} wstawiane są kolejne argument format
+&quot;x, y, z = {}, {}, {}&quot;.format(x, y, z)
+</code></pre>
+
+<pre><code>'x, y, z = 2, 2.5, trzy'
+</code></pre>
+<pre><code class="python"># ale kolejność można zmienić
+&quot;x, y, z = {2}, {0}, {1}&quot;.format(x, y, z)
+</code></pre>
+
+<pre><code>'x, y, z = trzy, 2, 2.5'
+</code></pre>
+<h2 id="format-deklaracja-typu"><em>format</em> - deklaracja typu</h2>
+<hr />
+<pre><code class="python">x = 1234567890
+y = 1234567890.1234567890
+z = &quot;Python&quot;
+
+# z reguły nie ma potrzeby jawnej deklaracji typu
+print(&quot;x, y, z = {}, {}, {}&quot;.format(x, y, z))
+</code></pre>
+
+<pre><code>x, y, z = 1234567890, 1234567890.1234567, Python
+</code></pre>
+<pre><code class="python"># ale można to zrobić
+# d - int; f - float; s - str
+print(&quot;x, y, z = {:d}, {:f}, {:s}&quot;.format(x, y, z))
+</code></pre>
+
+<pre><code>x, y, z = 1234567890, 1234567890.123457, Python
+</code></pre>
+<pre><code class="python"># e - wygodny format dla dużych liczb
+# XeY = X * 10^Y
+print(&quot;x, y, z = {:f}, {:e}, {}&quot;.format(x, y, z))
+</code></pre>
+
+<pre><code>x, y, z = 1234567890.000000, 1.234568e+09, Python
+</code></pre>
+<h2 id="format-dokadnosc"><em>format</em> - dokładność</h2>
+<hr />
+<pre><code class="python">from math import pi
+
+&quot;pi = {}&quot;.format(pi)
+</code></pre>
+
+<pre><code>'pi = 3.141592653589793'
+</code></pre>
+<pre><code class="python"># ograniczamy się do dwóch liczb po przecinku
+&quot;pi = {:.2f}&quot;.format(pi)
+</code></pre>
+
+<pre><code>'pi = 3.14'
+</code></pre>
+<pre><code class="python"># ograniczamy się do 50 liczb po przecinku
+# zwróć uwagę na zera na końcu
+&quot;pi = {:.50f}&quot;.format(pi)
+</code></pre>
+
+<pre><code>'pi = 3.14159265358979311599796346854418516159057617187500'
+</code></pre>
+<h2 id="format-keyword-arguments"><em>format</em>  - keyword arguments</h2>
+<hr />
+<pre><code class="python"># żeby się nie pogubić
+# warto &quot;tagować&quot; kolejne argumenty
+&quot;{student} otrzymał {ocena}&quot;.format(student=&quot;Jan Nowak&quot;, ocena=5)
+</code></pre>
+
+<pre><code>'Jan Nowak otrzymał 5'
+</code></pre>
+<pre><code class="python"># wtedy kolejność nie ma znaczenia
+&quot;{student} otrzymał {ocena}&quot;.format(ocena=5, student=&quot;Jan Nowak&quot;)
+</code></pre>
+
+<pre><code>'Jan Nowak otrzymał 5'
+</code></pre>
+<pre><code class="python"># lista studentów
+studenci = [&quot;Kasia&quot;, &quot;Basia&quot;, &quot;Marek&quot;, &quot;Józek&quot;]
+# każdy element odpowiada liście ocen danego studenta
+dziennik = [[3, 4, 5], [], [5, 3], [3, 2, 2, 2, 2]]
+
+# [znak]^N -&gt; centruj w szerokości N wypełniając [znakiem]
+print(&quot;{:-^42}&quot;.format(&quot;OCENY&quot;), end=&quot;\n\n&quot;)
+
+# enumerate zwraca dwa obiekty: index i parę: (student, oceny)
+for i, (student, oceny) in enumerate(zip(studenci, dziennik)):
+    # policz średnią; chyba że brak ocen
+    if len(oceny):
+        srednia = sum(oceny) / len(oceny)
+    else:
+        srednia = 0
+
+    # {oceny:&lt;15} działa jak ljust; {oceny:&gt;15} działa jak rjust
+    print(&quot;{index}. {imie}: {oceny:&lt;15} =&gt; srednia = {srednia:.1f}&quot;
+          .format(index=i+1,
+                  imie=student,
+                  oceny=str(oceny),
+                  srednia=srednia))
+</code></pre>
+
+<pre><code>------------------OCENY-------------------
+
+1. Kasia: [3, 4, 5]       =&gt; srednia = 4.0
+2. Basia: []              =&gt; srednia = 0.0
+3. Marek: [5, 3]          =&gt; srednia = 4.0
+4. Józek: [3, 2, 2, 2, 2] =&gt; srednia = 2.2
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

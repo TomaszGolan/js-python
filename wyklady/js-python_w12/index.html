@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 12 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w11/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w13-14/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
+            <li><a href="#wykad-12">Wykład 12</a></li>
+            <li><a href="#gui">GUI</a></li>
+            <li><a href="#pierwsze-okienko">PIerwsze okienko</a></li>
+            <li><a href="#tytu-i-wymiary">Tytuł i wymiary</a></li>
+            <li><a href="#klasa-app">Klasa App</a></li>
+            <li><a href="#pierwsza-aplikacja">Pierwsza "aplikacja"</a></li>
+            <li><a href="#centrowanie-aplikacji">Centrowanie aplikacji</a></li>
+            <li><a href="#test">Test</a></li>
+            <li><a href="#pierwszy-frame">Pierwszy Frame</a></li>
+            <li><a href="#pierwszy-kolorowy-frame">Pierwszy kolorowy Frame</a></li>
+            <li><a href="#aplikacja-z-ramka">Aplikacja z ramką</a></li>
+            <li><a href="#klasa-ramka">Klasa ramka</a></li>
+            <li><a href="#przykad">Przykład</a></li>
+            <li><a href="#dwie-ramki">Dwie ramki</a></li>
+            <li><a href="#pakowanie">Pakowanie</a></li>
+            <li><a href="#pakowanie-ramek">Pakowanie ramek</a></li>
+            <li><a href="#pakowanie-ramek-i">Pakowanie ramek I</a></li>
+            <li><a href="#pakowanie-ramek-ii">Pakowanie ramek II</a></li>
+            <li><a href="#pakowanie-ramek-iii">Pakowanie ramek III</a></li>
+            <li><a href="#pierwszy-przycisk">Pierwszy przycisk</a></li>
+            <li><a href="#wiecej-o-command">Więcej o command</a></li>
+            <li><a href="#command-i-argumenty-funkcji">command i argumenty funkcji?</a></li>
+            <li><a href="#wyrazenia-lambda">Wyrażenia lambda</a></li>
+            <li><a href="#wyrazenie-lambda">Wyrażenie lambda</a></li>
+            <li><a href="#wyrazenie-lambda_1">Wyrażenie lambda</a></li>
+            <li><a href="#kolor-ramki">Kolor ramki</a></li>
+            <li><a href="#przycisk-do-koloru">Przycisk do koloru</a></li>
+            <li><a href="#kilka-przyciskow">Kilka przycisków</a></li>
+            <li><a href="#kilka-przyciskow-krocej">Kilka przycisków krócej</a></li>
+            <li><a href="#ukadanie-przyciskow">Układanie przycisków</a></li>
+            <li><a href="#rozciaganie-przyciskow">Rozciąganie przycisków</a></li>
+            <li><a href="#siatka">Siatka</a></li>
+            <li><a href="#rozciaganie-w-siatce">Rozciąganie w siatce</a></li>
+            <li><a href="#pole-tekstowe">Pole tekstowe</a></li>
+            <li><a href="#pole-tekstowe-wstaw">Pole tekstowe - wstaw</a></li>
+            <li><a href="#usuwanie-tekstu">Usuwanie tekstu</a></li>
+            <li><a href="#pobieranie-tekstu">Pobieranie tekstu</a></li>
+            <li><a href="#student-gui">Student GUI</a></li>
+            <li><a href="#gowne-okno-programu">Główne okno programu</a></li>
+            <li><a href="#entries">Entries</a></li>
+            <li><a href="#przycisk-save">Przycisk save</a></li>
+            <li><a href="#test_1">Test</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
+<h2 id="wykad-12">Wykład 12</h2>
+<hr />
+<ul>
+<li>graficzny interfejs użytkownika</li>
+</ul>
+<h2 id="gui">GUI</h2>
+<hr />
+<ul>
+<li><em>Graphical User Interface</em></li>
+<li>Najpopularniejsze biblioteki:<ul>
+<li><strong>Tkinter</strong></li>
+<li>PyQT</li>
+<li>PyGTK</li>
+<li>wxPython</li>
+</ul>
+</li>
+<li>Pełna lista: <a href="https://wiki.python.org/moin/GuiProgramming">link</a></li>
+</ul>
+<h2 id="pierwsze-okienko">PIerwsze okienko</h2>
+<hr />
+<pre><code class="python">import tkinter as tk
+
+# główne okno programu
+# z tytułem, krawędziami itp
+# kontener na resztę
+root = tk.Tk()
+
+# pętla programu - wyłapuje sygnały
+# przerwana przez zamknięcie okna
+# lub wywołanie quit()
+root.mainloop()  
+</code></pre>
+
+<h2 id="tytu-i-wymiary">Tytuł i wymiary</h2>
+<hr />
+<pre><code class="python">root = tk.Tk()
+
+# tytuł okna
+root.title(&quot;Hello World!&quot;)
+
+# szerokość x wysokość + położenie x + położenie y
+root.geometry(&quot;400x300+200+200&quot;)
+
+root.mainloop()
+</code></pre>
+
+<h2 id="klasa-app">Klasa <em>App</em></h2>
+<hr />
+<pre><code class="python">class App(tk.Tk):
+    # App dziedziczy z tkinter.Tk
+    def __init__(self, title=&quot;Aplikacja&quot;):
+        super().__init__() # konstruktor Tk
+        self.title(title)  # ustaw tytuł
+
+    def run(self):
+        # app.run() będzie się lepiej prezentować
+        self.mainloop()
+</code></pre>
+
+<h2 id="pierwsza-aplikacja">Pierwsza "aplikacja"</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Pierwsza aplikacja&quot;)
+
+# app dziedziczy z Tk
+# więc ma dostęp do tych samych funkcji
+
+#app.geometry(&quot;400x300+200+200&quot;)
+
+app.run()
+</code></pre>
+
+<h2 id="centrowanie-aplikacji">Centrowanie aplikacji</h2>
+<hr />
+<pre><code class="python">class App(tk.Tk):
+    def __init__(self, title=&quot;Aplikacja&quot;):
+        super().__init__() # konstruktor Tk
+        #super().option_add(&quot;*font&quot;, &quot;Helvetica 24&quot;)
+        self.title(title)  # ustaw tytuł
+        self.center()      # wyśrodkuj
+
+    def run(self): self.mainloop()
+
+    def center(self):
+        self.update()
+        # szerokość / wysokość okna
+        wx = self.winfo_width()
+        wy = self.winfo_height()
+        # szerokość wysokość ekranu
+        sx = self.winfo_screenwidth()
+        sy = self.winfo_screenheight()
+        # środek ekranu przesunięty o 
+        x = (sx - wx) // 2 # połowę szerokośi
+        y = (sy - wy) // 2 # połowę wysokości
+
+        self.geometry(&quot;{}x{}+{}+{}&quot;.format(wx, wy, x, y))
+</code></pre>
+
+<h2 id="test">Test</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Wyśrodkowana aplikacja&quot;)
+
+app.run()
+</code></pre>
+
+<h2 id="pierwszy-frame">Pierwszy <em>Frame</em></h2>
+<hr />
+<pre><code class="python"># Frame to po prostu prostokątny obszar
+
+root = tk.Tk()
+root.geometry(&quot;400x300+200+200&quot;)
+
+# Frame(parent)
+ramka = tk.Frame(root) # umieść ramkę w root
+# więcej o pack za chwilę
+ramka.pack(fill=tk.BOTH, expand=True)
+
+root.mainloop()
+</code></pre>
+
+<h2 id="pierwszy-kolorowy-frame">Pierwszy kolorowy Frame</h2>
+<hr />
+<pre><code class="python">root = tk.Tk()
+root.geometry(&quot;400x300+200+200&quot;)
+
+# Frame(parent, background=color)
+ramka = tk.Frame(root, background=&quot;red&quot;)
+ramka.pack(fill=tk.BOTH, expand=True)
+
+root.mainloop()
+</code></pre>
+
+<h2 id="aplikacja-z-ramka">Aplikacja z ramką</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+
+# App dziedziczy z tk.Tk
+# więc też może być argumentem Frame(...)
+ramka = tk.Frame(app, background=&quot;red&quot;)
+ramka.pack(fill=tk.BOTH, expand=True)
+
+app.run()
+</code></pre>
+
+<h2 id="klasa-ramka">Klasa ramka</h2>
+<hr />
+<pre><code class="python"># pozwoli zaoszczędzić miejsca na kolejnych slajdach
+
+class Ramka(tk.Frame):
+    # nasza ramka dziedziczy z tkinter.Frame
+    def __init__(self, parent, color=&quot;white&quot;):
+        # wywołaj konstruktor Frame
+        tk.Frame.__init__(self, parent, background=color)
+        # o pack więcej za chwilę
+        self.pack(fill=tk.BOTH, expand=True)
+</code></pre>
+
+<h2 id="przykad">Przykład</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+
+# Ramka inicjuje Frame
+# i się pakuje w App
+ramka = Ramka(app)
+
+app.run()
+</code></pre>
+
+<h2 id="dwie-ramki">Dwie ramki</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+
+
+r1 = Ramka(app) # &quot;white&quot;
+r2 = Ramka(app, &quot;red&quot;)
+
+app.run()
+</code></pre>
+
+<h2 id="pakowanie">Pakowanie</h2>
+<hr />
+<ul>
+<li>do rozmieszczania widgetów służy funkcja <em>widget.pack(opcje)</em></li>
+<li>dostępne opcje:<ul>
+<li><strong>expand</strong> - <em>True</em> / <em>False</em>; domyślnie jak rodzic</li>
+<li><strong>fill</strong> - <em>None</em> (domyślnie) / <em>BOTH</em> / <em>X</em> / <em>Y</em></li>
+<li><strong>side</strong> - z której strony rodzica zacząć układać: <em>TOP</em> (domyślnie) / <em>BOTTOM</em> / <em>LEFT</em> / <em>RIGHT</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="pakowanie-ramek">Pakowanie ramek</h2>
+<hr />
+<pre><code class="python">class Ramka(tk.Frame):
+    # dodajemy argument kluczowy side
+    def __init__(self, parent, color=&quot;white&quot;, side=tk.TOP):
+        tk.Frame.__init__(self, parent, background=color)   
+        self.pack(fill=tk.BOTH, expand=True, side=side)
+</code></pre>
+
+<h2 id="pakowanie-ramek-i">Pakowanie ramek I</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Dwie ramki&quot;)
+
+r1 = Ramka(app, &quot;white&quot;, tk.LEFT)
+r2 = Ramka(app, &quot;red&quot;, tk.RIGHT)
+
+app.run()
+</code></pre>
+
+<h2 id="pakowanie-ramek-ii">Pakowanie ramek II</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Trzy ramki&quot;)
+
+r1 = Ramka(app, &quot;white&quot;, tk.LEFT)
+r2 = Ramka(app, &quot;red&quot;, tk.RIGHT)
+r3 = Ramka(app, &quot;green&quot;, tk.TOP)
+
+app.run()
+</code></pre>
+
+<h2 id="pakowanie-ramek-iii">Pakowanie ramek III</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Trzy ramki&quot;)
+
+r1 = Ramka(app, &quot;green&quot;, tk.TOP) # górna ramka
+r2 = Ramka(app) # dolna ramka
+
+# do dolnej ramki wrzucamy lewą i prawą
+r21 = Ramka(r2, &quot;white&quot;, tk.LEFT)
+r22 = Ramka(r2, &quot;red&quot;, tk.RIGHT)
+
+app.run()
+</code></pre>
+
+<h2 id="pierwszy-przycisk">Pierwszy przycisk</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Aplikacja z przyciskiem&quot;)
+
+ramka = Ramka(app)
+
+# Button(parent, text, command)
+# app.center bez ()
+przycisk = tk.Button(ramka, text=&quot;Center&quot;, command=app.center)
+przycisk.place(x=0, y=0) # pozycja przycisku
+
+app.run()
+</code></pre>
+
+<h2 id="wiecej-o-command">Więcej o <em>command</em></h2>
+<hr />
+<pre><code class="python">def funkcja():
+    return &quot;Hello&quot;
+
+# przypisuje odpowiednią funkcję
+# która będzie wywołana po naciśnięciu
+przycisk1 = tk.Button(command=funkcja)
+
+przycisk1.cget(&quot;command&quot;)
+</code></pre>
+
+<pre><code class="python"># przypisuje wynik zwracany przez funkcję
+przycisk2 = tk.Button(command=funkcja())
+
+przycisk2.cget(&quot;command&quot;)
+</code></pre>
+
+<h2 id="command-i-argumenty-funkcji"><em>command</em> i argumenty funkcji?</h2>
+<hr />
+<ul>
+<li>a co jeśli chcemy, aby przycisk wywoływał funkcję z jakimś argumentem?</li>
+<li>np. mamy dwa przyciski i chcemy, aby jeden zmieniał tło na kolor biały a drugi na czerwony</li>
+<li>chcemy użyć tej samej funkcji, ale z innym argumentem</li>
+<li>wtedy niezbędne jest wykorzystanie wyrażeń lambda</li>
+</ul>
+<h2 id="wyrazenia-lambda">Wyrażenia <em>lambda</em></h2>
+<hr />
+<pre><code class="python">def suma(a, b): # &quot;klasyczna&quot; funkcja
+    return a + b
+</code></pre>
+
+<pre><code class="python">lsuma = lambda a, b: a + b # &quot;anonimowa&quot; funkcja
+</code></pre>
+
+<pre><code class="python">suma(1, 2) # wywołujemy funkcję suma
+</code></pre>
+
+<pre><code class="python">lsuma(1, 2) # wywołujemy wyrażenia lambda
+</code></pre>
+
+<h2 id="wyrazenie-lambda">Wyrażenie <em>lambda</em></h2>
+<hr />
+<pre><code class="python">def suma(a, b):
+    return a + b
+
+suma2 = lambda b: suma(2, b) # dodaj 2
+suma4 = lambda b: suma(4, b) # dodaj 4
+</code></pre>
+
+<pre><code class="python">suma2(1)
+</code></pre>
+
+<pre><code class="python">suma4(1)
+</code></pre>
+
+<h2 id="wyrazenie-lambda_1">Wyrażenie <em>lambda</em></h2>
+<hr />
+<pre><code class="python">def change_color(color=&quot;white&quot;):
+    print(&quot;Zmieniam kolor na:&quot;, color)
+
+ustaw_zielony = lambda: change_color(&quot;zielony&quot;)
+ustaw_niebieski = lambda: change_color(&quot;niebieski&quot;)
+</code></pre>
+
+<pre><code class="python">ustaw_zielony() # change_color(&quot;zielony&quot;)
+</code></pre>
+
+<pre><code class="python">ustaw_niebieski() # change_color(&quot;niebieski&quot;)
+</code></pre>
+
+<h2 id="kolor-ramki">Kolor ramki</h2>
+<hr />
+<pre><code class="python">class Ramka(tk.Frame):
+
+    def __init__(self, parent, color=&quot;white&quot;, side=tk.TOP):
+        tk.Frame.__init__(self, parent, background=color)   
+        self.pack(fill=tk.BOTH, expand=True, side=side)
+
+    def change_color(self, color=&quot;white&quot;):
+        # Frame.config umożliwia zmianę parametrów
+        self.config(bg=color) # bg = background
+</code></pre>
+
+<pre><code class="python">app = App(&quot;Jedna ramka&quot;)
+
+ramka = Ramka(app) # domyślnie biała
+ramka.change_color(&quot;red&quot;) # zmień kolor
+
+app.run()
+</code></pre>
+
+<h2 id="przycisk-do-koloru">Przycisk do koloru</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Przycisk do tła&quot;)
+
+ramka = Ramka(app)
+
+# Button(parent, text, command)
+przycisk = tk.Button(ramka, text=&quot;Red&quot;,
+                     command=lambda: ramka.change_color(&quot;red&quot;))
+przycisk.place(x=0, y=0) # pozycja przycisku
+
+app.run()
+</code></pre>
+
+<h2 id="kilka-przyciskow">Kilka przycisków</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Przyciski v1&quot;)
+
+ramka = Ramka(app)
+
+but_red = tk.Button(ramka, text=&quot;Red&quot;,
+                    command=lambda: ramka.change_color(&quot;red&quot;))
+but_red.place(x=0, y=0) # wpisujemy ręcznie
+
+but_blue = tk.Button(ramka, text=&quot;Blue&quot;,
+                     command=lambda: ramka.change_color(&quot;blue&quot;))
+but_blue.place(x=0, y=50) # absolutne pozycje
+
+but_def = tk.Button(ramka, text=&quot;Default&quot;,
+                    command=lambda: ramka.change_color())
+but_def.place(x=0, y=100) # przycisków
+
+app.run()
+</code></pre>
+
+<h2 id="kilka-przyciskow-krocej">Kilka przycisków krócej</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Przyciski v2&quot;)
+
+ramka = Ramka(app)
+
+# wykorzystamy wyrażenia lambda do generowania przycisków
+button = lambda color: tk.Button(ramka, text=color,
+                                 command=lambda: ramka.change_color(color))
+
+button(&quot;red&quot;).place(x=0, y=0)     # wpisujemy ręcznie
+button(&quot;blue&quot;).place(x=0, y=50)   # absolutne pozycje
+button(&quot;white&quot;).place(x=0, y=100) # przyciskow
+
+app.run()
+</code></pre>
+
+<h2 id="ukadanie-przyciskow">Układanie przycisków</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Przyciski v3&quot;)
+
+ramka = Ramka(app)
+
+button(&quot;red&quot;).pack(side=tk.LEFT)   # pakujemy od lewej
+button(&quot;blue&quot;).pack(side=tk.LEFT)
+button(&quot;white&quot;).pack(side=tk.LEFT)
+
+app.run()
+</code></pre>
+
+<h2 id="rozciaganie-przyciskow">Rozciąganie przycisków</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Przyciski v4&quot;)
+
+ramka = Ramka(app)
+
+# czerwony rozciągamy w poziomie
+button(&quot;red&quot;).pack(side=tk.LEFT, fill=tk.X, expand=True)
+# niebieski ma stały rozmiar
+button(&quot;blue&quot;).pack(side=tk.LEFT)
+# biały rozciądamy w pionie
+button(&quot;white&quot;).pack(side=tk.LEFT, fill=tk.Y, expand=True)
+
+app.run()
+</code></pre>
+
+<h2 id="siatka">Siatka</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Przyciski v5&quot;)
+
+ramka = Ramka(app)
+
+
+# 1 rząd 1 kolumna
+button(&quot;red&quot;).grid(row=0, column=0)
+# 1 rząd 2 kolumna
+button(&quot;blue&quot;).grid(row=0, column=1)
+# 2 rząd 1 kolumna
+button(&quot;white&quot;).grid(row=1, column=0)
+# 2 rząd 2 kolumna
+button(&quot;black&quot;).grid(row=1, column=1)
+
+app.run()
+</code></pre>
+
+<h2 id="rozciaganie-w-siatce">Rozciąganie w siatce</h2>
+<hr />
+<pre><code class="python">from tkinter import N, S, E, W
+
+app = App(&quot;Przyciski v6&quot;)
+
+ramka = Ramka(app)
+
+# 1 rząd 1 kolumna
+button(&quot;red&quot;).grid(row=0, column=0, sticky=N+S+E+W)
+# 1 rząd 2 kolumna
+button(&quot;blue&quot;).grid(row=0, column=1, sticky=N+S+E+W)
+# 2 rząd 1 kolumna
+button(&quot;white&quot;).grid(row=1, column=0, sticky=N+S+E+W)
+# 2 rząd 2 kolumna
+button(&quot;black&quot;).grid(row=1, column=1, sticky=N+S+E+W)
+
+app.run()
+</code></pre>
+
+<h2 id="pole-tekstowe">Pole tekstowe</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Pole tekstowe&quot;)
+
+tekst = tk.Entry(app) # pole tekstowe
+tekst.pack() # domyślne pakowanie
+
+app.run()
+</code></pre>
+
+<h2 id="pole-tekstowe-wstaw">Pole tekstowe - wstaw</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Pole tekstowe - insert&quot;)
+
+tekst = tk.Entry(app)
+tekst.pack(fill=tk.X, expand=True) # rozciągnij w poziomie
+
+# wstaw początkowy tekst
+tekst.insert(0, &quot;Tutaj wpisz cokolwiek...&quot;)
+
+app.run()
+</code></pre>
+
+<h2 id="usuwanie-tekstu">Usuwanie tekstu</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Pole tekstowe - delete&quot;)
+
+tekst = tk.Entry(app)
+tekst.pack(fill=tk.X, expand=True)
+
+tekst.insert(0, &quot;Tutaj wpisz cokolwiek...&quot;)
+
+# Entry.delete usuwa tekst
+przycisk = tk.Button(app, text=&quot;clear&quot;,
+                     command=lambda: tekst.delete(0, tk.END))
+przycisk.pack()
+
+app.run()
+</code></pre>
+
+<h2 id="pobieranie-tekstu">Pobieranie tekstu</h2>
+<hr />
+<pre><code class="python">app = App(&quot;Pole tekstowe - get&quot;)
+
+tekst = tk.Entry(app)
+tekst.pack(fill=tk.X, expand=True)
+
+tekst.insert(0, &quot;Tutaj wpisz cokolwiek...&quot;)
+
+# Entry.get pobiera tekst
+przycisk = tk.Button(app, text=&quot;pobierz&quot;, command=lambda: print(tekst.get()))
+przycisk.pack()
+
+app.run()
+</code></pre>
+
+<h2 id="student-gui">Student GUI</h2>
+<hr />
+<pre><code class="python">class Student:
+
+    def __init__(self, imie, nazwisko, indeks):
+        self._imie = imie
+        self._nazwisko = nazwisko
+        self._indeks = indeks
+
+        self.save() # automatyczny zapis przy tworzeniu studenta
+
+    def save(self):
+        with open(&quot;.&quot;.join([self._imie, self._nazwisko]), 'w') as f:
+            f.write(self._indeks)
+</code></pre>
+
+<h2 id="gowne-okno-programu">Główne okno programu</h2>
+<hr />
+<pre><code class="python">import tkinter as tk
+
+root = tk.Tk()
+#root.option_add(&quot;*font&quot;, &quot;Helvetica 24&quot;)
+root.title(&quot;Student&quot;)
+root.geometry(&quot;800x600+400+300&quot;)
+
+# ramka z tłem, do której będziemy wrzucać pola tekstowe
+ramka = tk.Frame(root, bg=&quot;white&quot;)
+ramka.pack(fill=tk.BOTH, expand=True)
+</code></pre>
+
+<h2 id="entries">Entries</h2>
+<hr />
+<pre><code class="python"># imię
+tk.Label(ramka, text=&quot;Imię: &quot;).grid(row=0, column=0, sticky=&quot;nsew&quot;)
+imie = tk.Entry(ramka)
+imie.grid(row=0, column=1, sticky=&quot;nsew&quot;)
+
+# nazwisko
+tk.Label(ramka, text=&quot;Nazwisko: &quot;).grid(row=1, column=0, sticky=&quot;nsew&quot;)
+nazwisko = tk.Entry(ramka)
+nazwisko.grid(row=1, column=1, sticky=&quot;nsew&quot;)
+
+# numer indeksu
+tk.Label(ramka, text=&quot;Indeks: &quot;).grid(row=2, column=0, sticky=&quot;nsew&quot;)
+indeks = tk.Entry(ramka)
+indeks.grid(row=2, column=1, sticky=&quot;nsew&quot;)
+</code></pre>
+
+<h2 id="przycisk-save">Przycisk <em>save</em></h2>
+<hr />
+<pre><code class="python"># wyrażenie lamba generujące studenta
+# na bazie wpisów w entries
+make_student = lambda: Student(imie.get(), nazwisko.get(), indeks.get())
+
+przycisk = tk.Button(root, text=&quot;save&quot;, command=make_student)
+przycisk.pack()
+</code></pre>
+
+<h2 id="test_1">Test</h2>
+<hr />
+<pre><code class="python">root.mainloop()
+</code></pre>
+
+<pre><code class="python">%%bash
+cat Jan.Kowalski
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

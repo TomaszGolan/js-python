@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 5 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w04/">Wykład 4</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w04/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w06/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezyki-skryptowe-python">Języki skryptowe - Python</a></li>
+            <li><a href="#wykad-5">Wykład 5</a></li>
+            <li><a href="#dygresja-o-main">Dygresja o main</a></li>
+            <li><a href="#timeit">timeit</a></li>
+            <li><a href="#timeit-z-linii-komend">timeit z linii komend</a></li>
+            <li><a href="#timeit-w-jupyter-notebook">timeit w Jupyter Notebook</a></li>
+            <li><a href="#koty-ali">Koty Ali</a></li>
+            <li><a href="#koty-ali-algorytm-i">Koty Ali - algorytm I</a></li>
+            <li><a href="#koty-ali-algorytm-ii">Koty Ali - algorytm II</a></li>
+            <li><a href="#koty-ali-algorytm-iii">Koty Ali - algorytm III</a></li>
+            <li><a href="#koty-ali-algorytm-iv">Koty Ali - algorytm IV</a></li>
+            <li><a href="#range-vs-listrange">range vs list(range)</a></li>
+            <li><a href="#koty-ali-algorytm-v">Koty Ali - algorytm V</a></li>
+            <li><a href="#zozonosc-algorytmu">Złożoność algorytmu</a></li>
+            <li><a href="#wartosc-wielomianu">Wartość wielomianu</a></li>
+            <li><a href="#metoda-naiwna">Metoda naiwna</a></li>
+            <li><a href="#schemat-hornera">Schemat Hornera</a></li>
+            <li><a href="#algorytm-hornera">Algorytm Hornera</a></li>
+            <li><a href="#horner-vs-naive">Horner vs Naive</a></li>
+            <li><a href="#zozonosc-algorytmow">Złożoność algorytmów</a></li>
+            <li><a href="#wkady-od-roznych-czonow">Wkłady od różnych członów</a></li>
+            <li><a href="#wkady-od-roznych-czonow_1">Wkłady od różnych członów</a></li>
+            <li><a href="#wkady-od-roznych-czonow_2">Wkłady od różnych członów</a></li>
+            <li><a href="#wkady-od-roznych-czonow_3">Wkłady od różnych członów</a></li>
+            <li><a href="#wkady-od-roznych-czonow_4">Wkłady od różnych członów</a></li>
+            <li><a href="#notacja-duzego">Notacja dużego &Omicron;</a></li>
+            <li><a href="#notacja-duzego-przykad">Notacja dużego &Omicron; - przykład</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-o1">Przykłady rzędów złożoności - $O(1)$</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on">Przykłady rzędów złożoności - $O(n)$</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on_1">Przykłady rzędów złożoności - $O(n)$</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on-m">Przykłady rzędów złożoności - $O(n + m)$</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on2">Przykłady rzędów złożoności - $O(n^2)$</a></li>
+            <li><a href="#przykady-rzedow-zoznosci-olog-n">Przykłady rzędów złożności - $O(\log n)$</a></li>
+            <li><a href="#porownanie-zozonosci">Porównanie złożoności</a></li>
+            <li><a href="#sortowanie-babelkowe-bubble-sort">Sortowanie bąbelkowe (bubble sort)</a></li>
+            <li><a href="#sortowanie-babelkowe-przykad">Sortowanie bąbelkowe - przykład</a></li>
+            <li><a href="#implementacja">Implementacja</a></li>
+            <li><a href="#krok-po-kroku">Krok po kroku</a></li>
+            <li><a href="#optymalizacja-i">Optymalizacja I</a></li>
+            <li><a href="#optymalizacja-ii">Optymalizacja II</a></li>
+            <li><a href="#zozonosc-bubblesort">Złożoność bubblesort</a></li>
+            <li><a href="#sortowanie-przez-scalanie-mergesort">Sortowanie przez scalanie (mergesort)</a></li>
+            <li><a href="#algorytm-scalania">Algorytm scalania</a></li>
+            <li><a href="#algorytm-scalania-przykad">Algorytm scalania - przykład</a></li>
+            <li><a href="#algorytm-scalania-implementacja">Algorytm scalania - implementacja</a></li>
+            <li><a href="#sortowanie-przez-scalanie-przykad">Sortowanie przez scalanie - przykład</a></li>
+            <li><a href="#sortowanie-przez-scalanie-implementacja">Sortowanie przez scalanie - implementacja</a></li>
+            <li><a href="#krok-po-kroku_1">Krok po kroku</a></li>
+            <li><a href="#krok-po-kroku_2">Krok po kroku</a></li>
+            <li><a href="#zozonosc-mergesort">Złożoność mergesort</a></li>
+            <li><a href="#sortowanie-szybkie-quicksort">Sortowanie szybkie (quicksort)</a></li>
+            <li><a href="#sortowanie-szybkie-przykad">Sortowanie szybkie - przykład</a></li>
+            <li><a href="#sortowanie-szybkie-pivot">Sortowanie szybkie - pivot</a></li>
+            <li><a href="#pivot-wybor">pivot - wybór</a></li>
+            <li><a href="#implementacja-quicksort">Implementacja quicksort</a></li>
+            <li><a href="#mergesort-vs-quicksort">mergesort vs quicksort</a></li>
+            <li><a href="#bubblesort-vs-mergesort-vs-quicksort">bubblesort vs mergesort vs quicksort</a></li>
+            <li><a href="#bubblesort-vs-mergesort-vs-quicksort_1">bubblesort vs mergesort vs quicksort</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezyki-skryptowe-python">Języki skryptowe - Python</h1>
+<h2 id="wykad-5">Wykład 5</h2>
+<hr />
+<ul>
+<li><em>timeit</em>, czyli pythonowy stoper</li>
+<li>złożoność algorytmów + przykłady</li>
+<li>notacja "dużego &Omicron;" (Omicron)</li>
+<li>algorytmy sortowania</li>
+</ul>
+<h2 id="dygresja-o-main">Dygresja o <em><strong>main</strong></em></h2>
+<hr />
+<pre><code class="python">import math
+
+print(__name__)      # nazwa skryptu
+print(math.__name__) # nazwa zaimportowanego modułu
+</code></pre>
+
+<pre><code>__main__
+math
+</code></pre>
+<pre><code class="python"># instrukcje z main
+# z zaimportowanych modułów
+# nie zostaną wywołane
+
+if __name__ == &quot;__main__&quot;:
+    print(&quot;Hello World!&quot;)
+</code></pre>
+
+<pre><code>Hello World!
+</code></pre>
+<h2 id="timeit"><em>timeit</em></h2>
+<hr />
+<pre><code class="python">def silnia(n):
+    &quot;&quot;&quot;Zwraca silnię liczby n.&quot;&quot;&quot;
+    if n &lt; 2:
+        return 1 # 0! = 1, 1! = 1
+    return n*silnia(n - 1)
+</code></pre>
+
+<pre><code class="python">from timeit import timeit
+
+# timeit(funkcja, setup, number) -&gt; czas wykonania funkcji w s
+# funkcja - funkcja do wykonania
+# setup - konfiguracja
+# number - liczba powtórzeń
+timeit(&quot;silnia(10)&quot;, setup=&quot;from __main__ import silnia&quot;, number=10)
+</code></pre>
+
+<pre><code>3.7365999560279306e-05
+</code></pre>
+<pre><code class="python">timeit(&quot;silnia(100)&quot;, setup=&quot;from __main__ import silnia&quot;, number=10)
+</code></pre>
+
+<pre><code>0.0004746449994854629
+</code></pre>
+<h2 id="timeit-z-linii-komend"><em>timeit</em> z linii komend</h2>
+<hr />
+<pre><code class="py"># silnia.py
+
+def silnia(n):
+    &quot;&quot;&quot;Zwraca silnię liczby n.&quot;&quot;&quot;
+    if n &lt; 2:
+        return 1 # 0! = 1, 1! = 1
+    return n*silnia(n - 1)
+</code></pre>
+
+<ul>
+<li>możemy przetestować naszą funkcję z linii komend</li>
+</ul>
+<pre><code>$ python -m timeit -n10 'from silnia import silnia; silnia(10)'
+10 loops, best of 3: 9.11 usec per loop
+</code></pre>
+
+<h2 id="timeit-w-jupyter-notebook"><em>timeit</em> w Jupyter Notebook</h2>
+<hr />
+<pre><code class="python">def silnia(n):
+    &quot;&quot;&quot;Zwraca silnię liczby n.&quot;&quot;&quot;
+    if n &lt; 2:
+        return 1 # 0! = 1, 1! = 1
+    return n*silnia(n - 1)
+</code></pre>
+
+<pre><code class="python">%timeit -n10 silnia(10)
+</code></pre>
+
+<pre><code>10 loops, best of 3: 3.44 µs per loop
+</code></pre>
+<p><strong>Algorytm</strong> - <em>ciąg instrukcji prowadzących do rozwiązania zadania</em></p>
+<hr />
+<p><img alt="Algorytm: egzamin" src="../src/algorytm_egzamin.png" /></p>
+<h2 id="koty-ali">Koty Ali</h2>
+<hr />
+<ul>
+<li>Pierwszego dnia Ala dostała jednego kota. Każdego kolejnego dnia dostaje o jednego więcej niż dnia poprzedniego. Ile kotów ma Ala po <em>n</em> dniach?<ul>
+<li>pierwszy dzień: 1</li>
+<li>drugi dzień: 1 + 1</li>
+<li>trzeci dzień: 1 + 1 + 1
+...</li>
+</ul>
+</li>
+</ul>
+<h2 id="koty-ali-algorytm-i">Koty Ali - algorytm I</h2>
+<hr />
+<pre><code class="python">def licz_koty_v1(n):
+    &quot;&quot;&quot;Zwraca liczbę kotów po n dniach.&quot;&quot;&quot;
+    n_cats = 0                     # Ala nie ma kota
+    for dzien in range(1, n + 1):  # pętla po dniach
+        for koty in range(dzien):  # liczba kotów = nr dnia
+            n_cats += 1            # dodaj kota
+    return n_cats                  # dwie pętle -&gt; n*n operacji
+</code></pre>
+
+<pre><code class="python">%timeit -n3 licz_koty_v1(10000) # liczba kotów po 10 dniach
+</code></pre>
+
+<pre><code>3 loops, best of 3: 4.43 s per loop
+</code></pre>
+<h2 id="koty-ali-algorytm-ii">Koty Ali - algorytm II</h2>
+<hr />
+<pre><code class="python">def licz_koty_v2(n):
+    &quot;&quot;&quot;Zwraca liczbę kotów po n dniach.&quot;&quot;&quot;
+    n_cats = 0                     # Ala nie ma kota
+    for dzien in range(1, n + 1):  # pętla po dniach
+        n_cats += dzien            # dodaj koty (= nr dnia)
+    return n_cats                  # jedna pętla -&gt; n operacji
+</code></pre>
+
+<pre><code class="python">%timeit -n3 licz_koty_v2(10000) # liczba kotów po 10 dniach
+</code></pre>
+
+<pre><code>3 loops, best of 3: 904 µs per loop
+</code></pre>
+<h2 id="koty-ali-algorytm-iii">Koty Ali - algorytm III</h2>
+<hr />
+<pre><code class="python">def licz_koty_v3(n):
+    &quot;&quot;&quot;Zwraca liczbę kotów po n dniach.&quot;&quot;&quot;
+    return n * (n + 1) // 2 # jedna operacja
+</code></pre>
+
+<pre><code class="python">%timeit -n3 licz_koty_v3(10000) # liczba kotów po 10 dniach
+</code></pre>
+
+<pre><code>3 loops, best of 3: 535 ns per loop
+</code></pre>
+<h2 id="koty-ali-algorytm-iv">Koty Ali - algorytm IV</h2>
+<hr />
+<pre><code class="python">def licz_koty_v4(n):
+    &quot;&quot;&quot;Zwraca liczbę kotów po n dniach.&quot;&quot;&quot;
+    koty = list(range(n + 1)) # n zmiennych w pamięci
+    return sum(koty)          # jedna pętla -&gt; n operacji
+</code></pre>
+
+<pre><code class="python">%timeit -n3 licz_koty_v4(10000) # liczba kotów po 10 dniach
+</code></pre>
+
+<pre><code>3 loops, best of 3: 411 µs per loop
+</code></pre>
+<h2 id="range-vs-listrange"><em>range</em> vs <em>list(range)</em></h2>
+<hr />
+<pre><code>$ python -m timeit -n10 'range(1000000)'
+10 loops, best of 3: 0.684 usec per loop
+
+$ python -m timeit -n10 'list(range(1000000))'
+10 loops, best of 3: 52.3 msec per loop
+</code></pre>
+
+<h2 id="koty-ali-algorytm-v">Koty Ali - algorytm V</h2>
+<hr />
+<pre><code class="python">def licz_koty_v5(n):
+    &quot;&quot;&quot;Zwraca liczbę kotów po n dniach.&quot;&quot;&quot;
+    return sum(range(n + 1)) # jedna pętla -&gt; n operacji
+</code></pre>
+
+<pre><code class="python">%timeit -n3 licz_koty_v5(10000) # liczba kotów po 10 dniach
+</code></pre>
+
+<pre><code>3 loops, best of 3: 471 µs per loop
+</code></pre>
+<h2 id="zozonosc-algorytmu">Złożoność algorytmu</h2>
+<hr />
+<ul>
+<li>złożoność czasowa -&gt; liczba operacji</li>
+<li>złożoność pamięciowa -&gt; ilość potrzebnej pamięci</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Alg I</th>
+<th align="center">Alg II</th>
+<th align="center">Alg III</th>
+<th align="center">Alg IV</th>
+<th align="center">Alg V</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">operacje</td>
+<td align="center">$n^2$</td>
+<td align="center">$n$</td>
+<td align="center">$1$</td>
+<td align="center">$n$</td>
+<td align="center">n</td>
+</tr>
+<tr>
+<td align="center">pamięć</td>
+<td align="center">$1$</td>
+<td align="center">$1$</td>
+<td align="center">$1$</td>
+<td align="center">$n$</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">czas</td>
+<td align="center">4.6 s</td>
+<td align="center">973 $\mu$s</td>
+<td align="center">768 ns</td>
+<td align="center">661 $\mu$s</td>
+<td align="center">475 $\mu$s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wartosc-wielomianu">Wartość wielomianu</h2>
+<hr />
+<ul>
+<li>Dany jest wielomian:</li>
+</ul>
+<p>$$ W(x) = a_0 + a_1\cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$$</p>
+<ul>
+<li>Korzystając bezpośrednio z powyższgo wzoru należy wykonać $n$ dodawań oraz $1 + 2 + ... + n  = \frac{n\cdot(n+1)}{2}$ mnożeń</li>
+</ul>
+<h2 id="metoda-naiwna">Metoda naiwna</h2>
+<hr />
+<pre><code class="python">def naive(a, x):
+    &quot;&quot;&quot;Zwraca wartość wielomianu o współczynnikach a w punkcie x.&quot;&quot;&quot;
+    result = 0
+    for i, ai in enumerate(a): # i - indeks, ai - współczynnik a_i
+        result += ai * x**i    # W(x) += a_i * x^i
+    return result
+</code></pre>
+
+<pre><code class="python">a = range(500)
+x = 3.5
+
+naive(a, x)
+</code></pre>
+
+<pre><code>2.1569220024001972e+274
+</code></pre>
+<pre><code class="python">%timeit -n3 naive(a, x)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 259 µs per loop
+</code></pre>
+<h2 id="schemat-hornera">Schemat Hornera</h2>
+<hr />
+<ul>
+<li>Zapisując wielomian w postaci:</li>
+</ul>
+<p>$$W(x) = a_0 + x\cdot(a_1 + x\cdot(a_2 + ... + x\cdot(a_{n-1} + a_n\cdot x)...)$$</p>
+<ul>
+<li>organiczamy się do $n$ dodań i $n$ mnożeń</li>
+</ul>
+<h2 id="algorytm-hornera">Algorytm Hornera</h2>
+<hr />
+<p>$$W(x) = a_0 + x\cdot(a_1 + x\cdot(a_2 + ... + x\cdot(a_{n-1} + a_n\cdot x)...)$$</p>
+<ul>
+<li>Niech</li>
+</ul>
+<p>$$b_n = a_n$$
+$$b_{n-1} = b_n\cdot x + a_{n-1}$$
+$$b_{n-2} = n_{n-1}\cdot x + a_{n-2}$$
+$$...$$
+$$b_1 = b_2\cdot x + a_1$$
+$$b_0 = b_1\cdot x + a_0$$</p>
+<ul>
+<li>$b_0$ - wartość wielomianu</li>
+</ul>
+<h2 id="horner-vs-naive">Horner vs Naive</h2>
+<hr />
+<pre><code class="python">def horner(a, x):
+    &quot;&quot;&quot;Zwraca wartość wielomianu o współczynnikach a w punkcie x.&quot;&quot;&quot;
+    result = 0
+    for w in a[-1::-1]:         # &quot;reverse&quot;
+        result = result * x + w # b_i = b_{i-1} * x + a_i
+    return result
+</code></pre>
+
+<pre><code class="python">a = range(500)
+x = 3.5
+
+horner(a, x)
+</code></pre>
+
+<pre><code>2.156922002400198e+274
+</code></pre>
+<pre><code class="python">%timeit -n3 horner(a, x)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 98.1 µs per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 naive(a, x)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 257 µs per loop
+</code></pre>
+<h2 id="zozonosc-algorytmow">Złożoność algorytmów</h2>
+<hr />
+<ul>
+<li>czas w zależności od rozmiaru danych (N)</li>
+<li>zajęta pamięć (pomijając dane wejściowe)</li>
+<li>najczęściej interesuje nas złożoność asymptotyczna (dla dużych N)</li>
+<li>np. które człony $$f(n) = n^3 +10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)$$ są znaczące?</li>
+</ul>
+<h2 id="wkady-od-roznych-czonow">Wkłady od różnych członów</h2>
+<hr />
+<pre><code class="python">def terms(f):
+    &quot;&quot;&quot;Zwraca kolejne człony funkcji f (oddzielone +).&quot;&quot;&quot;    
+    return [term.strip() for term in f.split('+')]
+</code></pre>
+
+<pre><code class="python">terms(&quot;n**2 + 10*n&quot;)
+</code></pre>
+
+<pre><code>['n**2', '10*n']
+</code></pre>
+<pre><code class="python">def eval_f(f, n = 1):
+    &quot;&quot;&quot;Zwraca wartość funkcji f w punkcie n.&quot;&quot;&quot;
+    return eval(f)
+</code></pre>
+
+<pre><code class="python">eval_f(&quot;n**2 + 10*n&quot;, n = 5)
+</code></pre>
+
+<pre><code>75
+</code></pre>
+<h2 id="wkady-od-roznych-czonow_1">Wkłady od różnych członów</h2>
+<hr />
+<pre><code class="python">def eval_terms(*terms, n = 1):
+    &quot;&quot;&quot;Zwraca wartości kolejnych członów w punkcie n.&quot;&quot;&quot;
+    return [eval_f(term, n) for term in terms]
+</code></pre>
+
+<pre><code class="python">eval_f(&quot;n**2&quot;, n = 5), eval_f(&quot;10*n&quot;, n = 5)
+</code></pre>
+
+<pre><code>(25, 50)
+</code></pre>
+<pre><code class="python">eval_terms(*terms(&quot;n**2 + 10*n&quot;), n = 5)
+</code></pre>
+
+<pre><code>[25, 50]
+</code></pre>
+<h2 id="wkady-od-roznych-czonow_2">Wkłady od różnych członów</h2>
+<hr />
+<pre><code class="python">def print_cell(cell, width=10):
+    &quot;&quot;&quot;Drukuje pojedynczą komórkę w tabeli.&quot;&quot;&quot;
+    print(str(cell).rjust(width), end=' |')
+
+def table_head(f, width=10):
+    &quot;&quot;&quot;Drukuje pierwsze rząd tabeli.&quot;&quot;&quot;
+    print_cell(&quot;n&quot;, width)
+    for term in terms(f):
+        print_cell(term, width)
+    print(&quot;\n&quot; + &quot;-&quot; * width * (len(terms(f)) + 2))
+</code></pre>
+
+<pre><code class="python">table_head(&quot;n**2 + 10*n&quot;)
+</code></pre>
+
+<pre><code>         n |      n**2 |      10*n |
+----------------------------------------
+</code></pre>
+<h2 id="wkady-od-roznych-czonow_3">Wkłady od różnych członów</h2>
+<hr />
+<pre><code class="python">def f_as_table(f, *args, width=10):
+    &quot;&quot;&quot;Drukuje tabelę z procentowym wkładem każdego członu.&quot;&quot;&quot;
+    table_head(f, width)
+    for n in args:
+        print_cell(n, width)
+        f_val = eval_f(f, n)
+        for term in eval_terms(*terms(f), n = n):
+            print_cell(round(term / f_val * 100), width)
+        print()
+</code></pre>
+
+<pre><code class="python">f_as_table(&quot;n**2 + 10*n&quot;, 1, 10, 100, width=5)
+</code></pre>
+
+<pre><code>    n | n**2 | 10*n |
+--------------------
+    1 |    9 |   91 |
+   10 |   50 |   50 |
+  100 |   91 |    9 |
+</code></pre>
+<h2 id="wkady-od-roznych-czonow_4">Wkłady od różnych członów</h2>
+<hr />
+<p>$$f(n) = n^3 +10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)$$</p>
+<pre><code class="python">from math import log
+
+n = [10**i for i in range(5)]
+f_as_table(&quot;n**3 + 10*n**2 + 100*n + 1000*log(n)&quot;, *n, width=12)
+</code></pre>
+
+<pre><code>           n |        n**3 |     10*n**2 |       100*n | 1000*log(n) |
+------------------------------------------------------------------------
+           1 |           1 |           9 |          90 |           0 |
+          10 |          19 |          19 |          19 |          43 |
+         100 |          90 |           9 |           1 |           0 |
+        1000 |          99 |           1 |           0 |           0 |
+       10000 |         100 |           0 |           0 |           0 |
+</code></pre>
+<h2 id="notacja-duzego">Notacja dużego &Omicron;</h2>
+<hr />
+<ul>
+<li>Funkcja $f(n)$ jest $O(g(n))$, jeśli istnieją liczby dodatnie $c$ i $n_0$, takie że:</li>
+</ul>
+<p>$$\forall_{n&gt;n_0} ~~~~~ f(n) &lt; c\cdot g(n)$$</p>
+<ul>
+<li>Jeśli $f_1(n) \in O(g(n))$ i $f_2(n) \in O(g(n))$, to:</li>
+</ul>
+<p>$$f_1(n) + f_2(n) \in O(g(n))$$
+$$f_1(n) \cdot f_2(n) \in O(g^2(n))$$</p>
+<h2 id="notacja-duzego-przykad">Notacja dużego &Omicron; - przykład</h2>
+<hr />
+<pre><code class="python">import numpy as np
+import matplotlib.pyplot as plt
+from math import log
+
+n = np.arange(1, 50, 1) # kolejne liczby naturalne
+f = [n**3 + 10*n**2 + 100*n + 1000*log(n) for n in n] # wartości f(n)
+g = [2*n**3 for n in n] # wartości g(n)
+
+f_plot, = plt.plot(n, f, 'rs', label=&quot;$f(n) = n^3 + 10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)$&quot;)
+g_plot, = plt.plot(n, g, 'bo', label=&quot;$g(n) = 2\cdot n^3$&quot;)
+
+legend = plt.legend(handles=[f_plot, g_plot], loc=2)
+
+line = plt.plot((22, 22), (0, 150000), 'k--')
+
+label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&quot;
+                            &quot;$f(n) \in O(n^3)$&quot;, fontsize=20)
+</code></pre>
+
+<pre><code class="python">plt.show()
+</code></pre>
+
+<p><img alt="png" src="../js-python_w05_files/js-python_w05_64_0.png" /></p>
+<h2 id="przykady-rzedow-zozonosci-o1">Przykłady rzędów złożoności - $O(1)$</h2>
+<hr />
+<ul>
+<li>Proste operacje: arytmetyczne, logiczne, porównania, przypisania, dostęp do struktury danych</li>
+</ul>
+<pre><code class="python">def constant(n):
+    return n*n # jedna operacja -&gt; O(1)
+</code></pre>
+
+<h2 id="przykady-rzedow-zozonosci-on">Przykłady rzędów złożoności - $O(n)$</h2>
+<hr />
+<pre><code class="python">def linear(n):
+    result = 0 # 1 * operacja
+    for element in n:     # n * operacja
+        result += element # n * operacja
+        result *= 0.1     # n * operacja
+    return suma
+</code></pre>
+
+<ul>
+<li>ostatecznie mamy $3n + 1$ operacji, więc złożoność asymptotyczna -&gt; $O(n)$</li>
+</ul>
+<h2 id="przykady-rzedow-zozonosci-on_1">Przykłady rzędów złożoności - $O(n)$</h2>
+<hr />
+<pre><code class="python">def linear(n):
+    for element in n:
+        if element == 0:
+            return True
+    return False
+</code></pre>
+
+<ul>
+<li>złożoność asymptotyczna -&gt; $O(n)$</li>
+<li>może być lepsza (nawet $O(1)$), ale w najgorszym wypadku będzie <em>n</em> operacji</li>
+</ul>
+<h2 id="przykady-rzedow-zozonosci-on-m">Przykłady rzędów złożoności - $O(n + m)$</h2>
+<hr />
+<pre><code class="python">def linear(n, m):
+    result = 0
+
+    for element in n:
+        result += element
+
+    for element in n:
+        result += element
+
+    return result
+</code></pre>
+
+<ul>
+<li>dwie pętle: $O(n)$ i $O(m)$</li>
+<li>złożoność asymptotyczna $O(n+m)$</li>
+</ul>
+<h2 id="przykady-rzedow-zozonosci-on2">Przykłady rzędów złożoności - $O(n^2)$</h2>
+<hr />
+<pre><code class="python">def quadratic(n):
+    result = 0
+    for i in range(n):
+        for j in range(i, n):
+            result += 1
+    return result
+</code></pre>
+
+<ul>
+<li>pętla zewnętrzna -&gt; $n$ razy</li>
+<li>pętla wewnętrzna -&gt; $(n-i)$ razy</li>
+<li>w sumie $1 + 2 + ... + n = \frac{n\cdot(n + 1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n$</li>
+<li>złożoność asymptotyczna: $O(n^2) + O(n) = O(n^2)$</li>
+</ul>
+<h2 id="przykady-rzedow-zoznosci-olog-n">Przykłady rzędów złożności - $O(\log n)$</h2>
+<hr />
+<pre><code class="python">def logarithmic(n):
+    result = 0
+    while n &gt; 1:
+        n //= 2
+        result += 1
+    return result
+</code></pre>
+
+<ul>
+<li>w każdej iteracji zmniejszamy $n$ dwukrotnie</li>
+<li>jeśli $n = 2^x$, to wykonamy $\log n$ operacji</li>
+<li>algorytm jest $O(\log n)$</li>
+</ul>
+<h2 id="porownanie-zozonosci">Porównanie złożoności</h2>
+<hr />
+<pre><code class="python">import numpy as np
+import matplotlib.pyplot as plt
+from math import log
+
+n = np.arange(1, 100, 1)  # kolejne liczby naturalne
+f = [n for n in n]        # zależność liniowa
+g = [n**2 for n in n]     # zależność kwadratowa
+h = [log(n) for n in n]   # zależność logarytmiczna
+i = [n*log(n) for n in n] # zależność liniowo-logarytmiczna
+
+g_plot, = plt.plot(n, g, 'b.', label=&quot;$n^2$&quot;)
+i_plot, = plt.plot(n, i, 'k.', label=&quot;$n\log n$&quot;)
+f_plot, = plt.plot(n, f, 'r.', label=&quot;$n$&quot;)
+h_plot, = plt.plot(n, h, 'g.', label=&quot;$\log n$&quot;)
+
+plt.yscale(&quot;log&quot;)
+
+legend = plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+</code></pre>
+
+<pre><code class="python">plt.show()
+</code></pre>
+
+<p><img alt="png" src="../js-python_w05_files/js-python_w05_84_0.png" /></p>
+<pre><code class="python"># na wszelki wypadek do testów sortowania dużych tablic
+import sys
+sys.setrecursionlimit(10000)
+</code></pre>
+
+<h2 id="sortowanie-babelkowe-bubble-sort">Sortowanie bąbelkowe (<em>bubble sort</em>)</h2>
+<hr />
+<ol>
+<li>porównuj cyklicznie dwa sąsiadujące elementy</li>
+<li>zmień kolejność jeśli zaburzają porządek</li>
+<li>przerwij, jeśli nie ma co zmieniać</li>
+</ol>
+<h2 id="sortowanie-babelkowe-przykad">Sortowanie bąbelkowe - przykład</h2>
+<hr />
+<p>[<b style='color:red'>3</b>, <b style='color:red'>6</b>, 4, 2] --&gt; [3, <b style='color:blue'>6</b>, <b style='color:blue'>4</b>, 2] --&gt; [3, 4, <b style='color:blue'>6</b>, <b style='color:blue'>2</b>] --&gt; [3, 4, 2, 6]</p>
+<p>[<b style='color:red'>3</b>, <b style='color:red'>4</b>, 2, 6] --&gt; [3, <b style='color:blue'>4</b>, <b style='color:blue'>2</b>, 6] --&gt; [3, 2, <b style='color:red'>4</b>, <b style='color:red'>6</b>] --&gt; [3, 2, 4, 6]</p>
+<p>[<b style='color:blue'>3</b>, <b style='color:blue'>2</b>, 4, 6] --&gt; [2, <b style='color:red'>3</b>, <b style='color:red'>4</b>, 6] --&gt; [2, 3, <b style='color:red'>4</b>, <b style='color:red'>6</b>] --&gt; [2, 3, 4, 6]</p>
+<p>[<b style='color:red'>2</b>, <b style='color:red'>3</b>, 4, 6] --&gt; [2, <b style='color:red'>3</b>, <b style='color:red'>4</b>, 6] --&gt; [2, 3, <b style='color:red'>4</b>, <b style='color:red'>6</b>] --&gt; [2, 3, 4, 6]</p>
+<p><em>(brak zmian -&gt; koniec)</em></p>
+<h2 id="implementacja">Implementacja</h2>
+<hr />
+<pre><code class="python">def bubblesort(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    n = len(lst) # liczba elementów
+    while True:  # powtarzaj do break
+        swapped = False # ustaw flagę na fałsz
+        for i in range(n-1): # pętla od 0 do n-2
+            if lst[i] &gt; lst[i+1]: # porządek zaburzony
+                lst[i], lst[i+1] = lst[i+1], lst[i] # podmień
+                swapped = True # ustaw flagę na prawdę
+        if not swapped: # przerwij jeśli nie było zmian
+            break
+</code></pre>
+
+<pre><code class="python">x = [3, 6, 4, 2]
+
+bubblesort(x)
+
+print(x)
+</code></pre>
+
+<pre><code>[2, 3, 4, 6]
+</code></pre>
+<h2 id="krok-po-kroku">Krok po kroku</h2>
+<hr />
+<pre><code class="python">def bubblesort_v1(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    n = len(lst) # liczba elementów
+    while True:  # powtarzaj do break
+        swapped = False # ustaw flagę na fałsz
+        print(lst, end=' ')
+        for i in range(n-1): # pętla od 0 do n-2
+            if lst[i] &gt; lst[i+1]: # porządek zaburzony
+                lst[i], lst[i+1] = lst[i+1], lst[i] # podmień
+                swapped = True # ustaw flagę na prawdę
+            print(&quot;-&gt;&quot;, lst, end=' ')
+        print()
+        if not swapped: # przerwij jeśli nie było zmian
+            break
+</code></pre>
+
+<pre><code class="python">bubblesort_v1([3, 6, 4, 2])
+</code></pre>
+
+<pre><code>[3, 6, 4, 2] -&gt; [3, 6, 4, 2] -&gt; [3, 4, 6, 2] -&gt; [3, 4, 2, 6] 
+[3, 4, 2, 6] -&gt; [3, 4, 2, 6] -&gt; [3, 2, 4, 6] -&gt; [3, 2, 4, 6] 
+[3, 2, 4, 6] -&gt; [2, 3, 4, 6] -&gt; [2, 3, 4, 6] -&gt; [2, 3, 4, 6] 
+[2, 3, 4, 6] -&gt; [2, 3, 4, 6] -&gt; [2, 3, 4, 6] -&gt; [2, 3, 4, 6]
+</code></pre>
+<h2 id="optymalizacja-i">Optymalizacja I</h2>
+<hr />
+<pre><code class="python">def bubblesort_v2(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    n = len(lst) # liczba elementów
+    while True:  # powtarzaj do break
+        swapped = False # ustaw flagę na fałsz
+        print(lst, end=' ')
+        for i in range(n-1): # pętla od 0 do n-2
+            if lst[i] &gt; lst[i+1]: # porządek zaburzony
+                lst[i], lst[i+1] = lst[i+1], lst[i] # podmień
+                swapped = True # ustaw flagę na prawdę
+            print(&quot;-&gt;&quot;, lst, end=' ')
+        print()
+        if not swapped: # przerwij jeśli nie było zmian
+            break
+        n -= 1 # n-te przejście -&gt; n-ty największy na miejscu
+</code></pre>
+
+<pre><code class="python">bubblesort_v2([3, 6, 4, 2])
+</code></pre>
+
+<pre><code>[3, 6, 4, 2] -&gt; [3, 6, 4, 2] -&gt; [3, 4, 6, 2] -&gt; [3, 4, 2, 6] 
+[3, 4, 2, 6] -&gt; [3, 4, 2, 6] -&gt; [3, 2, 4, 6] 
+[3, 2, 4, 6] -&gt; [2, 3, 4, 6] 
+[2, 3, 4, 6]
+</code></pre>
+<h2 id="optymalizacja-ii">Optymalizacja II</h2>
+<hr />
+<pre><code class="python">def bubblesort_v3(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    n = len(lst) # liczba elementów
+    while n &gt; 0:
+        new_n = 0 # miejsce ostatniej zmiany
+        print(lst, end=' ')
+        for i in range(n-1): # pętla od 0 do n-2
+            if lst[i] &gt; lst[i+1]: # porządek zaburzony
+                lst[i], lst[i+1] = lst[i+1], lst[i] # podmień
+                new_n = i + 1 # indeks ostatniej zmiany
+            print(&quot;-&gt;&quot;, lst, end=' ')
+        print(&quot;new_n =&quot;, new_n)
+        n = new_n # ostatnie przejście -&gt; reszta musi być na miejscu
+</code></pre>
+
+<pre><code class="python">bubblesort_v3([3, 6, 4, 2])
+</code></pre>
+
+<pre><code>[3, 6, 4, 2] -&gt; [3, 6, 4, 2] -&gt; [3, 4, 6, 2] -&gt; [3, 4, 2, 6] new_n = 3
+[3, 4, 2, 6] -&gt; [3, 4, 2, 6] -&gt; [3, 2, 4, 6] new_n = 2
+[3, 2, 4, 6] -&gt; [2, 3, 4, 6] new_n = 1
+[2, 3, 4, 6] new_n = 0
+</code></pre>
+<h2 id="zozonosc-bubblesort">Złożoność <em>bubblesort</em></h2>
+<hr />
+<ul>
+<li>$n$ operacji -&gt; co najmniej ostatni na swoim miejscu</li>
+<li>$(n-1)$ operacji -&gt; dwa ostatnie na swoim miejscu</li>
+<li>$(n-2)$ operacji -&gt; trzy na swoim miejscu itd...</li>
+<li>$n + (n-1) + (n-2) + ... = O(n^2)$</li>
+</ul>
+<h2 id="sortowanie-przez-scalanie-mergesort">Sortowanie przez scalanie (<em>mergesort</em>)</h2>
+<hr />
+<ul>
+<li>podziel nieposortowaną listę na $n$ "podlist" zawierających po jednym elemencie</li>
+<li>cyklicznie <em>scalaj</em> "podlisty" w posortowane "podlisty", aż zostanie jedna</li>
+</ul>
+<p>Start: [3, 6, 4, 2]</p>
+<p>Split: [3] [6] [4] [2]</p>
+<p>Merge: [3, 6] [2, 4]</p>
+<p>Merge: [2, 3, 4, 6]</p>
+<h2 id="algorytm-scalania">Algorytm scalania</h2>
+<hr />
+<ul>
+<li>mając dwie uporządkowane listy</li>
+<li>porównaj skrajne elementy i mniejszy zapisz w liście wyjściowej</li>
+<li>powtarzaj dopóki jedna z list się nie skończy</li>
+<li>resztę dopisz na koniec wyjściowej listy</li>
+</ul>
+<h2 id="algorytm-scalania-przykad">Algorytm scalania - przykład</h2>
+<hr />
+<p>[<b style='color:blue'>1</b>, 6, 7] + [<b style='color:red'>2</b>, 3, 4, 5, 8, 9] --&gt; [1]</p>
+<p>[<b style='color:red'>6</b>, 7] + [<b style='color:blue'>2</b>, 4, 5, 8, 9] --&gt; [1, 2]</p>
+<p>[<b style='color:red'>6</b>, 7] + [<b style='color:blue'>3</b>, 4, 5, 8, 9] --&gt; [1, 2, 3]</p>
+<p>[<b style='color:red'>6</b>, 7] + [<b style='color:blue'>4</b>, 5, 8, 9] --&gt; [1, 2, 3, 4]</p>
+<p>[<b style='color:red'>6</b>, 7] + [<b style='color:blue'>5</b>, 8, 9] --&gt; [1, 2, 3, 4, 5]</p>
+<p>[<b style='color:red'>6</b>, 7] + [<b style='color:blue'>8</b>, 9] --&gt; [1, 2, 3, 4, 5, 6]</p>
+<p>[<b style='color:blue'>7</b>] + [<b style='color:red'>8</b>, 9] --&gt; [1, 2, 3, 4, 5, 6, 7]</p>
+<p>[] + [8, 9] --&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+<h2 id="algorytm-scalania-implementacja">Algorytm scalania - implementacja</h2>
+<hr />
+<pre><code class="python">def merge(A, B):
+    &quot;&quot;&quot;Scala posortowane listy zachowując porządek elementów.&quot;&quot;&quot;
+    result = [] # scalona lista
+    while len(A) and len(B): # dopoki obie mają elementy
+        # dodaj mniejszy element (usuwając go jednocześnie z listy)
+        if A[0] &lt; B[0]:
+            result.append(A.pop(0))
+        else:
+            result.append(B.pop(0))
+
+    result.extend(A) # dodaj resztę 
+    result.extend(B) # (jeśli została)
+
+    return result
+</code></pre>
+
+<pre><code class="python">merge([1, 6, 7], [2, 3, 4, 5, 8, 9])
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<h2 id="sortowanie-przez-scalanie-przykad">Sortowanie przez scalanie - przykład</h2>
+<hr />
+<p>Start: [1, 4, 2, 5, 6, 3, 9, 7, 8]</p>
+<p>Split: [1] [4] [2] [5] [6] [3] [9] [7] [8]</p>
+<p>Merge: [1, 4] [2, 5] [3, 6] [7, 9] [8]</p>
+<p>Merge: [1, 2, 4, 5] [3, 6, 7, 9] [8]</p>
+<p>Merge: [1, 2, 3, 4, 5, 6, 7, 9] [8]</p>
+<p>Merge: [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+<h2 id="sortowanie-przez-scalanie-implementacja">Sortowanie przez scalanie - implementacja</h2>
+<hr />
+<pre><code class="python">def mergesort(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    if len(lst) &lt; 2: # lista jednoelementowa
+        return lst   # nie wymaga sortowania
+
+    middle = len(lst) // 2 # środek listy
+
+    left = mergesort(lst[:middle])  # dziel na dwie części
+    right = mergesort(lst[middle:]) # i wywołaj merge_sort (rekurencja)
+
+    return merge(left, right) # scal dwie listy
+</code></pre>
+
+<pre><code class="python">mergesort([1, 4, 2, 5, 6, 3, 9, 7, 8])
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<h2 id="krok-po-kroku_1">Krok po kroku</h2>
+<hr />
+<pre><code class="python">def mergesort_p(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    if len(lst) &lt; 2: # lista jednoelementowa
+        return lst   # nie wymaga sortowania
+
+    middle = len(lst) // 2 # środek listy
+
+    left = mergesort_p(lst[:middle])  # dziel na dwie części
+    right = mergesort_p(lst[middle:]) # i wywołaj merge_sort (rekurencja)
+
+    # drukuj obecny stan
+    # użyj kopii, żeby nie modyfikowac tablic
+    print(&quot;left =&quot;, left, &quot;\tright =&quot;, right,
+          &quot;\t--&gt;&quot;, merge(left.copy(), right.copy()))
+
+    return merge(left, right) # scal dwie listy
+</code></pre>
+
+<h2 id="krok-po-kroku_2">Krok po kroku</h2>
+<hr />
+<pre><code class="python">mergesort_p([1, 4, 2, 5, 6, 3, 9, 7, 8])
+</code></pre>
+
+<pre><code>left = [1]  right = [4]     --&gt; [1, 4]
+left = [2]  right = [5]     --&gt; [2, 5]
+left = [1, 4]   right = [2, 5]  --&gt; [1, 2, 4, 5]
+left = [6]  right = [3]     --&gt; [3, 6]
+left = [7]  right = [8]     --&gt; [7, 8]
+left = [9]  right = [7, 8]  --&gt; [7, 8, 9]
+left = [3, 6]   right = [7, 8, 9]   --&gt; [3, 6, 7, 8, 9]
+left = [1, 2, 4, 5]     right = [3, 6, 7, 8, 9]     --&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<h2 id="zozonosc-mergesort">Złożoność <em>mergesort</em></h2>
+<hr />
+<ul>
+<li>$\log_2 n + 1$ <em>poziomów</em></li>
+<li>na każdym $n$ operacji</li>
+<li>złożoność czasowa -&gt; $O(n\cdot\log n)$</li>
+<li>złożoność pamięciowa -&gt; $O(n)$</li>
+</ul>
+<h2 id="sortowanie-szybkie-quicksort">Sortowanie szybkie (<em>quicksort</em>)</h2>
+<hr />
+<ul>
+<li>wybierz element rozdzielający (<em>pivot</em>)</li>
+<li>elementy nie większe przenieś "na lewo", resztę "na prawo"</li>
+<li>powtórz rekurencyjnie dla części "lewej" i "prawej"</li>
+</ul>
+<h2 id="sortowanie-szybkie-przykad">Sortowanie szybkie - przykład</h2>
+<hr />
+<p>[1, 4, 2, 5, <strong>6</strong>, 3, 9, 7, 8] -&gt; [<font style='color:blue'>1, 4, 2, 5, 3</font>, <strong>6</strong>, <font style='color:green'>9, 7, 8</font>]</p>
+<p><font style='color:blue'>[1, 4, <strong>2</strong>, 5, 3]</font> -&gt; [1, <strong>2</strong>, <font style='color:red'>4, 5, 3</font>]</p>
+<p><font style='color:red'>[4, <strong>5</strong>, 3]</font> -&gt; [<font style='color:purple'>4, 3</font>, <strong>5</strong>]</p>
+<p><font style='color:purple'>[4, <strong>3</strong>]</font> -&gt; [<strong>3</strong>, 4]</p>
+<p><font style='color:green'>[9, <strong>7</strong>, 8]</font> -&gt; [<strong>7</strong>, <font style='color:orange'>9, 8</font>]</p>
+<p><font style='color:orange'>[<strong>9</strong>, 8]</font> -&gt; [8, <strong>9</strong>]</p>
+<h2 id="sortowanie-szybkie-pivot">Sortowanie szybkie - <em>pivot</em></h2>
+<hr />
+<ul>
+<li>kluczowy jest wybór elementu rozdzielającego </li>
+<li>przeciętnie, złożoność algorytmu $O(n\cdot\log n)$, gdy dzielimy dane na mniej więcej dwa równe podzbiory</li>
+<li>gdy <em>pivot</em> jest wartością skrajną, to mamy jeden podzbiór $1$-elementowy i drugi $(n-1)$-elementowy; wtedy złożoność algorytmu $O(n^2)$</li>
+</ul>
+<h2 id="pivot-wybor"><em>pivot</em> - wybór</h2>
+<hr />
+<ul>
+<li>stały element: brzeg lub środek -&gt; kiepski wybór</li>
+<li>losowy -&gt; teoretycznie kiepski, ale w praktyce się sprawdza</li>
+<li>mediana -&gt; dobry wybór, ale kosztowny</li>
+<li><em>mediana z trzech</em> -&gt; mediana z pierwszego, ostatniego i środkowego</li>
+</ul>
+<h2 id="implementacja-quicksort">Implementacja <em>quicksort</em></h2>
+<hr />
+<pre><code class="python"># &quot;jednolinijkowy if&quot;- niezalecany (na potrzeby slajdu)
+def quicksort(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    if not len(lst): return lst # nie ma co sortować
+
+    left, middle, right = [], [], [] # mniejsze, równe, większe
+
+    pivot = lst[0] # kiepski wybór
+
+    for x in lst:
+        if x &lt; pivot: left.append(x)
+        elif x &gt; pivot: right.append(x)
+        else: middle.append(x)
+
+    # wywołaj rekurencyjnie dla &quot;lewej&quot; i &quot;prawej&quot; części
+    return quicksort(left) + middle + quicksort(right)
+</code></pre>
+
+<pre><code class="python">quicksort([1, 4, 2, 5, 6, 3, 9, 7, 8])
+</code></pre>
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<h2 id="mergesort-vs-quicksort"><em>mergesort</em> vs <em>quicksort</em></h2>
+<hr />
+<pre><code class="python">import random
+
+# 1000 losowych liczb od 0 do 999
+x = random.sample(range(10000), 10000) 
+y = x.copy()
+</code></pre>
+
+<pre><code class="python">%timeit -n3 quicksort(x)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 44.7 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 mergesort(y)
+</code></pre>
+
+<pre><code>3 loops, best of 3: 114 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 quicksort(list(range(1000)))
+</code></pre>
+
+<pre><code>3 loops, best of 3: 97.1 ms per loop
+</code></pre>
+<pre><code class="python">%timeit -n3 mergesort(list(range(1000)))
+</code></pre>
+
+<pre><code>3 loops, best of 3: 5.73 ms per loop
+</code></pre>
+<h2 id="bubblesort-vs-mergesort-vs-quicksort"><em>bubblesort</em> vs <em>mergesort</em> vs <em>quicksort</em></h2>
+<hr />
+<pre><code class="python">def bubblesort(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    n = len(lst) # liczba elementów
+    while n &gt; 0:
+        new_n = 0 # miejsce ostatniej zmiany
+        for i in range(n-1): # pętla od 0 do n-2
+            if lst[i] &gt; lst[i+1]: # porządek zaburzony
+                lst[i], lst[i+1] = lst[i+1], lst[i] # podmień
+                new_n = i + 1 # indeks ostatniej zmiany
+        n = new_n # ostatnie przejście -&gt; reszta musi być na miejscu
+
+def merge(A, B):
+    &quot;&quot;&quot;Scala posortowane listy zachowując porządek elementów.&quot;&quot;&quot;
+    result = [] # scalona lista
+    while len(A) and len(B): # dopoki obie mają elementy
+        # dodaj mniejszy element (usuwając go jednocześnie z listy)
+        if A[0] &lt; B[0]:
+            result.append(A.pop(0))
+        else:
+            result.append(B.pop(0))
+
+    result.extend(A) # dodaj resztę 
+    result.extend(B) # (jeśli została)
+
+    return result
+
+def mergesort(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    if len(lst) &lt; 2: # lista jednoelementowa
+        return lst   # nie wymaga sortowania
+
+    middle = len(lst) // 2 # środek listy
+
+    left = mergesort(lst[:middle])  # dziel na dwie części
+    right = mergesort(lst[middle:]) # i wywołaj merge_sort (rekurencja)
+
+    return merge(left, right) # scal dwie listy
+
+def quicksort(lst):
+    &quot;&quot;&quot;Sortuje podaną listę.&quot;&quot;&quot;
+    if not len(lst): # nie ma co sortować
+        return lst
+
+    left = []   # elementy mniejsze
+    middle = [] # elementy równe
+    right = []  # elementy większe
+
+    pivot = lst[0] # kiepski wybór
+
+    for x in lst:
+        if x &lt; pivot: left.append(x)
+        elif x &gt; pivot: right.append(x)
+        else: middle.append(x)
+
+    # wywołaj rekurencyjnie dla &quot;lewej&quot; i &quot;prawej&quot; części
+    return quicksort(left) + middle + quicksort(right)
+</code></pre>
+
+<pre><code class="python">from timeit import timeit
+import random
+
+sizes = [10, 50, 100, 500, 1000, 5000, 10000]
+bsort, msort, qsort = [], [], [] # wyniki timeit
+
+for size in sizes:
+    x = random.sample(range(size), size)
+    y = x.copy()
+    z = x.copy()
+
+    bs = timeit(&quot;bubblesort(x)&quot;, number=1,
+                setup=&quot;from __main__ import bubblesort, x&quot;)
+
+    ms = timeit(&quot;mergesort(y)&quot;, number=1,
+                setup=&quot;from __main__ import mergesort, y&quot;)
+
+    qs = timeit(&quot;quicksort(z)&quot;, number=1,
+                setup=&quot;from __main__ import quicksort, z&quot;)
+
+    bsort.append(bs)
+    msort.append(ms)
+    qsort.append(qs)
+</code></pre>
+
+<h2 id="bubblesort-vs-mergesort-vs-quicksort_1"><em>bubblesort</em> vs <em>mergesort</em> vs <em>quicksort</em></h2>
+<hr />
+<pre><code class="python">import matplotlib.pyplot as plt
+
+bs = plt.plot(sizes, bsort, 'bo', label=&quot;bubble&quot;)
+ms = plt.plot(sizes, msort, 'ro', label=&quot;merge&quot;)
+qs = plt.plot(sizes, qsort, 'go', label=&quot;quick&quot;)
+
+plt.xscale(&quot;log&quot;)
+plt.yscale(&quot;log&quot;)
+
+legend = plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+
+plt.show()
+</code></pre>
+
+<p><img alt="png" src="../js-python_w05_files/js-python_w05_133_0.png" /></p>
+<pre><code class="python"># css prezentacji
+
+from IPython.display import display, HTML
+
+s = &quot;&quot;&quot;
+
+&lt;style&gt;
+
+.rendered_html code {
+  font-size: 75%;
+}
+
+&lt;/style&gt;
+
+&quot;&quot;&quot;
+
+display(HTML(s))
+</code></pre>
+
+<style>
+
+.rendered_html code {
+  font-size: 75%;
+}
+
+</style></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

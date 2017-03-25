@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Wykład 4 - Języki skryptowe - Python (2016/17)</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Języki skryptowe - Python (2016/17)</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wykłady <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../js-python_w01/">Wykład 1</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w02/">Wykład 2</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w03/">Wykład 3</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Wykład 4</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w05/">Wykład 5</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w06/">Wykład 6</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w07/">Wykład 7</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w08/">Wykład 8</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w09/">Wykład 9</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w10/">Wykład 10</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w11/">Wykład 11</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w12/">Wykład 12</a>
+</li>
+                            
+<li >
+    <a href="../js-python_w13-14/">Wykłady powtórkowe</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listy zadań <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../listy/js-python_l01/">Lista 1</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l02/">Lista 2</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l03/">Lista 3</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l04/">Lista 4</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l05/">Lista 5</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l06/">Lista 6</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l07/">Lista 7</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l08/">Lista 8</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l09/">Lista 9</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l10/">Lista 10</a>
+</li>
+                            
+<li >
+    <a href="../../listy/js-python_l11/">Lista dodatkowa</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kolokwia/Egzaminy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_01/">Kolokwium na 3 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona3_02/">Kolokwium na 3 grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_kolona4_01/">Kolokwium na 4 grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_01/">Egzamin grupa I</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_02/">Egzamin grupa II</a>
+</li>
+                            
+<li >
+    <a href="../../egzaminy/2016_egz_03/">Egzamin grupa III</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../js-python_w03/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-python_w05/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jezki-skryptowe-python">Jęzki skryptowe - Python</a></li>
+            <li><a href="#wykad-4">Wykład 4</a></li>
+            <li><a href="#zozone-typy-danych">Złożone typy danych</a></li>
+            <li><a href="#sownik-dict">Słownik (dict)</a></li>
+            <li><a href="#sownik-przez-konstruktor">Słownik przez konstruktor</a></li>
+            <li><a href="#sownik-dostep-do-wartosci">Słownik - dostęp do wartości</a></li>
+            <li><a href="#sowniki-dostep-do-wartosci">Słowniki - dostęp do wartości</a></li>
+            <li><a href="#sowniki-dostep-do-wartosci_1">Słowniki - dostęp do wartości</a></li>
+            <li><a href="#sownik-klucze-i-wartosci">Słownik - klucze i wartości</a></li>
+            <li><a href="#sownik-python-2-vs-3">Słownik - Python 2 vs 3</a></li>
+            <li><a href="#sownik-modyfikacja-kluczy">Słownik - modyfikacja kluczy</a></li>
+            <li><a href="#sownik-usuwanie-kluczy">Słownik - usuwanie kluczy</a></li>
+            <li><a href="#sownik-dodawanie-kluczy">Słownik  - dodawanie kluczy</a></li>
+            <li><a href="#petla-po-sowniku">Pętla po słowniku</a></li>
+            <li><a href="#przykad-tworzenie-sownika">Przykład - tworzenie słownika</a></li>
+            <li><a href="#sownik-w-sowniku">Słownik w słowniku</a></li>
+            <li><a href="#funkcje">Funkcje</a></li>
+            <li><a href="#definiowanie-funkcji">Definiowanie funkcji</a></li>
+            <li><a href="#funkcja-hello-world">Funkcja "Hello World"</a></li>
+            <li><a href="#argumenty-funkcji">Argumenty funkcji</a></li>
+            <li><a href="#argumenty-funkcji_1">Argumenty funkcji</a></li>
+            <li><a href="#argumenty-ze-sowem-kluczowym">Argumenty ze słowem kluczowym</a></li>
+            <li><a href="#mieszanie-argumentow">Mieszanie argumentów</a></li>
+            <li><a href="#domyslne-wartosci-argumentow">Domyślne wartości argumentów</a></li>
+            <li><a href="#domyslne-wartosci-argumentow_1">Domyślne wartości argumentów</a></li>
+            <li><a href="#domyslne-wartosci-argumentow_2">Domyślne wartości argumentów</a></li>
+            <li><a href="#argumenty-niemutowalne">Argumenty "niemutowalne"</a></li>
+            <li><a href="#argumenty-mutowalne">Argumenty "mutowalne"</a></li>
+            <li><a href="#mutowalna-wartosc-domyslna">"Mutowalna" wartość domyślna</a></li>
+            <li><a href="#obejscie-problemu">Obejście problemu</a></li>
+            <li><a href="#dowolna-liczba-argumentow-pozycyjnych">Dowolna liczba argumentów (pozycyjnych)</a></li>
+            <li><a href="#args-i-key">*args i key</a></li>
+            <li><a href="#przykad">Przykład</a></li>
+            <li><a href="#dowolna-liczba-argumentow-kluczowych">Dowolna liczba argumentów (kluczowych)</a></li>
+            <li><a href="#forsowanie-argumentow-kluczowych">Forsowanie argumentów kluczowych</a></li>
+            <li><a href="#forsowanie-argumentow-kluczowych_1">Forsowanie argumentów kluczowych</a></li>
+            <li><a href="#forsowanie-argumentow-kluczowych_2">Forsowanie argumentów kluczowych</a></li>
+            <li><a href="#przykad_1">Przykład</a></li>
+            <li><a href="#argumenty-ze-sownika">Argumenty ze słownika</a></li>
+            <li><a href="#funkcja-jako-rezultat-funkcji">Funkcja jako rezultat funkcji</a></li>
+            <li><a href="#wynik-funkcji-jako-argument-funkcji">Wynik funkcji jako argument funkcji</a></li>
+            <li><a href="#funkcja-jako-argument-funkcji">Funkcja jako argument funkcji</a></li>
+            <li><a href="#zmienne-globalne">Zmienne globalne</a></li>
+            <li><a href="#zmienne-globalne_1">Zmienne globalne</a></li>
+            <li><a href="#rekurencja">Rekurencja</a></li>
+            <li><a href="#rekurencja-silnia">Rekurencja - silnia</a></li>
+            <li><a href="#dokumentacja">Dokumentacja</a></li>
+            <li><a href="#dokumentowanie-wasnych-funkcji">Dokumentowanie własnych funkcji</a></li>
+            <li><a href="#dokumentacja-pep-257">Dokumentacja (PEP 257)</a></li>
+            <li><a href="#opis">Opis</a></li>
+            <li><a href="#dokumentowanie-zmiennych">Dokumentowanie zmiennych</a></li>
+            <li><a href="#wyrazenie-lambda">Wyrażenie lambda</a></li>
+            <li><a href="#wyrazenie-lambda_1">Wyrażenie lambda</a></li>
+            <li><a href="#wyrazenie-lambda_2">Wyrażenie lambda</a></li>
+            <li><a href="#funkcja-main">Funkcja main</a></li>
+            <li><a href="#funkcja-main_1">Funkcja main</a></li>
+            <li><a href="#funkcja-main_2">Funkcja main</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jezki-skryptowe-python">Jęzki skryptowe - Python</h1>
+<h2 id="wykad-4">Wykład 4</h2>
+<hr />
+<ul>
+<li>typy mapujące: <em>dict</em></li>
+<li>funkcje</li>
+<li>dokumentacja</li>
+<li>wyrażenie lambda</li>
+</ul>
+<h2 id="zozone-typy-danych">Złożone typy danych</h2>
+<hr />
+<ul>
+<li>typy sekwencyjne ("mutowalne"): <em>list</em></li>
+<li>typy sekwencyjne ("niemutowalne"): <em>tuple</em>, <em>range</em>, <em>str</em></li>
+</ul>
+<hr />
+<ul>
+<li>typy mapujące ("mutowalne"): <em>dict</em></li>
+</ul>
+<h2 id="sownik-dict">Słownik (<em>dict</em>)</h2>
+<hr />
+<ul>
+<li>mapuje obiekty hashowalne (<em>hashable</em>) w dowolne obiekty, czyli: <em>klucz: wartość</em><ul>
+<li><em>klucz</em> - stały hash</li>
+<li><em>wartość</em> - dowolny obiekt</li>
+</ul>
+</li>
+<li>np. krotka może być kluczem, ale lista już nie</li>
+<li>słowniki tworzymy umieszczając oddzielone przecinkiem pary <em>key: value</em> w nawiasach klamrowych, np.</li>
+</ul>
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'Kasia': 7236, 'Basia': 5286, 'Darek': 7738, 'Marek': 9807}
+</code></pre>
+<h2 id="sownik-przez-konstruktor">Słownik przez konstruktor</h2>
+<hr />
+<pre><code class="python"># {key1: value1, key2: value2...}
+a = {&quot;jeden&quot;: 1, &quot;dwa&quot;: 2, &quot;trzy&quot;: 3}
+# dict(key1=value1, key2=value2...)
+b = dict(jeden=1, dwa=2, trzy=3) 
+# dict([(key1, value1), (key2, value2)...])
+c = dict(zip([&quot;jeden&quot;, &quot;dwa&quot;, &quot;trzy&quot;], [1, 2, 3]))
+# dict(słownik)
+d = dict(a)
+
+a == b == c == d
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="sownik-dostep-do-wartosci">Słownik - dostęp do wartości</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+slownik[&quot;Kasia&quot;] # dostęp -&gt; dict[key]
+</code></pre>
+
+<pre><code>7236
+</code></pre>
+<pre><code class="python">slownik[0] # słownik nie jest uporządkowany
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-4-8f2cb9210d58&gt; in &lt;module&gt;()
+----&gt; 1 slownik[0] # słownik nie jest uporządkowany
+
+
+KeyError: 0
+</code></pre>
+<h2 id="sowniki-dostep-do-wartosci">Słowniki - dostęp do wartości</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+print(slownik[&quot;Kasia&quot;]) # Kasia jest w słowniku -&gt; OK
+print(slownik[&quot;Ania&quot;])  # Ani nie ma -&gt; KeyError
+</code></pre>
+
+<pre><code>7236
+
+
+
+---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-5-7f55cd27f397&gt; in &lt;module&gt;()
+      3 
+      4 print(slownik["Kasia"]) # Kasia jest w słowniku -&gt; OK
+----&gt; 5 print(slownik["Ania"])  # Ani nie ma -&gt; KeyError
+
+
+KeyError: 'Ania'
+</code></pre>
+<h2 id="sowniki-dostep-do-wartosci_1">Słowniki - dostęp do wartości</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+print(slownik.get(&quot;Kasia&quot;)) # Kasia jest w słowniku -&gt; OK
+print(slownik.get(&quot;Ania&quot;))  # Ani nie ma -&gt; default = None
+print(slownik.get(&quot;Ania&quot;, 1234)) # Ani nie ma -&gt; default = 1234
+</code></pre>
+
+<pre><code>7236
+None
+1234
+</code></pre>
+<pre><code class="python"># czemu domyślnie None?
+if slownik.get(&quot;Ania&quot;):
+    print(slownik[&quot;Ania&quot;])
+else:
+    print(&quot;Brak studenta.&quot;)
+</code></pre>
+
+<pre><code>Brak studenta.
+</code></pre>
+<pre><code class="python"># lub prościej
+print(slownik.get(&quot;Ania&quot;) or &quot;Brak studenta.&quot;)
+</code></pre>
+
+<pre><code>Brak studenta.
+</code></pre>
+<h2 id="sownik-klucze-i-wartosci">Słownik - klucze i wartości</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+</code></pre>
+
+<pre><code class="python">slownik.keys() # lista kluczy
+</code></pre>
+
+<pre><code>dict_keys(['Kasia', 'Basia', 'Darek', 'Marek'])
+</code></pre>
+<pre><code class="python">slownik.values() # lista wartości
+</code></pre>
+
+<pre><code>dict_values([7236, 5286, 7738, 9807])
+</code></pre>
+<pre><code class="python">slownik.items() # lista par
+</code></pre>
+
+<pre><code>dict_items([('Kasia', 7236), ('Basia', 5286), ('Darek', 7738), ('Marek', 9807)])
+</code></pre>
+<h2 id="sownik-python-2-vs-3">Słownik - Python 2 vs 3</h2>
+<hr />
+<ul>
+<li>w Pythonie 2 <em>dict.keys()</em>, <em>dict.values()</em> i <em>dict.items()</em> zwracają listy (czyli dopuszczalne jest np. <em>dict.keys()[0]</em>)</li>
+<li>w Pythonie 3:</li>
+</ul>
+<pre><code class="python">import collections # for Iterable
+
+# student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+# slownik.keys()[0] # TypeError: 'dict_keys' object does not support indexing
+
+isinstance(slownik.keys(), list)
+</code></pre>
+
+<pre><code>False
+</code></pre>
+<pre><code class="python">isinstance(slownik, collections.Iterable) # pętla po keys() -&gt; OK
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<h2 id="sownik-modyfikacja-kluczy">Słownik - modyfikacja kluczy</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+slownik[&quot;Kasia&quot;] = 1234 # dict[key] = value
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'Kasia': 1234, 'Basia': 5286, 'Darek': 7738, 'Marek': 9807}
+</code></pre>
+<pre><code class="python">slownik[&quot;Kasia&quot;] += 1 # analogicznie do listy: list[index]
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'Kasia': 1235, 'Basia': 5286, 'Darek': 7738, 'Marek': 9807}
+</code></pre>
+<h2 id="sownik-usuwanie-kluczy">Słownik - usuwanie kluczy</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+del slownik[&quot;Marek&quot;] # del dict[key] -&gt; usuń klucz
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'Kasia': 7236, 'Basia': 5286, 'Darek': 7738}
+</code></pre>
+<pre><code class="python">slownik.clear() # wyczyść słownik
+
+print(slownik)
+</code></pre>
+
+<pre><code>{}
+</code></pre>
+<h2 id="sownik-dodawanie-kluczy">Słownik  - dodawanie kluczy</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+slownik[&quot;Ania&quot;] = 3384 # jeśli jest to zmień, jeśli nie ma to dodaj
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'Kasia': 7236, 'Ania': 3384, 'Basia': 5286, 'Darek': 7738, 'Marek': 9807}
+</code></pre>
+<pre><code class="python">nowi_studenci = {&quot;Romek&quot;: 3343, &quot;Basia&quot;: 8573}
+
+slownik.update(nowi_studenci) # &quot;dodaj/scal&quot; słowniki
+
+print(slownik) # zwróć uwagę na Basię
+</code></pre>
+
+<pre><code>{'Basia': 8573, 'Romek': 3343, 'Darek': 7738, 'Kasia': 7236, 'Ania': 3384, 'Marek': 9807}
+</code></pre>
+<pre><code class="python">slownik.update(Józek=2276)
+
+print(slownik)
+</code></pre>
+
+<pre><code>{'Basia': 8573, 'Romek': 3343, 'Darek': 7738, 'Józek': 2276, 'Kasia': 7236, 'Ania': 3384, 'Marek': 9807}
+</code></pre>
+<h2 id="petla-po-sowniku">Pętla po słowniku</h2>
+<hr />
+<pre><code class="python"># student: numer indeksu
+slownik = {&quot;Kasia&quot;: 7236, &quot;Basia&quot;: 5286, &quot;Marek&quot;: 9807, &quot;Darek&quot;: 7738}
+
+for student in slownik.keys(): # pętla po kluczach
+    print(student, end=' ')
+</code></pre>
+
+<pre><code>Kasia Basia Darek Marek
+</code></pre>
+<pre><code class="python">for index in slownik.values(): # pętla po wartościach
+    print(index, end=' ')
+</code></pre>
+
+<pre><code>7236 5286 7738 9807
+</code></pre>
+<pre><code class="python">for student, index in slownik.items(): # pętla po (klucz, wartość)
+    print(student, index)
+</code></pre>
+
+<pre><code>Kasia 7236
+Basia 5286
+Darek 7738
+Marek 9807
+</code></pre>
+<h2 id="przykad-tworzenie-sownika">Przykład - tworzenie słownika</h2>
+<hr />
+<pre><code class="python">studenci = {} # stwórz pusty słownik
+
+while True:
+    # pobierz imię studenta
+    student = input(&quot;Imię: &quot;)
+    # przerwij jeśli puste
+    if not student: break # niezalecane, ale możliwe
+    # pobierz numer indeksu
+    index = input(&quot;Nr indeksu: &quot;)
+    # aktualizuj słownik
+    studenci.update({student: index})
+
+print(studenci)
+</code></pre>
+
+<pre><code>Imię: Kasia
+Nr indeksu: 1234
+Imię: Jasiu
+Nr indeksu: 0987
+Imię: 
+{'Kasia': '1234', 'Jasiu': '0987'}
+</code></pre>
+<h2 id="sownik-w-sowniku">Słownik w słowniku</h2>
+<hr />
+<pre><code class="python">Kasia = {&quot;Wiek&quot;: 20, &quot;Wzrost&quot;: 190, &quot;Waga&quot;: 70}
+Marek = {&quot;Wiek&quot;: 22, &quot;Wzrost&quot;: 180, &quot;Waga&quot;: 80}
+
+# klucz musi być hashowalny
+# wartością może być dowolny obieky, np. słownik
+studenci = {&quot;Kasia&quot;: Kasia, &quot;Marek&quot;: Marek}
+
+# wydrukuj w pętli wszystkich studentów i ich atrybuty
+for imie, wlasnosci in studenci.items():
+    print(&quot;{student} ma {wiek} lat, &quot;
+          &quot;{wzrost} cm wzrostu &quot;
+          &quot;i waży {waga} kg.&quot;.format(
+            student=imie,
+            wiek=studenci[imie][&quot;Wiek&quot;],
+            wzrost=studenci[imie][&quot;Wzrost&quot;],
+            waga=studenci[imie][&quot;Waga&quot;])
+          )
+</code></pre>
+
+<pre><code>Kasia ma 20 lat, 190 cm wzrostu i waży 70 kg.
+Marek ma 22 lat, 180 cm wzrostu i waży 80 kg.
+</code></pre>
+<h2 id="funkcje">Funkcje</h2>
+<hr />
+<ul>
+<li>funkcje (w programowaniu) to "wywoływalne bloki instrukcji"</li>
+<li>mogą (ale nie muszą) przyjmować argumenty</li>
+<li>mogą (ale nie muszą) zwracać obiekt</li>
+<li>raz napisana funkcja może być wykorzystywana wiele razy</li>
+<li>zwiększają czytelność kodu</li>
+<li>łatwiejsze debugowanie</li>
+</ul>
+<h2 id="definiowanie-funkcji">Definiowanie funkcji</h2>
+<hr />
+<pre><code class="py">def nazwa_funkcji(argumenty):
+    instrukcje
+    ...
+    return obiekt
+</code></pre>
+
+<ol>
+<li>słowo kluczowe <em>def</em></li>
+<li>nazwa funkcji</li>
+<li>lista argumentów (opcjonalnie)</li>
+<li>dwukropek</li>
+<li>(wcięte) instrukcje</li>
+<li>słowo kluczowe <em>return</em> (opcjonalnie)</li>
+</ol>
+<h2 id="funkcja-hello-world">Funkcja "Hello World"</h2>
+<hr />
+<pre><code class="python">def hello(): # brak argumentów
+    print(&quot;Hello World!&quot;)
+    # nic nie zwraca
+
+hello() # wywołanie funkcji
+</code></pre>
+
+<pre><code>Hello World!
+</code></pre>
+<h2 id="argumenty-funkcji">Argumenty funkcji</h2>
+<hr />
+<pre><code class="python"># funkcja dzialanie przyjmuje trzy argumenty a, b i c
+# następnie zwraca wyrażenie a + b - c
+def dzialanie(a, b, c):
+    return a + b - c
+</code></pre>
+
+<pre><code class="python">dzialanie(1, 2, 3) # zwróci 1 + 2 - 3
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<pre><code class="python">x = 1
+y = 2
+
+dzialanie(x, y, 2*x + 3*y) # zwróci 1 + 2 - 2*1 - 3*2 
+</code></pre>
+
+<pre><code>-5
+</code></pre>
+<h2 id="argumenty-funkcji_1">Argumenty funkcji</h2>
+<hr />
+<pre><code class="python">def pobierz(komunikat): # funkcja przyjmuje jeden argument
+    user_input = input(komunikat.ljust(20))
+    return user_input   # zwraca dane użytkownika
+
+imie = pobierz(&quot;Jak masz na imię?&quot;) # komunikat = &quot;Jak masz na imię?&quot;
+wiek = pobierz(&quot;Ile masz lat?&quot;)     # komunikat = &quot;Ile masz lat?&quot;
+
+print(imie, wiek)
+</code></pre>
+
+<pre><code>Jak masz na imię?   Józek
+Ile masz lat?       20
+Józek 20
+</code></pre>
+<h2 id="argumenty-ze-sowem-kluczowym">Argumenty ze słowem kluczowym</h2>
+<hr />
+<pre><code class="python"># funkcja dzialanie przyjmuje trzy argumenty a, b i c
+# następnie zwraca wyrażenie a + b - c
+def dzialanie(a, b, c):
+    return a + b - c
+</code></pre>
+
+<pre><code class="python">dzialanie(1, 2, 3) # 3 argumenty pozycyjne
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<pre><code class="python">dzialanie(a=1, b=2, c=3) # 3 argumenty kluczowe
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<pre><code class="python">dzialanie(b=2, c=3, a=1) # kolejność nieważna dla argumentów kluczowych
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<h2 id="mieszanie-argumentow">Mieszanie argumentów</h2>
+<hr />
+<pre><code class="python"># funkcja dzialanie przyjmuje trzy argumenty a, b i c
+# następnie zwraca wyrażenie a + b - c
+def dzialanie(a, b, c):
+    return a + b - c
+</code></pre>
+
+<pre><code class="python">dzialanie(1, c = 3, b = 2) # jeden pozycyjny, dwa kluczowe
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<pre><code class="python">dzialanie(a = 1, b = 2, 3) # najpierw pozycyjne, potem kluczowe!
+</code></pre>
+
+<pre><code>  File "&lt;ipython-input-38-60286ad5b769&gt;", line 1
+    dzialanie(a = 1, b = 2, 3) # najpierw pozycyjne, potem kluczowe!
+                           ^
+SyntaxError: positional argument follows keyword argument
+</code></pre>
+<h2 id="domyslne-wartosci-argumentow">Domyślne wartości argumentów</h2>
+<hr />
+<pre><code class="python">def pobierz(komunikat):           # funkcja przyjmuje jeden argument
+    user_input = input(komunikat) # pobiera dane od użytkownika
+    return user_input             # i je zwraca
+</code></pre>
+
+<pre><code class="python">x = pobierz() # funkcja oczekuje argumentu &quot;komunikat&quot;
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-40-6184fdb92a47&gt; in &lt;module&gt;()
+----&gt; 1 x = pobierz() # funkcja oczekuje argumentu "komunikat"
+
+
+TypeError: pobierz() missing 1 required positional argument: 'komunikat'
+</code></pre>
+<h2 id="domyslne-wartosci-argumentow_1">Domyślne wartości argumentów</h2>
+<hr />
+<pre><code class="python">def pobierz(komunikat='&gt; '):      # domyślna wartość = &quot;&gt; &quot;
+    user_input = input(komunikat) # pobiera dane od użytkownika
+    return user_input             # i je zwraca
+</code></pre>
+
+<pre><code class="python">x = pobierz() # brak argumentu -&gt; domyślna wartość
+</code></pre>
+
+<pre><code>&gt; 1
+</code></pre>
+<pre><code class="python">x = pobierz(&quot;Napisz coś: &quot;) # nadpisanie wartości domyślne
+</code></pre>
+
+<pre><code>Napisz coś: 1
+</code></pre>
+<h2 id="domyslne-wartosci-argumentow_2">Domyślne wartości argumentów</h2>
+<hr />
+<pre><code class="python"># dwa ostatnie argumenty mają wartości domyślne
+def dzialanie(a, b=2, c=3):
+    return a + b - c
+</code></pre>
+
+<pre><code class="python">dzialanie(1, 2, 3) == dzialanie(1)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+<pre><code class="python"># argumenty bez wartości domyślnych
+# nie mogą występować po tych
+# które wartości domyśne posiadają
+def dzialanie(a=1, b, c):
+    return a + b - c
+</code></pre>
+
+<pre><code>  File "&lt;ipython-input-46-21b67a48022e&gt;", line 4
+    def dzialanie(a=1, b, c):
+                 ^
+SyntaxError: non-default argument follows default argument
+</code></pre>
+<h2 id="argumenty-niemutowalne">Argumenty "niemutowalne"</h2>
+<hr />
+<pre><code class="python">def zwieksz(x):
+    print(&quot;wewnątrz funkcji (przed) id(x) =&quot;, id(x))
+    x += 1
+    print(&quot;wewnątrz funkcji (po) id(x)=&quot;, id(x))
+
+x = 0 # zmienna x wskazuje na dany obszar pamięci
+
+print(&quot;Przed zwiększeniem x =&quot;, x)
+
+print(&quot;id(x) = &quot;, id(x))
+
+zwieksz(x)
+
+print(&quot;id(x) = &quot;, id(x))
+
+print(&quot;Po zwiększeniu x =&quot;, x)
+</code></pre>
+
+<pre><code>Przed zwiększeniem x = 0
+id(x) =  140266666990080
+wewnątrz funkcji (przed) id(x) = 140266666990080
+wewnątrz funkcji (po) id(x)= 140266666990112
+id(x) =  140266666990080
+Po zwiększeniu x = 0
+</code></pre>
+<h2 id="argumenty-mutowalne">Argumenty "mutowalne"</h2>
+<hr />
+<pre><code class="python">def zwieksz(x):
+    print(&quot;wewnątrz funkcji (przed) id(x) =&quot;, id(x))
+    x[0] += 1
+    print(&quot;wewnątrz funkcji (po) id(x) () =&quot;, id(x))
+
+x = [0] # zmienna x wskazuje na dany obszar pamięci
+
+print(&quot;Przed zwiększeniem x =&quot;, x)
+
+print(&quot;id(x) = &quot;, id(x))
+
+zwieksz(x)
+
+print(&quot;id(x) = &quot;, id(x))
+
+print(&quot;Po zwiększeniu x =&quot;, x)
+</code></pre>
+
+<pre><code>Przed zwiększeniem x = [0]
+id(x) =  140266455152520
+wewnątrz funkcji (przed) id(x) = 140266455152520
+wewnątrz funkcji (po) id(x) () = 140266455152520
+id(x) =  140266455152520
+Po zwiększeniu x = [1]
+</code></pre>
+<h2 id="mutowalna-wartosc-domyslna">"Mutowalna" wartość domyślna</h2>
+<hr />
+<pre><code class="python"># wartość domyślna jest inicjowana tylko raz
+def update(N, L = []):
+    L.append(N)
+    return L
+
+print(update(1)) # L wskazuje na obszar w pamięci
+print(update(2)) # i tak już zostaje
+print(update(3)) # dla każdego kolejnego wywołania
+</code></pre>
+
+<pre><code>[1]
+[1, 2]
+[1, 2, 3]
+</code></pre>
+<h2 id="obejscie-problemu">Obejście problemu</h2>
+<hr />
+<pre><code class="python">def update(N, L = None):
+    if not L:
+        L = []
+    L.append(N)
+    return L
+
+print(update(1)) # z każdym wywołaniem funkcji
+print(update(2)) # tworzona jest nowa lista
+print(update(3))
+</code></pre>
+
+<pre><code>[1]
+[2]
+[3]
+</code></pre>
+<h2 id="dowolna-liczba-argumentow-pozycyjnych">Dowolna liczba argumentów (pozycyjnych)</h2>
+<hr />
+<pre><code class="python"># funkcja przyjmuje dwa &quot;normalne&quot; argumenty
+# z pozostałych powstanie krotka
+def funkcja(arg1, arg2, *args):
+    print(arg1, arg2, args)
+
+funkcja('a', 'b', 'c', 'd', 'e', 'f')
+</code></pre>
+
+<pre><code>a b ('c', 'd', 'e', 'f')
+</code></pre>
+<h2 id="args-i-key">*args i key</h2>
+<hr />
+<pre><code class="python"># po *args mogą występować tylko argumenty kluczowe
+# mogą (ale nie muszą) mieć wartości domyślne
+def funkcja(arg1, *args, kwarg1, kwarg2=&quot;key&quot;):
+    print(&quot;arg1 =&quot;, arg1)
+    print(&quot;*args =&quot;, args)
+    print(&quot;kwarg1 =&quot;, kwarg1)
+    print(&quot;kwarg2 =&quot;, kwarg2)
+
+funkcja('a', 'b', 'c', 'd', kwarg1=&quot;argument kluczowy&quot;)
+</code></pre>
+
+<pre><code>arg1 = a
+*args = ('b', 'c', 'd')
+kwarg1 = argument kluczowy
+kwarg2 = key
+</code></pre>
+<pre><code class="python">funkcja('a', 'b', 'c', 'd')
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-53-aa278ac540f2&gt; in &lt;module&gt;()
+----&gt; 1 funkcja('a', 'b', 'c', 'd')
+
+
+TypeError: funkcja() missing 1 required keyword-only argument: 'kwarg1'
+</code></pre>
+<h2 id="przykad">Przykład</h2>
+<hr />
+<pre><code class="python"># średnia z dowolnej liczby argumentów
+def srednia(*args):
+    if not args: # brak argumentów -&gt; 0
+        return 0
+    return sum(args) / len(args)
+</code></pre>
+
+<pre><code class="python">srednia()
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<pre><code class="python">srednia(1, 2, 3, 4)
+</code></pre>
+
+<pre><code>2.5
+</code></pre>
+<pre><code class="python">srednia(*range(100))
+</code></pre>
+
+<pre><code>49.5
+</code></pre>
+<h2 id="dowolna-liczba-argumentow-kluczowych">Dowolna liczba argumentów (kluczowych)</h2>
+<hr />
+<pre><code class="python"># *args -&gt; krotka argumentów pozycyjnych
+# **kwargs -&gt; słownik argumentów kluczowych
+def funkcja(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value, type(value))
+</code></pre>
+
+<pre><code class="python">funkcja(imie=&quot;Jan&quot;, nazwisko=&quot;Kowalski&quot;, wiek=25)
+</code></pre>
+
+<pre><code>imie Jan &lt;class 'str'&gt;
+wiek 25 &lt;class 'int'&gt;
+nazwisko Kowalski &lt;class 'str'&gt;
+</code></pre>
+<pre><code class="python">funkcja(&quot;Jan&quot;, &quot;Kowalski&quot;, 25)
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-60-1c93f25ce1db&gt; in &lt;module&gt;()
+----&gt; 1 funkcja("Jan", "Kowalski", 25)
+
+
+TypeError: funkcja() takes 0 positional arguments but 3 were given
+</code></pre>
+<h2 id="forsowanie-argumentow-kluczowych">Forsowanie argumentów kluczowych</h2>
+<hr />
+<pre><code class="python"># zwróć sumę a i b
+# jeśli flaga==True zwróć 0
+def moja_suma(a, b, flaga=False):
+    if flaga:
+        return 0
+    else:
+        return a + b
+</code></pre>
+
+<pre><code class="python">moja_suma(1, 2) # dla dwóch argumentów działa OK
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">moja_suma(1, 2, 3) # flaga == 3
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<h2 id="forsowanie-argumentow-kluczowych_1">Forsowanie argumentów kluczowych</h2>
+<hr />
+<pre><code class="python"># zwróć sumę a i b
+# jeśli flaga==True zwróć 0
+def moja_suma(a, b, *args, flaga=False):    
+    if flaga:
+        return 0
+    else:
+        return a + b
+</code></pre>
+
+<pre><code class="python">moja_suma(1, 2)
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">moja_suma(1, 2, 3) # args=(3)
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">moja_suma(1, 2, flaga=True)
+</code></pre>
+
+<pre><code>0
+</code></pre>
+<h2 id="forsowanie-argumentow-kluczowych_2">Forsowanie argumentów kluczowych</h2>
+<hr />
+<pre><code class="python"># zwróć sumę a i b
+# jeśli flaga==True zwróć 0
+def moja_suma(a, b, *, flaga=False):    
+    if flaga:
+        return 0
+    else:
+        return a + b
+</code></pre>
+
+<pre><code class="python">moja_suma(1, 2)
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">moja_suma(1, 2, 3) # nadmiarowy argument wywołuje błąd
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-70-f09f12e8bd26&gt; in &lt;module&gt;()
+----&gt; 1 moja_suma(1, 2, 3) # nadmiarowy argument wywołuje błąd
+
+
+TypeError: moja_suma() takes 2 positional arguments but 3 were given
+</code></pre>
+<h2 id="przykad_1">Przykład</h2>
+<hr />
+<pre><code class="python">def create_car(marka, model, **options):
+    print(marka, model)
+    for opcja, wartosc in options.items():
+        print(&quot;  {}: {}&quot;.format(opcja, wartosc))
+</code></pre>
+
+<pre><code class="python">create_car(&quot;Fiat&quot;, &quot;126p&quot;, kolor=&quot;czarny&quot;, rocznik=1980)
+create_car(&quot;Ford&quot;, &quot;Mustang&quot;, kolor=&quot;różowy&quot;, moc=&quot;200KM&quot;, skrzynia=&quot;manualna&quot;)
+</code></pre>
+
+<pre><code>Fiat 126p
+  kolor: czarny
+  rocznik: 1980
+Ford Mustang
+  moc: 200KM
+  kolor: różowy
+  skrzynia: manualna
+</code></pre>
+<h2 id="argumenty-ze-sownika">Argumenty ze słownika</h2>
+<hr />
+<pre><code class="python">def create_car(marka, model, **options):
+    print(marka, model)
+    for opcja, wartosc in options.items():
+        print(&quot;  {}: {}&quot;.format(opcja, wartosc))
+
+ford_mustang = {&quot;kolor&quot;: &quot;różowy&quot;, &quot;moc&quot;: &quot;200KM&quot;, &quot;skrzynia&quot;: &quot;manualna&quot;}
+
+# **dict jako argument -&gt; rozpakuj slownik
+create_car(&quot;Ford&quot;, &quot;Mustang&quot;, **ford_mustang)
+</code></pre>
+
+<pre><code>Ford Mustang
+  moc: 200KM
+  kolor: różowy
+  skrzynia: manualna
+</code></pre>
+<h2 id="funkcja-jako-rezultat-funkcji">Funkcja jako rezultat funkcji</h2>
+<hr />
+<pre><code class="python">def kwadrat(x):
+    print(&quot;kwadrat({})&quot;.format(x))
+    return x*x
+
+def kwadrat_sumy(a, b):
+    print(&quot;kwadrat_sumy({}, {})&quot;.format(a, b))
+    return kwadrat(a + b) # return może zwrócić inną funkcję
+
+wynik = kwadrat_sumy(2, 3)
+
+print(&quot;wynik =&quot;, wynik)
+</code></pre>
+
+<pre><code>kwadrat_sumy(2, 3)
+kwadrat(5)
+wynik = 25
+</code></pre>
+<h2 id="wynik-funkcji-jako-argument-funkcji">Wynik funkcji jako argument funkcji</h2>
+<hr />
+<pre><code class="python">def kwadrat(x):
+    print(&quot;kwadrat({})&quot;.format(x))
+    return x*x
+
+def suma(a, b):
+    print(&quot;suma({}, {})&quot;.format(a, b))
+    return a + b
+
+def kwadrat_sumy(a, b):
+    print(&quot;kwadrat_sumy({}, {})&quot;.format(a, b))
+    return kwadrat(suma(a, b)) # wynik funkcji jest argumentem
+
+wynik = kwadrat_sumy(2, 3)
+
+print(&quot;wynik =&quot;, wynik)
+</code></pre>
+
+<pre><code>kwadrat_sumy(2, 3)
+suma(2, 3)
+kwadrat(5)
+wynik = 25
+</code></pre>
+<h2 id="funkcja-jako-argument-funkcji">Funkcja jako argument funkcji</h2>
+<hr />
+<pre><code class="python">def kwadrat(x):
+    print(&quot;kwadrat({})&quot;.format(x))
+    return x*x
+
+def suma(a, b):
+    print(&quot;suma({}, {})&quot;.format(a, b))
+    return a + b
+
+def kwadrat_sumy(a, b, f1, f2):
+    print(&quot;kwadrat_sumy({}, {}, {}, {})&quot;.format(a, b, f1, f2))
+    return f2(f1(a, b))
+
+wynik = kwadrat_sumy(2, 3, suma, kwadrat) # funkcja jest argumentem
+
+print(&quot;wynik =&quot;, wynik)
+</code></pre>
+
+<pre><code>kwadrat_sumy(2, 3, &lt;function suma at 0x7f9254388d08&gt;, &lt;function kwadrat at 0x7f925438ed90&gt;)
+suma(2, 3)
+kwadrat(5)
+wynik = 25
+</code></pre>
+<h2 id="zmienne-globalne">Zmienne globalne</h2>
+<hr />
+<pre><code class="python">zmienna_globalna = &quot;Hello World!&quot;
+
+print(&quot;Zmienna globalna przed =&quot;, zmienna_globalna)
+
+def zmien():
+    # print(&quot;Wewnątrz funkcji przed =&quot;, zmienna_globalna) # not assigned yet
+    zmienna_globalna = &quot;Bye World!&quot; # zmienna_globalna jest zmienną lokalną
+    print(&quot;Wewnątrz funkcji po =&quot;, zmienna_globalna)
+
+zmien()    
+
+print(&quot;Zmienna globalna po =&quot;, zmienna_globalna)
+</code></pre>
+
+<pre><code>Zmienna globalna przed = Hello World!
+Wewnątrz funkcji po = Bye World!
+Zmienna globalna po = Hello World!
+</code></pre>
+<h2 id="zmienne-globalne_1">Zmienne globalne</h2>
+<hr />
+<pre><code class="python">zmienna_globalna = &quot;Hello World!&quot;
+
+print(&quot;Zmienna globalna przed =&quot;, zmienna_globalna)
+
+def zmien():
+    global zmienna_globalna # sygnalizuje, że operujemy na zmiennej globalnej
+    print(&quot;Wewnątrz funkcji przed =&quot;, zmienna_globalna)
+    zmienna_globalna = &quot;Bye World!&quot;
+    print(&quot;Wewnątrz funkcji po =&quot;, zmienna_globalna)
+
+zmien()    
+
+print(&quot;Zmienna globalna po =&quot;, zmienna_globalna)
+</code></pre>
+
+<pre><code>Zmienna globalna przed = Hello World!
+Wewnątrz funkcji przed = Hello World!
+Wewnątrz funkcji po = Bye World!
+Zmienna globalna po = Bye World!
+</code></pre>
+<h2 id="rekurencja">Rekurencja</h2>
+<hr />
+<pre><code class="python">i = 0
+
+def funkcja():
+    global i # używaj zmiennej globalnej i
+    i += 1
+    print(i, end=' ')
+    if i &lt; 10:
+        return funkcja() # wywołuje sama siebie
+</code></pre>
+
+<pre><code class="python">funkcja()
+</code></pre>
+
+<pre><code>1 2 3 4 5 6 7 8 9 10
+</code></pre>
+<h2 id="rekurencja-silnia">Rekurencja - silnia</h2>
+<hr />
+<pre><code class="python">def silnia(n):
+    result = 1
+    while n &gt; 1:
+        result *= n
+        n -= 1
+    return result
+</code></pre>
+
+<pre><code class="python">print(&quot;Klasycznie silnia(5) =&quot;, silnia(5))
+</code></pre>
+
+<pre><code>Klasycznie silnia(5) = 120
+</code></pre>
+<pre><code class="python">def silnia(n):
+    if n &lt; 2:
+        return 1 # 0! = 1, 1! = 1
+    return n*silnia(n - 1)
+</code></pre>
+
+<pre><code class="python">print(&quot;Rekurencyjnie silnia(5) =&quot;, silnia(5))
+</code></pre>
+
+<pre><code>Rekurencyjnie silnia(5) = 120
+</code></pre>
+<h2 id="dokumentacja">Dokumentacja</h2>
+<hr />
+<pre><code class="python">help(help)
+</code></pre>
+
+<pre><code>Help on _Helper in module _sitebuiltins object:
+
+class _Helper(builtins.object)
+ |  Define the builtin 'help'.
+ |  
+ |  This is a wrapper around pydoc.help that provides a helpful message
+ |  when 'help' is typed at the Python interactive prompt.
+ |  
+ |  Calling help() at the Python prompt starts an interactive help session.
+ |  Calling help(thing) prints help for the python object 'thing'.
+ |  
+ |  Methods defined here:
+ |  
+ |  __call__(self, *args, **kwds)
+ |      Call self as a function.
+ |  
+ |  __repr__(self)
+ |      Return repr(self).
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+</code></pre>
+<h2 id="dokumentowanie-wasnych-funkcji">Dokumentowanie własnych funkcji</h2>
+<hr />
+<pre><code class="python">def funkcja():
+    pass
+</code></pre>
+
+<pre><code class="python">help(funkcja)
+</code></pre>
+
+<pre><code>Help on function funkcja in module __main__:
+
+funkcja()
+</code></pre>
+<pre><code class="python">def funkcja():
+    &quot;&quot;&quot;To jest moja funkcja, która nic nie robi&quot;&quot;&quot;
+    pass
+</code></pre>
+
+<pre><code class="python">help(funkcja)
+</code></pre>
+
+<pre><code>Help on function funkcja in module __main__:
+
+funkcja()
+    To jest moja funkcja, która nic nie robi
+</code></pre>
+<h2 id="dokumentacja-pep-257">Dokumentacja (PEP 257)</h2>
+<hr />
+<ul>
+<li>
+<p>dokumentacja (czyli tzw. <em>docstring</em>) wg standardów PEP 257:</p>
+<ul>
+<li>jednolinjkowy opis
+<code>py
+"""Mój opis"""</code></li>
+<li>wielolinijkowy opis
+```py
+"""Mój opis</li>
+</ul>
+<p>więcej opisu
+"""
+```</p>
+</li>
+</ul>
+<h2 id="opis">Opis</h2>
+<hr />
+<ul>
+<li>opis powinien krótki i jasny (i mieć sens), np:</li>
+</ul>
+<pre><code class="py">
+# taki opis nie ma sensu
+def moja_funkcja(a, b):
+    &quot;&quot;&quot;moja_funkcja(a, b) -&gt; a + b&quot;&quot;&quot;
+    return a + b
+
+# taki jest lepszy
+def moja_funkcja(a, b):
+    &quot;&quot;&quot;Zwraca sumę podanych liczb&quot;&quot;&quot;
+    return a + b
+</code></pre>
+
+<h2 id="dokumentowanie-zmiennych">Dokumentowanie zmiennych</h2>
+<hr />
+<pre><code class="python">def reszta(a = 0, b = 0):
+    &quot;&quot;&quot;Zwraca resztę z dzielenia
+
+    Keyword arguments:
+    a -- licznik
+    b -- mianownik
+    &quot;&quot;&quot;
+    if not b:
+        return 0
+    return a%b
+</code></pre>
+
+<pre><code class="python">help(reszta)
+</code></pre>
+
+<pre><code>Help on function reszta in module __main__:
+
+reszta(a=0, b=0)
+    Zwraca resztę z dzielenia
+
+    Keyword arguments:
+    a -- licznik
+    b -- mianownik
+</code></pre>
+<h2 id="wyrazenie-lambda">Wyrażenie <em>lambda</em></h2>
+<hr />
+<pre><code class="python">def suma(a, b): # &quot;klasyczna&quot; funkcja
+    return a + b
+</code></pre>
+
+<pre><code class="python">lsuma = lambda a, b: a + b # &quot;anonimowa&quot; funkcja
+</code></pre>
+
+<pre><code class="python">suma(1, 2) # wywołujemy funkcję suma
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<pre><code class="python">lsuma(1, 2) # wywołujemy wyrażenia lambda
+</code></pre>
+
+<pre><code>3
+</code></pre>
+<h2 id="wyrazenie-lambda_1">Wyrażenie <em>lambda</em></h2>
+<hr />
+<pre><code class="python">def wrapper(funkcja):
+    print(&quot;Wywołuję funkcję:&quot;, funkcja)
+    funkcja()
+
+def f():
+    print(&quot;Hello World!&quot;)
+
+wrapper(f)
+</code></pre>
+
+<pre><code>Wywołuję funkcję: &lt;function f at 0x7f92543518c8&gt;
+Hello World!
+</code></pre>
+<pre><code class="python">wrapper(lambda: print(&quot;Hello World!&quot;))
+</code></pre>
+
+<pre><code>Wywołuję funkcję: &lt;function &lt;lambda&gt; at 0x7f92543517b8&gt;
+Hello World!
+</code></pre>
+<h2 id="wyrazenie-lambda_2">Wyrażenie <em>lambda</em></h2>
+<hr />
+<pre><code class="python">def increase(n):
+    print(&quot;Teraz tworzę lambdę&quot;)
+    return lambda x: x + n
+
+inc2 = increase(2) # powiększ o 2
+inc4 = increase(4) # inc4 = lambda x: x + 4
+</code></pre>
+
+<pre><code>Teraz tworzę lambdę
+Teraz tworzę lambdę
+</code></pre>
+<pre><code class="python">inc2(10)
+</code></pre>
+
+<pre><code>12
+</code></pre>
+<pre><code class="python">inc4(10)
+</code></pre>
+
+<pre><code>14
+</code></pre>
+<h2 id="funkcja-main">Funkcja <em>main</em></h2>
+<hr />
+<ul>
+<li>najczęście program podzielony jest na pojedyczne funkcje</li>
+<li>zwiększa to czytelność kodu i ułatwia jego debugowanie</li>
+<li>funkcja main "steruje" programem - uruchamiana jest przy wywołaniu skryptu</li>
+</ul>
+<h2 id="funkcja-main_1">Funkcja <em>main</em></h2>
+<hr />
+<pre><code class="python"># skrypt.py
+
+def start():
+    print(&quot;Zaczynam program&quot;)
+
+def operations():
+    print(&quot;Wykonuje obliczenia&quot;)
+
+def end():
+    print(&quot;Kończę program&quot;)
+
+# taki skrypt nic nie zrobi
+# bo żadna funkcja nie jest wywołana
+</code></pre>
+
+<h2 id="funkcja-main_2">Funkcja <em>main</em></h2>
+<hr />
+<pre><code class="python"># skrypt.py
+
+def start():
+    print(&quot;Zaczynam program&quot;)
+
+def operations():
+    print(&quot;Wykonuje obliczenia&quot;)
+
+def end():
+    print(&quot;Kończę program&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    start()
+    operations()
+    end()
+</code></pre>
+
+<pre><code>Zaczynam program
+Wykonuje obliczenia
+Kończę program
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
