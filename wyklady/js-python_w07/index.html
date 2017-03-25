@@ -1059,10 +1059,9 @@ ls -l *.log
 <li>podnieś do kwadratu, aby otrzymać liczbę 8-cyfrową (dodaj zera, jeśli trzeba)</li>
 <li>4 środkowe cyfry są wynikiem i <em>seedem</em> dla następnej liczby</li>
 </ul>
-<p>$$1111^2 = 01234321 \rightarrow 2343$$
+<span>\[1111^2 = 01234321 \rightarrow 2343$$
 $$2343^2 = 05489649 \rightarrow 4896$$
-$$4896^2 = 23970816 \rightarrow 9708$$</p>
-<h2 id="middle-square-method-implementacja"><em>Middle square method</em> - implementacja</h2>
+$$4896^2 = 23970816 \rightarrow 9708\]</span><h2 id="middle-square-method-implementacja"><em>Middle square method</em> - implementacja</h2>
 <hr />
 <pre><code class="python">%%writefile middle2.py
 &quot;&quot;&quot;PRNG using middle-square method.&quot;&quot;&quot;
@@ -1106,8 +1105,7 @@ plt.plot(x, y)
 <li>prosty i szybki</li>
 <li>silne korelacje - nie nadaje się do symulacji Monte Carlo (i tym bardziej kryptografii)</li>
 </ul>
-<p>$$X_{n+1} = (aX_n + c) \text{ mod } m$$</p>
-<h2 id="algorytm-lcg-implementacja">Algorytm LCG - implementacja</h2>
+<span>\[X_{n+1} = (aX_n + c) \text{ mod } m\]</span><h2 id="algorytm-lcg-implementacja">Algorytm LCG - implementacja</h2>
 <hr />
 <pre><code class="python">def lcg(seed, m, a, c):
     &quot;&quot;&quot;Return next random number using LCG.&quot;&quot;&quot;
@@ -1332,7 +1330,8 @@ plt.hist(wyniki, 6)
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../../js/base.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

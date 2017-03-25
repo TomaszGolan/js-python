@@ -403,7 +403,7 @@ s[2:8:2] # sekwencja[początek:koniec:krok]
 <h2 id="indeksy-ujemne">Indeksy ujemne</h2>
 <hr />
 <ul>
-<li>indeks $-k$ oznacza $n-k$, gdzie $n$ - długość łańcucha</li>
+<li>indeks <span>\(-k\)</span> oznacza <span>\(n-k\)</span>, gdzie <span>\(n\)</span> - długość łańcucha</li>
 </ul>
 <pre><code class="python">s = &quot;Python&quot;
 
@@ -1006,10 +1006,10 @@ print(lista)
 <hr />
 <ul>
 <li>
-<p>ogólnie: $$a_n...a_2a_1a_0 = \sum\limits_{i = 0}^{n} a_i \cdot 10^{i} \text{ , gdzie } a_i \in {0,...,9}$$</p>
+<p>ogólnie: <span>\(<span>\(a_n...a_2a_1a_0 = \sum\limits_{i = 0}^{n} a_i \cdot 10^{i} \text{ , gdzie } a_i \in \{0,...,9\}\)</span>\)</span></p>
 </li>
 <li>
-<p>np. $$438 = 4 \cdot 10^2 + 3 \cdot 10^1 + 8 \cdot 10^0$$</p>
+<p>np. <span>\(<span>\(438 = 4 \cdot 10^2 + 3 \cdot 10^1 + 8 \cdot 10^0\)</span>\)</span></p>
 </li>
 </ul>
 <p>&nbsp;</p>
@@ -1020,10 +1020,10 @@ print(lista)
 <hr />
 <ul>
 <li>
-<p>ogólnie: $$a_n...a_2a_1a_0 = \sum\limits_{i = 0}^n a_i \cdot 2^i \text{ , gdzie } a_i \in {0,1}$$</p>
+<p>ogólnie: <span>\(<span>\(a_n...a_2a_1a_0 = \sum\limits_{i = 0}^n a_i \cdot 2^i \text{ , gdzie } a_i \in \{0,1\}\)</span>\)</span></p>
 </li>
 <li>
-<p>np. $$110110110_2 = 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 0 \cdot 2^0 = 256 + 128 + 32 + 16 + 4 + 2 = 438$$</p>
+<p>np. <span>\(<span>\(110110110_2 = 1 \cdot 2^8 + 1 \cdot 2^7 + 0 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 1 \cdot 2^1 + 0 \cdot 2^0 = 256 + 128 + 32 + 16 + 4 + 2 = 438\)</span>\)</span></p>
 </li>
 </ul>
 <p>&nbsp;</p>
@@ -1033,7 +1033,7 @@ print(lista)
 <h2 id="bit-binary-digit-i-bajt-byte">Bit (<em>binary digit</em>) i bajt (<em>byte</em>)</h2>
 <hr />
 <ul>
-<li>dwa równie prawdopodobne stany: ${0, 1}$</li>
+<li>dwa równie prawdopodobne stany: <span>\(\{0, 1\}\)</span></li>
 <li>1B = 8b (1 bajt = 8 bitów)</li>
 <li>myląca konwencja informatyków:<ul>
 <li>1KB = 1024B</li>
@@ -1048,7 +1048,7 @@ print(lista)
 <ul>
 <li>każda zmienna przechowywana jest w pamięci operacyjnej w postaci bitowej</li>
 <li>przy czym bajt jest najmniejszym adresowalnym "fragmentem" pamięci</li>
-<li>np. $438 = 110110110_2$ zajmie co najmniej 2B = 16b (a nie 9 bitów)</li>
+<li>np. <span>\(438 = 110110110_2\)</span> zajmie co najmniej 2B = 16b (a nie 9 bitów)</li>
 </ul>
 <pre><code class="python">from graphviz import Source
 
@@ -1066,8 +1066,8 @@ pamiec = Source('digraph &quot;pamiec&quot; \
 <ul>
 <li>zajmuje 32 bity</li>
 <li>stąd 438 = 00000000 00000000 00000001 10110110</li>
-<li>bez znaku: $(0, 2^{32} - 1) = (0, 4294967295)$</li>
-<li>ze znakiem: $(-2^{31} - 1, 2^{31} - 1) = (-2147483647, 2147483647)$</li>
+<li>bez znaku: <span>\((0, 2^{32} - 1) = (0, 4294967295)\)</span></li>
+<li>ze znakiem: <span>\((-2^{31} - 1, 2^{31} - 1) = (-2147483647, 2147483647)\)</span></li>
 <li>w C++ występują również: char (8 bitów), short int (8 bitów), long long int (64 bity)</li>
 </ul>
 <h2 id="czas-uniksowy">Czas uniksowy</h2>
@@ -1084,7 +1084,7 @@ pamiec = Source('digraph &quot;pamiec&quot; \
 <h2 id="limit-pamieci">Limit pamięci</h2>
 <hr />
 <ul>
-<li>Architektura 32-bitowa dysponuje $2^{32}$ adresami</li>
+<li>Architektura 32-bitowa dysponuje <span>\(2^{32}\)</span> adresami</li>
 </ul>
 <pre><code class="python">B = 1          # bajt
 KB = 1024 * B  # kilobajt
@@ -1129,10 +1129,10 @@ getsizeof(...)
 <hr />
 <ul>
 <li>
-<p>ogólnie: $$a_n...a_2a_1a_0 = \sum\limits_{i = 0}^n a_i \cdot 16^i \text{ , gdzie } a_i \in {0,...,9,A,...,F}$$</p>
+<p>ogólnie: <span>\(<span>\(a_n...a_2a_1a_0 = \sum\limits_{i = 0}^n a_i \cdot 16^i \text{ , gdzie } a_i \in \{0,...,9,A,...,F\}\)</span>\)</span></p>
 </li>
 <li>
-<p>np. $$1\text{b}6_{16} = 1 \cdot 16^2 + 11 \cdot 16^1 + 6 \cdot 16^0 = 256 + 176 + 6 = 438$$</p>
+<p>np. <span>\(<span>\(1\text{b}6_{16} = 1 \cdot 16^2 + 11 \cdot 16^1 + 6 \cdot 16^0 = 256 + 176 + 6 = 438\)</span>\)</span></p>
 </li>
 </ul>
 <p>&nbsp;</p>
@@ -1150,8 +1150,7 @@ getsizeof(...)
 </li>
 <li>czemu do 255? 1 bajt = 8 bitów</li>
 </ul>
-<p>$$11111111_2 = 255$$</p>
-<ul>
+<span>\[11111111_2 = 255\]</span><ul>
 <li>w 32-bitowym dochodzi kanał alpha (przezroczystość)</li>
 </ul>
 <h2 id="kolory-rgb_1">Kolory RGB</h2>
@@ -1160,9 +1159,9 @@ getsizeof(...)
 <li>często spotka się zapis: <code>#RRGGBB</code></li>
 <li>gdzie <code>RR</code> - kolor czerwony w zapisie szesnastkowym itd.</li>
 <li>np. <code>#ff96cb</code><ul>
-<li>czerwony: $\text{ff}_{16} = 255$</li>
-<li>zielony: $96_{16} = 150$</li>
-<li>niebieski: $\text{cb}_{16} = 203$</li>
+<li>czerwony: <span>\(\text{ff}_{16} = 255\)</span></li>
+<li>zielony: <span>\(96_{16} = 150\)</span></li>
+<li>niebieski: <span>\(\text{cb}_{16} = 203\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1533,7 +1532,8 @@ print(id(x), id(y)) # teraz są to dwa różne obiekty
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../../js/base.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

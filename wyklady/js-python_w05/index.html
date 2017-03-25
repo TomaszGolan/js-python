@@ -236,12 +236,12 @@
             <li><a href="#wkady-od-roznych-czonow_4">Wkłady od różnych członów</a></li>
             <li><a href="#notacja-duzego">Notacja dużego &Omicron;</a></li>
             <li><a href="#notacja-duzego-przykad">Notacja dużego &Omicron; - przykład</a></li>
-            <li><a href="#przykady-rzedow-zozonosci-o1">Przykłady rzędów złożoności - $O(1)$</a></li>
-            <li><a href="#przykady-rzedow-zozonosci-on">Przykłady rzędów złożoności - $O(n)$</a></li>
-            <li><a href="#przykady-rzedow-zozonosci-on_1">Przykłady rzędów złożoności - $O(n)$</a></li>
-            <li><a href="#przykady-rzedow-zozonosci-on-m">Przykłady rzędów złożoności - $O(n + m)$</a></li>
-            <li><a href="#przykady-rzedow-zozonosci-on2">Przykłady rzędów złożoności - $O(n^2)$</a></li>
-            <li><a href="#przykady-rzedow-zoznosci-olog-n">Przykłady rzędów złożności - $O(\log n)$</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-o1">Przykłady rzędów złożoności - \(O(1)\)</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on">Przykłady rzędów złożoności - \(O(n)\)</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on_1">Przykłady rzędów złożoności - \(O(n)\)</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on-m">Przykłady rzędów złożoności - \(O(n + m)\)</a></li>
+            <li><a href="#przykady-rzedow-zozonosci-on2">Przykłady rzędów złożoności - \(O(n^2)\)</a></li>
+            <li><a href="#przykady-rzedow-zoznosci-olog-n">Przykłady rzędów złożności - \(O(\log n)\)</a></li>
             <li><a href="#porownanie-zozonosci">Porównanie złożoności</a></li>
             <li><a href="#sortowanie-babelkowe-bubble-sort">Sortowanie bąbelkowe (bubble sort)</a></li>
             <li><a href="#sortowanie-babelkowe-przykad">Sortowanie bąbelkowe - przykład</a></li>
@@ -469,27 +469,27 @@ $ python -m timeit -n10 'list(range(1000000))'
 <tbody>
 <tr>
 <td align="center">operacje</td>
-<td align="center">$n^2$</td>
-<td align="center">$n$</td>
-<td align="center">$1$</td>
-<td align="center">$n$</td>
+<td align="center"><span>\(n^2\)</span></td>
+<td align="center"><span>\(n\)</span></td>
+<td align="center"><span>\(1\)</span></td>
+<td align="center"><span>\(n\)</span></td>
 <td align="center">n</td>
 </tr>
 <tr>
 <td align="center">pamięć</td>
-<td align="center">$1$</td>
-<td align="center">$1$</td>
-<td align="center">$1$</td>
-<td align="center">$n$</td>
+<td align="center"><span>\(1\)</span></td>
+<td align="center"><span>\(1\)</span></td>
+<td align="center"><span>\(1\)</span></td>
+<td align="center"><span>\(n\)</span></td>
 <td align="center">1</td>
 </tr>
 <tr>
 <td align="center">czas</td>
 <td align="center">4.6 s</td>
-<td align="center">973 $\mu$s</td>
+<td align="center">973 <span>\(\mu\)</span>s</td>
 <td align="center">768 ns</td>
-<td align="center">661 $\mu$s</td>
-<td align="center">475 $\mu$s</td>
+<td align="center">661 <span>\(\mu\)</span>s</td>
+<td align="center">475 <span>\(\mu\)</span>s</td>
 </tr>
 </tbody>
 </table>
@@ -498,9 +498,8 @@ $ python -m timeit -n10 'list(range(1000000))'
 <ul>
 <li>Dany jest wielomian:</li>
 </ul>
-<p>$$ W(x) = a_0 + a_1\cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n$$</p>
-<ul>
-<li>Korzystając bezpośrednio z powyższgo wzoru należy wykonać $n$ dodawań oraz $1 + 2 + ... + n  = \frac{n\cdot(n+1)}{2}$ mnożeń</li>
+<span>\[ W(x) = a_0 + a_1\cdot x + a_2 \cdot x^2 + ... + a_n \cdot x^n\]</span><ul>
+<li>Korzystając bezpośrednio z powyższgo wzoru należy wykonać <span>\(n\)</span> dodawań oraz <span>\(1 + 2 + ... + n  = \frac{n\cdot(n+1)}{2}\)</span> mnożeń</li>
 </ul>
 <h2 id="metoda-naiwna">Metoda naiwna</h2>
 <hr />
@@ -530,24 +529,21 @@ naive(a, x)
 <ul>
 <li>Zapisując wielomian w postaci:</li>
 </ul>
-<p>$$W(x) = a_0 + x\cdot(a_1 + x\cdot(a_2 + ... + x\cdot(a_{n-1} + a_n\cdot x)...)$$</p>
-<ul>
-<li>organiczamy się do $n$ dodań i $n$ mnożeń</li>
+<span>\[W(x) = a_0 + x\cdot(a_1 + x\cdot(a_2 + ... + x\cdot(a_{n-1} + a_n\cdot x)...)\]</span><ul>
+<li>organiczamy się do <span>\(n\)</span> dodań i <span>\(n\)</span> mnożeń</li>
 </ul>
 <h2 id="algorytm-hornera">Algorytm Hornera</h2>
 <hr />
-<p>$$W(x) = a_0 + x\cdot(a_1 + x\cdot(a_2 + ... + x\cdot(a_{n-1} + a_n\cdot x)...)$$</p>
-<ul>
+<span>\[W(x) = a_0 + x\cdot(a_1 + x\cdot(a_2 + ... + x\cdot(a_{n-1} + a_n\cdot x)...)\]</span><ul>
 <li>Niech</li>
 </ul>
-<p>$$b_n = a_n$$
+<span>\[b_n = a_n$$
 $$b_{n-1} = b_n\cdot x + a_{n-1}$$
 $$b_{n-2} = n_{n-1}\cdot x + a_{n-2}$$
 $$...$$
 $$b_1 = b_2\cdot x + a_1$$
-$$b_0 = b_1\cdot x + a_0$$</p>
-<ul>
-<li>$b_0$ - wartość wielomianu</li>
+$$b_0 = b_1\cdot x + a_0\]</span><ul>
+<li><span>\(b_0\)</span> - wartość wielomianu</li>
 </ul>
 <h2 id="horner-vs-naive">Horner vs Naive</h2>
 <hr />
@@ -583,7 +579,7 @@ horner(a, x)
 <li>czas w zależności od rozmiaru danych (N)</li>
 <li>zajęta pamięć (pomijając dane wejściowe)</li>
 <li>najczęściej interesuje nas złożoność asymptotyczna (dla dużych N)</li>
-<li>np. które człony $$f(n) = n^3 +10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)$$ są znaczące?</li>
+<li>np. które człony <span>\(<span>\(f(n) = n^3 +10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)\)</span>\)</span> są znaczące?</li>
 </ul>
 <h2 id="wkady-od-roznych-czonow">Wkłady od różnych członów</h2>
 <hr />
@@ -668,8 +664,7 @@ def table_head(f, width=10):
 </code></pre>
 <h2 id="wkady-od-roznych-czonow_4">Wkłady od różnych członów</h2>
 <hr />
-<p>$$f(n) = n^3 +10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)$$</p>
-<pre><code class="python">from math import log
+<span>\[f(n) = n^3 +10\cdot n^2 + 100\cdot n + 1000\cdot\ln(n)\]</span><pre><code class="python">from math import log
 
 n = [10**i for i in range(5)]
 f_as_table(&quot;n**3 + 10*n**2 + 100*n + 1000*log(n)&quot;, *n, width=12)
@@ -686,15 +681,13 @@ f_as_table(&quot;n**3 + 10*n**2 + 100*n + 1000*log(n)&quot;, *n, width=12)
 <h2 id="notacja-duzego">Notacja dużego &Omicron;</h2>
 <hr />
 <ul>
-<li>Funkcja $f(n)$ jest $O(g(n))$, jeśli istnieją liczby dodatnie $c$ i $n_0$, takie że:</li>
+<li>Funkcja <span>\(f(n)\)</span> jest <span>\(O(g(n))\)</span>, jeśli istnieją liczby dodatnie <span>\(c\)</span> i <span>\(n_0\)</span>, takie że:</li>
 </ul>
-<p>$$\forall_{n&gt;n_0} ~~~~~ f(n) &lt; c\cdot g(n)$$</p>
-<ul>
-<li>Jeśli $f_1(n) \in O(g(n))$ i $f_2(n) \in O(g(n))$, to:</li>
+<span>\[\forall_{n&gt;n_0} ~~~~~ f(n) &lt; c\cdot g(n)\]</span><ul>
+<li>Jeśli <span>\(f_1(n) \in O(g(n))\)</span> i <span>\(f_2(n) \in O(g(n))\)</span>, to:</li>
 </ul>
-<p>$$f_1(n) + f_2(n) \in O(g(n))$$
-$$f_1(n) \cdot f_2(n) \in O(g^2(n))$$</p>
-<h2 id="notacja-duzego-przykad">Notacja dużego &Omicron; - przykład</h2>
+<span>\[f_1(n) + f_2(n) \in O(g(n))$$
+$$f_1(n) \cdot f_2(n) \in O(g^2(n))\]</span><h2 id="notacja-duzego-przykad">Notacja dużego &Omicron; - przykład</h2>
 <hr />
 <pre><code class="python">import numpy as np
 import matplotlib.pyplot as plt
@@ -719,7 +712,7 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
 </code></pre>
 
 <p><img alt="png" src="../js-python_w05_files/js-python_w05_64_0.png" /></p>
-<h2 id="przykady-rzedow-zozonosci-o1">Przykłady rzędów złożoności - $O(1)$</h2>
+<h2 id="przykady-rzedow-zozonosci-o1">Przykłady rzędów złożoności - <span>\(O(1)\)</span></h2>
 <hr />
 <ul>
 <li>Proste operacje: arytmetyczne, logiczne, porównania, przypisania, dostęp do struktury danych</li>
@@ -728,7 +721,7 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
     return n*n # jedna operacja -&gt; O(1)
 </code></pre>
 
-<h2 id="przykady-rzedow-zozonosci-on">Przykłady rzędów złożoności - $O(n)$</h2>
+<h2 id="przykady-rzedow-zozonosci-on">Przykłady rzędów złożoności - <span>\(O(n)\)</span></h2>
 <hr />
 <pre><code class="python">def linear(n):
     result = 0 # 1 * operacja
@@ -739,9 +732,9 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
 </code></pre>
 
 <ul>
-<li>ostatecznie mamy $3n + 1$ operacji, więc złożoność asymptotyczna -&gt; $O(n)$</li>
+<li>ostatecznie mamy <span>\(3n + 1\)</span> operacji, więc złożoność asymptotyczna -&gt; <span>\(O(n)\)</span></li>
 </ul>
-<h2 id="przykady-rzedow-zozonosci-on_1">Przykłady rzędów złożoności - $O(n)$</h2>
+<h2 id="przykady-rzedow-zozonosci-on_1">Przykłady rzędów złożoności - <span>\(O(n)\)</span></h2>
 <hr />
 <pre><code class="python">def linear(n):
     for element in n:
@@ -751,10 +744,10 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
 </code></pre>
 
 <ul>
-<li>złożoność asymptotyczna -&gt; $O(n)$</li>
-<li>może być lepsza (nawet $O(1)$), ale w najgorszym wypadku będzie <em>n</em> operacji</li>
+<li>złożoność asymptotyczna -&gt; <span>\(O(n)\)</span></li>
+<li>może być lepsza (nawet <span>\(O(1)\)</span>), ale w najgorszym wypadku będzie <em>n</em> operacji</li>
 </ul>
-<h2 id="przykady-rzedow-zozonosci-on-m">Przykłady rzędów złożoności - $O(n + m)$</h2>
+<h2 id="przykady-rzedow-zozonosci-on-m">Przykłady rzędów złożoności - <span>\(O(n + m)\)</span></h2>
 <hr />
 <pre><code class="python">def linear(n, m):
     result = 0
@@ -769,10 +762,10 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
 </code></pre>
 
 <ul>
-<li>dwie pętle: $O(n)$ i $O(m)$</li>
-<li>złożoność asymptotyczna $O(n+m)$</li>
+<li>dwie pętle: <span>\(O(n)\)</span> i <span>\(O(m)\)</span></li>
+<li>złożoność asymptotyczna <span>\(O(n+m)\)</span></li>
 </ul>
-<h2 id="przykady-rzedow-zozonosci-on2">Przykłady rzędów złożoności - $O(n^2)$</h2>
+<h2 id="przykady-rzedow-zozonosci-on2">Przykłady rzędów złożoności - <span>\(O(n^2)\)</span></h2>
 <hr />
 <pre><code class="python">def quadratic(n):
     result = 0
@@ -783,12 +776,12 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
 </code></pre>
 
 <ul>
-<li>pętla zewnętrzna -&gt; $n$ razy</li>
-<li>pętla wewnętrzna -&gt; $(n-i)$ razy</li>
-<li>w sumie $1 + 2 + ... + n = \frac{n\cdot(n + 1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n$</li>
-<li>złożoność asymptotyczna: $O(n^2) + O(n) = O(n^2)$</li>
+<li>pętla zewnętrzna -&gt; <span>\(n\)</span> razy</li>
+<li>pętla wewnętrzna -&gt; <span>\((n-i)\)</span> razy</li>
+<li>w sumie <span>\(1 + 2 + ... + n = \frac{n\cdot(n + 1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n\)</span></li>
+<li>złożoność asymptotyczna: <span>\(O(n^2) + O(n) = O(n^2)\)</span></li>
 </ul>
-<h2 id="przykady-rzedow-zoznosci-olog-n">Przykłady rzędów złożności - $O(\log n)$</h2>
+<h2 id="przykady-rzedow-zoznosci-olog-n">Przykłady rzędów złożności - <span>\(O(\log n)\)</span></h2>
 <hr />
 <pre><code class="python">def logarithmic(n):
     result = 0
@@ -799,9 +792,9 @@ label = plt.text(52, 75000, &quot;$\\forall_{n\geq 22}$   $g(n) &gt; f(n)$ \n\n&
 </code></pre>
 
 <ul>
-<li>w każdej iteracji zmniejszamy $n$ dwukrotnie</li>
-<li>jeśli $n = 2^x$, to wykonamy $\log n$ operacji</li>
-<li>algorytm jest $O(\log n)$</li>
+<li>w każdej iteracji zmniejszamy <span>\(n\)</span> dwukrotnie</li>
+<li>jeśli <span>\(n = 2^x\)</span>, to wykonamy <span>\(\log n\)</span> operacji</li>
+<li>algorytm jest <span>\(O(\log n)\)</span></li>
 </ul>
 <h2 id="porownanie-zozonosci">Porównanie złożoności</h2>
 <hr />
@@ -953,15 +946,15 @@ print(x)
 <h2 id="zozonosc-bubblesort">Złożoność <em>bubblesort</em></h2>
 <hr />
 <ul>
-<li>$n$ operacji -&gt; co najmniej ostatni na swoim miejscu</li>
-<li>$(n-1)$ operacji -&gt; dwa ostatnie na swoim miejscu</li>
-<li>$(n-2)$ operacji -&gt; trzy na swoim miejscu itd...</li>
-<li>$n + (n-1) + (n-2) + ... = O(n^2)$</li>
+<li><span>\(n\)</span> operacji -&gt; co najmniej ostatni na swoim miejscu</li>
+<li><span>\((n-1)\)</span> operacji -&gt; dwa ostatnie na swoim miejscu</li>
+<li><span>\((n-2)\)</span> operacji -&gt; trzy na swoim miejscu itd...</li>
+<li><span>\(n + (n-1) + (n-2) + ... = O(n^2)\)</span></li>
 </ul>
 <h2 id="sortowanie-przez-scalanie-mergesort">Sortowanie przez scalanie (<em>mergesort</em>)</h2>
 <hr />
 <ul>
-<li>podziel nieposortowaną listę na $n$ "podlist" zawierających po jednym elemencie</li>
+<li>podziel nieposortowaną listę na <span>\(n\)</span> "podlist" zawierających po jednym elemencie</li>
 <li>cyklicznie <em>scalaj</em> "podlisty" w posortowane "podlisty", aż zostanie jedna</li>
 </ul>
 <p>Start: [3, 6, 4, 2]</p>
@@ -1080,10 +1073,10 @@ left = [1, 2, 4, 5]     right = [3, 6, 7, 8, 9]     --&gt; [1, 2, 3, 4, 5, 6, 7,
 <h2 id="zozonosc-mergesort">Złożoność <em>mergesort</em></h2>
 <hr />
 <ul>
-<li>$\log_2 n + 1$ <em>poziomów</em></li>
-<li>na każdym $n$ operacji</li>
-<li>złożoność czasowa -&gt; $O(n\cdot\log n)$</li>
-<li>złożoność pamięciowa -&gt; $O(n)$</li>
+<li><span>\(\log_2 n + 1\)</span> <em>poziomów</em></li>
+<li>na każdym <span>\(n\)</span> operacji</li>
+<li>złożoność czasowa -&gt; <span>\(O(n\cdot\log n)\)</span></li>
+<li>złożoność pamięciowa -&gt; <span>\(O(n)\)</span></li>
 </ul>
 <h2 id="sortowanie-szybkie-quicksort">Sortowanie szybkie (<em>quicksort</em>)</h2>
 <hr />
@@ -1104,8 +1097,8 @@ left = [1, 2, 4, 5]     right = [3, 6, 7, 8, 9]     --&gt; [1, 2, 3, 4, 5, 6, 7,
 <hr />
 <ul>
 <li>kluczowy jest wybór elementu rozdzielającego </li>
-<li>przeciętnie, złożoność algorytmu $O(n\cdot\log n)$, gdy dzielimy dane na mniej więcej dwa równe podzbiory</li>
-<li>gdy <em>pivot</em> jest wartością skrajną, to mamy jeden podzbiór $1$-elementowy i drugi $(n-1)$-elementowy; wtedy złożoność algorytmu $O(n^2)$</li>
+<li>przeciętnie, złożoność algorytmu <span>\(O(n\cdot\log n)\)</span>, gdy dzielimy dane na mniej więcej dwa równe podzbiory</li>
+<li>gdy <em>pivot</em> jest wartością skrajną, to mamy jeden podzbiór <span>\(1\)</span>-elementowy i drugi <span>\((n-1)\)</span>-elementowy; wtedy złożoność algorytmu <span>\(O(n^2)\)</span></li>
 </ul>
 <h2 id="pivot-wybor"><em>pivot</em> - wybór</h2>
 <hr />
@@ -1305,7 +1298,8 @@ display(HTML(s))
         </footer>
         <script>var base_url = '../..';</script>
         <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
-        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <script src="../../js/base.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
