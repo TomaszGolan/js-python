@@ -34,3 +34,7 @@ pages:
         - Egzamin grupa I: egzaminy/2016_egz_01.md
         - Egzamin grupa II: egzaminy/2016_egz_02.md
         - Egzamin grupa III: egzaminy/2016_egz_03.md
+markdown_extensions:
+   - pymdownx.arithmatex
+extra_javascript:
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
