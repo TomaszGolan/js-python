@@ -43,36 +43,36 @@ Do odtworzenia wykładów w formie prezentacji niezbędny jest dodatek [RISE](ht
     * notacja "dużego O"
     * algorytmy sortowania
 
-* [Wykład 6](wyklady/js-python_w06.ipynb),  [Lista 6](listy/js-python_l05.md))
+* [Wykład 6](wyklady/js-python_w06.ipynb),  [Lista 6](listy/js-python_l05.md)
 
     * przestrzenie nazw
     * moduły
 
-*  [Wykład 7](wyklady/js-python_w07.ipynb), [Lista 6](listy/js-python_l06.md))
+*  [Wykład 7](wyklady/js-python_w07.ipynb), [Lista 6](listy/js-python_l06.md)
 
     * wybrane moduły biblioteki standardowej
     * liczby pseudolosowe
 
-* [Wykład 8](wyklady/js-python_w08.ipynb), [Lista 7](listy/js-python_l07.md))
+* [Wykład 8](wyklady/js-python_w08.ipynb), [Lista 7](listy/js-python_l07.md)
 
     * Błędy i wyjątki
     * Operacje na plikach
 
-* [Wykład 9](wyklady/js-python_w09.ipynb),  [Lista 8](listy/js-python_l08.md))
+* [Wykład 9](wyklady/js-python_w09.ipynb),  [Lista 8](listy/js-python_l08.md)
 
     * typy sekwencyjne: set i frozenset
     * generatory
     * omówienie zadań z listy 6
 
-*  [Wykład 10](wyklady/js-python_w10.ipynb), [Lista 9](listy/js-python_l09.md))
+*  [Wykład 10](wyklady/js-python_w10.ipynb), [Lista 9](listy/js-python_l09.md)
 
     * wprowadzenie do programowania obiektowego
 
-* [Wykład 11](wyklady/js-python_w11.ipynb), [Lista 10](listy/js-python_l10.md))
+* [Wykład 11](wyklady/js-python_w11.ipynb), [Lista 10](listy/js-python_l10.md)
 
     * programowania obiektowego ciąg dalszy
 
-* [Wykład 12](wyklady/js-python_w12.ipynb))
+* [Wykład 12](wyklady/js-python_w12.ipynb)
 
     * graficzny interfejs użytkownika
 
