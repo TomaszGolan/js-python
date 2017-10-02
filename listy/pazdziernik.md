@@ -3,6 +3,16 @@
 
 ---
 
+Punktacja:
+
+* 80-100: bdb
+* 70-79: db+
+* 60-69: db
+* 50-59: dst+
+* 40-49: dst
+
+---
+
 ## Zadanie 1 (1 pkt)
 
 Użyj trybu interaktywnego jako kalkulatora, aby wyliczyć następujące wyrażenia:
