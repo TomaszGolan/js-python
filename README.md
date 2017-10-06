@@ -21,6 +21,12 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * Podstawowe typy danych: liczbowe i tekstowy
     * Operacje na liczbach; moduły *math* i *cmath*
 
+*  [Wykład 2](wyklady/js-python_w02.ipynb)
+
+    * sekwencyjne typy danych
+    * systemy liczbowe
+    * wyrażenia logiczne
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
