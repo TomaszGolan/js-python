@@ -27,6 +27,12 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * systemy liczbowe
     * wyrażenia logiczne
 
+*  [Wykład 3](wyklady/js-python_w03.ipynb)
+
+    * pakowanie / odpakowywanie sekwencji
+    * kontrola przepływu
+    * formatowanie tekstu
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
