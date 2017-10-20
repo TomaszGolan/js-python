@@ -33,6 +33,13 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * kontrola przepływu
     * formatowanie tekstu
 
+*  [Wykład 4](wyklady/js-python_w04.ipynb)
+
+    * typy mapujące
+    * funkcje
+    * dokumentacja
+    * wyrażenie lambda
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
