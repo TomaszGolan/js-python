@@ -40,6 +40,11 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * dokumentacja
     * wyrażenie lambda
 
+* [Wykład 5](wyklady/js-python_w05.ipynb)
+
+    * przestrzenie nazw
+    * moduły
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
