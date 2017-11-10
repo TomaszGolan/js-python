@@ -49,3 +49,4 @@ dodatek [RISE](https://github.com/damianavila/RISE).
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
 * Listopad: [markdown](listy/listopad.md), [pdf](listy/listopad.pdf)
+* Grudzień: [markdown](listy/grudzien.md), [pdf](listy/grudzien.pdf)
