@@ -45,6 +45,11 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * przestrzenie nazw
     * moduły
 
+* [Wykład 6](wyklady/js-python_w06.ipynb)
+
+    * wybrane moduły biblioteki standardowej
+    * liczby pseudolosowe
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
