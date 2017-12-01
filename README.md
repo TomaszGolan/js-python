@@ -55,6 +55,14 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * Błędy i wyjątki
     * Operacje na plikach
 
+* [Wykład 8](wyklady/js-python_w08.ipynb)
+
+    * wprowadzenie do programowania obiektowego
+
+* [Wykład 9](wyklady/js-python_w09.ipynb)
+
+    * programowania obiektowego ciąg dalszy
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
