@@ -50,6 +50,11 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * wybrane moduły biblioteki standardowej
     * liczby pseudolosowe
 
+* [Wykład 7](wyklady/js-python_w07.ipynb)
+
+    * Błędy i wyjątki
+    * Operacje na plikach
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
