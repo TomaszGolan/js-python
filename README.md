@@ -63,6 +63,13 @@ dodatek [RISE](https://github.com/damianavila/RISE).
 
     * programowania obiektowego ciąg dalszy
 
+* [Wykład 10](wyklady/js-python_w10.ipynb)
+
+    * *timeit*
+    * złożoność algorytmów
+    * notacja "dużego O"
+    * algorytmy sortowania
+
 ## Listy
 
 * Październik: [markdown](listy/pazdziernik.md), [pdf](listy/pazdziernik.pdf)
