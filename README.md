@@ -70,7 +70,7 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * notacja "dużego O"
     * algorytmy sortowania
     
-* [Wykład 11](docs/wyklady/js-python_w11.ipynb)
+* [Wykład 11](wyklady/js-python_w11.ipynb)
 
     * graficzny interfejs użytkownika
 
