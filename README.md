@@ -69,6 +69,16 @@ dodatek [RISE](https://github.com/damianavila/RISE).
     * złożoność algorytmów
     * notacja "dużego O"
     * algorytmy sortowania
+    
+* [Wykład 11](docs/wyklady/js-python_w11.ipynb)
+
+    * graficzny interfejs użytkownika
+
+* [Wykład 12](http://tomaszgolan.github.io/reveal_talks/html/js-python_w13.html)
+    * powtórka cz. I
+
+* [Wykład 13](http://tomaszgolan.github.io/reveal_talks/html/js-python_w14.html)
+    * powtórka cz. II
 
 ## Listy
 
