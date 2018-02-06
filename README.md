@@ -86,3 +86,7 @@ dodatek [RISE](https://github.com/damianavila/RISE).
 * Listopad: [markdown](listy/listopad.md), [pdf](listy/listopad.pdf)
 * Grudzień: [markdown](listy/grudzien.md), [pdf](listy/grudzien.pdf)
 * Styczeń: [markdown](listy/styczen.md), [pdf](listy/styczen.pdf)
+
+## Egzaminy
+
+* I termin: [markdown](listy/egzamin_01.md), [pdf](listy/egzamin_01.pdf)
