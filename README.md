@@ -90,3 +90,4 @@ dodatek [RISE](https://github.com/damianavila/RISE).
 ## Egzaminy
 
 * I termin: [markdown](listy/egzamin_01.md), [pdf](listy/egzamin_01.pdf)
+* II termin: [markdown](listy/egzamin_02.md), [pdf](listy/egzamin_02.pdf)
